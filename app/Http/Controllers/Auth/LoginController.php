@@ -39,7 +39,6 @@ class LoginController extends Controller
         
         $data['email'] = $request->email;
         $user = User::where('email',$request->email)->first();
-
         if($user && $user->password){
             return view('auth.login',$data);
         }elseif($user){

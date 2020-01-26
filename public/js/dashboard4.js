@@ -137,7 +137,7 @@ $(document).ready(function () {
     for (i = list.length; i--;) {
         var weatherType = list[i],
             elements = document.getElementsByClassName(weatherType);
-        for (var e = elements.length; e--;) {
+        for (e = elements.length; e--;) {
             icons.set(elements[e], weatherType);
         }
     }

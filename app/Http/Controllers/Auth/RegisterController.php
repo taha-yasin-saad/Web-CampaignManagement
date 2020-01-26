@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
-
+use Symfony\Component\HttpFoundation\Request;
 class RegisterController extends Controller
 {
     /*
@@ -84,7 +84,7 @@ class RegisterController extends Controller
                 'phone' => $request->phone,
                 'password' => Hash::make($request->password),
             ]);
-            Auth::loginUsingId($user->id);
+            Auth()->loginUsingId($user->id);
             return redirect('/');
         }
     }

@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="en" dir="rtl">
+<html lang="en">
   <head>
       <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="description" content="">
       <meta name="author" content="">
-      <link rel="icon" type="image/png" sizes="16x16" href="{{asset('logo.png')}}">
+      <link rel="icon" type="image/png" sizes="16x16" href="{{asset('logo.jpg')}}">
       <title>Closor</title>
       <!-- Bootstrap Core CSS -->
-      <link href="{{asset('plugins/bower_components/bootstrap-rtl-master/dist/css/bootstrap-rtl.min.css')}}"
+      <link href="{{asset('bootstrap/dist/css/bootstrap.min.css')}}"
           rel="stylesheet">
       <!-- Menu CSS -->
       <link href="{{asset('plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.css')}}" rel="stylesheet">
@@ -70,7 +70,7 @@
                                 <li>
                                     <div class="dw-user-box">
                                         <div class="u-text">
-                                            <h4>لوحة التحكم</h4>
+                                            <h4>Control panel</h4>
                                         </div>
                                     </div>
                                 </li>
@@ -103,14 +103,14 @@
                 <div class="sidebar-nav slimscrollsidebar">
                     <div class="sidebar-head">
                         <h3><span class="fa-fw open-close"><i class="ti-menu hidden-xs"></i>
-                                <i class="ti-close visible-xs"></i></span> <span class="hide-menu">راوي</span>
+                                <i class="ti-close visible-xs"></i></span> <span class="hide-menu">Closor</span>
                         </h3>
                     </div>
                     <ul class="nav" id="side-menu">
                         <li class="user-pro">
                             <a class="waves-effect">
-                                <img src="{{asset('logo.png')}}" alt="user-img" class="img-circle">
-                                <span class="hide-menu">راوي</span>
+                                <img src="{{asset('logo.jpg')}}" alt="user-img" class="img-circle">
+                                <span class="hide-menu">Closor</span>
                             </a>
                         </li>
                         <li> <a href="index.html" class="waves-effect"><i class="mdi mdi-av-timer fa-fw"

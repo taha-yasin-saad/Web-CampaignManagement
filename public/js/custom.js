@@ -82,7 +82,7 @@ $(document).ready(function () {
             element.addClass('active');
         }
         $(window).ready(set);
-        $(window).on("resize", set);
+        $(window).bind("resize", set);
     });
 
     /* ===== Collapsible Panels JS ===== */
