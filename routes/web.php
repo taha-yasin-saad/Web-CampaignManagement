@@ -15,8 +15,8 @@
 Auth::routes();
 
 Route::get('/', 'HomeController@index');
-Route::post('/first', 'auth\LoginController@firstlogin');
-Route::post('/login2', 'auth\RegisterController@login2');
+Route::post('/first', 'Auth\LoginController@firstlogin');
+Route::post('/login2', 'Auth\RegisterController@login2');
 
 Route::resource('/profile', 'UserController');
 

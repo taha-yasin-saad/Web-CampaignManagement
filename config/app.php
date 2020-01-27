@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://localhost/closor/public/'),
+    'url' => env('APP_URL', '/closor/public'),
 
     'asset_url' => env('ASSET_URL', null),
 
