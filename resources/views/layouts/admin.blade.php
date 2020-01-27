@@ -75,6 +75,12 @@
                                     </div>
                                 </li>
                                 <li role="separator" class="divider"></li>
+                                <li>
+                                    <a href="{{url('profile')}}">
+                                        Profile
+                                    </a>
+                                </li>
+                                <li role="separator" class="divider"></li>
                                 <li><a href="#"
                                         onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i
                                             class="fa fa-power-off"></i> Logout</a>
