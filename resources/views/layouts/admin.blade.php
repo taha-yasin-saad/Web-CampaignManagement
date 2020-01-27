@@ -131,13 +131,13 @@
 
                         <li> <a href="index.html" class="waves-effect"><i class="mdi mdi-av-timer fa-fw"
                                     data-icon="v"></i>
-                                <span class="hide-menu"> الماركات <span class="fa arrow"></span> </span></a>
+                                <span class="hide-menu"> Workplaces <span class="fa arrow"></span> </span></a>
                             <ul class="nav nav-second-level">
-                                <li> <a href="{{url('mark')}}"><i class=" fa-fw"></i>
-                                        <span class="hide-menu">عرض</span></a>
+                                <li> <a href="{{url('workplace')}}"><i class=" fa-fw"></i>
+                                        <span class="hide-menu">Show</span></a>
                                 </li>
-                                <li> <a href="{{url('mark/create ')}}"><i class=" fa-fw"></i>
-                                        <span class="hide-menu">أضافة</span></a>
+                                <li> <a href="{{url('workplace/create ')}}"><i class=" fa-fw"></i>
+                                        <span class="hide-menu">Add New</span></a>
                                 </li>
                             </ul>
                         </li>

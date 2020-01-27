@@ -20,4 +20,4 @@ Route::post('/login2', 'Auth\RegisterController@login2');
 
 Route::resource('/profile', 'UserController');
 
-Route::resource('mark', 'MarkController');
+Route::resource('workplace', 'WorkplacesController');

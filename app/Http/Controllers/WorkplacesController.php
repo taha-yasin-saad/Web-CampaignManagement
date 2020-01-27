@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\User;
+use App\Workplace;
 use Illuminate\Http\Request;
 
-class UserController extends Controller
+class WorkplacesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,9 @@ class UserController extends Controller
      */
     public function index()
     {
-        return view('users/profile');
+        $workplaces = Workplace::where('admin_id', auth()->user()->id)->get();
+        // dd($workplaces);
+        return view('workplaces.index', compact('workplaces'));
     }
 
     /**
@@ -24,7 +26,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        return view('workplaces.add');
     }
 
     /**
@@ -35,16 +37,23 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->validate([
+            'title'=>'required',
+            'admin_id'=>'required'
+        ]);
+        Workplace::create($data);
+
+        $workplaces = Workplace::where('admin_id', auth()->user()->id);
+        return view('workplaces.index', compact('workplaces'));
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\User  $user
+     * @param  \App\Workplace  $workplace
      * @return \Illuminate\Http\Response
      */
-    public function show(User $user)
+    public function show(Workplace $workplace)
     {
         //
     }
@@ -52,10 +61,10 @@ class UserController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\User  $user
+     * @param  \App\Workplace  $workplace
      * @return \Illuminate\Http\Response
      */
-    public function edit(User $user)
+    public function edit(Workplace $workplace)
     {
         //
     }
@@ -64,29 +73,23 @@ class UserController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\User  $user
+     * @param  \App\Workplace  $workplace
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $user)
+    public function update(Request $request, Workplace $workplace)
     {
-        $data = $request->validate([
-            'name'=>'required',
-            'email'=>'required|email',
-            'phone'=>'required|numeric'
-        ]);
-        $user = $user->find(Auth()->user()->id);
-        $user->update($data);
-        return back()->with('success', 'your profile has been updated successfully');
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\User  $user
+     * @param  \App\Workplace  $workplace
      * @return \Illuminate\Http\Response
      */
-    public function destroy(User $user)
+    public function destroy(Workplace $workplace)
     {
-        //
+        $workplace->delete();
+        return back();
     }
 }
