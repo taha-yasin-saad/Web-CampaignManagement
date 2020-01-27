@@ -43,7 +43,7 @@ class WorkplacesController extends Controller
         ]);
         Workplace::create($data);
 
-        $workplaces = Workplace::where('admin_id', auth()->user()->id);
+        $workplaces = Workplace::where('admin_id', auth()->user()->id)->get();
         return view('workplaces.index', compact('workplaces'));
     }
 
