@@ -14,9 +14,9 @@ class WorkplacesController extends Controller
      */
     public function index()
     {
-        $workplaces = Workplace::where('admin_id', auth()->user()->id)->get();
+        $query['data'] = Workplace::where('admin_id', auth()->user()->id)->get();
         // dd($workplaces);
-        return view('workplaces.index', compact('workplaces'));
+        return view('workplaces.index', $query);
     }
 
     /**
@@ -43,8 +43,9 @@ class WorkplacesController extends Controller
         ]);
         Workplace::create($data);
 
-        $workplaces = Workplace::where('admin_id', auth()->user()->id)->get();
-        return view('workplaces.index', compact('workplaces'));
+        // $workplaces = Workplace::where('admin_id', auth()->user()->id)->get();
+        // return view('workplaces.index', compact('workplaces'));
+        return redirect('workplace')->with('success','Edited Successfully');
     }
 
     /**
@@ -66,7 +67,8 @@ class WorkplacesController extends Controller
      */
     public function edit(Workplace $workplace)
     {
-        //
+        $query['data'] = $workplace;
+        return view('workplaces.add', $query);
     }
 
     /**
@@ -78,7 +80,10 @@ class WorkplacesController extends Controller
      */
     public function update(Request $request, Workplace $workplace)
     {
-        //
+        $workplace->update([
+            'title' => $request->title
+        ]);
+        return redirect('workplace')->with('success','Edited Successfully');
     }
 
     /**

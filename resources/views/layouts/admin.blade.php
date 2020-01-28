@@ -63,14 +63,14 @@
 
                         <li class="dropdown">
                             <a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#"> <b
-                                    class="hidden-xs">ADMIN</b>
+                                    class="hidden-xs">{{Auth::user()->name}}</b>
                                 <span class="caret"></span>
                             </a>
                             <ul class="dropdown-menu dropdown-user animated flipInY">
                                 <li>
                                     <div class="dw-user-box">
                                         <div class="u-text">
-                                            <h4>Control panel</h4>
+                                            <h4>User panel</h4>
                                         </div>
                                     </div>
                                 </li>
@@ -119,15 +119,6 @@
                                 <span class="hide-menu">Closor</span>
                             </a>
                         </li>
-                        <li> <a href="index.html" class="waves-effect"><i class="mdi mdi-av-timer fa-fw"
-                                    data-icon="v"></i>
-                                <span class="hide-menu"> الأعدادات العامة <span class="fa arrow"></span> </span></a>
-                            <ul class="nav nav-second-level">
-                                <li> <a href="{{url('settings')}}"><i class=" fa-fw"></i>
-                                        <span class="hide-menu">الاعدادات العامة </span></a>
-                                </li>
-                            </ul>
-                        </li>
 
                         <li> <a href="index.html" class="waves-effect"><i class="mdi mdi-av-timer fa-fw"
                                     data-icon="v"></i>
@@ -138,74 +129,6 @@
                                 </li>
                                 <li> <a href="{{url('workplace/create ')}}"><i class=" fa-fw"></i>
                                         <span class="hide-menu">Add New</span></a>
-                                </li>
-                            </ul>
-                        </li>
-
-                        <li> <a href="index.html" class="waves-effect"><i class="mdi mdi-av-timer fa-fw"
-                                    data-icon="v"></i>
-                                <span class="hide-menu"> المنتجات <span class="fa arrow"></span> </span></a>
-                            <ul class="nav nav-second-level">
-                                <li> <a href="{{url('product')}}"><i class=" fa-fw"></i>
-                                        <span class="hide-menu">عرض</span></a>
-                                </li>
-                                <li> <a href="{{url('product/create ')}}"><i class=" fa-fw"></i>
-                                        <span class="hide-menu">أضافة</span></a>
-                                </li>
-                            </ul>
-                        </li>
-
-                        <li> <a href="index.html" class="waves-effect"><i class="mdi mdi-av-timer fa-fw"
-                                    data-icon="v"></i>
-                                <span class="hide-menu"> الطلبات <span class="fa arrow"></span> </span></a>
-                            <ul class="nav nav-second-level">
-                                <li> <a href="{{url('order')}}"><i class=" fa-fw"></i>
-                                        <span class="hide-menu">عرض</span></a>
-                                </li>
-                            </ul>
-                        </li>
-
-                        <li> <a href="index.html" class="waves-effect"><i class="mdi mdi-av-timer fa-fw"
-                                    data-icon="v"></i>
-                                <span class="hide-menu"> مناطق التغطية <span class="fa arrow"></span> </span></a>
-                            <ul class="nav nav-second-level">
-                                <li> <a href="{{url('area')}}"><i class=" fa-fw"></i>
-                                        <span class="hide-menu">عرض</span></a>
-                                </li>
-                                <li> <a href="{{url('area/create ')}}"><i class=" fa-fw"></i>
-                                        <span class="hide-menu">أضافة</span></a>
-                                </li>
-                            </ul>
-                        </li>
-
-
-                        <li> <a href="index.html" class="waves-effect"><i class="mdi mdi-av-timer fa-fw"
-                                    data-icon="v"></i>
-                                <span class="hide-menu"> السلايدر <span class="fa arrow"></span> </span></a>
-                            <ul class="nav nav-second-level">
-                                <li> <a href="{{url('slider')}}"><i class=" fa-fw"></i>
-                                        <span class="hide-menu">عرض</span></a>
-                                </li>
-                                <li> <a href="{{url('slider/create ')}}"><i class=" fa-fw"></i>
-                                        <span class="hide-menu">أضافة</span></a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li> <a href="index.html" class="waves-effect"><i class="mdi mdi-av-timer fa-fw"
-                                    data-icon="v"></i>
-                                <span class="hide-menu">  بانر الرئيسية <span class="fa arrow"></span> </span></a>
-                            <ul class="nav nav-second-level">
-                                <li> <a href="{{url('banner')}}"><i class=" fa-fw"></i>
-                                        <span class="hide-menu">عرض</span></a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li> <a href="index.html" class="waves-effect"><i class="mdi mdi-av-timer fa-fw"
-                                    data-icon="v"></i>
-                                <span class="hide-menu">  ادارة الأستفسارات <span class="fa arrow"></span> </span></a>
-                            <ul class="nav nav-second-level">
-                                <li> <a href="{{url('contact')}}"><i class=" fa-fw"></i>
-                                        <span class="hide-menu">عرض</span></a>
                                 </li>
                             </ul>
                         </li>
