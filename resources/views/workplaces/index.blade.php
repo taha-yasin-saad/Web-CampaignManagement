@@ -11,7 +11,7 @@
                         <h4 class="page-title">Workplace</h4> </div>
                     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                         <button class="right-side-toggle waves-effect waves-light btn-info btn-circle pull-right m-l-20"><i class="ti-settings text-white"></i></button>
-                        <a href="javascript: void(0);" target="_blank" class="btn btn-danger pull-right m-l-20 hidden-xs hidden-sm waves-effect waves-light">Admin Panel</a>
+                        <!-- <a href="javascript: void(0);" target="_blank" class="btn btn-danger pull-right m-l-20 hidden-xs hidden-sm waves-effect waves-light">Admin Panel</a> -->
                         <ol class="breadcrumb">
                             <li><a href="#">Dashboard</a></li>
                             <li class="active">Workplaces</li>
@@ -50,7 +50,7 @@
                                             <h1>{{$value->title}}</h1>
                                         </div>
                                         <div class="panel-footer"> 
-                                            <a class="btn btn-info m-t-10">Show details</a>  
+                                            <a href="{{url('workplace/'.$value->id)}}" class="btn btn-info m-t-10">Show details</a>  
                                         </div>
                                     </div>
                                 </div>

@@ -4,9 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Workplace;
 use App\Product;
+use App\UserProduct;
 use Illuminate\Http\Request;
 
-class WorkplacesController extends Controller
+class ProductsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +16,8 @@ class WorkplacesController extends Controller
      */
     public function index()
     {
-        $query['data'] = Workplace::where('admin_id', auth()->user()->id)->get();
-        // dd($workplaces);
-        return view('workplaces.index', $query);
+        $query['data'] = Product::all();
+        return view('products.index', $query);
     }
 
     /**
@@ -25,9 +25,10 @@ class WorkplacesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($workplace_id)
     {
-        return view('workplaces.add');
+        $query['workplace'] = Workplace::where('id',$workplace_id)->first();
+        return view('products.add',$query);
     }
 
     /**
@@ -40,26 +41,22 @@ class WorkplacesController extends Controller
     {
         $data = $request->validate([
             'title'=>'required',
-            'admin_id'=>'required'
+            'workplace_id'=>'required'
         ]);
-        Workplace::create($data);
+        Product::create($data);
 
-        // $workplaces = Workplace::where('admin_id', auth()->user()->id)->get();
-        // return view('workplaces.index', compact('workplaces'));
-        return redirect('workplace')->with('success','Edited Successfully');
+        return redirect('workplace/'.$request->workplace_id)->with('success','Added Successfully');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Workplace  $workplace
+     * @param  \App\Product $product
      * @return \Illuminate\Http\Response
      */
-    public function show(Workplace $workplace)
+    public function show(Product $product)
     {
-        $query['workplace'] = $workplace;
-        $query['data'] = Product::where('workplace_id',$workplace->id)->get();
-        return view('products.index', $query);
+        //
     }
 
     /**
@@ -68,36 +65,37 @@ class WorkplacesController extends Controller
      * @param  \App\Workplace  $workplace
      * @return \Illuminate\Http\Response
      */
-    public function edit(Workplace $workplace)
+    public function edit(Product $product)
     {
-        $query['data'] = $workplace;
-        return view('workplaces.add', $query);
+        $query['data'] = $product;
+        $query['workplace'] = Workplace::where('id',$product->workplace_id)->first();
+        return view('products.add', $query);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Workplace  $workplace
+     * @param  \App\Product $product
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Workplace $workplace)
+    public function update(Request $request, Product $product)
     {
-        $workplace->update([
+        $product->update([
             'title' => $request->title
         ]);
-        return redirect('workplace')->with('success','Edited Successfully');
+        return redirect('workplace/'.$request->workplace_id)->with('success','Edited Successfully');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Workplace  $workplace
+     * @param  \App\Product $product
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Workplace $workplace)
+    public function destroy(Product $product)
     {
-        $workplace->delete();
-        return back();
+        $product->delete();
+        return back()->with('success','Deleted Successfully');
     }
 }

@@ -11,6 +11,9 @@ class Workplace extends Model
     ];
 
     public function admin(){
-        return $this->belongsTo('App\User');
+        return $this->belongsTo('App\User','admin_id','id');
+    }
+    public function products(){
+        return $this->hasMany('App\Product');
     }
 }

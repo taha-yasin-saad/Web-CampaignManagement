@@ -11,13 +11,15 @@
 |
 */
 
-
+//users
 Auth::routes();
-
 Route::get('/', 'HomeController@index');
 Route::any('/first', 'Auth\LoginController@firstlogin');
 Route::post('/login2', 'Auth\RegisterController@login2');
-
 Route::resource('/profile', 'UserController');
 
+//workplaces
 Route::resource('workplace', 'WorkplacesController');
+Route::resource('product', 'ProductsController');
+Route::get('product/create/{workplace_id}', 'ProductsController@create');
+Route::post('/invite_member', 'ProductsController@invite_member');
