@@ -57,7 +57,9 @@ class ProductsController extends Controller
      */
     public function show(Product $product)
     {
-        //
+        $query['data'] = Product::with('users')->first();
+        $query['product'] = $product;
+        return view('products.single', $query);
     }
 
     /**

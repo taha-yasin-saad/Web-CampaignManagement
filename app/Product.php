@@ -13,4 +13,8 @@ class Product extends Model
     public function workplace(){
         return $this->belongsTo('App\Workplace');
     }
+
+    public function users(){
+        return $this->belongsToMany('App\User','user_products');
+    }
 }
