@@ -54,7 +54,7 @@
                                 <h1>{{$value->title}}</h1>
                             </div>
                             <div class="panel-footer">
-                                <a href="{{url('product/'.$product->id)}}" class="btn btn-info m-t-10">Show details</a>
+                                <a href="{{url('product/'.$value->id)}}" class="btn btn-info m-t-10">Show details</a>
                                 <div class="dropdown pull-right"> <a class="dropdown-toggle" id="examplePanelDropdown" data-toggle="dropdown" href="#" aria-expanded="false" role="button">Invite Member <span class="caret"></span></a>
                                     <ul class="dropdown-menu  dropdown-menu-right" aria-labelledby="examplePanelDropdown" role="menu" style="width:300px;padding:5px">
 
