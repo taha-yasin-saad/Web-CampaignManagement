@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Workplace;
 use App\Product;
+use App\User;
 use App\UserProduct;
 use Illuminate\Http\Request;
 
@@ -27,8 +28,8 @@ class ProductsController extends Controller
      */
     public function create($workplace_id)
     {
-        $query['workplace'] = Workplace::where('id',$workplace_id)->first();
-        return view('products.add',$query);
+        $query['workplace'] = Workplace::where('id', $workplace_id)->first();
+        return view('products.add', $query);
     }
 
     /**
@@ -40,12 +41,12 @@ class ProductsController extends Controller
     public function store(Request $request)
     {
         $data = $request->validate([
-            'title'=>'required',
-            'workplace_id'=>'required'
+            'title' => 'required',
+            'workplace_id' => 'required'
         ]);
         Product::create($data);
 
-        return redirect('workplace/'.$request->workplace_id)->with('success','Added Successfully');
+        return redirect('workplace/' . $request->workplace_id)->with('success', 'Added Successfully');
     }
 
     /**
@@ -68,7 +69,7 @@ class ProductsController extends Controller
     public function edit(Product $product)
     {
         $query['data'] = $product;
-        $query['workplace'] = Workplace::where('id',$product->workplace_id)->first();
+        $query['workplace'] = Workplace::where('id', $product->workplace_id)->first();
         return view('products.add', $query);
     }
 
@@ -84,7 +85,7 @@ class ProductsController extends Controller
         $product->update([
             'title' => $request->title
         ]);
-        return redirect('workplace/'.$request->workplace_id)->with('success','Edited Successfully');
+        return redirect('workplace/' . $request->workplace_id)->with('success', 'Edited Successfully');
     }
 
     /**
@@ -96,6 +97,30 @@ class ProductsController extends Controller
     public function destroy(Product $product)
     {
         $product->delete();
-        return back()->with('success','Deleted Successfully');
+        return back()->with('success', 'Deleted Successfully');
+    }
+
+    public function invite_member(Request $request)
+    {
+        //check if user can be existed
+        $user = User::where('email', $request->email)->first();
+        //save in Users if new Email
+        if (!$user) {
+            $user = new User;
+            $user->email = $request->email;
+            $user->save();
+        }
+        //save in UserProduct
+        $invite = new UserProduct;
+        $invite->user_id = $user->id;
+        $invite->product_id = $request->product_id;
+        $invite->save();
+        //send invitation email
+        $data['subject'] = 'CLOSOR Invitation';
+        $data['email'] = $request->email;
+        \Illuminate\Support\Facades\Mail::send('auth.email_invite', $data, function ($message) use ($data) {
+            $message->from('info@closor.com', 'CLOSOR')->to($data['email'], 'CLOSOR')->subject($data['subject']);
+        });
+        return back()->with('success', 'Email invited Successfully');
     }
 }

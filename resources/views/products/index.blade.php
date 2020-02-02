@@ -22,6 +22,11 @@
         <!-- .row -->
         <div class="row">
             <div class="col-xs-12">
+                @if (session('success'))
+                <div class="alert alert-success" role="alert">
+                    {{ session('success') }}
+                </div>
+                @endif
                 @if(count($data) > 0)
                 @foreach ($data as $value)
                 <div class="col-md-6 col-xs-12">
@@ -52,7 +57,7 @@
                                 <a class="btn btn-info m-t-10">Show details</a>
                                 <div class="dropdown pull-right"> <a class="dropdown-toggle" id="examplePanelDropdown" data-toggle="dropdown" href="#" aria-expanded="false" role="button">Invite Member <span class="caret"></span></a>
                                     <ul class="dropdown-menu  dropdown-menu-right" aria-labelledby="examplePanelDropdown" role="menu" style="width:300px;padding:5px">
-                                        
+
                                         <form class="form-horizontal" method="POST" action="{{url('invite_member')}}">
                                             {{csrf_field()}}
                                             <input type="hidden" name="product_id" value="{{$value->id}}" />
@@ -60,7 +65,7 @@
                                                 <div class="col-md-12">
                                                     <div>
                                                         <label class="control-label">Email</label>
-                                                        <input required type="email" class="form-control" value="" name="email" required/>
+                                                        <input required type="email" class="form-control" value="" name="email" required />
                                                     </div>
 
                                                 </div>
