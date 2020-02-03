@@ -57,8 +57,12 @@ class ProductsController extends Controller
      */
     public function show(Product $product)
     {
+        
         $query['data'] = Product::with('users')->first();
         $query['product'] = $product;
+        $invited = $product->invited();
+        $query['users'] = $invited->where('product_id', $product->id)->with('invited_user')->get();
+        // dd($query['users']);
         return view('products.single', $query);
     }
 
@@ -116,6 +120,7 @@ class ProductsController extends Controller
         $invite = new UserProduct;
         $invite->user_id = $user->id;
         $invite->product_id = $request->product_id;
+        $invite->workplace_id = $request->workplace_id;
         $invite->save();
         //send invitation email
         $data['subject'] = 'CLOSOR Invitation';

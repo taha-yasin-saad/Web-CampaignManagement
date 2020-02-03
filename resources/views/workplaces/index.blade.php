@@ -62,6 +62,45 @@
                     </div>
                 </div>
                 <!-- /.row -->
+
+                {{-- start ivitations --}}
+                <div class="row bg-title">
+                    <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                        <h4 class="page-title">Invitations</h4> </div>
+                    <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+                        <button class="right-side-toggle waves-effect waves-light btn-info btn-circle pull-right m-l-20"><i class="ti-settings text-white"></i></button>
+                        <!-- <a href="javascript: void(0);" target="_blank" class="btn btn-danger pull-right m-l-20 hidden-xs hidden-sm waves-effect waves-light">Admin Panel</a> -->
+                        <ol class="breadcrumb">
+                            <li><a href="#">Dashboard</a></li>
+                            <li class="active">Workplaces Invitaions</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <!-- .row -->
+                <div class="row">
+                    <div class="col-xs-12">
+                        @if(count($invitations) > 0)
+                            @foreach ($invitations as $value)
+                            <div class="col-md-6 col-xs-12">
+                                <div class="panel panel-default block3" style="position: static; zoom: 1;">
+                                    <div class="panel-wrapper collapse in">
+                                        <div class="panel-body">
+                                            <h1>{{$value->workplaces->title}}</h1>
+                                        </div>
+                                        <div class="panel-footer"> 
+                                            <a href="{{url('workplace/'.$value->workplaces->id)}}" class="btn btn-info m-t-10">Show details</a>  
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            @endforeach
+                        @else
+                        <h3>You Have not any Workplaces invitation Yet ...</h3>
+                        @endif
+                    </div>
+                </div>
+                <!-- /.row -->
         </div>
         <!-- /#page-wrapper -->
     </div>

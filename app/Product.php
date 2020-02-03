@@ -14,7 +14,10 @@ class Product extends Model
         return $this->belongsTo('App\Workplace');
     }
 
+    public function invited(){
+        return $this->hasMany('App\UserProduct');
+    }
     public function users(){
-        return $this->belongsToMany('App\User','user_products');
+        return $this->belongsToMany('App\User','user_products', 'id');
     }
 }

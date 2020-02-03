@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Workplace;
 use App\Product;
+use App\UserProduct;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class WorkplacesController extends Controller
 {
@@ -15,8 +17,9 @@ class WorkplacesController extends Controller
      */
     public function index()
     {
+        $query['invitations'] = UserProduct::where('user_id', auth()->user()->id)->with('workplaces')->get();
         $query['data'] = Workplace::where('admin_id', auth()->user()->id)->get();
-        // dd($workplaces);
+        // dd($query['invitations']);
         return view('workplaces.index', $query);
     }
 
@@ -58,6 +61,7 @@ class WorkplacesController extends Controller
     public function show(Workplace $workplace)
     {
         $query['workplace'] = $workplace;
+        $query['invitations'] = UserProduct::where('workplace_id',$workplace->id)->where('user_id',Auth::id())->with('products')->get();
         $query['data'] = Product::where('workplace_id',$workplace->id)->get();
         return view('products.index', $query);
     }

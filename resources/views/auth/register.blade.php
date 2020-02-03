@@ -28,7 +28,7 @@
 
                         @error('name')
                             <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
+                                <strong class="text-danger">{{ $message }}</strong>
                             </span>
                         @enderror
                       </div>
@@ -39,7 +39,7 @@
                         <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="@if(session('email')){{ session('email') }}@else{{ old('email') }}@endif" required autocomplete="email" autofocus placeholder="email" required>
                         @error('email')
                             <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
+                                <strong class="text-danger">{{ $message }}</strong>
                             </span>
                         @enderror
                       </div>
@@ -50,7 +50,7 @@
                         <input id="phone" type="phone" class="form-control @error('phone') is-invalid @enderror" name="phone" value="{{ old('phone') }}" required autocomplete="phone" placeholder="Phone Number">
                         @error('phone')
                             <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
+                                <strong class="text-danger">{{ $message }}</strong>
                             </span>
                         @enderror
                       </div>
@@ -61,7 +61,7 @@
                         <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password" placeholder="Password">
                         @error('password')
                             <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
+                                <strong class="text-danger">{{ $message }}</strong>
                             </span>
                         @enderror
                       </div>
