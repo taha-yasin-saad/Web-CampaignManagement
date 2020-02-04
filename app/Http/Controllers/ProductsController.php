@@ -58,11 +58,8 @@ class ProductsController extends Controller
     public function show(Product $product)
     {
         
-        $query['data'] = Product::with('users')->first();
         $query['product'] = $product;
-        $invited = $product->invited();
-        $query['users'] = $invited->where('product_id', $product->id)->with('invited_user')->get();
-        // dd($query['users']);
+        $query['data'] = Product::where('id',$product->id)->with('users', 'workplace')->first();
         return view('products.single', $query);
     }
 

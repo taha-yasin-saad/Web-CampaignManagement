@@ -86,10 +86,10 @@
                                 <div class="panel panel-default block3" style="position: static; zoom: 1;">
                                     <div class="panel-wrapper collapse in">
                                         <div class="panel-body">
-                                            <h1>{{$value->workplaces->title}}</h1>
+                                            <h1>{{$value->products->workplace->title}}</h1>
                                         </div>
                                         <div class="panel-footer"> 
-                                            <a href="{{url('workplace/'.$value->workplaces->id)}}" class="btn btn-info m-t-10">Show details</a>  
+                                            <a href="{{url('workplace/'.$value->products->workplace->id)}}" class="btn btn-info m-t-10">Show details</a>  
                                         </div>
                                     </div>
                                 </div>

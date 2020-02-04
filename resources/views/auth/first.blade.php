@@ -56,6 +56,7 @@
                       <h2><img src="{{asset('logo2.jpg')}}"></h2>
                       <p class="text-muted">Sync & call leads instantly. </p>
                       <a href="{{ route('register') }}" class="btn btn-rounded btn-danger p-l-20 p-r-20"> Register for free</a>
+                      <a href="{{ route('admin-login') }}" class="btn btn-rounded btn-danger p-l-20 p-r-20"> Admin Login</a>
                   </div>
               </div>
       </div>

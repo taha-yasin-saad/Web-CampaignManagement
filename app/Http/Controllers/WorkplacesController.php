@@ -17,7 +17,8 @@ class WorkplacesController extends Controller
      */
     public function index()
     {
-        $query['invitations'] = UserProduct::where('user_id', auth()->user()->id)->with('workplaces')->get();
+        $query['invitations'] = UserProduct::where('user_id', auth()->user()->id)->with('products', 'products.workplace')->get();
+        // $query['invitations'] = Product::with('users', 'workplace')->get();
         $query['data'] = Workplace::where('admin_id', auth()->user()->id)->get();
         // dd($query['invitations']);
         return view('workplaces.index', $query);
@@ -61,7 +62,10 @@ class WorkplacesController extends Controller
     public function show(Workplace $workplace)
     {
         $query['workplace'] = $workplace;
-        $query['invitations'] = UserProduct::where('workplace_id',$workplace->id)->where('user_id',Auth::id())->with('products')->get();
+        $id = $workplace->id;
+        $query['invitations'] = UserProduct::where('user_id', auth()->user()->id)->whereHas('products', function($q) use ($id){
+            $q->where('workplace_id', $id);
+        })->get();
         $query['data'] = Product::where('workplace_id',$workplace->id)->get();
         return view('products.index', $query);
     }

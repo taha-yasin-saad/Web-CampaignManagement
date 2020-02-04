@@ -23,3 +23,11 @@ Route::resource('workplace', 'WorkplacesController');
 Route::resource('product', 'ProductsController');
 Route::get('product/create/{workplace_id}', 'ProductsController@create');
 Route::post('/invite_member', 'ProductsController@invite_member');
+
+//admins
+Route::get('admin-login','Auth\AdminLoginController@showlogin')->name('admin-login');
+Route::post('admin.login','Auth\AdminLoginController@login')->name('admin.login');
+
+Route::group(['middleware' => 'auth.admin', 'prefix' => 'admin'], function(){
+    Route::get('/dashboard','AdminController@index')->name('admin.dashboard');
+});

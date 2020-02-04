@@ -18,6 +18,6 @@ class Product extends Model
         return $this->hasMany('App\UserProduct');
     }
     public function users(){
-        return $this->belongsToMany('App\User','user_products', 'id');
+        return $this->belongsToMany('App\User','user_products', 'product_id', 'user_id');
     }
 }

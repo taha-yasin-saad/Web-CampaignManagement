@@ -40,11 +40,11 @@
                             </thead>
                             <tbody>
                             
-                            @foreach ($users as $value)
+                            @foreach ($data->users as $value)
                                 <tr>
-                                    <td>@if($value->invited_user->name){{$value->invited_user->name}}@else Not Registerd @endif</td>
-                                    <td>{{$value->invited_user->email}}</td>
-                                    <td>@if($value->invited_user->phone){{$value->invited_user->phone}}@else Not Registerd @endif</td>
+                                    <td>@if($value->name){{$value->name}}@else Not Registerd @endif</td>
+                                    <td>{{$value->email}}</td>
+                                    <td>@if($value->phone){{$value->phone}}@else Not Registerd @endif</td>
                                 </tr>
                             @endforeach
                             </tbody>
