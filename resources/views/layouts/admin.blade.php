@@ -56,7 +56,7 @@
         <!-- ============================================================== -->
         <!-- Topbar header - style you can find in pages.scss -->
         <!-- ============================================================== -->
-        <nav class="navbar navbar-default navbar-static-top m-b-0">
+        <nav class="navbar navbar-default m-b-0">
             <div class="navbar-header">
                 <!-- Search input and Toggle icon -->
                 <ul class="nav navbar-top-links navbar-right pull-right">
@@ -65,18 +65,11 @@
                         <a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#"> <b class="hidden-xs">{{Auth::user()->name}}</b>
                             <span class="caret"></span>
                         </a>
-                        <ul class="dropdown-menu dropdown-user animated flipInY">
-                            <li>
-                                <div class="dw-user-box">
-                                    <div class="u-text">
-                                        <h4>User panel</h4>
-                                    </div>
-                                </div>
-                            </li>
-                            <li role="separator" class="divider"></li>
+                        <ul class="dropdown-menu dropdown-user animated">
                             <li>
                                 <a href="{{url('profile')}}">
-                                    Profile
+                                    <i class="ti-settings"></i> 
+                                    Profile Setting
                                 </a>
                             </li>
                             <li role="separator" class="divider"></li>
@@ -104,28 +97,74 @@
         <div class="navbar-default sidebar" role="navigation">
             <div class="sidebar-nav slimscrollsidebar">
                 <div class="sidebar-head">
-                    <h3><span class="fa-fw open-close"><i class="ti-menu hidden-xs"></i>
-                            <i class="ti-close visible-xs"></i></span> <span class="hide-menu">Closor</span>
+                    <h3 class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#"> 
+                            <b >Workspace Name</b>
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-user animated">
+                            <li>
+                                <a href="#">
+                                    Workspace Preferences
+                                </a>
+                            </li>
+                            <li role="separator" class="divider"></li>
+                            <li>
+                                <a href="#">
+                                    Workspace Two
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    Workspace Three
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    Workspace Four
+                                </a>
+                            </li>
+                            <li role="separator" class="divider"></li>
+                            <li>
+                                <a href="#">
+                                    Create New Workspace
+                                </a>
+                            </li>
+
+                        </ul>
+                        <!-- /.dropdown-user -->
                     </h3>
                 </div>
                 <ul class="nav" id="side-menu">
-                    <li class="user-pro">
-                        <a class="waves-effect">
-                            <img src="{{asset('logo.jpg')}}" alt="user-img" class="img-circle">
-                            <span class="hide-menu">Closor</span>
+                    <li> 
+                        <a href="#" class="waves-effect"><i class="mdi mdi-home fa-fw" data-icon="v"></i>
+                            <span class="hide-menu"> Dashboard <span class="fa arrow"></span> </span>
                         </a>
                     </li>
-
-                    <li> <a href="index.html" class="waves-effect"><i class="mdi mdi-av-timer fa-fw" data-icon="v"></i>
-                            <span class="hide-menu"> Workplaces <span class="fa arrow"></span> </span></a>
-                        <ul class="nav nav-second-level">
-                            <li> <a href="{{url('workplace')}}"><i class=" fa-fw"></i>
-                                    <span class="hide-menu">Show</span></a>
-                            </li>
-                            <li> <a href="{{url('workplace/create ')}}"><i class=" fa-fw"></i>
-                                    <span class="hide-menu">Add New</span></a>
-                            </li>
-                        </ul>
+                    <li> 
+                        <a href="#" class="waves-effect"><i class="mdi mdi-contacts fa-fw" data-icon="v"></i>
+                            <span class="hide-menu"> Leads <span class="fa arrow"></span> </span>
+                        </a>
+                    </li>
+                    <li> 
+                        <a href="#" class="waves-effect"><i class="mdi mdi-card-bulleted fa-fw" data-icon="v"></i>
+                            <span class="hide-menu"> Products <span class="fa arrow"></span> </span>
+                        </a>
+                    </li>
+                    <li> 
+                        <a href="#" class="waves-effect"><i class="mdi mdi-account-supervisor fa-fw" data-icon="v"></i>
+                            <span class="hide-menu"> Team <span class="fa arrow"></span> </span>
+                        </a>
+                    </li>
+                    <li> 
+                        <a href="#" class="waves-effect"><i class="mdi mdi-filter fa-fw" data-icon="v"></i>
+                            <span class="hide-menu"> Lead Sources <span class="fa arrow"></span> </span>
+                        </a>
+                    </li>
+                    <li> 
+                        <a href="#" class="waves-effect"><i class="mdi mdi-chart-bar fa-fw" data-icon="v"></i>
+                            <span class="hide-menu"> Reports <span class="fa arrow"></span> </span>
+                        </a>
                     </li>
                 </ul>
             </div>
