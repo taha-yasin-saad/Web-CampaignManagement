@@ -69,7 +69,6 @@
                                                             <label class="control-label">Email</label>
                                                             <input required type="email" class="form-control" value="" name="email" required />
                                                         </div>
-
                                                     </div>
                                                 </div>
                                                 <div class="row">

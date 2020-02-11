@@ -77,7 +77,7 @@ class RegisterController extends Controller
         $user = User::where('email', $request->email)->first();
         $data['email'] = $request->email;
         if ($user && $user->password) {
-            return view('auth.login', $data);
+            return redirect('login')->with('email', $request->email);
         } elseif ($user) {
             $user->update([
                 'name' => $request->name,
