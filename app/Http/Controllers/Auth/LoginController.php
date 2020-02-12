@@ -43,7 +43,7 @@ class LoginController extends Controller
 
             return redirect('login')->with('email', $data['email']);
         }elseif($user){
-            return redirect('login2')->with('email', $data['email']);
+            return redirect('register')->with('email', $data['email'])->with('invited', 1);
         }else{
             return redirect('register')->with('email', $data['email']);
         }
