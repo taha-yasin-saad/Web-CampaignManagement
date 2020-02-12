@@ -72,7 +72,7 @@
                     <div class="panel">
                         <div class="panel-heading">MANAGE USERS</div>
                         <div class="table-responsive">
-                            <table class="table table-hover manage-u-table">
+                            <table class="table table-hover table-bordered manage-u-table">
                                 <thead>
                                     <tr>
                                         <th style="width: 70px;" class="text-center">#</th>
