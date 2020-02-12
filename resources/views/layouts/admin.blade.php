@@ -150,7 +150,7 @@
                         </a>
                     </li>
                     <li> 
-                        <a href="#" class="waves-effect"><i class="mdi mdi-contacts fa-fw" data-icon="v"></i>
+                        <a href="{{url('leads')}}" class="waves-effect"><i class="mdi mdi-contacts fa-fw" data-icon="v"></i>
                             <span class="hide-menu"> Leads <span class="fa arrow"></span> </span>
                         </a>
                     </li>
@@ -160,7 +160,7 @@
                         </a>
                     </li>
                     <li> 
-                        <a href="#" class="waves-effect"><i class="mdi mdi-account-supervisor fa-fw" data-icon="v"></i>
+                    <a href="{{url('team')}}" class="waves-effect"><i class="mdi mdi-account-supervisor fa-fw" data-icon="v"></i>
                             <span class="hide-menu"> Team <span class="fa arrow"></span> </span>
                         </a>
                     </li>
