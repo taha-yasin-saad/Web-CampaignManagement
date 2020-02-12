@@ -28,6 +28,7 @@ Route::post('/invite_member', 'ProductsController@invite_member');
 Route::get('admin-login','Auth\AdminLoginController@showlogin')->name('admin-login');
 Route::post('admin.login','Auth\AdminLoginController@login')->name('admin.login');
 Route::view('leads','leads.leads');
+Route::view('team','workplaces.team');
 Route::group(['middleware' => 'auth.admin', 'prefix' => 'admin'], function(){
     Route::get('/dashboard','AdminController@index')->name('admin.dashboard');
 });
