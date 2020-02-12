@@ -37,36 +37,34 @@
                                 <a class="dropdown-toggle btn btn-danger m-t-20" id="addProductDropDown" data-toggle="dropdown" href="#"
                                     aria-expanded="false" type="button">Add New Product</a>
                                 <div class="dropdown-menu bullet dropdown-menu-right"
-                                    aria-labelledby="addProductDropDown" role="menu" style="width: 100%;">
-                                    <div class="white-box">
-                                        <ul class="nav nav-tabs tabs customtab">
-                                            <li class="tab">
-                                                <a href="#settings" data-toggle="tab" aria-expanded="false"> <span class="visible-xs"><i class="fa fa-cog"></i></span> <span class="hidden-xs">insert your product title</span> </a>
-                                            </li>
-                                        </ul>
-                                        <div class="tab-content">
-                                            <form class="form-horizontal" method="POST" @if(isset($data)) action="{{url('product/')}}" @else action="{{url('product')}}" @endif>
-                                                {{csrf_field()}}
-                                                @if(isset($data))
-                                                @method('PATCH')
-                                                @endif
-                                                <input type="hidden" name="workplace_id" value="{{''}}" />
-                                                <div class="row">
-                                                    <div class="col-md-12">
-                                                        <div>
-                                                            <input required type="text" class="form-control" value="@if(isset($data)) {{''}} @endif" name="title" 
-                                                            placeholder="product Title"/>
-                                                        </div>
-                    
+                                    aria-labelledby="addProductDropDown p-20" role="menu" style="width: 100%;">
+                                    <ul class="nav nav-tabs tabs customtab">
+                                        <li class="tab">
+                                            <a href="#settings" data-toggle="tab" aria-expanded="false"> <span class="visible-xs"><i class="fa fa-cog"></i></span> <span class="hidden-xs">insert your product title</span> </a>
+                                        </li>
+                                    </ul>
+                                    <div class="tab-content">
+                                        <form class="form-horizontal" method="POST" @if(isset($data)) action="{{url('product/')}}" @else action="{{url('product')}}" @endif>
+                                            {{csrf_field()}}
+                                            @if(isset($data))
+                                            @method('PATCH')
+                                            @endif
+                                            <input type="hidden" name="workplace_id" value="{{''}}" />
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div>
+                                                        <input required type="text" class="form-control" value="@if(isset($data)) {{''}} @endif" name="title" 
+                                                        placeholder="product Title"/>
                                                     </div>
+                
                                                 </div>
-                                                <div class="row">
-                                                    <div class="form-actions m-t-40 text-right">
-                                                        <button type="submit" class="btn btn-danger"> <i class="fa fa-check"></i>
-                                                            Save</button>
-                                                    </div>
-                                            </form>
-                                        </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="form-actions m-t-40 text-right">
+                                                    <button type="submit" class="btn btn-danger"> <i class="fa fa-check"></i>
+                                                        Save</button>
+                                                </div>
+                                        </form>
                                     </div>
                                 </div>
                             </a>

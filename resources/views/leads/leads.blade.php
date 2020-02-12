@@ -60,10 +60,10 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="white-box">
-                            <div class="">
-                                <div id="myTable_wrapper" class="dataTables_wrapper no-footer table-responsive">
+                            <div class="table-responsive">
+                                <div id="myTable_wrapper" class="dataTables_wrapper no-footer">
                                     
-                                    <table id="myTable" class="table table-bordered table-striped dataTable no-footer" role="grid" aria-describedby="myTable_info">
+                                    <table id="myTable" class="table table-hover manage-u-table dataTable no-footer" role="grid" aria-describedby="myTable_info">
                                     <thead>
                                         <tr role="row">
                                             <th class="sorting_asc" tabindex="0" aria-controls="myTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 262px;">Lead</th>
