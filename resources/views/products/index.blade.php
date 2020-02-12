@@ -30,6 +30,62 @@
                     @endif
                     @if(count($data) > 0)
                     @foreach ($data as $value)
+                    <div class="panel">
+                        <div class="row panel-heading">
+                            <div class="col-md-6 col-sm-6 col-xs-6">
+                                <p>{{$value->title}}</p>
+                                <span class="label bg-inverse m-r-10">Mahmoud ali</span>
+                                <span class="label bg-inverse m-r-10">Mairy Yassin</span>
+                                <a class="text-info m-r-10">More...</a>
+                                <a class=" m-r-10"><i class="ti-pencil-alt"></i></a>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-xs-6 text-right">
+                                <button type="button" class="btn btn-primary m-t-20">Add Lead Source</button>
+                            </div>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table table-hover manage-u-table">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 70px;" class="text-center">#</th>
+                                        <th>SOURCE</th>
+                                        <th>TOTAL LEADS</th>
+                                        <th>CONTACTED LEADS</th>
+                                        <th>QUALIFIED LEADS</th>
+                                        <th>AVG. CONVERION RATE</th>
+                                        <th>MANAGE</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="text-center">1</td>
+                                        <td><span class="font-medium">Facebook</span>
+                                            <br><span class="text-muted">black friday camp</span>
+                                        </td>
+                                        <td>555</td>
+                                        <td>323</td>
+                                        <td>200</td>
+                                        <td>50%</td>
+                                        <td>
+                                            <button type="button" class="btn btn-info btn-outline btn-circle btn-lg m-r-5"><i class="ti-pencil-alt"></i></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">2</td>
+                                        <td><span class="font-medium">Twitter</span>
+                                            <br><span class="text-muted">Excutive compaign</span></td>
+                                            <td>442</td>
+                                            <td>211</td>
+                                            <td>120</td>
+                                            <td>48%</td>
+                                        <td>
+                                            <button type="button" class="btn btn-info btn-outline btn-circle btn-lg m-r-5"><i class="ti-pencil-alt"></i></button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                     <div class="col-md-6 col-xs-12">
                         <div class="panel panel-default block3" style="position: static; zoom: 1;">
                             <div class="panel-heading">
