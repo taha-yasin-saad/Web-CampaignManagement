@@ -119,7 +119,11 @@
         <div class="navbar-default sidebar" role="navigation">
             <div class="sidebar-nav slimscrollsidebar">
                 <div class="sidebar-head">
-                    <h3 class="dropdown">
+                    
+                    <img src="{{asset('dark-logo.png')}}" alt="logo"     width= "100%">
+                </div>
+                <ul class="nav" id="side-menu">
+                    <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                             <b>
                             @if(session('workplace'))
@@ -155,9 +159,7 @@
 
                         </ul>
                         <!-- /.dropdown-user -->
-                    </h3>
-                </div>
-                <ul class="nav" id="side-menu">
+                    </li>
                     @if(session('workplace'))
                     <li>
                         <a href="#" class="waves-effect"><i class="mdi mdi-home fa-fw" data-icon="v"></i>
