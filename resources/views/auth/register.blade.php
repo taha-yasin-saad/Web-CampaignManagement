@@ -62,7 +62,7 @@
         <div class="form-group">
           <div class="col-xs-12">
             <label>{{ __('Confirm Password') }}</label>
-            <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password_confirmation" required autocomplete="new-password" placeholder="Confirm Password">
+            <input id="password_confirmation" type="password" class="form-control @error('password') is-invalid @enderror" name="password_confirmation" required autocomplete="new-password" placeholder="Confirm Password">
           </div>
         </div>
         <div class="form-group">

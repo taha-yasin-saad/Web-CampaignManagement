@@ -63,6 +63,32 @@
     <script src="{{asset('js/custom.min.js')}}"></script>
     <!--Style Switcher -->
     <script src="{{asset('plugins/bower_components/styleswitcher/jQuery.style.switcher.js')}}"></script>
+
+    <script src="http://www.geoplugin.net/javascript.gp" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        var baseUrl = "{{url('/')}}";
+        jQuery(document).ready(function($) {
+            
+        jQuery.getScript('http://www.geoplugin.net/javascript.gp', function() 
+        {
+            var code= geoplugin_countryCode();
+            $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+            });
+            $.ajax({
+                type:'GET',
+                url:baseUrl+'/phoneCode/'+code,
+                success:function(data){
+                    var phone_code = data;
+                    $('#phone').val(data);
+                }
+            });
+        });
+        });
+    </script>
 </body>
 
 </html>
