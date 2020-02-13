@@ -432,10 +432,23 @@
         });
 
     </script>
+<script src="http://www.geoplugin.net/javascript.gp" type="text/javascript"></script>
+    <!-- get time zone -->
+    <script type="text/javascript">
+        jQuery(document).ready(function($) {
+            
+            jQuery.getScript('http://www.geoplugin.net/javascript.gp', function() 
+            {
+                var zone = geoplugin_timezone();
+                $("#time-zone").val(zone);
+                console.log(zone);
+            });
+        });
+    </script>
+    <!-- end get time zone -->
     <script src="{{asset('plugins/bower_components/toast-master/js/jquery.toast.js')}}"></script>
     <!--Style Switcher -->
     <script src="{{asset('plugins/bower_components/styleswitcher/jQuery.style.switcher.js')}}"></script>
-    <!-- get country code -->
     @yield('chart')
     @yield('filter_table')
 </body>

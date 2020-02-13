@@ -73,8 +73,6 @@
         jQuery.getScript('http://www.geoplugin.net/javascript.gp', function() 
         {
             var code= geoplugin_countryCode();
-            var zone = geoplugin_timezone();
-            console.log("Your location is: " + ", " + zone + ", " + code);
             $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
