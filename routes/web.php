@@ -29,6 +29,7 @@ Route::get('admin-login','Auth\AdminLoginController@showlogin')->name('admin-log
 Route::post('admin.login','Auth\AdminLoginController@login')->name('admin.login');
 Route::view('leads','leads.leads');
 Route::view('team','workplaces.team');
+Route::get('phoneCode/{code}','AjaxController@phoneCode');
 Route::group(['middleware' => 'auth.admin', 'prefix' => 'admin'], function(){
     Route::get('/dashboard','AdminController@index')->name('admin.dashboard');
 });

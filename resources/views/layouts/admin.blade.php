@@ -48,6 +48,7 @@
         type="text/css" />
     <link href="{{asset('plugins/bower_components/custom-select/custom-select.css')}}" rel="stylesheet"
         type="text/css" />
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -423,6 +424,7 @@
     <script src="{{asset('plugins/bower_components/toast-master/js/jquery.toast.js')}}"></script>
     <!--Style Switcher -->
     <script src="{{asset('plugins/bower_components/styleswitcher/jQuery.style.switcher.js')}}"></script>
+    <!-- get country code -->
     @yield('chart')
     @yield('filter_table')
 </body>
