@@ -6,7 +6,10 @@ use App\Workplace;
 use App\Product;
 use App\User;
 use App\UserProduct;
+use App\WorkplaceUser;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Session;
 
 class ProductsController extends Controller
 {
@@ -17,7 +20,8 @@ class ProductsController extends Controller
      */
     public function index($workplace_id)
     {
-        $query['workplace'] = Workplace::where('workplace_id',$workplace_id)->first();
+        $query['workplace'] = Workplace::where('id',$workplace_id)->first();
+        Session::put('workplace', $query['workplace']);
         $query['data'] = Product::where('workplace_id',$workplace_id)->get();
         return view('products.index', $query);
     }
@@ -46,8 +50,10 @@ class ProductsController extends Controller
             'workplace_id' => 'required'
         ]);
         Product::create($data);
+        $save = new UserProduct;
+        $save->user_id = Auth::user()->id; 
 
-        return redirect('workplace/' . $request->workplace_id)->with('success', 'Added Successfully');
+        return redirect($request->workplace_id.'/products')->with('success', 'Added Successfully');
     }
 
     /**

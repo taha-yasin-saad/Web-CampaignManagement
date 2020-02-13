@@ -37,14 +37,14 @@ class HomeController extends Controller
     {
 
         if (Auth::check()) {
-            $workplace = WorkplaceUser::where('user_id',Auth::user()->id)->first();
-            if($workplace){
+            $check = WorkplaceUser::where('user_id',Auth::user()->id)->first();
+            if($check){
+                $workplace = Workplace::where('id',$check->workplace_id)->first();
                 Session::put('workplace', $workplace);
                 return redirect($workplace->id.'/products');
             }else{
                 return redirect('workplace/create');
             }
-            
         }else{
             return view('auth.first');
         }

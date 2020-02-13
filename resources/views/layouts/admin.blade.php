@@ -132,26 +132,18 @@
                         <ul class="dropdown-menu dropdown-user animated">
                             @if(session('workplace'))
                             <li>
-                                <a href="#">
+                                <a href="{{url('workplace/'.session('workplace')->id.'/edit')}}">
                                     Workspace Preferences
                                 </a>
                             </li>
                             <li role="separator" class="divider"></li>
+                            @foreach(get_workplaces() as $value)
                             <li>
-                                <a href="#">
-                                    Workspace Two
+                                <a href="{{url($value->workplace->id.'/products')}}">
+                                    {{$value->workplace->title}}
                                 </a>
                             </li>
-                            <li>
-                                <a href="#">
-                                    Workspace Three
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    Workspace Four
-                                </a>
-                            </li>
+                            @endforeach
                             <li role="separator" class="divider"></li>
                             @endif
                             <li>
@@ -179,12 +171,12 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="waves-effect"><i class="mdi mdi-card-bulleted fa-fw" data-icon="v"></i>
+                        <a href="{{url(session('workplace')->id.'/products')}}" class="waves-effect"><i class="mdi mdi-card-bulleted fa-fw" data-icon="v"></i>
                             <span class="hide-menu"> Products <span class="fa arrow"></span> </span>
                         </a>
                     </li>
                     <li>
-                        <a href="{{url('team')}}" class="waves-effect"><i class="mdi mdi-account-supervisor fa-fw"
+                        <a href="{{url(session('workplace')->id.'/team')}}" class="waves-effect"><i class="mdi mdi-account-supervisor fa-fw"
                                 data-icon="v"></i>
                             <span class="hide-menu"> Team <span class="fa arrow"></span> </span>
                         </a>
