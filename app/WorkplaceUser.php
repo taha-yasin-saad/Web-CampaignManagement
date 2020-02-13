@@ -14,4 +14,8 @@ class WorkplaceUser extends Model
         return $this->belongsTo('App\Workplace');
     }
 
+    public function users(){
+        return $this->hasMany('App\User');
+    }
+
 }
