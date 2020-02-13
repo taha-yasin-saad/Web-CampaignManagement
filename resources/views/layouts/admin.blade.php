@@ -121,10 +121,17 @@
                 <div class="sidebar-head">
                     <h3 class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                            <b>Workspace Name</b>
+                            <b>
+                            @if(session('workplace'))
+                                {{session('workplace')->title}}
+                            @else
+                                Create Workspace
+                            @endif
+                            </b>
                             <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu dropdown-user animated">
+                            @if(session('workplace'))
                             <li>
                                 <a href="#">
                                     Workspace Preferences
@@ -147,8 +154,9 @@
                                 </a>
                             </li>
                             <li role="separator" class="divider"></li>
+                            @endif
                             <li>
-                                <a href="#">
+                                <a href="{{url('workplace/create')}}">
                                     Create New Workspace
                                 </a>
                             </li>
@@ -158,11 +166,13 @@
                     </h3>
                 </div>
                 <ul class="nav" id="side-menu">
+                    @if(session('workplace'))
                     <li>
                         <a href="#" class="waves-effect"><i class="mdi mdi-home fa-fw" data-icon="v"></i>
                             <span class="hide-menu"> Dashboard <span class="fa arrow"></span> </span>
                         </a>
                     </li>
+                    
                     <li>
                         <a href="{{url('leads')}}" class="waves-effect"><i class="mdi mdi-contacts fa-fw"
                                 data-icon="v"></i>
@@ -190,6 +200,7 @@
                             <span class="hide-menu"> Reports <span class="fa arrow"></span> </span>
                         </a>
                     </li>
+                    @endif
                 </ul>
             </div>
         </div>

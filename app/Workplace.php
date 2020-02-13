@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Workplace extends Model
 {
     protected $fillable = [
-        'admin_id', 'title',
+        'admin_id', 'title','timezone','website','startday'
     ];
 
     public function admin(){
