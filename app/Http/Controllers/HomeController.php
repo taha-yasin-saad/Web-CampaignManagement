@@ -6,6 +6,7 @@ use App\Workplace;
 use App\WorkplaceUser;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use Session;
 
 class HomeController extends Controller
 {
@@ -25,7 +26,7 @@ class HomeController extends Controller
     {
 
         if (Auth::check()) {
-            return redirect('workplace');
+            return redirect('check');
         }else{
             return view('auth.first');
         }
@@ -38,10 +39,10 @@ class HomeController extends Controller
         if (Auth::check()) {
             $workplace = WorkplaceUser::where('user_id',Auth::user()->id)->first();
             if($workplace){
-                Session::set('workplace', $workplace);
+                Session::put('workplace', $workplace);
                 return redirect($workplace->id.'/products');
             }else{
-                return redirect('workplace');
+                return redirect('workplace/create');
             }
             
         }else{

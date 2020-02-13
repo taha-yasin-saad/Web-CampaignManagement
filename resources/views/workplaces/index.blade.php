@@ -33,7 +33,12 @@
                                 </p>
                                 <p>if your business is already has a workspace, please ask your workmate to invite you by email.</p>
                             </div>
-                            <form action="#">
+                            
+                            <form method="POST" @if(isset($data)) action="{{url('workplace/'.$data->id)}}" @else action="{{url('workplace')}}" @endif>
+                                {{csrf_field()}}
+                                @if(isset($data))
+                                @method('PATCH')
+                                @endif
                                 <div class="form-body">
                                     <h3 class="box-title m-t-40">Create new workspace</h3>
                                     <hr>
@@ -41,17 +46,16 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>Workspace Name</label>
-                                                <input required type="text" class="form-control" placeholder="XYZ Workspace"> </div>
+                                                <input required type="text" class="form-control" placeholder="XYZ Workspace" value="@if(isset($data)) {{$data->title}} @endif" name="title"> </div>
                                         </div>
                                         <!--/span-->
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>TimeZone</label>
-                                                <select class="form-control">
-                                                    <option>--Select your Country--</option>
-                                                    <option>India</option>
-                                                    <option>Sri Lanka</option>
-                                                    <option>USA</option>
+                                                <select class="form-control" name="timezone" required>
+                                                    <option value="India">India</option>
+                                                    <option value="Sri Lanka">Sri Lanka</option>
+                                                    <option value="USA">USA</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -62,17 +66,20 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>Website</label>
-                                                <input type="text" class="form-control"> </div>
+                                                <input type="text" class="form-control" name="website"> </div>
                                         </div>
                                         <!--/span-->
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>Week Starts On</label>
                                                 <select class="form-control">
-                                                    <option>--Select your Country--</option>
-                                                    <option>India</option>
-                                                    <option>Sri Lanka</option>
-                                                    <option>USA</option>
+                                                    <option value="Monday">Monday</option>
+                                                    <option value="Tuesday">Tuesday</option>
+                                                    <option value="Wednesday">Wednesday</option>
+                                                    <option value="Thursday">Thursday</option>
+                                                    <option value="Friday">Friday</option>
+                                                    <option value="Saturday">Saturday</option>
+                                                    <option value="Sunday">Sunday</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -81,7 +88,7 @@
                                 </div>
                                 <div class="form-actions text-right">
                                     <button type="submit" class="btn btn-success"> <i class="fa fa-check"></i> Save</button>
-                                    <button type="button" class="btn btn-dark">Cancel</button>
+                                    <button type="reset" class="btn btn-dark">Cancel</button>
                                 </div>
                             </form>
                         </div>

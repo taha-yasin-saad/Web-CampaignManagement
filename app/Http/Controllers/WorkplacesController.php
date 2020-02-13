@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Workplace;
 use App\Product;
 use App\UserProduct;
+use App\WorkplaceUser;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -42,15 +43,23 @@ class WorkplacesController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->validate([
-            'title'=>'required',
-            'admin_id'=>'required'
-        ]);
-        Workplace::create($data);
 
-        // $workplaces = Workplace::where('admin_id', auth()->user()->id)->get();
-        // return view('workplaces.index', compact('workplaces'));
-        return redirect('workplace')->with('success','Edited Successfully');
+        $data = $request->all();
+        $data = $request->validate([
+            'admin_id'=>'required',
+            'title'=>'required',
+            'timezone'=>'required',
+            'startday'=>'required',
+            'website'=>''
+        ]);    
+        $workplace = Workplace::create($data);
+        $save = new WorkplaceUser;
+        $save->workplace_id = $workplace->id;
+        $save->user_id = $request->admin_id;
+        $save->status = 1;
+        $save->save();
+        
+        return redirect('check')->with('success','Edited Successfully');
     }
 
     /**
@@ -92,9 +101,12 @@ class WorkplacesController extends Controller
     public function update(Request $request, Workplace $workplace)
     {
         $workplace->update([
-            'title' => $request->title
+            'title' => $request->title,
+            'timezone' => $request->timezone,
+            'startday' => $request->startday,
+            'website' => $request->website,
         ]);
-        return redirect('workplace')->with('success','Edited Successfully');
+        return redirect()->back()->with('success','Edited Successfully');
     }
 
     /**

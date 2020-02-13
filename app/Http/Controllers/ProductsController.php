@@ -15,9 +15,10 @@ class ProductsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($workplace_id)
     {
-        $query['data'] = Product::all();
+        $query['workplace'] = Workplace::where('workplace_id',$workplace_id)->first();
+        $query['data'] = Product::where('workplace_id',$workplace_id)->get();
         return view('products.index', $query);
     }
 
