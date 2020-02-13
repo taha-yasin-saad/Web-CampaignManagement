@@ -17,12 +17,17 @@ Route::get('/', 'HomeController@index');
 Route::any('/first', 'Auth\LoginController@firstlogin');
 Route::any('/login2', 'Auth\RegisterController@login2');
 Route::resource('/profile', 'UserController');
+Route::get('/check', 'HomeController@check');
 
 //workplaces
 Route::resource('workplace', 'WorkplacesController');
 Route::resource('product', 'ProductsController');
 Route::get('product/create/{workplace_id}', 'ProductsController@create');
 Route::post('/invite_member', 'ProductsController@invite_member');
+
+
+//new routes
+Route::get('{workplace_id}/products', 'ProductsController@index');
 
 //admins
 Route::get('admin-login','Auth\AdminLoginController@showlogin')->name('admin-login');
