@@ -52,6 +52,7 @@ class WorkplacesController extends Controller
             'startday'=>'required',
             'website'=>''
         ]);    
+        
         $workplace = Workplace::create($data);
         $save = new WorkplaceUser;
         $save->workplace_id = $workplace->id;

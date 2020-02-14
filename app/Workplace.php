@@ -16,4 +16,8 @@ class Workplace extends Model
     public function products(){
         return $this->hasMany('App\Product');
     }
+
+    public function users(){
+        return $this->hasMany('App\WorkplaceUser','id','workplace_id');
+    }
 }
