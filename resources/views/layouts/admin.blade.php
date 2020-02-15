@@ -122,44 +122,44 @@
                     
                     <img src="{{asset('dark-logo.png')}}" alt="logo"     width= "100%">
                 </div>
-                <ul class="nav" id="side-menu">
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                            <b>
-                            @if(session('workplace'))
-                                {{session('workplace')->title}}
-                            @else
-                                Create Workspace
-                            @endif
-                            </b>
-                            <span class="caret"></span>
-                        </a>
-                        <ul class="dropdown-menu dropdown-user animated">
-                            @if(session('workplace'))
-                            <li>
-                                <a href="{{url('workplace/'.session('workplace')->id.'/edit')}}">
-                                    Workspace Preferences
-                                </a>
-                            </li>
-                            <li role="separator" class="divider"></li>
-                            @foreach(get_workplaces() as $value)
-                            <li>
-                                <a href="{{url($value->workplace->id.'/products')}}">
-                                    {{$value->workplace->title}}
-                                </a>
-                            </li>
-                            @endforeach
-                            <li role="separator" class="divider"></li>
-                            @endif
-                            <li>
-                                <a href="{{url('workplace/create')}}">
-                                    Create New Workspace
-                                </a>
-                            </li>
+                <div class="dropdown workspace_dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <b>
+                        @if(session('workplace'))
+                            {{session('workplace')->title}}
+                        @else
+                            Create Workspace
+                        @endif
+                        </b>
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu  animated">
+                        @if(session('workplace'))
+                        <li>
+                            <a href="{{url('workplace/'.session('workplace')->id.'/edit')}}">
+                                Workspace Preferences
+                            </a>
+                        </li>
+                        <li role="separator" class="divider"></li>
+                        @foreach(get_workplaces() as $value)
+                        <li>
+                            <a href="{{url($value->workplace->id.'/products')}}">
+                                {{$value->workplace->title}}
+                            </a>
+                        </li>
+                        @endforeach
+                        <li role="separator" class="divider"></li>
+                        @endif
+                        <li>
+                            <a href="{{url('workplace/create')}}">
+                                Create New Workspace
+                            </a>
+                        </li>
 
-                        </ul>
-                        <!-- /.dropdown-user -->
-                    </li>
+                    </ul>
+                    <!-- /.dropdown-user -->
+                </div>
+                <ul class="nav" id="side-menu">
                     @if(session('workplace'))
                     <li>
                         <a href="#" class="waves-effect"><i class="mdi mdi-home fa-fw" data-icon="v"></i>
