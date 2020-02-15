@@ -21,7 +21,6 @@ class ProductsController extends Controller
     public function index($workplace_id)
     {
         $query['workplace'] = Workplace::with('users.user')->where('id',$workplace_id)->first();
-        dd($query['workplace']);
         Session::put('workplace', $query['workplace']);
         $query['data'] = Product::where('workplace_id',$workplace_id)->get();
         return view('products.index', $query);

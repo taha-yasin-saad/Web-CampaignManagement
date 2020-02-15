@@ -90,10 +90,10 @@
                                         <p class="text-muted m-b-30"> Only these sales agents will receive leads related to this product</p>
                                         <form action="{{url('choose_members')}}" method="post">
                                             <select name="users[]" class="select2 m-b-10 select2-multiple" multiple="multiple" data-placeholder="Choose">
-                                                @foreach($workplace->users)
-                                                <option value="CA">California</option>
-                                                @endforeach
-                                                
+                                                <option value="CA">ahmed</option>
+                                                <option value="NV">mahmoud</option>
+                                                <option value="OR">Oregon</option>
+                                                <option value="WA">Washington</option>
                                             </select>
                                             <div class="form-actions text-right">
                                                 <button type="submit" class="btn btn-success"> <i class="fa fa-check"></i> Save</button>

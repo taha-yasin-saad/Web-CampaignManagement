@@ -20,4 +20,5 @@ class Product extends Model
     public function users(){
         return $this->belongsToMany('App\User','user_products', 'product_id', 'user_id');
     }
+
 }
