@@ -14,7 +14,7 @@
                     <button class="right-side-toggle waves-effect waves-light btn-info btn-circle pull-right m-l-20"><i class="ti-settings text-white"></i></button>
                     <!-- <a href="javascript: void(0);" target="_blank" class="btn btn-danger pull-right m-l-20 hidden-xs hidden-sm waves-effect waves-light">Admin Panel</a> -->
                     <ol class="breadcrumb">
-                        <li><a href="#">Workplace</a></li>
+                        <li><a href="#">{{$workplace->title}}</a></li>
                         <li class="active">Team</li>
                     </ol>
                 </div>
@@ -41,10 +41,9 @@
                                                 </li>
                                             </ul>
                                             <div class="tab-content">
-                                                <form class="form-horizontal" method="POST" action="{{url('invite_member')}}">
+                                                <form class="form-horizontal" method="POST" action="{{url('invite_member_workplace')}}">
                                                     {{csrf_field()}}
-                                                    <input type="hidden" name="product_id" value="{{''}}" />
-                                                    <input type="hidden" name="workplace_id" value="{{''}}" />
+                                                    <input type="hidden" name="workplace_id" value="{{session('workplace')->id}}" />
                                                     <div class="row">
                                                         <div class="col-md-12">
                                                             <div>
@@ -87,15 +86,17 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @foreach($workplace->users as $key=>$value)
                                     <tr>
-                                        <td class="text-center">1</td>
+                                        <td class="text-center">{{$key+1}}</td>
                                         <td>
-                                            <span class="font-medium">Mazen Ahmed</span><span class="badge-success badge">Online</span>
-                                            <br><span class="text-muted">Joined at 5/12/2015</span>
+                                            <span class="font-medium">{{$value->name}}</span><span class="badge-success badge">Online</span>
+                                            <br><span class="text-muted">Joined at 15/2/2020</span>
                                         </td>
                                         <td>
-                                            <span class="bg-inverse badge">English Course</span>
-                                            <br><span class="bg-inverse badge">English Course</span>
+                                            @foreach($value->products as $val)
+                                            <span class="bg-inverse badge">{{$val->title}}</span><br>
+                                            @endforeach
                                         </td>
                                         <td>Sales Agent</td>
                                         <td>514</td>
@@ -107,66 +108,7 @@
                                             <button type="button" class="btn btn-info btn-outline btn-circle btn-lg m-r-5"><i class="ti-pencil-alt"></i></button>
                                         </td>
                                     </tr>
-                                    <tr>
-                                        <td class="text-center">2</td>
-                                        <td>
-                                            <span class="font-medium">Mazen Ahmed</span><span class="badge-danger badge">Ofline</span>
-                                            <br><span class="text-muted">Joined at 5/12/2015</span>
-                                        </td>
-                                        <td>
-                                            <span class="bg-inverse badge">English Course</span>
-                                            <br><span class="bg-inverse badge">English Course</span>
-                                        </td>
-                                        <td>Sales Agent</td>
-                                        <td>514</td>
-                                        <td>214</td>
-                                        <td>78</td>
-                                        <td>20%</td>
-                                        <td>
-                                            <button type="button" class="btn btn-info btn-outline btn-circle btn-lg m-r-5"><i class="icon-trash"></i></button>
-                                            <button type="button" class="btn btn-info btn-outline btn-circle btn-lg m-r-5"><i class="ti-pencil-alt"></i></button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center">3</td>
-                                        <td>
-                                            <span class="font-medium">Mazen Ahmed</span><span class="badge-success badge">Online</span>
-                                            <br><span class="text-muted">Joined at 5/12/2015</span>
-                                        </td>
-                                        <td>
-                                            <span class="bg-inverse badge">English Course</span>
-                                            <br><span class="bg-inverse badge">English Course</span>
-                                        </td>
-                                        <td>Sales Agent</td>
-                                        <td>514</td>
-                                        <td>214</td>
-                                        <td>78</td>
-                                        <td>20%</td>
-                                        <td>
-                                            <button type="button" class="btn btn-info btn-outline btn-circle btn-lg m-r-5"><i class="icon-trash"></i></button>
-                                            <button type="button" class="btn btn-info btn-outline btn-circle btn-lg m-r-5"><i class="ti-pencil-alt"></i></button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center">4</td>
-                                        <td>
-                                            <span class="font-medium">Mazen Ahmed</span><span class="badge-danger badge">Ofline</span>
-                                            <br><span class="text-muted">Joined at 5/12/2015</span>
-                                        </td>
-                                        <td>
-                                            <span class="bg-inverse badge">English Course</span>
-                                            <br><span class="bg-inverse badge">English Course</span>
-                                        </td>
-                                        <td>Sales Agent</td>
-                                        <td>514</td>
-                                        <td>214</td>
-                                        <td>78</td>
-                                        <td>20%</td>
-                                        <td>
-                                            <button type="button" class="btn btn-info btn-outline btn-circle btn-lg m-r-5"><i class="icon-trash"></i></button>
-                                            <button type="button" class="btn btn-info btn-outline btn-circle btn-lg m-r-5"><i class="ti-pencil-alt"></i></button>
-                                        </td>
-                                    </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>

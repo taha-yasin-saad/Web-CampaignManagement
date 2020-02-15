@@ -18,6 +18,6 @@ class Workplace extends Model
     }
 
     public function users(){
-        return $this->hasMany('App\WorkplaceUser','id','workplace_id');
+        return $this->belongsToMany('App\User','workplace_users', 'workplace_id', 'user_id');
     }
 }

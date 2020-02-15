@@ -28,7 +28,9 @@ Route::post('/invite_member', 'ProductsController@invite_member');
 
 //new routes
 Route::get('{workplace_id}/products', 'ProductsController@index');
-Route::view('{workplace_id}/team','workplaces.team');
+Route::get('{workplace_id}/team','WorkplacesController@team');
+Route::post('/invite_member_workplace', 'ProductsController@invite_member_workplace');
+Route::post('/choose_members', 'ProductsController@choose_members');
 //admins
 Route::get('admin-login','Auth\AdminLoginController@showlogin')->name('admin-login');
 Route::post('admin.login','Auth\AdminLoginController@login')->name('admin.login');

@@ -79,9 +79,10 @@
                     <div class="row panel-heading">
                         <div class="col-md-6 col-sm-6 col-xs-6">
                             <p>{{$value->title}}</p>
-                            <span class="label bg-inverse m-r-10">Mahmoud ali</span>
-                            <span class="label bg-inverse m-r-10">Mairy Yassin</span>
-                            <a class=" m-r-10">More...</a>
+                            @foreach($value->users as $val)
+                            <span class="label bg-inverse m-r-10">{{$val->name}}</span>
+                            @endforeach
+                            <a href="{{url(session('workplace')->id.'/team')}}" class=" m-r-10">More...</a>
                             <a class="dropdown">
                                 <a class="dropdown-toggle text-info m-r-10" id="addRemoveLeadDropDown" data-toggle="dropdown" href="#" aria-expanded="false" role="button"><i class="ti-pencil-alt"></i></a>
                                 <div class="dropdown-menu bullet dropdown-menu-right" aria-labelledby="addRemoveLeadDropDown" role="menu" style="width: 100%;">
@@ -89,11 +90,12 @@
                                         <h3 class="box-title m-b-0">Add Or Remove Sales Agent</h3>
                                         <p class="text-muted m-b-30"> Only these sales agents will receive leads related to this product</p>
                                         <form action="{{url('choose_members')}}" method="post">
+                                            @csrf
+                                            <input type="hidden" name="product_id" value="{{$value->id}}">
                                             <select name="users[]" class="select2 m-b-10 select2-multiple" multiple="multiple" data-placeholder="Choose">
-                                                <option value="CA">ahmed</option>
-                                                <option value="NV">mahmoud</option>
-                                                <option value="OR">Oregon</option>
-                                                <option value="WA">Washington</option>
+                                                @foreach($workplace->users as $user)
+                                                <option value="{{$user->id}}" @if (in_array($user->id, $value->selected_ids)) selected @endif>{{$user->name}}</option>
+                                                @endforeach
                                             </select>
                                             <div class="form-actions text-right">
                                                 <button type="submit" class="btn btn-success"> <i class="fa fa-check"></i> Save</button>

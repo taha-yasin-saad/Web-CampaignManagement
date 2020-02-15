@@ -25,6 +25,12 @@ class WorkplacesController extends Controller
         return view('workplaces.index', $query);
     }
 
+    public function team($workplace_id)
+    {
+        $query['workplace'] = Workplace::with('users','users.products')->where('id', $workplace_id)->first();
+        return view('workplaces.team',$query);
+    }
+
     /**
      * Show the form for creating a new resource.
      *

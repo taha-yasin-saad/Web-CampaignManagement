@@ -20,9 +20,18 @@ class ProductsController extends Controller
      */
     public function index($workplace_id)
     {
-        $query['workplace'] = Workplace::with('users.user')->where('id',$workplace_id)->first();
+        $query['workplace'] = Workplace::with('users')->where('id',$workplace_id)->first();
+        
         Session::put('workplace', $query['workplace']);
-        $query['data'] = Product::where('workplace_id',$workplace_id)->get();
+        $query['data'] = Product::with('users')->where('workplace_id',$workplace_id)->get();
+        foreach($query['data'] as $value){
+            $selected_ids = array();
+            foreach($value->users as $val){
+                array_push($selected_ids, $val->id);
+            }
+            $value->selected_ids = $selected_ids;
+        }
+        // dd($query['data']);
         return view('products.index', $query);
     }
 
@@ -126,7 +135,7 @@ class ProductsController extends Controller
         $invite = new UserProduct;
         $invite->user_id = $user->id;
         $invite->product_id = $request->product_id;
-        $invite->workplace_id = $request->workplace_id;
+        // $invite->workplace_id = $request->workplace_id;
         $invite->save();
 
         $save = new WorkplaceUser;
@@ -142,5 +151,40 @@ class ProductsController extends Controller
             $message->from('info@closor.com', 'CLOSOR')->to($data['email'], 'CLOSOR')->subject($data['subject']);
         });
         return back()->with('success', 'Email invited Successfully');
+    }
+
+    public function invite_member_workplace(Request $request)
+    {
+        //check if user can be existed
+        $user = User::where('email', $request->email)->first();
+        //save in Users if new Email
+        if (!$user) {
+            $user = new User;
+            $user->email = $request->email;
+            $user->save();
+        }
+
+        $save = new WorkplaceUser;
+        $save->workplace_id = $request->workplace_id;
+        $save->user_id = $user->id;
+        $save->status = 1;
+        $save->save();
+
+        //send invitation email
+        $data['subject'] = 'CLOSOR Invitation';
+        $data['email'] = $request->email;
+        \Illuminate\Support\Facades\Mail::send('auth.email_invite', $data, function ($message) use ($data) {
+            $message->from('info@closor.com', 'CLOSOR')->to($data['email'], 'CLOSOR')->subject($data['subject']);
+        });
+        return back()->with('success', 'Email invited Successfully');
+    }
+
+    public function choose_members(Request $request)
+    {
+        
+        $product = Product::find($request->product_id);
+        $product->users()->sync($request->users);
+        
+        return back()->with('success', 'Member added Successfully');
     }
 }
