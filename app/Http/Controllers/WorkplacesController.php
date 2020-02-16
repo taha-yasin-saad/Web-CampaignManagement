@@ -27,7 +27,14 @@ class WorkplacesController extends Controller
 
     public function team($workplace_id)
     {
-        $query['workplace'] = Workplace::with('users','users.products')->where('id', $workplace_id)->first();
+        $query['workplace'] = Workplace::with('products','users','users.products')->where('id', $workplace_id)->first();
+        foreach($query['workplace']->users as $value){
+            $selected_ids = array();
+            foreach($value->products as $val){
+                array_push($selected_ids, $val->id);
+            }
+            $value->selected_ids = $selected_ids;
+        }
         return view('workplaces.team',$query);
     }
 
@@ -126,5 +133,15 @@ class WorkplacesController extends Controller
     {
         $workplace->delete();
         return back();
+    }
+
+    public function remove_user_from_workspace($user_id, $workspace_id){
+        $workspace = WorkplaceUser::where('user_id', $user_id)->where('workplace_id', $workspace_id)->first();
+        $workspace->delete();
+        $product_user = UserProduct::where('user_id', $user_id)->get();
+        foreach($product_user as $user){
+            $user->delete();
+        }
+        return redirect()->back()->with('success','User has been removed from workspace');
     }
 }

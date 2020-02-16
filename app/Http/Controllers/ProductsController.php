@@ -187,4 +187,13 @@ class ProductsController extends Controller
         
         return back()->with('success', 'Member added Successfully');
     }
+
+    public function add_product_to_user(Request $request)
+    {
+        
+        $user = User::find($request->user_id);
+        $user->products()->sync($request->products);
+        
+        return back()->with('success', 'Request has been done successfully');
+    }
 }

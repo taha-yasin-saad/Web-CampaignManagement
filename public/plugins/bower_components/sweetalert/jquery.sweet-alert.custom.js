@@ -23,19 +23,19 @@
     });
 
     //Warning Message
-    $('#sa-warning').click(function(){
-        swal({   
-            title: "Are you sure?",   
-            text: "You will not be able to recover this imaginary file!",   
-            type: "warning",   
-            showCancelButton: true,   
-            confirmButtonColor: "#DD6B55",   
-            confirmButtonText: "Yes, delete it!",   
-            closeOnConfirm: false 
-        }, function(){   
-            swal("Deleted!", "Your imaginary file has been deleted.", "success"); 
-        });
-    });
+    // $('.remove_user_from_workspace_alert').click(function(){
+    //     swal({   
+    //         title: "Are you sure?",   
+    //         text: "The user will be removed from entire workspace !",   
+    //         type: "warning",   
+    //         showCancelButton: true,   
+    //         confirmButtonColor: "#DD6B55",   
+    //         confirmButtonText: "Yes, delete it!",
+    //         closeOnConfirm: true 
+    //     }, function(){   
+    //         document.getElementsByClassName('remove_user_from_workspace').submit();
+    //     });
+    // });
 
     //Parameter
     $('#sa-params').click(function(){

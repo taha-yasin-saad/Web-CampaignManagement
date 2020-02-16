@@ -26,7 +26,7 @@
                     <div class="panel-wrapper collapse in" aria-expanded="true">
                         <div class="panel-body">
                             <div class="alert alert-info" role="alert">
-                                <h3 style="color: #31708f;"><strong><i class="fa fa-info-circle fa-lg"></i> Welcome Onboard!</strong></h3>
+                                <h3 style="color: #31708f;"><strong><i class="mdi mdi-alert-circle-outline fa-fw"></i> Welcome Onboard!</strong></h3>
 
                                 <p>
                                     your account is not associated with any work workspaces yet, you can create a new workspace now.

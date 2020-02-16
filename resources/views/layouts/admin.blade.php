@@ -48,7 +48,8 @@
         type="text/css" />
     <link href="{{asset('plugins/bower_components/custom-select/custom-select.css')}}" rel="stylesheet"
         type="text/css" />
-
+    <!--alerts CSS -->
+    <link href="{{asset('plugins/bower_components/sweetalert/sweetalert.css')}}" rel="stylesheet" type="text/css">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -174,12 +175,12 @@
                         </a>
                     </li>
                     <li>
-                        <a href="{{url(session('workplace')->id.'/products')}}" class="waves-effect"><i class="mdi mdi-card-bulleted fa-fw" data-icon="v"></i>
+                        <a href="{{url(session('workplace')->id.'/products')}}" class="waves-effect"><i class="mdi mdi-account-card-details fa-fw" data-icon="v"></i>
                             <span class="hide-menu"> Products <span class="fa arrow"></span> </span>
                         </a>
                     </li>
                     <li>
-                        <a href="{{url(session('workplace')->id.'/team')}}" class="waves-effect"><i class="mdi mdi-account-supervisor fa-fw"
+                        <a href="{{url(session('workplace')->id.'/team')}}" class="waves-effect"><i class="mdi mdi-account-multiple fa-fw"
                                 data-icon="v"></i>
                             <span class="hide-menu"> Team <span class="fa arrow"></span> </span>
                         </a>
@@ -196,6 +197,12 @@
                     </li>
                     @endif
                 </ul>
+                <div class="sidebar-footer">
+                    <a href="#" target="blank">
+                        <i class="mdi mdi-information fa-fw" data-icon="v"></i>
+                        need a little help?
+                    </a>
+                </div>
             </div>
         </div>
         <!-- ============================================================== -->
@@ -443,6 +450,9 @@
     <script src="{{asset('plugins/bower_components/toast-master/js/jquery.toast.js')}}"></script>
     <!--Style Switcher -->
     <script src="{{asset('plugins/bower_components/styleswitcher/jQuery.style.switcher.js')}}"></script>
+    <!-- Sweet-Alert  -->
+    <script src="{{asset('plugins/bower_components/sweetalert/sweetalert.min.js')}}"></script>
+    <script src="{{asset('plugins/bower_components/sweetalert/jquery.sweet-alert.custom.js')}}"></script>
     @yield('chart')
     @yield('filter_table')
 </body>

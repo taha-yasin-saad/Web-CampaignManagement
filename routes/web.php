@@ -31,6 +31,9 @@ Route::get('{workplace_id}/products', 'ProductsController@index');
 Route::get('{workplace_id}/team','WorkplacesController@team');
 Route::post('/invite_member_workplace', 'ProductsController@invite_member_workplace');
 Route::post('/choose_members', 'ProductsController@choose_members');
+Route::post('/add_product_to_user', 'ProductsController@add_product_to_user');
+Route::get('remove_user_from_workspace/{user_id}/{workplace_id}', 'WorkplacesController@remove_user_from_workspace');
+
 //admins
 Route::get('admin-login','Auth\AdminLoginController@showlogin')->name('admin-login');
 Route::post('admin.login','Auth\AdminLoginController@login')->name('admin.login');
