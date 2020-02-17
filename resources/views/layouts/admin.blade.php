@@ -106,7 +106,7 @@
                     <!-- /.dropdown -->
                 </ul>
                 <ul class="nav navbar-top-links navbar-right pull-right">
-                    <li><a href="javascript:void(0)" class="open-close waves-effect waves-light"><i class="ti-menu"></i></a></li>
+                    <li class="hidden-md hidden-lg"><a href="javascript:void(0)" class="open-close waves-effect waves-light"><i class="ti-menu"></i></a></li>
                 </ul>
             </div>
             <!-- /.navbar-header -->

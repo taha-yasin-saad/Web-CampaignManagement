@@ -123,6 +123,7 @@ class ProductsController extends Controller
 
     public function invite_member(Request $request)
     {
+        
         //check if user can be existed
         $user = User::where('email', $request->email)->first();
         //save in Users if new Email
@@ -144,6 +145,8 @@ class ProductsController extends Controller
         $save->status = 1;
         $save->save();
 
+        
+
         //send invitation email
         $data['subject'] = 'CLOSOR Invitation';
         $data['email'] = $request->email;
@@ -155,6 +158,7 @@ class ProductsController extends Controller
 
     public function invite_member_workplace(Request $request)
     {
+        // dd($request);
         //check if user can be existed
         $user = User::where('email', $request->email)->first();
         //save in Users if new Email
@@ -164,11 +168,17 @@ class ProductsController extends Controller
             $user->save();
         }
 
-        $save = new WorkplaceUser;
-        $save->workplace_id = $request->workplace_id;
-        $save->user_id = $user->id;
-        $save->status = 1;
-        $save->save();
+        $user->products()->sync($request->products);
+
+        $save = WorkplaceUser::where('user_id',$user->id)->where('workplace_id',$request->workplace_id)->first();
+        if(!$save){
+            $save = new WorkplaceUser;
+            $save->workplace_id = $request->workplace_id;
+            $save->user_id = $user->id;
+            $save->role = $request->role;
+            $save->status = 1;
+            $save->save();
+        }
 
         //send invitation email
         $data['subject'] = 'CLOSOR Invitation';

@@ -5,7 +5,7 @@
 <section id="wrapper" class="new-login-register">
   <div class="new-login-box" style="margin-top: 5%;">
     <div class="white-box">
-      <img src="{{asset('dark-logo.png')}}" alt="logo">
+      <img src="{{asset('bright-logo.png')}}" alt="logo">
       <form class="form-horizontal new-lg-form" id="loginform" method="POST" 
       @if(session('invited'))
       action="{{ url('login2') }}"
