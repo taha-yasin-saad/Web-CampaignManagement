@@ -112,10 +112,22 @@
                                         </td>
                                         <td>
                                             @foreach($value->products as $val)
+                                            @if($val->workplace_id == $workplace->id)
                                             <span class="bg-inverse badge">{{$val->title}}</span><br>
+                                            @endif
                                             @endforeach
                                         </td>
-                                        <td>Sales Agent</td>
+                                        <td>
+                                            @if($value->pivot->role == 0)
+                                            Owner
+                                            @elseif($value->pivot->role == 1)
+                                            Admin
+                                            @elseif($value->pivot->role == 2)
+                                            Leader
+                                            @elseif($value->pivot->role == 3)
+                                            Sales Agent
+                                            @endif
+                                        </td>
                                         <td>514</td>
                                         <td>214</td>
                                         <td>78</td>
