@@ -37,6 +37,9 @@
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+    <!--country flag -->
+    <link rel="stylesheet" href="{{asset('css/intl-tel-input-16.0.0/build/css/intlTelInput.css')}}">
 </head>
 
 <body>
@@ -64,31 +67,47 @@
     <!--Style Switcher -->
     <script src="{{asset('plugins/bower_components/styleswitcher/jQuery.style.switcher.js')}}"></script>
 
-    <script src="http://www.geoplugin.net/javascript.gp" type="text/javascript"></script>
-
-    <script type="text/javascript">
-        var baseUrl = "{{url('/')}}";
-        jQuery(document).ready(function($) {
-            
-        jQuery.getScript('http://www.geoplugin.net/javascript.gp', function() 
-        {
-            var code= geoplugin_countryCode();
-            $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            }
-            });
-            $.ajax({
-                type:'GET',
-                url:baseUrl+'/phoneCode/'+code,
-                success:function(data){
-                    var phone_code = data;
-                    $('#phone').val(data);
-                }
-            });
-        });
-        });
+    
+    {{-- country flag js --}}
+    <script src="{{asset('css/intl-tel-input-16.0.0/build/js/intlTelInput.js')}}"></script>
+    <script>
+    var input = document.querySelector("#phone");
+    window.intlTelInput(input);
+    var iti = window.intlTelInputGlobals.getInstance(input);
+    input.addEventListener("countrychange", function() {
+        console.log(iti.getSelectedCountryData().dialCode);
+        $('#phone').val(iti.getSelectedCountryData().dialCode);
+    });
     </script>
+
+<script src="http://www.geoplugin.net/javascript.gp" type="text/javascript"></script>
+
+<script type="text/javascript">
+    var baseUrl = "{{url('/')}}";
+    jQuery(document).ready(function($) {
+        
+    jQuery.getScript('http://www.geoplugin.net/javascript.gp', function() 
+    {
+        var code= geoplugin_countryCode();
+        $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+        });
+        $.ajax({
+            type:'GET',
+            url:baseUrl+'/phoneCode/'+code,
+            success:function(data){
+                let phone_code = data;
+                $('#phone').val(data);
+                var res = code.toLowerCase();
+                iti.setCountry(res);
+                
+            }
+        });
+    });
+    });
+</script>
 </body>
 
 </html>
