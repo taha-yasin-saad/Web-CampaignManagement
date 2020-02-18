@@ -87,6 +87,7 @@
                                         <p class="text-muted m-b-30"> Only these sales agents will receive leads related to this product</p>
                                         <form action="{{url('choose_members')}}" method="post">
                                             @csrf
+                                            <input type="hidden" name="workplace_id" value="{{$workplace->id}}" />
                                             <input type="hidden" name="product_id" value="{{$value->id}}">
                                             <select name="users[]" class="select2 m-b-10 select2-multiple" multiple="multiple" data-placeholder="Choose">
                                                 @foreach($workplace->users as $user)
