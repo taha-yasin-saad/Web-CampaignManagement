@@ -26,9 +26,11 @@
                                 <span class="text-muted m-r-10">Users</span>
                             </div>
                             <div class="col-md-6 col-sm-6 col-xs-6 text-right">
+                                @if(get_role($workplace->id) == 0 || get_role($workplace->id) == 1)
                                 <a>
                                 <a class=" btn btn-danger m-t-20" href="{{url('invite').'/'.$workplace->id}}"type="button">Invite New User</a>
                                 </a>
+                                @endif
                             </div>
                         </div>
                     </div>
@@ -53,7 +55,9 @@
                                         <th>CONTACTED LEADS</th>
                                         <th>QUALIFIED LEADS</th>
                                         <th>CONVERSION RATE</th>
+                                        @if(get_role($workplace->id) == 0 || get_role($workplace->id) == 1)
                                         <th>MANAGE</th>
+                                        @endif
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -86,10 +90,13 @@
                                         <td>214</td>
                                         <td>78</td>
                                         <td>20%</td>
+                                        @if(get_role($workplace->id) == 0 || get_role($workplace->id) == 1)
                                         <td>
-                                            <button type="button" class="btn btn-info btn-outline btn-circle btn-lg m-r-5">
+                                            {{-- <button type="button" class="btn btn-info btn-outline btn-circle btn-lg m-r-5">
                                                 <i class="mdi mdi-check-circle-outline"></i>
-                                            </button>
+                                            </button> --}}
+                                            
+                                            <input type="checkbox" checked class="js-switch" data-color="#2cabe3" name="status" />
                                         </td>
                                         <td>
                                             <button type="button" class="btn btn-info btn-outline btn-circle btn-lg m-r-5 remove_user_from_workspace_alert" id="sa-warning"
@@ -146,6 +153,7 @@
                                                 </div>
                                             </a>
                                         </td>
+                                        @endif
                                     </tr>
                                     @endforeach
                                 </tbody>

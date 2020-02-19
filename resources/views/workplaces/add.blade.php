@@ -45,7 +45,7 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>Workspace Name</label>
-                                                <input required type="text" class="form-control" placeholder="XYZ Workspace" value="@if(isset($data)) {{$data->title}} @endif" name="title"> </div>
+                                                <input required type="text" class="form-control" placeholder="XYZ Workspace" value="@if(isset($data)){{$data->title}}@endif" name="title"> </div>
                                         </div>
                                         <!--/span-->
                                         <div class="col-md-6">

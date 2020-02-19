@@ -28,7 +28,9 @@
                         </div>
                         <div class="col-md-6 col-sm-6 col-xs-6 text-right">
                             <a class="dropdown">
+                                @if(get_role($workplace->id) == 0 || get_role($workplace->id) == 1)
                                 <a class="dropdown-toggle btn btn-danger m-t-20" id="addProductDropDown" data-toggle="dropdown" href="#" aria-expanded="false" type="button">Add New Product</a>
+                                @endif
                                 <div class="dropdown-menu bullet dropdown-menu-right" aria-labelledby="addProductDropDown p-20" role="menu" style="width: 100%;">
                                     <div class="white-box">
                                         <ul class="nav nav-tabs tabs customtab">
@@ -79,6 +81,7 @@
                             <span class="label bg-inverse m-r-10">{{$val->name}}</span>
                             @endforeach
                             <a href="{{url(session('workplace')->id.'/team')}}" class=" m-r-10">More...</a>
+                            @if(get_role($workplace->id) == 0 || get_role($workplace->id) == 1 || get_role($workplace->id) == 2)
                             <a class="dropdown">
                                 <a class="dropdown-toggle text-info m-r-10" id="addRemoveLeadDropDown" data-toggle="dropdown" href="#" aria-expanded="false" role="button"><i class="ti-pencil-alt"></i></a>
                                 <div class="dropdown-menu bullet dropdown-menu-right" aria-labelledby="addRemoveLeadDropDown" role="menu" style="width: 100%;">
@@ -103,10 +106,13 @@
                                     </div>
                                 </div>
                             </a>
+                            @endif
                             
                         </div>
                         <div class="col-md-6 col-sm-6 col-xs-6 text-right">
+                            @if(get_role($workplace->id) == 0 || get_role($workplace->id) == 1 || get_role($workplace->id) == 2)
                             <button type="button" class="btn btn-primary m-t-20">Add Lead Source</button>
+                            @endif
                         </div>
                     </div>
                     <div class="table-responsive">
@@ -119,7 +125,9 @@
                                     <th>CONTACTED LEADS</th>
                                     <th>QUALIFIED LEADS</th>
                                     <th>AVG. CONVERION RATE</th>
+                                    @if(get_role($workplace->id) == 0 || get_role($workplace->id) == 1 || get_role($workplace->id) == 2)
                                     <th>MANAGE</th>
+                                    @endif
                                 </tr>
                             </thead>
                             <tbody>
@@ -132,9 +140,11 @@
                                     <td>323</td>
                                     <td>200</td>
                                     <td>50%</td>
+                                    @if(get_role($workplace->id) == 0 || get_role($workplace->id) == 1 || get_role($workplace->id) == 2)
                                     <td>
                                         <button type="button" class="btn btn-info btn-outline btn-circle btn-lg m-r-5"><i class="ti-pencil-alt"></i></button>
                                     </td>
+                                    @endif
                                 </tr>
                                 <tr>
                                     <td class="text-center">2</td>
@@ -144,9 +154,11 @@
                                     <td>211</td>
                                     <td>120</td>
                                     <td>48%</td>
+                                    @if(get_role($workplace->id) == 0 || get_role($workplace->id) == 1 || get_role($workplace->id) == 2)
                                     <td>
                                         <button type="button" class="btn btn-info btn-outline btn-circle btn-lg m-r-5"><i class="ti-pencil-alt"></i></button>
                                     </td>
+                                    @endif
                                 </tr>
                             </tbody>
                         </table>

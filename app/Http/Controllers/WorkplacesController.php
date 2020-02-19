@@ -146,6 +146,13 @@ class WorkplacesController extends Controller
         }
         return redirect()->back()->with('success','User has been removed from workspace');
     }
+    public function active_user_in_workspace($user_id, $workspace_id,$status){
+        $workspace = WorkplaceUser::where('user_id', $user_id)->where('workplace_id', $workspace_id)->first();
+        $workspace->status= $status;
+        $workspace->save();
+        
+        return redirect()->back()->with('success','User has been changed at workspace');
+    }
 
     public function invite($workplace_id){
         $query['workplace'] = Workplace::with('products','users','users.products')->where('id', $workplace_id)->first();
