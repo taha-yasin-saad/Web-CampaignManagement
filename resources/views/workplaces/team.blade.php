@@ -128,6 +128,7 @@
                                                         <form action="{{url('add_product_to_user')}}" method="post">
                                                             @csrf
                                                             <input type="hidden" name="user_id" value="{{$value->id}}">
+                                                            <input type="hidden" name="workplace_id" value="{{$workplace->id}}">
                                                             <select name="products[]" class="select2 m-b-10 select2-multiple" multiple="multiple" data-placeholder="Choose">
                                                                 @foreach($workplace->products as $val)
                                                                 <option value="{{$val->id}}" 

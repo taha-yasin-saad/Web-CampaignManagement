@@ -35,6 +35,7 @@ class WorkplacesController extends Controller
             }
             $value->selected_ids = $selected_ids;
         }
+
         return view('workplaces.team',$query);
     }
 

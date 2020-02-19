@@ -41,4 +41,11 @@ class User extends Authenticatable
     public function products(){
         return $this->belongsToMany('App\Product','user_products', 'user_id', 'product_id');
     }
+    public function products_workplace($work_id){
+        return $this->products()->where('workplace_id',$work_id);
+    }
+    public function workplaces(){
+        return $this->belongsToMany('App\Workplace','workplace_users', 'user_id', 'workplace_id');
+    }
+
 }

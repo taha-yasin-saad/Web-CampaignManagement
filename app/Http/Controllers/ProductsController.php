@@ -168,7 +168,9 @@ class ProductsController extends Controller
             $user->save();
         }
 
-        $user->products()->sync($request->products);
+        $old_products =$user->products_workplace($request->workplace_id)->pluck('products.id')->toArray();
+        $user->products()->detach($old_products);
+        $user->products()->attach($request->products);
 
         $save = WorkplaceUser::where('user_id',$user->id)->where('workplace_id',$request->workplace_id)->first();
         if(!$save){
@@ -193,7 +195,8 @@ class ProductsController extends Controller
     {
         
         $product = Product::find($request->product_id);
-        $product->users()->sync($request->users);
+
+        $product->sync($request->users);
         
         return back()->with('success', 'Member added Successfully');
     }
@@ -202,7 +205,10 @@ class ProductsController extends Controller
     {
         
         $user = User::find($request->user_id);
-        $user->products()->sync($request->products);
+        $old_products =$user->products_workplace($request->workplace_id)->pluck('products.id')->toArray();
+        $user->products()->detach($old_products);
+        $user->products()->attach($request->products);
+
         
         return back()->with('success', 'Request has been done successfully');
     }
