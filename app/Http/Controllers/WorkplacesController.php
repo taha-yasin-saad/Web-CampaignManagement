@@ -38,6 +38,7 @@ class WorkplacesController extends Controller
         return view('workplaces.team',$query);
     }
 
+
     /**
      * Show the form for creating a new resource.
      *
@@ -143,5 +144,10 @@ class WorkplacesController extends Controller
             $user->delete();
         }
         return redirect()->back()->with('success','User has been removed from workspace');
+    }
+
+    public function invite($workplace_id){
+        $query['workplace'] = Workplace::with('products','users','users.products')->where('id', $workplace_id)->first();
+        return view('workplaces.invite',$query);
     }
 }
