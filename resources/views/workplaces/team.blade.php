@@ -26,54 +26,8 @@
                                 <span class="text-muted m-r-10">Users</span>
                             </div>
                             <div class="col-md-6 col-sm-6 col-xs-6 text-right">
-                                <a class="dropdown">
-                                    <a class="dropdown-toggle btn btn-danger m-t-20" id="addProductDropDown" data-toggle="dropdown" href="#"
-                                        aria-expanded="false" type="button">Invite New User</a>
-                                    <div class="dropdown-menu bullet dropdown-menu-right p-20"
-                                        aria-labelledby="addProductDropDown" role="menu" style="width: 100%;">
-                                            <ul class="nav nav-tabs tabs customtab">
-                                                <li class="tab">
-                                                    <a href="#settings" data-toggle="tab" aria-expanded="false"> 
-                                                        <span class="visible-xs"><i class="fa fa-cog"></i></span> <span class="hidden-xs">insert User Email</span> 
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                            <div class="tab-content">
-                                                <form class="form-horizontal" method="POST" action="{{url('invite_member_workplace')}}">
-                                                    {{csrf_field()}}
-                                                    <input type="hidden" name="workplace_id" value="{{session('workplace')->id}}" />
-                                                    <div class="row">
-                                                        <div class="col-md-12">
-                                                            <div>
-                                                                <input required type="email" class="form-control m-b-10" value=""
-                                                                    name="email" required placeholder="Email .. ex@example.com"/>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-xs-8 ">
-                                                            <select name="products[]" class="select2 m-b-10 select2-multiple" multiple="multiple" data-placeholder="Choose Product">
-                                                                @foreach($workplace->products as $val)
-                                                                <option value="{{$val->id}}">{{$val->title}}</option>
-                                                                @endforeach
-                                                            </select>
-                                                        </div>
-                                                        <div class="col-xs-4 ">
-                                                            <select name="role" class="m-b-10 form-control">
-                                                                <option value="1">Admin</option>
-                                                                <option value="2">Leader</option>
-                                                                <option value="3">Sales Agent</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                    <div class="row">
-                                                        <div class="col-md-12 text-right m-t-20">
-                                                            <button type="submit" class="btn btn-danger"> <i
-                                                                    class="fa fa-check"></i>
-                                                                Save</button>
-                                                        </div>
-                                                    </div>
-                                                </form>
-                                            </div>
-                                    </div>
+                                <a>
+                                <a class=" btn btn-danger m-t-20" href="{{url('invite').'/'.$workplace->id}}"type="button">Invite New User</a>
                                 </a>
                             </div>
                         </div>
