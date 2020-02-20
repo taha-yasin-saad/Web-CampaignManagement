@@ -146,16 +146,23 @@ class WorkplacesController extends Controller
         }
         return redirect()->back()->with('success','User has been removed from workspace');
     }
-    public function active_user_in_workspace($user_id, $workspace_id,$status){
+    public function active_user_in_workspace($status,$user_id,$workspace_id){
         $workspace = WorkplaceUser::where('user_id', $user_id)->where('workplace_id', $workspace_id)->first();
         $workspace->status= $status;
         $workspace->save();
-        
-        return redirect()->back()->with('success','User has been changed at workspace');
+        return $status;
+        // return redirect()->back()->with('success','User has been changed at workspace');
     }
 
     public function invite($workplace_id){
         $query['workplace'] = Workplace::with('products','users','users.products')->where('id', $workplace_id)->first();
         return view('workplaces.invite',$query);
+    }
+
+    public function all_workspaces()
+    {
+        $all_workspaces = Workplace::all();
+
+        return response()->json(array('code' => '0', 'data' => $all_workspaces), 200, ['Access-Control-Allow-Origin' => '*'], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
     }
 }

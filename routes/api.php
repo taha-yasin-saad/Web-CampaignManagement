@@ -16,4 +16,7 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+Route::get('/all_workplaces', 'api\LeadController@all_workplaces');
+Route::post('/all_products', 'api\LeadController@all_products');
+
 
