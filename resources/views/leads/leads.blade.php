@@ -172,7 +172,7 @@
                                         <tr role="row" class="odd">
                                             <td class="sorting_1">
                                                 <div class="flex-column">
-                                                    <a>{{$lead->name}}</a>
+                                                    <a href="{{url('leads/'.$lead->id)}}">{{$lead->name}}</a>
                                                     <span class="text-right">
                                                         <button type="button" class="btn btn-primary lead-btn"><i
                                                                 class="fa  fa-envelope"></i></button>
