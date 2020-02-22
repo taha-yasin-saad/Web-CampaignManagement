@@ -82,19 +82,21 @@
                                         <div class="form-group">
                                             <label for="assigned">assigned to</label>
                                             <select class="form-control" name="" id="assigned">
-                                                <option>name one</option>
-                                                <option>name two</option>
-                                                <option>name three</option>
+                                                <option selected disabled>Select User</option>
+                                                @foreach ($users as $user)
+                                                    <option value="{{$user->user->id}}">{{$user->user->name}}</option>
+                                                @endforeach
                                             </select>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="assigned">Product</label>
-                                            <select class="form-control" name="" id="assigned">
-                                                <option>product one</option>
-                                                <option>product two</option>
-                                                <option>product three</option>
+                                            <select class="form-control" name="product_id" id="assigned">
+                                                <option selected disabled>Select Product</option>
+                                                @foreach ($leads as $lead)
+                                                    <option value="{{$lead->product_id}}">{{$lead->title}}</option>
+                                                @endforeach
                                             </select>
                                         </div>
                                     </div>
@@ -114,11 +116,11 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="assigned">Lead quality</label>
-                                            <select class="form-control" name="" id="assigned">
-                                                <option>quality one</option>
-                                                <option>quality two</option>
-                                                <option>quality three</option>
+                                            <label for="lead-quality">Lead quality</label>
+                                            <select class="form-control" name="status" id="lead-quality">
+                                                <option selected disabled>Select quality</option>
+                                                <option value="0">Qualified</option>
+                                                <option value="1">Un Qualified</option>
                                             </select>
                                         </div>
                                     </div>
@@ -166,26 +168,34 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr role="row" class="odd">
-                                        <td class="sorting_1">
-                                            <div class="flex-column">
-                                                <a>Airi Satou</a>
-                                                <span class="text-right">
-                                                    <button type="button" class="btn btn-primary lead-btn"><i
-                                                            class="fa  fa-envelope"></i></button>
-                                                    <button type="button" class="btn btn-success lead-btn"><i
-                                                            class="fa  fa-phone"></i></button>
-                                                </span>
-                                            </div>
-                                        </td>
-                                        <td>product One</td>
-                                        <td><span class="badge badge-primary">Facebook</span></td>
-                                        <td>2008/11/28</td>
-                                        <td>Ahmed</td>
-                                        <td>2008/11/28</td>
-                                        <td>2008/11/28</td>
-                                        <td><button class="btn btn-primary">Qualified</button></td>
-                                    </tr>
+                                    @foreach ($leads as $lead)
+                                        <tr role="row" class="odd">
+                                            <td class="sorting_1">
+                                                <div class="flex-column">
+                                                    <a>{{$lead->name}}</a>
+                                                    <span class="text-right">
+                                                        <button type="button" class="btn btn-primary lead-btn"><i
+                                                                class="fa  fa-envelope"></i></button>
+                                                        <a href="tel:{{$lead->phone}}" class="btn btn-success lead-btn" title="{{$lead->phone}}"><i
+                                                                class="fa  fa-phone"></i></a>
+                                                    </span>
+                                                </div>
+                                            </td>
+                                            <td>{{$lead->title}}</td>
+                                            <td><span class="badge badge-primary">Facebook</span></td>
+                                            <td>{{$lead->created_at}}</td>
+                                            <td>Ahmed</td>
+                                            <td>2008/11/28</td>
+                                            <td>2008/11/28</td>
+                                            <td>
+                                                @if ($lead->status == 0)
+                                                <button class="btn btn-primary">Qualified</button>
+                                                @else
+                                                <button class="btn btn-danger">Un Qualified</button>
+                                                @endif
+                                            </td>
+                                        </tr>
+                                    @endforeach
                                     <tr role="row" class="even">
                                         <td class="sorting_1">
                                             <div class="flex-column">
@@ -593,47 +603,6 @@
                 </div>
             </div>
         </div>
-
-        {{-- <div class="row">
-                    <div class="panel panel-primary filterable">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">Users</h3>
-                            <div class="pull-right">
-                                <button class="btn btn-default btn-xs btn-filter"><span class="glyphicon glyphicon-filter"></span> Filter</button>
-                            </div>
-                        </div>
-                        <table class="table">
-                            <thead>
-                                <tr class="filters">
-                                    <th><input type="text" class="form-control" placeholder="#" disabled></th>
-                                    <th><input type="text" class="form-control" placeholder="First Name" disabled></th>
-                                    <th><input type="text" class="form-control" placeholder="Last Name" disabled></th>
-                                    <th><input type="text" class="form-control" placeholder="Username" disabled></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
-                                    <td>@mdo</td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>Jacob</td>
-                                    <td>Thornton</td>
-                                    <td>@fat</td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>Larry</td>
-                                    <td>the Bird</td>
-                                    <td>@twitter</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div> --}}
     </div>
     <!-- /#page-wrapper -->
 </div>

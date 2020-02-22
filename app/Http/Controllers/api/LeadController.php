@@ -1,17 +1,41 @@
 <?php
 
 namespace App\Http\Controllers\api;
+
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Lead;
+use Illuminate\Support\Facades\Input;
 use App\Workplace;
 use App\Product;
 use App\UserProduct;
 use App\WorkplaceUser;
-use Illuminate\Support\Facades\Input;
-use App\Http\Controllers\Controller;
+use Validator;
 
 class LeadController extends Controller
 {
-	public function all_workplaces()
+    public function create_lead(Request $request){
+				$data = $request->all();
+				$rules = array(
+						'product_id' => 'required',
+						'phone' => 'required',
+						'name'   => 'required',
+					);
+				$validator = Validator::make($data, $rules);
+				if ($validator->fails()) {
+						return response()->json(array('code' => 1,'msg_en'=> 'Wrong Data','msg_ar'=>'خطأ فى البيانات','error'=>$validator->messages()), 200, ['Access-Control-Allow-Origin' => '*'], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
+				} else {
+                    $lead = new Lead();
+                    $lead->product_id = $request->product_id;
+                    $lead->phone = $request->phone;
+                    $lead->name = $request->name;
+                    $lead->lead = json_encode($request->all());
+                    $lead->save();
+					return response()->json(array('code' => '0', 'msg_en' => 'Request Has been Sent Successfully', 'msg_ar' => 'تم إرسال الطلب بنجاح'), 200, ['Access-Control-Allow-Origin' => '*'], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
+				}
+    }
+
+    public function all_workplaces()
 	{
 			$all_workplaces = Workplace::all();
 
