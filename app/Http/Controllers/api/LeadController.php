@@ -10,6 +10,7 @@ use App\Workplace;
 use App\Product;
 use App\UserProduct;
 use App\WorkplaceUser;
+use Validator;
 
 class LeadController extends Controller
 {
@@ -22,7 +23,7 @@ class LeadController extends Controller
 					);
 				$validator = Validator::make($data, $rules);
 				if ($validator->fails()) {
-						return response()->json(array('code' => 1,'msg_en'=> 'Wrong Data','msg_ar'=>'Wrong Data','error'=>$validator->messages()), 200, ['Access-Control-Allow-Origin' => '*'], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
+						return response()->json(array('code' => 1,'msg_en'=> 'Wrong Data','msg_ar'=>'خطأ فى البيانات','error'=>$validator->messages()), 200, ['Access-Control-Allow-Origin' => '*'], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
 				} else {
                     $lead = new Lead();
                     $lead->product_id = $data->product_id;
