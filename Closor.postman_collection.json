@@ -1,0 +1,78 @@
+{
+	"info": {
+		"_postman_id": "9135882d-f99a-4e42-9b56-062311d51830",
+		"name": "Closor",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "All Work Spaces",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": "http://malexs.net/closor/public/api/all_workplaces"
+			},
+			"response": []
+		},
+		{
+			"name": "All Products for WorkPlace",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "workplace_id",
+							"value": "6",
+							"type": "text"
+						}
+					]
+				},
+				"url": "http://malexs.net/closor/public/api/all_products"
+			},
+			"response": []
+		},
+		{
+			"name": "Lead Form",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "kareem222",
+							"type": "text"
+						},
+						{
+							"key": "phone",
+							"value": "1234567654",
+							"type": "text"
+						},
+						{
+							"key": "product_id",
+							"value": "6",
+							"type": "text"
+						},
+						{
+							"key": "mobile",
+							"value": "22345678987654",
+							"type": "text"
+						}
+					]
+				},
+				"url": "http://malexs.net/closor/public/api/lead"
+			},
+			"response": []
+		}
+	]
+}
