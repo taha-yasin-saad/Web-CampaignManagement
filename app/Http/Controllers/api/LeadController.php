@@ -30,6 +30,7 @@ class LeadController extends Controller
                     $lead->phone = $request->phone;
                     $lead->name = $request->name;
                     $lead->lead = json_encode($request->all());
+                    $lead->save();
 					return response()->json(array('code' => '0', 'msg_en' => 'Request Has been Sent Successfully', 'msg_ar' => 'تم إرسال الطلب بنجاح'), 200, ['Access-Control-Allow-Origin' => '*'], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
 				}
     }
