@@ -59,19 +59,19 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="white-box">
-                    <form class="white-box">
+                <form class="white-box">
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="">Submission date range</label>
                                     <div class="row">
                                         <div class="col-md-6">
-                                            <input type="date" name="" id="" class="form-control"
-                                                placeholder="mm/dd/yyyy">
+                                            <input type="date" name="min_date" id="" class="form-control"
+                                                placeholder="mm/dd/yyyy" value="@if(isset($_GET['min_date'])){{$_GET['min_date']}}@endif">
                                         </div>
                                         <div class="col-md-6">
-                                            <input type="date" name="" id="" class="form-control"
-                                                placeholder="mm/dd/yyyy">
+                                            <input type="date" name="max_date" id="" class="form-control"
+                                                placeholder="mm/dd/yyyy" value="@if(isset($_GET['max_date'])){{$_GET['max_date']}}@endif">
                                         </div>
                                     </div>
                                 </div>
@@ -81,10 +81,10 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="assigned">assigned to</label>
-                                            <select class="form-control" name="" id="assigned">
+                                            <select class="form-control" id="assigned">
                                                 <option selected disabled>Select User</option>
                                                 @foreach ($users as $user)
-                                                    <option value="{{$user->user->id}}">{{$user->user->name}}</option>
+                                                    <option value="{{$user->user->id}}" >{{$user->user->name}}</option>
                                                 @endforeach
                                             </select>
                                         </div>
@@ -95,7 +95,7 @@
                                             <select class="form-control" name="product_id" id="assigned">
                                                 <option selected disabled>Select Product</option>
                                                 @foreach ($leads as $lead)
-                                                    <option value="{{$lead->product_id}}">{{$lead->title}}</option>
+                                                    <option value="{{$lead->product_id}}" @if(isset($_GET['product_id']) && $_GET['product_id'] == $lead->product_id) selected @endif>{{$lead->title}}</option>
                                                 @endforeach
                                             </select>
                                         </div>
@@ -107,7 +107,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="assigned">Contact status</label>
-                                            <select class="form-control" name="" id="assigned">
+                                            <select class="form-control" id="assigned">
                                                 <option>status one</option>
                                                 <option>status two</option>
                                                 <option>status three</option>
@@ -119,15 +119,15 @@
                                             <label for="lead-quality">Lead quality</label>
                                             <select class="form-control" name="status" id="lead-quality">
                                                 <option selected disabled>Select quality</option>
-                                                <option value="0">Qualified</option>
-                                                <option value="1">Un Qualified</option>
+                                                <option value="0" @if(isset($_GET['status']) && $_GET['status'] == 0) selected @endif>Qualified</option>
+                                                <option value="1" @if(isset($_GET['status']) && $_GET['status'] == 1) selected @endif>Un Qualified</option>
                                             </select>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-3">
-                                <button type="button" class="btn btn-primary m-t-20">
+                                <button type="submit" class="btn btn-primary m-t-20">
                                     <i class="mdi mdi-filter fa-fw" data-icon="v"></i>
                                 </button>
                             </div>

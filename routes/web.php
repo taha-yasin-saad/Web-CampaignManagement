@@ -24,8 +24,10 @@ Route::resource('workplace', 'WorkplacesController');
 Route::resource('product', 'ProductsController');
 Route::get('product/create/{workplace_id}', 'ProductsController@create');
 Route::post('/invite_member', 'ProductsController@invite_member');
-Route::resource('leads', 'LeadController');
 
+// leads
+Route::resource('leads', 'LeadController');
+Route::post('leads_filter', 'LeadController@filter');
 //new routes
 Route::get('{workplace_id}/products', 'ProductsController@index');
 Route::get('{workplace_id}/team','WorkplacesController@team');
