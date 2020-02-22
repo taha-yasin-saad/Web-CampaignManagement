@@ -18,6 +18,6 @@ class Workplace extends Model
     }
 
     public function users(){
-        return $this->belongsToMany('App\User','workplace_users', 'workplace_id', 'user_id')->withPivot('role');
+        return $this->belongsToMany('App\User','workplace_users', 'workplace_id', 'user_id')->withPivot('role','status');
     }
 }

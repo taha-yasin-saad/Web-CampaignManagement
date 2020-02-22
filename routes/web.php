@@ -33,6 +33,7 @@ Route::post('/invite_member_workplace', 'ProductsController@invite_member_workpl
 Route::post('/choose_members', 'ProductsController@choose_members');
 Route::post('/add_product_to_user', 'ProductsController@add_product_to_user');
 Route::get('remove_user_from_workspace/{user_id}/{workplace_id}', 'WorkplacesController@remove_user_from_workspace');
+Route::get('active_user_in_workspace/{status}/{user_id}/{workplace_id}', 'WorkplacesController@active_user_in_workspace');
 Route::get('invite/{workplace}', 'WorkplacesController@invite');
 //admins
 Route::get('admin-login','Auth\AdminLoginController@showlogin')->name('admin-login');

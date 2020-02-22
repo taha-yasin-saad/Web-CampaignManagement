@@ -26,9 +26,11 @@
                                 <span class="text-muted m-r-10">Users</span>
                             </div>
                             <div class="col-md-6 col-sm-6 col-xs-6 text-right">
+                                @if(get_role($workplace->id) == 0 || get_role($workplace->id) == 1)
                                 <a>
                                 <a class=" btn btn-danger m-t-20" href="{{url('invite').'/'.$workplace->id}}"type="button">Invite New User</a>
                                 </a>
+                                @endif
                             </div>
                         </div>
                     </div>
@@ -53,7 +55,9 @@
                                         <th>CONTACTED LEADS</th>
                                         <th>QUALIFIED LEADS</th>
                                         <th>CONVERSION RATE</th>
+                                        @if(get_role($workplace->id) == 0 || get_role($workplace->id) == 1)
                                         <th>MANAGE</th>
+                                        @endif
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -86,11 +90,52 @@
                                         <td>214</td>
                                         <td>78</td>
                                         <td>20%</td>
+                                        @if(get_role($workplace->id) == 0 || get_role($workplace->id) == 1)
                                         <td>
-                                            <button type="button" class="btn btn-info btn-outline btn-circle btn-lg m-r-5">
+                                            {{-- <button type="button" class="btn btn-info btn-outline btn-circle btn-lg m-r-5">
                                                 <i class="mdi mdi-check-circle-outline"></i>
-                                            </button>
+                                            </button> --}}
+                                            <input onchange="change_status(this)" type="checkbox" 
+                                            @if($value->pivot->status == 1)
+                                            checked
+                                            @endif
+                                            class="js-switch" data-color="#2cabe3" name="status" />
+                                            <input type="hidden" id="current_user{{$value->id}}" value="{{$value->id}}"/>
                                         </td>
+                                        @section('status')
+                                        <script>
+                                            var baseUrl = "{{url('/')}}";
+
+                                            function change_status(activate){
+                                                console.log(activate.checked)
+                                                var id= document.getElementById("current_user"+{{$value->id}}).value;
+                                                console.log(id)
+                                                var status;
+
+                                                if(activate.checked == true){
+                                                    status = 1;
+                                                }
+                                                else{
+                                                    status = 0;
+                                                }
+                                    
+                                                $.ajaxSetup({
+                                                    headers: {
+                                                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                                                    }
+                                                    });
+                                                    $.ajax({
+                                                        type:'GET',
+                                                        url:baseUrl+'/active_user_in_workspace/'+status+'/'+id+'/'+{{$workplace->id}},
+                                                        success:function(data){
+                                                            
+                                                            console.log(data)
+
+                                                        }
+                                                    });
+                                            }
+                                        </script>
+                                        @endsection
                                         <td>
                                             <button type="button" class="btn btn-info btn-outline btn-circle btn-lg m-r-5 remove_user_from_workspace_alert" id="sa-warning"
                                             onclick=" delete_user();">
@@ -146,6 +191,7 @@
                                                 </div>
                                             </a>
                                         </td>
+                                        @endif
                                     </tr>
                                     @endforeach
                                 </tbody>
@@ -156,4 +202,4 @@
             </div>
         </div>
     </div>
-@endsection
+@endsectiony

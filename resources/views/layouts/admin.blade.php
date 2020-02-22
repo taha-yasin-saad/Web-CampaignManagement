@@ -298,6 +298,7 @@
     {{-- <script src="{{asset('js/dashboard1.js')}}"></script> --}}
     <!-- Custom tab JavaScript -->
     <script src="{{asset('js/cbpFWTabs.js')}}"></script>
+    @yield('status')
     <script type="text/javascript">
         (function () {
             [].slice.call(document.querySelectorAll('.sttabs')).forEach(function (el) {
@@ -446,6 +447,7 @@
             });
         });
     </script>
+    
     <!-- end get time zone -->
     <script src="{{asset('plugins/bower_components/toast-master/js/jquery.toast.js')}}"></script>
     <!--Style Switcher -->
