@@ -26,10 +26,10 @@ class LeadController extends Controller
 						return response()->json(array('code' => 1,'msg_en'=> 'Wrong Data','msg_ar'=>'خطأ فى البيانات','error'=>$validator->messages()), 200, ['Access-Control-Allow-Origin' => '*'], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
 				} else {
                     $lead = new Lead();
-                    $lead->product_id = $data->product_id;
-                    $lead->phone = $data->phone;
-                    $lead->name = $data->name;
-                    $lead->lead = json_encode($data);
+                    $lead->product_id = $request->product_id;
+                    $lead->phone = $request->phone;
+                    $lead->name = $request->name;
+                    $lead->lead = json_encode($request->all());
 					return response()->json(array('code' => '0', 'msg_en' => 'Request Has been Sent Successfully', 'msg_ar' => 'تم إرسال الطلب بنجاح'), 200, ['Access-Control-Allow-Origin' => '*'], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
 				}
     }
