@@ -1,4 +1,4 @@
-<?
+<?php
 
 use App\Workplace;
 use App\User;
@@ -13,3 +13,5 @@ function get_role($workplace_id){
     $role = WorkplaceUser::where('user_id',Auth::user()->id)->where('workplace_id',$workplace_id)->first()->role;
     return $role;
 }
+
+?>
