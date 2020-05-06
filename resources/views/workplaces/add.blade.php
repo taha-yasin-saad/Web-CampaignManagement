@@ -145,7 +145,8 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>Website</label>
-                                                <input type="text" class="form-control" name="website"> </div>
+                                                <input type="url" class="form-control" name="website" placeholder="https://example.com" value="@if(isset($data)){{$data->website}}@endif">
+                                            </div>
                                         </div>
                                         <!--/span-->
                                         <div class="col-md-6">
@@ -164,12 +165,87 @@
                                         </div>
                                         <!--/span-->
                                     </div>
+                                    
+                                        <label>working days & times</label>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="row form-group">
+                                                <div class="col-xs-4">
+                                                    <input onchange='change_status(this,"sunStart", "sunEnd")' type="checkbox" 
+                                                    class="js-switch" data-color="#2cabe3" name="status"/> Sunday </div>
+                                                <div class="col-xs-4"> <input type="time"  id="sunStart" class="form-control" disabled></div>
+                                                <div class="col-xs-4"> <input type="time" id="sunEnd" class="form-control" disabled> </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="row form-group">
+                                                <div class="col-xs-4">
+                                                    <input onchange='change_status(this,"monStart", "monEnd")' type="checkbox" 
+                                                    class="js-switch" data-color="#2cabe3" name="status" /> Monday </div>
+                                                <div class="col-xs-4"> <input type="time" name="" id="monStart" class="form-control" disabled> </div>
+                                                <div class="col-xs-4"> <input type="time" name="" id="monEnd" class="form-control" disabled> </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="row form-group">
+                                                <div class="col-xs-4">
+                                                    <input onchange='change_status(this,"tueStart", "tueEnd")' type="checkbox" 
+                                                    class="js-switch" data-color="#2cabe3" name="status" /> Tuesday </div>
+                                                <div class="col-xs-4"> <input type="time" name="" id="tueStart" class="form-control" disabled> </div>
+                                                <div class="col-xs-4"> <input type="time" name="" id="tueEnd" class="form-control" disabled> </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="row form-group">
+                                                <div class="col-xs-4">
+                                                    <input onchange='change_status(this,"wedStart", "wedEnd")' type="checkbox" 
+                                                    class="js-switch" data-color="#2cabe3" name="status" /> Wednesday </div>
+                                                <div class="col-xs-4"> <input type="time" name="" id="wedStart" class="form-control" disabled> </div>
+                                                <div class="col-xs-4"> <input type="time" name="" id="wedEnd" class="form-control" disabled> </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="row form-group">
+                                                <div class="col-xs-4">
+                                                    <input onchange='change_status(this,"thuStart", "thuEnd")' type="checkbox" 
+                                                    class="js-switch" data-color="#2cabe3" name="status" /> Thursday </div>
+                                                <div class="col-xs-4"> <input type="time" name="" id="thuStart" class="form-control" disabled> </div>
+                                                <div class="col-xs-4"> <input type="time" name="" id="thuEnd" class="form-control" disabled> </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="row form-group">
+                                                <div class="col-xs-4">
+                                                    <input onchange='change_status(this,"friStart", "friEnd")' type="checkbox" 
+                                                    class="js-switch" data-color="#2cabe3" name="status" /> Friday </div>
+                                                <div class="col-xs-4"> <input type="time" name="" id="friStart" class="form-control" disabled> </div>
+                                                <div class="col-xs-4"> <input type="time" name="" id="friEnd" class="form-control" disabled> </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="row form-group">
+                                                <div class="col-xs-4">
+                                                    <input onchange='change_status(this,"sutStart", "sutEnd")' type="checkbox" 
+                                                    class="js-switch" data-color="#2cabe3" name="status" /> Suterday </div>
+                                                <div class="col-xs-4"> <input type="time" name="" id="sutStart" class="form-control" disabled> </div>
+                                                <div class="col-xs-4"> <input type="time" name="" id="sutEnd" class="form-control" disabled> </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <script>
+                                        function change_status(value,start,end){
+                                            console.log(value.checked)
+                                            document.getElementById(start).disabled = !value.checked;
+                                            document.getElementById(end).disabled = !value.checked;
+                                        }
+                                    </script>
                                 </div>
                                 <div class="form-actions text-right">
                                     <button type="submit" class="btn btn-success"> <i class="fa fa-check"></i> Save</button>
                                     <button type="reset" class="btn btn-dark">Cancel</button>
                                 </div>
                             </form>
+                            
                         </div>
                     </div>
                 </div>

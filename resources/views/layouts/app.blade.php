@@ -73,12 +73,39 @@
     <script>
     var input = document.querySelector("#phone");
     window.intlTelInput(input);
-    var iti = window.intlTelInputGlobals.getInstance(input);
-    input.addEventListener("countrychange", function() {
-        console.log(iti.getSelectedCountryData().dialCode);
-        $('#phone').val(iti.getSelectedCountryData().dialCode);
-    });
+    
     </script>
+      <script>
+        var input = document.querySelector("#phone");
+        window.intlTelInput(input, {
+        //   allowDropdown: false,
+        //   autoHideDialCode: false,
+          autoPlaceholder: "aggressive",
+        //   dropdownContainer: document.body,
+        //   excludeCountries: ["us"],
+        //   formatOnDisplay: false,
+        //   geoIpLookup: function(callback) {
+        //     $.get("http://ipinfo.io", function() {}, "jsonp").always(function(resp) {
+        //       var countryCode = (resp && resp.country) ? resp.country : "";
+        //       callback(countryCode);
+        //     });
+        //   },
+        //   hiddenInput: "full_number",
+        //   initialCountry: "auto",
+        //   localizedCountries: { 'de': 'Deutschland' },
+        //   nationalMode: false,
+        //   onlyCountries: ['us', 'gb', 'ch', 'ca', 'do'],
+          placeholderNumberType: "MOBILE",
+        //   preferredCountries: ['cn', 'jp'],
+        //   separateDialCode: true,
+          utilsScript: "build/js/utils.js",
+        });
+        var iti = window.intlTelInputGlobals.getInstance(input);
+        input.addEventListener("countrychange", function() {
+            console.log(iti.getSelectedCountryData().dialCode);
+            $('#phone2').val(iti.getSelectedCountryData().dialCode);
+        });
+      </script>
 
 <script src="http://www.geoplugin.net/javascript.gp" type="text/javascript"></script>
 
@@ -99,7 +126,7 @@
             url:baseUrl+'/phoneCode/'+code,
             success:function(data){
                 let phone_code = data;
-                $('#phone').val(data);
+                $('#phone2').val(data);
                 var res = code.toLowerCase();
                 iti.setCountry(res);
                 

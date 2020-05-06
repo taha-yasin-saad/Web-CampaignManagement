@@ -62,7 +62,7 @@
           <div class="col-md-12">
             <div class="checkbox checkbox-info pull-left p-t-0">
               <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-              <label for="checkbox-signup"> Remember me </label>
+              <label for="remember"> Remember me </label>
             </div>
           </div>
         </div>

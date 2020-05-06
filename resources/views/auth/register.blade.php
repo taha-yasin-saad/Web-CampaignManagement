@@ -40,6 +40,7 @@
         <div class="form-group  m-t-20">
           <div class="col-xs-12">
             <label>Phone Number</label>
+            <input id="phone2" name="country_code" type="hidden">
             <input id="phone" type="phone" class="form-control @error('phone') is-invalid @enderror" name="phone" value="{{ old('phone') }}" required autocomplete="phone" placeholder="Phone Number">
             @error('phone')
             <span class="invalid-feedback" role="alert">
@@ -69,7 +70,7 @@
           <div class="col-md-12">
             <div class="checkbox checkbox-info pull-left p-t-0">
               <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-              <label for="checkbox-signup"> Remember me </label>
+              <label for="remember"> Remember me </label>
             </div>
           </div>
         </div>

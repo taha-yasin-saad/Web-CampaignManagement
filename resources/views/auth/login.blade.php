@@ -35,8 +35,8 @@
                     <div class="form-group">
                       <div class="col-md-12">
                         <div class="checkbox checkbox-info pull-left p-t-0">
-                          <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-                          <label for="checkbox-signup"> Remember me </label>
+                          <input class="form-check-input" type="checkbox" name="remember" id="remember_login" {{ old('remember') ? 'checked' : '' }}>
+                          <label for="remember_login"> Remember me </label>
                         </div>
                         <a href="{{ route('password.request') }}" class="text-dark pull-right"><i class="fa fa-lock m-r-5"></i> Forgot pwd?</a> </div>
                     </div>
