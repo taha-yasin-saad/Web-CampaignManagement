@@ -18,6 +18,11 @@ class ProductsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function index($workplace_id)
     {
         $query['workplace'] = Workplace::with('users')->where('id',$workplace_id)->first();
@@ -60,9 +65,11 @@ class ProductsController extends Controller
         ]);
         $product = Product::create($data);
         $save = new UserProduct;
-        $save->user_id = Auth::user()->id; 
+        $save->user_id = Auth::user()->id;
         $save->product_id = $product->id;
         $save->save();
+
+        $product->users()->attach($request->users);
 
         return redirect($request->workplace_id.'/products')->with('success', 'Added Successfully');
     }
@@ -196,7 +203,7 @@ class ProductsController extends Controller
         
         $product = Product::find($request->product_id);
 
-        $product->sync($request->users);
+        $product->users()->sync($request->users);
         
         return back()->with('success', 'Member added Successfully');
     }

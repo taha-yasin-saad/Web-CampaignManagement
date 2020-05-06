@@ -153,13 +153,13 @@
                                             <div class="form-group">
                                                 <label>Week Starts On</label>
                                                 <select class="form-control" name="startday" required>
-                                                    <option value="Monday">Monday</option>
-                                                    <option value="Tuesday">Tuesday</option>
-                                                    <option value="Wednesday">Wednesday</option>
-                                                    <option value="Thursday">Thursday</option>
-                                                    <option value="Friday">Friday</option>
-                                                    <option value="Saturday">Saturday</option>
-                                                    <option value="Sunday">Sunday</option>
+                                                    <option value="Monday" @if(isset($data) && $data->startday == 'Monday') selected @endif>Monday</option>
+                                                    <option value="Tuesday" @if(isset($data) && $data->startday == 'Tuesday') selected @endif>Tuesday</option>
+                                                    <option value="Wednesday" @if(isset($data) && $data->startday == 'Wednesday') selected @endif>Wednesday</option>
+                                                    <option value="Thursday" @if(isset($data) && $data->startday == 'Thursday') selected @endif>Thursday</option>
+                                                    <option value="Friday" @if(isset($data) && $data->startday == 'Friday') selected @endif>Friday</option>
+                                                    <option value="Saturday" @if(isset($data) && $data->startday == 'Saturday') selected @endif>Saturday</option>
+                                                    <option value="Sunday" @if(isset($data) && $data->startday == 'Sunday') selected @endif>Sunday</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -172,69 +172,69 @@
                                             <div class="row form-group">
                                                 <div class="col-xs-4">
                                                     <input onchange='change_status(this,"sunStart", "sunEnd")' type="checkbox" 
-                                                    class="js-switch" data-color="#2cabe3" name="status"/> Sunday </div>
-                                                <div class="col-xs-4"> <input type="time"  id="sunStart" class="form-control" disabled></div>
-                                                <div class="col-xs-4"> <input type="time" id="sunEnd" class="form-control" disabled> </div>
+                                                    class="js-switch" data-color="#2cabe3" name="status" @if(isset($data) && isset($data->times) && $data->times->sun_start) checked @endif /> Sunday </div>
+                                                <div class="col-xs-4"> <input type="time" name="sun_start" value="@if(isset($data) && isset($data->times)){{$data->times->sun_start}}@endif" id="sunStart" class="form-control" @if(isset($data) && isset($data->times) && $data->times->sun_start) @else disabled @endif></div>
+                                                <div class="col-xs-4"> <input type="time" name="sun_end" value="@if(isset($data) && isset($data->times)){{$data->times->sun_end}}@endif" id="sunEnd" class="form-control" @if(isset($data) && isset($data->times) && $data->times->sun_start) @else disabled @endif> </div>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="row form-group">
                                                 <div class="col-xs-4">
                                                     <input onchange='change_status(this,"monStart", "monEnd")' type="checkbox" 
-                                                    class="js-switch" data-color="#2cabe3" name="status" /> Monday </div>
-                                                <div class="col-xs-4"> <input type="time" name="" id="monStart" class="form-control" disabled> </div>
-                                                <div class="col-xs-4"> <input type="time" name="" id="monEnd" class="form-control" disabled> </div>
+                                                    class="js-switch" data-color="#2cabe3" name="status" @if(isset($data) && isset($data->times) && $data->times->mon_start) checked @endif /> Monday </div>
+                                                <div class="col-xs-4"> <input type="time" name="mon_start" value="@if(isset($data) && isset($data->times)){{$data->times->mon_start}}@endif" id="monStart" class="form-control" @if(isset($data) && isset($data->times) && $data->times->mon_start) @else disabled @endif> </div>
+                                                <div class="col-xs-4"> <input type="time" name="mon_end" value="@if(isset($data) && isset($data->times)){{$data->times->mon_end}}@endif" id="monEnd" class="form-control" @if(isset($data) && isset($data->times) && $data->times->mon_start) @else disabled @endif> </div>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="row form-group">
                                                 <div class="col-xs-4">
                                                     <input onchange='change_status(this,"tueStart", "tueEnd")' type="checkbox" 
-                                                    class="js-switch" data-color="#2cabe3" name="status" /> Tuesday </div>
-                                                <div class="col-xs-4"> <input type="time" name="" id="tueStart" class="form-control" disabled> </div>
-                                                <div class="col-xs-4"> <input type="time" name="" id="tueEnd" class="form-control" disabled> </div>
+                                                    class="js-switch" data-color="#2cabe3" name="status" @if(isset($data) && isset($data->times) && $data->times->tue_start) checked @endif /> Tuesday </div>
+                                                <div class="col-xs-4"> <input type="time" name="tue_start" value="@if(isset($data) && isset($data->times)){{$data->times->tue_start}}@endif" id="tueStart" class="form-control" @if(isset($data) && isset($data->times) && $data->times->tue_start) @else disabled @endif> </div>
+                                                <div class="col-xs-4"> <input type="time" name="tue_end" value="@if(isset($data) && isset($data->times)){{$data->times->tue_end}}@endif" id="tueEnd" class="form-control" @if(isset($data) && isset($data->times) && $data->times->tue_start) @else disabled @endif> </div>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="row form-group">
                                                 <div class="col-xs-4">
                                                     <input onchange='change_status(this,"wedStart", "wedEnd")' type="checkbox" 
-                                                    class="js-switch" data-color="#2cabe3" name="status" /> Wednesday </div>
-                                                <div class="col-xs-4"> <input type="time" name="" id="wedStart" class="form-control" disabled> </div>
-                                                <div class="col-xs-4"> <input type="time" name="" id="wedEnd" class="form-control" disabled> </div>
+                                                    class="js-switch" data-color="#2cabe3" name="status" @if(isset($data) && isset($data->times) && $data->times->wed_start) checked @endif /> Wednesday </div>
+                                                <div class="col-xs-4"> <input type="time" name="wed_start" value="@if(isset($data) && isset($data->times)){{$data->times->wed_start}}@endif" id="wedStart" class="form-control" @if(isset($data) && isset($data->times) && $data->times->wed_start) @else disabled @endif> </div>
+                                                <div class="col-xs-4"> <input type="time" name="wed_end" value="@if(isset($data) && isset($data->times)){{$data->times->wed_end}}@endif" id="wedEnd" class="form-control" @if(isset($data) && isset($data->times) && $data->times->wed_start) @else disabled @endif> </div>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="row form-group">
                                                 <div class="col-xs-4">
                                                     <input onchange='change_status(this,"thuStart", "thuEnd")' type="checkbox" 
-                                                    class="js-switch" data-color="#2cabe3" name="status" /> Thursday </div>
-                                                <div class="col-xs-4"> <input type="time" name="" id="thuStart" class="form-control" disabled> </div>
-                                                <div class="col-xs-4"> <input type="time" name="" id="thuEnd" class="form-control" disabled> </div>
+                                                    class="js-switch" data-color="#2cabe3" name="status" @if(isset($data) && isset($data->times) && $data->times->thu_start) checked @endif /> Thursday </div>
+                                                <div class="col-xs-4"> <input type="time" name="thu_start" value="@if(isset($data) && isset($data->times)){{$data->times->thu_start}}@endif" id="thuStart" class="form-control" @if(isset($data) && isset($data->times) && $data->times->thu_start) @else disabled @endif> </div>
+                                                <div class="col-xs-4"> <input type="time" name="thu_end" value="@if(isset($data) && isset($data->times)){{$data->times->thu_end}}@endif" id="thuEnd" class="form-control" @if(isset($data) && isset($data->times) && $data->times->thu_start) @else disabled @endif> </div>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="row form-group">
                                                 <div class="col-xs-4">
                                                     <input onchange='change_status(this,"friStart", "friEnd")' type="checkbox" 
-                                                    class="js-switch" data-color="#2cabe3" name="status" /> Friday </div>
-                                                <div class="col-xs-4"> <input type="time" name="" id="friStart" class="form-control" disabled> </div>
-                                                <div class="col-xs-4"> <input type="time" name="" id="friEnd" class="form-control" disabled> </div>
+                                                    class="js-switch" data-color="#2cabe3" name="status" @if(isset($data) && isset($data->times) && $data->times->fri_start) checked @endif /> Friday </div>
+                                                <div class="col-xs-4"> <input type="time" name="fri_start" value="@if(isset($data) && isset($data->times)){{$data->times->fri_start}}@endif" id="friStart" class="form-control" @if(isset($data) && isset($data->times) && $data->times->fri_start) @else disabled @endif> </div>
+                                                <div class="col-xs-4"> <input type="time" name="fri_end" value="@if(isset($data) && isset($data->times)){{$data->times->fri_end}}@endif" id="friEnd" class="form-control" @if(isset($data) && isset($data->times) && $data->times->fri_start) @else disabled @endif> </div>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="row form-group">
                                                 <div class="col-xs-4">
                                                     <input onchange='change_status(this,"sutStart", "sutEnd")' type="checkbox" 
-                                                    class="js-switch" data-color="#2cabe3" name="status" /> Suterday </div>
-                                                <div class="col-xs-4"> <input type="time" name="" id="sutStart" class="form-control" disabled> </div>
-                                                <div class="col-xs-4"> <input type="time" name="" id="sutEnd" class="form-control" disabled> </div>
+                                                    class="js-switch" data-color="#2cabe3" name="status" @if(isset($data) && isset($data->times) && $data->times->sat_start) checked @endif /> Saturday </div>
+                                                <div class="col-xs-4"> <input type="time" name="sat_start" value="@if(isset($data) && isset($data->times)){{$data->times->sat_start}}@endif" id="sutStart" class="form-control" @if(isset($data) && isset($data->times) && $data->times->sat_start) @else disabled @endif> </div>
+                                                <div class="col-xs-4"> <input type="time" name="sat_end" value="@if(isset($data) && isset($data->times)){{$data->times->sat_end}}@endif" id="sutEnd" class="form-control" @if(isset($data) && isset($data->times) && $data->times->sat_start) @else disabled @endif> </div>
                                             </div>
                                         </div>
                                     </div>
                                     <script>
                                         function change_status(value,start,end){
-                                            console.log(value.checked)
+                                            console.log(value.checked);
                                             document.getElementById(start).disabled = !value.checked;
                                             document.getElementById(end).disabled = !value.checked;
                                         }

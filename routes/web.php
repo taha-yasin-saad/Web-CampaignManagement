@@ -31,7 +31,9 @@ Route::post('leads_filter', 'LeadController@filter');
 //new routes
 Route::get('{workplace_id}/products', 'ProductsController@index');
 Route::get('{workplace_id}/team','WorkplacesController@team');
+Route::get('{workplace_id}/team/{product_id}','WorkplacesController@product_team');
 Route::post('/invite_member_workplace', 'ProductsController@invite_member_workplace');
+Route::post('/edit_user_role', 'WorkplacesController@edit_user_role');
 Route::post('/choose_members', 'ProductsController@choose_members');
 Route::post('/add_product_to_user', 'ProductsController@add_product_to_user');
 Route::get('remove_user_from_workspace/{user_id}/{workplace_id}', 'WorkplacesController@remove_user_from_workspace');

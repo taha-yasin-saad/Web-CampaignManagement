@@ -6,6 +6,7 @@ use App\Workplace;
 use App\Product;
 use App\UserProduct;
 use App\WorkplaceUser;
+use App\Times;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -16,6 +17,10 @@ class WorkplacesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index()
     {
         $query['invitations'] = UserProduct::where('user_id', auth()->user()->id)->with('products', 'products.workplace')->get();
@@ -37,6 +42,29 @@ class WorkplacesController extends Controller
         }
 
         return view('workplaces.team',$query);
+    }
+    public function product_team($workplace_id,$product_id)
+    {
+        $query['workplace'] = Workplace::with('products','users','users.products')->where('id', $workplace_id)->first();
+        foreach($query['workplace']->users as $value){
+            $selected_ids = array();
+            foreach($value->products as $val){
+                array_push($selected_ids, $val->id);
+            }
+            $value->selected_ids = $selected_ids;
+        }
+        $query['product_id'] = $product_id;
+        return view('workplaces.team',$query);
+    }
+
+    public function edit_user_role(Request $request)
+    {
+        $save = WorkplaceUser::where('user_id',$request->user_id)->where('workplace_id',$request->workplace_id)->first();
+        if($save){
+            $save->role = $request->role;
+            $save->save();
+        }
+        return back()->with('success', 'Role Updated Successfully');
     }
 
 
@@ -66,15 +94,28 @@ class WorkplacesController extends Controller
             'timezone'=>'required',
             'startday'=>'required',
             'website'=>''
-        ]);    
+        ]);
         
         $workplace = Workplace::create($data);
+
         $save = new WorkplaceUser;
         $save->workplace_id = $workplace->id;
         $save->user_id = $request->admin_id;
         $save->status = 1;
         $save->save();
+
+        $data = $request->except(['_token','_method','title','admin_id','timezone','website','startday','status']);
+        $data['workplace_id'] = $workplace->id;
+        $times = Times::create($data);
         
+        $product_data['title'] = "General";
+        $product_data['workplace_id'] = $workplace->id;
+        $product = Product::create($product_data);
+        $save = new UserProduct;
+        $save->user_id = $request->admin_id;
+        $save->product_id = $product->id;
+        $save->save();
+
         return redirect('check')->with('success','Edited Successfully');
     }
 
@@ -104,6 +145,7 @@ class WorkplacesController extends Controller
     public function edit(Workplace $workplace)
     {
         $query['data'] = $workplace;
+        //dd($query['data']);
         return view('workplaces.add', $query);
     }
 
@@ -116,12 +158,18 @@ class WorkplacesController extends Controller
      */
     public function update(Request $request, Workplace $workplace)
     {
-        $workplace->update([
-            'title' => $request->title,
-            'timezone' => $request->timezone,
-            'startday' => $request->startday,
-            'website' => $request->website,
-        ]);
+        //dd($request);
+        $data = $request->except(['_token','_method']);
+        $workplace->update($data);
+        $times = Times::where('workplace_id',$workplace->id)->first();
+        $data = $request->except(['_token','_method','title','admin_id','timezone','website','startday','status']);
+        $data['workplace_id'] = $workplace->id;
+        
+        if($times){
+            Times::where('workplace_id',$workplace->id)->update($data);
+        }else{
+            $times = Times::create($data);
+        }
         return redirect()->back()->with('success','Edited Successfully');
     }
 

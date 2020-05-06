@@ -35,7 +35,6 @@ class HomeController extends Controller
 
     public function check()
     {
-
         if (Auth::check()) {
             $check = WorkplaceUser::where('user_id',Auth::user()->id)->first();
             if($check){
@@ -46,7 +45,7 @@ class HomeController extends Controller
                 return redirect('workplace/create');
             }
         }else{
-            return view('auth.first');
+            return redirect('/');
         }
         
     }
