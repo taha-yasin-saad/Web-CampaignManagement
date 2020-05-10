@@ -63,7 +63,7 @@
                             </thead>
                             <tbody>
                                 @foreach($workplace->users as $key=>$value)
-                                @if (in_array($product_id,$value->selected_ids))
+                                @if (!isset($product_id)||in_array($product_id,$value->selected_ids))
                                 <tr>
                                     <td class="text-center">{{$key+1}}</td>
                                     <td>

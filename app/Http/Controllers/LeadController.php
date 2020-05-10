@@ -28,6 +28,14 @@ class LeadController extends Controller
         $query['leads'] = $query['leads']->get();
 
         $query['users'] = WorkplaceUser::where('workplace_id',session('workplace')->id)->with('user')->get();
+        $query['products'] = Product::with('users')->where('workplace_id',session('workplace')->id)->get();
+        foreach($query['products'] as $value){
+            $selected_ids = array();
+            foreach($value->users as $val){
+                array_push($selected_ids, $val->id);
+            }
+            $value->selected_ids = $selected_ids;
+        }
         // dd($query);
         return view('leads.leads', $query);
     }

@@ -10,6 +10,12 @@ function get_workplaces(){
     return $workplaces;
 }
 function get_role($workplace_id){
-    $role = WorkplaceUser::where('user_id',Auth::user()->id)->where('workplace_id',$workplace_id)->first()->role;
+    $user = WorkplaceUser::where('user_id',Auth::user()->id)->where('workplace_id',$workplace_id)->first();
+    if($user){
+        $role = $user->role;
+    }else{
+        $role = 9; // 9 for Permisions denied
+    }
+    //dd($role);
     return $role;
 }

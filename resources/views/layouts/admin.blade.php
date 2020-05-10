@@ -121,7 +121,7 @@
             <div class="sidebar-nav slimscrollsidebar">
                 <div class="sidebar-head">
                     
-                    <img src="{{asset('dark-logo.png')}}" alt="logo"     width= "100%">
+                    <img src="{{asset('dark-logo.png')}}" alt="logo" width= "100%">
                 </div>
                 <div class="dropdown workspace_dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
@@ -136,12 +136,14 @@
                     </a>
                     <ul class="dropdown-menu  animated">
                         @if(session('workplace'))
+                        @if(get_role(session('workplace')->id) == 0 || get_role(session('workplace')->id) == 1)
                         <li>
                             <a href="{{url('workplace/'.session('workplace')->id.'/edit')}}">
                                 Workspace Preferences
                             </a>
                         </li>
                         <li role="separator" class="divider"></li>
+                        @endif
                         @foreach(get_workplaces() as $value)
                         <li>
                             <a href="{{url($value->workplace->id.'/products')}}">
@@ -161,7 +163,7 @@
                     <!-- /.dropdown-user -->
                 </div>
                 <ul class="nav" id="side-menu">
-                    @if(session('workplace'))
+                    @if(session('workplace') && get_role(session('workplace')->id) != 9)
                     <li>
                         <a href="#" class="waves-effect"><i class="mdi mdi-home fa-fw" data-icon="v"></i>
                             <span class="hide-menu"> Dashboard <span class="fa arrow"></span> </span>
@@ -185,6 +187,7 @@
                             <span class="hide-menu"> Team <span class="fa arrow"></span> </span>
                         </a>
                     </li>
+                    @if(get_role(session('workplace')->id) == 0 || get_role(session('workplace')->id) == 1)
                     <li>
                         <a href="#" class="waves-effect"><i class="mdi mdi-filter fa-fw" data-icon="v"></i>
                             <span class="hide-menu"> Lead Sources <span class="fa arrow"></span> </span>
@@ -195,6 +198,7 @@
                             <span class="hide-menu"> Reports <span class="fa arrow"></span> </span>
                         </a>
                     </li>
+                    @endif
                     @endif
                 </ul>
                 <div class="sidebar-footer">

@@ -19,6 +19,9 @@
         </div>
         <!-- .row -->
         <div class="row">
+            @if(get_role($workplace->id) == 9)
+            <h3 class="text-center">you Have not Permission to access that Workspace</h3>
+            @else
             <div class="col-xs-12">
                 <div class="panel">
                     <div class="row panel-heading">
@@ -98,6 +101,7 @@
                 @endif
                 @if(count($data) > 0)
                 @foreach ($data as $value)
+                @if (get_role($workplace->id) <= 1 || (get_role($workplace->id) > 1 && in_array($user->id,$value->selected_ids)))
                 <div class="panel">
                     <div class="row panel-heading">
                         <div class="col-md-6 col-sm-6 col-xs-6">
@@ -211,12 +215,13 @@
                         </table>
                     </div>
                 </div>
-
+                @endif
                 @endforeach
                 @else
                 <h3>You Have not any product Yet ...</h3>
                 @endif
             </div>
+            @endif
         </div>
 
         <!-- /.row -->

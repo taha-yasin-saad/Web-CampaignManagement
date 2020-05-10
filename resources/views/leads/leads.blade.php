@@ -84,7 +84,9 @@
                                             <select class="form-control" id="assigned">
                                                 <option selected disabled>Select User</option>
                                                 @foreach ($users as $user)
+                                                    @if(get_role(session('workplace')->id) <= 2 || Auth::user()->id == $user->user->id)
                                                     <option value="{{$user->user->id}}" >{{$user->user->name}}</option>
+                                                    @endif
                                                 @endforeach
                                             </select>
                                         </div>
@@ -94,8 +96,10 @@
                                             <label for="assigned">Product</label>
                                             <select class="form-control" name="product_id" id="assigned">
                                                 <option selected disabled>Select Product</option>
-                                                @foreach ($leads as $lead)
-                                                    <option value="{{$lead->product_id}}" @if(isset($_GET['product_id']) && $_GET['product_id'] == $lead->product_id) selected @endif>{{$lead->title}}</option>
+                                                @foreach ($products as $value)
+                                                    @if (get_role(session('workplace')->id) <= 1 || (get_role(session('workplace')->id) > 1 && in_array(Auth::user()->id,$value->selected_ids)))
+                                                    <option value="{{$value->id}}" @if(isset($_GET['product_id']) && $_GET['product_id'] == $value->id) selected @endif>{{$value->title}}</option>
+                                                    @endif
                                                 @endforeach
                                             </select>
                                         </div>
