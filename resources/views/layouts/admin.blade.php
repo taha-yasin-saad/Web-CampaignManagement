@@ -50,6 +50,8 @@
         type="text/css" />
     <!--alerts CSS -->
     <link href="{{asset('plugins/bower_components/sweetalert/sweetalert.css')}}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="{{asset('css/intl-tel-input-16.0.0/build/css/intlTelInput.css')}}">
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -451,7 +453,84 @@
             });
         });
     </script>
+        {{-- country flag js --}}
+        <script src="{{asset('css/intl-tel-input-16.0.0/build/js/intlTelInput.js')}}"></script>
+        <script>
+        var input = document.querySelector("#phone");
+        window.intlTelInput(input);
+        
+        </script>
+          <script>
+            var input = document.querySelector("#phone");
+            window.intlTelInput(input, {
+              autoPlaceholder: "aggressive",
+              placeholderNumberType: "MOBILE",
+              utilsScript: "build/js/utils.js",
+            });
+            var iti = window.intlTelInputGlobals.getInstance(input);
+            input.addEventListener("countrychange", function() {
+                console.log(iti.getSelectedCountryData().dialCode);
+                $('.phone22').val(iti.getSelectedCountryData().dialCode);
+            });
+          </script>
     
+    <script src="http://www.geoplugin.net/javascript.gp" type="text/javascript"></script>
+    @if(isset(auth()->user()->country_code))
+    <script>
+        // iti.setCountry({{auth()->user()->country_code}});
+        var baseUrl = "{{url('/')}}";
+        jQuery(document).ready(function($) {
+            
+        jQuery.getScript('http://www.geoplugin.net/javascript.gp', function() 
+        {
+            
+            $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+            });
+            $.ajax({
+                type:'GET',
+                url:baseUrl+'/isoCode/'+{{auth()->user()->country_code}},
+                success:function(data){
+                    // let phone_code = data;
+                    // $('#phone2').val(data);
+                    var iso = data.toLowerCase();
+                    iti.setCountry(iso);
+                    
+                }
+            });
+        });
+        });
+    </script>
+    @else
+    <script type="text/javascript">
+        var baseUrl = "{{url('/')}}";
+        jQuery(document).ready(function($) {
+            
+        jQuery.getScript('http://www.geoplugin.net/javascript.gp', function() 
+        {
+            var code= geoplugin_countryCode();
+            $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+            });
+            $.ajax({
+                type:'GET',
+                url:baseUrl+'/phoneCode/'+code,
+                success:function(data){
+                    let phone_code = data;
+                    $('#phone2').val(data);
+                    var res = code.toLowerCase();
+                    iti.setCountry(res);
+                    
+                }
+            });
+        });
+        });
+    </script>
+    @endif
     <!-- end get time zone -->
     <script src="{{asset('plugins/bower_components/toast-master/js/jquery.toast.js')}}"></script>
     <!--Style Switcher -->

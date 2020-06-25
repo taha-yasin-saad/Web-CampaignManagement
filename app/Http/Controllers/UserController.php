@@ -4,9 +4,14 @@ namespace App\Http\Controllers;
 
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -69,14 +74,22 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
+        // dd($request->country_code);
         $data = $request->validate([
             'name'=>'required',
             'email'=>'required|email',
-            'phone'=>'required|numeric'
+            'phone'=>'required|numeric',
+            'country_code'=>'required'
         ]);
         $user = $user->find(Auth()->user()->id);
+        if($request->password){
+            $request->validate([
+                'password' => ['required', 'string', 'min:6'],
+            ]);
+            $data['password'] =  Hash::make($request['password']);
+        }
         $user->update($data);
-        return back()->with('success', 'your profile has been updated successfully');
+        return redirect('/')->with('success', 'your profile has been updated successfully');
     }
 
     /**

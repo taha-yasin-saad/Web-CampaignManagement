@@ -64,10 +64,10 @@ class ProductsController extends Controller
             'workplace_id' => 'required'
         ]);
         $product = Product::create($data);
-        $save = new UserProduct;
-        $save->user_id = Auth::user()->id;
-        $save->product_id = $product->id;
-        $save->save();
+        // $save = new UserProduct;
+        // $save->user_id = Auth::user()->id;
+        // $save->product_id = $product->id;
+        // $save->save();
 
         $product->users()->attach($request->users);
 

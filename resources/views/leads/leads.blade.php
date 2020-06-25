@@ -85,7 +85,8 @@
                                                 <option selected disabled>Select User</option>
                                                 @foreach ($users as $user)
                                                     @if(get_role(session('workplace')->id) <= 2 || Auth::user()->id == $user->user->id)
-                                                    <option value="{{$user->user->id}}" >{{$user->user->name}}</option>
+                                                    <option value="{{$user->user->id}}" >@if($user->user->name){{$user->user->name}} @else 
+                                                        {{$user->user->email}}@endif</option>
                                                     @endif
                                                 @endforeach
                                             </select>

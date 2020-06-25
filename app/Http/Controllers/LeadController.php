@@ -9,6 +9,10 @@ use Illuminate\Http\Request;
 
 class LeadController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index(){
         $query['leads'] = Product::where('workplace_id',session('workplace')->id)->join('leads', 'leads.product_id', '=', 'products.id')
         ->orderBy('leads.id')->select('*','products.id as product_id');

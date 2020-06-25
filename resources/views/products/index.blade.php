@@ -107,7 +107,7 @@
                         <div class="col-md-6 col-sm-6 col-xs-6">
                             <p>{{$value->title}}</p>
                             @foreach($value->users as $val)
-                            <span class="label bg-inverse m-r-10">{{$val->name}}</span>
+                        <span class="label bg-inverse m-r-10">@if($val->name){{$val->name}}@else{{$val->email}} @endif</span>
                             @endforeach
                             <a href="{{url(session('workplace')->id.'/team/'.$value->id)}}" class=" m-r-10">More...</a>
                             @if(get_role($workplace->id) == 0 || get_role($workplace->id) == 1 ||
