@@ -158,7 +158,7 @@ class ProductsController extends Controller
         $data['subject'] = 'CLOSOR Invitation';
         $data['email'] = $request->email;
         \Illuminate\Support\Facades\Mail::send('auth.email_invite', $data, function ($message) use ($data) {
-            $message->from('info@closor.com', 'CLOSOR')->to($data['email'], 'CLOSOR')->subject($data['subject']);
+            $message->from('support@closor.com', 'CLOSOR')->to($data['email'], 'CLOSOR')->subject($data['subject']);
         });
         return back()->with('success', 'Email invited Successfully');
     }
@@ -193,7 +193,7 @@ class ProductsController extends Controller
         $data['subject'] = 'CLOSOR Invitation';
         $data['email'] = $request->email;
         \Illuminate\Support\Facades\Mail::send('auth.email_invite', $data, function ($message) use ($data) {
-            $message->from('info@closor.com', 'CLOSOR')->to($data['email'], 'CLOSOR')->subject($data['subject']);
+            $message->from('support@closor.com', 'CLOSOR')->to($data['email'], 'CLOSOR')->subject($data['subject']);
         });
         return back()->with('success', 'Email invited Successfully');
     }
