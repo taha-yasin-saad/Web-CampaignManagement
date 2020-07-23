@@ -50,3 +50,7 @@ Route::get('isoCode/{code}','AjaxController@isoCode');
 Route::group(['middleware' => 'auth.admin', 'prefix' => 'admin'], function(){
     Route::get('/dashboard','AdminController@index')->name('admin.dashboard');
 });
+
+Route::get('design',function() {
+    return view('sources.design');
+});

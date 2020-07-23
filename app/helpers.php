@@ -1,4 +1,4 @@
-<?
+<?php
 
 use App\Workplace;
 use App\User;
