@@ -52,5 +52,5 @@ Route::group(['middleware' => 'auth.admin', 'prefix' => 'admin'], function(){
 });
 
 Route::get('design',function() {
-    return view('design');
+    return view('sources.design');
 });

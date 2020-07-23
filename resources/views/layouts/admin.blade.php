@@ -42,6 +42,8 @@
     <link href="{{asset('css/animate.css')}}" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="{{asset('css/style.css')}}" rel="stylesheet">
+    <link href="{{asset('css/new.css')}}" rel="stylesheet">
+
     <!-- color CSS -->
     <link href="{{asset('css/colors/blue-dark.css')}}" id="theme" rel="stylesheet">
     <link href="{{asset('plugins/bower_components/multiselect/css/multi-select.css')}}" rel="stylesheet"
@@ -546,6 +548,7 @@
 
     @yield('chart')
     @yield('filter_table')
+    @yield('js')
 </body>
 
 </html>
