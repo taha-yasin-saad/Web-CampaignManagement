@@ -54,3 +54,6 @@ Route::group(['middleware' => 'auth.admin', 'prefix' => 'admin'], function(){
 Route::get('design',function() {
     return view('sources.design');
 });
+
+//leads Sources
+Route::resource('sources', 'SourceController');

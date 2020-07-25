@@ -197,7 +197,7 @@
                     </li>
                     @if(get_role(session('workplace')->id) == 0 || get_role(session('workplace')->id) == 1)
                     <li>
-                        <a href="#" class="waves-effect"><i class="mdi mdi-filter fa-fw" data-icon="v"></i>
+                        <a href="{{url('sources')}}" class="waves-effect"><i class="mdi mdi-filter fa-fw" data-icon="v"></i>
                             <span class="hide-menu"> Lead Sources <span class="fa arrow"></span> </span>
                         </a>
                     </li>

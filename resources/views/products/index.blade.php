@@ -155,7 +155,7 @@
                         <div class="col-md-6 col-sm-6 col-xs-6 text-right">
                             @if(get_role($workplace->id) == 0 || get_role($workplace->id) == 1 ||
                             get_role($workplace->id) == 2)
-                            <button type="button" class="btn btn-primary m-t-20">Add Lead Source</button>
+                            <a href="{{url('sources/create')}}" class="btn btn-primary m-t-20">Add Lead Source</a>
                             @endif
                         </div>
                     </div>

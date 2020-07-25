@@ -1,0 +1,97 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Source;
+use Illuminate\Http\Request;
+use App\Workplace;
+use App\Product;
+
+class SourceController extends Controller
+{
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        $workplace_id = session('workplace')->id;
+        $query['workplace'] = Workplace::with('users')->where('id',$workplace_id)->first();
+        $query['data'] = Source::where('workplace_id',$workplace_id)->get();
+        // dd($query['data']);
+        return view('sources.index',$query);
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        $workplace_id = session('workplace')->id;
+        $query['products'] = Product::with('users')->where('workplace_id',$workplace_id)->get();
+        $query['workplace'] = Workplace::with('users')->where('id',$workplace_id)->first();
+        // dd($query['products']);
+        return view('sources.add',$query);
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        $data=$request->all();
+        $product = Source::create($data);
+        return redirect('sources')->with('success', 'Added Successfully');
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\Source  $source
+     * @return \Illuminate\Http\Response
+     */
+    public function show(Source $source)
+    {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\Source  $source
+     * @return \Illuminate\Http\Response
+     */
+    public function edit(Source $source)
+    {
+        //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Source  $source
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, Source $source)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\Source  $source
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy(Source $source)
+    {
+        //
+    }
+}
