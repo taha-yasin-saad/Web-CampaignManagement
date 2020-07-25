@@ -42,7 +42,7 @@
     cursor: pointer;
     box-shadow: rgba(0, 0, 0, 0.22) 0px 0px 4px, rgba(0, 0, 0, 0.31) 0px 4px 8px;
     position: absolute;
-    background-color: rgb(52 ,168 ,83);
+    background-color: #34a853;
     color: rgb(255, 255, 255);
     left: 8px;
     width: 75px;
@@ -52,10 +52,11 @@
     user-select: none;
     transform: translate(0px, 4.24151e-15px);
 }
-.x-icon {
+#x-icon {
     font-size: 50px !important;
     text-align: center !important;
     padding: 3px 12px !important;
+    color: white;
 }
 .buttonround_tooltip {
     resize: none;
@@ -67,7 +68,7 @@
     padding: 0px 12px;
     top: 13px;
     line-height: 38px;
-    background-color: rgb(149, 154, 158);
+    background-color: #959a9e;
     color: white;
     border-radius: 12px !important;
     text-align: center;
