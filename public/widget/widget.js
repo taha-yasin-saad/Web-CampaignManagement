@@ -1,5 +1,5 @@
 
-    document.body.innerHTML += `<link href="http://localhost/closor/public/widget/widget.css" rel="stylesheet">
+    document.body.innerHTML += `<link href="http://malexs.net/closor/public/widget/widget.css" rel="stylesheet">
     <div class="closor-widget-container closor-device-desktop">
         <div
             class="closor-widget closor-widget-4827 closor-widget-call-kind-callback closor-widget-bubble-trigger-load closor-widget-popup-trigger-totalTimeSpent closor-widget-popover-trigger-totalTimeSpent closor-closing-mode-minimizes closor-is-available closor-callback-v1-widget closor-placement-bottom-right closor-callback-popup">
