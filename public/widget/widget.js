@@ -494,23 +494,20 @@
             </div>
     
         </div>
-    </div>
-    
-    <script>
+    </div>`;
     console.log(1111111111111);
-        document.getElementById("closor-call-icon").addEventListener("click", function(){
-            console.log(2222222222);
-            document.getElementById("closor-call-modal").classList.add("closor-show-modal");
-            document.getElementById("closor-callback-v1-popup-scroll-container").classList.add("closor-show-modal");
-        });
-        document.getElementById("closor-modal-background").addEventListener("click", function(){
-            console.log(3333333);
-            document.getElementById("closor-call-modal").classList.remove("closor-show-modal");
-            document.getElementById("closor-callback-v1-popup-scroll-container").classList.remove("closor-show-modal");
-        });
-        document.getElementById("closor-modal-close").addEventListener("click", function(){
-            document.getElementById("closor-call-modal").classList.remove("closor-show-modal");
-            document.getElementById("closor-callback-v1-popup-scroll-container").classList.remove("closor-show-modal");
-        });
-    </script>`;
+    document.getElementById("closor-call-icon").addEventListener("click", function(){
+        console.log(2222222222);
+        document.getElementById("closor-call-modal").classList.add("closor-show-modal");
+        document.getElementById("closor-callback-v1-popup-scroll-container").classList.add("closor-show-modal");
+    });
+    document.getElementById("closor-modal-background").addEventListener("click", function(){
+        console.log(3333333);
+        document.getElementById("closor-call-modal").classList.remove("closor-show-modal");
+        document.getElementById("closor-callback-v1-popup-scroll-container").classList.remove("closor-show-modal");
+    });
+    document.getElementById("closor-modal-close").addEventListener("click", function(){
+        document.getElementById("closor-call-modal").classList.remove("closor-show-modal");
+        document.getElementById("closor-callback-v1-popup-scroll-container").classList.remove("closor-show-modal");
+    });
 
