@@ -551,7 +551,7 @@
     @yield('chart')
     @yield('filter_table')
     @yield('js')
-    <script src="http://localhost/closor/public/widget/widget.js"></script>
+    <!-- <script src="http://localhost/closor/public/widget/widget.js"></script> -->
     <!-- @include('widget') -->
 </body>
 
