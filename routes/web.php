@@ -57,3 +57,5 @@ Route::get('design',function() {
 
 //leads Sources
 Route::resource('sources', 'SourceController');
+
+Route::get('widget/{id}', 'WidgetController@widget');
