@@ -76,7 +76,7 @@
                                                 class="ti-eye"></i></a>
                                                 <button type="button"
                                                 class="btn btn-info btn-outline btn-circle btn-lg m-r-5" onclick="copyToClipboard()"><i
-                                                    class="ti-copy"></i></button>
+                                                    class="fa fa-copy"></i></button>
                                         <button type="button"
                                             class="btn btn-info btn-outline btn-circle btn-lg m-r-5"><i
                                                 class="ti-pencil-alt"></i></button>
