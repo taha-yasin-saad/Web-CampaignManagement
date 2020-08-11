@@ -70,7 +70,7 @@
                                     @if(get_role($workplace->id) == 0 || get_role($workplace->id) == 1 ||
                                     get_role($workplace->id) == 2)
                                     <td>
-                                        <a href="{{url('widget/'.$value->id)}}"
+                                        <a href="{{url('widgetView/'.$value->id)}}"
                                             class="btn btn-info btn-outline btn-circle btn-lg m-r-5"><i
                                                 class="ti-eye"></i></a>
                                         <button type="button"

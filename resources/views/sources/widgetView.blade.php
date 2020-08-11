@@ -1,0 +1,1 @@
+<script src="http://localhost/closor/public/widget/widget.js?id={{$id}}"></script>
