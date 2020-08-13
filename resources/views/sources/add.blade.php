@@ -290,7 +290,10 @@
 </div>
 <script>
 $('.color').colorpicker({});
+console.log('mmmmmmmmmmmmmmm');
+
 $("#widget_type").change(function() {
+    console.log('hhh');
     if (this.value == "text") {
         $("#text-settings").show("swing");
         $("#icon-settings").hide("swing");

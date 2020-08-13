@@ -70,6 +70,13 @@
                                     @if(get_role($workplace->id) == 0 || get_role($workplace->id) == 1 ||
                                     get_role($workplace->id) == 2)
                                     <td>
+                                        <input style="display: none" value="<script src='http://localhost/closor/public/widget/widget.js?id={{$value->id}}'></script>" id="copyToClipboard">
+                                        <a href="{{url('widgetView/'.$value->id)}}"
+                                            class="btn btn-info btn-outline btn-circle btn-lg m-r-5"><i
+                                                class="ti-eye"></i></a>
+                                                <button type="button"
+                                                class="btn btn-info btn-outline btn-circle btn-lg m-r-5" onclick="copyToClipboard()"><i
+                                                    class="fa fa-copy"></i></button>
                                         <button type="button"
                                             class="btn btn-info btn-outline btn-circle btn-lg m-r-5"><i
                                                 class="ti-pencil-alt"></i></button>
@@ -77,6 +84,15 @@
                                     @endif
                                 </tr>
                                 @endforeach
+                                <script>
+                                    function copyToClipboard(){
+                                        var copyText = document.getElementById("copyToClipboard");
+                                        copyText.select();
+                                        copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+                                        document.execCommand("copy");
+                                        alert("Copied the text: " + copyText.value);
+                                    }
+                                </script>
                                 @else
                                 <h3>You Have not any Source Yet ...</h3>
 
