@@ -11,6 +11,26 @@ class WidgetController extends Controller
         $source = Source::find($id);
         $widget = '
         <link href="http://malexs.net/closor/public/widget/widget.css" rel="stylesheet">
+        <link href="http://malexs.net/closor/public/css/icons/material-design-iconic-font/css/materialdesignicons.min.css" rel="stylesheet">
+        <style>
+        .mdi:before, .mdi-set {
+            display: inline-block;
+            font: normal normal normal 24px/1 "Material Design Icons";
+            font-size: inherit;
+            text-rendering: auto;
+            line-height: inherit;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            transform: translate(0, 0);
+            width: 100%;
+            text-align: center;
+            font-size: 2em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+        </style>
         <div class="closor-widget-container closor-device-desktop">
             <div
                 class="closor-widget closor-widget-4827 closor-widget-call-kind-callback closor-widget-bubble-trigger-load closor-widget-popup-trigger-totalTimeSpent closor-widget-popover-trigger-totalTimeSpent closor-closing-mode-minimizes closor-is-available closor-callback-v1-widget closor-placement-bottom-right closor-callback-popup">
@@ -27,8 +47,10 @@ class WidgetController extends Controller
                             </div>';
                         }else{
                             $widget .= '
-                            <div class="closor-callback-v1-avatar" id="closor-call-icon" onclick="callCloserModal()">
-                                <div class="closor-callback-v1-avatar-icon"></div>
+                            <div class="closor-callback-v1-avatar" id="closor-call-icon" onclick="callCloserModal()" style="background:'.$source->primary.'!important;">
+                                <div class="closor-callback-v1-avatar-icon">
+                                    <li class="mdi mdi-headset fa-fw" id="x-icon" style="color:'.$source->secondary.'!important;"></li>
+                                </div>
                             </div>
                             <div class="closor-callback-v1-bubble" >
                                 <div class="closor-callback-v1-bubble-close" data-action="close-component"
