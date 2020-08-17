@@ -40,6 +40,7 @@
                             @endif
                         </div>
                     </div>
+                    <div id="has_been_copied"></div>
                     <div class="table-responsive">
                         <table class="table table-hover manage-u-table">
                             <thead>
@@ -70,12 +71,11 @@
                                     @if(get_role($workplace->id) == 0 || get_role($workplace->id) == 1 ||
                                     get_role($workplace->id) == 2)
                                     <td>
-                                        <input style="display: none" value="<script src='http://localhost/closor/public/widget/widget.js?id={{$value->id}}'></script>" id="copyToClipboard">
+                                    <input style="display: none" value="<script src='http://malexs.net/closor/public/widget/widget.js?id={{$value->id}}'></script>" id="copyToClipboard{{$value->id}}">
                                         <a href="{{url('widgetView/'.$value->id)}}"
-                                            class="btn btn-info btn-outline btn-circle btn-lg m-r-5"><i
-                                                class="ti-eye"></i></a>
+                                            class="btn btn-info btn-outline btn-circle btn-lg m-r-5"><i class="ti-eye"></i></a>
                                                 <button type="button"
-                                                class="btn btn-info btn-outline btn-circle btn-lg m-r-5" onclick="copyToClipboard()"><i
+                                                class="btn btn-info btn-outline btn-circle btn-lg m-r-5" onclick="copyToClipboard('copyToClipboard{{$value->id}}')"><i
                                                     class="fa fa-copy"></i></button>
                                         <button type="button"
                                             class="btn btn-info btn-outline btn-circle btn-lg m-r-5"><i
@@ -84,15 +84,6 @@
                                     @endif
                                 </tr>
                                 @endforeach
-                                <script>
-                                    function copyToClipboard(){
-                                        var copyText = document.getElementById("copyToClipboard");
-                                        copyText.select();
-                                        copyText.setSelectionRange(0, 99999); /*For mobile devices*/
-                                        document.execCommand("copy");
-                                        alert("Copied the text: " + copyText.value);
-                                    }
-                                </script>
                                 @else
                                 <h3>You Have not any Source Yet ...</h3>
 

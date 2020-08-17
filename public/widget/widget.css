@@ -260,7 +260,7 @@
     list-style-type: square !important;
 }
 .closor-callback-v1-widget li {
-    display: list-item !important;
+    /* display: list-item !important; */
     min-height: auto !important;
     min-width: auto !important;
 }
@@ -329,14 +329,14 @@
 .closor-callback-v1-widget q {
     quotes: none !important;
 }
-.closor-callback-v1-widget blockquote:after,
+/* .closor-callback-v1-widget blockquote:after,
 .closor-callback-v1-widget blockquote:before,
 .closor-callback-v1-widget li:after,
 .closor-callback-v1-widget li:before,
 .closor-callback-v1-widget q:after,
 .closor-callback-v1-widget q:before {
     content: "" !important;
-}
+} */
 .closor-callback-v1-widget input,
 .closor-callback-v1-widget select {
     vertical-align: middle !important;
@@ -1044,11 +1044,16 @@
 .closor-callback-v1-widget .closor-callback-v1-avatar-icon {
     width: 40px !important;
     height: 40px !important;
-    background-image: url(http://malexs.net/closor/public/widget/icons-9384ae0d188da7d2bf6ce71005cbaf89.png) !important;
+    /* background-image: url(http://malexs.net/closor/public/widget/icons-9384ae0d188da7d2bf6ce71005cbaf89.png) !important; */
     margin: 12px !important;
 }
+
 html.no-svg .closor-callback-v1-widget .closor-callback-v1-avatar-icon {
     background-image: url(https://assets.closor.io/assets/skins/callback-v1/images/icons-b7bc33fa5982e1161630eb0b7f8ad092.png) !important;
+}
+
+.closor-callback-v1-avatar-icon li {
+    text-align: center;
 }
 .closor-callback-v1-widget .closor-callback-v1-avatar-close {
     display: none !important;
