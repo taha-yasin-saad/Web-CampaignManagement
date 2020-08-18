@@ -71,7 +71,7 @@
                                     @if(get_role($workplace->id) == 0 || get_role($workplace->id) == 1 ||
                                     get_role($workplace->id) == 2)
                                     <td>
-                                    <input style="display: none" value="<script src='http://malexs.net/closor/public/widget/widget.js?id={{$value->id}}'></script>" id="copyToClipboard{{$value->id}}">
+                                    <input style="display: none" value="<script src='https://malexs.net/closor/public/widget/widget.js?id={{$value->id}}'></script>" id="copyToClipboard{{$value->id}}">
                                         <a href="{{url('widgetView/'.$value->id)}}"
                                             class="btn btn-info btn-outline btn-circle btn-lg m-r-5"><i class="ti-eye"></i></a>
                                                 <button type="button"

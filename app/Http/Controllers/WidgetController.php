@@ -10,8 +10,8 @@ class WidgetController extends Controller
     public function widget($id){
         $source = Source::find($id);
         $widget = '
-        <link href="http://malexs.net/closor/public/widget/widget.css" rel="stylesheet">
-        <link href="http://malexs.net/closor/public/css/icons/material-design-iconic-font/css/materialdesignicons.min.css" rel="stylesheet">
+        <link href="https://malexs.net/closor/public/widget/widget.css" rel="stylesheet">
+        <link href="https://malexs.net/closor/public/css/icons/material-design-iconic-font/css/materialdesignicons.min.css" rel="stylesheet">
         <style>
         .mdi:before, .mdi-set {
             display: inline-block;
