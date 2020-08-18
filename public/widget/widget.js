@@ -526,7 +526,7 @@
                 document.body.innerHTML += this.responseText;
                 }
             };
-            var url = 'http://localhost/closor/public/widget/'+params.get('id');
+            var url = 'http://malexs.net/closor/public/widget/'+params.get('id');
             console.log(url);
             xhttp.open("GET", url, true);
             xhttp.send();
