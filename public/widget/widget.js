@@ -518,16 +518,13 @@
         
         const params = getFileParams();
         if ( params ) {
-            console.log(params.get('id'));
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
-                console.log(this.responseText);
                 document.body.innerHTML += this.responseText;
                 }
             };
             var url = 'https://malexs.net/closor/public/widget/'+params.get('id');
-            console.log(url);
             xhttp.open("GET", url, true);
             xhttp.send();
         }
