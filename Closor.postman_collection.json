@@ -17,7 +17,7 @@
 					"mode": "formdata",
 					"formdata": []
 				},
-				"url": "http://malexs.net/closor/public/api/all_workplaces"
+				"url": "https://malexs.net/closor/public/api/all_workplaces"
 			},
 			"response": []
 		},
@@ -36,7 +36,7 @@
 						}
 					]
 				},
-				"url": "http://malexs.net/closor/public/api/all_products"
+				"url": "https://malexs.net/closor/public/api/all_products"
 			},
 			"response": []
 		},
@@ -70,7 +70,7 @@
 						}
 					]
 				},
-				"url": "http://malexs.net/closor/public/api/lead"
+				"url": "https://malexs.net/closor/public/api/lead"
 			},
 			"response": []
 		}
