@@ -72,21 +72,15 @@
                             required autocomplete="new-password" placeholder="Confirm Password">
                     </div>
                 </div>
-                <div class="form-group">
-                    <div class="col-md-12">
-                        <div class="checkbox checkbox-info pull-left p-t-0">
-                            <input class="form-check-input" type="checkbox" name="remember" id="remember"
-                                {{ old('remember') ? 'checked' : '' }}>
-                            <label for="remember"> Remember me </label>
-                        </div>
-                    </div>
-                </div>
                 <div class="form-group text-center m-t-20">
                     <div class="col-xs-12">
                         <button
                             class="btn btn-info btn-lg btn-block btn-rounded text-uppercase waves-effect waves-light"
                             type="submit">{{ __('Register') }}</button>
                     </div>
+                </div>
+                <div>
+                <a href="{{url()->previous()}}"><- Back to login</a>
                 </div>
             </form>
         </div>

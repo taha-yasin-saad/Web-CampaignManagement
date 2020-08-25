@@ -89,17 +89,15 @@
                 <input type="hidden" name="token" value="{{ $token }}">
                 <div class="form-group ">
                     <div class="col-xs-12">
-                        <h3>Recover Password</h3>
-                        <p class="text-muted">Enter your Email and reset link will be sent to you!
-                        </p>
+                        <h3>Create New Password</h3>
                     </div>
                 </div>
                 <div class="form-group ">
                     <div class="col-xs-12">
                         <label for="email"
-                            class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+                            class="col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
                         <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
-                            name="email" value="{{ $email ?? old('email') }}" required autocomplete="email" autofocus>
+                            name="email" value="{{ $email ?? old('email') }}" required disabled>
 
                         @error('email')
                         <span class="invalid-feedback" role="alert">
@@ -125,7 +123,7 @@
                 <div class="form-group row">
                     <div class="col-xs-12">
                         <label for="password-confirm"
-                            class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
+                            class="col-form-label text-md-right">{{ __('Confirm Password') }}</label>
                         <input id="password-confirm" type="password" class="form-control" name="password_confirmation"
                             required autocomplete="new-password">
                     </div>
@@ -133,9 +131,10 @@
                 <div class="form-group text-center m-t-20">
                     <div class="col-xs-12">
                         <button class="btn btn-primary btn-lg btn-block text-uppercase waves-effect waves-light"
-                            type="submit">Reset</button>
+                            type="submit">Create New Password</button>
                     </div>
                 </div>
+            <div><a href="{{url('/')}}"><- Go back</a></div>
             </form>
         </div>
     </div>

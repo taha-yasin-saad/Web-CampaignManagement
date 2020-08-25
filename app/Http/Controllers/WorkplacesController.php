@@ -7,6 +7,7 @@ use App\Product;
 use App\UserProduct;
 use App\WorkplaceUser;
 use App\Times;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -116,6 +117,13 @@ class WorkplacesController extends Controller
         $save->product_id = $product->id;
         $save->save();
 
+        $data2['email'] = User::find($save->user_id)->email;
+        $data2['mm'] = 'You Have Created a new workspace';
+        $data2['subject'] = 'new workspace';
+        $data2['link'] = '#';
+        \Illuminate\Support\Facades\Mail::send('emails.welcome_email', $data2, function ($message) use ($data2) {
+            $message->from('support@closor.com', 'CLOSOR')->to($data2['email'], 'CLOSOR')->subject($data2['subject']);
+        });
         return redirect('check')->with('success','Edited Successfully');
     }
 
@@ -170,6 +178,13 @@ class WorkplacesController extends Controller
         }else{
             $times = Times::create($data);
         }
+        $data2['email'] = User::find($workplace->admin_id)->email;
+        $data2['mm'] = 'You Have Created a new workspace';
+        $data2['subject'] = 'new workspace';
+        $data2['link'] = '#';
+        \Illuminate\Support\Facades\Mail::send('emails.welcome_email', $data2, function ($message) use ($data2) {
+            $message->from('support@closor.com', 'CLOSOR')->to($data2['email'], 'CLOSOR')->subject($data2['subject']);
+        });
         return redirect()->back()->with('success','Edited Successfully');
     }
 
