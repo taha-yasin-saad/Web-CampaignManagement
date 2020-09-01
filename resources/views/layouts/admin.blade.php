@@ -323,7 +323,7 @@
     })();
 
     $(document).ready(function() {
-        $('#myTable').DataTable();
+        $('#myTable').DataTable;
         $(document).ready(function() {
             var table = $('#example').DataTable({
                 "columnDefs": [{

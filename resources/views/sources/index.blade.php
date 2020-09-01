@@ -77,9 +77,9 @@
                                                 <button type="button"
                                                 class="btn btn-info btn-outline btn-circle btn-lg m-r-5" onclick="copyToClipboard('copyToClipboard{{$value->id}}')"><i
                                                     class="fa fa-copy"></i></button>
-                                        <button type="button"
+                                        <a href="{{url('sources/'.$value->id.'/edit')}}" type="button"
                                             class="btn btn-info btn-outline btn-circle btn-lg m-r-5"><i
-                                                class="ti-pencil-alt"></i></button>
+                                                class="ti-pencil-alt"></i></a>
                                     </td>
                                     @endif
                                 </tr>

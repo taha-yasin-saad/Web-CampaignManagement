@@ -69,7 +69,9 @@ class SourceController extends Controller
      */
     public function edit(Source $source)
     {
-        //
+        $query['data'] = $source;
+
+        return view('sources.edit',$query);
     }
 
     /**

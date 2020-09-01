@@ -30,7 +30,6 @@
                                 @method('PATCH')
                                 @endif
                                 <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
-                                <input type="hidden" name="workplace_id" value="{{session('workplace')->id}}">
                                 <div class="form-body">
                                     <h3 class="box-title m-t-40">Widget Details</h3>
                                     <hr>
@@ -47,9 +46,15 @@
                                             <div class="form-group">
                                                 <label>Default Country</label>
                                                 <select class="form-control" name="country_id" required>
-                                                    <option value="1">Egypt</option>
-                                                    <option value="2">Saudi arabia</option>
-                                                    <option value="3">United Kingdom</option>
+                                                    <option value="1" @if(isset($data->country_id) &&
+                                                        $data->country_id == "1")
+                                                        selected @endif>Egypt</option>
+                                                    <option value="2" @if(isset($data->country_id) &&
+                                                        $data->country_id == "2")
+                                                        selected @endif>Saudi arabia</option>
+                                                    <option value="3" @if(isset($data->country_id) &&
+                                                        $data->country_id == "3")
+                                                        selected @endif>United Kingdom</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -72,7 +77,9 @@
                                                 <label>Product</label>
                                                 <select class="form-control" name="product_id" required>
                                                     @foreach($products as $value)
-                                                    <option value="{{$value->id}}">{{$value->title}}</option>
+                                                    <option value="{{$value->id}}" @if(isset($data->product_id) &&
+                                                        $data->product_id == {{$value->id}})
+                                                        selected @endif>{{$value->title}}</option>
                                                     @endforeach
                                                 </select>
                                             </div>
@@ -89,8 +96,12 @@
                                                 <label>Type</label>
                                                 <select class="form-control" name="widget_type" id="widget_type"
                                                     required>
-                                                    <option value="icon" selected>Icon Button</option>
-                                                    <option value="text">Text Button</option>
+                                                    <option value="icon"  @if(isset($data->widget_type) &&
+                                                        $data->widget_type == 'icon')
+                                                        selected @endif>Icon Button</option>
+                                                    <option value="text" @if(isset($data->widget_type) &&
+                                                        $data->widget_type == 'text')
+                                                        selected @endif>Text Button</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -99,8 +110,12 @@
                                             <div class="form-group">
                                                 <label>Alignment</label>
                                                 <select class="form-control" name="alignment" required>
-                                                    <option value="right">Right</option>
-                                                    <option value="left">Left</option>
+                                                    <option value="right" @if(isset($data->alignment) &&
+                                                        $data->alignment == 'right')
+                                                        selected @endif>Right</option>
+                                                    <option value="left" @if(isset($data->alignment) &&
+                                                        $data->alignment == 'left')
+                                                        selected @endif>Left</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -109,13 +124,13 @@
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label>Primary Color <li class="mdi mdi-filter fa-fw"></li></label><br>
-                                                <input class="form-control " name="primary" type="color" value="#34a853"
+                                                <input class="form-control " name="primary" type="color" value="@if(isset($data)){{$data->primary}}@endif"
                                                     id="primary-color">
                                             </div>
                                             <div class="form-group">
                                                 <label>Secondary Color<li class="mdi mdi-filter fa-fw"></li></label><br>
                                                 <input class="form-control" name="secondary" type="color"
-                                                    value="#ffffff" id="secondary-color">
+                                                    value="@if(isset($data)){{$data->secondary}}@endif" id="secondary-color">
                                             </div>
                                         </div>
                                         <!--/span-->
@@ -131,40 +146,50 @@
                                                     <label>Icon Shape</label><br>
                                                     <div class="col-md-4">
                                                         <input type="radio" name="icon_type" value="mdi mdi-phone fa-fw"
-                                                            checked>
+                                                            @if(isset($data->icon_type) &&
+                                                            $data->icon_type == 'mdi mdi-phone fa-fw')
+                                                            checked @endif>
                                                         <li class="mdi mdi-phone fa-fw" style="font-size:30px"></li>
                                                     </div>
                                                     <div class="col-md-4">
                                                         <input type="radio" name="icon_type"
-                                                            value="mdi mdi-cellphone-android fa-fw">
+                                                            value="mdi mdi-cellphone-android fa-fw" @if(isset($data->icon_type) &&
+                                                            $data->icon_type == 'mdi mdi-cellphone-android fa-fw')
+                                                            checked @endif>
                                                         <li class="mdi mdi-cellphone-android fa-fw"
                                                             style="font-size:30px"></li>
                                                     </div>
                                                     <div class="col-md-4">
                                                         <input type="radio" name="icon_type"
-                                                            value="mdi mdi-headset fa-fw">
+                                                            value="mdi mdi-headset fa-fw" @if(isset($data->icon_type) &&
+                                                            $data->icon_type == 'mdi mdi-headset fa-fw')
+                                                            checked @endif>
                                                         <li class="mdi mdi-headset fa-fw" style="font-size:30px"></li>
                                                     </div>
                                                     <label style="margin-top:20px">Bubble Switch</label><br>
                                                     <div class="col-md-4">
-                                                        <input type="radio" name="bubble" value="on" class="text-large" checked>
+                                                        <input type="radio" name="bubble" value="on" class="text-large" @if(isset($data->bubble) &&
+                                                        $data->bubble == 'on')
+                                                        checked @endif>
                                                         On
                                                     </div>
                                                     <div class="col-md-4">
                                                         <input type="radio" name="bubble" value="off"
-                                                            class="text-large"> Off
+                                                            class="text-large" @if(isset($data->bubble) &&
+                                                            $data->bubble == 'off')
+                                                            checked @endif> Off
                                                     </div>
                                                     <div class="form-group shoutout-bubble">
                                                         <label style="margin-top:20px">Shoutout Bubble Line 1
                                                         </label><span class="text-small text-muted"> (40 Characters
                                                             Max)</span><br>
-                                                        <input class="form-control" name="bubble_line_1" id="bubble-line-1" type="text" value="Want to talk to an expert?" placeholder="Want to talk to an expert?">
+                                                        <input class="form-control" name="bubble_line_1" id="bubble-line-1" type="text" value="@if(isset($data)){{$data->bubble_line_1}}@endif" placeholder="@if(isset($data)){{$data->bubble_line_1}}@endif">
                                                     </div>
                                                     <div class="form-group shoutout-bubble">
                                                         <label style="margin-top:20px">Shoutout Bubble Line 2
                                                         </label><span class="text-small text-muted"> (40 Characters
                                                             Max)</span><br>
-                                                        <input class="form-control" name="bubble_line_2" id="bubble-line-2" type="text" value="Our Team is 60 Second Away From You!" placeholder="Our Team is 60 Second Away From You!">
+                                                        <input class="form-control" name="bubble_line_2" id="bubble-line-2" type="text" value="@if(isset($data)){{$data->bubble_line_2}}@endif" placeholder="@if(isset($data)){{$data->bubble_line_2}}@endif">
                                                     </div>
                                                 </div>
 
@@ -174,11 +199,11 @@
                                                 <div class="col-md-4">
                                                     <label>Bubble BG Color <li class="mdi mdi-filter fa-fw"></li>
                                                     </label><br>
-                                                    <input class="form-control" name="bubble_bg_color" id="bubble-bg-color" type="color" value="#959a9e">
+                                                    <input class="form-control" name="bubble_bg_color" id="bubble-bg-color" type="color" value="@if(isset($data)){{$data->bubble_bg_color}}@endif">
                                                 </div>
                                                 <div class="col-md-4">
                                                     <label>Text Color<li class="mdi mdi-filter fa-fw"></li></label><br>
-                                                    <input class="form-control" name="bubble_text_color" id="bubble-text-color" type="color" value="#ffffff">
+                                                    <input class="form-control" name="bubble_text_color" id="bubble-text-color" type="color" value="@if(isset($data)){{$data->bubble_text_color}}@endif">
                                                 </div>
                                             </div>
                                         </div>
@@ -211,13 +236,13 @@
                                                         <label style="margin-top:20px">Call to action text </label><span
                                                             class="text-small text-muted"> (25 Characters
                                                             Max)</span><br>
-                                                        <input class="form-control" name="text_text" id="text_text" value="Talk to an expert!" type="text" placeholder="Talk to an expert!">
+                                                        <input class="form-control" name="text_text" id="text_text" value="@if(isset($data)){{$data->text_text}}@endif" type="text" placeholder="@if(isset($data)){{$data->text_text}}@endif">
                                                     </div>
                                                     <div class="form-group">
                                                         <label style="margin-top:20px">Corner Roundness </label><span
                                                             class="text-small text-muted"> (in px "50 px
                                                             Max")</span><br>
-                                                        <input class="form-control" name="text_round" type="number" id="text_round" value="10" placeholder="10">
+                                                        <input class="form-control" name="text_round" type="number" id="text_round" value="@if(isset($data)){{$data->text_round}}@endif" placeholder="@if(isset($data)){{$data->text_round}}@endif">
                                                     </div>
                                                 </div>
                                                 <!--/span-->
@@ -241,7 +266,7 @@
                                             <h4 class="font-bold">Fields</h4>
 
                                             <div class="col-md-3">
-                                                <input class="d-inline" name="fields[]" type="checkbox" value="name" ><span> Name</span><br>
+                                                <input class="d-inline" name="fields[]" type="checkbox" value="name"><span> Name</span><br>
                                             </div>
                                             <div class="col-md-3">
                                                 <input class="d-inline" name="fields[]" type="checkbox" value="email"><span> Email</span><br>
@@ -258,13 +283,13 @@
                                                 <label style="margin-top:20px">Custom Field 01 Title </label><span
                                                     class="text-small text-muted"> (20 Characters Max)</span><br>
                                                 <input class="form-control" name="custom_lable_1" type="text"
-                                                    placeholder="Field Label">
+                                                 value="@if(isset($data)){{$data->custom_lable_1}}@endif" placeholder="@if(isset($data)){{$data->custom_lable_1}}@endif">
                                             </div>
                                             <div class="form-group">
                                                 <label style="margin-top:20px">Custom Field 02 Title </label><span
                                                     class="text-small text-muted"> (20 Characters Max)</span><br>
                                                 <input class="form-control" name="custom_lable_2" type="text"
-                                                    placeholder="Field Label">
+                                                value="@if(isset($data)){{$data->custom_lable_2}}@endif" placeholder="@if(isset($data)){{$data->custom_lable_2}}@endif">
                                             </div>
                                         </div>
                                         <!--/span-->
