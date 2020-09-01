@@ -266,17 +266,17 @@
                                             <h4 class="font-bold">Fields</h4>
 
                                             <div class="col-md-3">
-                                                <input class="d-inline" name="fields[]" type="checkbox" value="name" @if(isset($data->fields) && in_array("name", $data->fields[])) checked @endif><span> Name</span><br>
+                                                <input class="d-inline" name="fields[]" type="checkbox" value="name" @if(isset($data->fields) && in_array("name", $data->fields)) checked @endif><span> Name</span><br>
                                             </div>
                                             <div class="col-md-3">
-                                                <input class="d-inline" name="fields[]" type="checkbox" value="email" @if(isset($data->fields) && in_array("email", $data->fields[])) checked @endif><span> Email</span><br>
+                                                <input class="d-inline" name="fields[]" type="checkbox" value="email" @if(isset($data->fields) && in_array("email", $data->fields)) checked @endif><span> Email</span><br>
                                             </div>
                                             <div class="col-md-3">
-                                                <input class="d-inline" name="fields[]" type="checkbox" value="custom1" @if(isset($data->fields) && in_array("custom1", $data->fields[])) checked @endif><span> Custom Field
+                                                <input class="d-inline" name="fields[]" type="checkbox" value="custom1" @if(isset($data->fields) && in_array("custom1", $data->fields)) checked @endif><span> Custom Field
                                                     01</span><br>
                                             </div>
                                             <div class="col-md-3">
-                                                <input class="d-inline" name="fields[]"  type="checkbox" value="custom2" @if(isset($data->fields) && in_array("custom2", $data->fields[])) checked @endif><span> Custom Field
+                                                <input class="d-inline" name="fields[]"  type="checkbox" value="custom2" @if(isset($data->fields) && in_array("custom2", $data->fields)) checked @endif><span> Custom Field
                                                     02</span><br>
                                             </div>
                                             <div class="form-group">
