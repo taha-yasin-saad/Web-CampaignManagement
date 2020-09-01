@@ -58,7 +58,7 @@ class SourceController extends Controller
      */
     public function show(Source $source)
     {
-        //
+        dd($source);
     }
 
     /**

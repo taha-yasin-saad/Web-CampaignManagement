@@ -40,6 +40,7 @@
                             @endif
                         </div>
                     </div>
+                    <div id="has_been_copied"></div>
                     <div class="table-responsive">
                         <table class="table table-hover manage-u-table">
                             <thead>
@@ -70,6 +71,12 @@
                                     @if(get_role($workplace->id) == 0 || get_role($workplace->id) == 1 ||
                                     get_role($workplace->id) == 2)
                                     <td>
+                                    <input style="display: none" value="<script src='https://malexs.net/closor/public/widget/widget.js?id={{$value->id}}'></script>" id="copyToClipboard{{$value->id}}">
+                                        <a href="{{url('widgetView/'.$value->id)}}"
+                                            class="btn btn-info btn-outline btn-circle btn-lg m-r-5"><i class="ti-eye"></i></a>
+                                                <button type="button"
+                                                class="btn btn-info btn-outline btn-circle btn-lg m-r-5" onclick="copyToClipboard('copyToClipboard{{$value->id}}')"><i
+                                                    class="fa fa-copy"></i></button>
                                         <button type="button"
                                             class="btn btn-info btn-outline btn-circle btn-lg m-r-5"><i
                                                 class="ti-pencil-alt"></i></button>

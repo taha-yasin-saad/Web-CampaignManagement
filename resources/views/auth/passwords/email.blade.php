@@ -15,7 +15,7 @@
                 @csrf
                 <div class="form-group ">
                     <div class="col-xs-12">
-                        <h3>Recover Password</h3>
+                        <h3>Reset Password</h3>
                         <p class="text-muted">Enter your Email and reset link will be sent to you! </p>
                     </div>
                 </div>
@@ -36,6 +36,9 @@
                         <button class="btn btn-primary btn-lg btn-block text-uppercase waves-effect waves-light"
                             type="submit">Reset</button>
                     </div>
+                </div>
+                <div>
+                    <a href="{{url()->previous()}}"><- Back to login</a>
                 </div>
             </form>
         </div>
