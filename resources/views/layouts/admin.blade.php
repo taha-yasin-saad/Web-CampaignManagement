@@ -496,11 +496,7 @@
             });
             $.ajax({
                 type: 'GET',
-                url: baseUrl + '/isoCode/' + {
-                    {
-                        auth() - > user() - > country_code
-                    }
-                },
+                url: baseUrl + '/isoCode/' + {{auth()->user()->country_code}},
                 success: function(data) {
                     // let phone_code = data;
                     // $('#phone2').val(data);
