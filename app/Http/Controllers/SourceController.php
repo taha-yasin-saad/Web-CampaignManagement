@@ -84,7 +84,8 @@ class SourceController extends Controller
      */
     public function update(Request $request, Source $source)
     {
-        //
+        $source->update($request->all());
+        return redirect('sources')->with('success', 'Edited Successfully');
     }
 
     /**

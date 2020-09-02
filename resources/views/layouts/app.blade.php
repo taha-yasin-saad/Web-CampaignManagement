@@ -39,7 +39,7 @@
     <![endif]-->
 
     <!--country flag -->
-    <link rel="stylesheet" href="{{asset('css/intl-tel-input-16.0.0/build/css/intlTelInput.css')}}">
+    <link rel="stylesheet" href="{{asset('css/intl-tel-input-17.0.0/build/css/intlTelInput.css')}}">
 </head>
 
 <body>
@@ -48,7 +48,7 @@
         <div class="cssload-speeding-wheel"></div>
     </div>
 
-    
+
     @yield('content')
 
     <!-- jQuery -->
@@ -67,13 +67,13 @@
     <!--Style Switcher -->
     <script src="{{asset('plugins/bower_components/styleswitcher/jQuery.style.switcher.js')}}"></script>
 
-    
+
     {{-- country flag js --}}
-    <script src="{{asset('css/intl-tel-input-16.0.0/build/js/intlTelInput.js')}}"></script>
+    <script src="{{asset('css/intl-tel-input-17.0.0/build/js/intlTelInput.js')}}"></script>
     <script>
     var input = document.querySelector("#phone");
     window.intlTelInput(input);
-    
+
     </script>
       <script>
         var input = document.querySelector("#phone");
@@ -112,8 +112,8 @@
 <script type="text/javascript">
     var baseUrl = "{{url('/')}}";
     jQuery(document).ready(function($) {
-        
-    jQuery.getScript('http://www.geoplugin.net/javascript.gp', function() 
+
+    jQuery.getScript('http://www.geoplugin.net/javascript.gp', function()
     {
         var code= geoplugin_countryCode();
         $.ajaxSetup({
@@ -129,7 +129,7 @@
                 $('#phone2').val(data);
                 var res = code.toLowerCase();
                 iti.setCountry(res);
-                
+
             }
         });
     });

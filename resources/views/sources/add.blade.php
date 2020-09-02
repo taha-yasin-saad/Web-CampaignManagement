@@ -35,7 +35,7 @@
                                     <h3 class="box-title m-t-40">Widget Details</h3>
                                     <hr>
                                     <div class="row">
-                                        <div class="col-md-6">
+                                        <div class="col-md-12">
                                             <div class="form-group">
                                                 <label>Widget Name</label>
                                                 <input required type="text" class="form-control" placeholder="Widget Name"
@@ -43,7 +43,7 @@
                                             </div>
                                         </div>
                                         <!--/span-->
-                                        <div class="col-md-6">
+                                        {{-- <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>Default Country</label>
                                                 <select class="form-control" name="country_id" required>
@@ -52,7 +52,7 @@
                                                     <option value="3">United Kingdom</option>
                                                 </select>
                                             </div>
-                                        </div>
+                                        </div> --}}
                                         <!--/span-->
 
                                     </div>

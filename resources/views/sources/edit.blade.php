@@ -34,7 +34,7 @@
                                     <h3 class="box-title m-t-40">Widget Details</h3>
                                     <hr>
                                     <div class="row">
-                                        <div class="col-md-6">
+                                        <div class="col-md-12">
                                             <div class="form-group">
                                                 <label>Widget Name</label>
                                                 <input required type="text" class="form-control" placeholder="Widget Name"
@@ -42,7 +42,7 @@
                                             </div>
                                         </div>
                                         <!--/span-->
-                                        <div class="col-md-6">
+                                        {{-- <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>Default Country</label>
                                                 <select class="form-control" name="country_id" required>
@@ -57,7 +57,7 @@
                                                         selected @endif>United Kingdom</option>
                                                 </select>
                                             </div>
-                                        </div>
+                                        </div> --}}
                                         <!--/span-->
 
                                     </div>
@@ -179,13 +179,13 @@
                                                             $data->bubble == 'off')
                                                             checked @endif> Off
                                                     </div>
-                                                    <div class="form-group shoutout-bubble">
+                                                    <div class="form-group shoutout-bubble" style="display:@if(isset($data->bubble) && $data->bubble == 'off')none @endif;">
                                                         <label style="margin-top:20px">Shoutout Bubble Line 1
                                                         </label><span class="text-small text-muted"> (40 Characters
                                                             Max)</span><br>
                                                         <input class="form-control" name="bubble_line_1" id="bubble-line-1" type="text" value="@if(isset($data)){{$data->bubble_line_1}}@endif" placeholder="@if(isset($data)){{$data->bubble_line_1}}@endif">
                                                     </div>
-                                                    <div class="form-group shoutout-bubble">
+                                                    <div class="form-group shoutout-bubble"style="display:@if(isset($data->bubble) && $data->bubble == 'off')none @endif;">
                                                         <label style="margin-top:20px">Shoutout Bubble Line 2
                                                         </label><span class="text-small text-muted"> (40 Characters
                                                             Max)</span><br>
@@ -195,7 +195,7 @@
 
                                                 <!--/span-->
                                             </div>
-                                            <div class="row shoutout-bubble">
+                                            <div class="row shoutout-bubble" style="display:@if(isset($data->bubble) && $data->bubble == 'off')none @endif;">
                                                 <div class="col-md-4">
                                                     <label>Bubble BG Color <li class="mdi mdi-filter fa-fw"></li>
                                                     </label><br>
@@ -209,12 +209,12 @@
                                         </div>
                                         <div class="col-md-6">
                                             <div class="button-review">
-                                                <div class="button-circle">
-                                                    <div class="buttonround" title="Chat now">
-                                                        <li class="mdi mdi-phone fa-fw" id="x-icon" style=""></li>
-                                                        <div class="buttonround_tooltip">
-                                                            <p id="b-l-1">Want to talk to an expert?</p>
-                                                            <p id="b-l-2">Our Team is 60 Second Away From You!</p>
+                                                <div class="button-circle" >
+                                                    <div class="buttonround" title="Chat now" style="background-color:@if(isset($data)){{$data->primary}}@endif;">
+                                                        <li class="@if(isset($data)){{$data->icon_type}}@endif" id="x-icon" style="color:@if(isset($data)){{$data->secondary}}@endif;"></li>
+                                                        <div class="buttonround_tooltip" style="background-color:@if(isset($data)){{$data->bubble_bg_color}}@endif;color:@if(isset($data)){{$data->bubble_text_color}}@endif; display:@if(isset($data->bubble) && $data->bubble == 'off')none @endif;" >
+                                                            <p id="b-l-1">@if(isset($data)){{$data->bubble_line_1}}@endif</p>
+                                                            <p id="b-l-2">@if(isset($data)){{$data->bubble_line_2}}@endif</p>
                                                             <div class="buttonround_tooltip_arrow">
                                                             </div>
                                                         </div>
