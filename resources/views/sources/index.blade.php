@@ -45,7 +45,7 @@
                         <table class="table table-hover manage-u-table">
                             <thead>
                                 <tr>
-                                    <th style="width: 70px;" class="text-center">#</th>
+                                    <th style="width: 70px;" class="text-center">widgetID</th>
                                     <th>SOURCE</th>
                                     <th>TOTAL LEADS</th>
                                     <th>CONTACTED LEADS</th>
@@ -60,7 +60,7 @@
                             <tbody>
                                 @foreach ($data as $value)
                                 <tr>
-                                    <td class="text-center">1</td>
+                                    <td class="text-center">{{$value->id}}</td>
                                     <td><span class="font-medium">{{$value->name}}</span>
                                         <br><span class="text-muted">{{$value->website}}</span>
                                     </td>

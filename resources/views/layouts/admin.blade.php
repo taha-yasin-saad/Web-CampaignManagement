@@ -52,7 +52,7 @@
         type="text/css" />
     <!--alerts CSS -->
     <link href="{{asset('plugins/bower_components/sweetalert/sweetalert.css')}}" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="{{asset('css/intl-tel-input-16.0.0/build/css/intlTelInput.css')}}">
+    <link rel="stylesheet" href="{{asset('css/intl-tel-input-17.0.0/build/css/intlTelInput.css')}}">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -461,7 +461,7 @@
     });
     </script>
     {{-- country flag js --}}
-    <script src="{{asset('css/intl-tel-input-16.0.0/build/js/intlTelInput.js')}}"></script>
+    <script src="{{asset('css/intl-tel-input-17.0.0/build/js/intlTelInput.js')}}"></script>
     <script>
     var input = document.querySelector("#phone");
     window.intlTelInput(input);
