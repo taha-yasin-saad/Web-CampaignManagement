@@ -262,21 +262,21 @@
                                     <hr>
                                     <div class="row">
                                         <!--/span-->
-                                        <div class="col-md-12">
+                                        <div class="col-md-8">
                                             <h4 class="font-bold">Fields</h4>
 
                                             <div class="col-md-3">
-                                                <input class="d-inline" name="fields[]" type="checkbox" value="name" @if(isset($data->fields) && in_array("name", $data->fields)) checked @endif><span> Name</span><br>
+                                                <input class="d-inline" name="fields[]" type="checkbox" id="checkbox_name" value="name" @if(isset($data->fields) && in_array("name", $data->fields)) checked @endif><span> Name</span><br>
                                             </div>
                                             <div class="col-md-3">
-                                                <input class="d-inline" name="fields[]" type="checkbox" value="email" @if(isset($data->fields) && in_array("email", $data->fields)) checked @endif><span> Email</span><br>
+                                                <input class="d-inline" name="fields[]" type="checkbox" id="checkbox_email" value="email" @if(isset($data->fields) && in_array("email", $data->fields)) checked @endif><span> Email</span><br>
                                             </div>
                                             <div class="col-md-3">
-                                                <input class="d-inline" name="fields[]" type="checkbox" value="custom1" @if(isset($data->fields) && in_array("custom1", $data->fields)) checked @endif><span> Custom Field
+                                                <input class="d-inline" name="fields[]" type="checkbox" id="checkbox_custom1" value="custom1" @if(isset($data->fields) && in_array("custom1", $data->fields)) checked @endif><span> Custom Field
                                                     01</span><br>
                                             </div>
                                             <div class="col-md-3">
-                                                <input class="d-inline" name="fields[]"  type="checkbox" value="custom2" @if(isset($data->fields) && in_array("custom2", $data->fields)) checked @endif><span> Custom Field
+                                                <input class="d-inline" name="fields[]"  type="checkbox" id="checkbox_custom2"  value="custom2" @if(isset($data->fields) && in_array("custom2", $data->fields)) checked @endif><span> Custom Field
                                                     02</span><br>
                                             </div>
                                             <div class="form-group">
@@ -290,6 +290,31 @@
                                                     class="text-small text-muted"> (20 Characters Max)</span><br>
                                                 <input class="form-control" name="custom_lable_2" type="text"
                                                 value="@if(isset($data)){{$data->custom_lable_2}}@endif" placeholder="@if(isset($data)){{$data->custom_lable_2}}@endif">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4" style="background: #ececec;padding-top: 15px;padding-bottom: 15px;">
+                                            <div class="live_form">
+                                                <label for="exampleInputEmail1">Would you like to recieve a free callback in 30 seconds?</label>
+                                                <div class="form-group">
+                                                  <input type="text" class="form-control" id="form1_name" placeholder="name" style="display:@if(isset($data->fields) && in_array("name", $data->fields)) block @else none @endif;">
+                                                </div>
+                                                <div class="form-group">
+                                                  <input type="email" class="form-control" id="form1_email" placeholder="email" style="display:@if(isset($data->fields) && in_array("email", $data->fields)) block @else none @endif;">
+                                                </div>
+                                                <div class="form-group">
+                                                    <input  name="country_code" type="hidden" @if(isset(auth()->user()->country_code)) value="{{auth()->user()->country_code}}" @else id="phone2" @endif class="phone22" >
+
+                                                    <input id="phone" type="phone" class="form-control" name="phone" value="{{ old('phone', auth()->user()->phone) }}"  placeholder="{{ old('phone', auth()->user()->phone) }}" required autocomplete="phone" style="padding-left: 52px">
+                                                </div>
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control" id="form1_custom_lable_1" placeholder="@if(isset($data)){{$data->custom_lable_1}}@endif" style="display:@if(isset($data->fields) && in_array("custom1", $data->fields))block @else none @endif;">
+                                                </div>
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control" id="form1_custom_lable_2" placeholder="@if(isset($data)){{$data->custom_lable_2}}@endif"  style="display:@if(isset($data->fields) && in_array("custom2", $data->fields))block @else none @endif;">
+                                                </div>
+                                                <div class="text-center">
+                                                <button type="button" class="btn btn-primary " style="background:#084F1B!important;color: #a6a6a6!important;">Call Me Now</button>
+                                                </div>
                                             </div>
                                         </div>
                                         <!--/span-->
@@ -317,6 +342,37 @@
 $('.color').colorpicker({});
 console.log('mmmmmmmmmmmmmmm');
 
+$('#checkbox_name').change(function(){
+    if(this.checked)
+        $('#form1_name').show('swing');
+    else
+        $('#form1_name').hide('swing');
+
+});
+
+$('#checkbox_email').change(function(){
+    if(this.checked)
+        $('#form1_email').show('swing');
+    else
+        $('#form1_email').hide('swing');
+
+});
+
+$('#checkbox_custom_lable_1').change(function(){
+    if(this.checked)
+        $('#form1_custom_lable_1').show('swing');
+    else
+        $('#form1_custom_lable_1').hide('swing');
+
+});
+
+$('#checkbox_custom_lable_2').change(function(){
+    if(this.checked)
+        $('#form1_custom_lable_2').show('swing');
+    else
+        $('#form1_custom_lable_2').hide('swing');
+
+});
 $("#widget_type").change(function() {
     console.log('hhh');
     if (this.value == "text") {
