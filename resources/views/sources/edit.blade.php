@@ -306,17 +306,6 @@
                                                             you like to recieve a free callback in 30 seconds?</label>
 
                                                         <div class="live_form">
-
-                                                            <div class="form-group">
-                                                                <input type="text" class="form-control" id="form1_name"
-                                                                    placeholder="name"
-                                                                    style="display:@if(isset($data->fields) && in_array("name",$data->fields)) block  @else none @endif;">
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <input type="email" class="form-control"
-                                                                    id="form1_email" placeholder="email"
-                                                                    style="display:@if(isset($data->fields) && in_array("email",$data->fields)) block @else none @endif;">
-                                                            </div>
                                                             <div class="form-group">
                                                                 <input name="country_code" type="hidden"
                                                                     @if(isset(auth()->user()->country_code))
@@ -330,6 +319,17 @@
                                                                     required autocomplete="phone"
                                                                     style="padding-left: 52px">
                                                             </div>
+                                                            <div class="form-group">
+                                                                <input type="text" class="form-control" id="form1_name"
+                                                                    placeholder="name"
+                                                                    style="display:@if(isset($data->fields) && in_array("name",$data->fields)) block  @else none @endif;">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <input type="email" class="form-control"
+                                                                    id="form1_email" placeholder="email"
+                                                                    style="display:@if(isset($data->fields) && in_array("email",$data->fields)) block @else none @endif;">
+                                                            </div>
+
                                                             <div class="form-group">
                                                                 <input type="text" class="form-control"
                                                                     id="form1_custom_lable_1"
