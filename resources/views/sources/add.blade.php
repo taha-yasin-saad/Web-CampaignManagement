@@ -352,8 +352,8 @@
     <!-- /#page-wrapper -->
 </div>
 <script>
-    $('.color').colorpicker({});
-    console.log('mmmmmmmmmmmmmmm');
+    // $('.color').colorpicker({});
+    // console.log('mmmmmmmmmmmmmmm');
 
     $('#checkbox_name').change(function () {
         if (this.checked)
