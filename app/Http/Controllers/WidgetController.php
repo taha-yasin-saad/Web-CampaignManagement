@@ -534,7 +534,7 @@ class WidgetController extends Controller
                                             }
                                             $widget .=' <div class="allow-dropdown separate-dial-code iti-sdc-3">
                                                         <div class="form-group">
-                                                            <input name="country_code" type="hidden" value="'.auth()->user()->country_code.'" id="phone" class="phone" >
+                                                            <input name="phone" type="tel" value="'.auth()->user()->country_code.'" id="phone" class="phone" >
 
 
                                                         </div>
