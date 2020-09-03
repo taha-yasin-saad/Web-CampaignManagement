@@ -532,15 +532,17 @@ class WidgetController extends Controller
                                                 ';
                                                 }
                                             }
-                                            $widget .= '<div class="form-group">
-                                            <input name="country_code" type="hidden" value=" id="phone2" class="phone22" >
-                                            <input id="phone" type="phone" class="form-control"
-                                                name="phone"
-                                                value="'.old('phone', auth()->user()->phone).'"
-                                                placeholder="'.old('phone', auth()->user()->phone).'"
-                                                required autocomplete="phone"
-                                                style="padding-left: 52px">
-                                                </div>';
+                                            $widget .=' <div class="allow-dropdown separate-dial-code iti-sdc-3">
+                                                        <div class="form-group">
+                                                            <input name="country_code" type="hidden" value=" id="phone2" class="phone22" >
+                                                            <input id="phone" type="phone" class="form-control closor-callback-v1-input"
+                                                            name="phone"
+                                                            value="'.old('phone', auth()->user()->phone).'"
+                                                            placeholder="'.old('phone', auth()->user()->phone).'"
+                                                            required autocomplete="phone"
+                                                            style="padding-left: 52px">
+                                                        </div>
+                                                    </div>';
                                             $widget .=   '<button class="closor-callback-v1-button" style="background:'.$source->primary.'!important">
                                                 <div class="closor-callback-v1-preloader">
                                                     <div class="closor-callback-v1-preloader-dot closor-dot-1">
@@ -584,7 +586,8 @@ class WidgetController extends Controller
         var zone = geoplugin_timezone();
         document.getElementById("time-zone").innerHTML = zone;
         </script>
-        {{-- country flag js --}}
+
+
         <script src="https://malexs.net/closor/public/css/intl-tel-input-17.0.0/build/js/intlTelInput.js"></script>
         <script>
             var input = document.querySelector("#phone");
