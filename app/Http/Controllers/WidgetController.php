@@ -604,7 +604,7 @@ class WidgetController extends Controller
             window.intlTelInput(input, {
                 autoPlaceholder: "aggressive",
                 placeholderNumberType: "MOBILE",
-                utilsScript: "https://malexs.net/closor/public/build/js/utils.js",
+                utilsScript: "https://malexs.net/closor/public/css/intl-tel-input-17.0.0/build/js/utils.js",
             });
             var iti = window.intlTelInputGlobals.getInstance(input);
             input.addEventListener("countrychange", function() {
@@ -613,6 +613,7 @@ class WidgetController extends Controller
                 $(".phone22").val(iti.getSelectedCountryData().dialCode);
             });
         </script>
+
 
     ';
         return $widget;
