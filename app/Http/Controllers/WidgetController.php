@@ -535,6 +535,7 @@ class WidgetController extends Controller
                                             $widget .=' <div class="allow-dropdown separate-dial-code iti-sdc-3">
                                                         <div class="form-group">
                                                             <input name="country_code" type="hidden" value="'.auth()->user()->country_code.'" id="phone2" class="phone22" >
+
                                                             <input id="phone" type="phone" class="form-control closor-callback-v1-input"
                                                             name="phone"
                                                             value="'.old('phone', auth()->user()->phone).'"
@@ -585,6 +586,8 @@ class WidgetController extends Controller
         <script type="text/javascript">
         var zone = geoplugin_timezone();
         document.getElementById("time-zone").innerHTML = zone;
+        console.log(var zone);
+        console.log(651651);
         </script>
 
 
@@ -592,6 +595,9 @@ class WidgetController extends Controller
         <script>
             var input = document.querySelector("#phone");
             window.intlTelInput(input);
+         console.log(1111111);
+         console.log(var input);
+
         </script>
         <script>
             var input = document.querySelector("#phone");
@@ -602,6 +608,7 @@ class WidgetController extends Controller
             });
             var iti = window.intlTelInputGlobals.getInstance(input);
             input.addEventListener("countrychange", function() {
+         console.log(1111111);
                 console.log(iti.getSelectedCountryData().dialCode);
                 $(".phone22").val(iti.getSelectedCountryData().dialCode);
             });
