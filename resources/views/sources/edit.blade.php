@@ -379,40 +379,42 @@
     <!-- /#page-wrapper -->
 </div>
 <script>
+    $('#checkbox_name').change(function () {
+        if (this.checked)
+            $('#form1_name').show('swing');
+        else
+            $('#form1_name').hide('swing');
+
+    });
+
+    $('#checkbox_email').change(function () {
+        if (this.checked)
+            $('#form1_email').show('swing');
+        else
+            $('#form1_email').hide('swing');
+
+    });
+
+    $('#checkbox_custom1').change(function () {
+        if (this.checked)
+            $('#form1_custom_lable_1').show('swing');
+        else
+            $('#form1_custom_lable_1').hide('swing');
+
+    });
+
+    $('#checkbox_custom2').change(function () {
+        if (this.checked)
+            $('#form1_custom_lable_2').show('swing');
+        else
+            $('#form1_custom_lable_2').hide('swing');
+
+    });
+</script>
+<script>
 // $('.color').colorpicker({});
 // console.log('mmmmmmmmmmmmmmm');
 
-$('#checkbox_name').change(function(){
-    if(this.checked)
-        $('#form1_name').show('swing');
-    else
-        $('#form1_name').hide('swing');
-
-});
-
-$('#checkbox_email').change(function(){
-    if(this.checked)
-        $('#form1_email').show('swing');
-    else
-        $('#form1_email').hide('swing');
-
-});
-
-$('#checkbox_custom1').change(function(){
-    if(this.checked)
-        $('#form1_custom_lable_1').show('swing');
-    else
-        $('#form1_custom_lable_1').hide('swing');
-
-});
-
-$('#checkbox_custom2').change(function(){
-    if(this.checked)
-        $('#form1_custom_lable_2').show('swing');
-    else
-        $('#form1_custom_lable_2').hide('swing');
-
-});
 $("#widget_type").change(function() {
     console.log('hhh');
     if (this.value == "text") {
