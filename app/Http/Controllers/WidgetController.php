@@ -11,7 +11,9 @@ class WidgetController extends Controller
         $source = Source::find($id);
         $widget = '
         <link href="https://malexs.net/closor/public/widget/widget.css" rel="stylesheet">
-        <link href="https://malexs.net/closor/public/css/icons/material-design-iconic-font/css/materialdesignicons.min.css" rel="stylesheet">
+        <link href="https://malexs.net/closor/public/css/icons/material-design-iconic-font/css/materialdesignicons.min.css"
+        rel="stylesheet">
+        <link rel="stylesheet" href="https://malexs.net/closor/public/css/intl-tel-input-17.0.0/build/css/intlTelInput.css">
         <style>
         .mdi:before, .mdi-set {
             display: inline-block;
@@ -502,15 +504,7 @@ class WidgetController extends Controller
                                             //         data-role="callback-phone-number-input" autocomplete="off"
                                             //         placeholder="Email">
                                             // </div>
-                                    $widget .= '<div class="form-group">
-                                            <input name="country_code" type="hidden"value="id="phone2" class="phone22" >
-                                            <input id="phone" type="phone" class="form-control"
-                                                name="phone"
-                                                value="'.old('phone', auth()->user()->phone).'"
-                                                placeholder="'.old('phone', auth()->user()->phone).'"
-                                                required autocomplete="phone"
-                                                style="padding-left: 52px">
-                                                </div>';
+
                                         foreach($source->fields as $inputfield){
                                                 if($inputfield == 'custom1'){
                                                     $widget .= '
@@ -538,6 +532,15 @@ class WidgetController extends Controller
                                                 ';
                                                 }
                                             }
+                                            $widget .= '<div class="form-group">
+                                            <input name="country_code" type="hidden" value=" id="phone2" class="phone22" >
+                                            <input id="phone" type="phone" class="form-control"
+                                                name="phone"
+                                                value="'.old('phone', auth()->user()->phone).'"
+                                                placeholder="'.old('phone', auth()->user()->phone).'"
+                                                required autocomplete="phone"
+                                                style="padding-left: 52px">
+                                                </div>';
                                             $widget .=   '<button class="closor-callback-v1-button" style="background:'.$source->primary.'!important">
                                                 <div class="closor-callback-v1-preloader">
                                                     <div class="closor-callback-v1-preloader-dot closor-dot-1">
@@ -574,7 +577,34 @@ class WidgetController extends Controller
 
             </div>
         </div>
-        ';
+        <script src="http://www.geoplugin.net/javascript.gp" type="text/javascript"></script>
+        <script src="https://malexs.net/closor/public/css/intl-tel-input-17.0.0/build/js/intlTelInput.js"></script>
+        <!-- get time zone -->
+        <script type="text/javascript">
+        var zone = geoplugin_timezone();
+        document.getElementById("time-zone").innerHTML = zone;
+        </script>
+        {{-- country flag js --}}
+        <script src="https://malexs.net/closor/public/css/intl-tel-input-17.0.0/build/js/intlTelInput.js"></script>
+        <script>
+            var input = document.querySelector("#phone");
+            window.intlTelInput(input);
+        </script>
+        <script>
+            var input = document.querySelector("#phone");
+            window.intlTelInput(input, {
+                autoPlaceholder: "aggressive",
+                placeholderNumberType: "MOBILE",
+                utilsScript: "https://malexs.net/closor/public/build/js/utils.js",
+            });
+            var iti = window.intlTelInputGlobals.getInstance(input);
+            input.addEventListener("countrychange", function() {
+                console.log(iti.getSelectedCountryData().dialCode);
+                $(".phone22").val(iti.getSelectedCountryData().dialCode);
+            });
+        </script>
+
+    ';
         return $widget;
 
         // <script>
