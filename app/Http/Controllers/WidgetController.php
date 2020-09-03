@@ -10,10 +10,10 @@ class WidgetController extends Controller
     public function widget($id){
         $source = Source::find($id);
         $widget = '
-        <link href="https://malexs.net/closor/public/widget/widget.css" rel="stylesheet">
-        <link href="https://malexs.net/closor/public/css/icons/material-design-iconic-font/css/materialdesignicons.min.css"
+        <link href="http://malexs.net/closor/public/widget/widget.css" rel="stylesheet">
+        <link href="http://malexs.net/closor/public/css/icons/material-design-iconic-font/css/materialdesignicons.min.css"
         rel="stylesheet">
-        <link rel="stylesheet" href="https://malexs.net/closor/public/css/intl-tel-input-17.0.0/build/css/intlTelInput.css">
+        <link rel="stylesheet" href="http://malexs.net/closor/public/css/intl-tel-input-17.0.0/build/css/intlTelInput.css">
         <style>
         .mdi:before, .mdi-set {
             display: inline-block;
@@ -581,7 +581,7 @@ class WidgetController extends Controller
             </div>
         </div>
         <script src="http://www.geoplugin.net/javascript.gp" type="text/javascript"></script>
-        <script src="https://malexs.net/closor/public/css/intl-tel-input-17.0.0/build/js/intlTelInput.js"></script>
+        <script src="http://malexs.net/closor/public/css/intl-tel-input-17.0.0/build/js/intlTelInput.js"></script>
         <!-- get time zone -->
         <script type="text/javascript">
         var zone = geoplugin_timezone();
@@ -591,7 +591,7 @@ class WidgetController extends Controller
         </script>
 
 
-        <script src="https://malexs.net/closor/public/css/intl-tel-input-17.0.0/build/js/intlTelInput.js"></script>
+        <script src="http://malexs.net/closor/public/css/intl-tel-input-17.0.0/build/js/intlTelInput.js"></script>
         <script>
             var input = document.querySelector("#phone");
             window.intlTelInput(input);
@@ -604,7 +604,7 @@ class WidgetController extends Controller
             window.intlTelInput(input, {
                 autoPlaceholder: "aggressive",
                 placeholderNumberType: "MOBILE",
-                utilsScript: "https://malexs.net/closor/public/css/intl-tel-input-17.0.0/build/js/utils.js",
+                utilsScript: "http://malexs.net/closor/public/css/intl-tel-input-17.0.0/build/js/utils.js",
             });
             var iti = window.intlTelInputGlobals.getInstance(input);
             input.addEventListener("countrychange", function() {
