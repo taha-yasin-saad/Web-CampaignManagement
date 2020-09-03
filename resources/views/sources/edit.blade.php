@@ -378,39 +378,7 @@
     </div>
     <!-- /#page-wrapper -->
 </div>
-<script type="text/javascript">
-    $('#checkbox_name').change(function () {
-        if (this.checked)
-            $('#form1_name').show('swing');
-        else
-            $('#form1_name').hide('swing');
 
-    });
-
-    $('#checkbox_email').change(function () {
-        if (this.checked)
-            $('#form1_email').show('swing');
-        else
-            $('#form1_email').hide('swing');
-
-    });
-
-    $('#checkbox_custom1').change(function () {
-        if (this.checked)
-            $('#form1_custom_lable_1').show('swing');
-        else
-            $('#form1_custom_lable_1').hide('swing');
-
-    });
-
-    $('#checkbox_custom2').change(function () {
-        if (this.checked)
-            $('#form1_custom_lable_2').show('swing');
-        else
-            $('#form1_custom_lable_2').hide('swing');
-
-    });
-</script>
 <script type="text/javascript">
 // $('.color').colorpicker({});
 // console.log('mmmmmmmmmmmmmmm');
@@ -429,7 +397,7 @@ $("#widget_type").change(function() {
 $('#primary-color').on('input', function(e) {
     $(".buttonround").css("background-color", this.value);
     $(".call_me").css("background-color", this.value);
-    $(".chat-text").css("background", this.value);
+    $(".chat-text").css("background-color", this.value);
 });
 $('#secondary-color').on('input', function(e) {
     $("#x-icon").css("color", this.value);
@@ -473,6 +441,39 @@ $('#text_text').on('input', function(e) {
 $('#text_round').on('input', function(e) {
     $(".chat-text").css("border-radius", this.value+"px "+this.value+"px "+"0px 0px");
 });
+</script>
+<script type="text/javascript">
+    $('#checkbox_name').change(function () {
+        if (this.checked)
+            $('#form1_name').show('swing');
+        else
+            $('#form1_name').hide('swing');
+
+    });
+
+    $('#checkbox_email').change(function () {
+        if (this.checked)
+            $('#form1_email').show('swing');
+        else
+            $('#form1_email').hide('swing');
+
+    });
+
+    $('#checkbox_custom1').change(function () {
+        if (this.checked)
+            $('#form1_custom_lable_1').show('swing');
+        else
+            $('#form1_custom_lable_1').hide('swing');
+
+    });
+
+    $('#checkbox_custom2').change(function () {
+        if (this.checked)
+            $('#form1_custom_lable_2').show('swing');
+        else
+            $('#form1_custom_lable_2').hide('swing');
+
+    });
 </script>
 @endsection
 @section('js')
