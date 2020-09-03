@@ -504,7 +504,18 @@ class WidgetController extends Controller
                                             //         data-role="callback-phone-number-input" autocomplete="off"
                                             //         placeholder="Email">
                                             // </div>
+                                            $widget .=' <div class="allow-dropdown separate-dial-code iti-sdc-3">
+                                                        <div class="form-group">
+                                                            <input name="country_code" type="hidden" value="'.auth()->user()->country_code.'" id="phone" class="phone" >
 
+                                                            <input id="phone" type="phone" class="form-control closor-callback-v1-input"
+                                                            name="phone"
+                                                            value="phone"
+                                                            placeholder="phone"
+                                                            required autocomplete="phone"
+                                                            style="padding-left: 52px">
+                                                        </div>
+                                                    </div>';
                                         foreach($source->fields as $inputfield){
                                                 if($inputfield == 'custom1'){
                                                     $widget .= '
@@ -532,18 +543,7 @@ class WidgetController extends Controller
                                                 ';
                                                 }
                                             }
-                                            $widget .=' <div class="allow-dropdown separate-dial-code iti-sdc-3">
-                                                        <div class="form-group">
-                                                            <input name="country_code" type="hidden" value="'.auth()->user()->country_code.'" id="phone" class="phone" >
 
-                                                            <input id="phone" type="phone" class="form-control closor-callback-v1-input"
-                                                            name="phone"
-                                                            value="'.old('phone', auth()->user()->phone).'"
-                                                            placeholder="'.old('phone', auth()->user()->phone).'"
-                                                            required autocomplete="phone"
-                                                            style="padding-left: 52px">
-                                                        </div>
-                                                    </div>';
                                             $widget .=   '<button class="closor-callback-v1-button" style="background:'.$source->primary.'!important">
                                                 <div class="closor-callback-v1-preloader">
                                                     <div class="closor-callback-v1-preloader-dot closor-dot-1">
