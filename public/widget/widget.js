@@ -459,11 +459,6 @@
     //                                             data-role="callback-phone-number-input" autocomplete="off"
     //                                             placeholder="Email">
     //                                     </div>
-    // <div class="form-group">
-    // <input name="country_code"  type="hidden" value="" id="phone2" class="phone22 closor-callback-v1-input" >
-
-    // <input id="phone" type="phone" class="form-control closor-callback-v1-input"name="phone" required autocomplete="phone"   style="padding-left: 52px">
-    // </div>
     //                                     <button class="closor-callback-v1-button">
     //                                         <div class="closor-callback-v1-preloader">
     //                                             <div class="closor-callback-v1-preloader-dot closor-dot-1">

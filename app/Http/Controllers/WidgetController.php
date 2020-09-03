@@ -63,8 +63,8 @@ class WidgetController extends Controller
                             </div>
                             ';
                         }
-                            
-                            
+
+
                         $widget .= '</div>
                     </div>
                 </div>
@@ -502,7 +502,16 @@ class WidgetController extends Controller
                                             //         data-role="callback-phone-number-input" autocomplete="off"
                                             //         placeholder="Email">
                                             // </div>
-                                            foreach($source->fields as $inputfield){
+                                    $widget .= '<div class="form-group">
+                                            <input name="country_code" type="hidden"value="id="phone2" class="phone22" >
+                                            <input id="phone" type="phone" class="form-control"
+                                                name="phone"
+                                                value="'.old('phone', auth()->user()->phone).'"
+                                                placeholder="'.old('phone', auth()->user()->phone).'"
+                                                required autocomplete="phone"
+                                                style="padding-left: 52px">
+                                                </div>';
+                                        foreach($source->fields as $inputfield){
                                                 if($inputfield == 'custom1'){
                                                     $widget .= '
                                                     <div class="allow-dropdown separate-dial-code iti-sdc-3">
