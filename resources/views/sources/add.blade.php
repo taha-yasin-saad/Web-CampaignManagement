@@ -241,17 +241,17 @@
                                             <h4 class="font-bold">Fields</h4>
 
                                             <div class="col-md-3">
-                                                <input class="d-inline" name="fields[]" type="checkbox" value="name" ><span> Name</span><br>
+                                                <input class="d-inline" name="fields[]" type="checkbox" id="checkbox_name" value="name" ><span> Name</span><br>
                                             </div>
                                             <div class="col-md-3">
-                                                <input class="d-inline" name="fields[]" type="checkbox" value="email"><span> Email</span><br>
+                                                <input class="d-inline" name="fields[]" type="checkbox" id="checkbox_email"  value="email"><span> Email</span><br>
                                             </div>
                                             <div class="col-md-3">
-                                                <input class="d-inline" name="fields[]" type="checkbox" value="custom1"><span> Custom Field
+                                                <input class="d-inline" name="fields[]" type="checkbox" id="checkbox_custom1" value="custom1"><span> Custom Field
                                                     01</span><br>
                                             </div>
                                             <div class="col-md-3">
-                                                <input class="d-inline" name="fields[]"  type="checkbox" value="custom2"><span> Custom Field
+                                                <input class="d-inline" name="fields[]"  type="checkbox" id="checkbox_custom2" value="custom2"><span> Custom Field
                                                     02</span><br>
                                             </div>
                                             <div class="form-group">
@@ -267,28 +267,66 @@
                                                     placeholder="Field Label">
                                             </div>
                                         </div>
-                                        <div class="col-md-4" style="background: #ececec;padding-top: 15px;padding-bottom: 15px;">
-                                            <div class="live_form">
-                                                <label for="exampleInputEmail1">Would you like to recieve a free callback in 30 seconds?</label>
-                                                <div class="form-group">
-                                                  <input type="text" class="form-control" id="form1_name" placeholder="name" style="display:@if(isset($data->fields) && in_array("name", $data->fields)) block @else none @endif;">
-                                                </div>
-                                                <div class="form-group">
-                                                  <input type="email" class="form-control" id="form1_email" placeholder="email" style="display:@if(isset($data->fields) && in_array("email", $data->fields)) block @else none @endif;">
-                                                </div>
-                                                <div class="form-group">
-                                                    <input  name="country_code" type="hidden" @if(isset(auth()->user()->country_code)) value="{{auth()->user()->country_code}}" @else id="phone2" @endif class="phone22" >
+                                        <div class="col-md-4"
+                                            style="background: #ececec;padding-top: 15px;padding-bottom: 15px;">
+                                            <div class="modal-dialog" role="document"
+                                                style="width:auto; max-width: 300px !important;">
+                                                <div class="modal-content">
+                                                    <div class="modal-body">
+                                                        <button type="button" class="close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                        <label for="exampleInputEmail1"
+                                                            style="display: block !important;font-family: inherit !important;text-align: center;">Would
+                                                            you like to recieve a free callback in 30 seconds?</label>
 
-                                                    <input id="phone" type="phone" class="form-control" name="phone" value="{{ old('phone', auth()->user()->phone) }}"  placeholder="{{ old('phone', auth()->user()->phone) }}" required autocomplete="phone" style="padding-left: 52px">
-                                                </div>
-                                                <div class="form-group">
-                                                    <input type="text" class="form-control" id="form1_custom_lable_1" placeholder="@if(isset($data)){{$data->custom_lable_1}}@endif" style="display:@if(isset($data->fields) && in_array("custom1", $data->fields))block @else none @endif;">
-                                                </div>
-                                                <div class="form-group">
-                                                    <input type="text" class="form-control" id="form1_custom_lable_2" placeholder="@if(isset($data)){{$data->custom_lable_2}}@endif"  style="display:@if(isset($data->fields) && in_array("custom2", $data->fields))block @else none @endif;">
-                                                </div>
-                                                <div class="text-center">
-                                                <button type="button" class="btn btn-primary " style="background:#084F1B!important;color: #a6a6a6!important;">Call Me Now</button>
+                                                        <div class="live_form">
+
+                                                            <div class="form-group">
+                                                                <input type="text" class="form-control" id="form1_name"
+                                                                    placeholder="name" style="display: none;"
+                                                                    >
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <input type="email" class="form-control"
+                                                                    id="form1_email" placeholder="email" style="display: none;"
+                                                                   >
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <input name="country_code" type="hidden"
+                                                                    @if(isset(auth()->user()->country_code))
+                                                                value="{{ auth()->user()->country_code }}" @else
+                                                                id="phone2" @endif class="phone22" >
+
+                                                                <input id="phone" type="phone" class="form-control"
+                                                                    name="phone"
+                                                                    value="{{ old('phone', auth()->user()->phone) }}"
+                                                                    placeholder="{{ old('phone', auth()->user()->phone) }}"
+                                                                    required autocomplete="phone"
+                                                                    style="padding-left: 52px">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <input type="text" class="form-control"
+                                                                    id="form1_custom_lable_1"
+                                                                    style="display: none;">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <input type="text" class="form-control"
+                                                                    id="form1_custom_lable_2"
+                                                                    style="display: none;">
+                                                            </div>
+                                                        </div>
+                                                        <div class="text-center">
+                                                            <button type="button" class="btn btn-primary btn-block call_me"
+                                                                style="background-color:#34a853;color:#ffffff;">Call
+                                                                Me Now
+                                                            </button>
+                                                            <p for="exampleInputEmail1"
+                                                                style="text-align: center;font-size: smaller;">
+                                                                Your data is secured.We respect your privacy.
+                                                            </p>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -314,65 +352,98 @@
     <!-- /#page-wrapper -->
 </div>
 <script>
-$('.color').colorpicker({});
-console.log('mmmmmmmmmmmmmmm');
+    $('.color').colorpicker({});
+    console.log('mmmmmmmmmmmmmmm');
 
-$("#widget_type").change(function() {
-    console.log('hhh');
-    if (this.value == "text") {
-        $("#text-settings").show("swing");
-        $("#icon-settings").hide("swing");
-    } else {
-        $("#icon-settings").show("swing");
-        $("#text-settings").hide("swing");
-    }
-});
+    $('#checkbox_name').change(function () {
+        if (this.checked)
+            $('#form1_name').show('swing');
+        else
+            $('#form1_name').hide('swing');
 
-$('#primary-color').on('input', function(e) {
-    $(".buttonround").css("background-color", this.value);
-    $(".chat-text").css("background", this.value);
-});
-$('#secondary-color').on('input', function(e) {
-    $("#x-icon").css("color", this.value);
-    $(".text-text").css("color", this.value);
-});
+    });
 
-$('input[type=radio][name=icon_type]').change(function() {
-    // alert(this.value);
-    $("#x-icon").removeClass().addClass(this.value);
-});
+    $('#checkbox_email').change(function () {
+        if (this.checked)
+            $('#form1_email').show('swing');
+        else
+            $('#form1_email').hide('swing');
 
-$('input[type=radio][name=bubble]').change(function() {
-    // alert(this.value);
-    if (this.value == "on") {
-        $(".buttonround_tooltip").show("swing");
-        $(".shoutout-bubble").show("swing");
-    } else {
-        $(".buttonround_tooltip").hide("swing");
-        $(".shoutout-bubble").hide("swing");
-    }
-});
+    });
 
-$('#bubble-line-1').on('input', function(e) {
-    $("#b-l-1").html(this.value);
-});
-$('#bubble-line-2').on('input', function(e) {
-    $("#b-l-2").html(this.value);
-});
-$('#bubble-bg-color').on('input', function(e) {
-    $(".buttonround_tooltip").css("background-color", this.value);
-    $(".buttonround_tooltip_arrow").css("border-color", "transparent "+ this.value);
-});
-$('#bubble-text-color').on('input', function(e) {
-    $(".buttonround_tooltip").css("color", this.value);
-});
+    $('#checkbox_custom1').change(function () {
+        if (this.checked)
+            $('#form1_custom_lable_1').show('swing');
+        else
+            $('#form1_custom_lable_1').hide('swing');
 
-$('#text_text').on('input', function(e) {
-    $(".text-text").html(this.value);
-});
-$('#text_round').on('input', function(e) {
-    $(".chat-text").css("border-radius", this.value+"px "+this.value+"px "+"0px 0px");
-});
+    });
+
+    $('#checkbox_custom2').change(function () {
+        if (this.checked)
+            $('#form1_custom_lable_2').show('swing');
+        else
+            $('#form1_custom_lable_2').hide('swing');
+
+    });
+    $("#widget_type").change(function () {
+        console.log('hhh');
+        if (this.value == "text") {
+            $("#text-settings").show("swing");
+            $("#icon-settings").hide("swing");
+        } else {
+            $("#icon-settings").show("swing");
+            $("#text-settings").hide("swing");
+        }
+    });
+
+    $('#primary-color').on('input', function (e) {
+        $(".buttonround").css("background-color", this.value);
+        $(".call_me").css("background-color", this.value);
+        $(".chat-text").css("background", this.value);
+    });
+    $('#secondary-color').on('input', function (e) {
+        $("#x-icon").css("color", this.value);
+        $(".call_me").css("color", this.value);
+        $(".text-text").css("color", this.value);
+    });
+
+    $('input[type=radio][name=icon_type]').change(function () {
+        // alert(this.value);
+        $("#x-icon").removeClass().addClass(this.value);
+    });
+
+    $('input[type=radio][name=bubble]').change(function () {
+        // alert(this.value);
+        if (this.value == "on") {
+            $(".buttonround_tooltip").show("swing");
+            $(".shoutout-bubble").show("swing");
+        } else {
+            $(".buttonround_tooltip").hide("swing");
+            $(".shoutout-bubble").hide("swing");
+        }
+    });
+
+    $('#bubble-line-1').on('input', function (e) {
+        $("#b-l-1").html(this.value);
+    });
+    $('#bubble-line-2').on('input', function (e) {
+        $("#b-l-2").html(this.value);
+    });
+    $('#bubble-bg-color').on('input', function (e) {
+        $(".buttonround_tooltip").css("background-color", this.value);
+        $(".buttonround_tooltip_arrow").css("border-color", "transparent " + this.value);
+    });
+    $('#bubble-text-color').on('input', function (e) {
+        $(".buttonround_tooltip").css("color", this.value);
+    });
+
+    $('#text_text').on('input', function (e) {
+        $(".text-text").html(this.value);
+    });
+    $('#text_round').on('input', function (e) {
+        $(".chat-text").css("border-radius", this.value + "px " + this.value + "px " + "0px 0px");
+    });
 </script>
 @endsection
 @section('js')

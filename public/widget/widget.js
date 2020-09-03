@@ -25,7 +25,7 @@
     //                 </div>
     //             </div>
     //         </div>
-    
+
     //         <div class="closor-callback-v1-popup-scroll-container" id="closor-callback-v1-popup-scroll-container">
     //             <div class="closor-callback-v1-popup-container">
     //                 <div id="closor-call-modal" class="closor-callback-v1-popup
@@ -34,15 +34,15 @@
     //                     <div id="closor-modal-background" class="closor-callback-v1-popup-background" data-action="close-callback-popup"></div>
     //                     <div class="closor-callback-v1-popup-wrapper">
     //                         <a href="#" id="closor-modal-close" class="closor-callback-v1-popup-close" data-action="close-callback-popup"></a>
-    
+
     //                         <section class="closor-callback-popup">
     //                             <div class="closor-callback-v1-popup-header">
     //                                 Would you like to recieve a free callback in 30 seconds?
     //                             </div>
-    
+
     //                             <div class="closor-callback-v1-interest-query">
     //                                 <form class="closor-callback-v1-interest-query-form" data-action="submit-callback">
-    
+
     //                                     <div class="allow-dropdown separate-dial-code iti-sdc-3">
     //                                         <input type="name" class="closor-callback-v1-input" data-iti="true"
     //                                             data-role="callback-phone-number-input" autocomplete="off"
@@ -459,6 +459,11 @@
     //                                             data-role="callback-phone-number-input" autocomplete="off"
     //                                             placeholder="Email">
     //                                     </div>
+    // <div class="form-group">
+    // <input name="country_code"  type="hidden" value="" id="phone2" class="phone22 closor-callback-v1-input" >
+
+    // <input id="phone" type="phone" class="form-control closor-callback-v1-input"name="phone" required autocomplete="phone"   style="padding-left: 52px">
+    // </div>
     //                                     <button class="closor-callback-v1-button">
     //                                         <div class="closor-callback-v1-preloader">
     //                                             <div class="closor-callback-v1-preloader-dot closor-dot-1">
@@ -469,37 +474,37 @@
     //                                         </div>
     //                                         <span class="closor-callback-v1-button-text">Call me now</span>
     //                                     </button>
-    
-    
-    
+
+
+
     //                                     <div class="closor-callback-v1-security-hint">
     //                                         <div class="closor-callback-v1-security-hint-icon"></div>
-    
+
     //                                         Your data is secured.We respect your privacy
-    
+
     //                                     </div>
-    
+
     //                                 </form>
     //                             </div>
     //                         </section>
-    
-    
+
+
     //                         <a class="closor-callback-v1-powered-by" href="https://closor.com" target="_blank">
     //                             Powered by closor
     //                         </a>
-    
+
     //                     </div>
     //                 </div>
     //             </div>
     //         </div>
-    
+
     //     </div>
     // </div>`;
     function loadDoc() {
         const STACK_TRACE_SPLIT_PATTERN = /(?:Error)?\n(?:\s*at\s+)?/;
         const STACK_TRACE_ROW_PATTERN1 = /^.+?\s\((.+?):\d+:\d+\)$/;
         const STACK_TRACE_ROW_PATTERN2 = /^(?:.*?@)?(.*?):\d+(?::\d+)?$/;
-        
+
         const getFileParams = () => {
             const stack = new Error().stack;
             const row = stack.split(STACK_TRACE_SPLIT_PATTERN, 2)[1];
@@ -515,7 +520,7 @@
                 console.warn(`The URL '${url}' is not valid.`);
             }
         };
-        
+
         const params = getFileParams();
         if ( params ) {
             var xhttp = new XMLHttpRequest();
@@ -528,7 +533,7 @@
             xhttp.open("GET", url, true);
             xhttp.send();
         }
-        
+
     };
     loadDoc();
     function callCloserModal(){

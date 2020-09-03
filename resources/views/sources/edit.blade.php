@@ -292,28 +292,68 @@
                                                 value="@if(isset($data)){{$data->custom_lable_2}}@endif" placeholder="@if(isset($data)){{$data->custom_lable_2}}@endif">
                                             </div>
                                         </div>
-                                        <div class="col-md-4" style="background: #ececec;padding-top: 15px;padding-bottom: 15px;">
-                                            <div class="live_form">
-                                                <label for="exampleInputEmail1">Would you like to recieve a free callback in 30 seconds?</label>
-                                                <div class="form-group">
-                                                  <input type="text" class="form-control" id="form1_name" placeholder="name" style="display:@if(isset($data->fields) && in_array("name", $data->fields)) block @else none @endif;">
-                                                </div>
-                                                <div class="form-group">
-                                                  <input type="email" class="form-control" id="form1_email" placeholder="email" style="display:@if(isset($data->fields) && in_array("email", $data->fields)) block @else none @endif;">
-                                                </div>
-                                                <div class="form-group">
-                                                    <input  name="country_code" type="hidden" @if(isset(auth()->user()->country_code)) value="{{auth()->user()->country_code}}" @else id="phone2" @endif class="phone22" >
+                                        <div class="col-md-4"
+                                            style="background: #ececec;padding-top: 15px;padding-bottom: 15px;">
+                                            <div class="modal-dialog" role="document"
+                                                style="width:auto; max-width: 300px !important;">
+                                                <div class="modal-content">
+                                                    <div class="modal-body">
+                                                        <button type="button" class="close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                        <label for="exampleInputEmail1"
+                                                            style="display: block !important;font-family: inherit !important;text-align: center;">Would
+                                                            you like to recieve a free callback in 30 seconds?</label>
 
-                                                    <input id="phone" type="phone" class="form-control" name="phone" value="{{ old('phone', auth()->user()->phone) }}"  placeholder="{{ old('phone', auth()->user()->phone) }}" required autocomplete="phone" style="padding-left: 52px">
-                                                </div>
-                                                <div class="form-group">
-                                                    <input type="text" class="form-control" id="form1_custom_lable_1" placeholder="@if(isset($data)){{$data->custom_lable_1}}@endif" style="display:@if(isset($data->fields) && in_array("custom1", $data->fields))block @else none @endif;">
-                                                </div>
-                                                <div class="form-group">
-                                                    <input type="text" class="form-control" id="form1_custom_lable_2" placeholder="@if(isset($data)){{$data->custom_lable_2}}@endif"  style="display:@if(isset($data->fields) && in_array("custom2", $data->fields))block @else none @endif;">
-                                                </div>
-                                                <div class="text-center">
-                                                <button type="button" class="btn btn-primary " style="background:#084F1B!important;color: #a6a6a6!important;">Call Me Now</button>
+                                                        <div class="live_form">
+
+                                                            <div class="form-group">
+                                                                <input type="text" class="form-control" id="form1_name"
+                                                                    placeholder="name"
+                                                                    style="display:@if(isset($data->fields) && in_array("name",$data->fields)) block  @else none @endif;">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <input type="email" class="form-control"
+                                                                    id="form1_email" placeholder="email"
+                                                                    style="display:@if(isset($data->fields) && in_array("email",$data->fields)) block @else none @endif;">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <input name="country_code" type="hidden"
+                                                                    @if(isset(auth()->user()->country_code))
+                                                                value="{{ auth()->user()->country_code }}" @else
+                                                                id="phone2" @endif class="phone22" >
+
+                                                                <input id="phone" type="phone" class="form-control"
+                                                                    name="phone"
+                                                                    value="{{ old('phone', auth()->user()->phone) }}"
+                                                                    placeholder="{{ old('phone', auth()->user()->phone) }}"
+                                                                    required autocomplete="phone"
+                                                                    style="padding-left: 52px">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <input type="text" class="form-control"
+                                                                    id="form1_custom_lable_1"
+                                                                    placeholder="@if(isset($data)){{ $data->custom_lable_1 }}@endif"
+                                                                    style="display:@if(isset($data->fields) && in_array("custom1",$data->fields)) block @else none @endif;">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <input type="text" class="form-control"
+                                                                    id="form1_custom_lable_2"
+                                                                    placeholder="@if(isset($data)){{ $data->custom_lable_2 }}@endif"
+                                                                    style="display:@if(isset($data->fields) && in_array("custom2",$data->fields)) block @else none @endif;">
+                                                            </div>
+                                                        </div>
+                                                        <div class="text-center">
+                                                            <button type="button" class="btn btn-primary btn-block call_me"
+                                                                style="background-color:@if(isset($data)){{$data->primary}}@endif;color:@if(isset($data)){{$data->secondary}}@endif;">Call
+                                                                Me Now
+                                                            </button>
+                                                            <p for="exampleInputEmail1"
+                                                                style="text-align: center;font-size: smaller;">
+                                                                Your data is secured.We respect your privacy.
+                                                            </p>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -358,7 +398,7 @@ $('#checkbox_email').change(function(){
 
 });
 
-$('#checkbox_custom_lable_1').change(function(){
+$('#checkbox_custom1').change(function(){
     if(this.checked)
         $('#form1_custom_lable_1').show('swing');
     else
@@ -366,7 +406,7 @@ $('#checkbox_custom_lable_1').change(function(){
 
 });
 
-$('#checkbox_custom_lable_2').change(function(){
+$('#checkbox_custom2').change(function(){
     if(this.checked)
         $('#form1_custom_lable_2').show('swing');
     else
@@ -386,10 +426,12 @@ $("#widget_type").change(function() {
 
 $('#primary-color').on('input', function(e) {
     $(".buttonround").css("background-color", this.value);
+    $(".call_me").css("background-color", this.value);
     $(".chat-text").css("background", this.value);
 });
 $('#secondary-color').on('input', function(e) {
     $("#x-icon").css("color", this.value);
+    $(".call_me").css("color", this.value);
     $(".text-text").css("color", this.value);
 });
 
