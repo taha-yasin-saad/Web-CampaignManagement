@@ -378,7 +378,7 @@
     </div>
     <!-- /#page-wrapper -->
 </div>
-<script>
+<script type="text/javascript">
     $('#checkbox_name').change(function () {
         if (this.checked)
             $('#form1_name').show('swing');
@@ -411,7 +411,7 @@
 
     });
 </script>
-<script>
+<script type="text/javascript">
 // $('.color').colorpicker({});
 // console.log('mmmmmmmmmmmmmmm');
 
