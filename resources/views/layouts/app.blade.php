@@ -67,7 +67,6 @@
     <!--Style Switcher -->
     <script src="{{asset('plugins/bower_components/styleswitcher/jQuery.style.switcher.js')}}"></script>
 
-
     {{-- country flag js --}}
     <script src="{{asset('css/intl-tel-input-17.0.0/build/js/intlTelInput.js')}}"></script>
     <script>
@@ -107,32 +106,56 @@
         });
       </script>
 
-<script src="http://www.geoplugin.net/javascript.gp" type="text/javascript"></script>
+<!-- <script src="http://www.geoplugin.net/javascript.gp" type="text/javascript"></script> -->
 
 <script type="text/javascript">
+
     var baseUrl = "{{url('/')}}";
+    // function getLocation() {
+    //     if (navigator.geolocation) {
+    //         return navigator.geolocation.getCurrentPosition(showPosition);
+    //     } else { 
+    //        return "Geolocation is not supported by this browser.";
+    //     }
+    // }
+    // function showPosition(position) {
+    //     var loc =  "lat=" + position.coords.latitude + 
+    //     "&lng=" + position.coords.longitude;
+    
+    //     console.log(loc);
+        
+    // }
+
     jQuery(document).ready(function($) {
-
-    jQuery.getScript('http://www.geoplugin.net/javascript.gp', function()
-    {
-        var code= geoplugin_countryCode();
-        $.ajaxSetup({
-        headers: {
-            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        }
-        });
-        $.ajax({
-            type:'GET',
-            url:baseUrl+'/phoneCode/'+code,
-            success:function(data){
-                let phone_code = data;
-                $('#phone2').val(data);
-                var res = code.toLowerCase();
-                iti.setCountry(res);
-
+        // getLocation();
+    
+        // jQuery.getScript('https://www.geoplugin.net/javascript.gp', function()
+        // {
+        //     var code= geoplugin_countryCode();
+        //     console.log('old Api: '+code);
+            
+        // });
+        
+        $.get("https://api.ipdata.co?api-key=test", function(response) {
+            console.log(response.country_code);
+            var code = response.country_code;
+            $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             }
-        });
-    });
+            });
+            $.ajax({
+                type:'GET',
+                url:baseUrl+'/phoneCode/'+code,
+                success:function(data){
+                    let phone_code = data;
+                    $('#phone2').val(data);
+                    var res = code.toLowerCase();
+                    iti.setCountry(res);
+
+                }
+            });
+        }, "jsonp");
     });
 </script>
 </body>
