@@ -379,6 +379,8 @@
     <!-- /#page-wrapper -->
 </div>
 
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+
 <script type="text/javascript">
 // $('.color').colorpicker({});
 // console.log('mmmmmmmmmmmmmmm');
