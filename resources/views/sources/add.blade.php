@@ -247,21 +247,21 @@
                                                 <input class="d-inline" name="fields[]" type="checkbox" id="checkbox_email"  value="email"><span> Email</span><br>
                                             </div>
                                             <div class="col-md-3">
-                                                <input class="d-inline" name="fields[]" type="checkbox" id="checkbox_custom1" value="custom1"><span> Custom Field
+                                                <input class="d-inline" name="fields[]" type="checkbox" id="checkbox_custom1" value="custom1"><span id="checkbox_custom_vlue_1"> Custom Field
                                                     01</span><br>
                                             </div>
                                             <div class="col-md-3">
-                                                <input class="d-inline" name="fields[]"  type="checkbox" id="checkbox_custom2" value="custom2"><span> Custom Field
+                                                <input class="d-inline" name="fields[]"  type="checkbox" id="checkbox_custom2" value="custom2"><span id="checkbox_custom_vlue_2"> Custom Field
                                                     02</span><br>
                                             </div>
                                             <div class="form-group">
-                                                <label style="margin-top:20px">Custom Field 01 Title </label><span
+                                                <label style="margin-top:20px" id="custom_lable_title_1">Custom Field 01 Title </label><span
                                                     class="text-small text-muted"> (20 Characters Max)</span><br>
                                                 <input class="form-control" id="custom_lable_1" name="custom_lable_1" type="text"
                                                     placeholder="Field Label">
                                             </div>
                                             <div class="form-group">
-                                                <label style="margin-top:20px">Custom Field 02 Title </label><span
+                                                <label style="margin-top:20px" id="custom_lable_title_2">Custom Field 02 Title </label><span
                                                     class="text-small text-muted"> (20 Characters Max)</span><br>
                                                 <input class="form-control" id="custom_lable_2" name="custom_lable_2" type="text"
                                                     placeholder="Field Label">
@@ -450,10 +450,15 @@
 
     $('#custom_lable_1').on('input', function(e) {
         document.getElementById("form1_custom_lable_1").placeholder = this.value;
+        document.getElementById("custom_lable_title_1").innerHTML = this.value;
+        document.getElementById("checkbox_custom_vlue_1").innerHTML = this.value;
     });
 
     $('#custom_lable_2').on('input', function(e) {
         document.getElementById("form1_custom_lable_2").placeholder = this.value;
+        document.getElementById("custom_lable_title_2").innerHTML = this.value;
+        document.getElementById("checkbox_custom_vlue_2").innerHTML = this.value;
+
     });
 
 </script>
