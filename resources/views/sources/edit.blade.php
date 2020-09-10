@@ -272,21 +272,20 @@
                                                 <input class="d-inline" name="fields[]" type="checkbox" id="checkbox_email" value="email" @if(isset($data->fields) && in_array("email", $data->fields)) checked @endif><span> Email</span><br>
                                             </div>
                                             <div class="col-md-3">
-                                                <input class="d-inline" name="fields[]" type="checkbox" id="checkbox_custom1" value="custom1" @if(isset($data->fields) && in_array("custom1", $data->fields)) checked @endif><span> Custom Field
-                                                    01</span><br>
+                                                <input class="d-inline" name="fields[]" type="checkbox" id="checkbox_custom1" value="custom1" @if(isset($data->fields) && in_array("custom1", $data->fields)) checked @endif><span id="checkbox_custom_vlue_1"> @if(isset($data)){{$data->custom_lable_1}}@endif
+                                                    </span><br>
                                             </div>
                                             <div class="col-md-3">
-                                                <input class="d-inline" name="fields[]"  type="checkbox" id="checkbox_custom2"  value="custom2" @if(isset($data->fields) && in_array("custom2", $data->fields)) checked @endif><span> Custom Field
-                                                    02</span><br>
+                                                <input class="d-inline" name="fields[]"  type="checkbox" id="checkbox_custom2"  value="custom2" @if(isset($data->fields) && in_array("custom2", $data->fields)) checked @endif><span id="checkbox_custom_vlue_2"> @if(isset($data)){{$data->custom_lable_2}}@endif</span><br>
                                             </div>
                                             <div class="form-group">
-                                                <label style="margin-top:20px">Custom Field 01 Title </label><span
+                                                <label style="margin-top:20px" id="custom_lable_title_1">@if(isset($data)){{$data->custom_lable_1}}@endif </label><span
                                                     class="text-small text-muted"> (20 Characters Max)</span><br>
                                                 <input class="form-control" id="custom_lable_1" name="custom_lable_1" type="text"
                                                  value="@if(isset($data)){{$data->custom_lable_1}}@endif" placeholder="@if(isset($data)){{$data->custom_lable_1}}@endif">
                                             </div>
                                             <div class="form-group">
-                                                <label style="margin-top:20px">Custom Field 02 Title </label><span
+                                                <label style="margin-top:20px" id="custom_lable_title_2">@if(isset($data)){{$data->custom_lable_2}}@endif</label><span
                                                     class="text-small text-muted"> (20 Characters Max)</span><br>
                                                 <input class="form-control" id="custom_lable_2" name="custom_lable_2" type="text"
                                                 value="@if(isset($data)){{$data->custom_lable_2}}@endif" placeholder="@if(isset($data)){{$data->custom_lable_2}}@endif">
@@ -479,10 +478,15 @@ $('#text_round').on('input', function(e) {
 
     $('#custom_lable_1').on('input', function(e) {
         document.getElementById("form1_custom_lable_1").placeholder = this.value;
+        document.getElementById("custom_lable_title_1").innerHTML = this.value;
+        document.getElementById("checkbox_custom_vlue_1").innerHTML = this.value;
     });
 
     $('#custom_lable_2').on('input', function(e) {
         document.getElementById("form1_custom_lable_2").placeholder = this.value;
+        document.getElementById("custom_lable_title_2").innerHTML = this.value;
+        document.getElementById("checkbox_custom_vlue_2").innerHTML = this.value;
+
     });
 
 </script>
