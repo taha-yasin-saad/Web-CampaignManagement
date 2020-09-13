@@ -574,7 +574,7 @@
     }
 
     function formData(){
-    const formData = new FormData(document.getElementById("form-id"))
+    var form_data = new FormData(document.getElementById("form-id"))
     for (var pair of formData.entries()) {
          console.log(pair[0] + ": " + pair[1]);
     }
