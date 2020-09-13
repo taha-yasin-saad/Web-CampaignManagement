@@ -510,7 +510,6 @@ class WidgetController extends Controller
 
                                                             <input id="phone" type="phone" class="form-control closor-callback-v1-input"
                                                             name="phone"
-                                                            value="phone"
                                                             placeholder="phone"
                                                             required autocomplete="phone"
                                                             style="padding-left: 52px">
@@ -521,7 +520,7 @@ class WidgetController extends Controller
                                                     $widget .= '
                                                     <div class="allow-dropdown separate-dial-code iti-sdc-3">
                                                         <input type="text" class="closor-callback-v1-input" data-iti="true"
-                                                            data-role="callback-phone-number-input" autocomplete="off"
+                                                            data-role="callback-phone-number-input" autocomplete="off" name="custom1"
                                                             placeholder="'.$source->custom_lable_1.'">
                                                     </div>
                                                     ';
@@ -529,7 +528,7 @@ class WidgetController extends Controller
                                                     $widget .= '
                                                     <div class="allow-dropdown separate-dial-code iti-sdc-3">
                                                         <input type="text" class="closor-callback-v1-input" data-iti="true"
-                                                            data-role="callback-phone-number-input" autocomplete="off"
+                                                            data-role="callback-phone-number-input" autocomplete="off" name="custom2"
                                                             placeholder="'.$source->custom_lable_2.'">
                                                     </div>
                                                     ';
