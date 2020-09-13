@@ -526,7 +526,8 @@
             };
             var url = 'https://malexs.net/closor/public/widget/'+params.get('id');
             xhttp.open("GET", url, true);
-            xhttp.send();
+            console.log(url);
+            // xhttp.send();
         }
 
     };
