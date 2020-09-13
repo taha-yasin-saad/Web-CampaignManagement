@@ -580,15 +580,16 @@ class WidgetController extends Controller
 
             </div>
         </div>
-        <script src="http://www.geoplugin.net/javascript.gp" type="text/javascript"></script>
+        <script src="https://api.ipdata.co?api-key=test" type="text/javascript"></script>
         <script src="https://malexs.net/closor/public/css/intl-tel-input-17.0.0/build/js/intlTelInput.js"></script>
         <!-- get time zone -->
         <script type="text/javascript">
         var zone = geoplugin_timezone();
         document.getElementById("time-zone").innerHTML = zone;
-        console.log(var zone);
+        console.log(zone);
         console.log(651651);
         </script>
+
 
 
         <script src="https://malexs.net/closor/public/css/intl-tel-input-17.0.0/build/js/intlTelInput.js"></script>
