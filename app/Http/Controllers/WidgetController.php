@@ -539,7 +539,7 @@ class WidgetController extends Controller
                                                 }else{
                                                 $widget .= '
                                                 <div class="allow-dropdown separate-dial-code iti-sdc-3">
-                                                    <input type="text" class="closor-callback-v1-input" data-iti="true"
+                                                    <input type="text" class="closor-callback-v1-input" data-iti="true" name="'.$inputfield.'"
                                                         data-role="callback-phone-number-input" autocomplete="off"
                                                         placeholder="'.$inputfield.'">
                                                 </div>
@@ -605,9 +605,13 @@ class WidgetController extends Controller
     }
     public function widget_ajax(Request $request){
         dd($request->all());
-
-        $data = $request->all();
-        $product = Lead::create($data);
+        $save = new Lead;
+        $save->product_id = $request->product_id;
+        $save->name = $request->name;
+        $save->email = $request->email;
+        $save->phone = $request->phone;
+        $save->lead = $request->all();
+        $save->save();
     }
 
 }
