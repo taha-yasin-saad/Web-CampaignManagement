@@ -586,7 +586,7 @@
         var xmlhttp = new XMLHttpRequest();
         xmlhttp.open("POST", "widget", true);
         xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        xmlhttp.setRequestHeader('Csrf-Token', document.getElementById("csrftoken"));
+        xmlhttp.setRequestHeader('Csrf-Token', document.getElementById("csrftoken").value);
         xmlhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
             this.form_data;
