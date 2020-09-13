@@ -86,8 +86,9 @@ class WidgetController extends Controller
                                         Would you like to recieve a free callback in 30 seconds?
                                     </div>
 
-                                    <form class="closor-callback-v1-interest-query" onsubmit="event.preventDefault(); return dataget()" id="form-id">
-                                        <div class="closor-callback-v1-interest-query-form" id="form-id" data-action="submit-callback">';
+                                    <div class="closor-callback-v1-interest-query" >
+                                        <form class="closor-callback-v1-interest-query-form" onsubmit="event.preventDefault(); return dataget()" id="form-id" data-action="submit-callback">';
+                                        dd(csrf_token());
 
                                             // <div class="allow-dropdown separate-dial-code iti-sdc-3">
                                             //     <input type="name" class="closor-callback-v1-input" data-iti="true"
@@ -564,8 +565,8 @@ class WidgetController extends Controller
 
                                             </div>
 
-                                        </div>
-                                    </form>
+                                        </form>
+                                    </div>
                                 </section>
 
 
