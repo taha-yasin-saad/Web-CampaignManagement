@@ -604,16 +604,12 @@ class WidgetController extends Controller
             // </script>
     }
     public function widget_ajax(Request $request){
-        $data = $request->all();
-        dd($data->toJson());
-        dd($data);
-
         $save = new Lead;
         $save->product_id = $request->product_id;
         $save->name = $request->name;
         $save->email = $request->email;
         $save->phone = $request->phone;
-        // $save->lead = $data->toJson();
+        $save->lead = json_encode($request->all());
         $save->save();
     }
 
