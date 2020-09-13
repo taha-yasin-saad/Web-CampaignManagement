@@ -526,8 +526,7 @@
             };
             var url = 'https://malexs.net/closor/public/widget/'+params.get('id');
             xhttp.open("GET", url, true);
-            console.log(url);
-            // xhttp.send();
+            xhttp.send();
         }
 
     };
@@ -540,6 +539,45 @@
     function closeCloserModal(){
         document.getElementById("closor-call-modal").classList.remove("closor-show-modal");
         document.getElementById("closor-callback-v1-popup-scroll-container").classList.remove("closor-show-modal");
+    }
+
+
+    //  get time zone
+    function geoplugin_timezone(){
+    var zone = geoplugin_timezone();
+    document.getElementById("time-zone").innerHTML = zone;
+    console.log(zone);
+    console.log(651651);
+    }
+
+
+    function intlTelInput(){
+    var input = document.querySelector("#phone");
+    window.intlTelInput(input);
+     console.log(1111111);
+     console.log(input);
+    }
+
+    function intlTelInput_1(){
+        var input = document.querySelector("#phone");
+        window.intlTelInput(input, {
+            autoPlaceholder: "aggressive",
+            placeholderNumberType: "MOBILE",
+            utilsScript: "https://malexs.net/closor/public/css/intl-tel-input-17.0.0/build/js/utils.js",
+        });
+        var iti = window.intlTelInputGlobals.getInstance(input);
+        input.addEventListener("countrychange", function() {
+        console.log(1111111);
+            console.log(iti.getSelectedCountryData().dialCode);
+            $(".phone22").val(iti.getSelectedCountryData().dialCode);
+        });
+    }
+
+    function formData(){
+    const formData = new FormData(document.querySelector("form"))
+    for (var pair of formData.entries()) {
+         console.log(pair[0] + ": " + pair[1]);
+    }
     }
     // console.log(1111111111111);
     // document.getElementById("closor-call-icon").addEventListener("click", function(){

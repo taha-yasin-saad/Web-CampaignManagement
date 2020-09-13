@@ -582,40 +582,6 @@ class WidgetController extends Controller
         </div>
         <script src="https://api.ipdata.co?api-key=test" type="text/javascript"></script>
         <script src="https://malexs.net/closor/public/css/intl-tel-input-17.0.0/build/js/intlTelInput.js"></script>
-        <!-- get time zone -->
-        <script type="text/javascript">
-        var zone = geoplugin_timezone();
-        document.getElementById("time-zone").innerHTML = zone;
-        console.log(zone);
-        console.log(651651);
-        </script>
-
-
-
-        <script src="https://malexs.net/closor/public/css/intl-tel-input-17.0.0/build/js/intlTelInput.js"></script>
-        <script>
-            var input = document.querySelector("#phone");
-            window.intlTelInput(input);
-         console.log(1111111);
-         console.log(var input);
-
-        </script>
-        <script>
-            var input = document.querySelector("#phone");
-            window.intlTelInput(input, {
-                autoPlaceholder: "aggressive",
-                placeholderNumberType: "MOBILE",
-                utilsScript: "https://malexs.net/closor/public/css/intl-tel-input-17.0.0/build/js/utils.js",
-            });
-            var iti = window.intlTelInputGlobals.getInstance(input);
-            input.addEventListener("countrychange", function() {
-         console.log(1111111);
-                console.log(iti.getSelectedCountryData().dialCode);
-                $(".phone22").val(iti.getSelectedCountryData().dialCode);
-            });
-        </script>
-
-
     ';
         return $widget;
 
