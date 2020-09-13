@@ -579,6 +579,32 @@
          console.log(pair[0] + ": " + pair[1]);
     }
     }
+
+    function dataget(){
+    document.getElementById("button-id").addEventListener("click", function () {
+        console.log(95165);
+            var elements = document.getElementById("form-id").elements;
+            var obj ={};
+            for(var i = 0 ; i < elements.length ; i++){
+                var item = elements.item(i);
+                obj[item.name] = item.value;
+            }
+
+            var obj_1 = document.getElementById("demo").innerHTML = JSON.stringify(obj);
+            console.log(obj_1);
+
+        });
+        // function data-get() {
+        //     var elements = document.getElementById("form-id").elements;
+        //     var obj ={};
+        //     for(var i = 0 ; i < elements.length ; i++){
+        //         var item = elements.item(i);
+        //         obj[item.name] = item.value;
+        //     }
+
+        //     document.getElementById("demo").innerHTML = JSON.stringify(obj);
+        // }
+    }
     // console.log(1111111111111);
     // document.getElementById("closor-call-icon").addEventListener("click", function(){
     //     console.log(2222222222);
