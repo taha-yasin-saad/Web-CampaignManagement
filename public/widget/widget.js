@@ -580,6 +580,7 @@
             var item = elements.item(i);
             obj[item.name] = item.value;
         }
+        console.log(obj);
         var form_data = JSON.stringify(obj);
         console.log(form_data);
 
