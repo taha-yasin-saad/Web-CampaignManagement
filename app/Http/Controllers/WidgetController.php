@@ -604,12 +604,14 @@ class WidgetController extends Controller
             // </script>
     }
     public function widget_ajax(Request $request){
+        $data = $request->all();
+        unset($data['csrftoken']);
         $save = new Lead;
         $save->product_id = $request->product_id;
         $save->name = $request->name;
         $save->email = $request->email;
-        $save->phone = $request->phone;
-        $save->lead = json_encode($request->all());
+        $save->phone = $request->country_code .' '.$request->phone;
+        $save->lead = json_encode($data);
         $save->save();
     }
 
