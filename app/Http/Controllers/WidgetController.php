@@ -604,6 +604,7 @@ class WidgetController extends Controller
             // </script>
     }
     public function widget_ajax(Request $request){
+        dd($request->all());
         $save = new Lead;
         $save->product_id = $request->product_id;
         $save->name = $request->name;
