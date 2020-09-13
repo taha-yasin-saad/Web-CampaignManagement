@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Lead;
 use App\Source;
 use Illuminate\Http\Request;
 
@@ -599,4 +600,11 @@ class WidgetController extends Controller
         //     });
         // </script>
     }
+    public function widget_ajax(Request $request){
+        dd($request->all());
+
+        $data = $request->all();
+        $product = Lead::create($data);
+    }
+
 }

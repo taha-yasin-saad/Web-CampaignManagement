@@ -580,9 +580,21 @@
             var item = elements.item(i);
             obj[item.name] = item.value;
         }
+        var form_data = JSON.stringify(obj);
+        console.log(form_data);
 
-        console.log(JSON.stringify(obj));
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.open("POST", "widget", true);
+        hr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+            this.form_data;
+            }
+        };
+
+        hr.send(this.form_data);
     }
+
     // console.log(1111111111111);
     // document.getElementById("closor-call-icon").addEventListener("click", function(){
     //     console.log(2222222222);
