@@ -86,7 +86,7 @@ class WidgetController extends Controller
                                     </div>
 
                                     <div class="closor-callback-v1-interest-query">
-                                        <form class="closor-callback-v1-interest-query-form" data-action="submit-callback">';
+                                        <div class="closor-callback-v1-interest-query-form" id="form-id" data-action="submit-callback">';
 
                                             // <div class="allow-dropdown separate-dial-code iti-sdc-3">
                                             //     <input type="name" class="closor-callback-v1-input" data-iti="true"
@@ -544,7 +544,7 @@ class WidgetController extends Controller
                                                 }
                                             }
 
-                                            $widget .=   '<button class="closor-callback-v1-button" style="background:'.$source->primary.'!important">
+                                            $widget .=   '<button class="closor-callback-v1-button" style="background:'.$source->primary.'!important" id="button-id">
                                                 <div class="closor-callback-v1-preloader">
                                                     <div class="closor-callback-v1-preloader-dot closor-dot-1">
                                                     </div>
@@ -552,7 +552,7 @@ class WidgetController extends Controller
                                                     </div>
                                                     <div class="closor-callback-v1-preloader-dot closor-dot-3"></div>
                                                 </div>
-                                                <span class="closor-callback-v1-button-text" style="color:'.$source->secondary.'!important">Call me now</span>
+                                                <span class="closor-callback-v1-button-text" style="color:'.$source->secondary.'!important" >Call me now</span>
                                             </button>
 
 
@@ -564,7 +564,7 @@ class WidgetController extends Controller
 
                                             </div>
 
-                                        </form>
+                                        </div>
                                     </div>
                                 </section>
 
