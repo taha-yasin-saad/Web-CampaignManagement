@@ -85,7 +85,7 @@ class WidgetController extends Controller
                                         Would you like to recieve a free callback in 30 seconds?
                                     </div>
 
-                                    <div class="closor-callback-v1-interest-query">
+                                    <form class="closor-callback-v1-interest-query" onsubmit="event.preventDefault(); return dataget()" id="form-id">
                                         <div class="closor-callback-v1-interest-query-form" id="form-id" data-action="submit-callback">';
 
                                             // <div class="allow-dropdown separate-dial-code iti-sdc-3">
@@ -544,7 +544,7 @@ class WidgetController extends Controller
                                                 }
                                             }
 
-                                            $widget .=   '<button class="closor-callback-v1-button" style="background:'.$source->primary.'!important" id="button-id" onclick="form_data()">
+                                            $widget .=   '<button class="closor-callback-v1-button" style="background:'.$source->primary.'!important" id="button-id">
                                                 <div class="closor-callback-v1-preloader">
                                                     <div class="closor-callback-v1-preloader-dot closor-dot-1">
                                                     </div>
@@ -565,7 +565,7 @@ class WidgetController extends Controller
                                             </div>
 
                                         </div>
-                                    </div>
+                                    </form>
                                 </section>
 
 
