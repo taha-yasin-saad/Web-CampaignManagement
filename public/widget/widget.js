@@ -574,7 +574,7 @@
     }
 
     function formData(){
-    const formData = new FormData(document.querySelector("form"))
+    const formData = new FormData(document.getElementById("form-id"))
     for (var pair of formData.entries()) {
          console.log(pair[0] + ": " + pair[1]);
     }
@@ -585,7 +585,8 @@
         console.log(95165);
             var elements = document.getElementById("form-id").elements;
             var obj ={};
-            for(var i = 0 ; i < elements.length ; i++){
+            var length = elements.length;
+            for(var i = 0 ; i < length ; i++){
                 var item = elements.item(i);
                 obj[item.name] = item.value;
             }
