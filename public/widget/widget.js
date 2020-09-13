@@ -585,14 +585,14 @@
 
         var xmlhttp = new XMLHttpRequest();
         xmlhttp.open("POST", "widget", true);
-        hr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         xmlhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
             this.form_data;
             }
         };
 
-        hr.send(this.form_data);
+        xmlhttp.send(form_data);
     }
 
     // console.log(1111111111111);
