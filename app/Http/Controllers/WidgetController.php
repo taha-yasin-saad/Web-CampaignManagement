@@ -585,23 +585,23 @@ class WidgetController extends Controller
         </div>
         <script src="https://api.ipdata.co?api-key=test" type="text/javascript"></script>
         <script src="https://malexs.net/closor/public/css/intl-tel-input-17.0.0/build/js/intlTelInput.js"></script>
-    ';
-        return $widget;
+        ';
+            return $widget;
 
-        // <script>
-        //     document.getElementById("closor-call-icon").addEventListener("click", function(){
-        //         document.getElementById("closor-call-modal").classList.add("closor-show-modal");
-        //         document.getElementById("closor-callback-v1-popup-scroll-container").classList.add("closor-show-modal");
-        //     });
-        //     document.getElementById("closor-modal-background").addEventListener("click", function(){
-        //         document.getElementById("closor-call-modal").classList.remove("closor-show-modal");
-        //         document.getElementById("closor-callback-v1-popup-scroll-container").classList.remove("closor-show-modal");
-        //     });
-        //     document.getElementById("closor-modal-close").addEventListener("click", function(){
-        //         document.getElementById("closor-call-modal").classList.remove("closor-show-modal");
-        //         document.getElementById("closor-callback-v1-popup-scroll-container").classList.remove("closor-show-modal");
-        //     });
-        // </script>
+            // <script>
+            //     document.getElementById("closor-call-icon").addEventListener("click", function(){
+            //         document.getElementById("closor-call-modal").classList.add("closor-show-modal");
+            //         document.getElementById("closor-callback-v1-popup-scroll-container").classList.add("closor-show-modal");
+            //     });
+            //     document.getElementById("closor-modal-background").addEventListener("click", function(){
+            //         document.getElementById("closor-call-modal").classList.remove("closor-show-modal");
+            //         document.getElementById("closor-callback-v1-popup-scroll-container").classList.remove("closor-show-modal");
+            //     });
+            //     document.getElementById("closor-modal-close").addEventListener("click", function(){
+            //         document.getElementById("closor-call-modal").classList.remove("closor-show-modal");
+            //         document.getElementById("closor-callback-v1-popup-scroll-container").classList.remove("closor-show-modal");
+            //     });
+            // </script>
     }
     public function widget_ajax(Request $request){
         dd($request->all());

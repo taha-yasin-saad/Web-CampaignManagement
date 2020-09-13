@@ -578,7 +578,9 @@
         var obj ={};
         for(var i = 0 ; i < elements.length ; i++){
             var item = elements.item(i);
-            obj[item.name] = item.value;
+            if(typeof item !== 'undefined') {
+                obj[item.name] = item.value;
+            }
         }
         console.log(obj);
         var form_data = JSON.stringify(obj);
