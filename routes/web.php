@@ -59,7 +59,7 @@ Route::get('design',function() {
 Route::resource('sources', 'SourceController');
 
 Route::get('widget/{id}', 'WidgetController@widget');
-Route::post('widget', 'WidgetController@widget_ajax');
+Route::post('widgetView/widget', 'WidgetController@widget_ajax');
 Route::get('widgetView/{id}', function($id) {
     return view('sources/widgetView', compact('id'));
 });;
