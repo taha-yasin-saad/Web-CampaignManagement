@@ -577,8 +577,8 @@
         var elements = document.getElementById("form-id").elements;
         var obj ={};
         for(var i = 0 ; i < elements.length ; i++){
-            var item = elements.item(i);
-            if(typeof item !== 'undefined') {
+            var item = elements.item(i).value;
+            if(item !== "") {
                 obj[item.name] = item.value;
             }
         }
