@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "9135882d-f99a-4e42-9b56-062311d51830",
+		"_postman_id": "04eae695-e85f-4655-8ac0-0fb6bdecf0e3",
 		"name": "Closor",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
@@ -17,7 +17,7 @@
 					"mode": "formdata",
 					"formdata": []
 				},
-				"url": "https://malexs.net/closor/public/api/all_workplaces"
+				"url": "{{url}}/all_workplaces"
 			},
 			"response": []
 		},
@@ -36,7 +36,7 @@
 						}
 					]
 				},
-				"url": "https://malexs.net/closor/public/api/all_products"
+				"url": "{{url}}/all_products"
 			},
 			"response": []
 		},
@@ -70,9 +70,147 @@
 						}
 					]
 				},
-				"url": "https://malexs.net/closor/public/api/lead"
+				"url": "{{url}}/lead"
+			},
+			"response": []
+		},
+		{
+			"name": "User-login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "a7medkamal775@gmail.com",
+							"type": "text"
+						}
+					]
+				},
+				"url": "{{url}}/login"
+			},
+			"response": []
+		},
+		{
+			"name": "User-login2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "a7medkamal775@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "kareem",
+							"type": "text"
+						},
+						{
+							"key": "phone",
+							"value": "01234567890",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123456",
+							"type": "text"
+						}
+					]
+				},
+				"url": "{{url}}/login2"
+			},
+			"response": []
+		},
+		{
+			"name": "All_Leads",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": "{{url}}/all_leads"
+			},
+			"response": []
+		},
+		{
+			"name": "update_profile",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "id",
+							"value": "4",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "kareem",
+							"type": "text"
+						},
+						{
+							"key": "phone",
+							"value": "01234567890",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123456",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "a7medkamal775@gmail.com",
+							"type": "text"
+						}
+					]
+				},
+				"url": "{{url}}/update_profile"
 			},
 			"response": []
 		}
-	]
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "a2c894fa-fd5f-41f2-98ea-8da15302da29",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "cd04495b-5ac8-4cf8-9044-b028bfe661aa",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "cf696aa9-f8a9-411c-b9e2-9d9dedeeb7ff",
+			"key": "url",
+			"value": "https://malexs.net/closor/public/api"
+		}
+	],
+	"protocolProfileBehavior": {}
 }

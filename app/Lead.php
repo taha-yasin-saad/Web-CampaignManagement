@@ -14,4 +14,7 @@ class Lead extends Model
     public function product(){
         return $this->belongsTo('\App\Product');
     }
+    public function source(){
+        return $this->belongsTo('\App\Source');
+    }
 }

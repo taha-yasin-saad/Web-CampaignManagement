@@ -88,7 +88,7 @@ class WidgetController extends Controller
 
                                     <div class="closor-callback-v1-interest-query" >
                                         <form class="closor-callback-v1-interest-query-form" onsubmit="event.preventDefault(); return dataget()" id="form-id" data-action="submit-callback">
-                                        <input type="hidden" name="product_id" value="'.$id.'">
+                                        <input type="hidden" name="source_id" value="'.$id.'">
                                         <input type="hidden" id="csrftoken" name="csrftoken" value="'.csrf_token().'">
                                         ';
 
@@ -607,7 +607,7 @@ class WidgetController extends Controller
         $data = $request->all();
         unset($data['csrftoken']);
         $save = new Lead;
-        $save->product_id = $request->product_id;
+        $save->source_id = $request->source_id;
         $save->name = $request->name;
         $save->email = $request->email;
         $save->phone = $request->country_code .' '.$request->phone;
