@@ -120,6 +120,11 @@
 							"key": "password",
 							"value": "123456",
 							"type": "text"
+						},
+						{
+							"key": "id",
+							"value": "4",
+							"type": "text"
 						}
 					]
 				},
@@ -207,7 +212,7 @@
 	],
 	"variable": [
 		{
-			"id": "cf696aa9-f8a9-411c-b9e2-9d9dedeeb7ff",
+			"id": "be6e1547-444b-4f23-8d3c-02e395612077",
 			"key": "url",
 			"value": "https://malexs.net/closor/public/api"
 		}
