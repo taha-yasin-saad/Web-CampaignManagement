@@ -27,14 +27,13 @@
 				"method": "POST",
 				"header": [],
 				"body": {
-					"mode": "formdata",
-					"formdata": [
-						{
-							"key": "workplace_id",
-							"value": "6",
-							"type": "text"
+					"mode": "raw",
+					"raw": "{   \r\n    \"workplace_id\": 6\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
 						}
-					]
+					}
 				},
 				"url": "{{url}}/all_products"
 			},
@@ -46,29 +45,13 @@
 				"method": "POST",
 				"header": [],
 				"body": {
-					"mode": "formdata",
-					"formdata": [
-						{
-							"key": "name",
-							"value": "kareem222",
-							"type": "text"
-						},
-						{
-							"key": "phone",
-							"value": "1234567654",
-							"type": "text"
-						},
-						{
-							"key": "product_id",
-							"value": "6",
-							"type": "text"
-						},
-						{
-							"key": "mobile",
-							"value": "22345678987654",
-							"type": "text"
+					"mode": "raw",
+					"raw": "{   \r\n    \"name\": \"kareem222\",\r\n    \"phone\": 1234567654,\r\n    \"product_id\": 6,\r\n    \"mobile\": 22345678987654\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
 						}
-					]
+					}
 				},
 				"url": "{{url}}/lead"
 			},
@@ -80,14 +63,13 @@
 				"method": "POST",
 				"header": [],
 				"body": {
-					"mode": "formdata",
-					"formdata": [
-						{
-							"key": "email",
-							"value": "a7medkamal775@gmail.com",
-							"type": "text"
+					"mode": "raw",
+					"raw": "{   \r\n    \"email\": \"a7medkamal775@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
 						}
-					]
+					}
 				},
 				"url": "{{url}}/login"
 			},
@@ -99,34 +81,13 @@
 				"method": "POST",
 				"header": [],
 				"body": {
-					"mode": "formdata",
-					"formdata": [
-						{
-							"key": "email",
-							"value": "a7medkamal775@gmail.com",
-							"type": "text"
-						},
-						{
-							"key": "name",
-							"value": "kareem",
-							"type": "text"
-						},
-						{
-							"key": "phone",
-							"value": "01234567890",
-							"type": "text"
-						},
-						{
-							"key": "password",
-							"value": "123456",
-							"type": "text"
-						},
-						{
-							"key": "id",
-							"value": "4",
-							"type": "text"
+					"mode": "raw",
+					"raw": "{   \r\n    \"id\": 4,\r\n    \"email\": \"a7medkamal775@gmail.com\",\r\n    \"name\": \"kareem\",\r\n    \"phone\": \"01234567890\",\r\n    \"password\": 123456\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
 						}
-					]
+					}
 				},
 				"url": "{{url}}/login2"
 			},
@@ -154,34 +115,13 @@
 				"method": "POST",
 				"header": [],
 				"body": {
-					"mode": "formdata",
-					"formdata": [
-						{
-							"key": "id",
-							"value": "4",
-							"type": "text"
-						},
-						{
-							"key": "name",
-							"value": "kareem",
-							"type": "text"
-						},
-						{
-							"key": "phone",
-							"value": "01234567890",
-							"type": "text"
-						},
-						{
-							"key": "password",
-							"value": "123456",
-							"type": "text"
-						},
-						{
-							"key": "email",
-							"value": "a7medkamal775@gmail.com",
-							"type": "text"
+					"mode": "raw",
+					"raw": "{   \r\n    \"id\": 4,\r\n    \"email\": \"a7medkamal775@gmail.com\",\r\n    \"name\": \"kareem\",\r\n    \"phone\": \"01234567890\",\r\n    \"password\": 123456\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
 						}
-					]
+					}
 				},
 				"url": "{{url}}/update_profile"
 			},
@@ -193,20 +133,13 @@
 				"method": "POST",
 				"header": [],
 				"body": {
-					"mode": "formdata",
-					"formdata": [
-						{
-							"key": "id",
-							"value": "1",
-							"type": "text"
-						},
-						{
-							"key": "status",
-							"value": "1",
-							"description": "0 not rated - 1 qualified - 2 unqualified",
-							"type": "text"
+					"mode": "raw",
+					"raw": "{   \r\n    \"id\": 1,\r\n    \"status\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
 						}
-					]
+					}
 				},
 				"url": "{{url}}/qualified"
 			},
@@ -237,7 +170,7 @@
 	],
 	"variable": [
 		{
-			"id": "8982f23c-b7ed-4254-a33f-e644c742e32c",
+			"id": "dc967358-b910-4eb9-9ade-b0fb0aa41a9d",
 			"key": "url",
 			"value": "https://malexs.net/closor/public/api"
 		}
