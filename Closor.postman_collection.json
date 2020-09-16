@@ -186,6 +186,31 @@
 				"url": "{{url}}/update_profile"
 			},
 			"response": []
+		},
+		{
+			"name": "qualified",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "status",
+							"value": "1",
+							"description": "0 not rated - 1 qualified - 2 unqualified",
+							"type": "text"
+						}
+					]
+				},
+				"url": "{{url}}/qualified"
+			},
+			"response": []
 		}
 	],
 	"event": [
@@ -212,7 +237,7 @@
 	],
 	"variable": [
 		{
-			"id": "be6e1547-444b-4f23-8d3c-02e395612077",
+			"id": "8982f23c-b7ed-4254-a33f-e644c742e32c",
 			"key": "url",
 			"value": "https://malexs.net/closor/public/api"
 		}
