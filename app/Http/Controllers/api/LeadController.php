@@ -54,20 +54,44 @@ class LeadController extends Controller
 
 			return response()->json(array('code' => '0', 'data' => $all_products), 200, ['Access-Control-Allow-Origin' => '*'], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
     }
-    public function allleads() {
-        
-        $lead = Lead::all();
-        $custom1= json_decode($lead->lead);
-
-        return response()->json(array(
-        'code' => '0','data' => $lead), 200, ['Access-Control-Allow-Origin' => '*'], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
-    }
 
     public function all_leads()
 	{
         $all_leads = Lead::with('source')->get();
 
         return response()->json(array('code' => '0', 'data' => $all_leads), 200, ['Access-Control-Allow-Origin' => '*'], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
-	}
+    }
     
+    public function qualified(Request $request)
+    {
+        $data = $request->all();
+        $rules = array(
+                'id'     => 'required',
+                'status'     => 'required',
+            );
+        $validator = Validator::make($data, $rules);
+        
+        if ($validator->fails()) {
+                return response()->json(array('code' => 1,'msg_en'=> 'Wrong Data','msg_ar'=>'خطأ فى البيانات','error'=>$validator->messages()), 200, ['Access-Control-Allow-Origin' => '*'], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
+        }
+
+        $lead = Lead::where('id', $request->id)->first();
+
+        if($request->status != 0 && $request->status != 1 && $request->status != 2){
+            return response()->json(array('code' => 1,'message'=> 'Status must be 0 or 1 or 2'), 200, ['Access-Control-Allow-Origin' => '*'], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
+        }
+
+        if ($lead) {
+            $lead->update([
+                $lead->status = $request->status,
+            ]);
+
+            return response()->json(array('code' => 0,
+            'id' => $lead->id,
+            'status' => $lead->status,
+            'message'=> 'Qualified Status Changed Successfully'), 200, ['Access-Control-Allow-Origin' => '*'], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
+        }else{
+            return response()->json(array('code' => 1,'message'=> 'No Lead in system with this id'), 200, ['Access-Control-Allow-Origin' => '*'], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
+        }
+    }
 }

@@ -25,3 +25,4 @@ Route::post('/login', 'api\UserController@login');
 Route::post('/login2', 'api\UserController@login2');
 Route::post('/update_profile', 'api\UserController@update_profile');
 Route::get('/all_leads', 'api\LeadController@all_leads');
+Route::post('/qualified', 'api\LeadController@qualified');
