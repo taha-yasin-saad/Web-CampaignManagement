@@ -48,4 +48,9 @@ class User extends Authenticatable
         return $this->belongsToMany('App\Workplace','workplace_users', 'user_id', 'workplace_id');
     }
 
+    public function leads()
+    {
+        return $this->hasMany('App\Lead');
+    }
+
 }
