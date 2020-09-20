@@ -34,7 +34,7 @@ class UserController extends Controller
         }elseif($user){
             return response()->json(array(
             'code' => 2,
-            'id' => $user->id
+            'id' => $user->id,
             'email' => $user->email
             ), 200, ['Access-Control-Allow-Origin' => '*'], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
         }else{
