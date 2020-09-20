@@ -74,36 +74,30 @@ class UserController extends Controller
 
     protected function update_profile(Request $request)
     {
-        
         $data = $request->all();
-        $user = User::where('id', $request->id)->first();
-        $rules = array(
-                'id'     => 'required',
+        if($user && $user['password'] == NULL){
+            $rules = array(
+                'id'        => 'required',
                 'email'     => 'required',
                 'phone'     => 'required',
                 'name'      => 'required',
-            if($user && $user->password == NULL){'password' => 'required'}
-        );
+                'password'  => 'required'
+            );
+        }else{
+            $rules = array(
+                'id'        => 'required',
+                'email'     => 'required',
+                'phone'     => 'required',
+                'name'      => 'required'
+            );
+        }
         $validator = Validator::make($data, $rules);
         if ($validator->fails()) {
                 return response()->json(array('code' => 1,'msg_en'=> 'Wrong Data','msg_ar'=>'خطأ فى البيانات','error'=>$validator->messages()), 200, ['Access-Control-Allow-Origin' => '*'], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
         }
 
-        if ($user && $user->password != NULL ) {
-            $user->update([
-                'name' => $request->name,
-                'email' => $request->email,
-                'phone' => $request->phone,
-            ]);
-            return response()->json(array(
-                'code' => 0,
-                'id' => $user->id,
-                'name' => $user->name,
-                'phone' => $user->phone,
-                'email' => $user->email,
-                'password' => $user->password,
-                'message'=> 'The User('.$user->name.') Updated successfully'), 200, ['Access-Control-Allow-Origin' => '*'], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
-        }else($user && $user->password == NULL){
+        $user = User::where('id', $request->id)->first();
+        if ($user && $user['password'] == NULL) {
             $user->update([
                 'name' => $request->name,
                 'email' => $request->email,
@@ -111,7 +105,21 @@ class UserController extends Controller
                 'password' => Hash::make($request->password),
             ]);
             return response()->json(array(
-                'code' => 0,
+                'code' => '0',
+                'id' => $user->id,
+                'name' => $user->name,
+                'phone' => $user->phone,
+                'email' => $user->email,
+                'password' => $user->password,
+                'message'=> 'The User('.$user->name.') Updated successfully'), 200, ['Access-Control-Allow-Origin' => '*'], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
+        }elseif{
+            $user->update([
+                'name' => $request->name,
+                'email' => $request->email,
+                'phone' => $request->phone,
+            ]);
+            return response()->json(array(
+                'code' => '0',
                 'id' => $user->id,
                 'name' => $user->name,
                 'phone' => $user->phone,
