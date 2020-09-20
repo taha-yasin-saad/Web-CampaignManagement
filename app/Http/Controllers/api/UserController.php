@@ -61,7 +61,7 @@ class UserController extends Controller
                 'password' => $user->password
                 ), 200, ['Access-Control-Allow-Origin' => '*'], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
         }else{
-            return response()->json(array('code' => 1,'message'=> 'No user in system with this email'), 200, ['Access-Control-Allow-Origin' => '*'], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
+            return response()->json(array('code' => 1,'message'=> 'Please check data you Login Data'), 200, ['Access-Control-Allow-Origin' => '*'], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
         }
     }
 
