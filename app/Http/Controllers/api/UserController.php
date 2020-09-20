@@ -27,12 +27,14 @@ class UserController extends Controller
         if($user && $user->password){
 			return response()->json(array(
                 'code' => 0,
+                'id' => $user->id,
                 'email' => $user->email,
                 'password' => $user->password
                 ), 200, ['Access-Control-Allow-Origin' => '*'], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
         }elseif($user){
             return response()->json(array(
             'code' => 2,
+            'id' => $user->id
             'email' => $user->email
             ), 200, ['Access-Control-Allow-Origin' => '*'], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
         }else{
@@ -44,7 +46,6 @@ class UserController extends Controller
 	{
         $data = $request->all();
         $rules = array(
-                'id'        => 'required',
                 'email'     => 'required',
                 'password'  => 'required'
             );
@@ -54,7 +55,7 @@ class UserController extends Controller
                 return response()->json(array('code' => 1,'msg_en'=> 'Wrong Data','msg_ar'=>'خطأ فى البيانات','error'=>$validator->messages()), 200, ['Access-Control-Allow-Origin' => '*'], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
         }
 
-        $user = User::where('id',$request->id)->first();
+        $user = User::where('email',$request->email)->first();
         if($user && Hash::check($request->password, $user->password)){
 			return response()->json(array(
                 'code'      => 0,
