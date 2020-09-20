@@ -106,7 +106,7 @@ class UserController extends Controller
                 'email'     => 'required',
                 'phone'     => 'required',
                 'name'      => 'required',
-                'password'  => 'required',
+//                'password'  => 'required',
             );
         $validator = Validator::make($data, $rules);
         if ($validator->fails()) {
@@ -115,12 +115,13 @@ class UserController extends Controller
 
         $user = User::where('id', $request->id)->first();
         if ($user) {
-            $user->update([
-                'name' => $request->name,
-                'email' => $request->email,
-                'phone' => $request->phone,
-                'password' => Hash::make($request->password),
-            ]);
+            $update['name'] = $request->name;
+            $update['email'] = $request->email;
+            $update['phone'] = $request->phone;
+            if(@$request->password && $request->password){
+                $update['password'] = Hash::make($request->password);
+            }
+            $user->update($update);
             return response()->json(array(
                 'code' => '0',
                 'id' => $user->id,
