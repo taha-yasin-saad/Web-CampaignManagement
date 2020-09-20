@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Lead;
 use App\Source;
+use App\Workplace;
 use Illuminate\Http\Request;
 
 class WidgetController extends Controller
@@ -606,8 +607,10 @@ class WidgetController extends Controller
     public function widget_ajax(Request $request){
         $data = $request->all();
         unset($data['csrftoken']);
+        $user = Source::find($request->source_id)->workplace->users->withCount('leeds')->orderBy('leeds_count', 'asc')->first();
         $save = new Lead;
         $save->source_id = $request->source_id;
+        $save->user_id = $user->id;
         $save->name = $request->name;
         $save->email = $request->email;
         $save->phone = $request->country_code .' '.$request->phone;

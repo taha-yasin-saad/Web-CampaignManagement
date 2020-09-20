@@ -12,4 +12,9 @@ class Source extends Model
     protected $casts = [
         'fields' => 'array',
     ];
+
+    public function workplace()
+    {
+        return $this->belongsTo('App\Workplace');
+    }
 }
