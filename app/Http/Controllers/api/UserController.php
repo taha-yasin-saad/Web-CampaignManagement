@@ -44,8 +44,9 @@ class UserController extends Controller
 	{
         $data = $request->all();
         $rules = array(
-                'email' => 'required',
-                'password'   => 'required'
+                'id'        => 'required',
+                'email'     => 'required',
+                'password'  => 'required'
             );
         $validator = Validator::make($data, $rules);
 
@@ -53,12 +54,12 @@ class UserController extends Controller
                 return response()->json(array('code' => 1,'msg_en'=> 'Wrong Data','msg_ar'=>'خطأ فى البيانات','error'=>$validator->messages()), 200, ['Access-Control-Allow-Origin' => '*'], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
         }
 
-        $user = User::where('email',$request->email)->first();
-        if($user && Hash::check($request->password) == $user->password){
+        $user = User::where('id',$request->id)->first();
+        if($user && Hash::check($request->password) , $user->password){
 			return response()->json(array(
                 'code' => 0,
                 'email' => $user->email,
-                'password' => bcrypt($user['password'])
+                'password' => $user->password
                 ), 200, ['Access-Control-Allow-Origin' => '*'], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
         }else{
             return response()->json(array('code' => 1,'message'=> 'Please check data you Login Data'), 200, ['Access-Control-Allow-Origin' => '*'], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
