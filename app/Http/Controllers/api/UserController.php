@@ -80,7 +80,10 @@ class UserController extends Controller
                 'email'     => 'required',
                 'phone'     => 'required',
                 'name'      => 'required',
-            );
+            if ($user && $user->password == NULL ) {
+            'password'      => 'required',
+            }
+        );
         $validator = Validator::make($data, $rules);
         if ($validator->fails()) {
                 return response()->json(array('code' => 1,'msg_en'=> 'Wrong Data','msg_ar'=>'خطأ فى البيانات','error'=>$validator->messages()), 200, ['Access-Control-Allow-Origin' => '*'], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
@@ -101,8 +104,7 @@ class UserController extends Controller
                 'email' => $user->email,
                 'password' => $user->password,
                 'message'=> 'The User('.$user->name.') Updated successfully'), 200, ['Access-Control-Allow-Origin' => '*'], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
-        }elseif($user && $user->password == NULL){
-
+        }else($user && $user->password == NULL){
             $user->update([
                 'name' => $request->name,
                 'email' => $request->email,
