@@ -607,7 +607,7 @@ class WidgetController extends Controller
     public function widget_ajax(Request $request){
         $data = $request->all();
         unset($data['csrftoken']);
-        $user = Source::find($request->source_id)->workplace->users->withCount('leeds')->orderBy('leeds_count', 'asc')->first();
+        $user = Source::find($request->source_id)->workplace->users()->withCount('leads')->orderBy('leads_count', 'asc')->first();
         $save = new Lead;
         $save->source_id = $request->source_id;
         $save->user_id = $user->id;
