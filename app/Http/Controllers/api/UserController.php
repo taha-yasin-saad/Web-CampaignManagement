@@ -50,9 +50,9 @@ class UserController extends Controller
             'email'     => 'required',
             'password'  => 'required',
         );
-        
+
         $validator = Validator::make($data, $rules);
-        
+
         if ($validator->fails()) {
                 return response()->json(array('code' => 1,'msg_en'=> 'Wrong Data','msg_ar'=>'خطأ فى البيانات','error'=>$validator->messages()), 200, ['Access-Control-Allow-Origin' => '*'], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
         }
@@ -133,7 +133,6 @@ class UserController extends Controller
                 'name' => $user->name,
                 'phone' => $user->phone,
                 'email' => $user->email,
-                'password' => $user->password,
                 'message'=> 'The User('.$user->name.') Updated successfully'), 200, ['Access-Control-Allow-Origin' => '*'], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
         }else{
             return response()->json(array('code' => 1,'message'=> 'No user in system with this email'), 200, ['Access-Control-Allow-Origin' => '*'], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
