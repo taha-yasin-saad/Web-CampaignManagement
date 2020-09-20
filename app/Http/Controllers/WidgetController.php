@@ -609,15 +609,23 @@ class WidgetController extends Controller
         unset($data['csrftoken']);
 
         $user = Source::find($request->source_id)->workplace->users()->withCount('leads')->orderBy('leads_count', 'asc')->first();
-        
+
+        if(!@$request->product_id && !$request->product_id){
+            $product_id = Source::find($request->source_id)->workplace->products()->first()->id;
+        }else{
+            $product_id = $request->product_id;
+        }
         $save = new Lead;
         $save->source_id = $request->source_id;
         $save->user_id = $user->id;
+        $save->product_id = $product_id;
         $save->name = $request->name;
         $save->email = $request->email;
         $save->phone = $request->country_code .' '.$request->phone;
         $save->lead = json_encode($data);
         $save->save();
+
+        return $save;
     }
 
 }
