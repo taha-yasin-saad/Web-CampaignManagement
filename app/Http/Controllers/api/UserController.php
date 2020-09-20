@@ -26,13 +26,13 @@ class UserController extends Controller
         $user = User::where('email',$request->email)->first();
         if($user && $user->password){
 			return response()->json(array(
-                'code' => '0',
+                'code' => 0,
                 'email' => $user->email,
                 'password' => $user->password
                 ), 200, ['Access-Control-Allow-Origin' => '*'], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
         }elseif($user){
             return response()->json(array(
-            'code' => '2',
+            'code' => 2,
             'email' => $user->email
             ), 200, ['Access-Control-Allow-Origin' => '*'], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
         }else{
@@ -80,7 +80,6 @@ class UserController extends Controller
                 'email'     => 'required',
                 'phone'     => 'required',
                 'name'      => 'required',
-                'password'  => 'required',
             );
         $validator = Validator::make($data, $rules);
         if ($validator->fails()) {
@@ -88,7 +87,22 @@ class UserController extends Controller
         }
 
         $user = User::where('id', $request->id)->first();
-        if ($user) {
+        if ($user && $user->password != NULL ) {
+            $user->update([
+                'name' => $request->name,
+                'email' => $request->email,
+                'phone' => $request->phone,
+            ]);
+            return response()->json(array(
+                'code' => 0,
+                'id' => $user->id,
+                'name' => $user->name,
+                'phone' => $user->phone,
+                'email' => $user->email,
+                'password' => $user->password,
+                'message'=> 'The User('.$user->name.') Updated successfully'), 200, ['Access-Control-Allow-Origin' => '*'], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
+        }elseif($user && $user->password == NULL){
+
             $user->update([
                 'name' => $request->name,
                 'email' => $request->email,
@@ -96,7 +110,7 @@ class UserController extends Controller
                 'password' => Hash::make($request->password),
             ]);
             return response()->json(array(
-                'code' => '0',
+                'code' => 0,
                 'id' => $user->id,
                 'name' => $user->name,
                 'phone' => $user->phone,
