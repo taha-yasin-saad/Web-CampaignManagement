@@ -27,12 +27,14 @@ class UserController extends Controller
         if($user && $user->password){
 			return response()->json(array(
                 'code' => 0,
+                'id' => $user->id,
                 'email' => $user->email,
                 'password' => $user->password
                 ), 200, ['Access-Control-Allow-Origin' => '*'], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
         }elseif($user){
             return response()->json(array(
             'code' => 2,
+            'id' => $user->id,
             'email' => $user->email
             ), 200, ['Access-Control-Allow-Origin' => '*'], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
         }else{
@@ -43,22 +45,25 @@ class UserController extends Controller
     public function login1(Request $request)
 	{
         $data = $request->all();
-        $rules = array(
-                'email' => 'required',
-                'password'   => 'required'
-            );
-        $validator = Validator::make($data, $rules);
 
+        $rules = array(
+            'email'     => 'required',
+            'password'  => 'required',
+        );
+        
+        $validator = Validator::make($data, $rules);
+        
         if ($validator->fails()) {
                 return response()->json(array('code' => 1,'msg_en'=> 'Wrong Data','msg_ar'=>'خطأ فى البيانات','error'=>$validator->messages()), 200, ['Access-Control-Allow-Origin' => '*'], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
         }
 
         $user = User::where('email',$request->email)->first();
-        if($user && Hash::check($request->password) == $user->password){
+        if($user && Hash::check($request->password, $user->password)){
 			return response()->json(array(
-                'code' => 0,
-                'email' => $user->email,
-                'password' => bcrypt($user['password'])
+                'code'      => 0,
+                'id'        => $user->id,
+                'email'     => $user->email,
+                'password'  => $user->password
                 ), 200, ['Access-Control-Allow-Origin' => '*'], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
         }else{
             return response()->json(array('code' => 1,'message'=> 'Please check data you Login Data'), 200, ['Access-Control-Allow-Origin' => '*'], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
