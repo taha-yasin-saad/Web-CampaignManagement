@@ -39,6 +39,32 @@ class UserController extends Controller
             return response()->json(array('code' => 1,'message'=> 'No user in system with this email'), 200, ['Access-Control-Allow-Origin' => '*'], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
         }
     }
+
+    public function login1(Request $request)
+	{
+        $data = $request->all();
+        $rules = array(
+                'email' => 'required',
+                'password'   => 'required'
+            );
+        $validator = Validator::make($data, $rules);
+
+        if ($validator->fails()) {
+                return response()->json(array('code' => 1,'msg_en'=> 'Wrong Data','msg_ar'=>'خطأ فى البيانات','error'=>$validator->messages()), 200, ['Access-Control-Allow-Origin' => '*'], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
+        }
+
+        $user = User::where('email',$request->email)->first();
+        if($user && Hash::check($request->password) == $user->password){
+			return response()->json(array(
+                'code' => 0,
+                'email' => $user->email,
+                'password' => bcrypt($user['password'])
+                ), 200, ['Access-Control-Allow-Origin' => '*'], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
+        }else{
+            return response()->json(array('code' => 1,'message'=> 'Please check data you Login Data'), 200, ['Access-Control-Allow-Origin' => '*'], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
+        }
+    }
+
     protected function login2(Request $request)
     {
         $data = $request->all();
@@ -80,6 +106,7 @@ class UserController extends Controller
                 'email'     => 'required',
                 'phone'     => 'required',
                 'name'      => 'required',
+                'password'  => 'required',
             );
         $validator = Validator::make($data, $rules);
         if ($validator->fails()) {
@@ -87,22 +114,7 @@ class UserController extends Controller
         }
 
         $user = User::where('id', $request->id)->first();
-        if ($user && $user->password != NULL ) {
-            $user->update([
-                'name' => $request->name,
-                'email' => $request->email,
-                'phone' => $request->phone,
-            ]);
-            return response()->json(array(
-                'code' => 0,
-                'id' => $user->id,
-                'name' => $user->name,
-                'phone' => $user->phone,
-                'email' => $user->email,
-                'password' => $user->password,
-                'message'=> 'The User('.$user->name.') Updated successfully'), 200, ['Access-Control-Allow-Origin' => '*'], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
-        }elseif($user && $user->password == NULL){
-
+        if ($user) {
             $user->update([
                 'name' => $request->name,
                 'email' => $request->email,
@@ -110,7 +122,7 @@ class UserController extends Controller
                 'password' => Hash::make($request->password),
             ]);
             return response()->json(array(
-                'code' => 0,
+                'code' => '0',
                 'id' => $user->id,
                 'name' => $user->name,
                 'phone' => $user->phone,
