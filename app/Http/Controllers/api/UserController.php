@@ -45,6 +45,7 @@ class UserController extends Controller
     public function login1(Request $request)
 	{
         $data = $request->all();
+        
         $rules = array(
                 'email'     => 'required',
                 'password'  => 'required'
