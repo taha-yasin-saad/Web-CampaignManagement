@@ -57,9 +57,10 @@ class UserController extends Controller
         $user = User::where('id',$request->id)->first();
         if($user && Hash::check($request->password, $user->password)){
 			return response()->json(array(
-                'code' => 0,
-                'email' => $user->email,
-                'password' => bcrypt($user->password)
+                'code'      => 0,
+                'id'        => $user->id,
+                'email'     => $user->email,
+                'password'  => $user->password
                 ), 200, ['Access-Control-Allow-Origin' => '*'], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
         }else{
             return response()->json(array('code' => 1,'message'=> 'Please check data you Login Data'), 200, ['Access-Control-Allow-Origin' => '*'], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
