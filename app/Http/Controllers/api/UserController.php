@@ -55,7 +55,7 @@ class UserController extends Controller
         }
 
         $user = User::where('id',$request->id)->first();
-        if($user && Hash::check($request->password) , $user->password){
+        if($user && Hash::check($request->password) == $user->password){
 			return response()->json(array(
                 'code' => 0,
                 'email' => $user->email,
