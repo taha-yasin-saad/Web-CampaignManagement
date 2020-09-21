@@ -600,9 +600,6 @@
         xmlhttp.send(form_data);
         if(xmlhttp.responseText == 1){
             closeCloserModal();
-
-        }else{
-            document.getElementById('phone').parentElement.css({"color": "red", "border": "2px solid red"});
         }
     }
 
