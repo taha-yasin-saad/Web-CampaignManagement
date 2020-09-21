@@ -598,9 +598,9 @@
         };
 
         xmlhttp.send(form_data);
-        console.log('response=',xmlhttp.responseText);
+        console.log('response=',xmlhttp.response);
 
-        if(xmlhttp.responseText == 1){
+        if(xmlhttp.response == 1){
             closeCloserModal();
         }
     }
