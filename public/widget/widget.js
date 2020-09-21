@@ -597,12 +597,8 @@
             }
         };
 
-        var x = xmlhttp.send(form_data);
-        console.log('response=',x);
-
-        if(xmlhttp.response == 1){
-            closeCloserModal();
-        }
+        xmlhttp.send(form_data);
+        closeCloserModal();
     }
 
     // console.log(1111111111111);
