@@ -514,7 +514,7 @@ class WidgetController extends Controller
                                                             <input name="country_code" type="hidden" value="'.auth()->user()->country_code.'" id="phone" class="phone" >
 
                                                             <input id="phone" type="phone" class="form-control closor-callback-v1-input"
-                                                            name="phone" 
+                                                            name="phone"
                                                             required
                                                             placeholder="phone"
                                                             required autocomplete="phone"
@@ -606,6 +606,9 @@ class WidgetController extends Controller
             // </script>
     }
     public function widget_ajax(Request $request){
+        if(!$request->phone){
+            return 0;
+        }
         $data = $request->all();
         unset($data['csrftoken']);
 
@@ -626,7 +629,7 @@ class WidgetController extends Controller
         $save->lead = json_encode($data);
         $save->save();
 
-        return $save;
+        return 1;
     }
 
 }

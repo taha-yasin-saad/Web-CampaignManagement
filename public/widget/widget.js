@@ -598,7 +598,12 @@
         };
 
         xmlhttp.send(form_data);
-        closeCloserModal();
+        if(xmlhttp.responseText == 1){
+            closeCloserModal();
+
+        }else{
+            document.getElementById('phone').parentElement.css({"color": "red", "border": "2px solid red"});
+        }
     }
 
     // console.log(1111111111111);
