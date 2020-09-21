@@ -597,8 +597,8 @@
             }
         };
 
-        xmlhttp.send(form_data);
-        console.log('response=',xmlhttp.response);
+        var x = xmlhttp.send(form_data);
+        console.log('response=',x);
 
         if(xmlhttp.response == 1){
             closeCloserModal();
