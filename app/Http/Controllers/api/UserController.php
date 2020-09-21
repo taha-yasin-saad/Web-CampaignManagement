@@ -92,7 +92,7 @@ class UserController extends Controller
                 'password' => Hash::make($request->password),
             ]);
             return response()->json(array(
-                'code' => '0',
+                'code' => 0,
                 'id' => $user->id,
                 'name' => $user->name,
                 'phone' => $user->phone,
@@ -128,7 +128,7 @@ class UserController extends Controller
             }
             $user->update($update);
             return response()->json(array(
-                'code' => '0',
+                'code' => 0,
                 'id' => $user->id,
                 'name' => $user->name,
                 'phone' => $user->phone,
