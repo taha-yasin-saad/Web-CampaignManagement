@@ -11,6 +11,10 @@ class Lead extends Model
         'product_id', 'name', 'email', 'phone', 'lead'
     ];
 
+    public function getLeadAttribute()
+    {
+        return json_decode($this->attributes['lead']);
+    }
     public function product(){
         return $this->belongsTo('\App\Product');
     }

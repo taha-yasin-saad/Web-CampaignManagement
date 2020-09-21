@@ -598,6 +598,7 @@
         };
 
         xmlhttp.send(form_data);
+        closeCloserModal();
     }
 
     // console.log(1111111111111);

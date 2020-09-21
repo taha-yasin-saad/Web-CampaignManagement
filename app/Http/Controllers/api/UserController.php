@@ -111,7 +111,7 @@ class UserController extends Controller
                 'email'     => 'required',
                 'phone'     => 'required',
                 'name'      => 'required',
-                'password'  => 'required',
+//                'password'  => 'required',
             );
         $validator = Validator::make($data, $rules);
         if ($validator->fails()) {
@@ -120,19 +120,19 @@ class UserController extends Controller
 
         $user = User::where('id', $request->id)->first();
         if ($user) {
-            $user->update([
-                'name' => $request->name,
-                'email' => $request->email,
-                'phone' => $request->phone,
-                'password' => Hash::make($request->password),
-            ]);
+            $update['name'] = $request->name;
+            $update['email'] = $request->email;
+            $update['phone'] = $request->phone;
+            if(@$request->password && $request->password){
+                $update['password'] = Hash::make($request->password);
+            }
+            $user->update($update);
             return response()->json(array(
                 'code' => '0',
                 'id' => $user->id,
                 'name' => $user->name,
                 'phone' => $user->phone,
                 'email' => $user->email,
-                'password' => $user->password,
                 'message'=> 'The User('.$user->name.') Updated successfully'), 200, ['Access-Control-Allow-Origin' => '*'], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
         }else{
             return response()->json(array('code' => 1,'message'=> 'No user in system with this email'), 200, ['Access-Control-Allow-Origin' => '*'], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
