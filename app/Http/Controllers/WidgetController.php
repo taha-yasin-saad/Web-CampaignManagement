@@ -514,7 +514,8 @@ class WidgetController extends Controller
                                                             <input name="country_code" type="hidden" value="'.auth()->user()->country_code.'" id="phone" class="phone" >
 
                                                             <input id="phone" type="phone" class="form-control closor-callback-v1-input"
-                                                            name="phone"
+                                                            name="phone" 
+                                                            required
                                                             placeholder="phone"
                                                             required autocomplete="phone"
                                                             style="padding-left: 52px">
