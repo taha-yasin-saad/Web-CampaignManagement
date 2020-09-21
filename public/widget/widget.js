@@ -598,6 +598,8 @@
         };
 
         xmlhttp.send(form_data);
+        console.log('response=',xmlhttp.responseText);
+
         if(xmlhttp.responseText == 1){
             closeCloserModal();
         }
