@@ -92,6 +92,7 @@ class WidgetController extends Controller
                                         <form class="closor-callback-v1-interest-query-form" onsubmit="event.preventDefault(); return dataget()" id="form-id" data-action="submit-callback">
                                         <input type="hidden" name="source_id" value="'.$id.'">
                                         <input type="hidden" id="csrftoken" name="csrftoken" value="'.csrf_token().'">
+                                        <input type="hidden" id="baseUrl" name="baseUrl" value="'.url('/').'">
                                         ';
 
                                             // <div class="allow-dropdown separate-dial-code iti-sdc-3">
