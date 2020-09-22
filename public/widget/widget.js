@@ -587,7 +587,7 @@
         console.log(form_data);
 
         var xmlhttp = new XMLHttpRequest();
-        xmlhttp.open("POST", "widget", true);
+        xmlhttp.open("POST", "widgetView/widget", true);
         xmlhttp.setRequestHeader("Accept", "application/json");
         xmlhttp.setRequestHeader("x-csrf-token", document.getElementById("csrftoken").value);
         xmlhttp.setRequestHeader("Content-Type", "application/json; charset=utf-8");
