@@ -59,6 +59,12 @@ class UserController extends Controller
 
         $user = User::where('email',$request->email)->first();
         if($user && Hash::check($request->password, $user->password)){
+            if($request->device_token){
+                $user->update([
+                    'device_token'=>$request->device_token,
+                    'os'=>$request->os
+                ]);
+            }
 			return response()->json(array(
                 'code'      => 0,
                 'id'        => $user->id,
@@ -90,6 +96,8 @@ class UserController extends Controller
                 'name' => $request->name,
                 'phone' => $request->phone,
                 'password' => Hash::make($request->password),
+                'device_token'=>$request->device_token,
+                'os'=>$request->os
             ]);
             return response()->json(array(
                 'code' => '0',
