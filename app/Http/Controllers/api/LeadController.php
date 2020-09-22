@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\api;
 
+use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Lead;
@@ -58,6 +59,12 @@ class LeadController extends Controller
     public function all_leads()
 	{
         $all_leads = Lead::with('source','product','user')->get();
+
+        return response()->json(array('code' => '0', 'data' => $all_leads), 200, ['Access-Control-Allow-Origin' => '*'], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
+    }
+    public function user_leads(User $user)
+	{
+        $all_leads = $user->leads()->with('source','product','user')->get();
 
         return response()->json(array('code' => '0', 'data' => $all_leads), 200, ['Access-Control-Allow-Origin' => '*'], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
     }

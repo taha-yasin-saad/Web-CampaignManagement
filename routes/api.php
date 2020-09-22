@@ -25,5 +25,7 @@ Route::post('/login', 'api\UserController@login');
 Route::post('/login1', 'api\UserController@login1');
 Route::post('/login2', 'api\UserController@login2');
 Route::post('/update_profile', 'api\UserController@update_profile');
+Route::post('/change_is_available', 'api\UserController@change_is_available');
 Route::get('/all_leads', 'api\LeadController@all_leads');
+Route::get('/user_leads/{user}', 'api\LeadController@user_leads');
 Route::post('/qualified', 'api\LeadController@qualified');

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\NotificationEvent;
 use App\Lead;
 use App\Source;
 use App\Workplace;
@@ -628,6 +629,8 @@ class WidgetController extends Controller
         $save->phone = $request->country_code .' '.$request->phone;
         $save->lead = json_encode($data);
         $save->save();
+
+        event(new NotificationEvent($save));
 
         return 1;
     }

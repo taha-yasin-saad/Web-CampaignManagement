@@ -111,6 +111,23 @@ class UserController extends Controller
         }
     }
 
+    public function change_is_available(Request $request)
+    {
+        $data = $request->all();
+        $rules = array(
+            'user_id'       => 'required',
+            'is_available'  => 'required|in:0,1',
+        );
+        $validator = Validator::make($data, $rules);
+        if ($validator->fails()) {
+            return response()->json(array('code' => 1,'msg_en'=> 'Wrong Data','msg_ar'=>'خطأ فى البيانات','error'=>$validator->messages()), 200, ['Access-Control-Allow-Origin' => '*'], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
+        }
+        $user = User::where('id', $request->user_id)->first();
+        $user->update(['is_available'=>$request->is_available]);
+        return response()->json(array('code' => 0,'msg_en'=> 'Updated Successfully','msg_ar'=> 'تم التعديل بنجاح'), 200, ['Access-Control-Allow-Origin' => '*'], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
+
+    }
+
     protected function update_profile(Request $request)
     {
         $data = $request->all();
