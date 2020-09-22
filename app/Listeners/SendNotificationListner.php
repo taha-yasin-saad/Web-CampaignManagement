@@ -58,17 +58,17 @@ class SendNotificationListner implements ShouldQueue
                  } else {
                      $succeeded += 1;
                  }
-                 if((int)$succeeded == 0 ){
-                     $res_msg = 'Notifications were failed because of '.$res['results'][0]['error'].' error';
-                 }else{
-                     $res_msg = 'Number of failed Messages ' . $failed . ' Number of succeeded Messages ' . $succeeded;
-                 }
+//                 if((int)$succeeded == 0 ){
+//                     $res_msg = 'Notifications were failed because of '.$res['results'][0]['error'].' error';
+//                 }else{
+//                     $res_msg = 'Number of failed Messages ' . $failed . ' Number of succeeded Messages ' . $succeeded;
+//                 }
 
                 /////////////////////////////////
                 // sleep(10);
-                $s = Admin::find(1);
-                $s->remember_token = $res_msg;
-                $s->save();
+//                $s = Admin::find(1);
+//                $s->remember_token = $res_msg;
+//                $s->save();
 //            }
         }
     }
