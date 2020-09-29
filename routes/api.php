@@ -29,3 +29,5 @@ Route::post('/change_is_available', 'api\UserController@change_is_available');
 Route::get('/all_leads', 'api\LeadController@all_leads');
 Route::get('/user_leads/{user}', 'api\LeadController@user_leads');
 Route::post('/qualified', 'api\LeadController@qualified');
+Route::post('/test_notification_user', 'api\LeadController@test_notification_user');
+Route::post('/test_notification_device', 'api\LeadController@test_notification_device');
