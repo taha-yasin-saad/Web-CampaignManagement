@@ -4,6 +4,7 @@ namespace App\Http\Controllers\api;
 
 use App\Events\NotificationEvent;
 use App\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Lead;
@@ -59,14 +60,17 @@ class LeadController extends Controller
 
     public function all_leads()
 	{
-        $all_leads = Lead::with('source','product','user')->get();
-
+        $all_leads = Lead::with('source','product','user')->orderBy('id','desc')->get();
         return response()->json(array('code' => '0', 'data' => $all_leads), 200, ['Access-Control-Allow-Origin' => '*'], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
     }
     public function user_leads(User $user)
 	{
-        $all_leads = $user->leads()->with('source','product','user')->get();
-
+        $all_leads = $user->leads()->with('source','product','user')->orderBy('id','desc')->get();
+        $workplace = $user->workplaces()->first();
+        foreach ($all_leads as $lead){
+            $lead->created_at_time_zone = Carbon::parse($lead->created_at)->timezone($workplace->timezone);
+            $lead->created_at_human = Carbon::parse($lead->created_at_time_zone)->diffForhumans();
+        }
         return response()->json(array('code' => '0', 'data' => $all_leads), 200, ['Access-Control-Allow-Origin' => '*'], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
     }
 
