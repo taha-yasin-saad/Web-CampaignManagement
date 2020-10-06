@@ -535,10 +535,21 @@
         console.log(2222222222);
         document.getElementById("closor-call-modal").classList.add("closor-show-modal");
         document.getElementById("closor-callback-v1-popup-scroll-container").classList.add("closor-show-modal");
+        var appBanners = document.getElementsByClassName('closerDiv');
+
+        for (var i = 0; i < appBanners.length; i ++) {
+            appBanners[i].style.display = 'none !important';
+        }
+
     }
     function closeCloserModal(){
         document.getElementById("closor-call-modal").classList.remove("closor-show-modal");
         document.getElementById("closor-callback-v1-popup-scroll-container").classList.remove("closor-show-modal");
+        var appBanners = document.getElementsByClassName('closerDiv');
+
+        for (var i = 0; i < appBanners.length; i ++) {
+            appBanners[i].style.display = 'block !important';
+        }
     }
 
 
