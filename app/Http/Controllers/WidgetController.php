@@ -512,8 +512,8 @@ class WidgetController extends Controller
                                             // </div>
                                             $widget .=' <div class="allow-dropdown separate-dial-code iti-sdc-3">
                                                         <div class="form-group">
-                                                            <input name="country_code" type="hidden" value="'.auth()->user()->country_code.'" id="phone" class="phone" >
-                                                            <input type="tel" id="phone" />
+                                                            <input id="phone" type="tel" class="closor-callback-v1-input" data-iti="true" name="phone" required
+                                                                data-role="callback-phone-number-input" autocomplete="off" placeholder="Enter your phone number">
                                                         </div>
                                                     </div>';
                                         foreach($source->fields as $inputfield){
