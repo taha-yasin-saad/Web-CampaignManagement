@@ -80,6 +80,7 @@ class UserController extends Controller
         $rules = array(
             'email' => 'required',
             'phone' => 'required',
+            'country_code' => 'required',
             'name'   => 'required',
             'password'   => 'required',
         );
@@ -92,6 +93,7 @@ class UserController extends Controller
         if ($user) {
             $user->update([
                 'name' => $request->name,
+                'country_code' => $request->country_code,
                 'phone' => $request->phone,
                 'password' => Hash::make($request->password),
                 'device_token' => $request->device_token,
@@ -130,6 +132,7 @@ class UserController extends Controller
             'id'     => 'required',
             'email'     => 'required',
             'phone'     => 'required',
+            'country_code'     => 'required',
             'name'      => 'required',
             //                'password'  => 'required',
         );
@@ -143,6 +146,7 @@ class UserController extends Controller
             $update['name'] = $request->name;
             $update['email'] = $request->email;
             $update['phone'] = $request->phone;
+            $update['country_code'] = $request->country_code;
             if (@$request->password && $request->password) {
                 $update['password'] = Hash::make($request->password);
             }
@@ -152,6 +156,7 @@ class UserController extends Controller
                 'id' => $user->id,
                 'name' => $user->name,
                 'phone' => $user->phone,
+                'country_code' => $user->country_code,
                 'email' => $user->email,
                 'message' => 'The User(' . $user->name . ') Updated successfully'
             ), 200, ['Access-Control-Allow-Origin' => '*'], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
