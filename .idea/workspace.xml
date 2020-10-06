@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7d661598-8791-4c89-9583-5c510f3d636c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="7d661598-8791-4c89-9583-5c510f3d636c" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -115,7 +113,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../tazaj" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RunManager">
@@ -141,7 +139,7 @@
       <workItem from="1601401222494" duration="1601000" />
       <workItem from="1601463460761" duration="123000" />
       <workItem from="1601552426535" duration="6836000" />
-      <workItem from="1601982812676" duration="692000" />
+      <workItem from="1601982812676" duration="1543000" />
     </task>
     <servers />
   </component>
@@ -153,10 +151,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1601401464905" />
-    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1601575117604">
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1601986966836">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1601575117604" />
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1601986966836" />
     <state x="478" y="147" width="579" height="530" key="find.popup" timestamp="1601401429665">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
