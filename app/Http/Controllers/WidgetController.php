@@ -16,8 +16,7 @@ class WidgetController extends Controller
         <link href="https://malexs.net/closor/public/widget/widget.css" rel="stylesheet">
         <link href="https://malexs.net/closor/public/css/icons/material-design-iconic-font/css/materialdesignicons.min.css"
         rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.3/css/intlTelInput.min.css" />
-
+        <link rel="stylesheet" href="https://malexs.net/closor/public/css/intl-tel-input-17.0.0/build/css/intlTelInput.css">
         <style>
         .mdi:before, .mdi-set {
             display: inline-block;
@@ -69,6 +68,8 @@ class WidgetController extends Controller
                             </div>
                             ';
                         }
+
+
                         $widget .= '</div>
                     </div>
                 </div>
@@ -510,12 +511,16 @@ class WidgetController extends Controller
                                             //         data-role="callback-phone-number-input" autocomplete="off"
                                             //         placeholder="Email">
                                             // </div>
-//        <input name="country_code" type="hidden" value="'.auth()->user()->country_code.'" id="phone" class="phone" >
-
                                             $widget .=' <div class="allow-dropdown separate-dial-code iti-sdc-3">
                                                         <div class="form-group">
-                                                            <input id="phone" type="tel" class="closor-callback-v1-input" data-iti="true" name="phone" required
-                                                                data-role="callback-phone-number-input" autocomplete="off" placeholder="Enter your phone number">
+                                                            <input name="country_code" type="hidden" value="'.auth()->user()->country_code.'" id="phone" class="phone" >
+
+                                                            <input id="phone" type="phone" class="form-control closor-callback-v1-input"
+                                                            name="phone"
+                                                            required
+                                                            placeholder="phone"
+                                                            required autocomplete="phone"
+                                                            style="padding-left: 52px">
                                                         </div>
                                                     </div>';
                                         foreach($source->fields as $inputfield){
@@ -583,26 +588,7 @@ class WidgetController extends Controller
             </div>
         </div>
         <script src="https://api.ipdata.co?api-key=test" type="text/javascript"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.3/js/intlTelInput.min.js"></script>
-
-    <script>
-      var input = document.querySelector("#phone");
-      window.intlTelInput(input, {
-        initialCountry: "auto",
-        geoIpLookup: function(success) {
-          // Get your api-key at https://ipdata.co/
-          fetch("https://api.ipdata.co/?api-key=test")
-            .then(function(response) {
-              if (!response.ok) return success("");
-              return response.json();
-            })
-            .then(function(ipdata) {
-              success(ipdata.country_code);
-            });
-        },
-        utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.3/js/utils.min.js",
-      });
-    </script>
+        <script src="https://malexs.net/closor/public/css/intl-tel-input-17.0.0/build/js/intlTelInput.js"></script>
         ';
             return $widget;
 
