@@ -47,7 +47,7 @@ class LeadController extends Controller
     public function show(Lead $lead)
     {
         $query['lead'] = $lead;
-        $query['ldata'] = json_decode($lead->lead,true);
+        $query['ldata'] = $lead->lead;
         // print_r($query['ldata']);exit();
         return view('leads.onelead', $query);
     }
