@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Auth;
 
 use App\User;
 use App\Http\Controllers\Controller;
+use App\Workplace;
+use App\WorkplaceUser;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -62,12 +64,31 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \App\User
      */
+    public function register(Request $request)
+    {
+        $this->validator($request->all())->validate();
+
+        $user = $this->create($request->all());
+
+        $this->guard()->login($user);
+        $data['email'] = $request->email;
+        $data['mm'] = 'welcome to Closer';
+        $data['subject'] = 'welcome to Closer';
+        $data['link'] = '#';
+        \Illuminate\Support\Facades\Mail::send('emails.welcome_email', $data, function ($message) use ($data) {
+            $message->from('support@closor.com', 'CLOSOR')->to($data['email'], 'CLOSOR')->subject($data['subject']);
+        });
+        return $this->registered($request, $user)
+                        ?: redirect($this->redirectPath());
+    }
+
     protected function create(array $data)
     {
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'phone' => $data['phone'],
+            'country_code' => $data['country_code'],
             'password' => Hash::make($data['password']),
         ]);
     }
@@ -85,6 +106,22 @@ class RegisterController extends Controller
                 'password' => Hash::make($request->password),
             ]);
             Auth()->loginUsingId($user->id);
+            $workPlaceuser = WorkplaceUser::where('user_id', $user->id)->first();
+            if($workPlaceuser){
+                $workplace = Workplace::where('id', $workPlaceuser->workplace_id)->first();
+            }
+            if($workplace){
+                $owner = User::where('id', $workplace->admin_id)->first();
+            }
+            if($owner){
+                $data['email'] = $owner->email;
+                $data['mm'] = 'The User('.$user->name.') who has been invited by you to workspace has been registered';
+                $data['subject'] = 'Invitaion Notification';
+                $data['link'] = '#';
+                \Illuminate\Support\Facades\Mail::send('emails.welcome_email', $data, function ($message) use ($data) {
+                    $message->from('support@closor.com', 'CLOSOR')->to($data['email'], 'CLOSOR')->subject($data['subject']);
+                });
+            }
             return redirect('/check');
         }
     }

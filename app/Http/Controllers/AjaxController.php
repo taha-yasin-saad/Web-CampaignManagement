@@ -12,4 +12,10 @@ class AjaxController extends Controller
         $country_code = Country::where('iso', $iso)->first()->phonecode;
         return $country_code;
     }
+
+    public function isoCode($code){
+        $code = $code;
+        $data = Country::where('phonecode', $code)->first()->iso;
+        return $data;
+    }
 }

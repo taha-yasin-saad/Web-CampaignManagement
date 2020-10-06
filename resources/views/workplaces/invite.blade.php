@@ -56,9 +56,9 @@
                                         <div class="col-xs-4 ">
                                             <label for="role" class="m-t-20">User Permission</label>
                                             <select id="role" name="role" class="m-b-10 form-control">
-                                                <option value="1">Admin</option>
-                                                <option value="2">Leader</option>
                                                 <option value="3">Sales Agent</option>
+                                                <option value="2">Leader</option>
+                                                <option value="1">Admin</option>
                                             </select>
                                         </div>
                                     </div>

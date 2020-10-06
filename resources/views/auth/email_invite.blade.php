@@ -35,7 +35,7 @@
 
             <div class="social" style="text-align:center">
 
-                <a target="_blank" style="background-color: #01447f;border: none;color: white;padding: 15px 32px;text-align: center;text-decoration: none;display: inline-block;font-size: 16px;border-radius: 20px;" href="{{url('/')}}">Register here</a>
+                <a target="_blank" style="background-color: #01447f;border: none;color: white;padding: 10px 32px;text-align: center;text-decoration: none;display: inline-block;font-size: 16px;border-radius: 20px;" href="{{url('/')}}">Register here</a>
             </div>
             <style>
                 

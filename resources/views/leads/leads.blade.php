@@ -24,7 +24,7 @@
                     <h3 class="box-title">Leads Captured</h3>
                     <p class="text-muted text-right">This month</p>
                     <ul class="list-inline">
-                        <li class="text-right"><span class="counter">198 21</span></li>
+                        <li class="text-right"><span class="counter">0</span></li>
                     </ul>
                 </div>
             </div>
@@ -33,7 +33,7 @@
                     <h3 class="box-title">Contacted Leads</h3>
                     <p class="text-muted text-right">This month</p>
                     <ul class="list-inline">
-                        <li class="text-right"><span class="counter">169</span></li>
+                        <li class="text-right"><span class="counter">0</span></li>
                     </ul>
                 </div>
             </div>
@@ -42,7 +42,7 @@
                     <h3 class="box-title">Qualified Leads</h3>
                     <p class="text-muted text-right">This month</p>
                     <ul class="list-inline">
-                        <li class="text-right"><span class="counter">200</span></li>
+                        <li class="text-right"><span class="counter">0</span></li>
                     </ul>
                 </div>
             </div>
@@ -51,7 +51,7 @@
                     <h3 class="box-title">AVG. Conversation rate</h3>
                     <p class="text-muted text-right">This month</p>
                     <ul class="list-inline">
-                        <li class="text-right"><span class="counter">52.2 %</span></li>
+                        <li class="text-right"><span class="counter">0%</span></li>
                     </ul>
                 </div>
             </div>
@@ -84,7 +84,10 @@
                                             <select class="form-control" id="assigned">
                                                 <option selected disabled>Select User</option>
                                                 @foreach ($users as $user)
-                                                    <option value="{{$user->user->id}}" >{{$user->user->name}}</option>
+                                                    @if(get_role(session('workplace')->id) <= 2 || Auth::user()->id == $user->user->id)
+                                                    <option value="{{$user->user->id}}" >@if($user->user->name){{$user->user->name}} @else
+                                                        {{$user->user->email}}@endif</option>
+                                                    @endif
                                                 @endforeach
                                             </select>
                                         </div>
@@ -94,8 +97,10 @@
                                             <label for="assigned">Product</label>
                                             <select class="form-control" name="product_id" id="assigned">
                                                 <option selected disabled>Select Product</option>
-                                                @foreach ($leads as $lead)
-                                                    <option value="{{$lead->product_id}}" @if(isset($_GET['product_id']) && $_GET['product_id'] == $lead->product_id) selected @endif>{{$lead->title}}</option>
+                                                @foreach ($products as $value)
+                                                    @if (get_role(session('workplace')->id) <= 1 || (get_role(session('workplace')->id) > 1 && in_array(Auth::user()->id,$value->selected_ids)))
+                                                    <option value="{{$value->id}}" @if(isset($_GET['product_id']) && $_GET['product_id'] == $value->id) selected @endif>{{$value->title}}</option>
+                                                    @endif
                                                 @endforeach
                                             </select>
                                         </div>
@@ -196,7 +201,7 @@
                                             </td>
                                         </tr>
                                     @endforeach
-                                    <tr role="row" class="even">
+                                    {{-- <tr role="row" class="even">
                                         <td class="sorting_1">
                                             <div class="flex-column">
                                                 <a>Ali Coco</a>
@@ -595,7 +600,7 @@
                                         <td>2009/11/11</td>
                                         <td>2008/11/28</td>
                                         <td><button class="btn btn-danger">un Qualified</button></td>
-                                    </tr>
+                                    </tr> --}}
                                 </tbody>
                             </table>
                         </div>

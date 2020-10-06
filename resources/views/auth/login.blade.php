@@ -15,7 +15,7 @@
                         <label>Email Address</label>
                         <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="@if(session('email')){{ session('email') }}@else{{ old('email') }}@endif" required autocomplete="email" autofocus placeholder="email" required>
                         @error('email')
-                            <span class="invalid-feedback" role="alert">
+                            <span class="invalid-feedback text-danger" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
                         @enderror
@@ -26,7 +26,7 @@
                         <label>Password</label>
                         <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password" placeholder="Password">
                         @error('password')
-                            <span class="invalid-feedback" role="alert">
+                            <span class="invalid-feedback text-danger" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
                         @enderror
@@ -35,8 +35,8 @@
                     <div class="form-group">
                       <div class="col-md-12">
                         <div class="checkbox checkbox-info pull-left p-t-0">
-                          <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-                          <label for="checkbox-signup"> Remember me </label>
+                          <input class="form-check-input" type="checkbox" name="remember" id="remember_login" {{ old('remember') ? 'checked' : '' }}>
+                          <label for="remember_login"> Remember me </label>
                         </div>
                         <a href="{{ route('password.request') }}" class="text-dark pull-right"><i class="fa fa-lock m-r-5"></i> Forgot pwd?</a> </div>
                     </div>

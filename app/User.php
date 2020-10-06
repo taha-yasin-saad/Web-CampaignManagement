@@ -17,7 +17,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password','phone'
+        'name', 'email', 'password','phone','country_code','device_token','os','is_available'
     ];
 
     /**
@@ -46,6 +46,11 @@ class User extends Authenticatable
     }
     public function workplaces(){
         return $this->belongsToMany('App\Workplace','workplace_users', 'user_id', 'workplace_id');
+    }
+
+    public function leads()
+    {
+        return $this->hasMany('App\Lead');
     }
 
 }

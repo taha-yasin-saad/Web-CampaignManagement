@@ -47,7 +47,7 @@
                                         <div class="form-group">
                                             <label for="example-email" class="col-md-12">Email</label>
                                             <div class="col-md-12">
-                                              <input id="email" type="email" class="form-control 
+                                              <input id="email" type="email" class="form-control
                                               form-control-line @error('email') is-invalid @enderror" name="email" value="{{auth()->user()->email}}" required autocomplete="email" autofocus placeholder="email" required>
                                               @error('email')
                                                   <span class="invalid-feedback" role="alert">
@@ -56,10 +56,10 @@
                                               @enderror
                                             </div>
                                         </div>
-                                        <div class="form-group">
+                                        {{-- <div class="form-group">
                                             <label class="col-md-12">Phone No</label>
                                             <div class="col-md-12">
-                                                <input id="phone" type="phone" class="form-control
+                                                <input id="phone3" type="phone" class="form-control
                                                  form-control-line @error('phone') is-invalid @enderror" name="phone" value="{{auth()->user()->phone}}" required autocomplete="phone" placeholder="Phone Number">
                                                 @error('phone')
                                                     <span class="invalid-feedback" role="alert">
@@ -67,11 +67,24 @@
                                                     </span>
                                                 @enderror
                                             </div>
+                                        </div> --}}
+                                        <div class="form-group  m-t-20" style="overflow: unset">
+                                            <div class="col-xs-12">
+                                              <label>Phone Number</label>
+                                              <input  name="country_code" type="hidden" @if(isset(auth()->user()->country_code)) value="{{auth()->user()->country_code}}" @else id="phone2" @endif class="phone22">
+
+                                              <input id="phone" type="phone" class="form-control @error('phone') is-invalid @enderror" name="phone" value="{{ old('phone', auth()->user()->phone) }}"  placeholder="{{ old('phone', auth()->user()->phone) }}" required autocomplete="phone" style="padding-left: 52px">
+                                              @error('phone')
+                                              <span class="invalid-feedback" role="alert">
+                                                <strong class="text-danger">{{ $message }}</strong>
+                                              </span>
+                                              @enderror
+                                            </div>
                                         </div>
                                         <div class="form-group">
                                             <label class="col-md-12">Password</label>
                                             <div class="col-md-12">
-                                                <input id="password" type="password" class="form-control 
+                                                <input id="password" type="password" class="form-control
                                                 form-control-line @error('password') is-invalid @enderror" name="password" autocomplete="current-password" placeholder="Password">
                                                 @error('password')
                                                     <span class="invalid-feedback" role="alert">

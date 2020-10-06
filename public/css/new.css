@@ -1,0 +1,94 @@
+.text-review {
+    margin-top: 100px;
+    height: 200px;
+    background: #ececec;
+    position: relative;
+}
+
+.text-review p.text-text {
+    color: white;
+    padding: 12px;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.text-review .chat-text {
+    background: #34a853;
+    width: 300px;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 10px 10px 0px 0px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.button-review {
+    margin-top: 100px;
+    height: 200px;
+    background: #ececec;
+    position: relative;
+}
+.button-circle {
+    color: rgb(0, 0, 0);
+    width: 76px;
+    height: 76px;
+    z-index: 16543210;
+    position: absolute;
+    right: 16px;
+    bottom: 15px;
+}
+.buttonround {
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.22) 0px 0px 4px, rgba(0, 0, 0, 0.31) 0px 4px 8px;
+    position: absolute;
+    background-color: #34a853;
+    color: rgb(255, 255, 255);
+    left: 8px;
+    width: 75px;
+    top: 4px;
+    height: 75px;
+    border-radius: 99px !important;
+    user-select: none;
+    transform: translate(0px, 4.24151e-15px);
+}
+#x-icon {
+    font-size: 50px !important;
+    text-align: center !important;
+    padding: 3px 12px !important;
+    color: white;
+}
+.buttonround_tooltip {
+    resize: none;
+    font-size: 15px;
+    box-shadow: rgb(153, 153, 153) 2px 2px 5px;
+    position: absolute;
+    white-space: nowrap;
+    right: 89px;
+    padding: 0px 12px;
+    top: 13px;
+    line-height: 38px;
+    background-color: #959a9e;
+    color: white;
+    border-radius: 12px !important;
+    text-align: center;
+}
+
+.buttonround_tooltip p {
+    margin-bottom: 0;
+    margin: 1px;
+}
+
+.buttonround_tooltip_arrow {
+    resize: none;
+    font-size: 13px;
+    position: absolute;
+    left: 100%;
+    top: 17px;
+    width: 12px;
+    height: 0px;
+    border-color: transparent rgb(149, 154, 158);
+    border-width: 10px 0px 10px 12px;
+    border-style: solid;
+    box-sizing: content-box;
+}

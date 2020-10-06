@@ -42,6 +42,8 @@
     <link href="{{asset('css/animate.css')}}" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="{{asset('css/style.css')}}" rel="stylesheet">
+    <link href="{{asset('css/new.css')}}" rel="stylesheet">
+
     <!-- color CSS -->
     <link href="{{asset('css/colors/blue-dark.css')}}" id="theme" rel="stylesheet">
     <link href="{{asset('plugins/bower_components/multiselect/css/multi-select.css')}}" rel="stylesheet"
@@ -50,12 +52,20 @@
         type="text/css" />
     <!--alerts CSS -->
     <link href="{{asset('plugins/bower_components/sweetalert/sweetalert.css')}}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="{{asset('css/intl-tel-input-17.0.0/build/css/intlTelInput.css')}}">
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-colorpicker/2.3.3/css/bootstrap-colorpicker.min.css"
+        rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-colorpicker/2.3.3/js/bootstrap-colorpicker.min.js">
+    </script>
+
 </head>
 
 <body class="fix-header">
@@ -106,7 +116,8 @@
                     <!-- /.dropdown -->
                 </ul>
                 <ul class="nav navbar-top-links navbar-right pull-right">
-                    <li class="hidden-md hidden-lg"><a href="javascript:void(0)" class="open-close waves-effect waves-light"><i class="ti-menu"></i></a></li>
+                    <li class="hidden-md hidden-lg"><a href="javascript:void(0)"
+                            class="open-close waves-effect waves-light"><i class="ti-menu"></i></a></li>
                 </ul>
             </div>
             <!-- /.navbar-header -->
@@ -120,28 +131,30 @@
         <div class="navbar-default sidebar" role="navigation">
             <div class="sidebar-nav slimscrollsidebar">
                 <div class="sidebar-head">
-                    
-                    <img src="{{asset('dark-logo.png')}}" alt="logo"     width= "100%">
+
+                    <img src="{{asset('dark-logo.png')}}" alt="logo" width="100%">
                 </div>
                 <div class="dropdown workspace_dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                         <b>
-                        @if(session('workplace'))
+                            @if(session('workplace'))
                             {{session('workplace')->title}}
-                        @else
+                            @else
                             Create Workspace
-                        @endif
+                            @endif
                         </b>
                         <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu  animated">
                         @if(session('workplace'))
+                        @if(get_role(session('workplace')->id) == 0 || get_role(session('workplace')->id) == 1)
                         <li>
                             <a href="{{url('workplace/'.session('workplace')->id.'/edit')}}">
                                 Workspace Preferences
                             </a>
                         </li>
                         <li role="separator" class="divider"></li>
+                        @endif
                         @foreach(get_workplaces() as $value)
                         <li>
                             <a href="{{url($value->workplace->id.'/products')}}">
@@ -161,13 +174,13 @@
                     <!-- /.dropdown-user -->
                 </div>
                 <ul class="nav" id="side-menu">
-                    @if(session('workplace'))
+                    @if(session('workplace') && get_role(session('workplace')->id) != 9)
                     <li>
                         <a href="#" class="waves-effect"><i class="mdi mdi-home fa-fw" data-icon="v"></i>
                             <span class="hide-menu"> Dashboard <span class="fa arrow"></span> </span>
                         </a>
                     </li>
-                    
+
                     <li>
                         <a href="{{url('leads')}}" class="waves-effect"><i class="mdi mdi-contacts fa-fw"
                                 data-icon="v"></i>
@@ -175,18 +188,21 @@
                         </a>
                     </li>
                     <li>
-                        <a href="{{url(session('workplace')->id.'/products')}}" class="waves-effect"><i class="mdi mdi-account-card-details fa-fw" data-icon="v"></i>
+                        <a href="{{url(session('workplace')->id.'/products')}}" class="waves-effect"><i
+                                class="mdi mdi-account-card-details fa-fw" data-icon="v"></i>
                             <span class="hide-menu"> Products <span class="fa arrow"></span> </span>
                         </a>
                     </li>
                     <li>
-                        <a href="{{url(session('workplace')->id.'/team')}}" class="waves-effect"><i class="mdi mdi-account-multiple fa-fw"
-                                data-icon="v"></i>
+                        <a href="{{url(session('workplace')->id.'/team')}}" class="waves-effect"><i
+                                class="mdi mdi-account-multiple fa-fw" data-icon="v"></i>
                             <span class="hide-menu"> Team <span class="fa arrow"></span> </span>
                         </a>
                     </li>
+                    @if(get_role(session('workplace')->id) == 0 || get_role(session('workplace')->id) == 1)
                     <li>
-                        <a href="#" class="waves-effect"><i class="mdi mdi-filter fa-fw" data-icon="v"></i>
+                        <a href="{{url('sources')}}" class="waves-effect"><i class="mdi mdi-filter fa-fw"
+                                data-icon="v"></i>
                             <span class="hide-menu"> Lead Sources <span class="fa arrow"></span> </span>
                         </a>
                     </li>
@@ -195,6 +211,7 @@
                             <span class="hide-menu"> Reports <span class="fa arrow"></span> </span>
                         </a>
                     </li>
+                    @endif
                     @endif
                 </ul>
                 <div class="sidebar-footer">
@@ -231,41 +248,40 @@
     <script src="{{asset('js/waves.js')}}"></script>
     <script src="{{asset('plugins/bower_components/dropify/dist/js/dropify.min.js')}}"></script>
     <script>
-        $(document).ready(function () {
-            // Basic
-            $('.dropify').dropify();
-            // Translated
-            $('.dropify-fr').dropify({
-                messages: {
-                    default: 'Glissez-déposez un fichier ici ou cliquez',
-                    replace: 'Glissez-déposez un fichier ou cliquez pour remplacer',
-                    remove: 'Supprimer',
-                    error: 'Désolé, le fichier trop volumineux'
-                }
-            });
-            // Used events
-            var drEvent = $('#input-file-events').dropify();
-            drEvent.on('dropify.beforeClear', function (event, element) {
-                return confirm("Do you really want to delete \"" + element.file.name + "\" ?");
-            });
-            drEvent.on('dropify.afterClear', function (event, element) {
-                alert('File deleted');
-            });
-            drEvent.on('dropify.errors', function (event, element) {
-                console.log('Has Errors');
-            });
-            var drDestroy = $('#input-file-to-destroy').dropify();
-            drDestroy = drDestroy.data('dropify')
-            $('#toggleDropify').on('click', function (e) {
-                e.preventDefault();
-                if (drDestroy.isDropified()) {
-                    drDestroy.destroy();
-                } else {
-                    drDestroy.init();
-                }
-            })
+    $(document).ready(function() {
+        // Basic
+        $('.dropify').dropify();
+        // Translated
+        $('.dropify-fr').dropify({
+            messages: {
+                default: 'Glissez-déposez un fichier ici ou cliquez',
+                replace: 'Glissez-déposez un fichier ou cliquez pour remplacer',
+                remove: 'Supprimer',
+                error: 'Désolé, le fichier trop volumineux'
+            }
         });
-
+        // Used events
+        var drEvent = $('#input-file-events').dropify();
+        drEvent.on('dropify.beforeClear', function(event, element) {
+            return confirm("Do you really want to delete \"" + element.file.name + "\" ?");
+        });
+        drEvent.on('dropify.afterClear', function(event, element) {
+            alert('File deleted');
+        });
+        drEvent.on('dropify.errors', function(event, element) {
+            console.log('Has Errors');
+        });
+        var drDestroy = $('#input-file-to-destroy').dropify();
+        drDestroy = drDestroy.data('dropify')
+        $('#toggleDropify').on('click', function(e) {
+            e.preventDefault();
+            if (drDestroy.isDropified()) {
+                drDestroy.destroy();
+            } else {
+                drDestroy.init();
+            }
+        })
+    });
     </script>
     <!--Counter js -->
     <script src="{{asset('plugins/bower_components/waypoints/lib/jquery.waypoints.js')}}"></script>
@@ -300,54 +316,53 @@
     <script src="{{asset('js/cbpFWTabs.js')}}"></script>
     @yield('status')
     <script type="text/javascript">
-        (function () {
-            [].slice.call(document.querySelectorAll('.sttabs')).forEach(function (el) {
-                new CBPFWTabs(el);
-            });
-        })();
+    (function() {
+        [].slice.call(document.querySelectorAll('.sttabs')).forEach(function(el) {
+            new CBPFWTabs(el);
+        });
+    })();
 
-        $(document).ready(function () {
-            $('#myTable').DataTable();
-            $(document).ready(function () {
-                var table = $('#example').DataTable({
-                    "columnDefs": [{
-                        "visible": false,
-                        "targets": 2
-                    }],
-                    "order": [
-                        [2, 'asc']
-                    ],
-                    "displayLength": 25,
-                    "drawCallback": function (settings) {
-                        var api = this.api();
-                        var rows = api.rows({
-                            page: 'current'
-                        }).nodes();
-                        var last = null;
-                        api.column(2, {
-                            page: 'current'
-                        }).data().each(function (group, i) {
-                            if (last !== group) {
-                                $(rows).eq(i).before(
-                                    '<tr class="group"><td colspan="5">' +
-                                    group + '</td></tr>');
-                                last = group;
-                            }
-                        });
-                    }
-                });
-                // Order by the grouping
-                $('#example tbody').on('click', 'tr.group', function () {
-                    var currentOrder = table.order()[0];
-                    if (currentOrder[0] === 2 && currentOrder[1] === 'asc') {
-                        table.order([2, 'desc']).draw();
-                    } else {
-                        table.order([2, 'asc']).draw();
-                    }
-                });
+    $(document).ready(function() {
+        $('#myTable').DataTable;
+        $(document).ready(function() {
+            var table = $('#example').DataTable({
+                "columnDefs": [{
+                    "visible": false,
+                    "targets": 2
+                }],
+                "order": [
+                    [2, 'asc']
+                ],
+                "displayLength": 25,
+                "drawCallback": function(settings) {
+                    var api = this.api();
+                    var rows = api.rows({
+                        page: 'current'
+                    }).nodes();
+                    var last = null;
+                    api.column(2, {
+                        page: 'current'
+                    }).data().each(function(group, i) {
+                        if (last !== group) {
+                            $(rows).eq(i).before(
+                                '<tr class="group"><td colspan="5">' +
+                                group + '</td></tr>');
+                            last = group;
+                        }
+                    });
+                }
+            });
+            // Order by the grouping
+            $('#example tbody').on('click', 'tr.group', function() {
+                var currentOrder = table.order()[0];
+                if (currentOrder[0] === 2 && currentOrder[1] === 'asc') {
+                    table.order([2, 'desc']).draw();
+                } else {
+                    table.order([2, 'asc']).draw();
+                }
             });
         });
-
+    });
     </script>
     <script src="{{asset('plugins/bower_components/switchery/dist/switchery.min.js')}}"></script>
     <script src="{{asset('plugins/bower_components/custom-select/custom-select.min.js')}}" type="text/javascript">
@@ -360,94 +375,175 @@
     <script type="text/javascript" src="{{asset('plugins/bower_components/multiselect/js/jquery.multi-select.js')}}">
     </script>
     <script>
-        jQuery(document).ready(function () {
-            // Switchery
-            var elems = Array.prototype.slice.call(document.querySelectorAll('.js-switch'));
-            $('.js-switch').each(function () {
-                new Switchery($(this)[0], $(this).data());
-            });
-            // For select 2
-            $(".select2").select2();
-            $('.selectpicker').selectpicker();
-            //Bootstrap-TouchSpin
-            $(".vertical-spin").TouchSpin({
-                verticalbuttons: true,
-                verticalupclass: 'ti-plus',
-                verticaldownclass: 'ti-minus'
-            });
-            var vspinTrue = $(".vertical-spin").TouchSpin({
-                verticalbuttons: true
-            });
-            if (vspinTrue) {
-                $('.vertical-spin').prev('.bootstrap-touchspin-prefix').remove();
-            }
-            $("input[name='tch1']").TouchSpin({
-                min: 0,
-                max: 100,
-                step: 0.1,
-                decimals: 2,
-                boostat: 5,
-                maxboostedstep: 10,
-                postfix: '%'
-            });
-            $("input[name='tch2']").TouchSpin({
-                min: -1000000000,
-                max: 1000000000,
-                stepinterval: 50,
-                maxboostedstep: 10000000,
-                prefix: '$'
-            });
-            $("input[name='tch3']").TouchSpin();
-            $("input[name='tch3_22']").TouchSpin({
-                initval: 40
-            });
-            $("input[name='tch5']").TouchSpin({
-                prefix: "pre",
-                postfix: "post"
-            });
-            // For multiselect
-            $('#pre-selected-options').multiSelect();
-            $('#optgroup').multiSelect({
-                selectableOptgroup: true
-            });
-            $('#public-methods').multiSelect();
-            $('#select-all').click(function () {
-                $('#public-methods').multiSelect('select_all');
-                return false;
-            });
-            $('#deselect-all').click(function () {
-                $('#public-methods').multiSelect('deselect_all');
-                return false;
-            });
-            $('#refresh').on('click', function () {
-                $('#public-methods').multiSelect('refresh');
-                return false;
-            });
-            $('#add-option').on('click', function () {
-                $('#public-methods').multiSelect('addOption', {
-                    value: 42,
-                    text: 'test 42',
-                    index: 0
-                });
-                return false;
-            });
+    jQuery(document).ready(function() {
+        // Switchery
+        var elems = Array.prototype.slice.call(document.querySelectorAll('.js-switch'));
+        $('.js-switch').each(function() {
+            new Switchery($(this)[0], $(this).data());
         });
-
+        // For select 2
+        $(".select2").select2();
+        $('.selectpicker').selectpicker();
+        //Bootstrap-TouchSpin
+        $(".vertical-spin").TouchSpin({
+            verticalbuttons: true,
+            verticalupclass: 'ti-plus',
+            verticaldownclass: 'ti-minus'
+        });
+        var vspinTrue = $(".vertical-spin").TouchSpin({
+            verticalbuttons: true
+        });
+        if (vspinTrue) {
+            $('.vertical-spin').prev('.bootstrap-touchspin-prefix').remove();
+        }
+        $("input[name='tch1']").TouchSpin({
+            min: 0,
+            max: 100,
+            step: 0.1,
+            decimals: 2,
+            boostat: 5,
+            maxboostedstep: 10,
+            postfix: '%'
+        });
+        $("input[name='tch2']").TouchSpin({
+            min: -1000000000,
+            max: 1000000000,
+            stepinterval: 50,
+            maxboostedstep: 10000000,
+            prefix: '$'
+        });
+        $("input[name='tch3']").TouchSpin();
+        $("input[name='tch3_22']").TouchSpin({
+            initval: 40
+        });
+        $("input[name='tch5']").TouchSpin({
+            prefix: "pre",
+            postfix: "post"
+        });
+        // For multiselect
+        $('#pre-selected-options').multiSelect();
+        $('#optgroup').multiSelect({
+            selectableOptgroup: true
+        });
+        $('#public-methods').multiSelect();
+        $('#select-all').click(function() {
+            $('#public-methods').multiSelect('select_all');
+            return false;
+        });
+        $('#deselect-all').click(function() {
+            $('#public-methods').multiSelect('deselect_all');
+            return false;
+        });
+        $('#refresh').on('click', function() {
+            $('#public-methods').multiSelect('refresh');
+            return false;
+        });
+        $('#add-option').on('click', function() {
+            $('#public-methods').multiSelect('addOption', {
+                value: 42,
+                text: 'test 42',
+                index: 0
+            });
+            return false;
+        });
+    });
     </script>
-<script src="http://www.geoplugin.net/javascript.gp" type="text/javascript"></script>
+    {{-- <script src="http://www.geoplugin.net/javascript.gp" type="text/javascript"></script>
     <!-- get time zone -->
     <script type="text/javascript">
-        jQuery(document).ready(function($) {
-            
-            jQuery.getScript('http://www.geoplugin.net/javascript.gp', function() 
-            {
-                var zone = geoplugin_timezone();
-                $("#time-zone").val(zone);
-                console.log(zone);
+    jQuery(document).ready(function($) {
+
+        jQuery.getScript('http://www.geoplugin.net/javascript.gp', function() {
+            var zone = geoplugin_timezone();
+            $("#time-zone").val(zone);
+            console.log(zone);
+        });
+    });
+    </script> --}}
+    {{-- country flag js --}}
+    <script src="{{asset('css/intl-tel-input-17.0.0/build/js/intlTelInput.js')}}"></script>
+    <script>
+    var input = document.querySelector("#phone");
+    window.intlTelInput(input);
+    </script>
+    <script>
+    var input = document.querySelector("#phone");
+    window.intlTelInput(input, {
+        autoPlaceholder: "aggressive",
+        placeholderNumberType: "MOBILE",
+        utilsScript: "build/js/utils.js",
+    });
+    var iti = window.intlTelInputGlobals.getInstance(input);
+    input.addEventListener("countrychange", function() {
+        console.log(iti.getSelectedCountryData().dialCode);
+        $('.phone22').val(iti.getSelectedCountryData().dialCode);
+    });
+    </script>
+    @if(isset(auth()->user()->country_code))
+    <script>
+    // iti.setCountry({{auth()->user()->country_code}});
+    var baseUrl = "{{url('/')}}";
+    jQuery(document).ready(function($) {
+
+        $.get("https://api.ipdata.co?api-key=test", function(response) {
+            console.log(response.country_code);
+            var code = response.country_code;
+
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+            $.ajax({
+                type: 'GET',
+                url: baseUrl + '/isoCode/' + {{auth()->user()->country_code}},
+                success: function(data) {
+                    // let phone_code = data;
+                    // $('#phone2').val(data);
+                    var iso = data.toLowerCase();
+                    iti.setCountry(iso);
+
+                }
             });
         });
+    });
     </script>
-    
+    @else
+    <script type="text/javascript">
+    var baseUrl = "{{url('/')}}";
+    jQuery(document).ready(function($) {
+        // getLocation();
+
+        // jQuery.getScript('https://www.geoplugin.net/javascript.gp', function()
+        // {
+        //     var code= geoplugin_countryCode();
+        //     console.log('old Api: '+code);
+
+        // });
+
+        $.get("https://api.ipdata.co?api-key=test", function(response) {
+            console.log(response.country_code);
+            var code = response.country_code;
+            $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+            });
+            $.ajax({
+                type:'GET',
+                url:baseUrl+'/phoneCode/'+code,
+                success:function(data){
+                    let phone_code = data;
+                    $('#phone2').val(data);
+                    var res = code.toLowerCase();
+                    iti.setCountry(res);
+
+                }
+            });
+        }, "jsonp");
+    });
+    </script>
+    @endif
     <!-- end get time zone -->
     <script src="{{asset('plugins/bower_components/toast-master/js/jquery.toast.js')}}"></script>
     <!--Style Switcher -->
@@ -455,8 +551,13 @@
     <!-- Sweet-Alert  -->
     <script src="{{asset('plugins/bower_components/sweetalert/sweetalert.min.js')}}"></script>
     <script src="{{asset('plugins/bower_components/sweetalert/jquery.sweet-alert.custom.js')}}"></script>
+    <script src="{{asset('plugins\bower_components\colorpicker\bootstrap-colorpicker.js')}}"></script>
+
     @yield('chart')
     @yield('filter_table')
+    @yield('js')
+    {{-- <script src="http://localhost/closor/public/widget/widget.js?id=1"></script> --}}
+    {{-- @include('widget') --}}
 </body>
 
 </html>

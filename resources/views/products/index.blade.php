@@ -19,6 +19,9 @@
         </div>
         <!-- .row -->
         <div class="row">
+            @if(get_role($workplace->id) == 9)
+            <h3 class="text-center">you Have not Permission to access that Workspace</h3>
+            @else
             <div class="col-xs-12">
                 <div class="panel">
                     <div class="row panel-heading">
@@ -29,31 +32,56 @@
                         <div class="col-md-6 col-sm-6 col-xs-6 text-right">
                             <a class="dropdown">
                                 @if(get_role($workplace->id) == 0 || get_role($workplace->id) == 1)
-                                <a class="dropdown-toggle btn btn-danger m-t-20" id="addProductDropDown" data-toggle="dropdown" href="#" aria-expanded="false" type="button">Add New Product</a>
+                                <a class="dropdown-toggle btn btn-danger m-t-20" id="addProductDropDown"
+                                    data-toggle="dropdown" href="#" aria-expanded="false" type="button">Add New
+                                    Product</a>
                                 @endif
-                                <div class="dropdown-menu bullet dropdown-menu-right" aria-labelledby="addProductDropDown p-20" role="menu" style="width: 100%;">
+                                <div class="dropdown-menu bullet dropdown-menu-right"
+                                    aria-labelledby="addProductDropDown p-20" role="menu" style="width: 100%;">
                                     <div class="white-box">
                                         <ul class="nav nav-tabs tabs customtab">
                                             <li class="tab">
-                                                <a href="#settings" data-toggle="tab" aria-expanded="false"> <span class="visible-xs"><i class="fa fa-cog"></i></span> <span class="hidden-xs">insert your product title</span> </a>
+                                                <a href="#settings" data-toggle="tab" aria-expanded="false"> <span
+                                                        class="visible-xs"><i class="fa fa-cog"></i></span> <span
+                                                        class="hidden-xs">insert your product title</span> </a>
                                             </li>
                                         </ul>
                                         <div class="tab-content">
                                             <form class="form-horizontal" method="POST" action="{{url('product')}}">
                                                 {{csrf_field()}}
-
                                                 <input type="hidden" name="workplace_id" value="{{$workplace->id}}" />
                                                 <div class="row">
                                                     <div class="col-md-12">
                                                         <div>
-                                                            <input required type="text" class="form-control" value="" name="title" placeholder="product Title" />
+                                                            <input required type="text" class="form-control" value=""
+                                                                name="title" placeholder="product Title" />
                                                         </div>
-
+                                                    </div>
+                                                </div>
+                                                <br>
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <div>
+                                                            <select name="users[]"
+                                                                class="select2 m-b-10 select2-multiple"
+                                                                multiple="multiple" data-placeholder="Choose Members (Optional)">
+                                                                @foreach($workplace->users as $user)
+                                                                <option value="{{$user->id}}">
+                                                                    @if($user->name)
+                                                                    {{$user->name}}
+                                                                    @else
+                                                                    {{$user->email}}
+                                                                    @endif
+                                                                </option>
+                                                                @endforeach
+                                                            </select>
+                                                        </div>
                                                     </div>
                                                 </div>
                                                 <div class="row">
                                                     <div class="form-actions m-t-40 text-right">
-                                                        <button type="submit" class="btn btn-danger"> <i class="fa fa-check"></i>
+                                                        <button type="submit" class="btn btn-danger"> <i
+                                                                class="fa fa-check"></i>
                                                             Save</button>
                                                     </div>
                                             </form>
@@ -73,32 +101,47 @@
                 @endif
                 @if(count($data) > 0)
                 @foreach ($data as $value)
+                @if (get_role($workplace->id) <= 1 || (get_role($workplace->id) > 1 && in_array($user->id,$value->selected_ids)))
                 <div class="panel">
                     <div class="row panel-heading">
                         <div class="col-md-6 col-sm-6 col-xs-6">
                             <p>{{$value->title}}</p>
                             @foreach($value->users as $val)
-                            <span class="label bg-inverse m-r-10">{{$val->name}}</span>
+                        <span class="label bg-inverse m-r-10">@if($val->name){{$val->name}}@else{{$val->email}} @endif</span>
                             @endforeach
-                            <a href="{{url(session('workplace')->id.'/team')}}" class=" m-r-10">More...</a>
-                            @if(get_role($workplace->id) == 0 || get_role($workplace->id) == 1 || get_role($workplace->id) == 2)
+                            <a href="{{url(session('workplace')->id.'/team/'.$value->id)}}" class=" m-r-10">More...</a>
+                            @if(get_role($workplace->id) == 0 || get_role($workplace->id) == 1 ||
+                            get_role($workplace->id) == 2)
                             <a class="dropdown">
-                                <a class="dropdown-toggle text-info m-r-10" id="addRemoveLeadDropDown" data-toggle="dropdown" href="#" aria-expanded="false" role="button"><i class="ti-pencil-alt"></i></a>
-                                <div class="dropdown-menu bullet dropdown-menu-right" aria-labelledby="addRemoveLeadDropDown" role="menu" style="width: 100%;">
+                                <a class="dropdown-toggle text-info m-r-10" id="addRemoveLeadDropDown"
+                                    data-toggle="dropdown" href="#" aria-expanded="false" role="button"><i
+                                        class="ti-pencil-alt"></i></a>
+                                <div class="dropdown-menu bullet dropdown-menu-right"
+                                    aria-labelledby="addRemoveLeadDropDown" role="menu" style="width: 100%;">
                                     <div class="white-box">
                                         <h3 class="box-title m-b-0">Add Or Remove Sales Agent</h3>
-                                        <p class="text-muted m-b-30"> Only these sales agents will receive leads related to this product</p>
+                                        <p class="text-muted m-b-30"> Only these sales agents will receive leads related
+                                            to this product</p>
                                         <form action="{{url('choose_members')}}" method="post">
                                             @csrf
                                             <input type="hidden" name="workplace_id" value="{{$workplace->id}}" />
                                             <input type="hidden" name="product_id" value="{{$value->id}}">
-                                            <select name="users[]" class="select2 m-b-10 select2-multiple" multiple="multiple" data-placeholder="Choose">
+                                            <select name="users[]" class="select2 m-b-10 select2-multiple"
+                                                multiple="multiple" data-placeholder="Choose">
                                                 @foreach($workplace->users as $user)
-                                                <option value="{{$user->id}}" @if (in_array($user->id, $value->selected_ids)) selected @endif>{{$user->name}}</option>
+                                                <option value="{{$user->id}}" @if (in_array($user->id,
+                                                    $value->selected_ids)) selected @endif>
+                                                    @if($user->name)
+                                                    {{$user->name}}
+                                                    @else
+                                                    {{$user->email}}
+                                                    @endif
+                                                </option>
                                                 @endforeach
                                             </select>
                                             <div class="form-actions text-right">
-                                                <button type="submit" class="btn btn-success"> <i class="fa fa-check"></i> Save</button>
+                                                <button type="submit" class="btn btn-success">
+                                                    <i class="fa fa-check"></i> Save</button>
                                                 <button type="button" class="btn btn-dark">Cancel</button>
                                             </div>
                                         </form>
@@ -107,11 +150,12 @@
                                 </div>
                             </a>
                             @endif
-                            
+
                         </div>
                         <div class="col-md-6 col-sm-6 col-xs-6 text-right">
-                            @if(get_role($workplace->id) == 0 || get_role($workplace->id) == 1 || get_role($workplace->id) == 2)
-                            <button type="button" class="btn btn-primary m-t-20">Add Lead Source</button>
+                            @if(get_role($workplace->id) == 0 || get_role($workplace->id) == 1 ||
+                            get_role($workplace->id) == 2)
+                            <a href="{{url('sources/create')}}" class="btn btn-primary m-t-20">Add Lead Source</a>
                             @endif
                         </div>
                     </div>
@@ -125,7 +169,8 @@
                                     <th>CONTACTED LEADS</th>
                                     <th>QUALIFIED LEADS</th>
                                     <th>AVG. CONVERION RATE</th>
-                                    @if(get_role($workplace->id) == 0 || get_role($workplace->id) == 1 || get_role($workplace->id) == 2)
+                                    @if(get_role($workplace->id) == 0 || get_role($workplace->id) == 1 ||
+                                    get_role($workplace->id) == 2)
                                     <th>MANAGE</th>
                                     @endif
                                 </tr>
@@ -140,9 +185,12 @@
                                     <td>323</td>
                                     <td>200</td>
                                     <td>50%</td>
-                                    @if(get_role($workplace->id) == 0 || get_role($workplace->id) == 1 || get_role($workplace->id) == 2)
+                                    @if(get_role($workplace->id) == 0 || get_role($workplace->id) == 1 ||
+                                    get_role($workplace->id) == 2)
                                     <td>
-                                        <button type="button" class="btn btn-info btn-outline btn-circle btn-lg m-r-5"><i class="ti-pencil-alt"></i></button>
+                                        <button type="button"
+                                            class="btn btn-info btn-outline btn-circle btn-lg m-r-5"><i
+                                                class="ti-pencil-alt"></i></button>
                                     </td>
                                     @endif
                                 </tr>
@@ -154,9 +202,12 @@
                                     <td>211</td>
                                     <td>120</td>
                                     <td>48%</td>
-                                    @if(get_role($workplace->id) == 0 || get_role($workplace->id) == 1 || get_role($workplace->id) == 2)
+                                    @if(get_role($workplace->id) == 0 || get_role($workplace->id) == 1 ||
+                                    get_role($workplace->id) == 2)
                                     <td>
-                                        <button type="button" class="btn btn-info btn-outline btn-circle btn-lg m-r-5"><i class="ti-pencil-alt"></i></button>
+                                        <button type="button"
+                                            class="btn btn-info btn-outline btn-circle btn-lg m-r-5"><i
+                                                class="ti-pencil-alt"></i></button>
                                     </td>
                                     @endif
                                 </tr>
@@ -164,12 +215,13 @@
                         </table>
                     </div>
                 </div>
-
+                @endif
                 @endforeach
                 @else
                 <h3>You Have not any product Yet ...</h3>
                 @endif
             </div>
+            @endif
         </div>
 
         <!-- /.row -->
