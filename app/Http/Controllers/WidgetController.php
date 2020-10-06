@@ -17,6 +17,7 @@ class WidgetController extends Controller
         <link href="https://malexs.net/closor/public/css/icons/material-design-iconic-font/css/materialdesignicons.min.css"
         rel="stylesheet">
         <link rel="stylesheet" href="https://malexs.net/closor/public/css/intl-tel-input-17.0.0/build/css/intlTelInput.css">
+
         <style>
         .mdi:before, .mdi-set {
             display: inline-block;
@@ -68,8 +69,6 @@ class WidgetController extends Controller
                             </div>
                             ';
                         }
-
-
                         $widget .= '</div>
                     </div>
                 </div>
@@ -584,6 +583,24 @@ class WidgetController extends Controller
         </div>
         <script src="https://api.ipdata.co?api-key=test" type="text/javascript"></script>
         <script src="https://malexs.net/closor/public/css/intl-tel-input-17.0.0/build/js/intlTelInput.js"></script>
+        <script>
+          var input = document.querySelector("#phone");
+          window.intlTelInput(input, {
+            initialCountry: "auto",
+            geoIpLookup: function(success) {
+              // Get your api-key at https://ipdata.co/
+              fetch("https://api.ipdata.co/?api-key=test")
+                .then(function(response) {
+                  if (!response.ok) return success("");
+                  return response.json();
+                })
+                .then(function(ipdata) {
+                  success(ipdata.country_code);
+                });
+            },
+            utilsScript: "https://malexs.net/closor/public/css/intl-tel-input-17.0.0/build/js/intlTelInput.js",
+          });
+        </script>
         ';
             return $widget;
 
