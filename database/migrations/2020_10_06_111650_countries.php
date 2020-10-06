@@ -13,7 +13,7 @@ class Countries extends Migration
      */
     public function up()
     {
-        DB::statement("Drop table countries");
+        DB::statement("Drop table if exists countries");
         Schema::create('countries', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->char('iso');
