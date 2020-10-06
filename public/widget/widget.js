@@ -538,7 +538,7 @@
         var appBanners = document.getElementsByClassName('closerDiv');
 
         for (var i = 0; i < appBanners.length; i ++) {
-            appBanners[i].style.display = 'none !important';
+            appBanners[i].style.display = 'none';
         }
 
     }
@@ -548,7 +548,7 @@
         var appBanners = document.getElementsByClassName('closerDiv');
 
         for (var i = 0; i < appBanners.length; i ++) {
-            appBanners[i].style.display = 'block !important';
+            appBanners[i].style.display = 'block';
         }
     }
 
