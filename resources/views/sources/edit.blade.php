@@ -236,7 +236,7 @@
                                                         <label style="margin-top:20px">Call to action text </label><span
                                                             class="text-small text-muted"> (25 Characters
                                                             Max)</span><br>
-                                                        <input class="form-control" name="text_text" id="text_text" value="@if(isset($data)){{$data->text_text}}@endif" type="text" placeholder="@if(isset($data)){{$data->text_text}}@endif">
+                                                        <input class="form-control" name="text_text" maxlength="25" id="text_text" value="@if(isset($data)){{$data->text_text}}@endif" type="text" placeholder="@if(isset($data)){{$data->text_text}}@endif">
                                                     </div>
                                                     <div class="form-group">
                                                         <label style="margin-top:20px">Corner Roundness </label><span
@@ -251,7 +251,7 @@
                                         <div class="col-md-6">
                                             <div class="text-review" style="postion:relative">
                                                 <div class="chat-text">
-                                                    <p class="text-text">TALK TO EXPERT NOW!</p>
+                                                    <p class="text-text">@if(isset($data)){{$data->text_text}}@endif</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -272,23 +272,23 @@
                                                 <input class="d-inline" name="fields[]" type="checkbox" id="checkbox_email" value="email" @if(isset($data->fields) && in_array("email", $data->fields)) checked @endif><span> Email</span><br>
                                             </div>
                                             <div class="col-md-3">
-                                                <input class="d-inline" name="fields[]" type="checkbox" id="checkbox_custom1" value="custom1" @if(isset($data->fields) && in_array("custom1", $data->fields)) checked @endif><span id="checkbox_custom_vlue_1"> @if(isset($data)){{$data->custom_lable_1}}@endif
+                                                <input class="d-inline" name="fields[]" type="checkbox" id="checkbox_custom1" value="custom1" @if(isset($data->fields) && in_array("custom1", $data->fields)) checked @endif><span > Custom Field 1
                                                     </span><br>
                                             </div>
                                             <div class="col-md-3">
-                                                <input class="d-inline" name="fields[]"  type="checkbox" id="checkbox_custom2"  value="custom2" @if(isset($data->fields) && in_array("custom2", $data->fields)) checked @endif><span id="checkbox_custom_vlue_2"> @if(isset($data)){{$data->custom_lable_2}}@endif</span><br>
+                                                <input class="d-inline" name="fields[]"  type="checkbox" id="checkbox_custom2"  value="custom2" @if(isset($data->fields) && in_array("custom2", $data->fields)) checked @endif><span > Custom Field 2 </span><br>
                                             </div>
                                             <div class="form-group">
                                                 <label style="margin-top:20px" id="custom_lable_title_1">@if(isset($data)){{$data->custom_lable_1}}@endif </label><span
                                                     class="text-small text-muted"> (20 Characters Max)</span><br>
                                                 <input class="form-control" id="custom_lable_1" name="custom_lable_1" type="text"
-                                                 value="@if(isset($data)){{$data->custom_lable_1}}@endif" placeholder="@if(isset($data)){{$data->custom_lable_1}}@endif">
+                                                 value="@if(isset($data)){{$data->custom_lable_1}}@endif" maxlength="20" placeholder="@if(isset($data)){{$data->custom_lable_1}}@endif">
                                             </div>
                                             <div class="form-group">
                                                 <label style="margin-top:20px" id="custom_lable_title_2">@if(isset($data)){{$data->custom_lable_2}}@endif</label><span
                                                     class="text-small text-muted"> (20 Characters Max)</span><br>
                                                 <input class="form-control" id="custom_lable_2" name="custom_lable_2" type="text"
-                                                value="@if(isset($data)){{$data->custom_lable_2}}@endif" placeholder="@if(isset($data)){{$data->custom_lable_2}}@endif">
+                                                value="@if(isset($data)){{$data->custom_lable_2}}@endif" maxlength="20" placeholder="@if(isset($data)){{$data->custom_lable_2}}@endif">
                                             </div>
                                         </div>
                                         <div class="col-md-4"

@@ -47,7 +47,7 @@ class WidgetController extends Controller
                         if($source->widget_type == 'text'){
                             $widget .= '<div onclick="callCloserModal()" style="background:'.$source->primary.'!important;
                             background: #3481a8!important;display: inline-block!important;padding: 20px!important;
-                            width: 300px!important;text-align: center!important;vertical-align: middle!important;border-radius: 10px 10px 0px 0px!important;position: absolute!important;bottom: 0!important;'.$source->alignment.': 0!important;">
+                            width: 300px!important;text-align: center!important;vertical-align: middle!important;border-radius: 10px 10px 0px 0px!important;position: absolute!important;'.$source->alignment.': 0!important;">
                                     <p class="text-text" style="color:'.$source->secondary.'!important">'.$source->text_text.'</p>
                             </div>';
                         }else{
@@ -514,13 +514,8 @@ class WidgetController extends Controller
                                             $widget .=' <div class="allow-dropdown separate-dial-code iti-sdc-3">
                                                         <div class="form-group">
                                                             <input name="country_code" type="hidden" value="'.auth()->user()->country_code.'" id="phone" class="phone" >
-
-                                                            <input id="phone" type="phone" class="form-control closor-callback-v1-input"
-                                                            name="phone"
-                                                            required
-                                                            placeholder="phone"
-                                                            required autocomplete="phone"
-                                                            style="padding-left: 52px">
+                                                            <input id="phone" type="tel" class="closor-callback-v1-input" data-iti="true" name="phone" required
+                                                                data-role="callback-phone-number-input" autocomplete="off" placeholder="Enter your phone number">
                                                         </div>
                                                     </div>';
                                         foreach($source->fields as $inputfield){
