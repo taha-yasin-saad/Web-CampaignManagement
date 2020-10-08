@@ -6,6 +6,7 @@ use App\Product;
 use App\Lead;
 use App\WorkplaceUser;
 use Illuminate\Http\Request;
+use function foo\func;
 
 class LeadController extends Controller
 {
@@ -14,11 +15,15 @@ class LeadController extends Controller
         $this->middleware('auth');
     }
     public function index(){
-        $query['leads'] = Product::where('workplace_id',session('workplace')->id)->join('leads', 'leads.product_id', '=', 'products.id')
-        ->orderBy('leads.id')->select('*','products.id as product_id');
+        $query['leads'] = Lead::whereHas('product',function($query){
+            $query->where('workplace_id',session('workplace')->id);
+        });
 
-        if (isset($_GET['product_id']))
+        if (isset($_GET['product_id']) && $_GET['product_id'] != 0)
             $query['leads']->where('product_id', 'like', '%' . $_GET['product_id'] . '%');
+
+        if (isset($_GET['user_id']) && $_GET['user_id'] != 0)
+            $query['leads']->where('user_id', 'like', '%' . $_GET['user_id'] . '%');
 
         if (isset($_GET['status']))
             $query['leads']->where('status', 'like', '%' . $_GET['status'] . '%');
