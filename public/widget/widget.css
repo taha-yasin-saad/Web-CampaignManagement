@@ -112,7 +112,7 @@
     counter-reset: none !important;
     cursor: auto !important;
     direction: inherit !important;
-    display: inline !important;
+    display: inline;
     float: none !important;
     font-family: inherit !important;
     font-size: inherit !important;
@@ -189,7 +189,7 @@
 .closor-callback-v1-widget section,
 .closor-callback-v1-widget select,
 .closor-callback-v1-widget ul {
-    display: block !important;
+    display: block;
 }
 .closor-callback-v1-widget textarea {
     display: inline-block !important;
@@ -995,7 +995,7 @@
     }
 }
 .closor-callback-v1-widget .closor-callback-v1-avatar {
-    display: block !important;
+    display: block;
     position: absolute !important;
     right: 0 !important;
     bottom: 0 !important;
@@ -1118,7 +1118,7 @@ html.no-svg .closor-callback-v1-widget .closor-callback-v1-avatar-close {
     /* backface-visibility: hidden !important; */
     /* opacity: 1 !important; */
     /* clip: rect(0, 0, 0, 0) !important; */
-    display: block !important;
+    display: block;
 }
 .closor-callback-v1-widget .closor-callback-v1-bubble::before {
     content: "" !important;

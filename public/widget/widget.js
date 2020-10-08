@@ -541,10 +541,9 @@
             appBanners[i].style.display = 'none';
         }
         document.getElementById("closor-callback-v1-bubble").style.display = "none";
-        document.getElementById("closor-call-icon").style.display = "none";
-        setTimeout(function(){
-            runPlugen()
-        }, 2000)
+        // setTimeout(function(){
+        //     runPlugen()
+        // }, 1000)
     }
     function closeCloserModal(){
         document.getElementById("closor-call-modal").classList.remove("closor-show-modal");
@@ -554,9 +553,8 @@
         for (var i = 0; i < appBanners.length; i ++) {
             appBanners[i].style.display = 'block';
         }
+        document.getElementById("closor-callback-v1-bubble").style.display = "block";
         
-        document.getElementById("closor-callback-v1-bubble").style.display = "none!important";
-        document.getElementById("closor-call-icon").style.display = "none!important";
     }
 
 
@@ -569,27 +567,27 @@
     }
 
 
-    function intlTelInput(){
-    var input = document.querySelector("#phone");
-    window.intlTelInput(input);
-     console.log(1111111);
-     console.log(input);
-    }
+    // function intlTelInput(){
+    // var input = document.querySelector("#phone");
+    // window.intlTelInput(input);
+    //  console.log(1111111);
+    //  console.log(input);
+    // }
 
-    function intlTelInput_1(){
-        var input = document.querySelector("#phone");
-        window.intlTelInput(input, {
-            autoPlaceholder: "aggressive",
-            placeholderNumberType: "MOBILE",
-            utilsScript: "https://malexs.net/closor/public/css/intl-tel-input-17.0.0/build/js/utils.js",
-        });
-        var iti = window.intlTelInputGlobals.getInstance(input);
-        input.addEventListener("countrychange", function() {
-        console.log(1111111);
-            console.log(iti.getSelectedCountryData().dialCode);
-            $(".phone22").val(iti.getSelectedCountryData().dialCode);
-        });
-    }
+    // function intlTelInput_1(){
+    //     var input = document.querySelector("#phone");
+    //     window.intlTelInput(input, {
+    //         autoPlaceholder: "aggressive",
+    //         placeholderNumberType: "MOBILE",
+    //         utilsScript: "https://malexs.net/closor/public/css/intl-tel-input-17.0.0/build/js/utils.js",
+    //     });
+    //     var iti = window.intlTelInputGlobals.getInstance(input);
+    //     input.addEventListener("countrychange", function() {
+    //     console.log(1111111);
+    //         console.log(iti.getSelectedCountryData().dialCode);
+    //         $(".phone22").val(iti.getSelectedCountryData().dialCode);
+    //     });
+    // }
 
     function dataget() {
         var elements = document.getElementById("form-id").elements;
@@ -636,6 +634,7 @@
     // });
     
     /*
+/*
  * International Telephone Input v17.0.0
  * https://github.com/jackocnr/intl-tel-input.git
  * Licensed under the MIT license
@@ -1972,13 +1971,14 @@
 function runPlugen(){
     console.log(121212);
     // var input = document.getElementById("phone");
-    console.log(input);
+
     // window.intlTelInput(input);
     
     var input = document.querySelector("#phone");
+        console.log(input);
     window.intlTelInput(input, {
         autoPlaceholder: "aggressive",
         placeholderNumberType: "MOBILE",
-        utilsScript: "build/js/utils.js",
+        utilsScript: "https://malexs.net/closor/public/css/intl-tel-input-17.0.0/build/js/utils.js",
     });
 };
