@@ -13,7 +13,13 @@ class Lead extends Model
 
     public function getLeadAttribute()
     {
-        return json_decode($this->attributes['lead']);
+        $arr = [];
+        foreach (json_decode($this->attributes['lead']) as $key=>$value){
+            $m['key'] = $key;
+            $m['value'] = $value;
+            array_push($arr,(object) $m);
+        }
+        return $arr;
     }
     public function product(){
         return $this->belongsTo('\App\Product');
