@@ -97,8 +97,9 @@
                         <label for="email"
                             class="col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
                         <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
-                            name="email" value="{{ $email ?? old('email') }}" required disabled>
-
+                           value="{{ $email ?? old('email') }}" required disabled>
+                        <input type="hidden" class="form-control "
+                               name="email" value="{{ $email ?? old('email') }}" >
                         @error('email')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
