@@ -1971,7 +1971,14 @@
 
 function runPlugen(){
     console.log(121212);
-    var input = document.getElementById("phone");
+    // var input = document.getElementById("phone");
     console.log(input);
-    window.intlTelInput(input);
+    // window.intlTelInput(input);
+    
+    var input = document.querySelector("#phone");
+    window.intlTelInput(input, {
+        autoPlaceholder: "aggressive",
+        placeholderNumberType: "MOBILE",
+        utilsScript: "build/js/utils.js",
+    });
 };
