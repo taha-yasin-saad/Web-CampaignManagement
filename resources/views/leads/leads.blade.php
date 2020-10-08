@@ -81,11 +81,11 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="assigned">assigned to</label>
-                                            <select class="form-control" id="assigned">
-                                                <option selected disabled>Select User</option>
+                                            <select class="form-control" id="assigned" name="user_id">
+                                                <option value="0">All Users</option>
                                                 @foreach ($users as $user)
                                                     @if(get_role(session('workplace')->id) <= 2 || Auth::user()->id == $user->user->id)
-                                                    <option value="{{$user->user->id}}" >@if($user->user->name){{$user->user->name}} @else
+                                                    <option value="{{$user->user->id}}"  @if(isset($_GET['user_id']) && $_GET['user_id'] == $user->user->id) selected @endif>@if($user->user->name){{$user->user->name}} @else
                                                         {{$user->user->email}}@endif</option>
                                                     @endif
                                                 @endforeach
@@ -96,7 +96,7 @@
                                         <div class="form-group">
                                             <label for="assigned">Product</label>
                                             <select class="form-control" name="product_id" id="assigned">
-                                                <option selected disabled>Select Product</option>
+                                                <option value="0">All Products</option>
                                                 @foreach ($products as $value)
                                                     @if (get_role(session('workplace')->id) <= 1 || (get_role(session('workplace')->id) > 1 && in_array(Auth::user()->id,$value->selected_ids)))
                                                     <option value="{{$value->id}}" @if(isset($_GET['product_id']) && $_GET['product_id'] == $value->id) selected @endif>{{$value->title}}</option>
@@ -186,12 +186,12 @@
                                                     </span>
                                                 </div>
                                             </td>
-                                            <td>{{$lead->title}}</td>
-                                            <td><span class="badge badge-primary">Facebook</span></td>
+                                            <td>@if($lead->product){{$lead->product->title}}@else - @endif</td>
+                                            <td><span class="badge badge-primary">@if($lead->source){{$lead->source->name}}@else - @endif</span></td>
                                             <td>{{$lead->created_at}}</td>
-                                            <td>Ahmed</td>
-                                            <td>2008/11/28</td>
-                                            <td>2008/11/28</td>
+                                            <td>@if($lead->user){{$lead->user->name}}@else - @endif</td>
+                                            <td>{{$lead->scheduled_on}}</td>
+                                            <td>{{$lead->last_contact}}</td>
                                             <td>
                                                 @if ($lead->status == 0)
                                                 <button class="btn btn-primary">Qualified</button>
