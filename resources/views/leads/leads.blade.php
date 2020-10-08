@@ -109,16 +109,16 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="assigned">Contact status</label>
-                                            <select class="form-control" id="assigned">
-                                                <option>status one</option>
-                                                <option>status two</option>
-                                                <option>status three</option>
-                                            </select>
-                                        </div>
-                                    </div>
+{{--                                    <div class="col-md-6">--}}
+{{--                                        <div class="form-group">--}}
+{{--                                            <label for="assigned">Contact status</label>--}}
+{{--                                            <select class="form-control" id="assigned">--}}
+{{--                                                <option>status one</option>--}}
+{{--                                                <option>status two</option>--}}
+{{--                                                <option>status three</option>--}}
+{{--                                            </select>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="lead-quality">Lead quality</label>
