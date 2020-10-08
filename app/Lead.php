@@ -15,8 +15,18 @@ class Lead extends Model
     {
         $arr = [];
         foreach (json_decode($this->attributes['lead']) as $key=>$value){
+            if (strpos($value->key, '_id') !== false)
+                continue;
             $m['key'] = $key;
             $m['value'] = $value;
+            array_push($arr,(object) $m);
+        }
+        $m['key'] = 'source';
+        $m['value'] = $this->source->name;
+        array_push($arr,(object) $m);
+        if($this->product){
+            $m['key'] = 'product';
+            $m['value'] = $this->product->title;
             array_push($arr,(object) $m);
         }
         return $arr;
