@@ -57,7 +57,7 @@ class WidgetController extends Controller
                                     <li class="mdi mdi-headset fa-fw" id="x-icon" style="color:'.$source->secondary.'!important;"></li>
                                 </div>
                             </div>
-                            <div class="closor-callback-v1-bubble" >
+                            <div class="closor-callback-v1-bubble" id="closor-callback-v1-bubble">
                                 <div class="closor-callback-v1-bubble-close" data-action="close-component"
                                     data-component="popover"></div>
                                 <div class="closor-callback-v1-bubble-text-1">'.$source->bubble_line_1.'<br>
@@ -513,8 +513,6 @@ class WidgetController extends Controller
                                             // </div>
                                             $widget .=' <div class="allow-dropdown separate-dial-code iti-sdc-3">
                                                         <div class="form-group">
-                                                            <input name="country_code" type="hidden" value="'.auth()->user()->country_code.'" id="phone" class="phone" >
-
                                                             <input id="phone" type="phone" class="form-control closor-callback-v1-input"
                                                             name="phone"
                                                             required
