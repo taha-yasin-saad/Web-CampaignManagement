@@ -104,9 +104,7 @@ class WidgetController extends Controller
                                         <input type="hidden" id="csrftoken" name="csrftoken" value="'.csrf_token().'">
                                         <input type="hidden" id="baseUrl" name="baseUrl" value="'.url('/').'">
                                         <div class="form-group">
-                                           <input id="phone" type="phone" class    ="form-control" name="phone" required
-                                            placeholder="phone" autocomplete        ="phone"
-                                        style="padding-left: 52px">
+                                           <input id="phone" >
                                         </div>';
                                         foreach($source->fields as $inputfield){
                                                 if($inputfield == 'custom1'){
