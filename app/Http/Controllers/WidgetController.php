@@ -13,10 +13,10 @@ class WidgetController extends Controller
     public function widget($id){
         $source = Source::find($id);
         $widget = '
-        <link href="https://malexs.net/closor/public/widget/widget.css" rel="stylesheet">
-        <link href="https://malexs.net/closor/public/css/icons/material-design-iconic-font/css/materialdesignicons.min.css"
+        <link href="https://app.closor.com/widget/widget.css" rel="stylesheet">
+        <link href="https://app.closor.com/css/icons/material-design-iconic-font/css/materialdesignicons.min.css"
         rel="stylesheet">
-        <link rel="stylesheet" href="https://malexs.net/closor/public/css/intl-tel-input-17.0.0/build/css/intlTelInput.css">
+        <link rel="stylesheet" href="https://app.closor.com/css/intl-tel-input-17.0.0/build/css/intlTelInput.css">
         <style>
         .mdi:before, .mdi-set {
             display: inline-block;
@@ -586,7 +586,7 @@ class WidgetController extends Controller
             </div>
         </div>
         <script src="https://api.ipdata.co?api-key=test" type="text/javascript"></script>
-        <script src="https://malexs.net/closor/public/css/intl-tel-input-17.0.0/build/js/intlTelInput.js"></script>
+        <script src="https://app.closor.com/css/intl-tel-input-17.0.0/build/js/intlTelInput.js"></script>
         ';
             return $widget;
 
