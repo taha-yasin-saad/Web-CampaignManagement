@@ -8,7 +8,7 @@ use App\User;
 use Crypt;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
-
+use App\Country;
 class UserController extends Controller
 {
     protected function validator(array $data)
@@ -64,6 +64,17 @@ class UserController extends Controller
                     'device_token' => $request->device_token,
                     'os' => $request->os
                 ]);
+            }
+            if($user->country_code){
+                $iso = Country::where('phonecode', $user->country_code)->first();
+                if($iso){
+                    $user['country_iso'] = $iso->iso;
+                }else{
+                    $user['country_iso'] = "EG";
+                }
+            }else{
+                    $user['country_code'] = 20;
+                    $user['country_iso'] = "EG";
             }
             return response()->json(array(
                 'code'      => 0,
@@ -130,7 +141,7 @@ class UserController extends Controller
         $data = $request->all();
         $rules = array(
             'id'     => 'required',
-            'email'     => 'required',
+            'email'     => 'required|unique:users,email,'.$request->id,
             'phone'     => 'required',
             'country_code'     => 'required',
             'name'      => 'required',
@@ -142,11 +153,22 @@ class UserController extends Controller
         }
 
         $user = User::where('id', $request->id)->first();
+        $iso = $request->country_iso;
+        if($iso){
+            $country = Country::where('iso', $iso)->first();
+            if($country){
+                $country_code = $country->phonecode;
+            }else{
+                $country_code = 20;
+            }
+        }else{
+                $country_code = 20;
+            }
         if ($user) {
             $update['name'] = $request->name;
             $update['email'] = $request->email;
             $update['phone'] = $request->phone;
-            $update['country_code'] = $request->country_code;
+            $update['country_code'] = $country_code;
             if (@$request->password && $request->password) {
                 $update['password'] = Hash::make($request->password);
             }
@@ -157,6 +179,7 @@ class UserController extends Controller
                 'name' => $user->name,
                 'phone' => $user->phone,
                 'country_code' => $user->country_code,
+                'country_iso' => $request->country_iso,
                 'email' => $user->email,
                 'message' => 'The User(' . $user->name . ') Updated successfully'
             ), 200, ['Access-Control-Allow-Origin' => '*'], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
