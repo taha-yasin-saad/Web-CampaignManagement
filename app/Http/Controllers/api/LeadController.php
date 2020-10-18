@@ -13,6 +13,7 @@ use App\Workplace;
 use App\Product;
 use App\UserProduct;
 use App\WorkplaceUser;
+use App\Source;
 use Validator;
 
 class LeadController extends Controller
@@ -165,5 +166,33 @@ class LeadController extends Controller
         #Echo Result Of FireBase Server
         $res = json_decode($result, true);
         return $res;
+    }
+    
+     public function widget_ajax(Request $request){
+        if(!$request->phone){
+            return 0;
+        }
+        $data = $request->all();
+
+        $user = Source::find($request->source_id)->workplace->users()->withCount('leads')->orderBy('leads_count', 'asc')->first();
+
+        if(!@$request->product_id && !$request->product_id){
+            $product_id = Source::find($request->source_id)->workplace->products()->first()->id;
+        }else{
+            $product_id = $request->product_id;
+        }
+        $save = new Lead;
+        $save->source_id = $request->source_id;
+        $save->user_id = $user->id;
+        $save->product_id = $product_id;
+        $save->name = $request->name;
+        $save->email = $request->email;
+        $save->phone = $request->country_code .$request->phone;
+        $save->lead = json_encode($data);
+        $save->save();
+
+        event(new NotificationEvent($save));
+
+        return 1;
     }
 }

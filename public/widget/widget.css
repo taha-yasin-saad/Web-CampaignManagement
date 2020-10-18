@@ -34,7 +34,6 @@
 .closor-callback-v1-widget del,
 .closor-callback-v1-widget dfn,
 .closor-callback-v1-widget dialog,
-.closor-callback-v1-widget div,
 .closor-callback-v1-widget dl,
 .closor-callback-v1-widget dt,
 .closor-callback-v1-widget em,
@@ -55,12 +54,10 @@
 .closor-callback-v1-widget i,
 .closor-callback-v1-widget iframe,
 .closor-callback-v1-widget img,
-.closor-callback-v1-widget input,
 .closor-callback-v1-widget ins,
 .closor-callback-v1-widget kbd,
 .closor-callback-v1-widget label,
 .closor-callback-v1-widget legend,
-.closor-callback-v1-widget li,
 .closor-callback-v1-widget mark,
 .closor-callback-v1-widget menu,
 .closor-callback-v1-widget nav,
@@ -75,7 +72,6 @@
 .closor-callback-v1-widget section,
 .closor-callback-v1-widget select,
 .closor-callback-v1-widget small,
-.closor-callback-v1-widget span,
 .closor-callback-v1-widget strike,
 .closor-callback-v1-widget strong,
 .closor-callback-v1-widget sub,
@@ -90,7 +86,6 @@
 .closor-callback-v1-widget time,
 .closor-callback-v1-widget tr,
 .closor-callback-v1-widget tt,
-.closor-callback-v1-widget ul,
 .closor-callback-v1-widget var,
 .closor-callback-v1-widget video {
     background-attachment: scroll !important;
@@ -135,7 +130,7 @@
     outline: invert none medium !important;
     overflow: visible !important;
     padding: 0 !important;
-    position: static !important;
+    position: static;
     quotes: "" "" !important;
     right: auto !important;
     table-layout: auto !important;
@@ -164,7 +159,6 @@
 .closor-callback-v1-widget caption,
 .closor-callback-v1-widget dd,
 .closor-callback-v1-widget dialog,
-.closor-callback-v1-widget div,
 .closor-callback-v1-widget dl,
 .closor-callback-v1-widget dt,
 .closor-callback-v1-widget fieldset,
@@ -187,8 +181,7 @@
 .closor-callback-v1-widget p,
 .closor-callback-v1-widget pre,
 .closor-callback-v1-widget section,
-.closor-callback-v1-widget select,
-.closor-callback-v1-widget ul {
+.closor-callback-v1-widget select{
     display: block;
 }
 .closor-callback-v1-widget textarea {
@@ -226,7 +219,7 @@
 }
 .closor-callback-v1-widget menu,
 .closor-callback-v1-widget ul {
-    list-style-type: disc !important;
+    /*list-style-type: disc !important;*/
 }
 .closor-callback-v1-widget ol {
     list-style-type: decimal !important;
@@ -341,8 +334,7 @@
 .closor-callback-v1-widget select {
     vertical-align: middle !important;
 }
-.closor-callback-v1-widget input,
-.closor-callback-v1-widget select,
+
 .closor-callback-v1-widget textarea {
     border: 1px solid #ccc !important;
 }
@@ -6937,3 +6929,8 @@ html.no-svg .closor-embedded-v1-widget .closor-embedded-v1-call-image {
 .closor-callback-v1-widget .closor-callback-v1-popup-scroll-container.closor-show-modal {
     position: fixed !important;
 }
+.iti__flag-container{
+    height: 40px;
+}
+.iti__country-list{width:280px;overflow-x: hidden;}
+.closor-widget-container li{    list-style-type: none!important;}
