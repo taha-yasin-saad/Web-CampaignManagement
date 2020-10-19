@@ -173,7 +173,8 @@ class LeadController extends Controller
             return 0;
         }
         $data = $request->all();
-        $data->unset($data['phone'],$data['country_code']);
+        unset($data['phone']);
+        unset($data['country_code']);
         $data["phone"] = $request->country_code .$request->phone;
 
         $user = Source::find($request->source_id)->workplace->users()->withCount('leads')->orderBy('leads_count', 'asc')->first();
