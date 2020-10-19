@@ -136,7 +136,7 @@
             
         // });
         
-        $.get("https://api.ipdata.co?api-key=test", function(response) {
+        $.get("https://api.ipdata.co?api-key=bbcc18dbda8db855a82aaecedab1b35c243700bd625b2ac94a9a8926", function(response) {
             console.log(response.country_code);
             var code = response.country_code;
             $.ajaxSetup({

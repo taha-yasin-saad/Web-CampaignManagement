@@ -167,7 +167,7 @@ class WidgetController extends Controller
 
             </div>
         </div>
-        <script src="https://api.ipdata.co?api-key=test" type="text/javascript"></script>
+        <script src="https://api.ipdata.co?api-key=bbcc18dbda8db855a82aaecedab1b35c243700bd625b2ac94a9a8926" type="text/javascript"></script>
         <script src="https://app.closor.com/css/intl-tel-input-17.0.0/build/js/intlTelInput.js"></script>
         ';
             return $widget;
