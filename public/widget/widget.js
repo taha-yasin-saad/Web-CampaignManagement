@@ -1497,7 +1497,7 @@ function runPlugen(){
         document.getElementById("country_code").value = JSON.parse(this.responseText)["calling_code"];
         }
     };
-    var url = "https://api.ipdata.co?api-key=test";
+    var url = "https://api.ipdata.co?api-key=bbcc18dbda8db855a82aaecedab1b35c243700bd625b2ac94a9a8926";
     xhttp.open("GET", url, true);
     xhttp.send();
 
