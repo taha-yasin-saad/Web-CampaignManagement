@@ -24,6 +24,7 @@
         const params = getFileParams();
         if ( params ) {
             var xhttp = new XMLHttpRequest();
+            xhttp.setRequestHeader("Access-Control-Allow-Origin", "*");
             xhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
                 document.body.innerHTML += this.responseText;
