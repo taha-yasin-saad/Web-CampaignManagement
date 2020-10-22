@@ -6942,6 +6942,7 @@ html.no-svg .closor-embedded-v1-widget .closor-embedded-v1-call-image {
 .closor-widget-container li {
     margin: 0 !important;
 }
+
 .closor-callback-v1-widget.closor-callback-popup .closor-callback-v1-avatar {
     -webkit-transform: none !important;
     transform: none !important;
@@ -6955,4 +6956,7 @@ html.no-svg .closor-embedded-v1-widget .closor-embedded-v1-call-image {
     background: rgb(52, 168, 83) !important;
     text-align: center !important;
     margin: 0!important;
+}
+.closor-callback-v1-widget .closor-callback-v1-bubble{
+    display:block;
 }
