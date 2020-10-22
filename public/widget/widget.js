@@ -31,7 +31,7 @@
                 }
             };
             var url = 'https://app.closor.com/widget/'+params.get('id');
-            xhttp.open("GET", url, true);
+            xhttp.open("GET", url);
             xhttp.setRequestHeader("Access-Control-Allow-Origin", "*");
             xhttp.send();
         }

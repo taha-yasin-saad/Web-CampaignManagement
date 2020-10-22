@@ -57,7 +57,7 @@ class WidgetController extends Controller
                                     <li class="mdi mdi-headset fa-fw" id="x-icon" style="color:'.$source->secondary.'!important;"></li>
                                 </div>
                             </div>
-                            <div class="closor-callback-v1-bubble" id="closor-callback-v1-bubble">
+                            <div class="closerDiv closor-callback-v1-bubble" id="closor-callback-v1-bubble">
                                 <div class="closor-callback-v1-bubble-close" data-action="close-component"
                                     data-component="popover"></div>
                                 <div class="closor-callback-v1-bubble-text-1">'.$source->bubble_line_1.'<br>
