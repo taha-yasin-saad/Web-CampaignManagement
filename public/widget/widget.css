@@ -6934,3 +6934,22 @@ html.no-svg .closor-embedded-v1-widget .closor-embedded-v1-call-image {
 }
 .iti__country-list{width:280px;overflow-x: hidden;}
 .closor-widget-container li{    list-style-type: none!important;}
+
+.closor-callback-v1-avatar-icon li {
+    text-align: center;
+    margin: 0 !important;
+}
+.closor-callback-v1-widget.closor-callback-popup .closor-callback-v1-avatar {
+    -webkit-transform: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+    clip: rect(-50px, 300px, 300px, -50px) !important;
+    -webkit-transition-delay: 0s !important;
+    transition-delay: 0s !important;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    background: rgb(52, 168, 83) !important;
+    text-align: center !important;
+    margin: 0!important;
+}
