@@ -43,7 +43,7 @@ class WidgetController extends Controller
                         closor-viewport-left  closor-viewport-bottom closor-viewport-width">
                     <div class="closor-callback-v1-overlay-container
                         closor-viewport-width closor-viewport-scale">
-                        <div class="closor-callback-v1-overlay" data-action="open-callback-popup" >';
+                        <div class="closor-callback-v1-overlay" id="data-action" data-action="open-callback-popup" >';
                         if($source->widget_type == 'text'){
                             $widget .= '<div class="closerDiv" onclick="callCloserModal()" style="background:'.$source->primary.'!important;
                             background: #3481a8!important;display: inline-block!important;padding: 20px!important;
@@ -57,7 +57,7 @@ class WidgetController extends Controller
                                     <li class="mdi mdi-headset fa-fw" id="x-icon" style="color:'.$source->secondary.'!important;"></li>
                                 </div>
                             </div>
-                            <div class="closor-callback-v1-bubble" id="closor-callback-v1-bubble" style="display: none">
+                            <div class="closor-callback-v1-bubble" id="closor-callback-v1-bubble" style="display: block">
                                 <div class="closor-callback-v1-bubble-close" data-action="close-component"
                                     data-component="popover"></div>
                                 <div class="closor-callback-v1-bubble-text-1">'.$source->bubble_line_1.'<br>

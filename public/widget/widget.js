@@ -46,6 +46,7 @@
             appBanners[i].style.display = 'none';
         }
         document.getElementById("closor-callback-v1-bubble").style.display = "none";
+        document.getElementById("data-action").style.display = "none";
         setTimeout(function(){
             runPlugen()
         }, 100)
@@ -59,6 +60,7 @@
             appBanners[i].style.display = 'block';
         }
         document.getElementById("closor-callback-v1-bubble").style.display = "block";
+        document.getElementById("data-action").style.display = "block";
         
     }
 
