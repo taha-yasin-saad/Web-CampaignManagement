@@ -23,19 +23,37 @@
 
         const params = getFileParams();
         if ( params ) {
-            var xhttp = new XMLHttpRequest();
-            
-            xhttp.onreadystatechange = function() {
-                if (this.readyState == 4 && this.status == 200) {
-                document.body.innerHTML += this.responseText;
-                }
+
+            var myHeaders = new Headers();
+            myHeaders.append("Content-Type", "application/json");
+
+            var requestOptions = {
+            method: 'GET',
+            headers: myHeaders,
+            redirect: 'follow'
             };
-            //var url = 'https://app.closor.com/widget/'+params.get('id');
-            var url = 'https://pharous.dev/c.php';
+
+            fetch("https://app.closor.com/widget/c.php?id="+params.get('id'), requestOptions)
+            .then(response => response.text())
+            .then((result) => {
+                console.log(result);
+                document.body.innerHTML += result;
+            })
+            .catch(error => console.log('error', error));
+
+            // var xhttp = new XMLHttpRequest();
             
-            xhttp.open("GET", url);
-            xhttp.setRequestHeader("Access-Control-Allow-Origin", "*");
-            xhttp.send();
+            // xhttp.onreadystatechange = function() {
+            //     if (this.readyState == 4 && this.status == 200) {
+            //     document.body.innerHTML += this.responseText;
+            //     }
+            // };
+
+            // var url = 'https://app.closor.com/widget/c.php?id='+params.get('id');
+            
+            // xhttp.open("GET", url);
+            // xhttp.setRequestHeader("Access-Control-Allow-Origin", "*");
+            // xhttp.send();
         }
 
     };
