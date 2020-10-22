@@ -46,7 +46,7 @@
             appBanners[i].style.display = 'none';
         }
         document.getElementById("closor-callback-v1-bubble").style.display = "none";
-        document.getElementById("data-action").style.display = "none";
+        document.getElementById("data-action").style.display = "none!important";
         setTimeout(function(){
             runPlugen()
         }, 100)
@@ -59,7 +59,7 @@
         for (var i = 0; i < appBanners.length; i ++) {
             appBanners[i].style.display = 'block';
         }
-        document.getElementById("closor-callback-v1-bubble").style.display = "flex";
+        document.getElementById("closor-callback-v1-bubble").style.display = "block";
         document.getElementById("data-action").style.display = "block";
         
     }
