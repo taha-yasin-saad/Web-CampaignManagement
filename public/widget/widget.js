@@ -132,12 +132,12 @@
         
         var myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
+        myHeaders.append("Access-Control-Allow-Origin", "*");
         
         var requestOptions = {
           method: 'POST',
           headers: myHeaders,
           body: form_data,
-          redirect: 'follow'
         };
         
         fetch("https://app.closor.com/api"+"/widgetView/widget", requestOptions)
