@@ -12,9 +12,6 @@ class WidgetController extends Controller
 {
     
     public function widget($id){
-        header('Access-Control-Allow-Origin: *');
-        header('Access-Control-Allow-Methods: GET, POST, PATCH, PUT, DELETE, OPTIONS');
-        header('Access-Control-Allow-Headers: Origin, Content-Type, X-Auth-Token');
         $source = Source::find($id);
         $widget = '
         <link href="https://app.closor.com/widget/widget.css" rel="stylesheet">
