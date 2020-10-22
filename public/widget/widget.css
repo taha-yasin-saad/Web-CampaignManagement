@@ -6950,7 +6950,7 @@ html.no-svg .closor-embedded-v1-widget .closor-embedded-v1-call-image {
     clip: rect(-50px, 300px, 300px, -50px) !important;
     -webkit-transition-delay: 0s !important;
     transition-delay: 0s !important;
-    display: flex;
+    display: block;
     justify-content: center;
     align-items: center;
     background: rgb(52, 168, 83) !important;
