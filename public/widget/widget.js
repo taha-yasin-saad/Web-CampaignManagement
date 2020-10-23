@@ -141,7 +141,7 @@
         };
         
         fetch("https://app.closor.com/api"+"/widgetView/widget", requestOptions)
-          .then(response => response.text())
+        //   .then(response => response.text())
           .then(result => console.log(result))
           .catch(error => console.log('error', error));
         // console.log(form_data);

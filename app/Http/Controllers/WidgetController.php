@@ -189,8 +189,9 @@ class WidgetController extends Controller
             // </script>
     }
     public function widget_ajax(Request $request){
-        if(!$request->phone){
-            return 0;
+        
+        if(!$request["phone"]){
+            return($request->all());
         }
         $data = $request->all();
         unset($data['csrftoken']);
