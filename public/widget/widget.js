@@ -132,7 +132,6 @@
         
         var myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
-        myHeaders.append("Access-Control-Allow-Origin", "*");
         
         var requestOptions = {
           method: 'POST',
@@ -140,7 +139,7 @@
           body: form_data,
         };
         
-        fetch("https://app.closor.com/api"+"/widgetView/widget", requestOptions)
+        fetch("https://app.closor.com/widget/v.php", requestOptions)
           .then(response => response.text())
           .then(result => console.log(result))
           .catch(error => console.log('error', error));
