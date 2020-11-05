@@ -1184,7 +1184,7 @@ html.no-svg .closor-callback-v1-widget .closor-callback-v1-bubble-close {
 }
 .closor-callback-v1-widget .closor-callback-v1-popup-scroll-container {
     /* position: fixed !important; */
-    z-index: 2147483499 !important;
+    /* z-index: 2147483499 !important; */
     top: 0 !important;
     left: 0 !important;
     height: 100% !important;
@@ -6962,9 +6962,4 @@ html.no-svg .closor-embedded-v1-widget .closor-embedded-v1-call-image {
 }
 .closor-callback-popup, .closerDiv{
     direction: ltr !important;
-}
-@media (max-width: 500px) {
-    .closor-callback-v1-widget .intl-tel-input .country-list {
-        z-index: 3147483499 !important;
-    }
 }
