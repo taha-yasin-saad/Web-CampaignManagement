@@ -92,8 +92,17 @@ class WidgetController extends Controller
                                     <div class="closor-callback-v1-interest-query" >
                                         <form class="closor-callback-v1-interest-query-form" onsubmit="event.preventDefault(); return dataget()" id="form-id" data-action="submit-callback">
                                         <input type="hidden" name="source_id" value="'.$id.'">
-                                        <input type="hidden" id="country_code" name="country_code" >
-                                        <div class="form-group">
+                                        <input type="hidden" id="country_code" name="country_code" >';
+                                        foreach($source->fields as $inputfield){
+                                            if($inputfield == 'name'){
+                                                $widget .= '<div class="allow-dropdown separate-dial-code iti-sdc-3">
+                                                    <input type="text" class="closor-callback-v1-input" data-iti="true" name="'.$inputfield.'"
+                                                        data-role="callback-phone-number-input" autocomplete="off"
+                                                        placeholder="'.ucwords($inputfield).'">
+                                                </div>';
+                                            }
+                                        }
+                                        $widget .= '<div class="form-group">
                                                             <input id="phone" type="phone"
                                                             name="phone"
                                                             required
@@ -105,6 +114,7 @@ class WidgetController extends Controller
                                             border: 1px solid #aaa;">
                                                     </div>';
                                         foreach($source->fields as $inputfield){
+                                            if($inputfield != 'name'){
                                                 if($inputfield == 'custom1'){
                                                     $widget .= '
                                                     <div class="allow-dropdown separate-dial-code iti-sdc-3">
@@ -131,6 +141,7 @@ class WidgetController extends Controller
                                                 ';
                                                 }
                                             }
+                                        }
 
                                             $widget .=   '<button class="closor-callback-v1-button" style="background:'.$source->primary.'!important" id="button-id">
                                                 <div class="closor-callback-v1-preloader">
