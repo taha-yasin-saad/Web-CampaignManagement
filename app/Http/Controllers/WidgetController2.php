@@ -1109,6 +1109,8 @@ class WidgetController extends Controller
         return $widget;
     }
     public function widget_ajax(Request $request){
+        echo 777;
+        return true;
         if(!$request->phone){
             return 0;
         }
