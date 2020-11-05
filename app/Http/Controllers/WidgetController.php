@@ -55,7 +55,7 @@ class WidgetController extends Controller
                             $widget .= '
                             <div class="closor-callback-v1-avatar closerDiv" id="closor-call-icon" onclick="callCloserModal()" style="background:'.$source->primary.'!important;">
                                 <div class="closor-callback-v1-avatar-icon">
-                                    <li class="mdi mdi-headset fa-fw" id="x-icon" style="color:'.$source->secondary.'!important;"></li>
+                                    <li class="mdi mdi-cellphone-android fa-fw" id="x-icon" style="color:'.$source->secondary.'!important;"></li>
                                 </div>
                             </div>
                             <div class="closerDiv closor-callback-v1-bubble" id="closor-callback-v1-bubble">
