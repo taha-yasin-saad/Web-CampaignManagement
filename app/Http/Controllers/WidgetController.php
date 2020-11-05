@@ -57,8 +57,9 @@ class WidgetController extends Controller
                                 <div class="closor-callback-v1-avatar-icon">
                                     <li class="'.$source->icon_type.'" id="x-icon" style="color:'.$source->secondary.'!important;"></li>
                                 </div>
-                            </div>
-                            <div class="closerDiv closor-callback-v1-bubble" id="closor-callback-v1-bubble">
+                            </div>';
+                            if($source->bubble == 'on'){
+                            $widget .='<div class="closerDiv closor-callback-v1-bubble" id="closor-callback-v1-bubble">
                                 <div class="closor-callback-v1-bubble-close" data-action="close-component"
                                     data-component="popover"></div>
                                 <div class="closor-callback-v1-bubble-text-1">'.$source->bubble_line_1.'<br>
@@ -67,7 +68,7 @@ class WidgetController extends Controller
                                 '.$source->bubble_line_2.'
                                 </div>
                             </div>
-                            ';
+                            ';}
                         }
 
 
