@@ -48,7 +48,7 @@ class WidgetController extends Controller
                         if($source->alignment == 'left'){
                             $widget .= 'style="left: 40px !important;
                             right: unset !important;
-                            direction: ltr !important;
+                            direction: rtl !important;
                             width: 400px;"';}else{
 
                         }; $widget .= '>';
