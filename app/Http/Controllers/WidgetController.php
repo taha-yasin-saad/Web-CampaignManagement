@@ -110,7 +110,7 @@ class WidgetController extends Controller
                                                     <div class="allow-dropdown separate-dial-code iti-sdc-3">
                                                         <input type="text" class="closor-callback-v1-input" data-iti="true"
                                                             data-role="callback-phone-number-input" autocomplete="off" name="custom1"
-                                                            placeholder="'.$source->custom_lable_1.'">
+                                                            placeholder="'.ucwords($source->custom_lable_1).'">
                                                     </div>
                                                     ';
                                                 }elseif($inputfield == 'custom2'){
@@ -118,7 +118,7 @@ class WidgetController extends Controller
                                                     <div class="allow-dropdown separate-dial-code iti-sdc-3">
                                                         <input type="text" class="closor-callback-v1-input" data-iti="true"
                                                             data-role="callback-phone-number-input" autocomplete="off" name="custom2"
-                                                            placeholder="'.$source->custom_lable_2.'">
+                                                            placeholder="'.ucwords($source->custom_lable_2).'">
                                                     </div>
                                                     ';
                                                 }else{
@@ -126,7 +126,7 @@ class WidgetController extends Controller
                                                 <div class="allow-dropdown separate-dial-code iti-sdc-3">
                                                     <input type="text" class="closor-callback-v1-input" data-iti="true" name="'.$inputfield.'"
                                                         data-role="callback-phone-number-input" autocomplete="off"
-                                                        placeholder="'.$inputfield.'">
+                                                        placeholder="'.ucwords($inputfield).'">
                                                 </div>
                                                 ';
                                                 }
