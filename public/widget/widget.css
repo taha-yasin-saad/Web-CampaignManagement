@@ -6963,3 +6963,8 @@ html.no-svg .closor-embedded-v1-widget .closor-embedded-v1-call-image {
 .closor-callback-popup, .closerDiv{
     direction: ltr !important;
 }
+@media (max-width: 500px) {
+    .closor-callback-v1-widget .intl-tel-input .country-list {
+        z-index: 214748350010 !important;
+    }
+}
