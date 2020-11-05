@@ -371,7 +371,7 @@
     list-style-type: disc !important;
 }
 .closor-callback-v1-widget ::-webkit-input-placeholder {
-    color: inherit !important;
+    color: #aaa !important;
     opacity: 1 !important;
     font-family: inherit !important;
     font-size: inherit !important;
@@ -380,7 +380,7 @@
     text-align: inherit !important;
 }
 .closor-callback-v1-widget :-ms-input-placeholder {
-    color: inherit !important;
+    color: #aaa !important;
     opacity: 1 !important;
     font-family: inherit !important;
     font-size: inherit !important;
@@ -389,7 +389,7 @@
     text-align: inherit !important;
 }
 .closor-callback-v1-widget ::-ms-input-placeholder {
-    color: inherit !important;
+    color: #aaa !important;
     opacity: 1 !important;
     font-family: inherit !important;
     font-size: inherit !important;
@@ -398,7 +398,7 @@
     text-align: inherit !important;
 }
 .closor-callback-v1-widget ::placeholder {
-    color: inherit !important;
+    color: #aaa !important;
     opacity: 1 !important;
     font-family: inherit !important;
     font-size: inherit !important;
@@ -3994,7 +3994,7 @@ html.no-svg .closor-callback-v1-widget .closor-callback-v1-call-image {
     list-style-type: disc !important;
 }
 .closor-embedded-v1-widget ::-webkit-input-placeholder {
-    color: inherit !important;
+    color: #aaa !important;
     opacity: 1 !important;
     font-family: inherit !important;
     font-size: inherit !important;
@@ -4003,7 +4003,7 @@ html.no-svg .closor-callback-v1-widget .closor-callback-v1-call-image {
     text-align: inherit !important;
 }
 .closor-embedded-v1-widget :-ms-input-placeholder {
-    color: inherit !important;
+    color: #aaa !important;
     opacity: 1 !important;
     font-family: inherit !important;
     font-size: inherit !important;
@@ -4012,7 +4012,7 @@ html.no-svg .closor-callback-v1-widget .closor-callback-v1-call-image {
     text-align: inherit !important;
 }
 .closor-embedded-v1-widget ::-ms-input-placeholder {
-    color: inherit !important;
+    color: #aaa !important;
     opacity: 1 !important;
     font-family: inherit !important;
     font-size: inherit !important;
@@ -4021,7 +4021,7 @@ html.no-svg .closor-callback-v1-widget .closor-callback-v1-call-image {
     text-align: inherit !important;
 }
 .closor-embedded-v1-widget ::placeholder {
-    color: inherit !important;
+    color: #aaa !important;
     opacity: 1 !important;
     font-family: inherit !important;
     font-size: inherit !important;
