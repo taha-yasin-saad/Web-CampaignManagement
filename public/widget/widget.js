@@ -87,8 +87,14 @@
         for (var i = 0; i < appBanners.length; i ++) {
             appBanners[i].style.display = 'block';
         }
-        document.getElementById("closor-callback-v1-bubble").style.display = "block";
-        document.getElementById("data-action").style.display = "block";
+        var toggle_element = document.getElementById("closor-callback-v1-bubble");
+        if(toggle_element){
+            toggle_element.style.display = "none";
+        }
+        var toggle_element2 = document.getElementById("data-action")
+        if(toggle_element2){
+            toggle_element2.style.display = "none!important";
+        }
         
     }
 

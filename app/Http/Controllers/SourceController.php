@@ -46,7 +46,7 @@ class SourceController extends Controller
     public function store(Request $request)
     {
         $data=$request->all();
-        dd($data);
+        // dd($data);
         $product = Source::create($data);
         return redirect('sources')->with('success', 'Added Successfully');
     }
