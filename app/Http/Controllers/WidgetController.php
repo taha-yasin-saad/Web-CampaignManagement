@@ -44,9 +44,9 @@ class WidgetController extends Controller
                         closor-viewport-left  closor-viewport-bottom closor-viewport-width">
                     <div class="closor-callback-v1-overlay-container
                         closor-viewport-width closor-viewport-scale">
-                        <div class="closor-callback-v1-overlay" id="data-action" data-action="open-callback-popup" style="direction: rtl;';
+                        <div class="closor-callback-v1-overlay" id="data-action" data-action="open-callback-popup";';
                         if($source->alignment == 'left'){
-                            $widget .= 'left: 40px !important;
+                            $widget .= 'left: 10px !important;
                             right: unset !important;
                             direction: ltr !important;
                             width: 400px;"';}else{
