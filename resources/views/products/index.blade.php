@@ -176,25 +176,27 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td class="text-center">1</td>
-                                    <td><span class="font-medium">Facebook</span>
-                                        <br><span class="text-muted">black friday camp</span>
-                                    </td>
-                                    <td>555</td>
-                                    <td>323</td>
-                                    <td>200</td>
-                                    <td>50%</td>
-                                    @if(get_role($workplace->id) == 0 || get_role($workplace->id) == 1 ||
-                                    get_role($workplace->id) == 2)
-                                    <td>
-                                        <button type="button"
-                                            class="btn btn-info btn-outline btn-circle btn-lg m-r-5"><i
-                                                class="ti-pencil-alt"></i></button>
-                                    </td>
-                                    @endif
-                                </tr>
-                                <tr>
+                                @foreach ($value->source as $source)                                    
+                                    <tr>
+                                        <td class="text-center">1</td>
+                                        <td><span class="font-medium">{{$source->name}}</span>
+                                            <br><span class="text-muted">black friday camp</span>
+                                        </td>
+                                        <td>555</td>
+                                        <td>323</td>
+                                        <td>200</td>
+                                        <td>50%</td>
+                                        @if(get_role($workplace->id) == 0 || get_role($workplace->id) == 1 ||
+                                        get_role($workplace->id) == 2)
+                                        <td>
+                                            <button type="button"
+                                                class="btn btn-info btn-outline btn-circle btn-lg m-r-5"><i
+                                                    class="ti-pencil-alt"></i></button>
+                                        </td>
+                                        @endif
+                                    </tr>
+                                @endforeach
+                                {{-- <tr>
                                     <td class="text-center">2</td>
                                     <td><span class="font-medium">Twitter</span>
                                         <br><span class="text-muted">Excutive compaign</span></td>
@@ -210,7 +212,7 @@
                                                 class="ti-pencil-alt"></i></button>
                                     </td>
                                     @endif
-                                </tr>
+                                </tr> --}}
                             </tbody>
                         </table>
                     </div>
