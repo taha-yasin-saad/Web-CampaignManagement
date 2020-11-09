@@ -387,7 +387,7 @@
                     // generate the markup
                     this._generateMarkup();
                     // set the initial state of the input value and the selected flag
-                    this._setInitialState();
+                    // this._setInitialState();
                     // start all of the event listeners: autoHideDialCode, input keydown, selectedFlag click
                     this._initListeners();
                     // utils script, and auto country
