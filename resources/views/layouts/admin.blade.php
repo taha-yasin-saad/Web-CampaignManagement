@@ -187,13 +187,13 @@
                             <span class="hide-menu"> Leads <span class="fa arrow"></span> </span>
                         </a>
                     </li>
-                    <li class="{{ (request()->is('products*')) ? 'active' : '' }}">
+                    <li class="{{ (request()->is(session('workplace')->id.'/products')) ? 'active' : '' }}">
                         <a href="{{url(session('workplace')->id.'/products')}}" class="waves-effect"><i
                                 class="mdi mdi-account-card-details fa-fw" data-icon="v"></i>
                             <span class="hide-menu"> Products <span class="fa arrow"></span> </span>
                         </a>
                     </li>
-                    <li class="{{ (request()->is('team*')) ? 'active' : '' }}">
+                    <li class="{{ (request()->is(session('workplace')->id.'/team')) ? 'active' : '' }}">
                         <a href="{{url(session('workplace')->id.'/team')}}" class="waves-effect"><i
                                 class="mdi mdi-account-multiple fa-fw" data-icon="v"></i>
                             <span class="hide-menu"> Team <span class="fa arrow"></span> </span>
