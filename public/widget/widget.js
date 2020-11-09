@@ -151,23 +151,23 @@
           body: form_data,
         };
         
-        fetch("https://app.closor.com/widget/v.php", requestOptions)
-          .then(response => response.text())
-          .then(result => console.log(result))
-          .catch(error => console.log('error', error));
+        // fetch("https://app.closor.com/widget/v.php", requestOptions)
+        //   .then(response => response.text())
+        //   .then(result => console.log(result))
+        //   .catch(error => console.log('error', error));
         // console.log(form_data);
 
-        // var xmlhttp = new XMLHttpRequest();
-        // xmlhttp.open("POST",  "https://app.closor.com/api"+"/widgetView/widget", true);
-        // xmlhttp.setRequestHeader("Accept", "application/json");
-        // xmlhttp.setRequestHeader("Content-Type", "application/json; charset=utf-8");
-        // xmlhttp.onreadystatechange = function() {
-        //     if (this.readyState == 4 && this.status == 200) {
-        //     this.form_data;
-        //     }
-        // };
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.open("POST",  "https://app.closor.com/widget/v.php", true);
+        xmlhttp.setRequestHeader("Accept", "application/json");
+        xmlhttp.setRequestHeader("Content-Type", "application/json; charset=utf-8");
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+            this.form_data;
+            }
+        };
 
-        // xmlhttp.send(form_data);
+        xmlhttp.send(form_data);
         closeCloserModal();
     }
 
