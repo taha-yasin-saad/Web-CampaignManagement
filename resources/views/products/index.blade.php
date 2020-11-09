@@ -180,9 +180,9 @@
                                     <tr>
                                         <td class="text-center">1</td>
                                         <td><span class="font-medium">{{$source->name}}</span>
-                                            <br><span class="text-muted">black friday camp</span>
+                                            <br>@if(isset($source->website))<span class="text-muted">{{$source->website}}</span>@endif
                                         </td>
-                                        <td>555</td>
+                                        <td>{{count($source->lead)}}</td>
                                         <td>323</td>
                                         <td>200</td>
                                         <td>50%</td>

@@ -28,7 +28,7 @@ class ProductsController extends Controller
         $query['workplace'] = Workplace::with('users')->where('id',$workplace_id)->first();
         
         Session::put('workplace', $query['workplace']);
-        $query['data'] = Product::with('users','source')->where('workplace_id',$workplace_id)->get();
+        $query['data'] = Product::with('users','source', 'source.lead')->where('workplace_id',$workplace_id)->get();
         foreach($query['data'] as $value){
             $selected_ids = array();
             foreach($value->users as $val){

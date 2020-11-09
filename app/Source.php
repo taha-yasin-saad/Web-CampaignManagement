@@ -17,4 +17,8 @@ class Source extends Model
     {
         return $this->belongsTo('App\Workplace');
     }
+
+    public function lead(){
+        return $this->hasMany('App\Lead');
+    }
 }
