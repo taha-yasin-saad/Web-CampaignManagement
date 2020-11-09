@@ -94,7 +94,7 @@
                             <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu dropdown-user animated">
-                            <li>
+                            <li class="{{ (request()->is('profile*')) ? 'active' : '' }}">
                                 <a href="{{url('profile')}}">
                                     <i class="ti-settings"></i>
                                     Profile Setting
@@ -181,26 +181,26 @@
                         </a>
                     </li>
 
-                    <li>
+                    <li class="{{ (request()->is('leads*')) ? 'active' : '' }}">
                         <a href="{{url('leads')}}" class="waves-effect"><i class="mdi mdi-contacts fa-fw"
                                 data-icon="v"></i>
                             <span class="hide-menu"> Leads <span class="fa arrow"></span> </span>
                         </a>
                     </li>
-                    <li>
+                    <li class="{{ (request()->is('products*')) ? 'active' : '' }}">
                         <a href="{{url(session('workplace')->id.'/products')}}" class="waves-effect"><i
                                 class="mdi mdi-account-card-details fa-fw" data-icon="v"></i>
                             <span class="hide-menu"> Products <span class="fa arrow"></span> </span>
                         </a>
                     </li>
-                    <li>
+                    <li class="{{ (request()->is('team*')) ? 'active' : '' }}">
                         <a href="{{url(session('workplace')->id.'/team')}}" class="waves-effect"><i
                                 class="mdi mdi-account-multiple fa-fw" data-icon="v"></i>
                             <span class="hide-menu"> Team <span class="fa arrow"></span> </span>
                         </a>
                     </li>
                     @if(get_role(session('workplace')->id) == 0 || get_role(session('workplace')->id) == 1)
-                    <li>
+                    <li class="{{ (request()->is('sources*')) ? 'active' : '' }}">
                         <a href="{{url('sources')}}" class="waves-effect"><i class="mdi mdi-filter fa-fw"
                                 data-icon="v"></i>
                             <span class="hide-menu"> Lead Sources <span class="fa arrow"></span> </span>
