@@ -289,6 +289,12 @@
                                                     class="text-small text-muted"> (20 Characters Max)</span><br>
                                                 <input class="form-control" id="custom_lable_2" name="custom_lable_2" type="text"
                                                 value="@if(isset($data)){{$data->custom_lable_2}}@endif" maxlength="20" placeholder="@if(isset($data)){{$data->custom_lable_2}}@endif">
+                                            </div><br>
+                                            <div class="form-group">
+                                                <label style="margin-top:20px" id="submitt_label">Submitt Button Text</label><span
+                                                    class="text-small text-muted"> (20 Characters Max)</span><br>
+                                                <input class="form-control" id="submitt_text" name="submitt_text" type="text"
+                                                    placeholder="Call Me Now" value="@if(isset($data)){{$data->submitt_text}}@endif">
                                             </div>
                                         </div>
                                         <div class="col-md-4"
