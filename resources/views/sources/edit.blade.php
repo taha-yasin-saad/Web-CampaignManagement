@@ -382,7 +382,7 @@
 
 <script type="text/javascript">
 // $('.color').colorpicker({});
-console.log({!!$data->widget_type!!});
+console.log('{!!$data->widget_type!!}');
 if('{!!$data->widget_type!!}' == 'text'){
     console.log('====================================');
     console.log('it is text');
