@@ -46,24 +46,26 @@ class WidgetController extends Controller
                         closor-viewport-width closor-viewport-scale">
                         <div class="closor-callback-v1-overlay" id="data-action" data-action="open-callback-popup"';
                         if($source->alignment == 'left'){
-                            $widget .= 'style="left: 10px !important;right: unset !important;direction: rtl !important;width: 400px;"';
+                            $widget .= 'style="left: 10px !important;right: unset !important;direction: ltr !important;width: 400px;"';
                         };
                         $widget .= '>';
                         if($source->widget_type == 'text'){
                             $widget .= '<div class="closerDiv" onclick="callCloserModal()" style="background:'.$source->primary.'!important;display: inline-block!important;padding: 20px!important;
                             width: 300px!important;text-align: center!important;vertical-align: middle!important;border-radius: 10px 10px 0px 0px!important;'.$source->alignment.': 0!important;">
-                                    <p class="text-text" style="text-align:center!important;color:'.$source->secondary.'!important;font-size: 18px !important;position:unset!important;
-                                    font-weight: 700 !important;">'.$source->text_text.'</p>
+                                    <p class="text-text" style="text-align:center!important;color:'.$source->secondary.'!important;font-size: 18px !important;position:absolute !important;';if($source->alignment == 'left'){$widget .='position:unset!important;';}
+                            $widget .='font-weight: 700 !important;">'.$source->text_text.'</p>
                             </div>';
                         }else{
                             $widget .= '
-                            <div class="closor-callback-v1-avatar closerDiv" id="closor-call-icon" onclick="callCloserModal()" style="background:'.$source->primary.'!important;display: inline-block!important;position:unset!important;">
+                            <div class="closor-callback-v1-avatar closerDiv" id="closor-call-icon" onclick="callCloserModal()" style="background:'.$source->primary.'!important;display: inline-block!important;';if($source->alignment == 'left'){$widget .='position:unset!important;';}
+                            $widget .=';">
                                 <div class="closor-callback-v1-avatar-icon">
                                     <li class="'.$source->icon_type.'" id="x-icon" style="color:'.$source->secondary.'!important;"></li>
                                 </div>
                             </div>';
                             if($source->bubble == 'on'){
-                            $widget .='<div class="closerDiv closor-callback-v1-bubble" id="closor-callback-v1-bubble"style="background:'.$source->bubble_bg_color.'!important;display: inline-block!important;position:unset!important;">
+                            $widget .='<div class="closerDiv closor-callback-v1-bubble" id="closor-callback-v1-bubble"style="background:'.$source->bubble_bg_color.'!important;display: inline-block!important;';if($source->alignment == 'left'){$widget .='position:unset!important;';}
+                            $widget .='">
                                 <div class="closor-callback-v1-bubble-close" data-action="close-component"
                                     data-component="popover"></div>
                                 <div class="closor-callback-v1-bubble-text-1" style="text-align:center!important;color:'.$source->bubble_text_color.'!important">'.$source->bubble_line_1.'<br>
