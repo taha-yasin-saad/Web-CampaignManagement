@@ -384,6 +384,9 @@
 // $('.color').colorpicker({});
 console.log({!!$data->widget_type!!});
 if('{!!$data->widget_type!!}' == 'text'){
+    console.log('====================================');
+    console.log('it is text');
+    console.log('====================================');
     $("#text-settings").show("swing");
     $("#icon-settings").hide("swing");
 }
