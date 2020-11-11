@@ -249,9 +249,9 @@
                                             </div>
                                         </div>
                                         <div class="col-md-6">
-                                            <div class="text-review" style="postion:relative">
-                                                <div class="chat-text">
-                                                    <p class="text-text">@if(isset($data)){{$data->text_text}}@endif</p>
+                                        <div class="text-review" style="postion:relative;">
+                                                <div class="chat-text" style="background:{{$data->primary}}">
+                                                    <p class="text-text" style="color:{{$data->secondary}}">@if(isset($data)){{$data->text_text}}@endif</p>
                                                 </div>
                                             </div>
                                         </div>
