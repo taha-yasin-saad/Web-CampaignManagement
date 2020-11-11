@@ -52,7 +52,7 @@ class WidgetController extends Controller
                         if($source->widget_type == 'text'){
                             $widget .= '<div class="closerDiv" onclick="callCloserModal()" style="background:'.$source->primary.'!important;display: inline-block!important;padding: 20px!important;
                             width: 300px!important;text-align: center!important;vertical-align: middle!important;border-radius: 10px 10px 0px 0px!important;'.$source->alignment.': 0!important;">
-                                    <p class="text-text" style="text-align:center!important;color:'.$source->secondary.'!important;font-size: 18px !important;position:absolute !important;';if($source->alignment == 'left'){$widget .='position:unset!important;';}
+                                    <p class="text-text" style="text-align:center!important;color:'.$source->secondary.'!important;font-size: 18px !important;';if($source->alignment == 'left'){$widget .='position:unset!important;';}else{$widget .='position:absolute !important;';}
                             $widget .='font-weight: 700 !important;">'.$source->text_text.'</p>
                             </div>';
                         }else{
