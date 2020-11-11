@@ -383,7 +383,7 @@
 <script type="text/javascript">
 // $('.color').colorpicker({});
 console.log({!!$data->widget_type!!});
-if({!!$data->widget_type!!} == 'text'){
+if('{!!$data->widget_type!!}' == 'text'){
     $("#text-settings").show("swing");
     $("#icon-settings").hide("swing");
 }
