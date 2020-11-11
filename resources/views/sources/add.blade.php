@@ -270,7 +270,7 @@
                                                 <label style="margin-top:20px" id="submitt_label">Submitt Button Text</label><span
                                                     class="text-small text-muted"> (20 Characters Max)</span><br>
                                                 <input class="form-control" id="submitt_text" name="submitt_text" type="text"
-                                                    placeholder="Field Label">
+                                                    placeholder="Call Me Now">
                                             </div>
                                         </div>
                                         <div class="col-md-4"
