@@ -1082,34 +1082,6 @@ html.no-svg .closor-callback-v1-widget .closor-callback-v1-avatar-close {
     width: auto !important;
     max-width: 320px !important;
     border-radius: 14px !important;
-    /* -webkit-transition-property: clip, opacity, -webkit-transform !important; */
-    /* transition-property: clip, opacity, -webkit-transform !important; */
-    /* transition-property: clip, transform, opacity !important; */
-    /* transition-property: clip, transform, opacity, -webkit-transform !important; */
-    /* -webkit-transition-duration: 0s, 0.2s, 0.2s, 0.2s !important; */
-    /* transition-duration: 0s, 0.2s, 0.2s, 0.2s !important; */
-    /* -webkit-transition-delay: 0.2s, 0s, 0s, 0s !important; */
-    /* transition-delay: 0.2s, 0s, 0s, 0s !important; */
-    /* -webkit-transition-timing-function: cubic-bezier(
-        0.55,
-        0.055,
-        0.675,
-        0.19
-    ) !important; */
-    /* transition-timing-function: cubic-bezier(
-        0.55,
-        0.055,
-        0.675,
-        0.19
-    ) !important; */
-    /* -webkit-transform-origin: bottom right !important; */
-    /* transform-origin: bottom right !important; */
-    /* -webkit-transform: scaleX(2) rotateY(-60deg) !important; */
-    /* transform: scaleX(2) rotateY(-60deg) !important; */
-    /* -webkit-backface-visibility: hidden !important; */
-    /* backface-visibility: hidden !important; */
-    /* opacity: 1 !important; */
-    /* clip: rect(0, 0, 0, 0) !important; */
     display: block;
 }
 
