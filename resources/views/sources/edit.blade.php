@@ -349,9 +349,13 @@
                                                             </div>
                                                         </div>
                                                         <div class="text-center">
-                                                            <button type="button" class="btn btn-primary btn-block call_me"
-                                                                style="background-color:@if(isset($data)){{$data->primary}}@endif;color:@if(isset($data)){{$data->secondary}}@endif;">Call
-                                                                Me Now
+                                                            <button type="button" class="btn btn-primary btn-block call_me" id="submitt_btn"
+                                                                style="background-color:@if(isset($data)){{$data->primary}}@endif;color:@if(isset($data)){{$data->secondary}}@endif;">
+                                                                @if(isset($data))
+                                                                {{$data->submitt_text}}
+                                                                @else
+                                                                Call Me Now
+                                                                @endif
                                                             </button>
                                                             <p for="exampleInputEmail1"
                                                                 style="text-align: center;font-size: smaller;">
