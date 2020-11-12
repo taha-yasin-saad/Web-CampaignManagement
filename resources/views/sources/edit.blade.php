@@ -454,6 +454,9 @@ $('#text_text').on('input', function(e) {
 $('#text_round').on('input', function(e) {
     $(".chat-text").css("border-radius", this.value+"px "+this.value+"px "+"0px 0px");
 });
+$('#submitt_text').on('input', function (e) {
+        $("#submitt_btn").html(this.value);
+    });
 </script>
 <script type="text/javascript">
     $('#checkbox_name').change(function () {
