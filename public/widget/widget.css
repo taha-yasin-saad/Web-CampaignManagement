@@ -1114,7 +1114,7 @@ html.no-svg .closor-callback-v1-widget .closor-callback-v1-avatar-close {
 }
 .closor-callback-v1-widget .closor-callback-v1-bubble::before {
     content: "" !important;
-    display: none !important;
+    /* display: bl !important; */
     border-left: 10px solid #b1b1b1 !important;
     border-left-color: #b1b1b1 !important;
     border-bottom: 10px solid transparent !important;
