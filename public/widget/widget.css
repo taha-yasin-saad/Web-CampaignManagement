@@ -1112,16 +1112,6 @@ html.no-svg .closor-callback-v1-widget .closor-callback-v1-avatar-close {
     /* clip: rect(0, 0, 0, 0) !important; */
     display: block;
 }
-.closor-callback-v1-widget .closor-callback-v1-bubble::before {
-    content: "" !important;
-    display: inline-block !important;
-    border-left: 10px solid #b1b1b1 !important;
-    border-left-color: #b1b1b1 !important;
-    border-bottom: 10px solid transparent !important;
-    position: absolute !important;
-    right: -10px !important;
-    bottom: 25px !important;
-}
 
 .closor-callback-v1-widget .closor-callback-v1-bubble-right::before {
     content: "" !important;
