@@ -1122,6 +1122,29 @@ html.no-svg .closor-callback-v1-widget .closor-callback-v1-avatar-close {
     right: -10px !important;
     bottom: 25px !important;
 }
+
+.closor-callback-v1-widget .closor-callback-v1-bubble-right::before {
+    content: "" !important;
+    display: inline-block !important;
+    border-left: 10px solid #b1b1b1 !important;
+    border-left-color: #b1b1b1 !important;
+    border-bottom: 10px solid transparent !important;
+    position: absolute !important;
+    right: -10px !important;
+    bottom: 25px !important;
+}
+
+.closor-callback-v1-widget .closor-callback-v1-bubble-left::before {
+    content: "" !important;
+    display: inline-block !important;
+    border-right: 10px solid #b1b1b1 !important;
+    border-right-color: #b1b1b1 !important;
+    border-bottom: 10px solid transparent !important;
+    position: absolute !important;
+    left: 72px !important;
+    bottom: 25px !important;
+}
+
 .closor-callback-v1-widget
     .closor-callback-v1-overlay:hover
     .closor-callback-v1-bubble {
@@ -6956,6 +6979,7 @@ html.no-svg .closor-embedded-v1-widget .closor-embedded-v1-call-image {
     background: rgb(52, 168, 83) !important;
     text-align: center !important;
     margin: 0!important;
+    margin-right: 12px !important;
 }
 .closor-callback-v1-widget .closor-callback-v1-bubble{
     display:block;

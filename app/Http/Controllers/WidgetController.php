@@ -64,7 +64,14 @@ class WidgetController extends Controller
                                 </div>
                             </div>';
                             if($source->bubble == 'on'){
-                            $widget .='<div class="closerDiv closor-callback-v1-bubble" id="closor-callback-v1-bubble"style="background:'.$source->bubble_bg_color.'!important;display: inline-block!important;';if($source->alignment == 'left'){$widget .='position:unset!important;';}
+                            $widget .='<div class="closerDiv closor-callback-v1-bubble';
+                            if($source->alignment == 'left'){
+                                $widget .=' closor-callback-v1-bubble-left';
+                            }else{
+                                $widget .=' closor-callback-v1-bubble-right';
+                            }
+                            $widget .='" id="closor-callback-v1-bubble"style="background:'.$source->bubble_bg_color.'!important;display: inline-block!important;';
+                            if($source->alignment == 'left'){$widget .='position:unset!important;';}
                             $widget .='">
                                 <div class="closor-callback-v1-bubble-close" data-action="close-component"
                                     data-component="popover"></div>
