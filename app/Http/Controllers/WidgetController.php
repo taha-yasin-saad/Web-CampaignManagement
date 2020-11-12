@@ -60,7 +60,7 @@ class WidgetController extends Controller
                             <div class="closor-callback-v1-avatar closerDiv" id="closor-call-icon" onclick="callCloserModal()" style="background:'.$source->primary.'!important;display: inline-block!important;';if($source->alignment == 'left'){$widget .='position:unset!important;';}
                             $widget .=';">
                                 <div class="closor-callback-v1-avatar-icon">
-                                    <li class="'.$source->icon_type.'" id="x-icon" style="color:'.$source->secondary.'!important;"></li>
+                                    <li class="'.$source->icon_type.'" id="x-icon" style="color:'.$source->secondary.'!important;width: 40px;height: 40px;font-size: 20px;"></li>
                                 </div>
                             </div>';
                             if($source->bubble == 'on'){
