@@ -138,12 +138,12 @@ class LeadController extends Controller
         $data = $lead;
         $fields = [
             'to' => $device_token,
-            'notification' => [
-                'title' => 'CLOSOR',
-                'body' => $message,
-                'vibrate'   => 1,
-                'sound'     => "default",
-            ],
+            // 'notification' => [
+            //     'title' => 'CLOSOR',
+            //     'body' => $message,
+            //     'vibrate'   => 1,
+            //     'sound'     => "default",
+            // ],
             "priority" => "high",
             'data' => [
                 'data' =>$data
