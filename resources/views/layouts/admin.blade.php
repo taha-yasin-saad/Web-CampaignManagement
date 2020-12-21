@@ -174,6 +174,30 @@
                     <!-- /.dropdown-user -->
                 </div>
                 <ul class="nav" id="side-menu">
+                    @if(Auth::guard('admin')->check())
+                        <li>
+                            <a href="{{url('admin/dashboard')}}" class="waves-effect"><i class="mdi mdi-home fa-fw" data-icon="v"></i>
+                                <span class="hide-menu"> Dashboard <span class="fa arrow"></span> </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{url('admin/zone')}}" class="waves-effect"><i class="mdi mdi-contacts fa-fw" data-icon="v"></i>
+                                <span class="hide-menu"> Zones <span class="fa arrow"></span> </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{url('admin/moderator')}}" class="waves-effect"><i class="mdi mdi-contacts fa-fw"
+                                                                               data-icon="v"></i>
+                                <span class="hide-menu"> Moderators <span class="fa arrow"></span> </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{url('admin/user')}}" class="waves-effect"><i class="mdi mdi-contacts fa-fw"
+                                                                               data-icon="v"></i>
+                                <span class="hide-menu"> Users <span class="fa arrow"></span> </span>
+                            </a>
+                        </li>
+                    @endif
                     @if(session('workplace') && get_role(session('workplace')->id) != 9)
                     <li>
                         <a href="#" class="waves-effect"><i class="mdi mdi-home fa-fw" data-icon="v"></i>
@@ -552,6 +576,7 @@
     <script src="{{asset('plugins/bower_components/sweetalert/sweetalert.min.js')}}"></script>
     <script src="{{asset('plugins/bower_components/sweetalert/jquery.sweet-alert.custom.js')}}"></script>
     <script src="{{asset('plugins\bower_components\colorpicker\bootstrap-colorpicker.js')}}"></script>
+    <script src="{{asset('/')}}/plugins/bower_components/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
 
     @yield('chart')
     @yield('filter_table')
