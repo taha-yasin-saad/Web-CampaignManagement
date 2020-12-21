@@ -249,9 +249,9 @@
                                             </div>
                                         </div>
                                         <div class="col-md-6">
-                                            <div class="text-review" style="postion:relative">
-                                                <div class="chat-text">
-                                                    <p class="text-text">@if(isset($data)){{$data->text_text}}@endif</p>
+                                        <div class="text-review" style="postion:relative;">
+                                                <div class="chat-text" style="background:{{$data->primary}}">
+                                                    <p class="text-text" style="color:{{$data->secondary}}">@if(isset($data)){{$data->text_text}}@endif</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -289,6 +289,12 @@
                                                     class="text-small text-muted"> (20 Characters Max)</span><br>
                                                 <input class="form-control" id="custom_lable_2" name="custom_lable_2" type="text"
                                                 value="@if(isset($data)){{$data->custom_lable_2}}@endif" maxlength="20" placeholder="@if(isset($data)){{$data->custom_lable_2}}@endif">
+                                            </div><br>
+                                            <div class="form-group">
+                                                <label style="margin-top:20px" id="submitt_label">Submitt Button Text</label><span
+                                                    class="text-small text-muted"> (20 Characters Max)</span><br>
+                                                <input class="form-control" id="submitt_text" name="submitt_text" type="text"
+                                                    placeholder="Call Me Now" value="@if(isset($data)){{$data->submitt_text}}@endif">
                                             </div>
                                         </div>
                                         <div class="col-md-4"
@@ -343,9 +349,13 @@
                                                             </div>
                                                         </div>
                                                         <div class="text-center">
-                                                            <button type="button" class="btn btn-primary btn-block call_me"
-                                                                style="background-color:@if(isset($data)){{$data->primary}}@endif;color:@if(isset($data)){{$data->secondary}}@endif;">Call
-                                                                Me Now
+                                                            <button type="button" class="btn btn-primary btn-block call_me" id="submitt_btn"
+                                                                style="background-color:@if(isset($data)){{$data->primary}}@endif;color:@if(isset($data)){{$data->secondary}}@endif;">
+                                                                @if(isset($data))
+                                                                {{$data->submitt_text}}
+                                                                @else
+                                                                Call Me Now
+                                                                @endif
                                                             </button>
                                                             <p for="exampleInputEmail1"
                                                                 style="text-align: center;font-size: smaller;">
@@ -382,8 +392,14 @@
 
 <script type="text/javascript">
 // $('.color').colorpicker({});
-// console.log('mmmmmmmmmmmmmmm');
-
+console.log('{!!$data->widget_type!!}');
+if('{!!$data->widget_type!!}' == 'text'){
+    console.log('====================================');
+    console.log('it is text');
+    console.log('====================================');
+    $("#text-settings").show("swing");
+    $("#icon-settings").hide("swing");
+}
 $("#widget_type").change(function() {
     console.log('hhh');
     if (this.value == "text") {
@@ -442,6 +458,9 @@ $('#text_text').on('input', function(e) {
 $('#text_round').on('input', function(e) {
     $(".chat-text").css("border-radius", this.value+"px "+this.value+"px "+"0px 0px");
 });
+$('#submitt_text').on('input', function (e) {
+        $("#submitt_btn").html(this.value);
+    });
 </script>
 <script type="text/javascript">
     $('#checkbox_name').change(function () {

@@ -19,3 +19,5 @@ function get_role($workplace_id){
     //dd($role);
     return $role;
 }
+
+?>

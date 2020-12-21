@@ -265,6 +265,12 @@
                                                     class="text-small text-muted"> (20 Characters Max)</span><br>
                                                 <input class="form-control" id="custom_lable_2" name="custom_lable_2" type="text"
                                                     placeholder="Field Label">
+                                            </div><hr>
+                                            <div class="form-group">
+                                                <label style="margin-top:20px" id="submitt_label">Submitt Button Text</label><span
+                                                    class="text-small text-muted"> (20 Characters Max)</span><br>
+                                                <input class="form-control" id="submitt_text" name="submitt_text" type="text"
+                                                    placeholder="Call Me Now" value="Call Me Now">
                                             </div>
                                         </div>
                                         <div class="col-md-4"
@@ -317,7 +323,7 @@
                                                             </div>
                                                         </div>
                                                         <div class="text-center">
-                                                            <button type="button" class="btn btn-primary btn-block call_me"
+                                                            <button type="button" class="btn btn-primary btn-block call_me" id="submitt_btn"
                                                                 style="background-color:#34a853;color:#ffffff;">Call
                                                                 Me Now
                                                             </button>
@@ -413,6 +419,9 @@
     });
     $('#text_round').on('input', function (e) {
         $(".chat-text").css("border-radius", this.value + "px " + this.value + "px " + "0px 0px");
+    });
+    $('#submitt_text').on('input', function (e) {
+        $("#submitt_btn").html(this.value);
     });
 </script>
 <script type="text/javascript">

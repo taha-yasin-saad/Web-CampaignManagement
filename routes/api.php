@@ -20,6 +20,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::post('password/email', 'api\ForgotPasswordController@sendResetLinkEmail');
 Route::post('password/reset', 'api\ResetPasswordController@reset');
 
+Route::post('widgetView/widget', 'api\LeadController@widget_ajax');
 Route::post('/lead', 'api\LeadController@create_lead');
 Route::get('/all_workplaces', 'api\LeadController@all_workplaces');
 Route::post('/all_products', 'api\LeadController@all_products');

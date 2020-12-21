@@ -34,7 +34,6 @@
 .closor-callback-v1-widget del,
 .closor-callback-v1-widget dfn,
 .closor-callback-v1-widget dialog,
-.closor-callback-v1-widget div,
 .closor-callback-v1-widget dl,
 .closor-callback-v1-widget dt,
 .closor-callback-v1-widget em,
@@ -55,12 +54,10 @@
 .closor-callback-v1-widget i,
 .closor-callback-v1-widget iframe,
 .closor-callback-v1-widget img,
-.closor-callback-v1-widget input,
 .closor-callback-v1-widget ins,
 .closor-callback-v1-widget kbd,
 .closor-callback-v1-widget label,
 .closor-callback-v1-widget legend,
-.closor-callback-v1-widget li,
 .closor-callback-v1-widget mark,
 .closor-callback-v1-widget menu,
 .closor-callback-v1-widget nav,
@@ -75,7 +72,6 @@
 .closor-callback-v1-widget section,
 .closor-callback-v1-widget select,
 .closor-callback-v1-widget small,
-.closor-callback-v1-widget span,
 .closor-callback-v1-widget strike,
 .closor-callback-v1-widget strong,
 .closor-callback-v1-widget sub,
@@ -90,7 +86,6 @@
 .closor-callback-v1-widget time,
 .closor-callback-v1-widget tr,
 .closor-callback-v1-widget tt,
-.closor-callback-v1-widget ul,
 .closor-callback-v1-widget var,
 .closor-callback-v1-widget video {
     background-attachment: scroll !important;
@@ -112,7 +107,7 @@
     counter-reset: none !important;
     cursor: auto !important;
     direction: inherit !important;
-    display: inline !important;
+    display: inline;
     float: none !important;
     font-family: inherit !important;
     font-size: inherit !important;
@@ -135,7 +130,7 @@
     outline: invert none medium !important;
     overflow: visible !important;
     padding: 0 !important;
-    position: static !important;
+    position: static;
     quotes: "" "" !important;
     right: auto !important;
     table-layout: auto !important;
@@ -164,7 +159,6 @@
 .closor-callback-v1-widget caption,
 .closor-callback-v1-widget dd,
 .closor-callback-v1-widget dialog,
-.closor-callback-v1-widget div,
 .closor-callback-v1-widget dl,
 .closor-callback-v1-widget dt,
 .closor-callback-v1-widget fieldset,
@@ -187,9 +181,8 @@
 .closor-callback-v1-widget p,
 .closor-callback-v1-widget pre,
 .closor-callback-v1-widget section,
-.closor-callback-v1-widget select,
-.closor-callback-v1-widget ul {
-    display: block !important;
+.closor-callback-v1-widget select{
+    display: block;
 }
 .closor-callback-v1-widget textarea {
     display: inline-block !important;
@@ -226,7 +219,7 @@
 }
 .closor-callback-v1-widget menu,
 .closor-callback-v1-widget ul {
-    list-style-type: disc !important;
+    /*list-style-type: disc !important;*/
 }
 .closor-callback-v1-widget ol {
     list-style-type: decimal !important;
@@ -341,8 +334,7 @@
 .closor-callback-v1-widget select {
     vertical-align: middle !important;
 }
-.closor-callback-v1-widget input,
-.closor-callback-v1-widget select,
+
 .closor-callback-v1-widget textarea {
     border: 1px solid #ccc !important;
 }
@@ -379,7 +371,7 @@
     list-style-type: disc !important;
 }
 .closor-callback-v1-widget ::-webkit-input-placeholder {
-    color: inherit !important;
+    color: #aaa !important;
     opacity: 1 !important;
     font-family: inherit !important;
     font-size: inherit !important;
@@ -388,7 +380,7 @@
     text-align: inherit !important;
 }
 .closor-callback-v1-widget :-ms-input-placeholder {
-    color: inherit !important;
+    color: #aaa !important;
     opacity: 1 !important;
     font-family: inherit !important;
     font-size: inherit !important;
@@ -397,7 +389,7 @@
     text-align: inherit !important;
 }
 .closor-callback-v1-widget ::-ms-input-placeholder {
-    color: inherit !important;
+    color: #aaa !important;
     opacity: 1 !important;
     font-family: inherit !important;
     font-size: inherit !important;
@@ -406,7 +398,7 @@
     text-align: inherit !important;
 }
 .closor-callback-v1-widget ::placeholder {
-    color: inherit !important;
+    color: #aaa !important;
     opacity: 1 !important;
     font-family: inherit !important;
     font-size: inherit !important;
@@ -995,7 +987,7 @@
     }
 }
 .closor-callback-v1-widget .closor-callback-v1-avatar {
-    display: block !important;
+    display: block;
     position: absolute !important;
     right: 0 !important;
     bottom: 0 !important;
@@ -1045,7 +1037,7 @@
     width: 40px !important;
     height: 40px !important;
     /* background-image: url(https://malexs.net/closor/public/widget/icons-9384ae0d188da7d2bf6ce71005cbaf89.png) !important; */
-    margin: 12px !important;
+        margin: 12px auto !important;
 }
 
 html.no-svg .closor-callback-v1-widget .closor-callback-v1-avatar-icon {
@@ -1081,7 +1073,7 @@ html.no-svg .closor-callback-v1-widget .closor-callback-v1-avatar-close {
     text-decoration: none !important;
     position: absolute !important;
     bottom: 0 !important;
-    right: 85px !important;
+    right: 92px !important;
     background-color: #313c4c !important;
     background-color: #b1b1b1 !important;
     padding: 15px !important;
@@ -1090,39 +1082,12 @@ html.no-svg .closor-callback-v1-widget .closor-callback-v1-avatar-close {
     width: auto !important;
     max-width: 320px !important;
     border-radius: 14px !important;
-    /* -webkit-transition-property: clip, opacity, -webkit-transform !important; */
-    /* transition-property: clip, opacity, -webkit-transform !important; */
-    /* transition-property: clip, transform, opacity !important; */
-    /* transition-property: clip, transform, opacity, -webkit-transform !important; */
-    /* -webkit-transition-duration: 0s, 0.2s, 0.2s, 0.2s !important; */
-    /* transition-duration: 0s, 0.2s, 0.2s, 0.2s !important; */
-    /* -webkit-transition-delay: 0.2s, 0s, 0s, 0s !important; */
-    /* transition-delay: 0.2s, 0s, 0s, 0s !important; */
-    /* -webkit-transition-timing-function: cubic-bezier(
-        0.55,
-        0.055,
-        0.675,
-        0.19
-    ) !important; */
-    /* transition-timing-function: cubic-bezier(
-        0.55,
-        0.055,
-        0.675,
-        0.19
-    ) !important; */
-    /* -webkit-transform-origin: bottom right !important; */
-    /* transform-origin: bottom right !important; */
-    /* -webkit-transform: scaleX(2) rotateY(-60deg) !important; */
-    /* transform: scaleX(2) rotateY(-60deg) !important; */
-    /* -webkit-backface-visibility: hidden !important; */
-    /* backface-visibility: hidden !important; */
-    /* opacity: 1 !important; */
-    /* clip: rect(0, 0, 0, 0) !important; */
-    display: block !important;
+    display: block;
 }
-.closor-callback-v1-widget .closor-callback-v1-bubble::before {
+
+.closor-callback-v1-widget .closor-callback-v1-bubble-right::before {
     content: "" !important;
-    display: block !important;
+    display: inline-block !important;
     border-left: 10px solid #b1b1b1 !important;
     border-left-color: #b1b1b1 !important;
     border-bottom: 10px solid transparent !important;
@@ -1130,6 +1095,18 @@ html.no-svg .closor-callback-v1-widget .closor-callback-v1-avatar-close {
     right: -10px !important;
     bottom: 25px !important;
 }
+
+.closor-callback-v1-widget .closor-callback-v1-bubble-left::before {
+    content: "" !important;
+    display: inline-block !important;
+    border-right: 10px solid #b1b1b1 !important;
+    border-right-color: #b1b1b1 !important;
+    border-bottom: 10px solid transparent !important;
+    position: absolute !important;
+    left: 72px !important;
+    bottom: 25px !important;
+}
+
 .closor-callback-v1-widget
     .closor-callback-v1-overlay:hover
     .closor-callback-v1-bubble {
@@ -1192,7 +1169,7 @@ html.no-svg .closor-callback-v1-widget .closor-callback-v1-bubble-close {
 }
 .closor-callback-v1-widget .closor-callback-v1-popup-scroll-container {
     /* position: fixed !important; */
-    z-index: 2147483499 !important;
+    /* z-index: 2147483499 !important; */
     top: 0 !important;
     left: 0 !important;
     height: 100% !important;
@@ -4002,7 +3979,7 @@ html.no-svg .closor-callback-v1-widget .closor-callback-v1-call-image {
     list-style-type: disc !important;
 }
 .closor-embedded-v1-widget ::-webkit-input-placeholder {
-    color: inherit !important;
+    color: #aaa !important;
     opacity: 1 !important;
     font-family: inherit !important;
     font-size: inherit !important;
@@ -4011,7 +3988,7 @@ html.no-svg .closor-callback-v1-widget .closor-callback-v1-call-image {
     text-align: inherit !important;
 }
 .closor-embedded-v1-widget :-ms-input-placeholder {
-    color: inherit !important;
+    color: #aaa !important;
     opacity: 1 !important;
     font-family: inherit !important;
     font-size: inherit !important;
@@ -4020,7 +3997,7 @@ html.no-svg .closor-callback-v1-widget .closor-callback-v1-call-image {
     text-align: inherit !important;
 }
 .closor-embedded-v1-widget ::-ms-input-placeholder {
-    color: inherit !important;
+    color: #aaa !important;
     opacity: 1 !important;
     font-family: inherit !important;
     font-size: inherit !important;
@@ -4029,7 +4006,7 @@ html.no-svg .closor-callback-v1-widget .closor-callback-v1-call-image {
     text-align: inherit !important;
 }
 .closor-embedded-v1-widget ::placeholder {
-    color: inherit !important;
+    color: #aaa !important;
     opacity: 1 !important;
     font-family: inherit !important;
     font-size: inherit !important;
@@ -6936,4 +6913,39 @@ html.no-svg .closor-embedded-v1-widget .closor-embedded-v1-call-image {
 
 .closor-callback-v1-widget .closor-callback-v1-popup-scroll-container.closor-show-modal {
     position: fixed !important;
+}
+.iti__flag-container{
+    height: 40px;
+}
+.iti__country-list{width:280px;overflow-x: hidden;}
+.closor-widget-container li{    list-style-type: none!important;}
+
+.closor-callback-v1-avatar-icon li {
+    text-align: center;
+    margin: 0 !important;
+}
+.closor-widget-container li {
+    margin: 0 !important;
+}
+
+.closor-callback-v1-widget.closor-callback-popup .closor-callback-v1-avatar {
+    -webkit-transform: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+    clip: rect(-50px, 300px, 300px, -50px) !important;
+    -webkit-transition-delay: 0s !important;
+    transition-delay: 0s !important;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    background: rgb(52, 168, 83) !important;
+    text-align: center !important;
+    margin: 0!important;
+    margin-right: 12px !important;
+}
+.closor-callback-v1-widget .closor-callback-v1-bubble{
+    display:block;
+}
+.closor-callback-popup, .closerDiv{
+    direction: ltr !important;
 }
