@@ -14,6 +14,11 @@ class Product extends Model
         return $this->belongsTo('App\Workplace');
     }
 
+    public function leads(){
+        return $this->hasMany('App\Lead');
+    }
+
+
     public function invited(){
         return $this->hasMany('App\UserProduct');
     }
@@ -25,7 +30,7 @@ class Product extends Model
         return $this->hasMany('App\Source');
     }
 
-    
+
 
 
 }

@@ -52,6 +52,8 @@ Route::group(['middleware' => 'auth.admin', 'prefix' => 'admin', 'namespace' => 
     Route::resource('moderator', 'ModeratorController');
     Route::resource('zone', 'ZoneController');
     Route::resource('user', 'UserController');
+    Route::resource('workplace', 'WorkplacesController');
+    Route::post('workplace', 'WorkplacesController@index');
     Route::post('user', 'UserController@index');
     Route::get('user_available/{user}/{is_available}', 'UserController@user_available');
 });
