@@ -28,10 +28,14 @@ class SendNotificationListner
                         'body' => 'New lead for you',
                         'vibrate'   => 1,
                         'sound'     => "default",
+                        'click_ action'=>'FCM_PLUGIN_ACTIVITY'
+
                     ],
                     "priority" => "high",
                     'data' => [
-                        'data' =>$data
+                        'data' =>$data,
+                        "landing_page"=>"second",
+                        "price"=>"$3,000.00"
                     ]
                 ];
                 $headers = [
