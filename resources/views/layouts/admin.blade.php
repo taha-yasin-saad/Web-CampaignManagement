@@ -128,100 +128,15 @@
         <!-- ============================================================== -->
         <!-- Left Sidebar - style you can find in sidebar.scss  -->
         <!-- ============================================================== -->
-        <div class="navbar-default sidebar" role="navigation">
-            <div class="sidebar-nav slimscrollsidebar">
-                <div class="sidebar-head">
+        @if(isset(auth()->user()->role) && auth()->user()->role == 0)
 
-                    <img src="{{asset('dark-logo.png')}}" alt="logo" width="100%">
-                </div>
-                <div class="dropdown workspace_dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <b>
-                            @if(session('workplace'))
-                            {{session('workplace')->title}}
-                            @else
-                            Create Workspace
-                            @endif
-                        </b>
-                        <span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu  animated">
-                        @if(session('workplace'))
-                        @if(get_role(session('workplace')->id) == 0 || get_role(session('workplace')->id) == 1)
-                        <li>
-                            <a href="{{url('workplace/'.session('workplace')->id.'/edit')}}">
-                                Workspace Preferences
-                            </a>
-                        </li>
-                        <li role="separator" class="divider"></li>
-                        @endif
-                        @foreach(get_workplaces() as $value)
-                        <li>
-                            <a href="{{url($value->workplace->id.'/products')}}">
-                                {{$value->workplace->title}}
-                            </a>
-                        </li>
-                        @endforeach
-                        <li role="separator" class="divider"></li>
-                        @endif
-                        <li>
-                            <a href="{{url('workplace/create')}}">
-                                Create New Workspace
-                            </a>
-                        </li>
+        @include('layouts.side-menu-admin')
 
-                    </ul>
-                    <!-- /.dropdown-user -->
-                </div>
-                <ul class="nav" id="side-menu">
-                    @if(session('workplace') && get_role(session('workplace')->id) != 9)
-                    <li>
-                        <a href="#" class="waves-effect"><i class="mdi mdi-home fa-fw" data-icon="v"></i>
-                            <span class="hide-menu"> Dashboard <span class="fa arrow"></span> </span>
-                        </a>
-                    </li>
+        @else
 
-                    <li class="{{ (request()->is('leads*')) ? 'active' : '' }}">
-                        <a href="{{url('leads')}}" class="waves-effect"><i class="mdi mdi-contacts fa-fw"
-                                data-icon="v"></i>
-                            <span class="hide-menu"> Leads <span class="fa arrow"></span> </span>
-                        </a>
-                    </li>
-                    <li class="{{ (request()->is(session('workplace')->id.'/products')) ? 'active' : '' }}">
-                        <a href="{{url(session('workplace')->id.'/products')}}" class="waves-effect"><i
-                                class="mdi mdi-account-card-details fa-fw" data-icon="v"></i>
-                            <span class="hide-menu"> Products <span class="fa arrow"></span> </span>
-                        </a>
-                    </li>
-                    <li class="{{ (request()->is(session('workplace')->id.'/team')) ? 'active' : '' }}">
-                        <a href="{{url(session('workplace')->id.'/team')}}" class="waves-effect"><i
-                                class="mdi mdi-account-multiple fa-fw" data-icon="v"></i>
-                            <span class="hide-menu"> Team <span class="fa arrow"></span> </span>
-                        </a>
-                    </li>
-                    @if(get_role(session('workplace')->id) == 0 || get_role(session('workplace')->id) == 1)
-                    <li class="{{ (request()->is('sources*')) ? 'active' : '' }}">
-                        <a href="{{url('sources')}}" class="waves-effect"><i class="mdi mdi-filter fa-fw"
-                                data-icon="v"></i>
-                            <span class="hide-menu"> Lead Sources <span class="fa arrow"></span> </span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="waves-effect"><i class="mdi mdi-chart-bar fa-fw" data-icon="v"></i>
-                            <span class="hide-menu"> Reports <span class="fa arrow"></span> </span>
-                        </a>
-                    </li>
-                    @endif
-                    @endif
-                </ul>
-                <div class="sidebar-footer">
-                    <a href="#" target="blank">
-                        <i class="mdi mdi-information fa-fw" data-icon="v"></i>
-                        need a little help?
-                    </a>
-                </div>
-            </div>
-        </div>
+        @include('layouts.side-menu-general')
+
+        @endif
         <!-- ============================================================== -->
         <!-- End Left Sidebar -->
         <!-- ============================================================== -->
@@ -248,7 +163,7 @@
     <script src="{{asset('js/waves.js')}}"></script>
     <script src="{{asset('plugins/bower_components/dropify/dist/js/dropify.min.js')}}"></script>
     <script>
-    $(document).ready(function() {
+        $(document).ready(function() {
         // Basic
         $('.dropify').dropify();
         // Translated
@@ -316,7 +231,7 @@
     <script src="{{asset('js/cbpFWTabs.js')}}"></script>
     @yield('status')
     <script type="text/javascript">
-    (function() {
+        (function() {
         [].slice.call(document.querySelectorAll('.sttabs')).forEach(function(el) {
             new CBPFWTabs(el);
         });
@@ -375,7 +290,7 @@
     <script type="text/javascript" src="{{asset('plugins/bower_components/multiselect/js/jquery.multi-select.js')}}">
     </script>
     <script>
-    jQuery(document).ready(function() {
+        jQuery(document).ready(function() {
         // Switchery
         var elems = Array.prototype.slice.call(document.querySelectorAll('.js-switch'));
         $('.js-switch').each(function() {
@@ -463,11 +378,11 @@
     {{-- country flag js --}}
     <script src="{{asset('css/intl-tel-input-17.0.0/build/js/intlTelInput.js')}}"></script>
     <script>
-    var input = document.querySelector("#phone");
+        var input = document.querySelector("#phone");
     window.intlTelInput(input);
     </script>
     <script>
-    var input = document.querySelector("#phone");
+        var input = document.querySelector("#phone");
     window.intlTelInput(input, {
         autoPlaceholder: "aggressive",
         placeholderNumberType: "MOBILE",
@@ -481,7 +396,7 @@
     </script>
     @if(isset(auth()->user()->country_code))
     <script>
-    // iti.setCountry({{auth()->user()->country_code}});
+        // iti.setCountry({{auth()->user()->country_code}});
     var baseUrl = "{{url('/')}}";
     jQuery(document).ready(function($) {
 
@@ -510,7 +425,7 @@
     </script>
     @else
     <script type="text/javascript">
-    var baseUrl = "{{url('/')}}";
+        var baseUrl = "{{url('/')}}";
     jQuery(document).ready(function($) {
         // getLocation();
 
@@ -552,6 +467,7 @@
     <script src="{{asset('plugins/bower_components/sweetalert/sweetalert.min.js')}}"></script>
     <script src="{{asset('plugins/bower_components/sweetalert/jquery.sweet-alert.custom.js')}}"></script>
     <script src="{{asset('plugins\bower_components\colorpicker\bootstrap-colorpicker.js')}}"></script>
+    <script src="{{asset('/')}}/plugins/bower_components/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
 
     @yield('chart')
     @yield('filter_table')

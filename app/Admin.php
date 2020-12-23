@@ -10,7 +10,8 @@ use Illuminate\Auth\Passwords\CanResetPassword;
 class Admin extends Authenticatable
 {
     use Notifiable;
-
+    public static $ROLE_Admin= 0;
+    public static $ROLE_MODERATOR= 1;
     protected $guard = 'admin';
     /**
      * The attributes that are mass assignable.
@@ -38,4 +39,9 @@ class Admin extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function zones()
+    {
+        return $this->belongsToMany('App\Zone','admin_zones','admin_id','zone_id');
+    }
 }

@@ -53,4 +53,21 @@ class User extends Authenticatable
         return $this->hasMany('App\Lead');
     }
 
+    public function scopeFilter($query, $request)
+    {
+        if($request->from_date && $request->to_date){
+            $query->whereDate('created_at','>=', date('Y-m-d', strtotime($request->from_date)))->whereDate('created_at','<=', date('Y-m-d', strtotime($request->to_date)));
+        }
+        if($request->select_leads && $request->count_leads){
+            $query->has('leads',$request->select_leads, $request->count_leads);
+        }
+        if($request->select_workplaces && $request->count_workplaces){
+            $query->has('workplaces',$request->select_workplaces, $request->count_workplaces);
+        }
+        if($request->select_products && $request->count_products){
+            $query->has('products',$request->select_products, $request->count_products);
+        }
+        return $query;
+    }
+
 }

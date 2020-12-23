@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7d661598-8791-4c89-9583-5c510f3d636c" name="Default Changelist" comment="" />
+    <list default="true" id="7d661598-8791-4c89-9583-5c510f3d636c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Listeners/SendNotificationListner.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Listeners/SendNotificationListner.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -105,6 +108,9 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1hm0KBcPxSk1EHuhVyKC017VxV2" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -113,11 +119,17 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../tazaj" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\closor\app\Http\Controllers\Admin" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\closor\resources\views\admin\users" />
+      <recent name="C:\xampp\htdocs\closor\resources\views\admin" />
+      <recent name="C:\xampp\htdocs\closor\resources\views\admin\zones" />
       <recent name="C:\xampp\htdocs\closor\app\Http\Controllers\api" />
     </key>
   </component>
@@ -149,6 +161,14 @@
       <workItem from="1602000543194" duration="4410000" />
       <workItem from="1602066364144" duration="21000" />
       <workItem from="1602156827547" duration="5316000" />
+      <workItem from="1602172034852" duration="972000" />
+      <workItem from="1602504175159" duration="539000" />
+      <workItem from="1605701569622" duration="4892000" />
+      <workItem from="1607362939024" duration="43000" />
+      <workItem from="1607425501992" duration="597000" />
+      <workItem from="1608469552518" duration="18936000" />
+      <workItem from="1608566351596" duration="645000" />
+      <workItem from="1608634428564" duration="1273000" />
     </task>
     <servers />
   </component>
@@ -156,17 +176,21 @@
     <option name="version" value="2" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1601401464905">
+    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1608485658709">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1601401464905" />
-    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1602164892917">
+    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1608485658709" />
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1608475153642">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1602164892917" />
-    <state x="478" y="147" width="579" height="530" key="find.popup" timestamp="1602000654492">
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1608475153642" />
+    <state x="478" y="147" width="579" height="530" key="find.popup" timestamp="1608474413190">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="478" y="147" width="579" height="530" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1602000654492" />
+    <state x="478" y="147" width="579" height="530" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1608474413190" />
+    <state x="425" y="187" key="run.anything.popup" timestamp="1608490695884">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1608490695884" />
   </component>
 </project>

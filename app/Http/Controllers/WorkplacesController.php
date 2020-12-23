@@ -31,6 +31,7 @@ class WorkplacesController extends Controller
         return view('workplaces.index', $query);
     }
 
+
     public function team($workplace_id)
     {
         $query['workplace'] = Workplace::with('products','users','users.products')->where('id', $workplace_id)->first();
@@ -96,7 +97,7 @@ class WorkplacesController extends Controller
             'startday'=>'required',
             'website'=>''
         ]);
-        
+
         $workplace = Workplace::create($data);
 
         $save = new WorkplaceUser;
@@ -108,7 +109,7 @@ class WorkplacesController extends Controller
         $data = $request->except(['_token','_method','title','admin_id','timezone','website','startday','status']);
         $data['workplace_id'] = $workplace->id;
         $times = Times::create($data);
-        
+
         $product_data['title'] = "General";
         $product_data['workplace_id'] = $workplace->id;
         $product = Product::create($product_data);
@@ -172,7 +173,7 @@ class WorkplacesController extends Controller
         $times = Times::where('workplace_id',$workplace->id)->first();
         $data = $request->except(['_token','_method','title','admin_id','timezone','website','startday','status']);
         $data['workplace_id'] = $workplace->id;
-        
+
         if($times){
             Times::where('workplace_id',$workplace->id)->update($data);
         }else{
