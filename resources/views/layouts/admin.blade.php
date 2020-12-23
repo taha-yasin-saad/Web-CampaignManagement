@@ -128,7 +128,7 @@
         <!-- ============================================================== -->
         <!-- Left Sidebar - style you can find in sidebar.scss  -->
         <!-- ============================================================== -->
-        @if(isset(auth()->user()->role) && auth()->user()->role == 0)
+        @if(isset(auth()->user()->role) && (auth()->user()->role == 0 || auth()->user()->role == 1))
 
         @include('layouts.side-menu-admin')
 
