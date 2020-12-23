@@ -128,71 +128,15 @@
         <!-- ============================================================== -->
         <!-- Left Sidebar - style you can find in sidebar.scss  -->
         <!-- ============================================================== -->
-        <div class="navbar-default sidebar" role="navigation">
-            <div class="sidebar-nav slimscrollsidebar">
-                <div class="sidebar-head">
+        @if(isset(auth()->user()->role) && auth()->user()->role == 0)
 
-                    <img src="{{asset('dark-logo.png')}}" alt="logo" width="100%">
-                </div>
-                <div class="dropdown workspace_dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <b>
-                            @if(session('workplace'))
-                            {{session('workplace')->title}}
-                            @else
-                            Create Workspace
-                            @endif
-                        </b>
-                        <span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu  animated">
-                        @if(session('workplace'))
-                        @if(get_role(session('workplace')->id) == 0 || get_role(session('workplace')->id) == 1)
-                        <li>
-                            <a href="{{url('workplace/'.session('workplace')->id.'/edit')}}">
-                                Workspace Preferences
-                            </a>
-                        </li>
-                        <li role="separator" class="divider"></li>
-                        @endif
-                        @foreach(get_workplaces() as $value)
-                        <li>
-                            <a href="{{url($value->workplace->id.'/products')}}">
-                                {{$value->workplace->title}}
-                            </a>
-                        </li>
-                        @endforeach
-                        <li role="separator" class="divider"></li>
-                        @endif
-                        <li>
-                            <a href="{{url('workplace/create')}}">
-                                Create New Workspace
-                            </a>
-                        </li>
+        @include('layouts.side-menu-admin')
 
-                    </ul>
-                    <!-- /.dropdown-user -->
-                </div>
-                <ul class="nav" id="side-menu">
-                    @if(isset(auth()->user()->role) && auth()->user()->role == 0)
+        @else
 
-                    @include('layouts.side-menu-admin')
+        @include('layouts.side-menu-general')
 
-                    @else
-
-                    @include('layouts.side-menu-general')
-
-                    @endif
-
-                </ul>
-                <div class="sidebar-footer">
-                    <a href="#" target="blank">
-                        <i class="mdi mdi-information fa-fw" data-icon="v"></i>
-                        need a little help?
-                    </a>
-                </div>
-            </div>
-        </div>
+        @endif
         <!-- ============================================================== -->
         <!-- End Left Sidebar -->
         <!-- ============================================================== -->

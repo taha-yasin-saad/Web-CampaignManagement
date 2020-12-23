@@ -10,7 +10,7 @@ class Workplace extends Model
         'admin_id', 'title','timezone','website','startday'
     ];
     protected $with = [
-        'times'
+        'times','admin'
     ];
 
     public function admin(){

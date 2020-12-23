@@ -16,6 +16,8 @@ class WorkplacesController extends Controller
     {
         $query = $request->all();
         $query['data'] = Workplace::withCount(['products','users','leads'])->filter($request)->get();
+        $query['data_without_filter'] = Workplace::withCount(['products','users','leads'])->get();
+        // dd($query['data'][0]);
         return view('admin.workplaces.index',$query);
     }
 
