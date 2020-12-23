@@ -23,8 +23,7 @@ class SendNotificationListner
 //            foreach ($device_token as $device){
                 $fields = [
                     'to' => $device_token,
-                    'notification' => [
-                        'title' => 'CLOSOR',
+                    'notification' => [                                                                                                         'title' => 'CLOSOR',
                         'body' => 'New lead for you',
                         'vibrate'   => 1,
                         'sound'     => "default",
