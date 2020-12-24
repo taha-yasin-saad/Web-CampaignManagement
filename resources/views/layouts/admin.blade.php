@@ -89,8 +89,8 @@
                 <!-- Search input and Toggle icon -->
                 <ul class="nav navbar-top-links navbar-right pull-right">
                     <li class="dropdown">
-                        <a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#"> <b
-                                class="hidden-xs">{{Auth::user()->name}}</b>
+                        <a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#">
+                            <b class="hidden-xs">{{Auth::user()->name}}</b>
                             <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu dropdown-user animated">

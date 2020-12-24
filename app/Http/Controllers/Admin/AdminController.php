@@ -3,8 +3,13 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Admin;
-use App\Http\Controllers\Controller;
+use App\Lead;
+use App\Product;
+use App\User;
+use App\Workplace;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+
 
 
 class AdminController extends Controller
@@ -21,7 +26,12 @@ class AdminController extends Controller
 
     public function index()
     {
-        return view('admin.dashboard');
+        $query['workplaces_count'] = Workplace::count();
+        $query['products_count'] = Product::count();
+        $query['users_count'] = User::count();
+        $query['leads_count'] = Lead::count();
+
+        return view('admin.dashboard',$query);
     }
 
     /**

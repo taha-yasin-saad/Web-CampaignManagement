@@ -25,72 +25,85 @@
                                 <div class="col-lg-3 col-sm-6 row-in-br">
                                     <ul class="col-in">
                                         <li>
-                                            <span class="circle circle-md bg-danger"><i class="ti-clipboard"></i></span>
+                                            <span class="circle circle-md bg-danger"><i class="ti-home"></i></span>
                                         </li>
                                         <li class="col-last">
-                                            <h3 class="counter text-right m-t-15">23</h3>
+                                            <h3 class="counter text-right m-t-15">{{$workplaces_count}}</h3>
                                         </li>
                                         <li class="col-middle">
-                                            <h4>New projects</h4>
-                                            <div class="progress">
+                                            <h4>Total Workplaces</h4>
+                                            {{-- <div class="progress">
                                                 <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
                                                     <span class="sr-only">40% Complete (success)</span>
                                                 </div>
-                                            </div>
+                                            </div> --}}
+
                                         </li>
+                                        @if($workplaces_count>0)
+                                        <div class="col-md-6 col-sm-6 col-xs-6 text-center">
+                                            <a href="{{url('admin/workplace')}}" class="btn btn-primary m-t-20">View Workplaces</a>
+                                        </div>
+                                        @endif
                                     </ul>
                                 </div>
                                 <div class="col-lg-3 col-sm-6 row-in-br  b-r-none">
                                     <ul class="col-in">
                                         <li>
-                                            <span class="circle circle-md bg-info"><i class="ti-wallet"></i></span>
+                                            <span class="circle circle-md bg-info"><i class="ti-bag"></i></span>
                                         </li>
                                         <li class="col-last">
-                                            <h3 class="counter text-right m-t-15">76</h3>
+                                            <h3 class="counter text-right m-t-15">{{$products_count}}</h3>
                                         </li>
                                         <li class="col-middle">
-                                            <h4>Total Earnings</h4>
-                                            <div class="progress">
+                                            <h4>Total Products</h4>
+                                            {{-- <div class="progress">
                                                 <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
                                                     <span class="sr-only">40% Complete (success)</span>
                                                 </div>
-                                            </div>
+                                            </div> --}}
                                         </li>
                                     </ul>
                                 </div>
                                 <div class="col-lg-3 col-sm-6 row-in-br">
                                     <ul class="col-in">
                                         <li>
-                                            <span class="circle circle-md bg-success"><i class=" ti-shopping-cart"></i></span>
+                                            <span class="circle circle-md bg-success"><i class=" ti-user"></i></span>
                                         </li>
                                         <li class="col-last">
-                                            <h3 class="counter text-right m-t-15">93</h3>
+                                            <h3 class="counter text-right m-t-15">{{$users_count}}</h3>
                                         </li>
                                         <li class="col-middle">
-                                            <h4>Total Projects</h4>
-                                            <div class="progress">
+                                            <h4>Total Members</h4>
+                                            {{-- <div class="progress">
                                                 <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
                                                     <span class="sr-only">40% Complete (success)</span>
                                                 </div>
-                                            </div>
+                                            </div> --}}
+
+
                                         </li>
+                                        @if($users_count>0)
+                                        <div class="col-md-6 col-sm-6 col-xs-6 text-center">
+                                            <a href="{{url('admin/user')}}" class="btn btn-primary m-t-20">View Members</a>
+                                        </div>
+                                        @endif
                                     </ul>
                                 </div>
                                 <div class="col-lg-3 col-sm-6  b-0">
                                     <ul class="col-in">
                                         <li>
-                                            <span class="circle circle-md bg-warning"><i class="fa fa-dollar"></i></span>
+                                            <span class="circle circle-md bg-warning"><i class="ti-sharethis"></i></span>
                                         </li>
                                         <li class="col-last">
-                                            <h3 class="counter text-right m-t-15">83</h3>
+                                            <h3 class="counter text-right m-t-15">{{$leads_count}}</h3>
                                         </li>
                                         <li class="col-middle">
-                                            <h4>Net Earnings</h4>
-                                            <div class="progress">
+                                            <h4>Total Leads</h4>
+                                            {{-- <div class="progress">
                                                 <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
                                                     <span class="sr-only">40% Complete (success)</span>
                                                 </div>
-                                            </div>
+                                            </div> --}}
                                         </li>
                                     </ul>
                                 </div>

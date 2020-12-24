@@ -46,4 +46,8 @@ class Lead extends Model
         return $this->belongsTo('\App\User');
 
     }
+    public function workplaces(){
+        return $this->belongsToMany(Workplace::class, 'products', 'id', 'workplace_id');
+        // return $this->belongsToMany('App\workplaces','App\Product');
+    }
 }

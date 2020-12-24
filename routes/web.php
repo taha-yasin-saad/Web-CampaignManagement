@@ -18,9 +18,13 @@ Route::any('/first', 'Auth\LoginController@firstlogin');
 Route::any('/login2', 'Auth\RegisterController@login2');
 Route::resource('/profile', 'UserController');
 Route::get('/check', 'HomeController@check');
+Route::get('/dashboard', 'UserController@dashboard');
+
 
 //workplaces
 Route::resource('workplace', 'WorkplacesController');
+Route::get('invited_workplaces', 'WorkplacesController@invited_workplaces');
+Route::get('user_workplaces', 'WorkplacesController@user_workplaces');
 Route::resource('product', 'ProductsController');
 Route::get('product/create/{workplace_id}', 'ProductsController@create');
 Route::post('/invite_member', 'ProductsController@invite_member');
@@ -53,6 +57,8 @@ Route::group(['middleware' => 'auth.admin', 'prefix' => 'admin', 'namespace' => 
     Route::resource('zone', 'ZoneController');
     Route::resource('user', 'UserController');
     Route::resource('workplace', 'WorkplacesController');
+    Route::resource('leads', 'LeadController');
+    Route::get('workplace-info/{workplace_id}' , 'WorkplacesController@getWorkplaceInfo');
     Route::post('workplace', 'WorkplacesController@index');
     Route::post('user', 'UserController@index');
     Route::get('user_available/{user}/{is_available}', 'UserController@user_available');

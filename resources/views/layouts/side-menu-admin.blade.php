@@ -36,6 +36,12 @@
                     <span class="hide-menu"> WorkPlaces <span class="fa arrow"></span> </span>
                 </a>
             </li>
+            <li>
+                <a href="{{url('admin/leads')}}" class="waves-effect"><i class="mdi mdi-home-modern"
+                        data-icon="v"></i>
+                    <span class="hide-menu"> Leads <span class="fa arrow"></span> </span>
+                </a>
+            </li>
         </ul>
     </div>
 </div>

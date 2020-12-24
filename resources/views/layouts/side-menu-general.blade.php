@@ -26,7 +26,7 @@
                 </li>
                 <li role="separator" class="divider"></li>
                 @endif
-                @foreach(get_workplaces() as $value)
+                @foreach(get_workplaces(session('workplace')->admin_id) as $value)
                 <li>
                     <a href="{{url($value->workplace->id.'/products')}}">
                         {{$value->workplace->title}}
@@ -49,7 +49,7 @@
 
             @if(session('workplace') && get_role(session('workplace')->id) != 9)
             <li>
-                <a href="#" class="waves-effect"><i class="mdi mdi-view-dashboard" data-icon="v"></i>
+                <a href="{{url('dashboard')}}" class="waves-effect"><i class="mdi mdi-view-dashboard" data-icon="v"></i>
                     <span class="hide-menu"> Dashboard <span class="fa arrow"></span> </span>
                 </a>
             </li>

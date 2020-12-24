@@ -145,6 +145,22 @@ class WorkplacesController extends Controller
         return view('products.index', $query);
     }
 
+    public function invited_workplaces()
+    {
+        $user_workplaces_ids = Workplace::where('admin_id',auth()->id())->pluck('id');
+        $invited_workplaces_ids = WorkplaceUser::whereNotIn('workplace_id',$user_workplaces_ids)->where('user_id',auth()->id())->pluck('id');
+
+        $query['data'] = Workplace::withCount(['products', 'users', 'leads'])->whereIn('id',$invited_workplaces_ids)->get();
+
+        return view('workplaces.invited_workplaces', $query);
+    }
+
+    public function user_workplaces()
+    {
+        $query['data'] = Workplace::withCount(['products', 'users', 'leads'])->where('admin_id',auth()->id())->get();
+
+        return view('workplaces.user_workplaces', $query);
+    }
     /**
      * Show the form for editing the specified resource.
      *

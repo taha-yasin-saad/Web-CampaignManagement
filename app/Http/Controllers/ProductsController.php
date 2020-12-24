@@ -22,11 +22,11 @@ class ProductsController extends Controller
     {
         $this->middleware('auth');
     }
-    
+
     public function index($workplace_id)
     {
         $query['workplace'] = Workplace::with('users')->where('id',$workplace_id)->first();
-        
+
         Session::put('workplace', $query['workplace']);
         $query['data'] = Product::with('users','source', 'source.lead')->where('workplace_id',$workplace_id)->get();
         foreach($query['data'] as $value){
@@ -82,7 +82,7 @@ class ProductsController extends Controller
      */
     public function show(Product $product)
     {
-        
+
         $query['product'] = $product;
         $query['data'] = Product::where('id',$product->id)->with('users', 'workplace')->first();
         return view('products.single', $query);
@@ -130,7 +130,7 @@ class ProductsController extends Controller
 
     public function invite_member(Request $request)
     {
-        
+
         //check if user can be existed
         $user = User::where('email', $request->email)->first();
         //save in Users if new Email
@@ -152,7 +152,7 @@ class ProductsController extends Controller
         $save->status = 1;
         $save->save();
 
-        
+
 
         //send invitation email
         $data['subject'] = 'CLOSOR Invitation';
@@ -200,23 +200,23 @@ class ProductsController extends Controller
 
     public function choose_members(Request $request)
     {
-        
+
         $product = Product::find($request->product_id);
 
         $product->users()->sync($request->users);
-        
+
         return back()->with('success', 'Member added Successfully');
     }
 
     public function add_product_to_user(Request $request)
     {
-        
+
         $user = User::find($request->user_id);
         $old_products =$user->products_workplace($request->workplace_id)->pluck('products.id')->toArray();
         $user->products()->detach($old_products);
         $user->products()->attach($request->products);
 
-        
+
         return back()->with('success', 'Request has been done successfully');
     }
 }

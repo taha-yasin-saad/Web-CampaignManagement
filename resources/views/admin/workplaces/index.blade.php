@@ -53,8 +53,12 @@
                                     <h4>Total Products</h4>
                                     <div class="progress">
                                         <div class="progress-bar progress-bar-info" role="progressbar"
-                                            aria-valuenow="{{$data->sum('products_count')/$data_without_filter->sum('products_count')*100}}" aria-valuemin="0" aria-valuemax="100" style="width: {{$data->sum('products_count')/$data_without_filter->sum('products_count')*100}}%">
-                                            <span class="sr-only">{{$data->sum('products_count')/$data_without_filter->sum('products_count')*100}}% Complete (success)</span>
+                                            aria-valuenow="{{$data->sum('products_count')/$data_without_filter->sum('products_count')*100}}"
+                                            aria-valuemin="0" aria-valuemax="100"
+                                            style="width: {{$data->sum('products_count')/$data_without_filter->sum('products_count')*100}}%">
+                                            <span
+                                                class="sr-only">{{$data->sum('products_count')/$data_without_filter->sum('products_count')*100}}%
+                                                Complete (success)</span>
                                         </div>
                                     </div>
                                 </li>
@@ -72,8 +76,12 @@
                                     <h4>Total Members</h4>
                                     <div class="progress">
                                         <div class="progress-bar progress-bar-success" role="progressbar"
-                                            aria-valuenow="{{$data->sum('users_count')/$data_without_filter->sum('users_count')*100}}" aria-valuemin="0" aria-valuemax="100" style="width: {{$data->sum('users_count')/$data_without_filter->sum('users_count')*100}}%">
-                                            <span class="sr-only">{{$data->sum('users_count')/$data_without_filter->sum('users_count')*100}}% Complete (success)</span>
+                                            aria-valuenow="{{$data->sum('users_count')/$data_without_filter->sum('users_count')*100}}"
+                                            aria-valuemin="0" aria-valuemax="100"
+                                            style="width: {{$data->sum('users_count')/$data_without_filter->sum('users_count')*100}}%">
+                                            <span
+                                                class="sr-only">{{$data->sum('users_count')/$data_without_filter->sum('users_count')*100}}%
+                                                Complete (success)</span>
                                         </div>
                                     </div>
                                 </li>
@@ -91,8 +99,12 @@
                                     <h4>Total Leads</h4>
                                     <div class="progress">
                                         <div class="progress-bar progress-bar-warning" role="progressbar"
-                                            aria-valuenow="{{$data->sum('leads_count')/$data_without_filter->sum('leads_count')*100}}" aria-valuemin="0" aria-valuemax="100" style="width: {{$data->sum('leads_count')/$data_without_filter->sum('leads_count')*100}}%">
-                                            <span class="sr-only">{{$data->sum('leads_count')/$data_without_filter->sum('leads_count')*100}}% Complete (success)</span>
+                                            aria-valuenow="{{$data->sum('leads_count')/$data_without_filter->sum('leads_count')*100}}"
+                                            aria-valuemin="0" aria-valuemax="100"
+                                            style="width: {{$data->sum('leads_count')/$data_without_filter->sum('leads_count')*100}}%">
+                                            <span
+                                                class="sr-only">{{$data->sum('leads_count')/$data_without_filter->sum('leads_count')*100}}%
+                                                Complete (success)</span>
                                         </div>
                                     </div>
                                 </li>
@@ -245,7 +257,11 @@
                                 @foreach ($data as $key=>$value)
                                 <tr>
                                     <td class="text-center">{{$key+1}}</td>
-                                    <td><span class="font-medium">{{$value->title}}</span></td>
+                                    <td>
+                                        <a href="{{url('admin/workplace-info/'.$value->id)}}">
+                                            <span class="font-medium">{{$value->title}}</span>
+                                        </a>
+                                    </td>
                                     <td><span class="font-medium">{{$value->products_count}}</span></td>
                                     <td><span class="font-medium">{{$value->users_count}}</span></td>
                                     <td><span class="font-medium">{{$value->leads_count}}</span></td>
