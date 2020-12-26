@@ -17,19 +17,20 @@ class SendNotificationListner
     public function handle($event)
     {
         if(@$event->lead->user->device_token && $event->lead->user->device_token){
-            $API_ACCESS_KEY = 'AAAAAmEDn3w:APA91bGBWdD0XkzwivgPc_0qF0xt_V9NaRCDl59s0x54Qxjh6EPpSASsWgKF26fI9bVyJppiJnM5E7wxG25OiJ1iiLktyTa0pQiTChustIzH3CraEpAcaQJw9W02C1sKl9qBNrXY0Lmm';
+            $API_ACCESS_KEY = 'AAAAUyFWMKw:APA91bGyV7gUnZNRY6o4qH-vb_eI7IKMDKWX7VU6NUYDQwMcHz2JHN7cqKXPgfLvus44TI2oMBzeakYBgBABKGaGolzDp0mQYlmfVItQDFxtaZ-E43UrE8wvFg7an0OL5ql3qxV52L12';
             $device_token = $event->lead->user->device_token;
             $data = $event->lead;
 //            foreach ($device_token as $device){
                 $fields = [
                     'to' => $device_token,
-                    'notification' => [                                                                                                         'title' => 'CLOSOR',
+                    'notification' => [
+                        'title' => 'CLOSOR',
                         'body' => 'New lead for you',
                         'vibrate'   => 1,
                         'sound'     => "default",
                         'click_ action'=>'FCM_PLUGIN_ACTIVITY'
-
                     ],
+
                     "priority" => "high",
                     'data' => [
                         'data' =>$data,
