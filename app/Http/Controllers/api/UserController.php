@@ -9,6 +9,7 @@ use Crypt;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use App\Country;
+
 class UserController extends Controller
 {
     protected function validator(array $data)
@@ -24,19 +25,21 @@ class UserController extends Controller
     {
         $data = $request->email;
         $user = User::where('email', $request->email)->first();
-        if ($user && $user->password) {
+        if ($user && $user->password && $user->is_available == 1) {
             return response()->json(array(
                 'code' => 0,
                 'id' => $user->id,
                 'email' => $user->email,
                 'password' => $user->password
             ), 200, ['Access-Control-Allow-Origin' => '*'], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
-        } elseif ($user) {
+        } elseif ($user && $user->is_available == 1) {
             return response()->json(array(
                 'code' => 2,
                 'id' => $user->id,
                 'email' => $user->email
             ), 200, ['Access-Control-Allow-Origin' => '*'], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
+        } elseif ($user && $user->is_available == 0) {
+            return response()->json(array('code' => 3, 'message' => 'Your Account Has Been Disabled By The Admin'), 200, ['Access-Control-Allow-Origin' => '*'], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
         } else {
             return response()->json(array('code' => 1, 'message' => 'No user in system with this email'), 200, ['Access-Control-Allow-Origin' => '*'], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
         }
@@ -58,28 +61,30 @@ class UserController extends Controller
         }
 
         $user = User::where('email', $request->email)->first();
-        if ($user && Hash::check($request->password, $user->password)) {
+        if ($user && Hash::check($request->password, $user->password) && $user->is_available == 1) {
             if ($request->device_token) {
                 $user->update([
                     'device_token' => $request->device_token,
                     'os' => $request->os
                 ]);
             }
-            if($user->country_code){
+            if ($user->country_code) {
                 $iso = Country::where('phonecode', $user->country_code)->first();
-                if($iso){
+                if ($iso) {
                     $user['country_iso'] = $iso->iso;
-                }else{
+                } else {
                     $user['country_iso'] = "EG";
                 }
-            }else{
-                    $user['country_code'] = 20;
-                    $user['country_iso'] = "EG";
+            } else {
+                $user['country_code'] = 20;
+                $user['country_iso'] = "EG";
             }
             return response()->json(array(
                 'code'      => 0,
                 'user'        => $user,
             ), 200, ['Access-Control-Allow-Origin' => '*'], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
+        } elseif ($user && Hash::check($request->password, $user->password) && $user->is_available == 0) {
+            return response()->json(array('code' => 2, 'message' => 'Your Account Has Been Disabled By The Admin'), 200, ['Access-Control-Allow-Origin' => '*'], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
         } else {
             return response()->json(array('code' => 1, 'message' => 'Please check data you Login Data'), 200, ['Access-Control-Allow-Origin' => '*'], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
         }
@@ -141,7 +146,7 @@ class UserController extends Controller
         $data = $request->all();
         $rules = array(
             'id'     => 'required',
-            'email'     => 'required|unique:users,email,'.$request->id,
+            'email'     => 'required|unique:users,email,' . $request->id,
             'phone'     => 'required',
             'country_code'     => 'required',
             'name'      => 'required',
@@ -154,16 +159,16 @@ class UserController extends Controller
 
         $user = User::where('id', $request->id)->first();
         $iso = $request->country_iso;
-        if($iso){
+        if ($iso) {
             $country = Country::where('iso', $iso)->first();
-            if($country){
+            if ($country) {
                 $country_code = $country->phonecode;
-            }else{
+            } else {
                 $country_code = 20;
             }
-        }else{
-                $country_code = 20;
-            }
+        } else {
+            $country_code = 20;
+        }
         if ($user) {
             $update['name'] = $request->name;
             $update['email'] = $request->email;

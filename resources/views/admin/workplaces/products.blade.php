@@ -64,7 +64,8 @@
                                                         <div>
                                                             <select name="users[]"
                                                                 class="select2 m-b-10 select2-multiple"
-                                                                multiple="multiple" data-placeholder="Choose Members (Optional)">
+                                                                multiple="multiple"
+                                                                data-placeholder="Choose Members (Optional)">
                                                                 @foreach($workplace->users as $user)
                                                                 <option value="{{$user->id}}">
                                                                     @if($user->name)
@@ -101,18 +102,29 @@
                 @endif
                 @if(count($data) > 0)
                 @foreach ($data as $value)
-                @if (get_role($workplace->id) <= 1 || (get_role($workplace->id) > 1 && in_array($user->id,$value->selected_ids)))
-                <div class="panel">
-                    <div class="row panel-heading">
-                        <div class="col-md-6 col-sm-6 col-xs-6">
-                            <p>{{$value->title}}</p>
-                            @foreach($value->users as $val)
-                        <span class="label bg-inverse m-r-10">@if($val->name){{$val->name}}@else{{$val->email}} @endif</span>
-                            @endforeach
-                            {{-- <a href="{{url(session('workplace')->id.'/team/'.$value->id)}}" class=" m-r-10">More...</a> --}}
+                @if (get_role($workplace->id) <= 1 || (get_role($workplace->id) > 1 &&
+                    in_array($user->id,$value->selected_ids)))
+                    <div class="panel">
+                        <div class="row panel-heading">
+                            <div class="col-md-6 col-sm-6 col-xs-6">
+                                <span>
+                                    <p>
+                                        {{$value->title}}
+                                        @if(count($value->leads) > 0)
+                                        <a href="{{url('admin/product_leads/'.$value->id)}}"
+                                            class="btn btn-danger">Leads</a>
+                                        @endif
+                                    </p>
 
-                        </div>
-                        {{-- <div class="col-md-6 col-sm-6 col-xs-6 text-right">
+                                </span>
+                                @foreach($value->users as $val)
+                                <span class="label bg-inverse m-r-10">@if($val->name){{$val->name}}@else{{$val->email}}
+                                    @endif</span>
+                                @endforeach
+                                <a href="{{url('admin/'.$workplace->id.'/team/'.$value->id)}}" class=" m-r-10">More...</a>
+
+                            </div>
+                            {{-- <div class="col-md-6 col-sm-6 col-xs-6 text-right">
                             @if(get_role($workplace->id) == 0 || get_role($workplace->id) == 1 ||
                             get_role($workplace->id) == 2)
                             <a href="{{url('sources/create')}}" class="btn btn-primary m-t-20">Add Lead Source</a>
@@ -120,7 +132,7 @@
                         </div> --}}
                     </div>
                     <div class="table-responsive">
-                        <table class="table table-hover manage-u-table">
+                        <table class="table table-hover manage-u-table myTables">
                             <thead>
                                 <tr>
                                     <th style="width: 70px;" class="text-center">#</th>
@@ -137,16 +149,23 @@
                             </thead>
                             <tbody>
                                 @foreach ($value->source as $source)
-                                    <tr>
-                                        <td class="text-center">1</td>
-                                        <td><span class="font-medium">{{$source->name}}</span>
-                                            <br>@if(isset($source->website))<span class="text-muted">{{$source->website}}</span>@endif
-                                        </td>
-                                        <td>{{count($source->lead)}}</td>
-                                        <td>323</td>
-                                        <td>200</td>
-                                        <td>50%</td>
-                                        {{-- @if(get_role($workplace->id) == 0 || get_role($workplace->id) == 1 ||
+                                <tr>
+                                    <td class="text-center">1</td>
+                                    <td><span class="font-medium">{{$source->name}}</span>
+                                        <br>@if(isset($source->website))<span
+                                            class="text-muted">{{$source->website}}</span>@endif
+                                    </td>
+                                    <td>{{count($source->lead)}}</td>
+                                    <td>{{$source->lead->where('last_contact','!=',null)->count()}}</td>
+                                    <td>{{$source->lead->where('status',0)->count()}}</td>
+                                    <td>
+                                        @if(@$source->lead->count() > 0)
+                                        {{$source->lead->where('status',0)->count() % count($source->lead)}}%
+                                        @else
+                                        0%
+                                        @endif
+                                    </td>
+                                    {{-- @if(get_role($workplace->id) == 0 || get_role($workplace->id) == 1 ||
                                         get_role($workplace->id) == 2)
                                         <td>
                                             <button type="button"
@@ -154,7 +173,7 @@
                                                     class="ti-pencil-alt"></i></button>
                                         </td>
                                         @endif --}}
-                                    </tr>
+                                </tr>
                                 @endforeach
                                 {{-- <tr>
                                     <td class="text-center">2</td>
@@ -176,18 +195,18 @@
                             </tbody>
                         </table>
                     </div>
-                </div>
-                @endif
-                @endforeach
-                @else
-                <h3>You Have not any product Yet ...</h3>
-                @endif
             </div>
             @endif
+            @endforeach
+            @else
+            <h3>You Have not any product Yet ...</h3>
+            @endif
         </div>
-
-        <!-- /.row -->
+        @endif
     </div>
-    <!-- /#page-wrapper -->
+
+    <!-- /.row -->
+</div>
+<!-- /#page-wrapper -->
 </div>
 @endsection

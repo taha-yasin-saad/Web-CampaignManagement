@@ -37,7 +37,7 @@
                 </a>
             </li>
             <li>
-                <a href="{{url('admin/leads')}}" class="waves-effect"><i class="mdi mdi-home-modern"
+                <a href="{{url('admin/lead')}}" class="waves-effect"><i class="mdi mdi-account-multiple fa-fw"
                         data-icon="v"></i>
                     <span class="hide-menu"> Leads <span class="fa arrow"></span> </span>
                 </a>

@@ -11,7 +11,7 @@
                 <h4 class="page-title">product</h4>
             </div>
             <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
-                <a href="javascript: void(0);" target="_blank" class="btn btn-danger pull-right m-l-20 hidden-xs hidden-sm waves-effect waves-light">Admin Panel</a>
+                {{-- <a href="javascript: void(0);" target="_blank" class="btn btn-danger pull-right m-l-20 hidden-xs hidden-sm waves-effect waves-light">Admin Panel</a> --}}
                 <ol class="breadcrumb">
                     <li><a href="#">Dashboard</a></li>
                     <li class="active">

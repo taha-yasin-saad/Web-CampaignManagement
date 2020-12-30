@@ -7,6 +7,8 @@ use App\Http\Requests\ZoneRequest;
 use App\Zone;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use DataTables;
+
 
 class ZoneController extends Controller
 {
@@ -20,9 +22,22 @@ class ZoneController extends Controller
         $this->middleware('auth:admin');
     }
 
-    public function index()
+    public function index(Request $request)
     {
         $query['data'] = Zone::with('countries')->get();
+
+        if ($request->ajax()) {
+            return Datatables::of($query['data'])
+                ->addIndexColumn()
+                ->addColumn('countries', function ($row) {
+                    return $row;
+                })
+                ->addColumn('action', function ($row) {
+                    return $row;
+                })
+                ->rawColumns(['action'])
+                ->make(true);
+        }
         return view('admin.zones.index',$query);
     }
 

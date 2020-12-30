@@ -166,7 +166,7 @@
                             </div>
                         </div>
                         <div class="table-responsive">
-                            <table class="table table-hover manage-u-table">
+                            <table class="table table-hover manage-u-table myTables">
                                 <thead>
                                     <tr>
                                         <th style="width: 70px;" class="text-center">#</th>
@@ -190,9 +190,15 @@
                                                 class="text-muted">{{$source->website}}</span>@endif
                                         </td>
                                         <td>{{count($source->lead)}}</td>
-                                        <td>323</td>
-                                        <td>200</td>
-                                        <td>50%</td>
+                                        <td>{{$source->lead->where('last_contact','!=',null)->count()}}</td>
+                                        <td>{{$source->lead->where('status',0)->count()}}</td>
+                                        <td>
+                                            @if(@$source->lead->count() > 0)
+                                                {{$source->lead->where('status',0)->count() % count($source->lead)}}%
+                                            @else
+                                                0%
+                                            @endif
+                                        </td>
                                         @if(get_role($workplace->id) == 0 || get_role($workplace->id) == 1 ||
                                         get_role($workplace->id) == 2)
                                         <td>

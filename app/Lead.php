@@ -47,7 +47,34 @@ class Lead extends Model
 
     }
     public function workplaces(){
-        return $this->belongsToMany(Workplace::class, 'products', 'id', 'workplace_id');
-        // return $this->belongsToMany('App\workplaces','App\Product');
+        return $this->hasOneThrough(Workplace::class, Product::class, 'id', 'id', 'product_id', 'workplace_id');
+    }
+
+    public function scopeQualified($query)
+    {
+        return $query->where('status', 0 );
+    }
+
+    public function scopeLastContact($query)
+    {
+        return $query->where('last_contact','!=', null );
+    }
+
+    public function scopeFilter($query, $request)
+    {
+        if($request->product_id){
+            $query->where('product_id', $request->product_id);
+        }
+        if($request->user_id){
+            $query->where('user_id', $request->user_id);
+        }
+        if($request->status){
+            $query->where('status', $request->status);
+        }
+        if($request->min_date && $request->max_date){
+            $query->whereDate('created_at','>=', date('Y-m-d', strtotime($request->min_date)))->whereDate('created_at','<=', date('Y-m-d', strtotime($request->max_date)));
+        }
+
+        return $query;
     }
 }

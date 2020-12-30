@@ -41,12 +41,13 @@
                             </div>
                             <div id="has_been_copied"></div>
                             <div class="table-responsive">
-                                <table class="table table-hover manage-u-table">
+                                <table id="myTable" class="table table-hover manage-u-table">
                                     <thead>
                                     <tr>
                                         <th style="width: 70px;" class="text-center">#</th>
                                         <th>Zone name</th>
                                         <th>Countries</th>
+                                        {{-- <th>Countries</th> --}}
                                         {{--@if(get_role($workplace->id) == 0 || get_role($workplace->id) == 1 || get_role($workplace->id) == 2)--}}
                                         <th>MANAGE</th>
                                         {{--@endif--}}

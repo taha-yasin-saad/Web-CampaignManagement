@@ -31,7 +31,7 @@ Route::post('/invite_member', 'ProductsController@invite_member');
 
 // leads
 Route::resource('leads', 'LeadController');
-Route::post('leads_filter', 'LeadController@filter');
+Route::post('leads', 'LeadController@index');
 //new routes
 Route::get('{workplace_id}/products', 'ProductsController@index');
 Route::get('{workplace_id}/team', 'WorkplacesController@team');
@@ -57,10 +57,14 @@ Route::group(['middleware' => 'auth.admin', 'prefix' => 'admin', 'namespace' => 
     Route::resource('zone', 'ZoneController');
     Route::resource('user', 'UserController');
     Route::resource('workplace', 'WorkplacesController');
-    Route::resource('leads', 'LeadController');
-    Route::get('workplace-info/{workplace_id}' , 'WorkplacesController@getWorkplaceInfo');
+    Route::resource('lead', 'LeadController');
+    Route::get('workplace-info/{workplace_id}', 'WorkplacesController@getWorkplaceInfo');
+    Route::get('{workplace_id}/team/{product_id}', 'WorkplacesController@product_team');
+    Route::get('product_leads/{product_id}', 'LeadController@product_leads');
     Route::post('workplace', 'WorkplacesController@index');
     Route::post('user', 'UserController@index');
+    Route::post('lead', 'LeadController@index');
+    // Route::post('user_ajax', 'UserController@user_ajax');
     Route::get('user_available/{user}/{is_available}', 'UserController@user_available');
 });
 

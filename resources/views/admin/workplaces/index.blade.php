@@ -28,7 +28,7 @@
                                     <span class="circle circle-md bg-danger"><i class="ti-home"></i></span>
                                 </li>
                                 <li class="col-last">
-                                    <h3 class="counter text-right m-t-15">{{$data->count()}}</h3>
+                                    <h3 class="counter text-right m-t-15 workplaces_count">{{$workplaces->count()}}</h3>
                                 </li>
                                 <li class="col-middle">
                                     <h4>Total Workplace</h4>
@@ -47,20 +47,23 @@
                                     <span class="circle circle-md bg-info"><i class="ti-bag"></i></span>
                                 </li>
                                 <li class="col-last">
-                                    <h3 class="counter text-right m-t-15">{{$data->sum('products_count')}}</h3>
+                                    <h3 class="counter text-right m-t-15 products_count">
+                                        {{$workplaces->sum('products_count')}}</h3>
                                 </li>
                                 <li class="col-middle">
                                     <h4>Total Products</h4>
+                                    @if($workplaces_without_filter->sum('products_count') != 0)
                                     <div class="progress">
                                         <div class="progress-bar progress-bar-info" role="progressbar"
-                                            aria-valuenow="{{$data->sum('products_count')/$data_without_filter->sum('products_count')*100}}"
+                                            aria-valuenow="{{$workplaces->sum('products_count')/$workplaces_without_filter->sum('products_count')*100}}"
                                             aria-valuemin="0" aria-valuemax="100"
-                                            style="width: {{$data->sum('products_count')/$data_without_filter->sum('products_count')*100}}%">
+                                            style="width: {{$workplaces->sum('products_count')/$workplaces_without_filter->sum('products_count')*100}}%">
                                             <span
-                                                class="sr-only">{{$data->sum('products_count')/$data_without_filter->sum('products_count')*100}}%
+                                                class="sr-only">{{$workplaces->sum('products_count')/$workplaces_without_filter->sum('products_count')*100}}%
                                                 Complete (success)</span>
                                         </div>
                                     </div>
+                                    @endif
                                 </li>
                             </ul>
                         </div>
@@ -70,20 +73,23 @@
                                     <span class="circle circle-md bg-success"><i class=" ti-user"></i></span>
                                 </li>
                                 <li class="col-last">
-                                    <h3 class="counter text-right m-t-15">{{$data->sum('users_count')}}</h3>
+                                    <h3 class="counter text-right m-t-15 users_count">
+                                        {{$workplaces->sum('users_count')}}</h3>
                                 </li>
                                 <li class="col-middle">
                                     <h4>Total Members</h4>
+                                    @if($workplaces_without_filter->sum('users_count') != 0)
                                     <div class="progress">
                                         <div class="progress-bar progress-bar-success" role="progressbar"
-                                            aria-valuenow="{{$data->sum('users_count')/$data_without_filter->sum('users_count')*100}}"
+                                            aria-valuenow="{{$workplaces->sum('users_count')/$workplaces_without_filter->sum('users_count')*100}}"
                                             aria-valuemin="0" aria-valuemax="100"
-                                            style="width: {{$data->sum('users_count')/$data_without_filter->sum('users_count')*100}}%">
-                                            <span
-                                                class="sr-only">{{$data->sum('users_count')/$data_without_filter->sum('users_count')*100}}%
+                                            style="width: {{$workplaces->sum('users_count')/$workplaces_without_filter->sum('users_count')*100}}%">
+                                            <span class="sr-only">
+                                                {{$workplaces->sum('users_count')/$workplaces_without_filter->sum('users_count')*100}}%
                                                 Complete (success)</span>
                                         </div>
                                     </div>
+                                    @endif
                                 </li>
                             </ul>
                         </div>
@@ -93,20 +99,23 @@
                                     <span class="circle circle-md bg-warning"><i class="ti-sharethis"></i></span>
                                 </li>
                                 <li class="col-last">
-                                    <h3 class="counter text-right m-t-15">{{$data->sum('leads_count')}}</h3>
+                                    <h3 class="counter text-right m-t-15 leads_count">
+                                        {{$workplaces->sum('leads_count')}}</h3>
                                 </li>
                                 <li class="col-middle">
                                     <h4>Total Leads</h4>
+                                    @if($workplaces_without_filter->sum('leads_count') != 0)
                                     <div class="progress">
                                         <div class="progress-bar progress-bar-warning" role="progressbar"
-                                            aria-valuenow="{{$data->sum('leads_count')/$data_without_filter->sum('leads_count')*100}}"
+                                            aria-valuenow="{{$workplaces->sum('leads_count')/$workplaces_without_filter->sum('leads_count')*100}}"
                                             aria-valuemin="0" aria-valuemax="100"
-                                            style="width: {{$data->sum('leads_count')/$data_without_filter->sum('leads_count')*100}}%">
+                                            style="width: {{$workplaces->sum('leads_count')/$workplaces_without_filter->sum('leads_count')*100}}%">
                                             <span
-                                                class="sr-only">{{$data->sum('leads_count')/$data_without_filter->sum('leads_count')*100}}%
+                                                class="sr-only">{{$workplaces->sum('leads_count')/$workplaces_without_filter->sum('leads_count')*100}}%
                                                 Complete (success)</span>
                                         </div>
                                     </div>
+                                    @endif
                                 </li>
                             </ul>
                         </div>
@@ -119,7 +128,7 @@
                 <div class="panel panel-info">
                     <div class="panel-wrapper collapse in" aria-expanded="true">
                         <div class="panel-body">
-                            <form action="#" method="post">
+                            <form class="workplace_filter" method="post">
                                 @csrf
                                 <div class="form-body">
                                     <div class="row">
@@ -221,21 +230,17 @@
                     {{ session('success') }}
                 </div>
                 @endif
-                @if(count($data) > 0)
+                {{-- @if(count($workplaces) > 0) --}}
                 <div class="panel">
                     <div class="row panel-heading">
                         <div class="col-md-6 col-sm-6 col-xs-6">
                         </div>
                         <div class="col-md-6 col-sm-6 col-xs-6 text-right">
-                            {{--@if(get_role($workplace->id) == 0 || get_role($workplace->id) == 1 || get_role($workplace->id) == 2)--}}
-                            {{--                                    <a href="{{url('admin/Workplaces/create')}}"
-                            class="btn btn-primary m-t-20">Add User</a>--}}
-                            {{--@endif--}}
                         </div>
                     </div>
                     <div id="has_been_copied"></div>
                     <div class="table-responsive">
-                        <table class="table table-hover manage-u-table">
+                        <table class="table table-hover manage-u-table workplace-data-table">
                             <thead>
                                 <tr>
                                     <th style="width: 70px;" class="text-center">#</th>
@@ -248,44 +253,14 @@
                                     <th>Created By</th>
                                     <th>Website</th>
                                     <th>Registered At</th>
-                                    {{--@if(get_role($workplace->id) == 0 || get_role($workplace->id) == 1 || get_role($workplace->id) == 2)--}}
-                                    {{-- <th>MANAGE</th> --}}
-                                    {{--@endif--}}
                                 </tr>
                             </thead>
-                            <tbody>
-                                @foreach ($data as $key=>$value)
-                                <tr>
-                                    <td class="text-center">{{$key+1}}</td>
-                                    <td>
-                                        <a href="{{url('admin/workplace-info/'.$value->id)}}">
-                                            <span class="font-medium">{{$value->title}}</span>
-                                        </a>
-                                    </td>
-                                    <td><span class="font-medium">{{$value->products_count}}</span></td>
-                                    <td><span class="font-medium">{{$value->users_count}}</span></td>
-                                    <td><span class="font-medium">{{$value->leads_count}}</span></td>
-                                    <td><span class="font-medium">{{$value->startday}}</span></td>
-                                    <td><span class="font-medium">{{$value->timezone}}</span></td>
-                                    <td>
-                                        <button type="button" class="btn btn-primary open-UserModal" data-toggle="modal"
-                                            data-target="#UserModal" data-name="{{$value->admin->name}}"
-                                            data-phone="{{$value->admin->phone}}" data-email="{{$value->admin->email}}">
-                                            <span class="font-medium">{{$value->admin->name}}</span>
-                                        </button>
-                                    </td>
-                                    <td><span class="font-medium">{{$value->website}}</span></td>
-                                    <td><span class="font-medium">{{date("Y-m-d",strtotime($value->created_at))}}</span>
-                                    </td>
-
-                                    {{-- @endif--}}
-                                </tr> @endforeach </tbody>
                         </table>
                     </div>
                 </div>
-                @else
+                {{-- @else
                 <h3> You Have not any Workplaces Yet ...</h3>
-                @endif
+                @endif --}}
             </div>
             {{--@endif--}}
         </div>
@@ -296,6 +271,88 @@
 </div>
 @endsection
 @section('js')
+<script type="text/javascript">
+    var oTable = $('.workplace-data-table').DataTable({
+        dom: "<'row'<'col-xs-12'<'col-xs-6'l><'col-xs-6'p>>r>"+
+            "<'row'<'col-xs-12't>>"+
+            "<'row'<'col-xs-12'<'col-xs-6'i><'col-xs-6'p>>>",
+        processing: true,
+        serverSide: true,
+        ajax: {
+            url: "{{ route('workplace.index') }}",
+            data: function (d) {
+                d.from_date = $('input[name=from_date]').val();
+                d.to_date = $('input[name=to_date]').val();
+                d.select_leads = $('select[name=select_leads]').val();
+                d.count_leads = $('input[name=count_leads]').val();
+                d.select_user = $('select[name=select_user]').val();
+                d.count_user = $('input[name=count_user]').val();
+                d.select_products = $('select[name=select_products]').val();
+                d.count_workplaces = $('input[name=count_workplaces]').val();
+            }
+        },
+        columns: [
+              {data: 'DT_RowIndex', name: 'DT_RowIndex'},
+              {
+                data: "title",
+                "render": function (data, type, full, meta) {
+                    // console.log(full);
+                    var workplace_title = full.title;
+                    var workplace_id = full.id;
+                    var workplace_info_url = "{{url('admin/workplace-info/')}}";
+                return '<a href="'+ workplace_info_url +'/'+ workplace_id +'"><span class="font-medium">'+ workplace_title + '</span></a>'
+            },
+                "orderable": false,
+                "targets": 0
+                },
+              {data: 'products_count', name: 'products_count'},
+              {data: 'users_count', name: 'users_count'},
+              {data: 'leads_count', name: 'leads_count'},
+              {data: 'startday', name: 'startday'},
+              {data: 'timezone', name: 'timezone'},
+              {
+                data: "admin_id",
+                "render": function (data, type, full, meta) {
+                    // console.log(full.admin);
+                    var admin_name = full.admin.name;
+                    var admin_phone = full.admin.phone;
+                    var admin_email = full.admin.email;
+                return '<button type="button" class="btn btn-primary open-UserModal" data-toggle="modal" data-target="#UserModal" data-name="'+admin_name+'" data-phone="'+admin_phone+'" data-email="'+admin_email+'"> <span class="font-medium">'+admin_name+'</span> </button>'
+            },
+                "orderable": false,
+                "targets": 0
+                },
+              {data: 'leads_count', name: 'leads_count'},
+              {data: 'created_at', name: 'created_at'},
+
+            ],
+          columnDefs: [{
+                orderable: false,
+                targets: [3, 8]
+
+            }]
+    });
+
+
+    $('.workplace_filter').on('submit', function(e) {
+        e.preventDefault();
+        oTable.draw();
+        setTimeout(function(){
+            var total_workplaces_count = oTable.page.info().recordsTotal;
+            var total_products_count = oTable.column(2).data().sum();
+            var total_users_count = oTable.column(3).data().sum();
+            var total_leads_count = oTable.column(4).data().sum();
+            $(".workplaces_count").text(total_workplaces_count);
+            $(".products_count").text(total_products_count);
+            $(".users_count").text(total_users_count);
+            $(".leads_count").text(total_leads_count);
+        }, 500);
+
+
+    // console.log(oTable.page.info().recordsTotal);
+
+    });
+</script>
 <script>
     $('.mydatepicker').datepicker();
             $(document).on("click", ".open-UserModal", function () {

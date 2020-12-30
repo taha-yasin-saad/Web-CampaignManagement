@@ -42,7 +42,7 @@
                     </div>
                     <div id="has_been_copied"></div>
                     <div class="table-responsive">
-                        <table class="table table-hover manage-u-table">
+                        <table id="myTable" class="table table-hover manage-u-table">
                             <thead>
                                 <tr>
                                     <th style="width: 70px;" class="text-center">widgetID</th>

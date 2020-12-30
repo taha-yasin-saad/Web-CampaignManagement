@@ -36,18 +36,19 @@ class LoginController extends Controller
 
     public function firstlogin(Request $request)
     {
-        
+
         $data['email'] = $request->email;
         $user = User::where('email',$request->email)->first();
-        if($user && $user->password){
-
+        if($user && $user->password && $user->is_available == 1){
             return redirect('login')->with('email', $data['email']);
+        }elseif($user && $user->password && $user->is_available == 0){
+            return redirect('/')->with('is_available', 'Your Account Has Been Disabled By The Admin');
         }elseif($user){
             return redirect('register')->with('email', $data['email'])->with('invited', 1);
         }else{
             return redirect('register')->with('email', $data['email']);
         }
-        
+
     }
 
 

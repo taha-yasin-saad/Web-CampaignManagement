@@ -11,6 +11,7 @@ class AdminLoginController extends Controller
     public function showlogin(){
         return view('admin.login');
     }
+
     public function login(Request $request){
         $request->validate([
             'email' => ['required', 'string', 'email'],

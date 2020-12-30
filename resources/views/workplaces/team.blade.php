@@ -143,7 +143,7 @@
                                     }
                                     </script>
                                     @endsection
-                                    <td> 
+                                    <td>
                                         @if($value->pivot->role != 0)
                                         <button type="button"
                                             class="btn btn-info btn-outline btn-circle btn-lg m-r-5 remove_user_from_workspace_alert"
@@ -171,7 +171,7 @@
                                             style="display: none;">
                                             {{ csrf_field() }}
                                         </form>
-                                        
+
                                         <a class="dropdown">
                                             <a class="btn btn-info btn-outline btn-circle btn-lg m-r-5"
                                                 id="addRemoveLeadDropDown" data-toggle="dropdown" href="#"
