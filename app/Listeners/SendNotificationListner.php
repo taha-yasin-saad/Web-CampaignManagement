@@ -23,13 +23,13 @@ class SendNotificationListner
 //            foreach ($device_token as $device){
                 $fields = [
                     'to' => $device_token,
-                    'notification' => [
-                        'title' => 'CLOSOR',
-                        'body' => 'New lead for you',
-                        'vibrate'   => 1,
-                        'sound'     => "default",
-                        'click_ action'=>'FCM_PLUGIN_ACTIVITY'
-                    ],
+                    // 'notification' => [
+                    //     'title' => 'CLOSOR',
+                    //     'body' => 'New lead for you',
+                    //     'vibrate'   => 1,
+                    //     'sound'     => "default",
+                    //     'click_ action'=>'FCM_PLUGIN_ACTIVITY'
+                    // ],
 
                     "priority" => "high",
                     'data' => [
