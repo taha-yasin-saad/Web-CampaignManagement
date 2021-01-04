@@ -12,7 +12,7 @@
             </div>
             <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                 <ol class="breadcrumb">
-                    <li><a href="#">Dashboard</a></li>
+                    <li><a href="{{url('/')}}">Dashboard</a></li>
                     <li class="active">Workplaces</li>
                 </ol>
             </div>
@@ -74,7 +74,8 @@
                             <span class="circle circle-md bg-success"><i class=" ti-user"></i></span>
                         </li>
                         <li class="col-last">
-                            <h3 class="counter text-right m-t-15 qualified_leads_count">{{$qualified_leads->count()}}</h3>
+                            <h3 class="counter text-right m-t-15 qualified_leads_count">{{$qualified_leads->count()}}
+                            </h3>
                         </li>
                         <li class="col-middle">
                             <h4>QUALIFIED LEADS</h4>
@@ -100,8 +101,13 @@
                     <span class="circle circle-md bg-warning"><i class="ti-sharethis"></i></span>
                 </li>
                 <li class="col-last">
-                    <h3 class="counter text-right m-t-15">
-                        {{($last_contact_leads->count()/$leads->count()) * 100 }}</h3>
+                    <h3 class="counter text-right m-t-15" style="font-size: 25px;">
+                        @if ($leads->count() != 0)
+                        {{sprintf("%.0f%%", $last_contact_leads->count()/$leads->count()* 100)}}
+                        @else
+                        0%
+                        @endif
+                    </h3>
                 </li>
                 <li class="col-middle">
                     <h4>AVG. CONVERSATION RATE</h4>
@@ -110,9 +116,9 @@
                         <div class="progress-bar progress-bar-warning" role="progressbar"
                             aria-valuenow="{{$leads->sum('leads_count')/$leads_without_filter->sum('leads_count')*100}}"
                             aria-valuemin="0" aria-valuemax="100"
-                            style="width: {{$leads->sum('leads_count')/$leads_without_filter->sum('leads_count')*100}}%">
+                            style="width: {{sprintf("%.2f%%", $leads->sum('leads_count')/$leads_without_filter->sum('leads_count')*100)}}">
                             <span
-                                class="sr-only">{{$leads->sum('leads_count')/$leads_without_filter->sum('leads_count')*100}}%
+                                class="sr-only">{{sprintf("%.2f%%", $leads->sum('leads_count')/$leads_without_filter->sum('leads_count')*100)}}
                                 Complete (success)</span>
                         </div>
                     </div>
@@ -270,7 +276,7 @@
                     var lead_id = (full.id != null) ? full.id : '-';
                     var lead_url = "{{url('admin/lead/')}}";
                     // console.log(full);
-                    return '<div class="flex-column"><a href="' + lead_url + lead_id +'">' + lead_name + '</a><span class="text-right"><button type="button" class="btn btn-primary lead-btn"><i class="fa  fa-envelope"></i></button><a href="tel:' + lead_phone + '" class="btn btn-success lead-btn" title="' + lead_phone + '"><i class="fa fa-phone"></i></a></span></div>'
+                    return '<div class="flex-column"><a href="' + lead_url +'/'+ lead_id +'">' + lead_name + '</a><span class="text-right"><button type="button" class="btn btn-primary lead-btn"><i class="fa  fa-envelope"></i></button><a href="tel:' + lead_phone + '" class="btn btn-success lead-btn" title="' + lead_phone + '"><i class="fa fa-phone"></i></a></span></div>'
                 },
                 // "orderable": true,
                 // "targets": 0

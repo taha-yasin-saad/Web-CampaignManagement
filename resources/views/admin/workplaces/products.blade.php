@@ -12,8 +12,8 @@
             </div>
             <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                 <ol class="breadcrumb">
-                    <li>{{$workplace->title}}</li>
-                    <li class="active">Products</li>
+                    <li><a href="{{url('admin/dashboard')}}">Dashboard</a></li>
+                    <li class="active">{{$workplace->title}}</li>
                 </ol>
             </div>
         </div>
@@ -111,7 +111,7 @@
                                     <p>
                                         {{$value->title}}
                                         @if(count($value->leads) > 0)
-                                        <a href="{{url('admin/product_leads/'.$value->id)}}"
+                                        <a href="{{url('admin/lead/'.$value->id)}}"
                                             class="btn btn-danger">Leads</a>
                                         @endif
                                     </p>
@@ -160,7 +160,7 @@
                                     <td>{{$source->lead->where('status',0)->count()}}</td>
                                     <td>
                                         @if(@$source->lead->count() > 0)
-                                        {{$source->lead->where('status',0)->count() % count($source->lead)}}%
+                                        {{sprintf("%.1f%%", $source->lead->where('last_contact','!=',null)->count() / count($source->lead)* 100)}}
                                         @else
                                         0%
                                         @endif

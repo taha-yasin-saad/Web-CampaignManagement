@@ -12,8 +12,8 @@
             </div>
             <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                 <ol class="breadcrumb">
-                    <li>{{$workplace->title}}</li>
-                    <li class="active">Products</li>
+                    <li><a href="{{url('dashboard')}}">Dashboard</a></li>
+                    <li class="active">{{$workplace->title}}</li>
                 </ol>
             </div>
         </div>
@@ -194,7 +194,7 @@
                                         <td>{{$source->lead->where('status',0)->count()}}</td>
                                         <td>
                                             @if(@$source->lead->count() > 0)
-                                                {{$source->lead->where('status',0)->count() % count($source->lead)}}%
+                                                {{$source->lead->where('status',0)->count() / count($source->lead) * 100}}%
                                             @else
                                                 0%
                                             @endif

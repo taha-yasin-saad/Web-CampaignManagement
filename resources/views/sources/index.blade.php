@@ -12,7 +12,7 @@
             </div>
             <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                 <ol class="breadcrumb">
-                    <li>{{$workplace->title}}</li>
+                    <li><a href="{{url('/')}}">{{$workplace->title}}</a></li>
                     <li class="active">Leads Sources</li>
                 </ol>
             </div>
@@ -64,10 +64,16 @@
                                     <td><span class="font-medium">{{$value->name}}</span>
                                         <br><span class="text-muted">{{$value->website}}</span>
                                     </td>
-                                    <td>555</td>
-                                    <td>323</td>
-                                    <td>200</td>
-                                    <td>50%</td>
+                                    <td>{{$value->lead->count()}}</td>
+                                    <td>{{$value->lead->where('last_contact','!=',null)->count()}}</td>
+                                    <td>{{$value->lead->where('status',0)->count()}}</td>
+                                    <td>
+                                        @if(@$value->lead->count() > 0)
+                                        {{$value->lead->where('last_contact','!=',null)->count() / count($value->lead) * 100}}%
+                                        @else
+                                        0%
+                                        @endif
+                                    </td>
                                     @if(get_role($workplace->id) == 0 || get_role($workplace->id) == 1 ||
                                     get_role($workplace->id) == 2)
                                     <td>

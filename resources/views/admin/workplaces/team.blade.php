@@ -96,20 +96,16 @@
                                         Sales Agent
                                         @endif
                                     </td>
-                                    {{-- <td>514</td>
-                                    <td>214</td>
-                                    <td>78</td>
-                                    <td>20%</td> --}}
-                                    <td>{{count($value->leads)}}</td>
+                                    <td>{{$value->leads->count()}}</td>
                                     <td>{{$value->leads->where('last_contact','!=',null)->count()}}</td>
                                     <td>{{$value->leads->where('status',0)->count()}}</td>
                                     <td>
                                         @if(@$value->leads->count() > 0)
-                                        {{$value->leads->where('status',0)->count() % count($value->leads)}}%
+                                        {{($value->leads->where('last_contact','!=',null)->count() / count($value->leads)) * 100}}%
                                         @else
                                         0%
                                         @endif
-                                    </td>
+                                    </td>z
                                 </tr>
                                 @endif
                                 @endforeach

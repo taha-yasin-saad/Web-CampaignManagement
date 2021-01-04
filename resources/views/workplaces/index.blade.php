@@ -12,7 +12,7 @@
             </div>
             <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                 <ol class="breadcrumb">
-                    <li><a href="#">Dashboard</a></li>
+                    <li><a href="{{url('dashboard')}}">Dashboard</a></li>
                     <li class="active">Workplaces</li>
                 </ol>
             </div>
@@ -31,7 +31,7 @@
                                 </p>
                                 <p>if your business is already has a workspace, please ask your workmate to invite you by email.</p>
                             </div>
-                            
+
                             <form method="POST" @if(isset($data)) action="{{url('workplace/'.$data->id)}}" @else action="{{url('workplace')}}" @endif>
                                 {{csrf_field()}}
                                 @if(isset($data))
