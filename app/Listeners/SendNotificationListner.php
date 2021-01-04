@@ -34,8 +34,8 @@ class SendNotificationListner
                     "priority" => "high",
                     'data' => [
                         'data' =>$data,
-                        "landing_page"=>"second",
-                        "price"=>"$3,000.00"
+                        // "landing_page"=>"second",
+                        // "price"=>"$3,000.00"
                     ]
                 ];
                 $headers = [
