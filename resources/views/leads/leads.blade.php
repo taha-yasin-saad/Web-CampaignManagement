@@ -276,7 +276,7 @@
                     var lead_id = (full.id != null) ? full.id : '-';
                     var lead_url = "{{url('leads')}}";
                     // console.log(full);
-                    return '<div class="flex-column"><a href="' + lead_url +'/'+ lead_id +'">' + lead_name + '</a><span class="text-right"><button type="button" class="btn btn-primary lead-btn"><i class="fa  fa-envelope"></i></button><a href="tel:' + lead_phone + '" class="btn btn-success lead-btn" title="' + lead_phone + '"><i class="fa fa-phone"></i></a></span></div>'
+                    return '<div class="flex-column"><a href="'+ lead_url +'/'+ lead_id +'">' + lead_name + '</a><span class="text-right"><button type="button" class="btn btn-primary lead-btn"><i class="fa  fa-envelope"></i></button><a href="tel:+' + lead_phone + '" class="btn btn-success lead-btn" title="+' + lead_phone + '"><i class="fa fa-phone"></i></a></span></div>'
                 },
                 // "orderable": true,
                 // "targets": 0

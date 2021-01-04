@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 
 class WidgetController extends Controller
 {
-    
+
     public function widget($id){
         $source = Source::find($id);
         $widget = '
@@ -133,7 +133,7 @@ class WidgetController extends Controller
                                                     $widget .= '
                                                     <div class="allow-dropdown separate-dial-code iti-sdc-3">
                                                         <input type="text" class="closor-callback-v1-input" data-iti="true"
-                                                            data-role="callback-phone-number-input" autocomplete="off" name="custom1"
+                                                            data-role="callback-phone-number-input" autocomplete="off" name="'.ucwords($source->custom_lable_1).'"
                                                             placeholder="'.ucwords($source->custom_lable_1).'">
                                                     </div>
                                                     ';
@@ -141,7 +141,7 @@ class WidgetController extends Controller
                                                     $widget .= '
                                                     <div class="allow-dropdown separate-dial-code iti-sdc-3">
                                                         <input type="text" class="closor-callback-v1-input" data-iti="true"
-                                                            data-role="callback-phone-number-input" autocomplete="off" name="custom2"
+                                                            data-role="callback-phone-number-input" autocomplete="off" name="'.ucwords($source->custom_lable_2).'"
                                                             placeholder="'.ucwords($source->custom_lable_2).'">
                                                     </div>
                                                     ';
