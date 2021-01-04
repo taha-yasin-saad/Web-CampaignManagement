@@ -1,7 +1,5 @@
 ssh -i appclosor.pem ec2-user@ec2-35-178-137-120.eu-west-2.compute.amazonaws.com
 
-ssh -i closorppk.ppk ec2-user@ec2-35-178-137-120.eu-west-2.compute.amazonaws.com
-
 cd /var/www/html/closor
 
 It looks like you haven't opened up the ports. If you look at security groups on the management console, you should see the ports you need on the 'Inbound' tab once you have ticked the appropriate security group. If it isn't working select HTTP from the drop down box, and click apply.

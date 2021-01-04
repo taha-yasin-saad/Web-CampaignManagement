@@ -70,7 +70,7 @@ class SourceController extends Controller
      */
     public function edit(Source $source)
     {
-        $query['products'] = Product::with('users')->where('workplace_id',$source->workplace_id)->get();
+        $query['products'] = Product::with('users','workplace')->where('workplace_id',$source->workplace_id)->get();
         $query['data'] = $source;
 
         return view('sources.edit',$query);

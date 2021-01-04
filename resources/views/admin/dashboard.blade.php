@@ -13,8 +13,8 @@
                         <button class="right-side-toggle waves-effect waves-light btn-info btn-circle pull-right m-l-20"><i class="ti-settings text-white"></i></button>
                         <!-- <a href="javascript: void(0);" target="_blank" class="btn btn-danger pull-right m-l-20 hidden-xs hidden-sm waves-effect waves-light">Admin Panel</a> -->
                         <ol class="breadcrumb">
-                            <li><a href="#">Admin Dashboard</a></li>
-                            <li class="active">Workplaces</li>
+                            <li><a href="{{url('admin/workplace')}}">Workplaces</a></li>
+                            <li class="active">{{auth()->user()->name}} : Dashboard</li>
                         </ol>
                     </div>
                 </div>

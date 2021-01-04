@@ -12,7 +12,7 @@
             </div>
             <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                 <ol class="breadcrumb">
-                    <li><a href="#">{{$workplace->title}}</a></li>
+                    <li><a href="{{url('/')}}">{{$workplace->title}}</a></li>
                     <li class="active">Team</li>
                 </ol>
             </div>
@@ -74,7 +74,8 @@
                                             {{$value->email}}
                                             @endif
                                         </span><span class="badge-success badge">Online</span>
-                                        <br><span class="text-muted">Joined at 15/2/2020</span>
+                                        <br><span class="text-muted">Joined at
+                                            {{date('Y-m-d', strtotime($value->created_at))}}</span>
                                     </td>
                                     <td>
                                         @foreach($value->products as $val)
@@ -94,24 +95,30 @@
                                         Sales Agent
                                         @endif
                                     </td>
-                                    <td>514</td>
-                                    <td>214</td>
-                                    <td>78</td>
-                                    <td>20%</td>
+                                    <td>{{$value->leads->count()}}</td>
+                                    <td>{{$value->leads->where('last_contact','!=',null)->count()}}</td>
+                                    <td>{{$value->leads->where('status',0)->count()}}</td>
+                                    <td>
+                                        @if(@$value->leads->count() > 0)
+                                        {{$value->leads->where('last_contact','!=',null)->count() / count($value->leads) * 100}}%
+                                        @else
+                                        0%
+                                        @endif
+                                    </td>
                                     @if(get_role($workplace->id) == 0 || get_role($workplace->id) == 1)
                                     <td>
-                                    @if($value->pivot->role != 0)
+                                        @if($value->pivot->role != 0)
                                         <input onchange="change_status(this)" type="checkbox" @if($value->pivot->status
                                         == 1)
                                         checked
                                         @endif
                                         class="js-switch" data-color="#2cabe3" name="status" />
                                         <input type="hidden" id="current_user{{$value->id}}" value="{{$value->id}}" />
-                                    @endif
+                                        @endif
                                     </td>
                                     @section('status')
                                     <script>
-                                    var baseUrl = "{{url('/')}}";
+                                        var baseUrl = "{{url('/')}}";
 
                                     function change_status(activate) {
                                         console.log(activate.checked)
@@ -152,7 +159,7 @@
                                         </button>
                                         @endif
                                         <script>
-                                        function delete_user() {
+                                            function delete_user() {
                                             swal({
                                                 title: "Are you sure?",
                                                 text: "The user will be removed from entire workspace !",

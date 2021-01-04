@@ -12,7 +12,7 @@
             </div>
             <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                 <ol class="breadcrumb">
-                    <li>Dashboard</li>
+                    <li><a href="{{url('admin/dashboard')}}">Dashboard</a></li>
                     <li class="active">Users</li>
                 </ol>
             </div>
@@ -37,9 +37,9 @@
                                         <div class="progress-bar progress-bar-success" role="progressbar"
                                             aria-valuenow="{{$users->count()/$users_without_filter->count()*100}}"
                                             aria-valuemin="0" aria-valuemax="100"
-                                            style="width: {{$users->count()/$users_without_filter->count()*100}}%">
+                                            style="width: {{sprintf("%.2f%%", $users->count()/$users_without_filter->count()* 100)}}">
                                             <span class="sr-only">
-                                                {{$users->count()/$users_without_filter->count()*100}}%
+                                                {{sprintf("%.2f%%",$users->count()/$users_without_filter->count()* 100)}}
                                                 Complete (success)</span>
                                         </div>
                                     </div>
@@ -83,9 +83,9 @@
                                         <div class="progress-bar progress-bar-info" role="progressbar"
                                             aria-valuenow="{{$users->sum('products_count')/$users_without_filter->sum('products_count')*100}}"
                                             aria-valuemin="0" aria-valuemax="100"
-                                            style="width: {{$users->sum('products_count')/$users_without_filter->sum('products_count')*100}}%">
+                                            style="width: {{sprintf("%.2f%%",$users->sum('products_count')/$users_without_filter->sum('products_count') * 100)}}%">
                                             <span
-                                                class="sr-only">{{$users->sum('products_count')/$users_without_filter->sum('products_count')*100}}%
+                                                class="sr-only">{{sprintf("%.2f%%",$users->sum('products_count')/$users_without_filter->sum('products_count') * 100)}}
                                                 Complete (success)</span>
                                         </div>
                                     </div>
@@ -110,9 +110,9 @@
                                         <div class="progress-bar progress-bar-warning" role="progressbar"
                                             aria-valuenow="{{$users->sum('leads_count')/$users_without_filter->sum('leads_count')*100}}"
                                             aria-valuemin="0" aria-valuemax="100"
-                                            style="width: {{$users->sum('leads_count')/$users_without_filter->sum('leads_count')*100}}%">
+                                            style="width: {{sprintf("%.2f%%",$users->sum('leads_count')/$users_without_filter->sum('leads_count') * 100)}}">
                                             <span
-                                                class="sr-only">{{$users->sum('leads_count')/$users_without_filter->sum('leads_count')*100}}%
+                                                class="sr-only">{{sprintf("%.2f%%",$users->sum('leads_count')/$users_without_filter->sum('leads_count')* 100)}}
                                                 Complete (success)</span>
                                         </div>
                                     </div>

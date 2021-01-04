@@ -12,6 +12,10 @@
 */
 
 //users
+
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
+
 Auth::routes();
 Route::get('/', 'HomeController@index');
 Route::any('/first', 'Auth\LoginController@firstlogin');
@@ -60,7 +64,7 @@ Route::group(['middleware' => 'auth.admin', 'prefix' => 'admin', 'namespace' => 
     Route::resource('lead', 'LeadController');
     Route::get('workplace-info/{workplace_id}', 'WorkplacesController@getWorkplaceInfo');
     Route::get('{workplace_id}/team/{product_id}', 'WorkplacesController@product_team');
-    Route::get('product_leads/{product_id}', 'LeadController@product_leads');
+    // Route::get('product_leads/{product_id}', 'LeadController@product_leads');
     Route::post('workplace', 'WorkplacesController@index');
     Route::post('user', 'UserController@index');
     Route::post('lead', 'LeadController@index');

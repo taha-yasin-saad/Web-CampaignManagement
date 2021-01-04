@@ -12,7 +12,7 @@
             </div>
             <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                 <ol class="breadcrumb">
-                    <li><a href="#">Dashboard</a></li>
+                    <li><a href="{{url('dashboard')}}">Dashboard</a></li>
                     <li class="active">Workplaces</li>
                 </ol>
             </div>
@@ -100,8 +100,13 @@
                     <span class="circle circle-md bg-warning"><i class="ti-sharethis"></i></span>
                 </li>
                 <li class="col-last">
-                    <h3 class="counter text-right m-t-15">
-                        {{($last_contact_leads->count()/$leads->count()) * 100 }}</h3>
+                    <h3 class="counter text-right m-t-15"  style="font-size: 25px;">>
+                    @if($leads->count() != 0)
+                        {{sprintf("%.0f%%", ($last_contact_leads->count()/$leads->count())* 100) }}
+                    @else
+                    0%
+                    @endif
+                    </h3>
                 </li>
                 <li class="col-middle">
                     <h4>AVG. CONVERSATION RATE</h4>
@@ -192,8 +197,8 @@
                                 <label for="lead-quality">Lead quality</label>
                                 <select class="form-control" name="status" id="lead-quality">
                                     <option selected disabled>Select quality</option>
-                                    <option value="0" @if(@$status && $status==0) selected @endif>Qualified</option>
-                                    <option value="1" @if(@$status && $status==1) selected @endif>Un Qualified</option>
+                                    <option value="0" @if(@$status && $status == 0) selected @endif>Qualified</option>
+                                    <option value="1" @if(@$status && $status == 1) selected @endif>Un Qualified</option>
                                 </select>
                             </div>
                         </div>
@@ -259,6 +264,7 @@
                 d.user_id = $('select[name=user_id]').val();
                 d.product_id = $('select[name=product_id]').val();
                 d.status = $('select[name=status]').val();
+                console.log(d.status);
             }
         },
         columns: [
@@ -268,9 +274,9 @@
                     var lead_name = (full.name != null) ? full.name : '-';
                     var lead_phone = (full.phone != null) ? full.phone : '-';
                     var lead_id = (full.id != null) ? full.id : '-';
-                    var lead_url = "{{url('admin/lead/')}}";
+                    var lead_url = "{{url('leads')}}";
                     // console.log(full);
-                    return '<div class="flex-column"><a href="' + lead_url + lead_id +'">' + lead_name + '</a><span class="text-right"><button type="button" class="btn btn-primary lead-btn"><i class="fa  fa-envelope"></i></button><a href="tel:' + lead_phone + '" class="btn btn-success lead-btn" title="' + lead_phone + '"><i class="fa fa-phone"></i></a></span></div>'
+                    return '<div class="flex-column"><a href="' + lead_url +'/'+ lead_id +'">' + lead_name + '</a><span class="text-right"><button type="button" class="btn btn-primary lead-btn"><i class="fa  fa-envelope"></i></button><a href="tel:' + lead_phone + '" class="btn btn-success lead-btn" title="' + lead_phone + '"><i class="fa fa-phone"></i></a></span></div>'
                 },
                 // "orderable": true,
                 // "targets": 0
@@ -294,68 +300,6 @@
                 },
                 {data: 'scheduled_on', name: 'scheduled_on'},
                 {data: 'last_contact', name: 'last_contact'},
-                // {
-                // data: "workplace",
-                // "render": function (data, type, full, meta) {
-                //     var workplace_title = (full.workplaces != null) ? full.workplaces.title : '-';
-                //     console.log(full);
-                //     return '<div class="flex-column">' + workplace_title + '</div>'
-                // },
-                // "orderable": true,
-                // "targets": 0
-                // },
-                // {
-                // data: "product",
-                // "render": function (data, type, full, meta) {
-                //     var product_title = (full.product != null) ? full.product.title : '-';
-                //     // console.log(product_title);
-
-                //     return product_title
-                // },
-                // // "orderable": true,
-                // // "targets": 0
-                // },
-                // {
-                // data: "source",
-                // "render": function (data, type, full, meta) {
-                //     var source_name = (full.source != null) ? full.source.name : '-';
-
-                //     return '<span class="badge badge-primary">' + source_name + '</span>'
-                // },
-                // // "orderable": true,
-                // // "targets": 0
-                // },
-                // {
-                // data: "created_at",
-                // "render": function (data, type, full, meta) {
-                //     var created_at = (full.created_at != null) ? full.created_at : '-';
-
-                //     return created_at
-                // },
-                // // "orderable": true,
-                // // "targets": 0
-                // },
-
-                // {
-                // data: "scheduled_on",
-                // "render": function (data, type, full, meta) {
-                //     var scheduled_on = (full.scheduled_on != null) ? full.scheduled_on : '-';
-
-                //     return scheduled_on
-                // },
-                // // "orderable": true,
-                // // "targets": 0
-                // },
-                // {
-                // data: "last_contact",
-                // "render": function (data, type, full, meta) {
-                //     var last_contact = (full.last_contact != null) ? full.last_contact : '-';
-
-                //     return last_contact
-                // },
-                // // "orderable": true,
-                // // "targets": 0
-                // },
                 {
                 data: "status",
                 "render": function (data, type, full, meta) {
@@ -387,7 +331,7 @@
         var total_qualified_leads_count = oTable.column(8).data().filter( function ( value, index ) {
             return value == 0 ? true : false;
         }).count();
-        console.log(total_qualified_leads_count);
+        console.log(total_leads_count);
         $(".leads_count").text(total_leads_count);
         $(".contacted_leads_count").text(total_contacted_leads_count);
         $(".qualified_leads_count").text(total_qualified_leads_count);
