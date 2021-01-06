@@ -74,7 +74,8 @@
                             <span class="circle circle-md bg-success"><i class=" ti-user"></i></span>
                         </li>
                         <li class="col-last">
-                            <h3 class="counter text-right m-t-15 qualified_leads_count">{{$qualified_leads->count()}}</h3>
+                            <h3 class="counter text-right m-t-15 qualified_leads_count">{{$qualified_leads->count()}}
+                            </h3>
                         </li>
                         <li class="col-middle">
                             <h4>QUALIFIED LEADS</h4>
@@ -100,12 +101,12 @@
                     <span class="circle circle-md bg-warning"><i class="ti-sharethis"></i></span>
                 </li>
                 <li class="col-last">
-                    <h3 class="counter text-right m-t-15"  style="font-size: 25px;">>
-                    @if($leads->count() != 0)
+                    <h3 class="counter text-right m-t-15" style="font-size: 25px;">>
+                        @if($leads->count() != 0)
                         {{sprintf("%.0f%%", ($last_contact_leads->count()/$leads->count())* 100) }}
-                    @else
-                    0%
-                    @endif
+                        @else
+                        0%
+                        @endif
                     </h3>
                 </li>
                 <li class="col-middle">
@@ -197,8 +198,8 @@
                                 <label for="lead-quality">Lead quality</label>
                                 <select class="form-control" name="status" id="lead-quality">
                                     <option selected disabled>Select quality</option>
-                                    <option value="0" @if(@$status && $status == 0) selected @endif>Qualified</option>
-                                    <option value="1" @if(@$status && $status == 1) selected @endif>Un Qualified</option>
+                                    <option value="0" @if(@$status && $status==0) selected @endif>Qualified</option>
+                                    <option value="1" @if(@$status && $status==1) selected @endif>Un Qualified</option>
                                 </select>
                             </div>
                         </div>
@@ -251,9 +252,12 @@
 @section('filter_table')
 <script type="text/javascript">
     var oTable = $('.lead-data-table').DataTable({
-        dom: "<'row'<'col-xs-12'<'col-xs-6'l><'col-xs-6'p>>r>"+
+        dom: "Bf" + "<'row'<'col-xs-12'<'col-xs-6'l><'col-xs-6'p>>r>"+
             "<'row'<'col-xs-12't>>"+
             "<'row'<'col-xs-12'<'col-xs-6'i><'col-xs-6'p>>>",
+        buttons: [
+            'copy', 'csv', 'excel', 'pdf', 'print'
+        ],
         processing: true,
         serverSide: true,
         ajax: {

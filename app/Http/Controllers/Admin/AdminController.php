@@ -11,7 +11,12 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 
-
+/**
+ * @group  Admin management
+ *
+ *
+ * Routes To manage Admin data For The Admin Control Panal
+ */
 class AdminController extends Controller
 {
     /**

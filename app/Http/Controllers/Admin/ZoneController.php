@@ -10,6 +10,12 @@ use App\Http\Controllers\Controller;
 use DataTables;
 
 
+
+/**
+ * @group Admin Zone management
+ *
+ * Routes To manage Zone data For The Admin Control Panal
+ */
 class ZoneController extends Controller
 {
     /**

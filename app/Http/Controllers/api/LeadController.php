@@ -16,6 +16,11 @@ use App\WorkplaceUser;
 use App\Source;
 use Validator;
 
+/**
+ * @group  Workplaces management
+ *
+ * APIs for managing Workplaces
+ */
 class LeadController extends Controller
 {
     public function create_lead(Request $request){

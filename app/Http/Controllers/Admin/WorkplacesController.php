@@ -13,6 +13,12 @@ use DataTables;
 
 
 
+/**
+ * @group Admin Workplaces management
+ *
+ * Routes To manage Workplaces data For The Admin Control Panal
+ */
+
 class WorkplacesController extends Controller
 {
     public function __construct()
@@ -34,6 +40,66 @@ class WorkplacesController extends Controller
                 ->make(true);
         }
         return view('admin.workplaces.index', compact('workplaces', 'workplaces_without_filter'));
+    }
+
+        /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        //
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        //
+    }
+
+    public function show(Workplace $workplace)
+    {
+        //
+    }
+
+        /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\Workplace  $workplace
+     * @return \Illuminate\Http\Response
+     */
+    public function edit(Workplace $workplace)
+    {
+        //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Workplace  $workplace
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, Workplace $workplace)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\Workplace  $workplace
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy(Workplace $workplace)
+    {
+        //
     }
 
 

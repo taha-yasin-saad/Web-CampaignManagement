@@ -11,6 +11,12 @@ use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
+
+/**
+ * @group  Workplaces management
+ *
+ * Routes To manage Workplaces data For The Manager Control Panal
+ */
 class WorkplacesController extends Controller
 {
     /**

@@ -72,15 +72,22 @@ Route::group(['middleware' => 'auth.admin', 'prefix' => 'admin', 'namespace' => 
     Route::get('user_available/{user}/{is_available}', 'UserController@user_available');
 });
 
-Route::get('design', function () {
-    return view('sources.design');
-});
+// Route::get('design', function () {
+//     return view('sources.design');
+// });
+
+Route::get('design', 'HomeController@design');
 
 //leads Sources
 Route::resource('sources', 'SourceController');
 
 Route::get('widget/{id}', 'WidgetController@widget');
 Route::post('widgetView/widget', 'WidgetController@widget_ajax');
-Route::get('widgetView/{id}', function ($id) {
-    return view('sources/widgetView', compact('id'));
-});;
+// Route::get('widgetView/{id}', function ($id) {
+//     return view('sources/widgetView', compact('id'));
+// });
+
+Route::get('widgetView/{id}', 'HomeController@widgetView');
+
+
+

@@ -8,6 +8,12 @@ use App\Zone;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
+/**
+ * @group  Admin Moderator management
+ *
+ * Routes To manage Moderator data For The Admin Control Panal
+ */
+
 class ModeratorController extends Controller
 {
     /**

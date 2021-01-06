@@ -5,6 +5,11 @@ namespace App\Http\Controllers;
 use App\Country;
 use Illuminate\Http\Request;
 
+/**
+ * @group  Ajax Request management
+ *
+ * Routes for managing Ajax Request for site
+ */
 class AjaxController extends Controller
 {
     public function phoneCode($code){

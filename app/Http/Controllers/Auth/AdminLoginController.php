@@ -6,6 +6,11 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 
+/**
+ * @group  Admin Login management
+ *
+ * Route for Login Admin & Moderator
+ */
 class AdminLoginController extends Controller
 {
     public function showlogin(){

@@ -8,6 +8,11 @@ use App\Source;
 use App\Workplace;
 use Illuminate\Http\Request;
 
+/**
+ * @group Product Widget management
+ *
+ * Routes To manage Product Widget View data For Leads
+ */
 class WidgetController extends Controller
 {
 
