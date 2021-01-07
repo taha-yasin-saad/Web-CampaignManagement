@@ -17,7 +17,7 @@ use App\Http\Controllers\Controller;
  *
  * Page Group To manage Admin data & Lists Stats Of The Site In General .
  *
- * <p><img src="images/admin/admin-login-page.PNG" width="100%"></p>
+ * <p><img src="images/admin/admin-login-page.png" width="100%"></p>
  *
  * <p><img src="images/admin/admin-management.png" width="100%"></p>
  *
