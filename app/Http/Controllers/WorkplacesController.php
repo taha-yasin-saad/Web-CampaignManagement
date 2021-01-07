@@ -13,9 +13,9 @@ use Illuminate\Support\Facades\Auth;
 
 
 /**
- * @group  Workplaces management
+ * @group 2.3  Workplaces management
  *
- * Routes To manage Workplaces data For The Manager Control Panal
+ * Routes To manage Workplaces data For The Manager Control Panel
  */
 class WorkplacesController extends Controller
 {

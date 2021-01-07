@@ -17,7 +17,7 @@ use App\Source;
 use Validator;
 
 /**
- * @group  Workplaces management
+ * @group 3.2  APIs Workplaces management
  *
  * APIs for managing Workplaces
  */

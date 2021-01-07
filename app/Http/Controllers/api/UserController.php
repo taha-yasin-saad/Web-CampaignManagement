@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Validator;
 use App\Country;
 
 /**
- * @group  User management
+ * @group 3.1  APIs User management
  *
  * APIs for managing users
  */

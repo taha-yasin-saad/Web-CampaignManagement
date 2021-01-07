@@ -31,7 +31,7 @@
                     <div class="col-xs-12">
                         <button
                             class="btn btn-info btn-lg btn-block btn-rounded text-uppercase waves-effect waves-light"
-                            type="submit">Contenue </button>
+                            type="submit">Continue </button>
                     </div>
                 </div>
             </form>

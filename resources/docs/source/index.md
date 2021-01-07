@@ -20,12 +20,1323 @@ Welcome to the generated API reference.
 
 <!-- END_INFO -->
 
-#Admin Leads management
+#1.1  Admin management
 
 
-Routes To manage Leads data For The Admin Control Panal
+
+Page Group To manage Admin data & Lists Stats Of The Site In General .
+
+<p><img src="images/admin/admin-login-page.PNG" width="100%"></p>
+
+<p><img src="images/admin/admin-management.png" width="100%"></p>
+<!-- START_8a59594ff635c00027a130968fc47527 -->
+## Dashboard
+
+<br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+Is A Dashboard Page That Shows Lists Of Stats & General Data Of The Site In General That admin can view stats and make decisions from the stats brief in front of him to manage the site more efficient .
+
+<p><img src="images/admin/dashboard.png" width="100%"></p>
+
+- Statistics For All The Site .
+- Diagrams For Data Of Workplaces.
+- Diagrams For Data Of Products.
+- Diagrams For Data Of Users.
+- Diagrams For Data Of Leads.
+- Counter For Workplaces All Over the Site .
+- Counter For Products All Over the Site .
+- Counter For Users All Over the Site .
+- Counter For Leads All Over the Site .
+
+> Example request:
+
+```bash
+curl -X GET \
+    -G "http://localhost/closor/public/admin/dashboard" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/closor/public/admin/dashboard"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (200):
+
+```json
+{
+    "workplaces_count": 19,
+    "products_count": 28,
+    "users_count": 32,
+    "leads_count": 86
+}
+```
+
+### HTTP Request
+`GET admin/dashboard`
+
+
+<!-- END_8a59594ff635c00027a130968fc47527 -->
+
+#1.2  Admin Moderator management
+
+
+Page Group To manage Moderator data For The Admin Control Panel .
+
+- View the moderator Data Ex. Name, Email & Phone .
+- Create New Moderators for the Site .
+- Edit an existing Moderators from the Edit Button .
+- Delete Moderators From the delete Button .
+
+<p><img src="images/admin/moderators/admin-moderator-management.png" width="100%"></p>
+<!-- START_42f1c137c1a4a3c3a7d1a98f743d76f7 -->
+## Moderators View Page
+
+<br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+Is An Admin-Panel Moderator Page That Views Moderators Data Info .
+
+<p><img src="images/admin/moderators/admin-moderator-view.png" width="100%"></p>
+
+> Example request:
+
+```bash
+curl -X GET \
+    -G "http://localhost/closor/public/admin/moderator" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/closor/public/admin/moderator"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (200):
+
+```json
+{
+    "id": 2,
+    "name": "Demo Mato",
+    "phone": 123456789,
+    "email": "test@demo.com",
+    "created_at": "2020-12-29 14:13:08",
+    "updated_at": "2020-12-29 14:13:08",
+    "role": 1
+}
+```
+
+### HTTP Request
+`GET admin/moderator`
+
+
+<!-- END_42f1c137c1a4a3c3a7d1a98f743d76f7 -->
+
+<!-- START_01b7e01eae0845434c2002e47bc1f035 -->
+## Moderator Create Page
+
+<br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+Is An Admin-Panel Moderator Page That Creates Moderators To Manage The Web Site Generally .
+
+<p><img src="images/admin/moderators/admin-moderator-create.png" width="100%"></p>
+
+> Example request:
+
+```bash
+curl -X GET \
+    -G "http://localhost/closor/public/admin/moderator/create" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"name":"demo","email":"test@demo.com","phone":123456789,"Zones":"Alex"}'
+
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/closor/public/admin/moderator/create"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "name": "demo",
+    "email": "test@demo.com",
+    "phone": 123456789,
+    "Zones": "Alex"
+}
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+    body: body
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (200):
+
+```json
+{
+    "id": 2,
+    "name": "Demo Mato",
+    "phone": 123456789,
+    "email": "test@demo.com",
+    "created_at": "2020-12-29 14:13:08",
+    "updated_at": "2020-12-29 14:13:08",
+    "role": 1
+}
+```
+
+### HTTP Request
+`GET admin/moderator/create`
+
+#### Body Parameters
+Parameter | Type | Status | Description
+--------- | ------- | ------- | ------- | -----------
+    `name` | string |  required  | The name of the user.
+        `email` | string |  required  | The email of the user.
+        `phone` | integer |  required  | The phone of the user.
+        `Zones` | string |  optional  | The Zone selected of the user.
+    
+<!-- END_01b7e01eae0845434c2002e47bc1f035 -->
+
+<!-- START_9ace67bf5a097be959593ac93ecddcc2 -->
+## Moderator Store Data
+
+<br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+Is An Admin-Panel Moderator Data Request That Stores Moderators Data To Database .
+
+<p><img src="images/admin/added-successfully.png" width="100%"></p>
+
+> Example request:
+
+```bash
+curl -X POST \
+    "http://localhost/closor/public/admin/moderator" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/closor/public/admin/moderator"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (200):
+
+```json
+{
+    "success": "Added Successfully"
+}
+```
+
+### HTTP Request
+`POST admin/moderator`
+
+
+<!-- END_9ace67bf5a097be959593ac93ecddcc2 -->
+
+<!-- START_2a667f53fed4f739b41ed0003a388271 -->
+## Moderator Edit Page
+
+<br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+Is An Admin-Panel Moderator Page That Edits Moderators To Manage The Web Site Generally .
+
+> Example request:
+
+```bash
+curl -X GET \
+    -G "http://localhost/closor/public/admin/moderator/1/edit" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"name":"demo .","email":"test@demo.com .","phone":123456789,"Zones":"Alex ."}'
+
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/closor/public/admin/moderator/1/edit"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "name": "demo .",
+    "email": "test@demo.com .",
+    "phone": 123456789,
+    "Zones": "Alex ."
+}
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+    body: body
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (200):
+
+```json
+{
+    "id": 2,
+    "name": "Demo Mato",
+    "phone": 123456789,
+    "email": "test@demo.com",
+    "created_at": "2020-12-29 14:13:08",
+    "updated_at": "2020-12-29 14:13:08",
+    "role": 1
+}
+```
+
+### HTTP Request
+`GET admin/moderator/{moderator}/edit`
+
+#### Body Parameters
+Parameter | Type | Status | Description
+--------- | ------- | ------- | ------- | -----------
+    `name` | string |  required  | The name of the user.
+        `email` | string |  required  | The email of the user.
+        `phone` | integer |  required  | The phone of the user.
+        `Zones` | string |  optional  | The Zone selected of the user.
+    
+<!-- END_2a667f53fed4f739b41ed0003a388271 -->
+
+<!-- START_9b6c2330037b0e5193fe78948e5e945c -->
+## Moderator Update Data
+
+<br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+Is An Admin-Panel Moderator Data Request That Updates Moderators Data To Database .
+
+<p><img src="images/admin/moderators/admin-moderator-update.png" width="100%"></p>
+<p><img src="images/admin/updated-successfully.png" width="100%"></p>
+
+> Example request:
+
+```bash
+curl -X PUT \
+    "http://localhost/closor/public/admin/moderator/1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/closor/public/admin/moderator/1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "PUT",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (200):
+
+```json
+{
+    "success": "Updated Successfully"
+}
+```
+
+### HTTP Request
+`PUT admin/moderator/{moderator}`
+
+`PATCH admin/moderator/{moderator}`
+
+
+<!-- END_9b6c2330037b0e5193fe78948e5e945c -->
+
+<!-- START_588e95fb6821fb070bbe71063ea23f26 -->
+## Moderator Delete Data
+
+<br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+Is An Admin-Panel Moderator Data Request That Delete Moderators Data To Database .
+
+<p><img src="images/admin/moderators/admin-moderator-delete.png" width="100%"></p>
+<p><img src="images/admin/deleted-successfully.png" width="100%"></p>
+
+> Example request:
+
+```bash
+curl -X DELETE \
+    "http://localhost/closor/public/admin/moderator/1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/closor/public/admin/moderator/1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "DELETE",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (200):
+
+```json
+{
+    "success": "Deleted Successfully"
+}
+```
+
+### HTTP Request
+`DELETE admin/moderator/{moderator}`
+
+
+<!-- END_588e95fb6821fb070bbe71063ea23f26 -->
+
+#1.3  Admin Users management
+
+
+Page Group To manage Users data For The Admin Control Panel .
+
+- View the User Data Ex. Name, Email & Phone etc.
+- Filter an existing Users from the Filter Form .
+- Manage Users From the Enable & Disable Button .
+
+<p><img src="images/admin/users/admin-user-view.png" width="100%"></p>
+<!-- START_bd487ab94d8034c2d13644bb1772fdfa -->
+## Users View Page
+
+<br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+Is An Admin-Panel User Page That Views users Data Info .
+
+Form Filter is used to filtering existing Users To get better results .
+
+<p><img src="images/admin/users/admin-user-filter.png" width="100%"></p>
+
+View users Data Info
+
+- View the User Data Ex. Name, Email & Phone etc.
+
+- Manage Users From the Enable & Disable Button .
+
+<p><img src="images/admin/users/admin-user-view.png" width="100%"></p>
+
+> Example request:
+
+```bash
+curl -X GET \
+    -G "http://localhost/closor/public/admin/user" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/closor/public/admin/user"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (200):
+
+```json
+{
+    "id": 1,
+    "name": "demo",
+    "phone": "01234567890",
+    "country_code": null,
+    "email": "test@demo.com",
+    "email_verified_at": null,
+    "created_at": "2020-01-26 16:26:56",
+    "updated_at": "2021-01-07 13:35:48",
+    "device_token": null,
+    "os": null,
+    "is_available": 1,
+    "products_count": 2,
+    "workplaces_count": 1,
+    "leads_count": 7
+}
+```
+
+### HTTP Request
+`GET admin/user`
+
+
+<!-- END_bd487ab94d8034c2d13644bb1772fdfa -->
+
+<!-- START_71dba47ec1215d1147a3f8e59c55751a -->
+## Users View Page
+
+<br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+Is An Admin-Panel User Page That Views users Data Info .
+
+Form Filter is used to filtering existing Users To get better results .
+
+<p><img src="images/admin/users/admin-user-filter.png" width="100%"></p>
+
+View users Data Info
+
+- View the User Data Ex. Name, Email & Phone etc.
+
+- Manage Users From the Enable & Disable Button .
+
+<p><img src="images/admin/users/admin-user-view.png" width="100%"></p>
+
+> Example request:
+
+```bash
+curl -X POST \
+    "http://localhost/closor/public/admin/user" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/closor/public/admin/user"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (200):
+
+```json
+{
+    "id": 1,
+    "name": "demo",
+    "phone": "01234567890",
+    "country_code": null,
+    "email": "test@demo.com",
+    "email_verified_at": null,
+    "created_at": "2020-01-26 16:26:56",
+    "updated_at": "2021-01-07 13:35:48",
+    "device_token": null,
+    "os": null,
+    "is_available": 1,
+    "products_count": 2,
+    "workplaces_count": 1,
+    "leads_count": 7
+}
+```
+
+### HTTP Request
+`POST admin/user`
+
+
+<!-- END_71dba47ec1215d1147a3f8e59c55751a -->
+
+<!-- START_9fa8fc1e020e7d36ccc1f3b8d7072309 -->
+## Manage Users From the Enable &amp; Disable Button
+
+<br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+<p><img src="images/admin/users/admin-user-enable.png" width="100%"></p>
+
+<p><img src="images/admin/updated-successfully.png" width="100%"></p>
+
+> Example request:
+
+```bash
+curl -X GET \
+    -G "http://localhost/closor/public/admin/user_available/1/1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/closor/public/admin/user_available/1/1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (200):
+
+```json
+{
+    "success": "Updated Successfully"
+}
+```
+
+### HTTP Request
+`GET admin/user_available/{user}/{is_available}`
+
+
+<!-- END_9fa8fc1e020e7d36ccc1f3b8d7072309 -->
+
+#1.4  Admin Zone management
+
+
+Page Group To manage Zone data For The Admin Control Panel .
+
+- View the Zone Data Ex. Name, Countries & MANAGE .
+- Create New Zones .
+- Edit an existing Zones from the Edit Button .
+- Delete Zones From the delete Button .
+
+<p><img src="images/admin/zones/admin-zones-view.PNG" width="100%"></p>
+<!-- START_64ec3c6c19150d0203cd3a9140836e11 -->
+## Zones View Page
+
+<br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+Is An Admin-Panel Zone Page That Views Zones Data Info .
+
+<p><img src="images/admin/zones/admin-zones-view.PNG" width="100%"></p>
+
+View Zones Data Info
+
+- View the Zone Data Ex. Name, Countries & MANAGE .
+- Create New Zones for the Site .
+- Edit an existing Zones from the Edit Button .
+- Delete Zones From the delete Button .
+
+> Example request:
+
+```bash
+curl -X GET \
+    -G "http://localhost/closor/public/admin/zone" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/closor/public/admin/zone"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (200):
+
+```json
+{
+    "id": 2,
+    "name": "Test",
+    "created_at": "2020-12-29 14:07:43",
+    "updated_at": "2020-12-29 14:07:43",
+    "countries": [
+        {
+            "id": 2,
+            "iso": "AL",
+            "name": "ALBANIA",
+            "nicename": "Albania",
+            "iso3": "ALB",
+            "numcode": 8,
+            "phonecode": 355,
+            "pivot": {
+                "zone_id": 2,
+                "country_id": 2
+            }
+        }
+    ]
+}
+```
+
+### HTTP Request
+`GET admin/zone`
+
+
+<!-- END_64ec3c6c19150d0203cd3a9140836e11 -->
+
+<!-- START_8aa920ff953d3d7b612986df862f0688 -->
+## Zone Create Page
+
+<br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+Is An Admin-Panel Zone Page That Creates Zones To Manage The Web Site Generally .
+
+<p><img src="images/admin/zones/admin-zones-create.PNG" width="100%"></p>
+
+> Example request:
+
+```bash
+curl -X GET \
+    -G "http://localhost/closor/public/admin/zone/create" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"name":"demo","Countries":"Alex"}'
+
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/closor/public/admin/zone/create"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "name": "demo",
+    "Countries": "Alex"
+}
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+    body: body
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (200):
+
+```json
+{
+    "id": 2,
+    "name": "Demo Mato",
+    "countries": "ALBANIA"
+}
+```
+
+### HTTP Request
+`GET admin/zone/create`
+
+#### Body Parameters
+Parameter | Type | Status | Description
+--------- | ------- | ------- | ------- | -----------
+    `name` | string |  required  | The name of the zone.
+        `Countries` | string |  required  | The Countries selected of the zone.
+    
+<!-- END_8aa920ff953d3d7b612986df862f0688 -->
+
+<!-- START_2a549bed4d631a624001ebb1533e1ccd -->
+## Zone Store Data
+
+<br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+Is An Admin-Panel Zone Data Request That Stores Zones Data To Database .
+
+<p><img src="images/admin/added-successfully.png" width="100%"></p>
+
+> Example request:
+
+```bash
+curl -X POST \
+    "http://localhost/closor/public/admin/zone" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/closor/public/admin/zone"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (200):
+
+```json
+{
+    "success": "Added Successfully"
+}
+```
+
+### HTTP Request
+`POST admin/zone`
+
+
+<!-- END_2a549bed4d631a624001ebb1533e1ccd -->
+
+<!-- START_5b2e7e6bea511d686076f055d3098619 -->
+## Zone Edit Page
+
+<br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+Is An Admin-Panel Zone Page That Edits Zones To Manage The Web Site Generally .
+
+<p><img src="images/admin/zones/admin-zones-edit.PNG" width="100%"></p>
+
+> Example request:
+
+```bash
+curl -X GET \
+    -G "http://localhost/closor/public/admin/zone/1/edit" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"name":"demo","Countries":"Alex"}'
+
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/closor/public/admin/zone/1/edit"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "name": "demo",
+    "Countries": "Alex"
+}
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+    body: body
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (200):
+
+```json
+{
+    "id": 2,
+    "name": "Demo",
+    "countries": "ALBANIA"
+}
+```
+
+### HTTP Request
+`GET admin/zone/{zone}/edit`
+
+#### Body Parameters
+Parameter | Type | Status | Description
+--------- | ------- | ------- | ------- | -----------
+    `name` | string |  required  | The name of the zone.
+        `Countries` | string |  required  | The Countries selected of the zone.
+    
+<!-- END_5b2e7e6bea511d686076f055d3098619 -->
+
+<!-- START_33fdf5c386ce71185ab081d19c5eec4b -->
+## Zone Update Data
+
+<br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+Is An Admin-Panel Zone Data Request That Updates Zones Data To Database .
+
+<p><img src="images/admin/zones/admin-zones-update.png" width="100%"></p>
+<p><img src="images/admin/updated-successfully.png" width="100%"></p>
+
+> Example request:
+
+```bash
+curl -X PUT \
+    "http://localhost/closor/public/admin/zone/1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/closor/public/admin/zone/1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "PUT",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (200):
+
+```json
+{
+    "success": "Updated Successfully"
+}
+```
+
+### HTTP Request
+`PUT admin/zone/{zone}`
+
+`PATCH admin/zone/{zone}`
+
+
+<!-- END_33fdf5c386ce71185ab081d19c5eec4b -->
+
+<!-- START_d9e5a24825aa831706830db3050287c3 -->
+## Zone Delete Data
+
+<br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+Is An Admin-Panel Zone Data Request That Delete Zones Data To Database .
+
+<p><img src="images/admin/zones/admin-zones-delete.png" width="100%"></p>
+
+<p><img src="images/admin/deleted-successfully.png" width="100%"></p>
+
+> Example request:
+
+```bash
+curl -X DELETE \
+    "http://localhost/closor/public/admin/zone/1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/closor/public/admin/zone/1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "DELETE",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (200):
+
+```json
+{
+    "success": "Deleted Successfully"
+}
+```
+
+### HTTP Request
+`DELETE admin/zone/{zone}`
+
+
+<!-- END_d9e5a24825aa831706830db3050287c3 -->
+
+#1.5  Admin Workplaces management
+
+
+Page Group To manage Workplaces data For The Admin Control Panel .
+
+- View the Workplaces Data Ex. Title, Count of Products & Created By etc .
+
+<p><img src="images/admin/workplaces/admin-workplaces-view.PNG" width="100%"></p>
+<!-- START_699bfa8985dd4a8445e6cd2dba6bd1ff -->
+## Workplaces View Page
+
+<br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+Is An Admin-Panel Workplace Page That Views Workplaces Data Info .
+
+Form Filter is used to filtering existing workplaces To get better results .
+
+<p><img src="images/admin/workplaces/admin-workplaces-filter.png" width="100%"></p>
+
+View Workplace Data Info
+
+- View the Workplace Data Ex. Title, Count of Products & Created By etc.
+
+<p><img src="images/admin/workplaces/admin-workplaces-view.png" width="100%"></p>
+
+> Example request:
+
+```bash
+curl -X GET \
+    -G "http://localhost/closor/public/admin/workplace" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/closor/public/admin/workplace"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (200):
+
+```json
+{
+    "id": 1,
+    "admin_id": 7,
+    "title": "Sherkat",
+    "created_at": "2020-02-14 23:08:32",
+    "updated_at": "2020-06-21 07:21:07",
+    "timezone": "Africa\/Cairo",
+    "website": null,
+    "startday": "Monday",
+    "products_count": 5,
+    "users_count": 5,
+    "leads_count": 12
+}
+```
+
+### HTTP Request
+`GET admin/workplace`
+
+
+<!-- END_699bfa8985dd4a8445e6cd2dba6bd1ff -->
+
+<!-- START_eb470148c94798707e89a20561b7c924 -->
+## Workplaces View Page
+
+<br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+Is An Admin-Panel Workplace Page That Views Workplaces Data Info .
+
+Form Filter is used to filtering existing workplaces To get better results .
+
+<p><img src="images/admin/workplaces/admin-workplaces-filter.png" width="100%"></p>
+
+View Workplace Data Info
+
+- View the Workplace Data Ex. Title, Count of Products & Created By etc.
+
+<p><img src="images/admin/workplaces/admin-workplaces-view.png" width="100%"></p>
+
+> Example request:
+
+```bash
+curl -X POST \
+    "http://localhost/closor/public/admin/workplace" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/closor/public/admin/workplace"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (200):
+
+```json
+{
+    "id": 1,
+    "admin_id": 7,
+    "title": "Sherkat",
+    "created_at": "2020-02-14 23:08:32",
+    "updated_at": "2020-06-21 07:21:07",
+    "timezone": "Africa\/Cairo",
+    "website": null,
+    "startday": "Monday",
+    "products_count": 5,
+    "users_count": 5,
+    "leads_count": 12
+}
+```
+
+### HTTP Request
+`POST admin/workplace`
+
+
+<!-- END_eb470148c94798707e89a20561b7c924 -->
+
+<!-- START_7f5c3cb4f0190a68ad56c43df0411e0e -->
+## Single Workplace Info View Page
+
+<br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+Is An Admin-Panel Page For Single Workplace That Views Workplace Data Info .
+
+- View Products For the Workplace .
+- View Products Count For the Single Workplace .
+- Every Product In the WorkPlace With its Stats Ex. Leads Source Name, Leads count, Contacted Leads Count & Team Names That Assigned to this Product .
+- Filter Search to go through every table data .
+
+<p><img src="images/admin/workplaces/admin-workplace-products.PNG" width="100%"></p>
+
+> Example request:
+
+```bash
+curl -X GET \
+    -G "http://localhost/closor/public/admin/workplace-info/1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/closor/public/admin/workplace-info/1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (200):
+
+```json
+{
+    "id": 1,
+    "admin_id": 7,
+    "title": "Sherkat",
+    "created_at": "2020-02-14 23:08:32",
+    "updated_at": "2020-06-21 07:21:07",
+    "timezone": "Africa\/Cairo",
+    "website": null,
+    "startday": "Monday",
+    "products_count": 5,
+    "users_count": 5,
+    "leads_count": 12
+}
+```
+
+### HTTP Request
+`GET admin/workplace-info/{workplace_id}`
+
+
+<!-- END_7f5c3cb4f0190a68ad56c43df0411e0e -->
+
+<!-- START_ad220b974b859e1602a3412dad2df202 -->
+## Single Workplace Team Info View Page
+
+<br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+Is An Admin-Panel Page Workplace Team That Views Workplaces Team Data Info That is assigned to the product to manage into the workplaces .
+
+- invite users with the invite button to manage the product that belongs to the workplace .
+<p><img src="images/admin/workplaces/admin-workplaces-invite.png" width="100%"></p>
+- counter users that invited to a certain product .
+<p><img src="images/admin/workplaces/admin-workplaces-counter.png" width="100%"></p>
+
+
+View Workplace Single Product Team Info & Roles
+
+- View the Workplace Single Product Team Info & Roles Ex. User Name, Products Names That Assigned to the user & User role, etc.
+
+<p><img src="images/admin/workplaces/admin-workplace-team.PNG" width="100%"></p>
+
+> Example request:
+
+```bash
+curl -X GET \
+    -G "http://localhost/closor/public/admin/1/team/1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/closor/public/admin/1/team/1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (200):
+
+```json
+{
+    "id": 7,
+    "name": "demo",
+    "phone": "0123456789",
+    "country_code": 20,
+    "email": "test@demo.com",
+    "email_verified_at": null,
+    "created_at": "2020-02-03 21:36:19",
+    "updated_at": "2020-12-09 01:46:55"
+}
+```
+
+### HTTP Request
+`GET admin/{workplace_id}/team/{product_id}`
+
+
+<!-- END_ad220b974b859e1602a3412dad2df202 -->
+
+#1.6  Admin Leads management
+
+
+Page Group To manage Leads data For The Admin Control Panel .
+
+- View the Leads Data Ex. Lead Name, Workplace Product belongs to & Product etc.
+- Filter an existing Leads from the Filter Form .
+- View Leads Stats the Qualified & Un Qualified Buttons .
+
+<p><img src="images/admin/leads/admin-leads-view.png" width="100%"></p>
 <!-- START_d73e5ecdb21a6038d8c7d5ab1b3bff01 -->
-## Display a listing of Leads.
+## Leads View Page
+
+<br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+Is An Admin-Panel Lead Page That Views leads Data Info .
+
+Form Filter is used to filtering existing leads To get better results .
+
+<p><img src="images/admin/leads/admin-leads-filter.png" width="100%"></p>
+
+View leads Data Info
+
+- View the Leads Data Ex. Lead Name, Workplace Product belongs to & Product etc.
+
+-View Leads Stats the Qualified & Un Qualified Buttons .
+
+<p><img src="images/admin/leads/admin-leads-view.png" width="100%"></p>
 
 > Example request:
 
@@ -60,115 +1371,20 @@ fetch(url, {
 ```json
 {
     "id": 1,
-    "name": "kareem222",
-    "product_id": 6,
-    "user_id": null,
-    "source_id": 9,
-    "phone": "1234567654",
-    "email": "kareemkima@gmail.com\r\n",
-    "scheduled_on": null,
-    "last_contact": null,
-    "status": 2,
-    "lead": [
-        {
-            "key": "name",
-            "value": "kareem222"
-        },
-        {
-            "key": "phone",
-            "value": "1234567654"
-        },
-        {
-            "key": "mobile",
-            "value": "22345678987654"
-        },
-        {
-            "key": "source",
-            "value": "Bottels Website Form"
-        },
-        {
-            "key": "product",
-            "value": "Product test"
-        }
-    ],
-    "created_at": "2020-02-23 04:10:22",
-    "updated_at": "2020-10-01 07:07:08",
-    "workplaces": {
-        "id": 6,
-        "admin_id": 2,
-        "title": "My work",
-        "created_at": "2020-02-20 04:39:36",
-        "updated_at": "2020-02-20 04:39:36",
-        "timezone": "Africa\/Cairo",
-        "website": null,
-        "startday": "Monday",
-        "laravel_through_key": 6,
-        "times": null,
-        "admin": {
-            "id": 2,
-            "name": "ahmed kamal",
-            "phone": "123456789",
-            "country_code": null,
-            "email": "kamal@gmail.com",
-            "email_verified_at": null,
-            "created_at": "2020-01-27 13:18:17",
-            "updated_at": "2020-12-28 15:23:53",
-            "device_token": null,
-            "os": null,
-            "is_available": 1
-        }
-    },
-    "product": {
-        "id": 6,
-        "workplace_id": 6,
-        "title": "Product test",
-        "created_at": "2020-02-20 04:40:06",
-        "updated_at": "2020-02-20 04:40:06"
-    },
-    "source": {
-        "id": 9,
-        "workplace_id": 8,
-        "user_id": 7,
-        "name": "Bottels Website Form",
-        "country_id": null,
-        "website": "https:\/\/popcorn.com",
-        "product_id": 11,
-        "widget_type": "text",
-        "alignment": "left",
-        "primary": "#34a853",
-        "secondary": "#ffffff",
-        "icon_type": "mdi mdi-phone fa-fw",
-        "bubble": "on",
-        "bubble_line_1": "Want to talk to an expert?",
-        "bubble_line_2": "Our Team is 60 Second Away From You!",
-        "bubble_bg_color": "#959a9e",
-        "bubble_text_color": "#ffffff",
-        "text_text": "Talk to sales expert now!",
-        "text_round": 10,
-        "fields": [
-            "name",
-            "email",
-            "custom1",
-            "custom2"
-        ],
-        "custom_lable_1": "Country",
-        "custom_lable_2": "Job Title",
-        "submitt_text": "Call\r\n Me Now",
-        "created_at": "2020-10-01 16:42:32",
-        "updated_at": "2020-10-01 16:42:32"
-    },
-    "user": null
+    "name": "demo",
+    "phone": "01234567890",
+    "country_code": null,
+    "email": "test@demo.com",
+    "email_verified_at": null,
+    "created_at": "2020-01-26 16:26:56",
+    "updated_at": "2021-01-07 13:35:48",
+    "device_token": null,
+    "os": null,
+    "is_available": 1,
+    "products_count": 2,
+    "workplaces_count": 1,
+    "leads_count": 7
 }
-```
-> Example response (404):
-
-```json
-null
-```
-> Example response (401):
-
-```json
-null
 ```
 
 ### HTTP Request
@@ -177,53 +1393,23 @@ null
 
 <!-- END_d73e5ecdb21a6038d8c7d5ab1b3bff01 -->
 
-<!-- START_f0d5be4b6535bdf6c5893c2d36c4b7a3 -->
-## Show the form for creating a new resource.
-
-> Example request:
-
-```bash
-curl -X GET \
-    -G "http://localhost/closor/public/admin/lead/create" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"
-```
-
-```javascript
-const url = new URL(
-    "http://localhost/closor/public/admin/lead/create"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-> Example response (401):
-
-```json
-{
-    "message": "Unauthenticated."
-}
-```
-
-### HTTP Request
-`GET admin/lead/create`
-
-
-<!-- END_f0d5be4b6535bdf6c5893c2d36c4b7a3 -->
-
 <!-- START_8c41b839307216344317ddb09df54c66 -->
-## Display a listing of Leads.
+## Leads View Page
+
+<br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+Is An Admin-Panel Lead Page That Views leads Data Info .
+
+Form Filter is used to filtering existing leads To get better results .
+
+<p><img src="images/admin/leads/admin-leads-filter.png" width="100%"></p>
+
+View leads Data Info
+
+- View the Leads Data Ex. Lead Name, Workplace Product belongs to & Product etc.
+
+-View Leads Stats the Qualified & Un Qualified Buttons .
+
+<p><img src="images/admin/leads/admin-leads-view.png" width="100%"></p>
 
 > Example request:
 
@@ -258,115 +1444,20 @@ fetch(url, {
 ```json
 {
     "id": 1,
-    "name": "kareem222",
-    "product_id": 6,
-    "user_id": null,
-    "source_id": 9,
-    "phone": "1234567654",
-    "email": "kareemkima@gmail.com\r\n",
-    "scheduled_on": null,
-    "last_contact": null,
-    "status": 2,
-    "lead": [
-        {
-            "key": "name",
-            "value": "kareem222"
-        },
-        {
-            "key": "phone",
-            "value": "1234567654"
-        },
-        {
-            "key": "mobile",
-            "value": "22345678987654"
-        },
-        {
-            "key": "source",
-            "value": "Bottels Website Form"
-        },
-        {
-            "key": "product",
-            "value": "Product test"
-        }
-    ],
-    "created_at": "2020-02-23 04:10:22",
-    "updated_at": "2020-10-01 07:07:08",
-    "workplaces": {
-        "id": 6,
-        "admin_id": 2,
-        "title": "My work",
-        "created_at": "2020-02-20 04:39:36",
-        "updated_at": "2020-02-20 04:39:36",
-        "timezone": "Africa\/Cairo",
-        "website": null,
-        "startday": "Monday",
-        "laravel_through_key": 6,
-        "times": null,
-        "admin": {
-            "id": 2,
-            "name": "ahmed kamal",
-            "phone": "123456789",
-            "country_code": null,
-            "email": "kamal@gmail.com",
-            "email_verified_at": null,
-            "created_at": "2020-01-27 13:18:17",
-            "updated_at": "2020-12-28 15:23:53",
-            "device_token": null,
-            "os": null,
-            "is_available": 1
-        }
-    },
-    "product": {
-        "id": 6,
-        "workplace_id": 6,
-        "title": "Product test",
-        "created_at": "2020-02-20 04:40:06",
-        "updated_at": "2020-02-20 04:40:06"
-    },
-    "source": {
-        "id": 9,
-        "workplace_id": 8,
-        "user_id": 7,
-        "name": "Bottels Website Form",
-        "country_id": null,
-        "website": "https:\/\/popcorn.com",
-        "product_id": 11,
-        "widget_type": "text",
-        "alignment": "left",
-        "primary": "#34a853",
-        "secondary": "#ffffff",
-        "icon_type": "mdi mdi-phone fa-fw",
-        "bubble": "on",
-        "bubble_line_1": "Want to talk to an expert?",
-        "bubble_line_2": "Our Team is 60 Second Away From You!",
-        "bubble_bg_color": "#959a9e",
-        "bubble_text_color": "#ffffff",
-        "text_text": "Talk to sales expert now!",
-        "text_round": 10,
-        "fields": [
-            "name",
-            "email",
-            "custom1",
-            "custom2"
-        ],
-        "custom_lable_1": "Country",
-        "custom_lable_2": "Job Title",
-        "submitt_text": "Call\r\n Me Now",
-        "created_at": "2020-10-01 16:42:32",
-        "updated_at": "2020-10-01 16:42:32"
-    },
-    "user": null
+    "name": "demo",
+    "phone": "01234567890",
+    "country_code": null,
+    "email": "test@demo.com",
+    "email_verified_at": null,
+    "created_at": "2020-01-26 16:26:56",
+    "updated_at": "2021-01-07 13:35:48",
+    "device_token": null,
+    "os": null,
+    "is_available": 1,
+    "products_count": 2,
+    "workplaces_count": 1,
+    "leads_count": 7
 }
-```
-> Example response (404):
-
-```json
-null
-```
-> Example response (401):
-
-```json
-null
 ```
 
 ### HTTP Request
@@ -376,7 +1467,18 @@ null
 <!-- END_8c41b839307216344317ddb09df54c66 -->
 
 <!-- START_20c4b3ef2d56086bd3394de6b0a721b8 -->
-## admin/lead/{lead}
+## Single Lead Info View Page
+
+<br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+Is An Admin-Panel Page For Single Lead That Views Lead Data Info .
+
+- View Products For the Lead .
+- View Products Count For the Single Lead .
+- Every Product In the Lead With its Stats Ex. Leads Source Name, Leads count, Contacted Leads Count & Team Names That Assigned to this Product .
+- Filter Search to go through every table data .
+
+<p><img src="images/admin/leads/admin-singlelead-view.PNG" width="100%"></p>
+
 > Example request:
 
 ```bash
@@ -405,11 +1507,29 @@ fetch(url, {
 ```
 
 
-> Example response (401):
+> Example response (200):
 
 ```json
 {
-    "message": "Unauthenticated."
+    "id": 9,
+    "workplace_id": 8,
+    "user_id": 7,
+    "name": "Bottels Website Form",
+    "country_id": null,
+    "website": "https:\/\/popcorn.com",
+    "product_id": 11,
+    "widget_type": "text",
+    "alignment": "left",
+    "primary": "#34a853",
+    "secondary": "#ffffff",
+    "icon_type": "mdi mdi-phone fa-fw",
+    "bubble": "on",
+    "bubble_line_1": "Want to talk to an expert?",
+    "bubble_line_2": "Our Team is 60 Second Away From You!",
+    "bubble_bg_color": "#959a9e",
+    "bubble_text_color": "#ffffff",
+    "text_text": "Talk to sales expert now!",
+    "text_round": 10
 }
 ```
 
@@ -419,1592 +1539,19 @@ fetch(url, {
 
 <!-- END_20c4b3ef2d56086bd3394de6b0a721b8 -->
 
-<!-- START_e30b1cdf6cb7c6b478375e473d00b6c3 -->
-## Show the form for editing the specified resource.
-
-> Example request:
-
-```bash
-curl -X GET \
-    -G "http://localhost/closor/public/admin/lead/1/edit" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"
-```
-
-```javascript
-const url = new URL(
-    "http://localhost/closor/public/admin/lead/1/edit"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-> Example response (401):
-
-```json
-{
-    "message": "Unauthenticated."
-}
-```
-
-### HTTP Request
-`GET admin/lead/{lead}/edit`
-
-
-<!-- END_e30b1cdf6cb7c6b478375e473d00b6c3 -->
-
-<!-- START_115a84479c20fc8f8e57d331e12f62ec -->
-## Update the specified resource in storage.
-
-> Example request:
-
-```bash
-curl -X PUT \
-    "http://localhost/closor/public/admin/lead/1" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"
-```
-
-```javascript
-const url = new URL(
-    "http://localhost/closor/public/admin/lead/1"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "PUT",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-
-### HTTP Request
-`PUT admin/lead/{lead}`
-
-`PATCH admin/lead/{lead}`
-
-
-<!-- END_115a84479c20fc8f8e57d331e12f62ec -->
-
-<!-- START_f19725379c56d42c4801533c7e0d62d4 -->
-## Remove the specified resource from storage.
-
-> Example request:
-
-```bash
-curl -X DELETE \
-    "http://localhost/closor/public/admin/lead/1" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"
-```
-
-```javascript
-const url = new URL(
-    "http://localhost/closor/public/admin/lead/1"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "DELETE",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-
-### HTTP Request
-`DELETE admin/lead/{lead}`
-
-
-<!-- END_f19725379c56d42c4801533c7e0d62d4 -->
-
-#Admin Login management
-
-
-Route for Login Admin & Moderator
-<!-- START_18f69092e65df23bcc6d9f57e4ca2662 -->
-## admin-login
-> Example request:
-
-```bash
-curl -X GET \
-    -G "http://localhost/closor/public/admin-login" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"
-```
-
-```javascript
-const url = new URL(
-    "http://localhost/closor/public/admin-login"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-> Example response (200):
-
-```json
-null
-```
-
-### HTTP Request
-`GET admin-login`
-
-
-<!-- END_18f69092e65df23bcc6d9f57e4ca2662 -->
-
-<!-- START_82dae795cbae227a0f1a48ab41923d78 -->
-## admin.login
-> Example request:
-
-```bash
-curl -X POST \
-    "http://localhost/closor/public/admin.login" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"
-```
-
-```javascript
-const url = new URL(
-    "http://localhost/closor/public/admin.login"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "POST",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-
-### HTTP Request
-`POST admin.login`
-
-
-<!-- END_82dae795cbae227a0f1a48ab41923d78 -->
-
-#Admin Moderator management
-
-
-Routes To manage Moderator data For The Admin Control Panal
-<!-- START_42f1c137c1a4a3c3a7d1a98f743d76f7 -->
-## admin/moderator
-> Example request:
-
-```bash
-curl -X GET \
-    -G "http://localhost/closor/public/admin/moderator" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"
-```
-
-```javascript
-const url = new URL(
-    "http://localhost/closor/public/admin/moderator"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-> Example response (401):
-
-```json
-{
-    "message": "Unauthenticated."
-}
-```
-
-### HTTP Request
-`GET admin/moderator`
-
-
-<!-- END_42f1c137c1a4a3c3a7d1a98f743d76f7 -->
-
-<!-- START_01b7e01eae0845434c2002e47bc1f035 -->
-## Show the form for creating a new resource.
-
-> Example request:
-
-```bash
-curl -X GET \
-    -G "http://localhost/closor/public/admin/moderator/create" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"
-```
-
-```javascript
-const url = new URL(
-    "http://localhost/closor/public/admin/moderator/create"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-> Example response (401):
-
-```json
-{
-    "message": "Unauthenticated."
-}
-```
-
-### HTTP Request
-`GET admin/moderator/create`
-
-
-<!-- END_01b7e01eae0845434c2002e47bc1f035 -->
-
-<!-- START_9ace67bf5a097be959593ac93ecddcc2 -->
-## Store a newly created resource in storage.
-
-> Example request:
-
-```bash
-curl -X POST \
-    "http://localhost/closor/public/admin/moderator" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"
-```
-
-```javascript
-const url = new URL(
-    "http://localhost/closor/public/admin/moderator"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "POST",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-
-### HTTP Request
-`POST admin/moderator`
-
-
-<!-- END_9ace67bf5a097be959593ac93ecddcc2 -->
-
-<!-- START_e756d12646498175ea50d61ab76d59b1 -->
-## Display the specified resource.
-
-> Example request:
-
-```bash
-curl -X GET \
-    -G "http://localhost/closor/public/admin/moderator/1" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"
-```
-
-```javascript
-const url = new URL(
-    "http://localhost/closor/public/admin/moderator/1"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-> Example response (401):
-
-```json
-{
-    "message": "Unauthenticated."
-}
-```
-
-### HTTP Request
-`GET admin/moderator/{moderator}`
-
-
-<!-- END_e756d12646498175ea50d61ab76d59b1 -->
-
-<!-- START_2a667f53fed4f739b41ed0003a388271 -->
-## Show the form for editing the specified resource.
-
-> Example request:
-
-```bash
-curl -X GET \
-    -G "http://localhost/closor/public/admin/moderator/1/edit" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"
-```
-
-```javascript
-const url = new URL(
-    "http://localhost/closor/public/admin/moderator/1/edit"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-> Example response (401):
-
-```json
-{
-    "message": "Unauthenticated."
-}
-```
-
-### HTTP Request
-`GET admin/moderator/{moderator}/edit`
-
-
-<!-- END_2a667f53fed4f739b41ed0003a388271 -->
-
-<!-- START_9b6c2330037b0e5193fe78948e5e945c -->
-## Update the specified resource in storage.
-
-> Example request:
-
-```bash
-curl -X PUT \
-    "http://localhost/closor/public/admin/moderator/1" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"
-```
-
-```javascript
-const url = new URL(
-    "http://localhost/closor/public/admin/moderator/1"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "PUT",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-
-### HTTP Request
-`PUT admin/moderator/{moderator}`
-
-`PATCH admin/moderator/{moderator}`
-
-
-<!-- END_9b6c2330037b0e5193fe78948e5e945c -->
-
-<!-- START_588e95fb6821fb070bbe71063ea23f26 -->
-## Remove the specified resource from storage.
-
-> Example request:
-
-```bash
-curl -X DELETE \
-    "http://localhost/closor/public/admin/moderator/1" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"
-```
-
-```javascript
-const url = new URL(
-    "http://localhost/closor/public/admin/moderator/1"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "DELETE",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-
-### HTTP Request
-`DELETE admin/moderator/{moderator}`
-
-
-<!-- END_588e95fb6821fb070bbe71063ea23f26 -->
-
-#Admin Users management
-
-
-
-Routes To manage Users data For The Admin Control Panal
-<!-- START_bd487ab94d8034c2d13644bb1772fdfa -->
-## admin/user
-> Example request:
-
-```bash
-curl -X GET \
-    -G "http://localhost/closor/public/admin/user" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"
-```
-
-```javascript
-const url = new URL(
-    "http://localhost/closor/public/admin/user"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-> Example response (401):
-
-```json
-{
-    "message": "Unauthenticated."
-}
-```
-
-### HTTP Request
-`GET admin/user`
-
-
-<!-- END_bd487ab94d8034c2d13644bb1772fdfa -->
-
-<!-- START_85482a73dd59bd3ef1adaab154cc5407 -->
-## Show the form for creating a new resource.
-
-> Example request:
-
-```bash
-curl -X GET \
-    -G "http://localhost/closor/public/admin/user/create" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"
-```
-
-```javascript
-const url = new URL(
-    "http://localhost/closor/public/admin/user/create"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-> Example response (401):
-
-```json
-{
-    "message": "Unauthenticated."
-}
-```
-
-### HTTP Request
-`GET admin/user/create`
-
-
-<!-- END_85482a73dd59bd3ef1adaab154cc5407 -->
-
-<!-- START_71dba47ec1215d1147a3f8e59c55751a -->
-## admin/user
-> Example request:
-
-```bash
-curl -X POST \
-    "http://localhost/closor/public/admin/user" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"
-```
-
-```javascript
-const url = new URL(
-    "http://localhost/closor/public/admin/user"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "POST",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-
-### HTTP Request
-`POST admin/user`
-
-
-<!-- END_71dba47ec1215d1147a3f8e59c55751a -->
-
-<!-- START_3b3de25d21f37e1748b345027c37ce73 -->
-## admin/user/{user}
-> Example request:
-
-```bash
-curl -X GET \
-    -G "http://localhost/closor/public/admin/user/1" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"
-```
-
-```javascript
-const url = new URL(
-    "http://localhost/closor/public/admin/user/1"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-> Example response (401):
-
-```json
-{
-    "message": "Unauthenticated."
-}
-```
-
-### HTTP Request
-`GET admin/user/{user}`
-
-
-<!-- END_3b3de25d21f37e1748b345027c37ce73 -->
-
-<!-- START_8dbd3c8dace74c8cc20dbdadc3a61eed -->
-## Show the form for editing the specified resource.
-
-> Example request:
-
-```bash
-curl -X GET \
-    -G "http://localhost/closor/public/admin/user/1/edit" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"
-```
-
-```javascript
-const url = new URL(
-    "http://localhost/closor/public/admin/user/1/edit"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-> Example response (401):
-
-```json
-{
-    "message": "Unauthenticated."
-}
-```
-
-### HTTP Request
-`GET admin/user/{user}/edit`
-
-
-<!-- END_8dbd3c8dace74c8cc20dbdadc3a61eed -->
-
-<!-- START_7bc8a51548d7c6e9ac5bc7dda1263ba7 -->
-## Update the specified resource in storage.
-
-> Example request:
-
-```bash
-curl -X PUT \
-    "http://localhost/closor/public/admin/user/1" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"
-```
-
-```javascript
-const url = new URL(
-    "http://localhost/closor/public/admin/user/1"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "PUT",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-
-### HTTP Request
-`PUT admin/user/{user}`
-
-`PATCH admin/user/{user}`
-
-
-<!-- END_7bc8a51548d7c6e9ac5bc7dda1263ba7 -->
-
-<!-- START_b8a25da15b804e04ecaa4bf05806041e -->
-## Remove the specified resource from storage.
-
-> Example request:
-
-```bash
-curl -X DELETE \
-    "http://localhost/closor/public/admin/user/1" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"
-```
-
-```javascript
-const url = new URL(
-    "http://localhost/closor/public/admin/user/1"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "DELETE",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-
-### HTTP Request
-`DELETE admin/user/{user}`
-
-
-<!-- END_b8a25da15b804e04ecaa4bf05806041e -->
-
-<!-- START_9fa8fc1e020e7d36ccc1f3b8d7072309 -->
-## admin/user_available/{user}/{is_available}
-> Example request:
-
-```bash
-curl -X GET \
-    -G "http://localhost/closor/public/admin/user_available/1/1" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"
-```
-
-```javascript
-const url = new URL(
-    "http://localhost/closor/public/admin/user_available/1/1"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-> Example response (401):
-
-```json
-{
-    "message": "Unauthenticated."
-}
-```
-
-### HTTP Request
-`GET admin/user_available/{user}/{is_available}`
-
-
-<!-- END_9fa8fc1e020e7d36ccc1f3b8d7072309 -->
-
-#Admin Workplaces management
-
-
-Routes To manage Workplaces data For The Admin Control Panal
-<!-- START_699bfa8985dd4a8445e6cd2dba6bd1ff -->
-## admin/workplace
-> Example request:
-
-```bash
-curl -X GET \
-    -G "http://localhost/closor/public/admin/workplace" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"
-```
-
-```javascript
-const url = new URL(
-    "http://localhost/closor/public/admin/workplace"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-> Example response (401):
-
-```json
-{
-    "message": "Unauthenticated."
-}
-```
-
-### HTTP Request
-`GET admin/workplace`
-
-
-<!-- END_699bfa8985dd4a8445e6cd2dba6bd1ff -->
-
-<!-- START_331b7b1d3313e84efe71645916a04f2c -->
-## Show the form for creating a new resource.
-
-> Example request:
-
-```bash
-curl -X GET \
-    -G "http://localhost/closor/public/admin/workplace/create" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"
-```
-
-```javascript
-const url = new URL(
-    "http://localhost/closor/public/admin/workplace/create"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-> Example response (401):
-
-```json
-{
-    "message": "Unauthenticated."
-}
-```
-
-### HTTP Request
-`GET admin/workplace/create`
-
-
-<!-- END_331b7b1d3313e84efe71645916a04f2c -->
-
-<!-- START_eb470148c94798707e89a20561b7c924 -->
-## admin/workplace
-> Example request:
-
-```bash
-curl -X POST \
-    "http://localhost/closor/public/admin/workplace" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"
-```
-
-```javascript
-const url = new URL(
-    "http://localhost/closor/public/admin/workplace"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "POST",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-
-### HTTP Request
-`POST admin/workplace`
-
-
-<!-- END_eb470148c94798707e89a20561b7c924 -->
-
-<!-- START_1f9db6ae6410b211303e81d922532776 -->
-## admin/workplace/{workplace}
-> Example request:
-
-```bash
-curl -X GET \
-    -G "http://localhost/closor/public/admin/workplace/1" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"
-```
-
-```javascript
-const url = new URL(
-    "http://localhost/closor/public/admin/workplace/1"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-> Example response (401):
-
-```json
-{
-    "message": "Unauthenticated."
-}
-```
-
-### HTTP Request
-`GET admin/workplace/{workplace}`
-
-
-<!-- END_1f9db6ae6410b211303e81d922532776 -->
-
-<!-- START_64df5128489927f75d76c6f8d85bb0d0 -->
-## Show the form for editing the specified resource.
-
-> Example request:
-
-```bash
-curl -X GET \
-    -G "http://localhost/closor/public/admin/workplace/1/edit" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"
-```
-
-```javascript
-const url = new URL(
-    "http://localhost/closor/public/admin/workplace/1/edit"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-> Example response (401):
-
-```json
-{
-    "message": "Unauthenticated."
-}
-```
-
-### HTTP Request
-`GET admin/workplace/{workplace}/edit`
-
-
-<!-- END_64df5128489927f75d76c6f8d85bb0d0 -->
-
-<!-- START_af0201434253e3126a740a2c61ed16e3 -->
-## Update the specified resource in storage.
-
-> Example request:
-
-```bash
-curl -X PUT \
-    "http://localhost/closor/public/admin/workplace/1" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"
-```
-
-```javascript
-const url = new URL(
-    "http://localhost/closor/public/admin/workplace/1"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "PUT",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-
-### HTTP Request
-`PUT admin/workplace/{workplace}`
-
-`PATCH admin/workplace/{workplace}`
-
-
-<!-- END_af0201434253e3126a740a2c61ed16e3 -->
-
-<!-- START_bd99cfdb0ae89be5b2f0810dd040ab12 -->
-## Remove the specified resource from storage.
-
-> Example request:
-
-```bash
-curl -X DELETE \
-    "http://localhost/closor/public/admin/workplace/1" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"
-```
-
-```javascript
-const url = new URL(
-    "http://localhost/closor/public/admin/workplace/1"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "DELETE",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-
-### HTTP Request
-`DELETE admin/workplace/{workplace}`
-
-
-<!-- END_bd99cfdb0ae89be5b2f0810dd040ab12 -->
-
-<!-- START_7f5c3cb4f0190a68ad56c43df0411e0e -->
-## admin/workplace-info/{workplace_id}
-> Example request:
-
-```bash
-curl -X GET \
-    -G "http://localhost/closor/public/admin/workplace-info/1" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"
-```
-
-```javascript
-const url = new URL(
-    "http://localhost/closor/public/admin/workplace-info/1"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-> Example response (401):
-
-```json
-{
-    "message": "Unauthenticated."
-}
-```
-
-### HTTP Request
-`GET admin/workplace-info/{workplace_id}`
-
-
-<!-- END_7f5c3cb4f0190a68ad56c43df0411e0e -->
-
-<!-- START_ad220b974b859e1602a3412dad2df202 -->
-## admin/{workplace_id}/team/{product_id}
-> Example request:
-
-```bash
-curl -X GET \
-    -G "http://localhost/closor/public/admin/1/team/1" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"
-```
-
-```javascript
-const url = new URL(
-    "http://localhost/closor/public/admin/1/team/1"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-> Example response (401):
-
-```json
-{
-    "message": "Unauthenticated."
-}
-```
-
-### HTTP Request
-`GET admin/{workplace_id}/team/{product_id}`
-
-
-<!-- END_ad220b974b859e1602a3412dad2df202 -->
-
-#Admin Zone management
-
-
-Routes To manage Zone data For The Admin Control Panal
-<!-- START_64ec3c6c19150d0203cd3a9140836e11 -->
-## admin/zone
-> Example request:
-
-```bash
-curl -X GET \
-    -G "http://localhost/closor/public/admin/zone" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"
-```
-
-```javascript
-const url = new URL(
-    "http://localhost/closor/public/admin/zone"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-> Example response (401):
-
-```json
-{
-    "message": "Unauthenticated."
-}
-```
-
-### HTTP Request
-`GET admin/zone`
-
-
-<!-- END_64ec3c6c19150d0203cd3a9140836e11 -->
-
-<!-- START_8aa920ff953d3d7b612986df862f0688 -->
-## Show the form for creating a new resource.
-
-> Example request:
-
-```bash
-curl -X GET \
-    -G "http://localhost/closor/public/admin/zone/create" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"
-```
-
-```javascript
-const url = new URL(
-    "http://localhost/closor/public/admin/zone/create"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-> Example response (401):
-
-```json
-{
-    "message": "Unauthenticated."
-}
-```
-
-### HTTP Request
-`GET admin/zone/create`
-
-
-<!-- END_8aa920ff953d3d7b612986df862f0688 -->
-
-<!-- START_2a549bed4d631a624001ebb1533e1ccd -->
-## Store a newly created resource in storage.
-
-> Example request:
-
-```bash
-curl -X POST \
-    "http://localhost/closor/public/admin/zone" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"
-```
-
-```javascript
-const url = new URL(
-    "http://localhost/closor/public/admin/zone"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "POST",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-
-### HTTP Request
-`POST admin/zone`
-
-
-<!-- END_2a549bed4d631a624001ebb1533e1ccd -->
-
-<!-- START_7fab55a1c29fa96e311cd6da3038e8bd -->
-## Display the specified resource.
-
-> Example request:
-
-```bash
-curl -X GET \
-    -G "http://localhost/closor/public/admin/zone/1" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"
-```
-
-```javascript
-const url = new URL(
-    "http://localhost/closor/public/admin/zone/1"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-> Example response (401):
-
-```json
-{
-    "message": "Unauthenticated."
-}
-```
-
-### HTTP Request
-`GET admin/zone/{zone}`
-
-
-<!-- END_7fab55a1c29fa96e311cd6da3038e8bd -->
-
-<!-- START_5b2e7e6bea511d686076f055d3098619 -->
-## Show the form for editing the specified resource.
-
-> Example request:
-
-```bash
-curl -X GET \
-    -G "http://localhost/closor/public/admin/zone/1/edit" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"
-```
-
-```javascript
-const url = new URL(
-    "http://localhost/closor/public/admin/zone/1/edit"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-> Example response (401):
-
-```json
-{
-    "message": "Unauthenticated."
-}
-```
-
-### HTTP Request
-`GET admin/zone/{zone}/edit`
-
-
-<!-- END_5b2e7e6bea511d686076f055d3098619 -->
-
-<!-- START_33fdf5c386ce71185ab081d19c5eec4b -->
-## Update the specified resource in storage.
-
-> Example request:
-
-```bash
-curl -X PUT \
-    "http://localhost/closor/public/admin/zone/1" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"
-```
-
-```javascript
-const url = new URL(
-    "http://localhost/closor/public/admin/zone/1"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "PUT",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-
-### HTTP Request
-`PUT admin/zone/{zone}`
-
-`PATCH admin/zone/{zone}`
-
-
-<!-- END_33fdf5c386ce71185ab081d19c5eec4b -->
-
-<!-- START_d9e5a24825aa831706830db3050287c3 -->
-## Remove the specified resource from storage.
-
-> Example request:
-
-```bash
-curl -X DELETE \
-    "http://localhost/closor/public/admin/zone/1" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"
-```
-
-```javascript
-const url = new URL(
-    "http://localhost/closor/public/admin/zone/1"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "DELETE",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-
-### HTTP Request
-`DELETE admin/zone/{zone}`
-
-
-<!-- END_d9e5a24825aa831706830db3050287c3 -->
-
-#Admin management
-
-
-
-Routes To manage Admin data For The Admin Control Panal
-<!-- START_8a59594ff635c00027a130968fc47527 -->
-## admin/dashboard
-> Example request:
-
-```bash
-curl -X GET \
-    -G "http://localhost/closor/public/admin/dashboard" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"
-```
-
-```javascript
-const url = new URL(
-    "http://localhost/closor/public/admin/dashboard"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-> Example response (401):
-
-```json
-{
-    "message": "Unauthenticated."
-}
-```
-
-### HTTP Request
-`GET admin/dashboard`
-
-
-<!-- END_8a59594ff635c00027a130968fc47527 -->
-
-#Ajax Request management
+#2.1  Ajax Request management
 
 
 Routes for managing Ajax Request for site
+
+- Get the country phone code .
+
+- Get the country data info .
 <!-- START_01e8e27813cb0bbdbd50865bdad2d538 -->
-## phoneCode/{code}
+## country phone code for site
+
+- Get the country phone code .
+
 > Example request:
 
 ```bash
@@ -2033,11 +1580,12 @@ fetch(url, {
 ```
 
 
-> Example response (500):
+> Example response (200):
 
 ```json
 {
-    "message": "Server Error"
+    "iso": "AL",
+    "name": "ALBANIA"
 }
 ```
 
@@ -2048,7 +1596,10 @@ fetch(url, {
 <!-- END_01e8e27813cb0bbdbd50865bdad2d538 -->
 
 <!-- START_1142f13834868f73270109636ff92df5 -->
-## isoCode/{code}
+## country data info for site
+
+- Get the country data info .
+
 > Example request:
 
 ```bash
@@ -2080,7 +1631,9 @@ fetch(url, {
 > Example response (200):
 
 ```json
-null
+{
+    "phonecode": 355
+}
 ```
 
 ### HTTP Request
@@ -2089,10 +1642,14 @@ null
 
 <!-- END_1142f13834868f73270109636ff92df5 -->
 
-#Home management
+#2.1  Home management
 
 
-Routes for managing general data for site
+Page Group To manage General data for site .
+
+- View the General Data & Routes.
+
+<p><img src="images/users/home/users-login-page.PNG" width="100%"></p>
 <!-- START_53be1e9e10a08458929a2e0ea70ddb86 -->
 ## Show the application dashboard.
 
@@ -2137,6 +1694,7 @@ null
 <!-- END_53be1e9e10a08458929a2e0ea70ddb86 -->
 <!-- START_b3e829637707a0c3ff670162febb23b9 -->
 ## check
+<br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
 > Example request:
 
 ```bash
@@ -2179,6 +1737,7 @@ null
 
 <!-- START_1662f672202588d8cba0b0bdcbe4de6e -->
 ## design
+<br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
 > Example request:
 
 ```bash
@@ -2223,6 +1782,7 @@ fetch(url, {
 
 <!-- START_62e8dd9f1911aba4a2520fd5a6010e6d -->
 ## widgetView/{id}
+<br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
 > Example request:
 
 ```bash
@@ -2263,1186 +1823,11 @@ null
 
 <!-- END_62e8dd9f1911aba4a2520fd5a6010e6d -->
 
-#Lead Sources management
+#2.2  Users management
 
 
-Routes To manage Lead Sources data For The Manager Control Panal
-<!-- START_afe861116942da8827f905c42d93c7cd -->
-## Display a listing of the resource.
 
-> Example request:
-
-```bash
-curl -X GET \
-    -G "http://localhost/closor/public/sources" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"
-```
-
-```javascript
-const url = new URL(
-    "http://localhost/closor/public/sources"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-> Example response (500):
-
-```json
-{
-    "message": "Server Error"
-}
-```
-
-### HTTP Request
-`GET sources`
-
-
-<!-- END_afe861116942da8827f905c42d93c7cd -->
-
-<!-- START_6525a24380d6f0fc3d9199bdb70d8ead -->
-## Show the form for creating a new resource.
-
-> Example request:
-
-```bash
-curl -X GET \
-    -G "http://localhost/closor/public/sources/create" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"
-```
-
-```javascript
-const url = new URL(
-    "http://localhost/closor/public/sources/create"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-> Example response (500):
-
-```json
-{
-    "message": "Server Error"
-}
-```
-
-### HTTP Request
-`GET sources/create`
-
-
-<!-- END_6525a24380d6f0fc3d9199bdb70d8ead -->
-
-<!-- START_1d134c058a66ac2dd612ccd654972569 -->
-## Store a newly created resource in storage.
-
-> Example request:
-
-```bash
-curl -X POST \
-    "http://localhost/closor/public/sources" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"
-```
-
-```javascript
-const url = new URL(
-    "http://localhost/closor/public/sources"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "POST",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-
-### HTTP Request
-`POST sources`
-
-
-<!-- END_1d134c058a66ac2dd612ccd654972569 -->
-
-<!-- START_35fe2adef26023dfdca2618eb9aa11cc -->
-## Display the specified resource.
-
-> Example request:
-
-```bash
-curl -X GET \
-    -G "http://localhost/closor/public/sources/1" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"
-```
-
-```javascript
-const url = new URL(
-    "http://localhost/closor/public/sources/1"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-
-### HTTP Request
-`GET sources/{source}`
-
-
-<!-- END_35fe2adef26023dfdca2618eb9aa11cc -->
-
-<!-- START_8982bffebd0eaf02ce61568a0017882e -->
-## Show the form for editing the specified resource.
-
-> Example request:
-
-```bash
-curl -X GET \
-    -G "http://localhost/closor/public/sources/1/edit" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"
-```
-
-```javascript
-const url = new URL(
-    "http://localhost/closor/public/sources/1/edit"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-> Example response (500):
-
-```json
-{
-    "message": "Server Error"
-}
-```
-
-### HTTP Request
-`GET sources/{source}/edit`
-
-
-<!-- END_8982bffebd0eaf02ce61568a0017882e -->
-
-<!-- START_cc29ce8491095a2f9a53e0b9749b6273 -->
-## Update the specified resource in storage.
-
-> Example request:
-
-```bash
-curl -X PUT \
-    "http://localhost/closor/public/sources/1" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"
-```
-
-```javascript
-const url = new URL(
-    "http://localhost/closor/public/sources/1"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "PUT",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-
-### HTTP Request
-`PUT sources/{source}`
-
-`PATCH sources/{source}`
-
-
-<!-- END_cc29ce8491095a2f9a53e0b9749b6273 -->
-
-<!-- START_9c88b622b1245a5da5089e7994e6eccd -->
-## Remove the specified resource from storage.
-
-> Example request:
-
-```bash
-curl -X DELETE \
-    "http://localhost/closor/public/sources/1" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"
-```
-
-```javascript
-const url = new URL(
-    "http://localhost/closor/public/sources/1"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "DELETE",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-
-### HTTP Request
-`DELETE sources/{source}`
-
-
-<!-- END_9c88b622b1245a5da5089e7994e6eccd -->
-
-#Login management
-
-
-Route for Login Users
-<!-- START_66e08d3cc8222573018fed49e121e96d -->
-## Show the application&#039;s login form.
-
-> Example request:
-
-```bash
-curl -X GET \
-    -G "http://localhost/closor/public/login" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"
-```
-
-```javascript
-const url = new URL(
-    "http://localhost/closor/public/login"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-> Example response (200):
-
-```json
-null
-```
-
-### HTTP Request
-`GET login`
-
-
-<!-- END_66e08d3cc8222573018fed49e121e96d -->
-
-<!-- START_ba35aa39474cb98cfb31829e70eb8b74 -->
-## Handle a login request to the application.
-
-> Example request:
-
-```bash
-curl -X POST \
-    "http://localhost/closor/public/login" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"
-```
-
-```javascript
-const url = new URL(
-    "http://localhost/closor/public/login"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "POST",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-
-### HTTP Request
-`POST login`
-
-
-<!-- END_ba35aa39474cb98cfb31829e70eb8b74 -->
-
-<!-- START_e65925f23b9bc6b93d9356895f29f80c -->
-## Log the user out of the application.
-
-> Example request:
-
-```bash
-curl -X POST \
-    "http://localhost/closor/public/logout" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"
-```
-
-```javascript
-const url = new URL(
-    "http://localhost/closor/public/logout"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "POST",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-
-### HTTP Request
-`POST logout`
-
-
-<!-- END_e65925f23b9bc6b93d9356895f29f80c -->
-
-<!-- START_dc44652b722af6abcc3925ae84bdee69 -->
-## Create a new controller instance.
-
-> Example request:
-
-```bash
-curl -X GET \
-    -G "http://localhost/closor/public/first" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"
-```
-
-```javascript
-const url = new URL(
-    "http://localhost/closor/public/first"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-> Example response (302):
-
-```json
-null
-```
-
-### HTTP Request
-`GET first`
-
-`POST first`
-
-`PUT first`
-
-`PATCH first`
-
-`DELETE first`
-
-`OPTIONS first`
-
-
-<!-- END_dc44652b722af6abcc3925ae84bdee69 -->
-
-#Manager Leads management
-
-
-Routes To manage Leads data For The Manager Control Panal
-<!-- START_374cfeb27ba1670c869a004f31d8f828 -->
-## Display a listing of the resource.
-
-> Example request:
-
-```bash
-curl -X GET \
-    -G "http://localhost/closor/public/leads" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"
-```
-
-```javascript
-const url = new URL(
-    "http://localhost/closor/public/leads"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-> Example response (200):
-
-```json
-null
-```
-
-### HTTP Request
-`GET leads`
-
-
-<!-- END_374cfeb27ba1670c869a004f31d8f828 -->
-
-<!-- START_afa4466f98b9aabba06588f178216996 -->
-## Show the form for creating a new resource.
-
-> Example request:
-
-```bash
-curl -X GET \
-    -G "http://localhost/closor/public/leads/create" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"
-```
-
-```javascript
-const url = new URL(
-    "http://localhost/closor/public/leads/create"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-> Example response (401):
-
-```json
-{
-    "message": "Unauthenticated."
-}
-```
-
-### HTTP Request
-`GET leads/create`
-
-
-<!-- END_afa4466f98b9aabba06588f178216996 -->
-
-<!-- START_e27d419ecd767880269a31b5b88f149d -->
-## Display a listing of the resource.
-
-> Example request:
-
-```bash
-curl -X POST \
-    "http://localhost/closor/public/leads" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"
-```
-
-```javascript
-const url = new URL(
-    "http://localhost/closor/public/leads"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "POST",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-> Example response (200):
-
-```json
-null
-```
-
-### HTTP Request
-`POST leads`
-
-
-<!-- END_e27d419ecd767880269a31b5b88f149d -->
-
-<!-- START_8bfb6ab02f276fc606969dfede92597f -->
-## leads/{lead}
-> Example request:
-
-```bash
-curl -X GET \
-    -G "http://localhost/closor/public/leads/1" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"
-```
-
-```javascript
-const url = new URL(
-    "http://localhost/closor/public/leads/1"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-> Example response (401):
-
-```json
-{
-    "message": "Unauthenticated."
-}
-```
-
-### HTTP Request
-`GET leads/{lead}`
-
-
-<!-- END_8bfb6ab02f276fc606969dfede92597f -->
-
-<!-- START_768db20e2d420f5da80b1ab65bc75cd0 -->
-## Show the form for editing the specified resource.
-
-> Example request:
-
-```bash
-curl -X GET \
-    -G "http://localhost/closor/public/leads/1/edit" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"
-```
-
-```javascript
-const url = new URL(
-    "http://localhost/closor/public/leads/1/edit"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-> Example response (401):
-
-```json
-{
-    "message": "Unauthenticated."
-}
-```
-
-### HTTP Request
-`GET leads/{lead}/edit`
-
-
-<!-- END_768db20e2d420f5da80b1ab65bc75cd0 -->
-
-<!-- START_f16c73a0fc51e0ee0c91be9031fba0f9 -->
-## Update the specified resource in storage.
-
-> Example request:
-
-```bash
-curl -X PUT \
-    "http://localhost/closor/public/leads/1" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"
-```
-
-```javascript
-const url = new URL(
-    "http://localhost/closor/public/leads/1"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "PUT",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-
-### HTTP Request
-`PUT leads/{lead}`
-
-`PATCH leads/{lead}`
-
-
-<!-- END_f16c73a0fc51e0ee0c91be9031fba0f9 -->
-
-<!-- START_591151aff4db46db789a3f5554bd497e -->
-## Remove the specified resource from storage.
-
-> Example request:
-
-```bash
-curl -X DELETE \
-    "http://localhost/closor/public/leads/1" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"
-```
-
-```javascript
-const url = new URL(
-    "http://localhost/closor/public/leads/1"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "DELETE",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-
-### HTTP Request
-`DELETE leads/{lead}`
-
-
-<!-- END_591151aff4db46db789a3f5554bd497e -->
-
-#Product Widget management
-
-
-Routes To manage Product Widget View data For Leads
-<!-- START_6d0c9b8cc536e9a9ff2cd34e09735f19 -->
-## widget/{id}
-> Example request:
-
-```bash
-curl -X GET \
-    -G "http://localhost/closor/public/widget/1" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"
-```
-
-```javascript
-const url = new URL(
-    "http://localhost/closor/public/widget/1"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-> Example response (200):
-
-```json
-null
-```
-
-### HTTP Request
-`GET widget/{id}`
-
-
-<!-- END_6d0c9b8cc536e9a9ff2cd34e09735f19 -->
-
-<!-- START_a4fca1cb337722b58ae6367668979b88 -->
-## widgetView/widget
-> Example request:
-
-```bash
-curl -X POST \
-    "http://localhost/closor/public/widgetView/widget" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"
-```
-
-```javascript
-const url = new URL(
-    "http://localhost/closor/public/widgetView/widget"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "POST",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-
-### HTTP Request
-`POST widgetView/widget`
-
-
-<!-- END_a4fca1cb337722b58ae6367668979b88 -->
-
-#Register management
-
-
-Route for Register Users
-<!-- START_ff38dfb1bd1bb7e1aa24b4e1792a9768 -->
-## Show the application registration form.
-
-> Example request:
-
-```bash
-curl -X GET \
-    -G "http://localhost/closor/public/register" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"
-```
-
-```javascript
-const url = new URL(
-    "http://localhost/closor/public/register"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-> Example response (200):
-
-```json
-null
-```
-
-### HTTP Request
-`GET register`
-
-
-<!-- END_ff38dfb1bd1bb7e1aa24b4e1792a9768 -->
-
-<!-- START_d7aad7b5ac127700500280d511a3db01 -->
-## Create a new user instance after a valid registration.
-
-> Example request:
-
-```bash
-curl -X POST \
-    "http://localhost/closor/public/register" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"
-```
-
-```javascript
-const url = new URL(
-    "http://localhost/closor/public/register"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "POST",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-
-### HTTP Request
-`POST register`
-
-
-<!-- END_d7aad7b5ac127700500280d511a3db01 -->
-
-<!-- START_1dbcdf4354aee512432e2c97f2f678e8 -->
-## login2
-> Example request:
-
-```bash
-curl -X GET \
-    -G "http://localhost/closor/public/login2" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"
-```
-
-```javascript
-const url = new URL(
-    "http://localhost/closor/public/login2"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-
-### HTTP Request
-`GET login2`
-
-`POST login2`
-
-`PUT login2`
-
-`PATCH login2`
-
-`DELETE login2`
-
-`OPTIONS login2`
-
-
-<!-- END_1dbcdf4354aee512432e2c97f2f678e8 -->
-
-#User management
-
-
-APIs for managing users
-<!-- START_c3fa189a6c95ca36ad6ac4791a873d23 -->
-## api/login
-> Example request:
-
-```bash
-curl -X POST \
-    "http://localhost/closor/public/api/login" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"
-```
-
-```javascript
-const url = new URL(
-    "http://localhost/closor/public/api/login"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "POST",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-
-### HTTP Request
-`POST api/login`
-
-
-<!-- END_c3fa189a6c95ca36ad6ac4791a873d23 -->
-
-<!-- START_ea980f00fb009965aa3dd5f562337404 -->
-## api/login1
-> Example request:
-
-```bash
-curl -X POST \
-    "http://localhost/closor/public/api/login1" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"
-```
-
-```javascript
-const url = new URL(
-    "http://localhost/closor/public/api/login1"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "POST",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-
-### HTTP Request
-`POST api/login1`
-
-
-<!-- END_ea980f00fb009965aa3dd5f562337404 -->
-
-<!-- START_bdd2d0f4f2c3e0f3a53ecef15732db78 -->
-## api/login2
-> Example request:
-
-```bash
-curl -X POST \
-    "http://localhost/closor/public/api/login2" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"
-```
-
-```javascript
-const url = new URL(
-    "http://localhost/closor/public/api/login2"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "POST",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-
-### HTTP Request
-`POST api/login2`
-
-
-<!-- END_bdd2d0f4f2c3e0f3a53ecef15732db78 -->
-
-<!-- START_8f90011138117fdccfc791cf91d0a65b -->
-## api/update_profile
-> Example request:
-
-```bash
-curl -X POST \
-    "http://localhost/closor/public/api/update_profile" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"
-```
-
-```javascript
-const url = new URL(
-    "http://localhost/closor/public/api/update_profile"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "POST",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-
-### HTTP Request
-`POST api/update_profile`
-
-
-<!-- END_8f90011138117fdccfc791cf91d0a65b -->
-
-<!-- START_c6ffcc473f819c15d8ee9f636eed9343 -->
-## api/change_is_available
-> Example request:
-
-```bash
-curl -X POST \
-    "http://localhost/closor/public/api/change_is_available" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"
-```
-
-```javascript
-const url = new URL(
-    "http://localhost/closor/public/api/change_is_available"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "POST",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-
-### HTTP Request
-`POST api/change_is_available`
-
-
-<!-- END_c6ffcc473f819c15d8ee9f636eed9343 -->
-
-#Users management
-
-
-
-Routes To manage Users data For The Manager Control Panal
+Routes To manage Users data For The Manager Control Panel
 <!-- START_47f7fbb6bf98ef4cdc54b10f03cb3bdd -->
 ## Display a listing of the resource.
 
@@ -3783,10 +2168,654 @@ fetch(url, {
 
 <!-- END_30059a09ef3f0284c40e4d06962ce08d -->
 
-#WorkPlace Products management
+#2.3  Workplaces management
 
 
-Routes To manage WorkPlace Products data For The Manager Control Panal
+Routes To manage Workplaces data For The Manager Control Panel
+<!-- START_498136219ce762889e3ffd73765b9003 -->
+## workplace
+> Example request:
+
+```bash
+curl -X GET \
+    -G "http://localhost/closor/public/workplace" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/closor/public/workplace"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (401):
+
+```json
+{
+    "message": "Unauthenticated."
+}
+```
+
+### HTTP Request
+`GET workplace`
+
+
+<!-- END_498136219ce762889e3ffd73765b9003 -->
+
+<!-- START_9e2e44622c4b535a411370f0e12f3e1b -->
+## Show the form for creating a new resource.
+
+> Example request:
+
+```bash
+curl -X GET \
+    -G "http://localhost/closor/public/workplace/create" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/closor/public/workplace/create"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (401):
+
+```json
+{
+    "message": "Unauthenticated."
+}
+```
+
+### HTTP Request
+`GET workplace/create`
+
+
+<!-- END_9e2e44622c4b535a411370f0e12f3e1b -->
+
+<!-- START_3fc9a606a4188179a352baefb2070a4f -->
+## Store a newly created resource in storage.
+
+> Example request:
+
+```bash
+curl -X POST \
+    "http://localhost/closor/public/workplace" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/closor/public/workplace"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+
+### HTTP Request
+`POST workplace`
+
+
+<!-- END_3fc9a606a4188179a352baefb2070a4f -->
+
+<!-- START_55b4223b6d5c3dae76077fa642c07a2d -->
+## Display the specified resource.
+
+> Example request:
+
+```bash
+curl -X GET \
+    -G "http://localhost/closor/public/workplace/1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/closor/public/workplace/1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (401):
+
+```json
+{
+    "message": "Unauthenticated."
+}
+```
+
+### HTTP Request
+`GET workplace/{workplace}`
+
+
+<!-- END_55b4223b6d5c3dae76077fa642c07a2d -->
+
+<!-- START_5f73cc8376a24ab4ac6b7536a76479ee -->
+## Show the form for editing the specified resource.
+
+> Example request:
+
+```bash
+curl -X GET \
+    -G "http://localhost/closor/public/workplace/1/edit" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/closor/public/workplace/1/edit"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (401):
+
+```json
+{
+    "message": "Unauthenticated."
+}
+```
+
+### HTTP Request
+`GET workplace/{workplace}/edit`
+
+
+<!-- END_5f73cc8376a24ab4ac6b7536a76479ee -->
+
+<!-- START_75c66c346528f43f48c1da31f07d0f2b -->
+## Update the specified resource in storage.
+
+> Example request:
+
+```bash
+curl -X PUT \
+    "http://localhost/closor/public/workplace/1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/closor/public/workplace/1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "PUT",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+
+### HTTP Request
+`PUT workplace/{workplace}`
+
+`PATCH workplace/{workplace}`
+
+
+<!-- END_75c66c346528f43f48c1da31f07d0f2b -->
+
+<!-- START_8017da6c5d0ba10a95b74891659b71d7 -->
+## Remove the specified resource from storage.
+
+> Example request:
+
+```bash
+curl -X DELETE \
+    "http://localhost/closor/public/workplace/1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/closor/public/workplace/1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "DELETE",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+
+### HTTP Request
+`DELETE workplace/{workplace}`
+
+
+<!-- END_8017da6c5d0ba10a95b74891659b71d7 -->
+
+<!-- START_4707187567e347e9f9b62fa54857eb58 -->
+## invited_workplaces
+> Example request:
+
+```bash
+curl -X GET \
+    -G "http://localhost/closor/public/invited_workplaces" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/closor/public/invited_workplaces"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (401):
+
+```json
+{
+    "message": "Unauthenticated."
+}
+```
+
+### HTTP Request
+`GET invited_workplaces`
+
+
+<!-- END_4707187567e347e9f9b62fa54857eb58 -->
+
+<!-- START_2d7929f290ae72d939e89b7e232cdffb -->
+## user_workplaces
+> Example request:
+
+```bash
+curl -X GET \
+    -G "http://localhost/closor/public/user_workplaces" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/closor/public/user_workplaces"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (401):
+
+```json
+{
+    "message": "Unauthenticated."
+}
+```
+
+### HTTP Request
+`GET user_workplaces`
+
+
+<!-- END_2d7929f290ae72d939e89b7e232cdffb -->
+
+<!-- START_46c3c689207155a26adf42e4d5418a3f -->
+## {workplace_id}/team
+> Example request:
+
+```bash
+curl -X GET \
+    -G "http://localhost/closor/public/1/team" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/closor/public/1/team"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (401):
+
+```json
+{
+    "message": "Unauthenticated."
+}
+```
+
+### HTTP Request
+`GET {workplace_id}/team`
+
+
+<!-- END_46c3c689207155a26adf42e4d5418a3f -->
+
+<!-- START_c88f787d4d34968e9bf2bfe32466e5f2 -->
+## {workplace_id}/team/{product_id}
+> Example request:
+
+```bash
+curl -X GET \
+    -G "http://localhost/closor/public/1/team/1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/closor/public/1/team/1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (401):
+
+```json
+{
+    "message": "Unauthenticated."
+}
+```
+
+### HTTP Request
+`GET {workplace_id}/team/{product_id}`
+
+
+<!-- END_c88f787d4d34968e9bf2bfe32466e5f2 -->
+
+<!-- START_b770a79f5f0514009c815eaca6b27451 -->
+## edit_user_role
+> Example request:
+
+```bash
+curl -X POST \
+    "http://localhost/closor/public/edit_user_role" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/closor/public/edit_user_role"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+
+### HTTP Request
+`POST edit_user_role`
+
+
+<!-- END_b770a79f5f0514009c815eaca6b27451 -->
+
+<!-- START_81b98dce40509745c38b0ea8d41364a4 -->
+## remove_user_from_workspace/{user_id}/{workplace_id}
+> Example request:
+
+```bash
+curl -X GET \
+    -G "http://localhost/closor/public/remove_user_from_workspace/1/1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/closor/public/remove_user_from_workspace/1/1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (401):
+
+```json
+{
+    "message": "Unauthenticated."
+}
+```
+
+### HTTP Request
+`GET remove_user_from_workspace/{user_id}/{workplace_id}`
+
+
+<!-- END_81b98dce40509745c38b0ea8d41364a4 -->
+
+<!-- START_7cdf1186f200d47090bfdffb41f52e72 -->
+## active_user_in_workspace/{status}/{user_id}/{workplace_id}
+> Example request:
+
+```bash
+curl -X GET \
+    -G "http://localhost/closor/public/active_user_in_workspace/1/1/1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/closor/public/active_user_in_workspace/1/1/1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (401):
+
+```json
+{
+    "message": "Unauthenticated."
+}
+```
+
+### HTTP Request
+`GET active_user_in_workspace/{status}/{user_id}/{workplace_id}`
+
+
+<!-- END_7cdf1186f200d47090bfdffb41f52e72 -->
+
+<!-- START_9df3cc4d44958b41b6e119ee5744a74f -->
+## invite/{workplace}
+> Example request:
+
+```bash
+curl -X GET \
+    -G "http://localhost/closor/public/invite/1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/closor/public/invite/1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (401):
+
+```json
+{
+    "message": "Unauthenticated."
+}
+```
+
+### HTTP Request
+`GET invite/{workplace}`
+
+
+<!-- END_9df3cc4d44958b41b6e119ee5744a74f -->
+
+#2.4  WorkPlace Products management
+
+
+Routes To manage WorkPlace Products data For The Manager Control Panel
 <!-- START_b63c55c4bd1dca269829c5efb74328c8 -->
 ## product
 > Example request:
@@ -4319,7 +3348,874 @@ fetch(url, {
 
 <!-- END_7a139cf107f19ae9163446ce5ae22ee0 -->
 
-#Workplaces management
+#2.5  Lead Sources management
+
+
+Routes To manage Lead Sources data For The Manager Control Panel
+<!-- START_afe861116942da8827f905c42d93c7cd -->
+## Display a listing of the resource.
+
+> Example request:
+
+```bash
+curl -X GET \
+    -G "http://localhost/closor/public/sources" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/closor/public/sources"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (500):
+
+```json
+{
+    "message": "Server Error"
+}
+```
+
+### HTTP Request
+`GET sources`
+
+
+<!-- END_afe861116942da8827f905c42d93c7cd -->
+
+<!-- START_6525a24380d6f0fc3d9199bdb70d8ead -->
+## Show the form for creating a new resource.
+
+> Example request:
+
+```bash
+curl -X GET \
+    -G "http://localhost/closor/public/sources/create" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/closor/public/sources/create"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (500):
+
+```json
+{
+    "message": "Server Error"
+}
+```
+
+### HTTP Request
+`GET sources/create`
+
+
+<!-- END_6525a24380d6f0fc3d9199bdb70d8ead -->
+
+<!-- START_1d134c058a66ac2dd612ccd654972569 -->
+## Store a newly created resource in storage.
+
+> Example request:
+
+```bash
+curl -X POST \
+    "http://localhost/closor/public/sources" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/closor/public/sources"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+
+### HTTP Request
+`POST sources`
+
+
+<!-- END_1d134c058a66ac2dd612ccd654972569 -->
+
+<!-- START_35fe2adef26023dfdca2618eb9aa11cc -->
+## Display the specified resource.
+
+> Example request:
+
+```bash
+curl -X GET \
+    -G "http://localhost/closor/public/sources/1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/closor/public/sources/1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+
+### HTTP Request
+`GET sources/{source}`
+
+
+<!-- END_35fe2adef26023dfdca2618eb9aa11cc -->
+
+<!-- START_8982bffebd0eaf02ce61568a0017882e -->
+## Show the form for editing the specified resource.
+
+> Example request:
+
+```bash
+curl -X GET \
+    -G "http://localhost/closor/public/sources/1/edit" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/closor/public/sources/1/edit"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (500):
+
+```json
+{
+    "message": "Server Error"
+}
+```
+
+### HTTP Request
+`GET sources/{source}/edit`
+
+
+<!-- END_8982bffebd0eaf02ce61568a0017882e -->
+
+<!-- START_cc29ce8491095a2f9a53e0b9749b6273 -->
+## Update the specified resource in storage.
+
+> Example request:
+
+```bash
+curl -X PUT \
+    "http://localhost/closor/public/sources/1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/closor/public/sources/1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "PUT",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+
+### HTTP Request
+`PUT sources/{source}`
+
+`PATCH sources/{source}`
+
+
+<!-- END_cc29ce8491095a2f9a53e0b9749b6273 -->
+
+<!-- START_9c88b622b1245a5da5089e7994e6eccd -->
+## Remove the specified resource from storage.
+
+> Example request:
+
+```bash
+curl -X DELETE \
+    "http://localhost/closor/public/sources/1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/closor/public/sources/1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "DELETE",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+
+### HTTP Request
+`DELETE sources/{source}`
+
+
+<!-- END_9c88b622b1245a5da5089e7994e6eccd -->
+
+#2.6  Manager Leads management
+
+
+Routes To manage Leads data For The Manager Control Panel
+<!-- START_374cfeb27ba1670c869a004f31d8f828 -->
+## Display a listing of the resource.
+
+> Example request:
+
+```bash
+curl -X GET \
+    -G "http://localhost/closor/public/leads" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/closor/public/leads"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (200):
+
+```json
+null
+```
+
+### HTTP Request
+`GET leads`
+
+
+<!-- END_374cfeb27ba1670c869a004f31d8f828 -->
+
+<!-- START_afa4466f98b9aabba06588f178216996 -->
+## Show the form for creating a new resource.
+
+> Example request:
+
+```bash
+curl -X GET \
+    -G "http://localhost/closor/public/leads/create" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/closor/public/leads/create"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (401):
+
+```json
+{
+    "message": "Unauthenticated."
+}
+```
+
+### HTTP Request
+`GET leads/create`
+
+
+<!-- END_afa4466f98b9aabba06588f178216996 -->
+
+<!-- START_e27d419ecd767880269a31b5b88f149d -->
+## Display a listing of the resource.
+
+> Example request:
+
+```bash
+curl -X POST \
+    "http://localhost/closor/public/leads" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/closor/public/leads"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (200):
+
+```json
+null
+```
+
+### HTTP Request
+`POST leads`
+
+
+<!-- END_e27d419ecd767880269a31b5b88f149d -->
+
+<!-- START_8bfb6ab02f276fc606969dfede92597f -->
+## leads/{lead}
+> Example request:
+
+```bash
+curl -X GET \
+    -G "http://localhost/closor/public/leads/1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/closor/public/leads/1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (401):
+
+```json
+{
+    "message": "Unauthenticated."
+}
+```
+
+### HTTP Request
+`GET leads/{lead}`
+
+
+<!-- END_8bfb6ab02f276fc606969dfede92597f -->
+
+<!-- START_768db20e2d420f5da80b1ab65bc75cd0 -->
+## Show the form for editing the specified resource.
+
+> Example request:
+
+```bash
+curl -X GET \
+    -G "http://localhost/closor/public/leads/1/edit" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/closor/public/leads/1/edit"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (401):
+
+```json
+{
+    "message": "Unauthenticated."
+}
+```
+
+### HTTP Request
+`GET leads/{lead}/edit`
+
+
+<!-- END_768db20e2d420f5da80b1ab65bc75cd0 -->
+
+<!-- START_f16c73a0fc51e0ee0c91be9031fba0f9 -->
+## Update the specified resource in storage.
+
+> Example request:
+
+```bash
+curl -X PUT \
+    "http://localhost/closor/public/leads/1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/closor/public/leads/1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "PUT",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+
+### HTTP Request
+`PUT leads/{lead}`
+
+`PATCH leads/{lead}`
+
+
+<!-- END_f16c73a0fc51e0ee0c91be9031fba0f9 -->
+
+<!-- START_591151aff4db46db789a3f5554bd497e -->
+## Remove the specified resource from storage.
+
+> Example request:
+
+```bash
+curl -X DELETE \
+    "http://localhost/closor/public/leads/1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/closor/public/leads/1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "DELETE",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+
+### HTTP Request
+`DELETE leads/{lead}`
+
+
+<!-- END_591151aff4db46db789a3f5554bd497e -->
+
+#2.7  Product Widget management
+
+
+Routes To manage Product Widget View data For Leads
+<!-- START_6d0c9b8cc536e9a9ff2cd34e09735f19 -->
+## widget/{id}
+> Example request:
+
+```bash
+curl -X GET \
+    -G "http://localhost/closor/public/widget/1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/closor/public/widget/1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (200):
+
+```json
+null
+```
+
+### HTTP Request
+`GET widget/{id}`
+
+
+<!-- END_6d0c9b8cc536e9a9ff2cd34e09735f19 -->
+
+<!-- START_a4fca1cb337722b58ae6367668979b88 -->
+## widgetView/widget
+> Example request:
+
+```bash
+curl -X POST \
+    "http://localhost/closor/public/widgetView/widget" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/closor/public/widgetView/widget"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+
+### HTTP Request
+`POST widgetView/widget`
+
+
+<!-- END_a4fca1cb337722b58ae6367668979b88 -->
+
+#3.1  APIs User management
+
+
+APIs for managing users
+<!-- START_c3fa189a6c95ca36ad6ac4791a873d23 -->
+## api/login
+> Example request:
+
+```bash
+curl -X POST \
+    "http://localhost/closor/public/api/login" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/closor/public/api/login"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+
+### HTTP Request
+`POST api/login`
+
+
+<!-- END_c3fa189a6c95ca36ad6ac4791a873d23 -->
+
+<!-- START_ea980f00fb009965aa3dd5f562337404 -->
+## api/login1
+> Example request:
+
+```bash
+curl -X POST \
+    "http://localhost/closor/public/api/login1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/closor/public/api/login1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+
+### HTTP Request
+`POST api/login1`
+
+
+<!-- END_ea980f00fb009965aa3dd5f562337404 -->
+
+<!-- START_bdd2d0f4f2c3e0f3a53ecef15732db78 -->
+## api/login2
+> Example request:
+
+```bash
+curl -X POST \
+    "http://localhost/closor/public/api/login2" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/closor/public/api/login2"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+
+### HTTP Request
+`POST api/login2`
+
+
+<!-- END_bdd2d0f4f2c3e0f3a53ecef15732db78 -->
+
+<!-- START_8f90011138117fdccfc791cf91d0a65b -->
+## api/update_profile
+> Example request:
+
+```bash
+curl -X POST \
+    "http://localhost/closor/public/api/update_profile" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/closor/public/api/update_profile"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+
+### HTTP Request
+`POST api/update_profile`
+
+
+<!-- END_8f90011138117fdccfc791cf91d0a65b -->
+
+<!-- START_c6ffcc473f819c15d8ee9f636eed9343 -->
+## api/change_is_available
+> Example request:
+
+```bash
+curl -X POST \
+    "http://localhost/closor/public/api/change_is_available" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/closor/public/api/change_is_available"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+
+### HTTP Request
+`POST api/change_is_available`
+
+
+<!-- END_c6ffcc473f819c15d8ee9f636eed9343 -->
+
+#3.2  APIs Workplaces management
 
 
 APIs for managing Workplaces
@@ -4494,10 +4390,10 @@ fetch(url, {
                 "email": "a7medkamal775@gmail.com",
                 "email_verified_at": null,
                 "created_at": "2020-01-26 16:26:56",
-                "updated_at": "2020-12-28 18:27:48",
+                "updated_at": "2021-01-07 14:07:05",
                 "device_token": null,
                 "os": null,
-                "is_available": 1
+                "is_available": 0
             }
         },
         {
@@ -8359,10 +8255,10 @@ fetch(url, {
                 "email": "a7medkamal775@gmail.com",
                 "email_verified_at": null,
                 "created_at": "2020-01-26 16:26:56",
-                "updated_at": "2020-12-28 18:27:48",
+                "updated_at": "2021-01-07 14:07:05",
                 "device_token": null,
                 "os": null,
-                "is_available": 1
+                "is_available": 0
             }
         },
         {
@@ -8719,10 +8615,10 @@ fetch(url, {
                 "email": "a7medkamal775@gmail.com",
                 "email_verified_at": null,
                 "created_at": "2020-01-26 16:26:56",
-                "updated_at": "2020-12-28 18:27:48",
+                "updated_at": "2021-01-07 14:07:05",
                 "device_token": null,
                 "os": null,
-                "is_available": 1
+                "is_available": 0
             }
         },
         {
@@ -9071,10 +8967,10 @@ fetch(url, {
                 "email": "a7medkamal775@gmail.com",
                 "email_verified_at": null,
                 "created_at": "2020-01-26 16:26:56",
-                "updated_at": "2020-12-28 18:27:48",
+                "updated_at": "2021-01-07 14:07:05",
                 "device_token": null,
                 "os": null,
-                "is_available": 1
+                "is_available": 0
             }
         },
         {
@@ -9455,10 +9351,10 @@ fetch(url, {
                 "email": "a7medkamal775@gmail.com",
                 "email_verified_at": null,
                 "created_at": "2020-01-26 16:26:56",
-                "updated_at": "2020-12-28 18:27:48",
+                "updated_at": "2021-01-07 14:07:05",
                 "device_token": null,
                 "os": null,
-                "is_available": 1
+                "is_available": 0
             }
         },
         {
@@ -10171,10 +10067,10 @@ fetch(url, {
                 "email": "a7medkamal775@gmail.com",
                 "email_verified_at": null,
                 "created_at": "2020-01-26 16:26:56",
-                "updated_at": "2020-12-28 18:27:48",
+                "updated_at": "2021-01-07 14:07:05",
                 "device_token": null,
                 "os": null,
-                "is_available": 1
+                "is_available": 0
             }
         },
         {
@@ -10249,10 +10145,10 @@ fetch(url, {
                 "email": "a7medkamal775@gmail.com",
                 "email_verified_at": null,
                 "created_at": "2020-01-26 16:26:56",
-                "updated_at": "2020-12-28 18:27:48",
+                "updated_at": "2021-01-07 14:07:05",
                 "device_token": null,
                 "os": null,
-                "is_available": 1
+                "is_available": 0
             }
         },
         {
@@ -10483,10 +10379,10 @@ fetch(url, {
                 "email": "a7medkamal775@gmail.com",
                 "email_verified_at": null,
                 "created_at": "2020-01-26 16:26:56",
-                "updated_at": "2020-12-28 18:27:48",
+                "updated_at": "2021-01-07 14:07:05",
                 "device_token": null,
                 "os": null,
-                "is_available": 1
+                "is_available": 0
             }
         },
         {
@@ -13219,10 +13115,10 @@ fetch(url, {
                 "email": "a7medkamal775@gmail.com",
                 "email_verified_at": null,
                 "created_at": "2020-01-26 16:26:56",
-                "updated_at": "2020-12-28 18:27:48",
+                "updated_at": "2021-01-07 14:07:05",
                 "device_token": null,
                 "os": null,
-                "is_available": 1
+                "is_available": 0
             }
         },
         {
@@ -13301,10 +13197,10 @@ fetch(url, {
                 "email": "a7medkamal775@gmail.com",
                 "email_verified_at": null,
                 "created_at": "2020-01-26 16:26:56",
-                "updated_at": "2020-12-28 18:27:48",
+                "updated_at": "2021-01-07 14:07:05",
                 "device_token": null,
                 "os": null,
-                "is_available": 1
+                "is_available": 0
             }
         },
         {
@@ -13399,10 +13295,10 @@ fetch(url, {
                 "email": "a7medkamal775@gmail.com",
                 "email_verified_at": null,
                 "created_at": "2020-01-26 16:26:56",
-                "updated_at": "2020-12-28 18:27:48",
+                "updated_at": "2021-01-07 14:07:05",
                 "device_token": null,
                 "os": null,
-                "is_available": 1
+                "is_available": 0
             }
         },
         {
@@ -13497,10 +13393,10 @@ fetch(url, {
                 "email": "a7medkamal775@gmail.com",
                 "email_verified_at": null,
                 "created_at": "2020-01-26 16:26:56",
-                "updated_at": "2020-12-28 18:27:48",
+                "updated_at": "2021-01-07 14:07:05",
                 "device_token": null,
                 "os": null,
-                "is_available": 1
+                "is_available": 0
             }
         },
         {
@@ -13577,10 +13473,10 @@ fetch(url, {
                 "email": "a7medkamal775@gmail.com",
                 "email_verified_at": null,
                 "created_at": "2020-01-26 16:26:56",
-                "updated_at": "2020-12-28 18:27:48",
+                "updated_at": "2021-01-07 14:07:05",
                 "device_token": null,
                 "os": null,
-                "is_available": 1
+                "is_available": 0
             }
         },
         {
@@ -13657,10 +13553,10 @@ fetch(url, {
                 "email": "a7medkamal775@gmail.com",
                 "email_verified_at": null,
                 "created_at": "2020-01-26 16:26:56",
-                "updated_at": "2020-12-28 18:27:48",
+                "updated_at": "2021-01-07 14:07:05",
                 "device_token": null,
                 "os": null,
-                "is_available": 1
+                "is_available": 0
             }
         },
         {
@@ -13737,10 +13633,10 @@ fetch(url, {
                 "email": "a7medkamal775@gmail.com",
                 "email_verified_at": null,
                 "created_at": "2020-01-26 16:26:56",
-                "updated_at": "2020-12-28 18:27:48",
+                "updated_at": "2021-01-07 14:07:05",
                 "device_token": null,
                 "os": null,
-                "is_available": 1
+                "is_available": 0
             }
         }
     ]
@@ -13864,20 +13760,24 @@ fetch(url, {
 
 <!-- END_df70b272cf915016a1ca96cbc14c2b09 -->
 
-<!-- START_498136219ce762889e3ffd73765b9003 -->
-## workplace
+#Admin Login management
+
+
+Route for Login Admin & Moderator
+<!-- START_18f69092e65df23bcc6d9f57e4ca2662 -->
+## admin-login
 > Example request:
 
 ```bash
 curl -X GET \
-    -G "http://localhost/closor/public/workplace" \
+    -G "http://localhost/closor/public/admin-login" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/closor/public/workplace"
+    "http://localhost/closor/public/admin-login"
 );
 
 let headers = {
@@ -13894,80 +13794,32 @@ fetch(url, {
 ```
 
 
-> Example response (401):
+> Example response (200):
 
 ```json
-{
-    "message": "Unauthenticated."
-}
+null
 ```
 
 ### HTTP Request
-`GET workplace`
+`GET admin-login`
 
 
-<!-- END_498136219ce762889e3ffd73765b9003 -->
+<!-- END_18f69092e65df23bcc6d9f57e4ca2662 -->
 
-<!-- START_9e2e44622c4b535a411370f0e12f3e1b -->
-## Show the form for creating a new resource.
-
-> Example request:
-
-```bash
-curl -X GET \
-    -G "http://localhost/closor/public/workplace/create" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"
-```
-
-```javascript
-const url = new URL(
-    "http://localhost/closor/public/workplace/create"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-> Example response (401):
-
-```json
-{
-    "message": "Unauthenticated."
-}
-```
-
-### HTTP Request
-`GET workplace/create`
-
-
-<!-- END_9e2e44622c4b535a411370f0e12f3e1b -->
-
-<!-- START_3fc9a606a4188179a352baefb2070a4f -->
-## Store a newly created resource in storage.
-
+<!-- START_82dae795cbae227a0f1a48ab41923d78 -->
+## admin.login
 > Example request:
 
 ```bash
 curl -X POST \
-    "http://localhost/closor/public/workplace" \
+    "http://localhost/closor/public/admin.login" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/closor/public/workplace"
+    "http://localhost/closor/public/admin.login"
 );
 
 let headers = {
@@ -13986,26 +13838,30 @@ fetch(url, {
 
 
 ### HTTP Request
-`POST workplace`
+`POST admin.login`
 
 
-<!-- END_3fc9a606a4188179a352baefb2070a4f -->
+<!-- END_82dae795cbae227a0f1a48ab41923d78 -->
 
-<!-- START_55b4223b6d5c3dae76077fa642c07a2d -->
-## Display the specified resource.
+#Login management
+
+
+Route for Login Users
+<!-- START_66e08d3cc8222573018fed49e121e96d -->
+## Show the application&#039;s login form.
 
 > Example request:
 
 ```bash
 curl -X GET \
-    -G "http://localhost/closor/public/workplace/1" \
+    -G "http://localhost/closor/public/login" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/closor/public/workplace/1"
+    "http://localhost/closor/public/login"
 );
 
 let headers = {
@@ -14022,333 +13878,33 @@ fetch(url, {
 ```
 
 
-> Example response (401):
+> Example response (200):
 
 ```json
-{
-    "message": "Unauthenticated."
-}
+null
 ```
 
 ### HTTP Request
-`GET workplace/{workplace}`
+`GET login`
 
 
-<!-- END_55b4223b6d5c3dae76077fa642c07a2d -->
+<!-- END_66e08d3cc8222573018fed49e121e96d -->
 
-<!-- START_5f73cc8376a24ab4ac6b7536a76479ee -->
-## Show the form for editing the specified resource.
+<!-- START_ba35aa39474cb98cfb31829e70eb8b74 -->
+## Handle a login request to the application.
 
-> Example request:
-
-```bash
-curl -X GET \
-    -G "http://localhost/closor/public/workplace/1/edit" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"
-```
-
-```javascript
-const url = new URL(
-    "http://localhost/closor/public/workplace/1/edit"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-> Example response (401):
-
-```json
-{
-    "message": "Unauthenticated."
-}
-```
-
-### HTTP Request
-`GET workplace/{workplace}/edit`
-
-
-<!-- END_5f73cc8376a24ab4ac6b7536a76479ee -->
-
-<!-- START_75c66c346528f43f48c1da31f07d0f2b -->
-## Update the specified resource in storage.
-
-> Example request:
-
-```bash
-curl -X PUT \
-    "http://localhost/closor/public/workplace/1" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"
-```
-
-```javascript
-const url = new URL(
-    "http://localhost/closor/public/workplace/1"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "PUT",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-
-### HTTP Request
-`PUT workplace/{workplace}`
-
-`PATCH workplace/{workplace}`
-
-
-<!-- END_75c66c346528f43f48c1da31f07d0f2b -->
-
-<!-- START_8017da6c5d0ba10a95b74891659b71d7 -->
-## Remove the specified resource from storage.
-
-> Example request:
-
-```bash
-curl -X DELETE \
-    "http://localhost/closor/public/workplace/1" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"
-```
-
-```javascript
-const url = new URL(
-    "http://localhost/closor/public/workplace/1"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "DELETE",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-
-### HTTP Request
-`DELETE workplace/{workplace}`
-
-
-<!-- END_8017da6c5d0ba10a95b74891659b71d7 -->
-
-<!-- START_4707187567e347e9f9b62fa54857eb58 -->
-## invited_workplaces
-> Example request:
-
-```bash
-curl -X GET \
-    -G "http://localhost/closor/public/invited_workplaces" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"
-```
-
-```javascript
-const url = new URL(
-    "http://localhost/closor/public/invited_workplaces"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-> Example response (401):
-
-```json
-{
-    "message": "Unauthenticated."
-}
-```
-
-### HTTP Request
-`GET invited_workplaces`
-
-
-<!-- END_4707187567e347e9f9b62fa54857eb58 -->
-
-<!-- START_2d7929f290ae72d939e89b7e232cdffb -->
-## user_workplaces
-> Example request:
-
-```bash
-curl -X GET \
-    -G "http://localhost/closor/public/user_workplaces" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"
-```
-
-```javascript
-const url = new URL(
-    "http://localhost/closor/public/user_workplaces"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-> Example response (401):
-
-```json
-{
-    "message": "Unauthenticated."
-}
-```
-
-### HTTP Request
-`GET user_workplaces`
-
-
-<!-- END_2d7929f290ae72d939e89b7e232cdffb -->
-
-<!-- START_46c3c689207155a26adf42e4d5418a3f -->
-## {workplace_id}/team
-> Example request:
-
-```bash
-curl -X GET \
-    -G "http://localhost/closor/public/1/team" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"
-```
-
-```javascript
-const url = new URL(
-    "http://localhost/closor/public/1/team"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-> Example response (401):
-
-```json
-{
-    "message": "Unauthenticated."
-}
-```
-
-### HTTP Request
-`GET {workplace_id}/team`
-
-
-<!-- END_46c3c689207155a26adf42e4d5418a3f -->
-
-<!-- START_c88f787d4d34968e9bf2bfe32466e5f2 -->
-## {workplace_id}/team/{product_id}
-> Example request:
-
-```bash
-curl -X GET \
-    -G "http://localhost/closor/public/1/team/1" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"
-```
-
-```javascript
-const url = new URL(
-    "http://localhost/closor/public/1/team/1"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-> Example response (401):
-
-```json
-{
-    "message": "Unauthenticated."
-}
-```
-
-### HTTP Request
-`GET {workplace_id}/team/{product_id}`
-
-
-<!-- END_c88f787d4d34968e9bf2bfe32466e5f2 -->
-
-<!-- START_b770a79f5f0514009c815eaca6b27451 -->
-## edit_user_role
 > Example request:
 
 ```bash
 curl -X POST \
-    "http://localhost/closor/public/edit_user_role" \
+    "http://localhost/closor/public/login" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/closor/public/edit_user_role"
+    "http://localhost/closor/public/login"
 );
 
 let headers = {
@@ -14367,25 +13923,64 @@ fetch(url, {
 
 
 ### HTTP Request
-`POST edit_user_role`
+`POST login`
 
 
-<!-- END_b770a79f5f0514009c815eaca6b27451 -->
+<!-- END_ba35aa39474cb98cfb31829e70eb8b74 -->
 
-<!-- START_81b98dce40509745c38b0ea8d41364a4 -->
-## remove_user_from_workspace/{user_id}/{workplace_id}
+<!-- START_e65925f23b9bc6b93d9356895f29f80c -->
+## Log the user out of the application.
+
 > Example request:
 
 ```bash
-curl -X GET \
-    -G "http://localhost/closor/public/remove_user_from_workspace/1/1" \
+curl -X POST \
+    "http://localhost/closor/public/logout" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/closor/public/remove_user_from_workspace/1/1"
+    "http://localhost/closor/public/logout"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+
+### HTTP Request
+`POST logout`
+
+
+<!-- END_e65925f23b9bc6b93d9356895f29f80c -->
+
+<!-- START_dc44652b722af6abcc3925ae84bdee69 -->
+## Create a new controller instance.
+
+> Example request:
+
+```bash
+curl -X GET \
+    -G "http://localhost/closor/public/first" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/closor/public/first"
 );
 
 let headers = {
@@ -14402,34 +13997,47 @@ fetch(url, {
 ```
 
 
-> Example response (401):
+> Example response (302):
 
 ```json
-{
-    "message": "Unauthenticated."
-}
+null
 ```
 
 ### HTTP Request
-`GET remove_user_from_workspace/{user_id}/{workplace_id}`
+`GET first`
+
+`POST first`
+
+`PUT first`
+
+`PATCH first`
+
+`DELETE first`
+
+`OPTIONS first`
 
 
-<!-- END_81b98dce40509745c38b0ea8d41364a4 -->
+<!-- END_dc44652b722af6abcc3925ae84bdee69 -->
 
-<!-- START_7cdf1186f200d47090bfdffb41f52e72 -->
-## active_user_in_workspace/{status}/{user_id}/{workplace_id}
+#Register management
+
+
+Route for Register Users
+<!-- START_ff38dfb1bd1bb7e1aa24b4e1792a9768 -->
+## Show the application registration form.
+
 > Example request:
 
 ```bash
 curl -X GET \
-    -G "http://localhost/closor/public/active_user_in_workspace/1/1/1" \
+    -G "http://localhost/closor/public/register" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/closor/public/active_user_in_workspace/1/1/1"
+    "http://localhost/closor/public/register"
 );
 
 let headers = {
@@ -14446,34 +14054,70 @@ fetch(url, {
 ```
 
 
-> Example response (401):
+> Example response (200):
 
 ```json
-{
-    "message": "Unauthenticated."
-}
+null
 ```
 
 ### HTTP Request
-`GET active_user_in_workspace/{status}/{user_id}/{workplace_id}`
+`GET register`
 
 
-<!-- END_7cdf1186f200d47090bfdffb41f52e72 -->
+<!-- END_ff38dfb1bd1bb7e1aa24b4e1792a9768 -->
 
-<!-- START_9df3cc4d44958b41b6e119ee5744a74f -->
-## invite/{workplace}
+<!-- START_d7aad7b5ac127700500280d511a3db01 -->
+## Create a new user instance after a valid registration.
+
 > Example request:
 
 ```bash
-curl -X GET \
-    -G "http://localhost/closor/public/invite/1" \
+curl -X POST \
+    "http://localhost/closor/public/register" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/closor/public/invite/1"
+    "http://localhost/closor/public/register"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+
+### HTTP Request
+`POST register`
+
+
+<!-- END_d7aad7b5ac127700500280d511a3db01 -->
+
+<!-- START_1dbcdf4354aee512432e2c97f2f678e8 -->
+## login2
+> Example request:
+
+```bash
+curl -X GET \
+    -G "http://localhost/closor/public/login2" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/closor/public/login2"
 );
 
 let headers = {
@@ -14490,19 +14134,22 @@ fetch(url, {
 ```
 
 
-> Example response (401):
-
-```json
-{
-    "message": "Unauthenticated."
-}
-```
 
 ### HTTP Request
-`GET invite/{workplace}`
+`GET login2`
+
+`POST login2`
+
+`PUT login2`
+
+`PATCH login2`
+
+`DELETE login2`
+
+`OPTIONS login2`
 
 
-<!-- END_9df3cc4d44958b41b6e119ee5744a74f -->
+<!-- END_1dbcdf4354aee512432e2c97f2f678e8 -->
 
 #general
 

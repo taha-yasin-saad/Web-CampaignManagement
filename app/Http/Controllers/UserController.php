@@ -9,10 +9,10 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
 /**
- * @group  Users management
+ * @group 2.2  Users management
  *
  *
- * Routes To manage Users data For The Manager Control Panal
+ * Routes To manage Users data For The Manager Control Panel
  */
 class UserController extends Controller
 {

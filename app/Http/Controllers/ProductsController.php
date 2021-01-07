@@ -12,9 +12,9 @@ use Illuminate\Support\Facades\Auth;
 use Session;
 
 /**
- * @group  WorkPlace Products management
+ * @group 2.4  WorkPlace Products management
  *
- * Routes To manage WorkPlace Products data For The Manager Control Panal
+ * Routes To manage WorkPlace Products data For The Manager Control Panel
  */
 class ProductsController extends Controller
 {

@@ -9,27 +9,28 @@ use Illuminate\Http\Request;
 use Session;
 
 /**
- * @group  Home management
+ * @group 2.1  Home management
  *
- * Routes for managing general data for site
+ * Page Group To manage General data for site .
+ *
+ * - View the General Data & Routes.
+ *
+ * <p><img src="images/users/home/users-login-page.PNG" width="100%"></p>
+ *
+ * @authenticated
+ *
  */
 
 class HomeController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-
 
     /**
-     * Show the application dashboard.
-     * @queryParam  sort Field to sort by
-     * @queryParam  page The page number to return
-     * @queryParam  fields required The fields to include
+     * Users Login View Page
      *
-     * @return \Illuminate\Contracts\Support\Renderable
+     * Is An Admin-Panel User Login Page .
+     *
+     * <p><img src="images/users/home/users-login-page.PNG" width="100%"></p>
+     *
      */
     public function index()
     {

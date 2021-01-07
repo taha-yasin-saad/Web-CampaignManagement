@@ -105,7 +105,7 @@
                                         @else
                                         0%
                                         @endif
-                                    </td>z
+                                    </td>
                                 </tr>
                                 @endif
                                 @endforeach

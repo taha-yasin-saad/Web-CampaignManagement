@@ -8,17 +8,64 @@ use App\Http\Controllers\Controller;
 use DataTables;
 
 /**
- * @group Admin Users management
+ * @group 1.3  Admin Users management
  *
+ * Page Group To manage Users data For The Admin Control Panel .
  *
- * Routes To manage Users data For The Admin Control Panal
+ * - View the User Data Ex. Name, Email & Phone etc.
+ * - Filter an existing Users from the Filter Form .
+ * - Manage Users From the Enable & Disable Button .
+ *
+ * <p><img src="images/admin/users/admin-user-view.png" width="100%"></p>
+ *
+ * @authenticated
+ *
  */
 class UserController extends Controller
 {
+
     public function __construct()
     {
         $this->middleware('auth:admin');
     }
+    /**
+     * Users View Page
+     *
+     * Is An Admin-Panel User Page That Views users Data Info .
+     *
+     * Form Filter is used to filtering existing Users To get better results .
+     *
+     * <p><img src="images/admin/users/admin-user-filter.png" width="100%"></p>
+     *
+     * View users Data Info
+     *
+     * - View the User Data Ex. Name, Email & Phone etc.
+     *
+     * - Manage Users From the Enable & Disable Button .
+     *
+     * <p><img src="images/admin/users/admin-user-view.png" width="100%"></p>
+     *
+     * @authenticated
+     *
+     * @response {
+     * "id":1,
+     * "name":"demo",
+     * "phone":"01234567890",
+     * "country_code":null,
+     * "email":"test@demo.com",
+     * "email_verified_at":null,
+     * "created_at":"2020-01-26 16:26:56",
+     * "updated_at":"2021-01-07 13:35:48",
+     * "device_token":null,
+     * "os":null,
+     * "is_available":1,
+     * "products_count":2,
+     * "workplaces_count":1,
+     * "leads_count":7
+     * }
+     *
+     */
+
     public function index(Request $request)
     {
         $users = User::withCount(['products', 'workplaces', 'leads'])->filter($request)->get();
@@ -32,68 +79,23 @@ class UserController extends Controller
                 ->rawColumns(['action'])
                 ->make(true);
         }
+
         return view('admin.users.index', compact('users', 'users_without_filter'));
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Manage Users From the Enable & Disable Button
      *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
+     * <p><img src="images/admin/users/admin-user-enable.png" width="100%"></p>
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    public function show(User $user)
-    {
-        //
-    }
-
-        /**
-     * Show the form for editing the specified resource.
+     * <p><img src="images/admin/updated-successfully.png" width="100%"></p>
+     * @authenticated
      *
-     * @param  \App\User  $user
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(User $user)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
+     * @response  {
+     * "success":"Updated Successfully"
+     * }
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\User  $user
-     * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $user)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\User  $user
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(User $user)
-    {
-        //
-    }
 
     public function user_available(User $user, $is_available)
     {

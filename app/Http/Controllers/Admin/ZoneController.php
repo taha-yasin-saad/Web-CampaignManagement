@@ -12,21 +12,66 @@ use DataTables;
 
 
 /**
- * @group Admin Zone management
+ * @group 1.4  Admin Zone management
  *
- * Routes To manage Zone data For The Admin Control Panal
+ * Page Group To manage Zone data For The Admin Control Panel .
+ *
+ * - View the Zone Data Ex. Name, Countries & MANAGE .
+ * - Create New Zones .
+ * - Edit an existing Zones from the Edit Button .
+ * - Delete Zones From the delete Button .
+ *
+ * <p><img src="images/admin/zones/admin-zones-view.PNG" width="100%"></p>
+ *
+ * @authenticated
+ *
  */
 class ZoneController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function __construct()
     {
         $this->middleware('auth:admin');
     }
+
+    /**
+     * Zones View Page
+     *
+     * Is An Admin-Panel Zone Page That Views Zones Data Info .
+     *
+     * <p><img src="images/admin/zones/admin-zones-view.PNG" width="100%"></p>
+     *
+     * View Zones Data Info
+     *
+     * - View the Zone Data Ex. Name, Countries & MANAGE .
+     * - Create New Zones for the Site .
+     * - Edit an existing Zones from the Edit Button .
+     * - Delete Zones From the delete Button .
+     *
+     * @authenticated
+     *
+     * @response {
+     *  "id":2,
+     *  "name":"Test",
+     *  "created_at":"2020-12-29 14:07:43",
+     *  "updated_at":"2020-12-29 14:07:43",
+     *  "countries":[
+     *    {
+     *       "id":2,
+     *       "iso":"AL",
+     *       "name":"ALBANIA",
+     *       "nicename":"Albania",
+     *       "iso3":"ALB",
+     *       "numcode":8,
+     *       "phonecode":355,
+     *       "pivot":{
+     *          "zone_id":2,
+     *          "country_id":2
+     *       }
+     *    }
+     * ]
+     *}
+     *
+     */
 
     public function index(Request $request)
     {
@@ -44,25 +89,49 @@ class ZoneController extends Controller
                 ->rawColumns(['action'])
                 ->make(true);
         }
-        return view('admin.zones.index',$query);
+
+        return view('admin.zones.index', $query);
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Zone Create Page
      *
-     * @return \Illuminate\Http\Response
+     * Is An Admin-Panel Zone Page That Creates Zones To Manage The Web Site Generally .
+     *
+     * <p><img src="images/admin/zones/admin-zones-create.PNG" width="100%"></p>
+     *
+     * @authenticated
+     *
+     * @bodyParam  name string required The name of the zone. Example: demo
+     * @bodyParam  Countries string required The Countries selected of the zone. Example: Alex
+     *
+     * @response {
+     *   "id":2,
+     *   "name":"Demo Mato",
+     *   "countries":"ALBANIA"
+     *   }
+     *
      */
     public function create()
     {
         $query['countries'] = Country::all();
-        return view('admin.zones.add',$query);
+
+        return view('admin.zones.add', $query);
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Zone Store Data
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * Is An Admin-Panel Zone Data Request That Stores Zones Data To Database .
+     *
+     * <p><img src="images/admin/added-successfully.png" width="100%"></p>
+     *
+     * @authenticated
+     *
+     * @response  {
+     * "success":"Added Successfully"
+     * }
+     *
      */
     public function store(ZoneRequest $request)
     {
@@ -71,37 +140,50 @@ class ZoneController extends Controller
         return  redirect('admin/zone')->with('success', 'Added Successfully');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
 
     /**
-     * Show the form for editing the specified resource.
+     * Zone Edit Page
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * Is An Admin-Panel Zone Page That Edits Zones To Manage The Web Site Generally .
+     *
+     * <p><img src="images/admin/zones/admin-zones-edit.PNG" width="100%"></p>
+     *
+     * @authenticated
+     *
+     * @bodyParam  name string required The name of the zone. Example: demo
+     * @bodyParam  Countries string required The Countries selected of the zone. Example: Alex
+     *
+     * @response {
+     *   "id":2,
+     *   "name":"Demo",
+     *   "countries":"ALBANIA"
+     *   }
+     *
      */
+
     public function edit(Zone $zone)
     {
         $query['countries'] = Country::all();
         $query['single'] = $zone;
-        return view('admin.zones.add',$query);
+        return view('admin.zones.add', $query);
     }
 
     /**
-     * Update the specified resource in storage.
+     * Zone Update Data
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * Is An Admin-Panel Zone Data Request That Updates Zones Data To Database .
+     *
+     * <p><img src="images/admin/zones/admin-zones-update.png" width="100%"></p>
+     * <p><img src="images/admin/updated-successfully.png" width="100%"></p>
+     *
+     * @authenticated
+     *
+     * @response  {
+     * "success":"Updated Successfully"
+     * }
+     *
      */
+
     public function update(ZoneRequest $request, Zone $zone)
     {
         $zone->update($request->all());
@@ -110,16 +192,26 @@ class ZoneController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Zone Delete Data
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * Is An Admin-Panel Zone Data Request That Delete Zones Data To Database .
+     *
+     * <p><img src="images/admin/zones/admin-zones-delete.png" width="100%"></p>
+     *
+     * <p><img src="images/admin/deleted-successfully.png" width="100%"></p>
+     *
+     * @authenticated
+     *
+     * @response  {
+     * "success":"Deleted Successfully"
+     * }
+     *
      */
+
     public function destroy(Zone $zone)
     {
         $zone->countries()->detach();
         $zone->delete();
         return  redirect('admin/zone')->with('success', 'Deleted Successfully');
-
     }
 }

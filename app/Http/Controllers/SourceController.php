@@ -8,9 +8,9 @@ use App\Workplace;
 use App\Product;
 
 /**
- * @group Lead Sources management
+ * @group 2.5  Lead Sources management
  *
- * Routes To manage Lead Sources data For The Manager Control Panal
+ * Routes To manage Lead Sources data For The Manager Control Panel
  */
 class SourceController extends Controller
 {
