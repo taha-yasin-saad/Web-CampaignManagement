@@ -2,7 +2,7 @@
     "variables": [],
     "info": {
         "name": "Closor API",
-        "_postman_id": "c0323fd1-0403-4b96-a9c2-1df31f8f212d",
+        "_postman_id": "808463c1-d07a-467b-8663-03076b395225",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.0.0\/collection.json"
     },
@@ -16,7 +16,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
+                            "host": "",
                             "path": "admin\/dashboard",
                             "query": []
                         },
@@ -50,7 +50,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
+                            "host": "",
                             "path": "admin\/moderator",
                             "query": []
                         },
@@ -78,7 +78,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
+                            "host": "",
                             "path": "admin\/moderator\/create",
                             "query": []
                         },
@@ -106,7 +106,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
+                            "host": "",
                             "path": "admin\/moderator",
                             "query": []
                         },
@@ -134,7 +134,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
+                            "host": "",
                             "path": "admin\/moderator\/:moderator\/edit",
                             "query": []
                         },
@@ -162,7 +162,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
+                            "host": "",
                             "path": "admin\/moderator\/:moderator",
                             "query": []
                         },
@@ -190,7 +190,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
+                            "host": "",
                             "path": "admin\/moderator\/:moderator",
                             "query": []
                         },
@@ -224,7 +224,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
+                            "host": "",
                             "path": "admin\/user",
                             "query": []
                         },
@@ -252,7 +252,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
+                            "host": "",
                             "path": "admin\/user",
                             "query": []
                         },
@@ -280,7 +280,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
+                            "host": "",
                             "path": "admin\/user_available\/:user\/:is_available",
                             "query": []
                         },
@@ -314,7 +314,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
+                            "host": "",
                             "path": "admin\/zone",
                             "query": []
                         },
@@ -342,7 +342,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
+                            "host": "",
                             "path": "admin\/zone\/create",
                             "query": []
                         },
@@ -370,7 +370,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
+                            "host": "",
                             "path": "admin\/zone",
                             "query": []
                         },
@@ -398,7 +398,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
+                            "host": "",
                             "path": "admin\/zone\/:zone\/edit",
                             "query": []
                         },
@@ -426,7 +426,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
+                            "host": "",
                             "path": "admin\/zone\/:zone",
                             "query": []
                         },
@@ -454,7 +454,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
+                            "host": "",
                             "path": "admin\/zone\/:zone",
                             "query": []
                         },
@@ -488,7 +488,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
+                            "host": "",
                             "path": "admin\/workplace",
                             "query": []
                         },
@@ -516,7 +516,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
+                            "host": "",
                             "path": "admin\/workplace",
                             "query": []
                         },
@@ -544,7 +544,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
+                            "host": "",
                             "path": "admin\/workplace-info\/:workplace_id",
                             "query": []
                         },
@@ -572,7 +572,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
+                            "host": "",
                             "path": "admin\/:workplace_id\/team\/:product_id",
                             "query": []
                         },
@@ -606,7 +606,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
+                            "host": "",
                             "path": "admin\/lead",
                             "query": []
                         },
@@ -634,7 +634,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
+                            "host": "",
                             "path": "admin\/lead",
                             "query": []
                         },
@@ -662,7 +662,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
+                            "host": "",
                             "path": "admin\/lead\/:lead",
                             "query": []
                         },
@@ -696,7 +696,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
+                            "host": "",
                             "path": "phoneCode\/:code",
                             "query": []
                         },
@@ -724,7 +724,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
+                            "host": "",
                             "path": "isoCode\/:code",
                             "query": []
                         },
@@ -758,7 +758,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
+                            "host": "",
                             "path": "\/",
                             "query": []
                         },
@@ -786,7 +786,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
+                            "host": "",
                             "path": "check",
                             "query": []
                         },
@@ -814,7 +814,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
+                            "host": "",
                             "path": "design",
                             "query": []
                         },
@@ -842,7 +842,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
+                            "host": "",
                             "path": "widgetView\/:id",
                             "query": []
                         },
@@ -876,7 +876,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
+                            "host": "",
                             "path": "profile",
                             "query": []
                         },
@@ -904,7 +904,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
+                            "host": "",
                             "path": "profile\/create",
                             "query": []
                         },
@@ -932,7 +932,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
+                            "host": "",
                             "path": "profile",
                             "query": []
                         },
@@ -960,7 +960,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
+                            "host": "",
                             "path": "profile\/:profile",
                             "query": []
                         },
@@ -988,7 +988,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
+                            "host": "",
                             "path": "profile\/:profile\/edit",
                             "query": []
                         },
@@ -1016,7 +1016,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
+                            "host": "",
                             "path": "profile\/:profile",
                             "query": []
                         },
@@ -1044,7 +1044,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
+                            "host": "",
                             "path": "profile\/:profile",
                             "query": []
                         },
@@ -1072,7 +1072,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
+                            "host": "",
                             "path": "dashboard",
                             "query": []
                         },
@@ -1106,7 +1106,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
+                            "host": "",
                             "path": "workplace",
                             "query": []
                         },
@@ -1134,7 +1134,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
+                            "host": "",
                             "path": "workplace\/create",
                             "query": []
                         },
@@ -1162,7 +1162,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
+                            "host": "",
                             "path": "workplace",
                             "query": []
                         },
@@ -1190,7 +1190,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
+                            "host": "",
                             "path": "workplace\/:workplace",
                             "query": []
                         },
@@ -1218,7 +1218,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
+                            "host": "",
                             "path": "workplace\/:workplace\/edit",
                             "query": []
                         },
@@ -1246,7 +1246,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
+                            "host": "",
                             "path": "workplace\/:workplace",
                             "query": []
                         },
@@ -1274,7 +1274,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
+                            "host": "",
                             "path": "workplace\/:workplace",
                             "query": []
                         },
@@ -1302,7 +1302,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
+                            "host": "",
                             "path": "invited_workplaces",
                             "query": []
                         },
@@ -1330,7 +1330,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
+                            "host": "",
                             "path": "user_workplaces",
                             "query": []
                         },
@@ -1358,7 +1358,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
+                            "host": "",
                             "path": "{workplace_id}\/team",
                             "query": []
                         },
@@ -1386,7 +1386,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
+                            "host": "",
                             "path": "{workplace_id}\/team\/:product_id",
                             "query": []
                         },
@@ -1414,7 +1414,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
+                            "host": "",
                             "path": "edit_user_role",
                             "query": []
                         },
@@ -1442,7 +1442,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
+                            "host": "",
                             "path": "remove_user_from_workspace\/:user_id\/:workplace_id",
                             "query": []
                         },
@@ -1470,7 +1470,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
+                            "host": "",
                             "path": "active_user_in_workspace\/:status\/:user_id\/:workplace_id",
                             "query": []
                         },
@@ -1498,7 +1498,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
+                            "host": "",
                             "path": "invite\/:workplace",
                             "query": []
                         },
@@ -1532,7 +1532,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
+                            "host": "",
                             "path": "product",
                             "query": []
                         },
@@ -1560,7 +1560,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
+                            "host": "",
                             "path": "product\/create",
                             "query": []
                         },
@@ -1588,7 +1588,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
+                            "host": "",
                             "path": "product",
                             "query": []
                         },
@@ -1616,7 +1616,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
+                            "host": "",
                             "path": "product\/:product",
                             "query": []
                         },
@@ -1644,7 +1644,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
+                            "host": "",
                             "path": "product\/:product\/edit",
                             "query": []
                         },
@@ -1672,7 +1672,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
+                            "host": "",
                             "path": "product\/:product",
                             "query": []
                         },
@@ -1700,7 +1700,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
+                            "host": "",
                             "path": "product\/:product",
                             "query": []
                         },
@@ -1728,7 +1728,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
+                            "host": "",
                             "path": "product\/create\/:workplace_id",
                             "query": []
                         },
@@ -1756,7 +1756,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
+                            "host": "",
                             "path": "invite_member",
                             "query": []
                         },
@@ -1784,7 +1784,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
+                            "host": "",
                             "path": "{workplace_id}\/products",
                             "query": []
                         },
@@ -1812,7 +1812,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
+                            "host": "",
                             "path": "invite_member_workplace",
                             "query": []
                         },
@@ -1840,7 +1840,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
+                            "host": "",
                             "path": "choose_members",
                             "query": []
                         },
@@ -1868,7 +1868,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
+                            "host": "",
                             "path": "add_product_to_user",
                             "query": []
                         },
@@ -1902,7 +1902,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
+                            "host": "",
                             "path": "sources",
                             "query": []
                         },
@@ -1930,7 +1930,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
+                            "host": "",
                             "path": "sources\/create",
                             "query": []
                         },
@@ -1958,7 +1958,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
+                            "host": "",
                             "path": "sources",
                             "query": []
                         },
@@ -1986,7 +1986,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
+                            "host": "",
                             "path": "sources\/:source",
                             "query": []
                         },
@@ -2014,7 +2014,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
+                            "host": "",
                             "path": "sources\/:source\/edit",
                             "query": []
                         },
@@ -2042,7 +2042,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
+                            "host": "",
                             "path": "sources\/:source",
                             "query": []
                         },
@@ -2070,7 +2070,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
+                            "host": "",
                             "path": "sources\/:source",
                             "query": []
                         },
@@ -2104,7 +2104,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
+                            "host": "",
                             "path": "leads",
                             "query": []
                         },
@@ -2132,7 +2132,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
+                            "host": "",
                             "path": "leads\/create",
                             "query": []
                         },
@@ -2160,7 +2160,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
+                            "host": "",
                             "path": "leads",
                             "query": []
                         },
@@ -2188,7 +2188,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
+                            "host": "",
                             "path": "leads\/:lead",
                             "query": []
                         },
@@ -2216,7 +2216,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
+                            "host": "",
                             "path": "leads\/:lead\/edit",
                             "query": []
                         },
@@ -2244,7 +2244,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
+                            "host": "",
                             "path": "leads\/:lead",
                             "query": []
                         },
@@ -2272,7 +2272,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
+                            "host": "",
                             "path": "leads\/:lead",
                             "query": []
                         },
@@ -2306,7 +2306,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
+                            "host": "",
                             "path": "widget\/:id",
                             "query": []
                         },
@@ -2334,7 +2334,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
+                            "host": "",
                             "path": "widgetView\/widget",
                             "query": []
                         },
@@ -2368,7 +2368,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
+                            "host": "",
                             "path": "api\/login",
                             "query": []
                         },
@@ -2396,7 +2396,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
+                            "host": "",
                             "path": "api\/login1",
                             "query": []
                         },
@@ -2424,7 +2424,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
+                            "host": "",
                             "path": "api\/login2",
                             "query": []
                         },
@@ -2452,7 +2452,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
+                            "host": "",
                             "path": "api\/update_profile",
                             "query": []
                         },
@@ -2480,7 +2480,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
+                            "host": "",
                             "path": "api\/change_is_available",
                             "query": []
                         },
@@ -2514,7 +2514,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
+                            "host": "",
                             "path": "api\/widgetView\/widget",
                             "query": []
                         },
@@ -2542,7 +2542,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
+                            "host": "",
                             "path": "api\/lead",
                             "query": []
                         },
@@ -2570,7 +2570,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
+                            "host": "",
                             "path": "api\/all_workplaces",
                             "query": []
                         },
@@ -2598,7 +2598,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
+                            "host": "",
                             "path": "api\/all_products",
                             "query": []
                         },
@@ -2626,7 +2626,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
+                            "host": "",
                             "path": "api\/all_leads",
                             "query": []
                         },
@@ -2654,7 +2654,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
+                            "host": "",
                             "path": "api\/user_leads\/:user",
                             "query": []
                         },
@@ -2682,7 +2682,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
+                            "host": "",
                             "path": "api\/qualified",
                             "query": []
                         },
@@ -2710,7 +2710,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
+                            "host": "",
                             "path": "api\/test_notification_user",
                             "query": []
                         },
@@ -2738,7 +2738,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
+                            "host": "",
                             "path": "api\/test_notification_device",
                             "query": []
                         },
@@ -2772,7 +2772,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
+                            "host": "",
                             "path": "admin-login",
                             "query": []
                         },
@@ -2800,7 +2800,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
+                            "host": "",
                             "path": "admin.login",
                             "query": []
                         },
@@ -2834,7 +2834,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
+                            "host": "",
                             "path": "login",
                             "query": []
                         },
@@ -2862,7 +2862,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
+                            "host": "",
                             "path": "login",
                             "query": []
                         },
@@ -2890,7 +2890,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
+                            "host": "",
                             "path": "logout",
                             "query": []
                         },
@@ -2918,7 +2918,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
+                            "host": "",
                             "path": "first",
                             "query": []
                         },
@@ -2952,7 +2952,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
+                            "host": "",
                             "path": "register",
                             "query": []
                         },
@@ -2980,7 +2980,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
+                            "host": "",
                             "path": "register",
                             "query": []
                         },
@@ -3008,7 +3008,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
+                            "host": "",
                             "path": "login2",
                             "query": []
                         },
@@ -3042,7 +3042,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
+                            "host": "",
                             "path": "api\/password\/email",
                             "query": []
                         },
@@ -3070,7 +3070,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
+                            "host": "",
                             "path": "api\/password\/reset",
                             "query": []
                         },
@@ -3098,7 +3098,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
+                            "host": "",
                             "path": "password\/reset",
                             "query": []
                         },
@@ -3126,7 +3126,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
+                            "host": "",
                             "path": "password\/email",
                             "query": []
                         },
@@ -3154,7 +3154,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
+                            "host": "",
                             "path": "password\/reset\/:token",
                             "query": []
                         },
@@ -3182,7 +3182,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
+                            "host": "",
                             "path": "password\/reset",
                             "query": []
                         },
@@ -3210,7 +3210,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
+                            "host": "",
                             "path": "team",
                             "query": []
                         },
