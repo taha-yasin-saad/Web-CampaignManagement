@@ -110,7 +110,7 @@ class LeadController extends Controller
      * - Every Product In the Lead With its Stats Ex. Leads Source Name, Leads count, Contacted Leads Count & Team Names That Assigned to this Product .
      * - Filter Search to go through every table data .
      *
-     * <p><img src="images/admin/leads/admin-singlelead-view.PNG" width="100%"></p>
+     * <p><img src="images/admin/leads/admin-singlelead-view.png" width="100%"></p>
      *
      * @authenticated
      *

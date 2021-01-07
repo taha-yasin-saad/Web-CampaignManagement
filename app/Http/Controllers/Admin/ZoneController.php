@@ -21,7 +21,7 @@ use DataTables;
  * - Edit an existing Zones from the Edit Button .
  * - Delete Zones From the delete Button .
  *
- * <p><img src="images/admin/zones/admin-zones-view.PNG" width="100%"></p>
+ * <p><img src="images/admin/zones/admin-zones-view.png" width="100%"></p>
  *
  * @authenticated
  *
@@ -38,7 +38,7 @@ class ZoneController extends Controller
      *
      * Is An Admin-Panel Zone Page That Views Zones Data Info .
      *
-     * <p><img src="images/admin/zones/admin-zones-view.PNG" width="100%"></p>
+     * <p><img src="images/admin/zones/admin-zones-view.png" width="100%"></p>
      *
      * View Zones Data Info
      *
@@ -98,7 +98,7 @@ class ZoneController extends Controller
      *
      * Is An Admin-Panel Zone Page That Creates Zones To Manage The Web Site Generally .
      *
-     * <p><img src="images/admin/zones/admin-zones-create.PNG" width="100%"></p>
+     * <p><img src="images/admin/zones/admin-zones-create.png" width="100%"></p>
      *
      * @authenticated
      *
@@ -146,7 +146,7 @@ class ZoneController extends Controller
      *
      * Is An Admin-Panel Zone Page That Edits Zones To Manage The Web Site Generally .
      *
-     * <p><img src="images/admin/zones/admin-zones-edit.PNG" width="100%"></p>
+     * <p><img src="images/admin/zones/admin-zones-edit.png" width="100%"></p>
      *
      * @authenticated
      *

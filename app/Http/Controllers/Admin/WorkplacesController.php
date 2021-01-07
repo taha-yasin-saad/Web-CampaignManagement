@@ -19,7 +19,7 @@ use DataTables;
  *
  * - View the Workplaces Data Ex. Title, Count of Products & Created By etc .
  *
- * <p><img src="images/admin/workplaces/admin-workplaces-view.PNG" width="100%"></p>
+ * <p><img src="images/admin/workplaces/admin-workplaces-view.png" width="100%"></p>
  *
  * @authenticated
  *
@@ -93,7 +93,7 @@ class WorkplacesController extends Controller
      * - Every Product In the WorkPlace With its Stats Ex. Leads Source Name, Leads count, Contacted Leads Count & Team Names That Assigned to this Product .
      * - Filter Search to go through every table data .
      *
-     * <p><img src="images/admin/workplaces/admin-workplace-products.PNG" width="100%"></p>
+     * <p><img src="images/admin/workplaces/admin-workplace-products.png" width="100%"></p>
      *
      * @authenticated
      *
@@ -145,7 +145,7 @@ class WorkplacesController extends Controller
       *
      * - View the Workplace Single Product Team Info & Roles Ex. User Name, Products Names That Assigned to the user & User role, etc.
      *
-     * <p><img src="images/admin/workplaces/admin-workplace-team.PNG" width="100%"></p>
+     * <p><img src="images/admin/workplaces/admin-workplace-team.png" width="100%"></p>
      *
      * @authenticated
      *

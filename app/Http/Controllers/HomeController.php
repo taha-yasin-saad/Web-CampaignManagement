@@ -15,7 +15,7 @@ use Session;
  *
  * - View the General Data & Routes.
  *
- * <p><img src="images/users/home/users-login-page.PNG" width="100%"></p>
+ * <p><img src="images/users/home/users-login-page.png" width="100%"></p>
  *
  * @authenticated
  *
@@ -29,7 +29,7 @@ class HomeController extends Controller
      *
      * Is An Admin-Panel User Login Page .
      *
-     * <p><img src="images/users/home/users-login-page.PNG" width="100%"></p>
+     * <p><img src="images/users/home/users-login-page.png" width="100%"></p>
      *
      */
     public function index()
