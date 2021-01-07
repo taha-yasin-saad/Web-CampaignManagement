@@ -2,7 +2,11 @@
     "variables": [],
     "info": {
         "name": "Closor API",
+<<<<<<< HEAD
         "_postman_id": "8ec0d8b9-5689-4dfa-809d-73dabfa56715",
+=======
+        "_postman_id": "51cf5333-6f37-4015-9290-eb6cfdf67eb4",
+>>>>>>> 06cf378d1aa54060846efc2bb0327b9fe8a1011b
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.0.0\/collection.json"
     },
