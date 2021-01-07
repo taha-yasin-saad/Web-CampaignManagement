@@ -8,6 +8,12 @@ use App\WorkplaceUser;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
+/**
+ * @group 2.2  Users management
+ *
+ *
+ * Routes To manage Users data For The Manager Control Panel
+ */
 class UserController extends Controller
 {
     public function __construct()
@@ -26,10 +32,10 @@ class UserController extends Controller
 
     public function dashboard()
     {
-        $user_workplaces = Workplace::where('admin_id',auth()->id())->get();
+        $user_workplaces = Workplace::where('admin_id', auth()->id())->get();
         $query['user_workplaces_count'] =  $user_workplaces->count();
         $user_workplaces_ids = $user_workplaces->pluck('id');
-        $query['invited_workplaces_count'] = WorkplaceUser::whereNotIn('workplace_id',$user_workplaces_ids)->where('user_id',auth()->id())->count();
+        $query['invited_workplaces_count'] = WorkplaceUser::whereNotIn('workplace_id', $user_workplaces_ids)->where('user_id', auth()->id())->count();
         // dd( $query['invited_workplaces']);
         return view('dashboard', $query);
     }
@@ -88,13 +94,13 @@ class UserController extends Controller
     {
         // dd($request->country_code);
         $data = $request->validate([
-            'name'=>'required',
-            'email'=>'required|email',
-            'phone'=>'required|numeric',
-            'country_code'=>'required'
+            'name' => 'required',
+            'email' => 'required|email',
+            'phone' => 'required|numeric',
+            'country_code' => 'required'
         ]);
         $user = $user->find(Auth()->user()->id);
-        if($request->password){
+        if ($request->password) {
             $request->validate([
                 'password' => ['required', 'string', 'min:6'],
             ]);

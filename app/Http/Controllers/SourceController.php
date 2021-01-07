@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 use App\Workplace;
 use App\Product;
 
+/**
+ * @group 2.5  Lead Sources management
+ *
+ * Routes To manage Lead Sources data For The Manager Control Panel
+ */
 class SourceController extends Controller
 {
     /**
@@ -46,8 +51,8 @@ class SourceController extends Controller
     public function store(Request $request)
     {
         $data=$request->all();
-        // dd($data);
         $product = Source::create($data);
+
         return redirect('sources')->with('success', 'Added Successfully');
     }
 
@@ -59,7 +64,7 @@ class SourceController extends Controller
      */
     public function show(Source $source)
     {
-        dd($source);
+        // dd($source);
     }
 
     /**

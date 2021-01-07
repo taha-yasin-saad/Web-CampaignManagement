@@ -273,9 +273,12 @@
 @section('js')
 <script type="text/javascript">
     var oTable = $('.workplace-data-table').DataTable({
-        dom: "<'row'<'col-xs-12'<'col-xs-6'l><'col-xs-6'p>>r>"+
+        dom: "Bf"+ "<'row'<'col-xs-12'<'col-xs-6'l><'col-xs-6'p>>r>"+
             "<'row'<'col-xs-12't>>"+
             "<'row'<'col-xs-12'<'col-xs-6'i><'col-xs-6'p>>>",
+        buttons: [
+            'copy', 'csv', 'excel', 'pdf', 'print'
+        ],
         processing: true,
         serverSide: true,
         ajax: {
@@ -288,7 +291,7 @@
                 d.select_user = $('select[name=select_user]').val();
                 d.count_user = $('input[name=count_user]').val();
                 d.select_products = $('select[name=select_products]').val();
-                d.count_workplaces = $('input[name=count_workplaces]').val();
+                d.count_products = $('input[name=count_products]').val();
             }
         },
         columns: [

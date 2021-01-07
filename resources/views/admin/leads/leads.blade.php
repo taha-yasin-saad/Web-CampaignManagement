@@ -8,12 +8,12 @@
     <div class="container-fluid">
         <div class="row bg-title">
             <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                <h4 class="page-title">Workplace</h4>
+                <h4 class="page-title">Lead</h4>
             </div>
             <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                 <ol class="breadcrumb">
                     <li><a href="{{url('/')}}">Dashboard</a></li>
-                    <li class="active">Workplaces</li>
+                    <li class="active">Leads</li>
                 </ol>
             </div>
         </div>
@@ -164,15 +164,14 @@
                                 <label for="assigned">assigned to</label>
                                 <select class="form-control" id="assigned" name="user_id">
                                     <option value="0">All Users</option>
-                                    @foreach ($users as $user)
-                                    @if(get_role(session('workplace')->id) <= 2 || Auth::user()->id ==
-                                        $user->user->id)
-                                        <option value="{{$user->user->id}}" @if(isset($_GET['user_id']) &&
-                                            $user_id==$user->user->id) selected
-                                            @endif>@if($user->user->name){{$user->user->name}} @else
-                                            {{$user->user->email}}@endif</option>
-                                        @endif
-                                        @endforeach
+                                    @foreach ($workplace_users as $workplace_user)
+                                    @if(@$workplace_user)
+                                    <option value="{{$workplace_user->user->id}}" @if(@$user_id &&
+                                        $user_id==$workplace_user->user->id) selected
+                                        @endif>@if($workplace_user->user->name){{$workplace_user->user->name}} @else
+                                        {{$workplace_user->user->email}}@endif</option>
+                                    @endif
+                                    @endforeach
                                 </select>
                             </div>
                         </div>
@@ -182,14 +181,12 @@
                                 <select class="form-control" name="product_id" id="assigned">
                                     <option value="0">All Products</option>
                                     @foreach ($products as $value)
-                                    @if (get_role(session('workplace')->id) <= 1 || (get_role(session('workplace')->id)
-                                        > 1 &&
-                                        in_array(Auth::user()->id,$value->selected_ids)))
-                                        <option value="{{$value->id}}" @if(@$product_id && $product_id==$value->id)
-                                            selected
-                                            @endif>{{$value->title}}</option>
-                                        @endif
-                                        @endforeach
+                                    @if (@$value)
+                                    <option value="{{$value->id}}" @if(@$product_id && $product_id==$value->id)
+                                        selected
+                                        @endif>{{$value->title}}</option>
+                                    @endif
+                                    @endforeach
                                 </select>
                             </div>
                         </div>
@@ -252,9 +249,12 @@
 @section('filter_table')
 <script type="text/javascript">
     var oTable = $('.lead-data-table').DataTable({
-        dom: "<'row'<'col-xs-12'<'col-xs-6'l><'col-xs-6'p>>r>"+
+        dom: "Bf" + "<'row'<'col-xs-12'<'col-xs-6'l><'col-xs-6'p>>r>"+
             "<'row'<'col-xs-12't>>"+
             "<'row'<'col-xs-12'<'col-xs-6'i><'col-xs-6'p>>>",
+        buttons: [
+            'copy', 'csv', 'excel', 'pdf', 'print'
+        ],
         processing: true,
         serverSide: true,
         ajax: {

@@ -161,6 +161,7 @@
     <script src="{{asset('js/jquery.slimscroll.js')}}"></script>
     <!--Wave Effects -->
     <script src="{{asset('js/waves.js')}}"></script>
+    <!--Counter js -->
     <script src="{{asset('plugins/bower_components/dropify/dist/js/dropify.min.js')}}"></script>
     <script>
         $(document).ready(function() {

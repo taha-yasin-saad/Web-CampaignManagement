@@ -1,0 +1,1116 @@
+{
+	"info": {
+		"_postman_id": "98a5921b-7ed9-45c8-bf46-ff1fc6c971c9",
+		"name": "Closor Copy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User-login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \r\n    \"email\": \"a7medkamal775@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/login",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "User-login",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{   \r\n    \"email\": \"a7medkamal775@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 17 Sep 2020 12:53:58 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "54"
+						},
+						{
+							"key": "Upgrade",
+							"value": "h2,h2c"
+						},
+						{
+							"key": "Connection",
+							"value": "Upgrade, Keep-Alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=3, max=100"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": \"0\",\n    \"email\": \"a7medkamal775@gmail.com\",\n    \"password\": \"$2y$10$fKgLXDyaDq9Mk1b991Di3OjqO4lqi/j7dKSZZ1GF0you3APZU5HAC\"\n}"
+				}
+			]
+		},
+		{
+			"name": "User-login1",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \r\n    \"email\": \"a7medkamal775@gmail.com\",\r\n    \"password\": 123456,\r\n    \"device_token\": \"fe5fef744544479\",\r\n    \"os\":\"android\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/login1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"login1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "{{url}}/login1",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{   \r\n    \"email\": \"a7medkamal775@gmail.com\",\r\n    \"password\": 123456\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/login1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"login1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 20 Sep 2020 15:19:43 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Upgrade",
+							"value": "h2,h2c"
+						},
+						{
+							"key": "Connection",
+							"value": "Upgrade, Keep-Alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=3, max=100"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": 0,\n    \"id\": 4,\n    \"email\": \"a7medkamal775@gmail.com\",\n    \"password\": \"$2y$10$mv4UNxQf83FFpIrWOg3Bre4qeo1/miEICRRvpAu6rZeHqJ1gJlVau\"\n}"
+				}
+			]
+		},
+		{
+			"name": "User-login2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \r\n    \"email\": \"a7medkamal775@gmail.com\",\r\n    \"name\": \"kareem\",\r\n    \"phone\": \"01234567890\",\r\n    \"password\": 123456,\r\n    \"device_token\": \"wwddwfwff45f44\",\r\n    \"os\":\"android\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/login2",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"login2"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "User-login2",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{   \r\n    \"email\": \"a7medkamal775@gmail.com\",\r\n    \"name\": \"kareem\",\r\n    \"phone\": \"01234567890\",\r\n    \"password\": 123456\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/login2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"login2"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 21 Sep 2020 13:39:19 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Upgrade",
+							"value": "h2,h2c"
+						},
+						{
+							"key": "Connection",
+							"value": "Upgrade, Keep-Alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=3, max=100"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": 0,\n    \"id\": 4,\n    \"name\": \"kareem\",\n    \"phone\": \"01234567890\",\n    \"email\": \"a7medkamal775@gmail.com\",\n    \"message\": \"The User(kareem) who has been invited by you to workspace has been registered\"\n}"
+				}
+			]
+		},
+		{
+			"name": "All_Leads",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [],
+					"options": {
+						"formdata": {}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/all_leads",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"all_leads"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "All_Leads",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/all_leads",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"all_leads"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 17 Sep 2020 12:54:10 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "51"
+						},
+						{
+							"key": "Upgrade",
+							"value": "h2,h2c"
+						},
+						{
+							"key": "Connection",
+							"value": "Upgrade, Keep-Alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=3, max=100"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": \"0\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"kareem222\",\n            \"product_id\": 6,\n            \"user_id\": null,\n            \"source_id\": null,\n            \"phone\": \"1234567654\",\n            \"email\": \"kareemkima@gmail.com\\r\\n\",\n            \"scheduled_on\": null,\n            \"last_contact\": null,\n            \"status\": 2,\n            \"lead\": \"{\\\"name\\\":\\\"kareem222\\\",\\\"phone\\\":\\\"1234567654\\\",\\\"product_id\\\":\\\"6\\\",\\\"mobile\\\":\\\"22345678987654\\\"}\",\n            \"created_at\": \"2020-02-22 18:10:22\",\n            \"updated_at\": \"2020-09-16 15:02:50\",\n            \"source\": null\n        },\n        {\n            \"id\": 2,\n            \"name\": \"kareem222\",\n            \"product_id\": 6,\n            \"user_id\": null,\n            \"source_id\": null,\n            \"phone\": \"1234567654\",\n            \"email\": \"kareemkima@gmail.com\",\n            \"scheduled_on\": null,\n            \"last_contact\": null,\n            \"status\": 0,\n            \"lead\": \"{\\\"name\\\":\\\"kareem222\\\",\\\"phone\\\":\\\"1234567654\\\",\\\"product_id\\\":\\\"6\\\",\\\"mobile\\\":\\\"22345678987654\\\"}\",\n            \"created_at\": \"2020-02-22 18:10:47\",\n            \"updated_at\": \"2020-02-22 18:10:47\",\n            \"source\": null\n        },\n        {\n            \"id\": 3,\n            \"name\": \"kareemTest\",\n            \"product_id\": 2,\n            \"user_id\": null,\n            \"source_id\": null,\n            \"phone\": \"0123987662\",\n            \"email\": \"kareemkima@gmail.com\",\n            \"scheduled_on\": null,\n            \"last_contact\": null,\n            \"status\": 0,\n            \"lead\": \"{\\\"name\\\":\\\"kareemTest\\\",\\\"email\\\":\\\"kareemkima@gmail.com\\\",\\\"phone\\\":\\\"0123987662\\\",\\\"address\\\":\\\"miami\\\",\\\"city\\\":\\\"alexandria\\\",\\\"social\\\":\\\"http:\\\\/\\\\/facebook.com\\\",\\\"occupation\\\":\\\"Manager\\\",\\\"workplace_id\\\":\\\"4\\\",\\\"product_id\\\":\\\"2\\\"}\",\n            \"created_at\": \"2020-02-22 18:36:55\",\n            \"updated_at\": \"2020-02-22 18:36:55\",\n            \"source\": null\n        },\n        {\n            \"id\": 4,\n            \"name\": \"kareemTest2\",\n            \"product_id\": 6,\n            \"user_id\": null,\n            \"source_id\": null,\n            \"phone\": \"0123987662\",\n            \"email\": \"kareemkima@gmail.com\",\n            \"scheduled_on\": null,\n            \"last_contact\": null,\n            \"status\": 0,\n            \"lead\": \"{\\\"name\\\":\\\"kareemTest2\\\",\\\"email\\\":\\\"kareemkima@gmail.com\\\",\\\"phone\\\":\\\"0123987662\\\",\\\"address\\\":\\\"miami\\\",\\\"city\\\":\\\"alexandria\\\",\\\"social\\\":\\\"http:\\\\/\\\\/facebook.com\\\",\\\"occupation\\\":\\\"Manager\\\",\\\"workplace_id\\\":\\\"6\\\",\\\"product_id\\\":\\\"6\\\"}\",\n            \"created_at\": \"2020-02-22 18:37:58\",\n            \"updated_at\": \"2020-02-22 18:37:58\",\n            \"source\": null\n        },\n        {\n            \"id\": 5,\n            \"name\": \"kareemTest2\",\n            \"product_id\": 6,\n            \"user_id\": null,\n            \"source_id\": null,\n            \"phone\": \"0123987662\",\n            \"email\": \"kareemkima@gmail.com\",\n            \"scheduled_on\": null,\n            \"last_contact\": null,\n            \"status\": 0,\n            \"lead\": \"{\\\"name\\\":\\\"kareemTest2\\\",\\\"email\\\":\\\"kareemkima@gmail.com\\\",\\\"phone\\\":\\\"0123987662\\\",\\\"address\\\":\\\"miami\\\",\\\"city\\\":\\\"alexandria\\\",\\\"social\\\":\\\"http:\\\\/\\\\/facebook.com\\\",\\\"occupation\\\":\\\"Manager\\\",\\\"workplace_id\\\":\\\"6\\\",\\\"product_id\\\":\\\"6\\\"}\",\n            \"created_at\": \"2020-02-22 18:38:02\",\n            \"updated_at\": \"2020-02-22 18:38:02\",\n            \"source\": null\n        },\n        {\n            \"id\": 6,\n            \"name\": \"kareemTest2\",\n            \"product_id\": 6,\n            \"user_id\": null,\n            \"source_id\": null,\n            \"phone\": \"0123987662\",\n            \"email\": \"kareemkima@gmail.com\",\n            \"scheduled_on\": null,\n            \"last_contact\": null,\n            \"status\": 0,\n            \"lead\": \"{\\\"name\\\":\\\"kareemTest2\\\",\\\"email\\\":\\\"kareemkima@gmail.com\\\",\\\"phone\\\":\\\"0123987662\\\",\\\"address\\\":\\\"miami\\\",\\\"city\\\":\\\"alexandria\\\",\\\"social\\\":\\\"http:\\\\/\\\\/facebook.com\\\",\\\"occupation\\\":\\\"Manager\\\",\\\"workplace_id\\\":\\\"6\\\",\\\"product_id\\\":\\\"6\\\"}\",\n            \"created_at\": \"2020-02-22 18:38:11\",\n            \"updated_at\": \"2020-02-22 18:38:11\",\n            \"source\": null\n        },\n        {\n            \"id\": 7,\n            \"name\": \"midooo\",\n            \"product_id\": 7,\n            \"user_id\": null,\n            \"source_id\": null,\n            \"phone\": \"123456\",\n            \"email\": null,\n            \"scheduled_on\": null,\n            \"last_contact\": null,\n            \"status\": 0,\n            \"lead\": \"{\\\"name\\\":\\\"midooo\\\",\\\"email\\\":\\\"hanafy@gmail.com\\\",\\\"phone\\\":\\\"123456\\\",\\\"address\\\":null,\\\"city\\\":null,\\\"social\\\":null,\\\"occupation\\\":null,\\\"workplace_id\\\":\\\"1\\\",\\\"product_id\\\":\\\"7\\\"}\",\n            \"created_at\": \"2020-02-24 14:07:29\",\n            \"updated_at\": \"2020-02-24 14:07:29\",\n            \"source\": null\n        },\n        {\n            \"id\": 8,\n            \"name\": \"midooo\",\n            \"product_id\": 7,\n            \"user_id\": null,\n            \"source_id\": null,\n            \"phone\": \"123456\",\n            \"email\": null,\n            \"scheduled_on\": null,\n            \"last_contact\": null,\n            \"status\": 0,\n            \"lead\": \"{\\\"name\\\":\\\"midooo\\\",\\\"email\\\":\\\"hanafy@gmail.com\\\",\\\"phone\\\":\\\"123456\\\",\\\"address\\\":\\\"1\\\",\\\"city\\\":\\\"1\\\",\\\"social\\\":\\\"1\\\",\\\"occupation\\\":\\\"1\\\",\\\"workplace_id\\\":\\\"1\\\",\\\"product_id\\\":\\\"7\\\"}\",\n            \"created_at\": \"2020-02-24 14:07:39\",\n            \"updated_at\": \"2020-02-24 14:07:39\",\n            \"source\": null\n        },\n        {\n            \"id\": 9,\n            \"name\": \"midooo\",\n            \"product_id\": 7,\n            \"user_id\": null,\n            \"source_id\": null,\n            \"phone\": \"123456\",\n            \"email\": null,\n            \"scheduled_on\": null,\n            \"last_contact\": null,\n            \"status\": 0,\n            \"lead\": \"{\\\"name\\\":\\\"midooo\\\",\\\"email\\\":\\\"hanafy@gmail.com\\\",\\\"phone\\\":\\\"123456\\\",\\\"address\\\":\\\"1\\\",\\\"city\\\":\\\"1\\\",\\\"social\\\":\\\"1\\\",\\\"occupation\\\":\\\"1\\\",\\\"workplace_id\\\":\\\"1\\\",\\\"product_id\\\":\\\"7\\\"}\",\n            \"created_at\": \"2020-02-24 14:07:44\",\n            \"updated_at\": \"2020-02-24 14:07:44\",\n            \"source\": null\n        },\n        {\n            \"id\": 10,\n            \"name\": \"dada\",\n            \"product_id\": 7,\n            \"user_id\": null,\n            \"source_id\": null,\n            \"phone\": \"123456\",\n            \"email\": null,\n            \"scheduled_on\": null,\n            \"last_contact\": null,\n            \"status\": 0,\n            \"lead\": \"{\\\"name\\\":\\\"dada\\\",\\\"email\\\":\\\"hanafy@gmail.com\\\",\\\"phone\\\":\\\"123456\\\",\\\"address\\\":\\\"1\\\",\\\"city\\\":\\\"1\\\",\\\"social\\\":\\\"1\\\",\\\"occupation\\\":\\\"1\\\",\\\"workplace_id\\\":\\\"1\\\",\\\"product_id\\\":\\\"7\\\"}\",\n            \"created_at\": \"2020-02-24 14:10:21\",\n            \"updated_at\": \"2020-02-24 14:10:21\",\n            \"source\": null\n        },\n        {\n            \"id\": 11,\n            \"name\": \"dada\",\n            \"product_id\": 7,\n            \"user_id\": null,\n            \"source_id\": null,\n            \"phone\": \"123456\",\n            \"email\": null,\n            \"scheduled_on\": null,\n            \"last_contact\": null,\n            \"status\": 0,\n            \"lead\": \"{\\\"name\\\":\\\"dada\\\",\\\"email\\\":\\\"hanafy@gmail.com\\\",\\\"phone\\\":\\\"123456\\\",\\\"address\\\":\\\"1\\\",\\\"city\\\":\\\"1\\\",\\\"social\\\":\\\"1\\\",\\\"occupation\\\":\\\"1\\\",\\\"workplace_id\\\":\\\"1\\\",\\\"product_id\\\":\\\"7\\\"}\",\n            \"created_at\": \"2020-02-24 14:10:47\",\n            \"updated_at\": \"2020-02-24 14:10:47\",\n            \"source\": null\n        },\n        {\n            \"id\": 12,\n            \"name\": \"dada\",\n            \"product_id\": 7,\n            \"user_id\": null,\n            \"source_id\": null,\n            \"phone\": \"123456\",\n            \"email\": null,\n            \"scheduled_on\": null,\n            \"last_contact\": null,\n            \"status\": 0,\n            \"lead\": \"{\\\"name\\\":\\\"dada\\\",\\\"email\\\":\\\"hanafy@gmail.com\\\",\\\"phone\\\":\\\"123456\\\",\\\"address\\\":\\\"1\\\",\\\"city\\\":\\\"1\\\",\\\"social\\\":\\\"1\\\",\\\"occupation\\\":\\\"1\\\",\\\"workplace_id\\\":\\\"1\\\",\\\"product_id\\\":\\\"7\\\"}\",\n            \"created_at\": \"2020-02-24 14:10:48\",\n            \"updated_at\": \"2020-02-24 14:10:48\",\n            \"source\": null\n        },\n        {\n            \"id\": 13,\n            \"name\": \"dada\",\n            \"product_id\": 7,\n            \"user_id\": null,\n            \"source_id\": null,\n            \"phone\": \"123456\",\n            \"email\": null,\n            \"scheduled_on\": null,\n            \"last_contact\": null,\n            \"status\": 0,\n            \"lead\": \"{\\\"name\\\":\\\"dada\\\",\\\"email\\\":\\\"hanafy@gmail.com\\\",\\\"phone\\\":\\\"123456\\\",\\\"address\\\":\\\"1\\\",\\\"city\\\":\\\"1\\\",\\\"social\\\":\\\"1\\\",\\\"occupation\\\":\\\"1\\\",\\\"workplace_id\\\":\\\"1\\\",\\\"product_id\\\":\\\"7\\\"}\",\n            \"created_at\": \"2020-02-24 14:11:20\",\n            \"updated_at\": \"2020-02-24 14:11:20\",\n            \"source\": null\n        },\n        {\n            \"id\": 14,\n            \"name\": \"fofo\",\n            \"product_id\": 7,\n            \"user_id\": null,\n            \"source_id\": null,\n            \"phone\": \"123456\",\n            \"email\": null,\n            \"scheduled_on\": null,\n            \"last_contact\": null,\n            \"status\": 0,\n            \"lead\": \"{\\\"name\\\":\\\"fofo\\\",\\\"email\\\":\\\"hanafy@gmail.com\\\",\\\"phone\\\":\\\"123456\\\",\\\"address\\\":\\\"1\\\",\\\"city\\\":\\\"1\\\",\\\"social\\\":\\\"1\\\",\\\"occupation\\\":\\\"1\\\",\\\"workplace_id\\\":\\\"1\\\",\\\"product_id\\\":\\\"7\\\"}\",\n            \"created_at\": \"2020-02-24 14:11:25\",\n            \"updated_at\": \"2020-02-24 14:11:25\",\n            \"source\": null\n        },\n        {\n            \"id\": 15,\n            \"name\": \"Abu Yazeed\",\n            \"product_id\": 7,\n            \"user_id\": null,\n            \"source_id\": null,\n            \"phone\": \"01016789919\",\n            \"email\": null,\n            \"scheduled_on\": null,\n            \"last_contact\": null,\n            \"status\": 0,\n            \"lead\": \"{\\\"name\\\":\\\"Abu Yazeed\\\",\\\"email\\\":\\\"info@ahmedmohsen.com\\\",\\\"phone\\\":\\\"01016789919\\\",\\\"address\\\":\\\"5 Hefny Nasif, From Kornish, Sidi Gaber\\\",\\\"city\\\":\\\"Alexandria\\\",\\\"social\\\":\\\"1\\\",\\\"occupation\\\":\\\"1\\\",\\\"workplace_id\\\":\\\"1\\\",\\\"product_id\\\":\\\"7\\\"}\",\n            \"created_at\": \"2020-02-25 14:07:33\",\n            \"updated_at\": \"2020-02-25 14:07:33\",\n            \"source\": null\n        },\n        {\n            \"id\": 16,\n            \"name\": \"Abu Yazeed\",\n            \"product_id\": 7,\n            \"user_id\": null,\n            \"source_id\": null,\n            \"phone\": \"01016789919\",\n            \"email\": null,\n            \"scheduled_on\": null,\n            \"last_contact\": null,\n            \"status\": 0,\n            \"lead\": \"{\\\"name\\\":\\\"Abu Yazeed\\\",\\\"email\\\":\\\"info@ahmedmohsen.com\\\",\\\"phone\\\":\\\"01016789919\\\",\\\"address\\\":\\\"5 Hefny Nasif, From Kornish, Sidi Gaber\\\",\\\"city\\\":\\\"Alexandria\\\",\\\"social\\\":\\\"1\\\",\\\"occupation\\\":\\\"1\\\",\\\"workplace_id\\\":\\\"1\\\",\\\"product_id\\\":\\\"7\\\"}\",\n            \"created_at\": \"2020-02-25 14:07:35\",\n            \"updated_at\": \"2020-02-25 14:07:35\",\n            \"source\": null\n        },\n        {\n            \"id\": 17,\n            \"name\": \"asd\",\n            \"product_id\": 7,\n            \"user_id\": null,\n            \"source_id\": null,\n            \"phone\": \"1324564\",\n            \"email\": \"ajksbdkljasbd@slnkd.aksbd\",\n            \"scheduled_on\": null,\n            \"last_contact\": null,\n            \"status\": 0,\n            \"lead\": \"{\\\"product_id\\\":\\\"7\\\",\\\"csrftoken\\\":\\\"aw9cr5EdZoYyFPi9RJitOSIEdJOxrZ9tSLY6w6ko\\\",\\\"country_code\\\":\\\"20\\\",\\\"phone\\\":\\\"1324564\\\",\\\"name\\\":\\\"asd\\\",\\\"email\\\":\\\"ajksbdkljasbd@slnkd.aksbd\\\",\\\"custom1\\\":\\\"asdas\\\",\\\"custom2\\\":\\\"asdd\\\"}\",\n            \"created_at\": \"2020-09-13 18:39:13\",\n            \"updated_at\": \"2020-09-13 18:39:13\",\n            \"source\": null\n        },\n        {\n            \"id\": 18,\n            \"name\": \"asd\",\n            \"product_id\": 7,\n            \"user_id\": null,\n            \"source_id\": null,\n            \"phone\": \"20 1324564\",\n            \"email\": \"ajksbdkljasbd@slnkd.aksbd\",\n            \"scheduled_on\": null,\n            \"last_contact\": null,\n            \"status\": 0,\n            \"lead\": \"{\\\"product_id\\\":\\\"7\\\",\\\"country_code\\\":\\\"20\\\",\\\"phone\\\":\\\"1324564\\\",\\\"name\\\":\\\"asd\\\",\\\"email\\\":\\\"ajksbdkljasbd@slnkd.aksbd\\\",\\\"custom1\\\":\\\"Leave your Message\\\",\\\"custom2\\\":\\\"we will back to you\\\"}\",\n            \"created_at\": \"2020-09-13 18:44:33\",\n            \"updated_at\": \"2020-09-13 18:44:33\",\n            \"source\": null\n        },\n        {\n            \"id\": 19,\n            \"name\": \"mahmoud ali mohamed\",\n            \"product_id\": 5,\n            \"user_id\": null,\n            \"source_id\": null,\n            \"phone\": \" 01128321285\",\n            \"email\": \"m7moodali88@gmail.com\",\n            \"scheduled_on\": null,\n            \"last_contact\": null,\n            \"status\": 0,\n            \"lead\": \"{\\\"product_id\\\":\\\"5\\\",\\\"phone\\\":\\\"01128321285\\\",\\\"name\\\":\\\"mahmoud ali mohamed\\\",\\\"email\\\":\\\"m7moodali88@gmail.com\\\"}\",\n            \"created_at\": \"2020-09-14 10:59:57\",\n            \"updated_at\": \"2020-09-14 10:59:57\",\n            \"source\": null\n        },\n        {\n            \"id\": 20,\n            \"name\": \"kareem\",\n            \"product_id\": 5,\n            \"user_id\": null,\n            \"source_id\": null,\n            \"phone\": \" 1033677562\",\n            \"email\": \"kareem@gmail.com\",\n            \"scheduled_on\": null,\n            \"last_contact\": null,\n            \"status\": 0,\n            \"lead\": \"{\\\"product_id\\\":\\\"5\\\",\\\"phone\\\":\\\"1033677562\\\",\\\"name\\\":\\\"kareem\\\",\\\"email\\\":\\\"kareem@gmail.com\\\"}\",\n            \"created_at\": \"2020-09-14 17:12:50\",\n            \"updated_at\": \"2020-09-14 17:12:50\",\n            \"source\": null\n        },\n        {\n            \"id\": 21,\n            \"name\": \"kareem\",\n            \"product_id\": 5,\n            \"user_id\": null,\n            \"source_id\": null,\n            \"phone\": \" 1033677562\",\n            \"email\": \"kareem@gmail.com\",\n            \"scheduled_on\": null,\n            \"last_contact\": null,\n            \"status\": 0,\n            \"lead\": \"{\\\"product_id\\\":\\\"5\\\",\\\"phone\\\":\\\"1033677562\\\",\\\"name\\\":\\\"kareem\\\",\\\"email\\\":\\\"kareem@gmail.com\\\"}\",\n            \"created_at\": \"2020-09-14 17:12:57\",\n            \"updated_at\": \"2020-09-14 17:12:57\",\n            \"source\": null\n        },\n        {\n            \"id\": 22,\n            \"name\": \"kareem\",\n            \"product_id\": 5,\n            \"user_id\": null,\n            \"source_id\": null,\n            \"phone\": \" 1033677562\",\n            \"email\": \"kareem@gmail.com\",\n            \"scheduled_on\": null,\n            \"last_contact\": null,\n            \"status\": 0,\n            \"lead\": \"{\\\"product_id\\\":\\\"5\\\",\\\"phone\\\":\\\"1033677562\\\",\\\"name\\\":\\\"kareem\\\",\\\"email\\\":\\\"kareem@gmail.com\\\"}\",\n            \"created_at\": \"2020-09-14 17:12:57\",\n            \"updated_at\": \"2020-09-14 17:12:57\",\n            \"source\": null\n        },\n        {\n            \"id\": 23,\n            \"name\": \"kareem\",\n            \"product_id\": 5,\n            \"user_id\": null,\n            \"source_id\": null,\n            \"phone\": \" 1033677562\",\n            \"email\": \"kareem@gmail.com\",\n            \"scheduled_on\": null,\n            \"last_contact\": null,\n            \"status\": 0,\n            \"lead\": \"{\\\"product_id\\\":\\\"5\\\",\\\"phone\\\":\\\"1033677562\\\",\\\"name\\\":\\\"kareem\\\",\\\"email\\\":\\\"kareem@gmail.com\\\"}\",\n            \"created_at\": \"2020-09-14 17:12:57\",\n            \"updated_at\": \"2020-09-14 17:12:57\",\n            \"source\": null\n        },\n        {\n            \"id\": 24,\n            \"name\": \"kareem222\",\n            \"product_id\": 6,\n            \"user_id\": null,\n            \"source_id\": null,\n            \"phone\": \"1234567654\",\n            \"email\": null,\n            \"scheduled_on\": null,\n            \"last_contact\": null,\n            \"status\": 0,\n            \"lead\": \"{\\\"name\\\":\\\"kareem222\\\",\\\"phone\\\":1234567654,\\\"product_id\\\":6,\\\"mobile\\\":22345678987654}\",\n            \"created_at\": \"2020-09-16 15:07:52\",\n            \"updated_at\": \"2020-09-16 15:07:52\",\n            \"source\": null\n        },\n        {\n            \"id\": 25,\n            \"name\": \"kareem222\",\n            \"product_id\": 6,\n            \"user_id\": null,\n            \"source_id\": null,\n            \"phone\": \"1234567654\",\n            \"email\": null,\n            \"scheduled_on\": null,\n            \"last_contact\": null,\n            \"status\": 0,\n            \"lead\": \"{\\\"name\\\":\\\"kareem222\\\",\\\"phone\\\":1234567654,\\\"product_id\\\":6,\\\"mobile\\\":22345678987654}\",\n            \"created_at\": \"2020-09-17 12:53:31\",\n            \"updated_at\": \"2020-09-17 12:53:31\",\n            \"source\": null\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "user_leads",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [],
+					"options": {
+						"formdata": {}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/user_leads/4",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"user_leads",
+						"4"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "All_Leads",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/all_leads",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"all_leads"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 17 Sep 2020 12:54:10 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "51"
+						},
+						{
+							"key": "Upgrade",
+							"value": "h2,h2c"
+						},
+						{
+							"key": "Connection",
+							"value": "Upgrade, Keep-Alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=3, max=100"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": \"0\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"kareem222\",\n            \"product_id\": 6,\n            \"user_id\": null,\n            \"source_id\": null,\n            \"phone\": \"1234567654\",\n            \"email\": \"kareemkima@gmail.com\\r\\n\",\n            \"scheduled_on\": null,\n            \"last_contact\": null,\n            \"status\": 2,\n            \"lead\": \"{\\\"name\\\":\\\"kareem222\\\",\\\"phone\\\":\\\"1234567654\\\",\\\"product_id\\\":\\\"6\\\",\\\"mobile\\\":\\\"22345678987654\\\"}\",\n            \"created_at\": \"2020-02-22 18:10:22\",\n            \"updated_at\": \"2020-09-16 15:02:50\",\n            \"source\": null\n        },\n        {\n            \"id\": 2,\n            \"name\": \"kareem222\",\n            \"product_id\": 6,\n            \"user_id\": null,\n            \"source_id\": null,\n            \"phone\": \"1234567654\",\n            \"email\": \"kareemkima@gmail.com\",\n            \"scheduled_on\": null,\n            \"last_contact\": null,\n            \"status\": 0,\n            \"lead\": \"{\\\"name\\\":\\\"kareem222\\\",\\\"phone\\\":\\\"1234567654\\\",\\\"product_id\\\":\\\"6\\\",\\\"mobile\\\":\\\"22345678987654\\\"}\",\n            \"created_at\": \"2020-02-22 18:10:47\",\n            \"updated_at\": \"2020-02-22 18:10:47\",\n            \"source\": null\n        },\n        {\n            \"id\": 3,\n            \"name\": \"kareemTest\",\n            \"product_id\": 2,\n            \"user_id\": null,\n            \"source_id\": null,\n            \"phone\": \"0123987662\",\n            \"email\": \"kareemkima@gmail.com\",\n            \"scheduled_on\": null,\n            \"last_contact\": null,\n            \"status\": 0,\n            \"lead\": \"{\\\"name\\\":\\\"kareemTest\\\",\\\"email\\\":\\\"kareemkima@gmail.com\\\",\\\"phone\\\":\\\"0123987662\\\",\\\"address\\\":\\\"miami\\\",\\\"city\\\":\\\"alexandria\\\",\\\"social\\\":\\\"http:\\\\/\\\\/facebook.com\\\",\\\"occupation\\\":\\\"Manager\\\",\\\"workplace_id\\\":\\\"4\\\",\\\"product_id\\\":\\\"2\\\"}\",\n            \"created_at\": \"2020-02-22 18:36:55\",\n            \"updated_at\": \"2020-02-22 18:36:55\",\n            \"source\": null\n        },\n        {\n            \"id\": 4,\n            \"name\": \"kareemTest2\",\n            \"product_id\": 6,\n            \"user_id\": null,\n            \"source_id\": null,\n            \"phone\": \"0123987662\",\n            \"email\": \"kareemkima@gmail.com\",\n            \"scheduled_on\": null,\n            \"last_contact\": null,\n            \"status\": 0,\n            \"lead\": \"{\\\"name\\\":\\\"kareemTest2\\\",\\\"email\\\":\\\"kareemkima@gmail.com\\\",\\\"phone\\\":\\\"0123987662\\\",\\\"address\\\":\\\"miami\\\",\\\"city\\\":\\\"alexandria\\\",\\\"social\\\":\\\"http:\\\\/\\\\/facebook.com\\\",\\\"occupation\\\":\\\"Manager\\\",\\\"workplace_id\\\":\\\"6\\\",\\\"product_id\\\":\\\"6\\\"}\",\n            \"created_at\": \"2020-02-22 18:37:58\",\n            \"updated_at\": \"2020-02-22 18:37:58\",\n            \"source\": null\n        },\n        {\n            \"id\": 5,\n            \"name\": \"kareemTest2\",\n            \"product_id\": 6,\n            \"user_id\": null,\n            \"source_id\": null,\n            \"phone\": \"0123987662\",\n            \"email\": \"kareemkima@gmail.com\",\n            \"scheduled_on\": null,\n            \"last_contact\": null,\n            \"status\": 0,\n            \"lead\": \"{\\\"name\\\":\\\"kareemTest2\\\",\\\"email\\\":\\\"kareemkima@gmail.com\\\",\\\"phone\\\":\\\"0123987662\\\",\\\"address\\\":\\\"miami\\\",\\\"city\\\":\\\"alexandria\\\",\\\"social\\\":\\\"http:\\\\/\\\\/facebook.com\\\",\\\"occupation\\\":\\\"Manager\\\",\\\"workplace_id\\\":\\\"6\\\",\\\"product_id\\\":\\\"6\\\"}\",\n            \"created_at\": \"2020-02-22 18:38:02\",\n            \"updated_at\": \"2020-02-22 18:38:02\",\n            \"source\": null\n        },\n        {\n            \"id\": 6,\n            \"name\": \"kareemTest2\",\n            \"product_id\": 6,\n            \"user_id\": null,\n            \"source_id\": null,\n            \"phone\": \"0123987662\",\n            \"email\": \"kareemkima@gmail.com\",\n            \"scheduled_on\": null,\n            \"last_contact\": null,\n            \"status\": 0,\n            \"lead\": \"{\\\"name\\\":\\\"kareemTest2\\\",\\\"email\\\":\\\"kareemkima@gmail.com\\\",\\\"phone\\\":\\\"0123987662\\\",\\\"address\\\":\\\"miami\\\",\\\"city\\\":\\\"alexandria\\\",\\\"social\\\":\\\"http:\\\\/\\\\/facebook.com\\\",\\\"occupation\\\":\\\"Manager\\\",\\\"workplace_id\\\":\\\"6\\\",\\\"product_id\\\":\\\"6\\\"}\",\n            \"created_at\": \"2020-02-22 18:38:11\",\n            \"updated_at\": \"2020-02-22 18:38:11\",\n            \"source\": null\n        },\n        {\n            \"id\": 7,\n            \"name\": \"midooo\",\n            \"product_id\": 7,\n            \"user_id\": null,\n            \"source_id\": null,\n            \"phone\": \"123456\",\n            \"email\": null,\n            \"scheduled_on\": null,\n            \"last_contact\": null,\n            \"status\": 0,\n            \"lead\": \"{\\\"name\\\":\\\"midooo\\\",\\\"email\\\":\\\"hanafy@gmail.com\\\",\\\"phone\\\":\\\"123456\\\",\\\"address\\\":null,\\\"city\\\":null,\\\"social\\\":null,\\\"occupation\\\":null,\\\"workplace_id\\\":\\\"1\\\",\\\"product_id\\\":\\\"7\\\"}\",\n            \"created_at\": \"2020-02-24 14:07:29\",\n            \"updated_at\": \"2020-02-24 14:07:29\",\n            \"source\": null\n        },\n        {\n            \"id\": 8,\n            \"name\": \"midooo\",\n            \"product_id\": 7,\n            \"user_id\": null,\n            \"source_id\": null,\n            \"phone\": \"123456\",\n            \"email\": null,\n            \"scheduled_on\": null,\n            \"last_contact\": null,\n            \"status\": 0,\n            \"lead\": \"{\\\"name\\\":\\\"midooo\\\",\\\"email\\\":\\\"hanafy@gmail.com\\\",\\\"phone\\\":\\\"123456\\\",\\\"address\\\":\\\"1\\\",\\\"city\\\":\\\"1\\\",\\\"social\\\":\\\"1\\\",\\\"occupation\\\":\\\"1\\\",\\\"workplace_id\\\":\\\"1\\\",\\\"product_id\\\":\\\"7\\\"}\",\n            \"created_at\": \"2020-02-24 14:07:39\",\n            \"updated_at\": \"2020-02-24 14:07:39\",\n            \"source\": null\n        },\n        {\n            \"id\": 9,\n            \"name\": \"midooo\",\n            \"product_id\": 7,\n            \"user_id\": null,\n            \"source_id\": null,\n            \"phone\": \"123456\",\n            \"email\": null,\n            \"scheduled_on\": null,\n            \"last_contact\": null,\n            \"status\": 0,\n            \"lead\": \"{\\\"name\\\":\\\"midooo\\\",\\\"email\\\":\\\"hanafy@gmail.com\\\",\\\"phone\\\":\\\"123456\\\",\\\"address\\\":\\\"1\\\",\\\"city\\\":\\\"1\\\",\\\"social\\\":\\\"1\\\",\\\"occupation\\\":\\\"1\\\",\\\"workplace_id\\\":\\\"1\\\",\\\"product_id\\\":\\\"7\\\"}\",\n            \"created_at\": \"2020-02-24 14:07:44\",\n            \"updated_at\": \"2020-02-24 14:07:44\",\n            \"source\": null\n        },\n        {\n            \"id\": 10,\n            \"name\": \"dada\",\n            \"product_id\": 7,\n            \"user_id\": null,\n            \"source_id\": null,\n            \"phone\": \"123456\",\n            \"email\": null,\n            \"scheduled_on\": null,\n            \"last_contact\": null,\n            \"status\": 0,\n            \"lead\": \"{\\\"name\\\":\\\"dada\\\",\\\"email\\\":\\\"hanafy@gmail.com\\\",\\\"phone\\\":\\\"123456\\\",\\\"address\\\":\\\"1\\\",\\\"city\\\":\\\"1\\\",\\\"social\\\":\\\"1\\\",\\\"occupation\\\":\\\"1\\\",\\\"workplace_id\\\":\\\"1\\\",\\\"product_id\\\":\\\"7\\\"}\",\n            \"created_at\": \"2020-02-24 14:10:21\",\n            \"updated_at\": \"2020-02-24 14:10:21\",\n            \"source\": null\n        },\n        {\n            \"id\": 11,\n            \"name\": \"dada\",\n            \"product_id\": 7,\n            \"user_id\": null,\n            \"source_id\": null,\n            \"phone\": \"123456\",\n            \"email\": null,\n            \"scheduled_on\": null,\n            \"last_contact\": null,\n            \"status\": 0,\n            \"lead\": \"{\\\"name\\\":\\\"dada\\\",\\\"email\\\":\\\"hanafy@gmail.com\\\",\\\"phone\\\":\\\"123456\\\",\\\"address\\\":\\\"1\\\",\\\"city\\\":\\\"1\\\",\\\"social\\\":\\\"1\\\",\\\"occupation\\\":\\\"1\\\",\\\"workplace_id\\\":\\\"1\\\",\\\"product_id\\\":\\\"7\\\"}\",\n            \"created_at\": \"2020-02-24 14:10:47\",\n            \"updated_at\": \"2020-02-24 14:10:47\",\n            \"source\": null\n        },\n        {\n            \"id\": 12,\n            \"name\": \"dada\",\n            \"product_id\": 7,\n            \"user_id\": null,\n            \"source_id\": null,\n            \"phone\": \"123456\",\n            \"email\": null,\n            \"scheduled_on\": null,\n            \"last_contact\": null,\n            \"status\": 0,\n            \"lead\": \"{\\\"name\\\":\\\"dada\\\",\\\"email\\\":\\\"hanafy@gmail.com\\\",\\\"phone\\\":\\\"123456\\\",\\\"address\\\":\\\"1\\\",\\\"city\\\":\\\"1\\\",\\\"social\\\":\\\"1\\\",\\\"occupation\\\":\\\"1\\\",\\\"workplace_id\\\":\\\"1\\\",\\\"product_id\\\":\\\"7\\\"}\",\n            \"created_at\": \"2020-02-24 14:10:48\",\n            \"updated_at\": \"2020-02-24 14:10:48\",\n            \"source\": null\n        },\n        {\n            \"id\": 13,\n            \"name\": \"dada\",\n            \"product_id\": 7,\n            \"user_id\": null,\n            \"source_id\": null,\n            \"phone\": \"123456\",\n            \"email\": null,\n            \"scheduled_on\": null,\n            \"last_contact\": null,\n            \"status\": 0,\n            \"lead\": \"{\\\"name\\\":\\\"dada\\\",\\\"email\\\":\\\"hanafy@gmail.com\\\",\\\"phone\\\":\\\"123456\\\",\\\"address\\\":\\\"1\\\",\\\"city\\\":\\\"1\\\",\\\"social\\\":\\\"1\\\",\\\"occupation\\\":\\\"1\\\",\\\"workplace_id\\\":\\\"1\\\",\\\"product_id\\\":\\\"7\\\"}\",\n            \"created_at\": \"2020-02-24 14:11:20\",\n            \"updated_at\": \"2020-02-24 14:11:20\",\n            \"source\": null\n        },\n        {\n            \"id\": 14,\n            \"name\": \"fofo\",\n            \"product_id\": 7,\n            \"user_id\": null,\n            \"source_id\": null,\n            \"phone\": \"123456\",\n            \"email\": null,\n            \"scheduled_on\": null,\n            \"last_contact\": null,\n            \"status\": 0,\n            \"lead\": \"{\\\"name\\\":\\\"fofo\\\",\\\"email\\\":\\\"hanafy@gmail.com\\\",\\\"phone\\\":\\\"123456\\\",\\\"address\\\":\\\"1\\\",\\\"city\\\":\\\"1\\\",\\\"social\\\":\\\"1\\\",\\\"occupation\\\":\\\"1\\\",\\\"workplace_id\\\":\\\"1\\\",\\\"product_id\\\":\\\"7\\\"}\",\n            \"created_at\": \"2020-02-24 14:11:25\",\n            \"updated_at\": \"2020-02-24 14:11:25\",\n            \"source\": null\n        },\n        {\n            \"id\": 15,\n            \"name\": \"Abu Yazeed\",\n            \"product_id\": 7,\n            \"user_id\": null,\n            \"source_id\": null,\n            \"phone\": \"01016789919\",\n            \"email\": null,\n            \"scheduled_on\": null,\n            \"last_contact\": null,\n            \"status\": 0,\n            \"lead\": \"{\\\"name\\\":\\\"Abu Yazeed\\\",\\\"email\\\":\\\"info@ahmedmohsen.com\\\",\\\"phone\\\":\\\"01016789919\\\",\\\"address\\\":\\\"5 Hefny Nasif, From Kornish, Sidi Gaber\\\",\\\"city\\\":\\\"Alexandria\\\",\\\"social\\\":\\\"1\\\",\\\"occupation\\\":\\\"1\\\",\\\"workplace_id\\\":\\\"1\\\",\\\"product_id\\\":\\\"7\\\"}\",\n            \"created_at\": \"2020-02-25 14:07:33\",\n            \"updated_at\": \"2020-02-25 14:07:33\",\n            \"source\": null\n        },\n        {\n            \"id\": 16,\n            \"name\": \"Abu Yazeed\",\n            \"product_id\": 7,\n            \"user_id\": null,\n            \"source_id\": null,\n            \"phone\": \"01016789919\",\n            \"email\": null,\n            \"scheduled_on\": null,\n            \"last_contact\": null,\n            \"status\": 0,\n            \"lead\": \"{\\\"name\\\":\\\"Abu Yazeed\\\",\\\"email\\\":\\\"info@ahmedmohsen.com\\\",\\\"phone\\\":\\\"01016789919\\\",\\\"address\\\":\\\"5 Hefny Nasif, From Kornish, Sidi Gaber\\\",\\\"city\\\":\\\"Alexandria\\\",\\\"social\\\":\\\"1\\\",\\\"occupation\\\":\\\"1\\\",\\\"workplace_id\\\":\\\"1\\\",\\\"product_id\\\":\\\"7\\\"}\",\n            \"created_at\": \"2020-02-25 14:07:35\",\n            \"updated_at\": \"2020-02-25 14:07:35\",\n            \"source\": null\n        },\n        {\n            \"id\": 17,\n            \"name\": \"asd\",\n            \"product_id\": 7,\n            \"user_id\": null,\n            \"source_id\": null,\n            \"phone\": \"1324564\",\n            \"email\": \"ajksbdkljasbd@slnkd.aksbd\",\n            \"scheduled_on\": null,\n            \"last_contact\": null,\n            \"status\": 0,\n            \"lead\": \"{\\\"product_id\\\":\\\"7\\\",\\\"csrftoken\\\":\\\"aw9cr5EdZoYyFPi9RJitOSIEdJOxrZ9tSLY6w6ko\\\",\\\"country_code\\\":\\\"20\\\",\\\"phone\\\":\\\"1324564\\\",\\\"name\\\":\\\"asd\\\",\\\"email\\\":\\\"ajksbdkljasbd@slnkd.aksbd\\\",\\\"custom1\\\":\\\"asdas\\\",\\\"custom2\\\":\\\"asdd\\\"}\",\n            \"created_at\": \"2020-09-13 18:39:13\",\n            \"updated_at\": \"2020-09-13 18:39:13\",\n            \"source\": null\n        },\n        {\n            \"id\": 18,\n            \"name\": \"asd\",\n            \"product_id\": 7,\n            \"user_id\": null,\n            \"source_id\": null,\n            \"phone\": \"20 1324564\",\n            \"email\": \"ajksbdkljasbd@slnkd.aksbd\",\n            \"scheduled_on\": null,\n            \"last_contact\": null,\n            \"status\": 0,\n            \"lead\": \"{\\\"product_id\\\":\\\"7\\\",\\\"country_code\\\":\\\"20\\\",\\\"phone\\\":\\\"1324564\\\",\\\"name\\\":\\\"asd\\\",\\\"email\\\":\\\"ajksbdkljasbd@slnkd.aksbd\\\",\\\"custom1\\\":\\\"Leave your Message\\\",\\\"custom2\\\":\\\"we will back to you\\\"}\",\n            \"created_at\": \"2020-09-13 18:44:33\",\n            \"updated_at\": \"2020-09-13 18:44:33\",\n            \"source\": null\n        },\n        {\n            \"id\": 19,\n            \"name\": \"mahmoud ali mohamed\",\n            \"product_id\": 5,\n            \"user_id\": null,\n            \"source_id\": null,\n            \"phone\": \" 01128321285\",\n            \"email\": \"m7moodali88@gmail.com\",\n            \"scheduled_on\": null,\n            \"last_contact\": null,\n            \"status\": 0,\n            \"lead\": \"{\\\"product_id\\\":\\\"5\\\",\\\"phone\\\":\\\"01128321285\\\",\\\"name\\\":\\\"mahmoud ali mohamed\\\",\\\"email\\\":\\\"m7moodali88@gmail.com\\\"}\",\n            \"created_at\": \"2020-09-14 10:59:57\",\n            \"updated_at\": \"2020-09-14 10:59:57\",\n            \"source\": null\n        },\n        {\n            \"id\": 20,\n            \"name\": \"kareem\",\n            \"product_id\": 5,\n            \"user_id\": null,\n            \"source_id\": null,\n            \"phone\": \" 1033677562\",\n            \"email\": \"kareem@gmail.com\",\n            \"scheduled_on\": null,\n            \"last_contact\": null,\n            \"status\": 0,\n            \"lead\": \"{\\\"product_id\\\":\\\"5\\\",\\\"phone\\\":\\\"1033677562\\\",\\\"name\\\":\\\"kareem\\\",\\\"email\\\":\\\"kareem@gmail.com\\\"}\",\n            \"created_at\": \"2020-09-14 17:12:50\",\n            \"updated_at\": \"2020-09-14 17:12:50\",\n            \"source\": null\n        },\n        {\n            \"id\": 21,\n            \"name\": \"kareem\",\n            \"product_id\": 5,\n            \"user_id\": null,\n            \"source_id\": null,\n            \"phone\": \" 1033677562\",\n            \"email\": \"kareem@gmail.com\",\n            \"scheduled_on\": null,\n            \"last_contact\": null,\n            \"status\": 0,\n            \"lead\": \"{\\\"product_id\\\":\\\"5\\\",\\\"phone\\\":\\\"1033677562\\\",\\\"name\\\":\\\"kareem\\\",\\\"email\\\":\\\"kareem@gmail.com\\\"}\",\n            \"created_at\": \"2020-09-14 17:12:57\",\n            \"updated_at\": \"2020-09-14 17:12:57\",\n            \"source\": null\n        },\n        {\n            \"id\": 22,\n            \"name\": \"kareem\",\n            \"product_id\": 5,\n            \"user_id\": null,\n            \"source_id\": null,\n            \"phone\": \" 1033677562\",\n            \"email\": \"kareem@gmail.com\",\n            \"scheduled_on\": null,\n            \"last_contact\": null,\n            \"status\": 0,\n            \"lead\": \"{\\\"product_id\\\":\\\"5\\\",\\\"phone\\\":\\\"1033677562\\\",\\\"name\\\":\\\"kareem\\\",\\\"email\\\":\\\"kareem@gmail.com\\\"}\",\n            \"created_at\": \"2020-09-14 17:12:57\",\n            \"updated_at\": \"2020-09-14 17:12:57\",\n            \"source\": null\n        },\n        {\n            \"id\": 23,\n            \"name\": \"kareem\",\n            \"product_id\": 5,\n            \"user_id\": null,\n            \"source_id\": null,\n            \"phone\": \" 1033677562\",\n            \"email\": \"kareem@gmail.com\",\n            \"scheduled_on\": null,\n            \"last_contact\": null,\n            \"status\": 0,\n            \"lead\": \"{\\\"product_id\\\":\\\"5\\\",\\\"phone\\\":\\\"1033677562\\\",\\\"name\\\":\\\"kareem\\\",\\\"email\\\":\\\"kareem@gmail.com\\\"}\",\n            \"created_at\": \"2020-09-14 17:12:57\",\n            \"updated_at\": \"2020-09-14 17:12:57\",\n            \"source\": null\n        },\n        {\n            \"id\": 24,\n            \"name\": \"kareem222\",\n            \"product_id\": 6,\n            \"user_id\": null,\n            \"source_id\": null,\n            \"phone\": \"1234567654\",\n            \"email\": null,\n            \"scheduled_on\": null,\n            \"last_contact\": null,\n            \"status\": 0,\n            \"lead\": \"{\\\"name\\\":\\\"kareem222\\\",\\\"phone\\\":1234567654,\\\"product_id\\\":6,\\\"mobile\\\":22345678987654}\",\n            \"created_at\": \"2020-09-16 15:07:52\",\n            \"updated_at\": \"2020-09-16 15:07:52\",\n            \"source\": null\n        },\n        {\n            \"id\": 25,\n            \"name\": \"kareem222\",\n            \"product_id\": 6,\n            \"user_id\": null,\n            \"source_id\": null,\n            \"phone\": \"1234567654\",\n            \"email\": null,\n            \"scheduled_on\": null,\n            \"last_contact\": null,\n            \"status\": 0,\n            \"lead\": \"{\\\"name\\\":\\\"kareem222\\\",\\\"phone\\\":1234567654,\\\"product_id\\\":6,\\\"mobile\\\":22345678987654}\",\n            \"created_at\": \"2020-09-17 12:53:31\",\n            \"updated_at\": \"2020-09-17 12:53:31\",\n            \"source\": null\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "update_profile",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \r\n    \"id\": 4,\r\n    \"email\": \"a7medkamal775@gmail.com\",\r\n    \"name\": \"kareem\",\r\n    \"phone\": \"01234567890\",\r\n    \"password\": 123456\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/update_profile",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"update_profile"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "update_profile",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{   \r\n    \"id\": 4,\r\n    \"email\": \"a7medkamal775@gmail.com\",\r\n    \"name\": \"kareem\",\r\n    \"phone\": \"01234567890\",\r\n    \"password\": 123456\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/update_profile",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"update_profile"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 17 Sep 2020 12:54:17 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Upgrade",
+							"value": "h2,h2c"
+						},
+						{
+							"key": "Connection",
+							"value": "Upgrade, Keep-Alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=3, max=100"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": \"0\",\n    \"id\": 4,\n    \"name\": \"kareem\",\n    \"phone\": \"01234567890\",\n    \"email\": \"a7medkamal775@gmail.com\",\n    \"password\": \"$2y$10$Mt93F08CaD1h0HgwiDPQbuGhx708VVjSuPbYceaJIK60Z72m08WKy\",\n    \"message\": \"The User(kareem) Updated successfully\"\n}"
+				}
+			]
+		},
+		{
+			"name": "qualified",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \r\n    \"id\": 1,\r\n    \"status\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/qualified",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"qualified"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "qualified",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{   \r\n    \"id\": 1,\r\n    \"status\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/qualified",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"qualified"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 17 Sep 2020 12:54:22 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "58"
+						},
+						{
+							"key": "Upgrade",
+							"value": "h2,h2c"
+						},
+						{
+							"key": "Connection",
+							"value": "Upgrade, Keep-Alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=3, max=100"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": 0,\n    \"id\": 1,\n    \"status\": 2,\n    \"message\": \"Qualified Status Changed Successfully\"\n}"
+				}
+			]
+		},
+		{
+			"name": "change is available",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "user_id",
+							"value": "4",
+							"type": "text"
+						},
+						{
+							"key": "is_available",
+							"value": "1",
+							"description": "0:not available, 1: available",
+							"type": "text"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/change_is_available",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"change_is_available"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "qualified",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{   \r\n    \"id\": 1,\r\n    \"status\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/qualified",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"qualified"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 17 Sep 2020 12:54:22 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "58"
+						},
+						{
+							"key": "Upgrade",
+							"value": "h2,h2c"
+						},
+						{
+							"key": "Connection",
+							"value": "Upgrade, Keep-Alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=3, max=100"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": 0,\n    \"id\": 1,\n    \"status\": 2,\n    \"message\": \"Qualified Status Changed Successfully\"\n}"
+				}
+			]
+		},
+		{
+			"name": "test_notification_device",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "device_token",
+							"value": "45455555555",
+							"type": "text"
+						},
+						{
+							"key": "message",
+							"value": "fskvj grrjfgkrefrk ",
+							"type": "text"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/test_notification_device",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"test_notification_device"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "qualified",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{   \r\n    \"id\": 1,\r\n    \"status\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/qualified",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"qualified"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 17 Sep 2020 12:54:22 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "58"
+						},
+						{
+							"key": "Upgrade",
+							"value": "h2,h2c"
+						},
+						{
+							"key": "Connection",
+							"value": "Upgrade, Keep-Alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=3, max=100"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": 0,\n    \"id\": 1,\n    \"status\": 2,\n    \"message\": \"Qualified Status Changed Successfully\"\n}"
+				}
+			]
+		},
+		{
+			"name": "test_notification_user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "user_id",
+							"value": "5",
+							"type": "text"
+						},
+						{
+							"key": "message",
+							"value": "fskvj grrjfgkrefrk ",
+							"type": "text"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/test_notification_user",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"test_notification_user"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "qualified",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{   \r\n    \"id\": 1,\r\n    \"status\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/qualified",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"qualified"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 17 Sep 2020 12:54:22 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "58"
+						},
+						{
+							"key": "Upgrade",
+							"value": "h2,h2c"
+						},
+						{
+							"key": "Connection",
+							"value": "Upgrade, Keep-Alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=3, max=100"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": 0,\n    \"id\": 1,\n    \"status\": 2,\n    \"message\": \"Qualified Status Changed Successfully\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Forgot Password",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "mohamedismaiel12224@gmail.com",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/password/email",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"password",
+						"email"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "cf87b78a-abd6-4f29-a3dd-3e8c3978d1f4",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "cb355fdd-b5e8-4b20-b58c-2f56f92f0371",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "c2d6c0a2-3d6e-4aa9-9394-d2347f47dbb8",
+			"key": "url",
+			"value": "https://app.closor.com/api"
+		}
+	],
+	"protocolProfileBehavior": {}
+}

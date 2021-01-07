@@ -11,6 +11,11 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Session;
 
+/**
+ * @group 2.4  WorkPlace Products management
+ *
+ * Routes To manage WorkPlace Products data For The Manager Control Panel
+ */
 class ProductsController extends Controller
 {
     /**

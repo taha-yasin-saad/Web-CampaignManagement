@@ -10,6 +10,11 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use App\Country;
 
+/**
+ * @group 3.1  APIs User management
+ *
+ * APIs for managing users
+ */
 class UserController extends Controller
 {
     protected function validator(array $data)

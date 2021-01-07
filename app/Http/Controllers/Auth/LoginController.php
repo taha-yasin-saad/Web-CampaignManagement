@@ -6,6 +6,12 @@ use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Symfony\Component\HttpFoundation\Request;
 use App\User;
+
+/**
+ * @group  Login management
+ *
+ * Route for Login Users
+ */
 class LoginController extends Controller
 {
     /*
@@ -18,6 +24,8 @@ class LoginController extends Controller
     | to conveniently provide its functionality to your applications.
     |
     */
+
+
 
     use AuthenticatesUsers;
 
@@ -38,17 +46,16 @@ class LoginController extends Controller
     {
 
         $data['email'] = $request->email;
-        $user = User::where('email',$request->email)->first();
-        if($user && $user->password && $user->is_available == 1){
+        $user = User::where('email', $request->email)->first();
+        if ($user && $user->password && $user->is_available == 1) {
             return redirect('login')->with('email', $data['email']);
-        }elseif($user && $user->password && $user->is_available == 0){
+        } elseif ($user && $user->password && $user->is_available == 0) {
             return redirect('/')->with('is_available', 'Your Account Has Been Disabled By The Admin');
-        }elseif($user){
+        } elseif ($user) {
             return redirect('register')->with('email', $data['email'])->with('invited', 1);
-        }else{
+        } else {
             return redirect('register')->with('email', $data['email']);
         }
-
     }
 
 
