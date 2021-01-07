@@ -2,14 +2,14 @@
     "variables": [],
     "info": {
         "name": "Closor API",
-        "_postman_id": "c0323fd1-0403-4b96-a9c2-1df31f8f212d",
+        "_postman_id": "51cf5333-6f37-4015-9290-eb6cfdf67eb4",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.0.0\/collection.json"
     },
     "item": [
         {
             "name": "1.1  Admin management",
-            "description": "\n\nPage Group To manage Admin data & Lists Stats Of The Site In General .\n\n<p><img src=\"images\/admin\/admin-login-page.PNG\" width=\"100%\"><\/p>\n\n<p><img src=\"images\/admin\/admin-management.png\" width=\"100%\"><\/p>",
+            "description": "\n\nPage Group To manage Admin data & Lists Stats Of The Site In General .\n\n<p><img src=\"images\/admin\/admin-login-page.png\" width=\"100%\"><\/p>\n\n<p><img src=\"images\/admin\/admin-management.png\" width=\"100%\"><\/p>",
             "item": [
                 {
                     "name": "Dashboard",
@@ -307,7 +307,7 @@
         },
         {
             "name": "1.4  Admin Zone management",
-            "description": "\nPage Group To manage Zone data For The Admin Control Panel .\n\n- View the Zone Data Ex. Name, Countries & MANAGE .\n- Create New Zones .\n- Edit an existing Zones from the Edit Button .\n- Delete Zones From the delete Button .\n\n<p><img src=\"images\/admin\/zones\/admin-zones-view.PNG\" width=\"100%\"><\/p>",
+            "description": "\nPage Group To manage Zone data For The Admin Control Panel .\n\n- View the Zone Data Ex. Name, Countries & MANAGE .\n- Create New Zones .\n- Edit an existing Zones from the Edit Button .\n- Delete Zones From the delete Button .\n\n<p><img src=\"images\/admin\/zones\/admin-zones-view.png\" width=\"100%\"><\/p>",
             "item": [
                 {
                     "name": "Zones View Page",
@@ -333,7 +333,7 @@
                             "mode": "raw",
                             "raw": "[]"
                         },
-                        "description": "Is An Admin-Panel Zone Page That Views Zones Data Info .\n\n<p><img src=\"images\/admin\/zones\/admin-zones-view.PNG\" width=\"100%\"><\/p>\n\nView Zones Data Info\n\n- View the Zone Data Ex. Name, Countries & MANAGE .\n- Create New Zones for the Site .\n- Edit an existing Zones from the Edit Button .\n- Delete Zones From the delete Button .",
+                        "description": "Is An Admin-Panel Zone Page That Views Zones Data Info .\n\n<p><img src=\"images\/admin\/zones\/admin-zones-view.png\" width=\"100%\"><\/p>\n\nView Zones Data Info\n\n- View the Zone Data Ex. Name, Countries & MANAGE .\n- Create New Zones for the Site .\n- Edit an existing Zones from the Edit Button .\n- Delete Zones From the delete Button .",
                         "response": []
                     }
                 },
@@ -361,7 +361,7 @@
                             "mode": "raw",
                             "raw": "{\n    \"name\": \"demo\",\n    \"Countries\": \"Alex\"\n}"
                         },
-                        "description": "Is An Admin-Panel Zone Page That Creates Zones To Manage The Web Site Generally .\n\n<p><img src=\"images\/admin\/zones\/admin-zones-create.PNG\" width=\"100%\"><\/p>",
+                        "description": "Is An Admin-Panel Zone Page That Creates Zones To Manage The Web Site Generally .\n\n<p><img src=\"images\/admin\/zones\/admin-zones-create.png\" width=\"100%\"><\/p>",
                         "response": []
                     }
                 },
@@ -417,7 +417,7 @@
                             "mode": "raw",
                             "raw": "{\n    \"name\": \"demo\",\n    \"Countries\": \"Alex\"\n}"
                         },
-                        "description": "Is An Admin-Panel Zone Page That Edits Zones To Manage The Web Site Generally .\n\n<p><img src=\"images\/admin\/zones\/admin-zones-edit.PNG\" width=\"100%\"><\/p>",
+                        "description": "Is An Admin-Panel Zone Page That Edits Zones To Manage The Web Site Generally .\n\n<p><img src=\"images\/admin\/zones\/admin-zones-edit.png\" width=\"100%\"><\/p>",
                         "response": []
                     }
                 },
@@ -481,7 +481,7 @@
         },
         {
             "name": "1.5  Admin Workplaces management",
-            "description": "\nPage Group To manage Workplaces data For The Admin Control Panel .\n\n- View the Workplaces Data Ex. Title, Count of Products & Created By etc .\n\n<p><img src=\"images\/admin\/workplaces\/admin-workplaces-view.PNG\" width=\"100%\"><\/p>",
+            "description": "\nPage Group To manage Workplaces data For The Admin Control Panel .\n\n- View the Workplaces Data Ex. Title, Count of Products & Created By etc .\n\n<p><img src=\"images\/admin\/workplaces\/admin-workplaces-view.png\" width=\"100%\"><\/p>",
             "item": [
                 {
                     "name": "Workplaces View Page",
@@ -563,7 +563,7 @@
                             "mode": "raw",
                             "raw": "[]"
                         },
-                        "description": "Is An Admin-Panel Page For Single Workplace That Views Workplace Data Info .\n\n- View Products For the Workplace .\n- View Products Count For the Single Workplace .\n- Every Product In the WorkPlace With its Stats Ex. Leads Source Name, Leads count, Contacted Leads Count & Team Names That Assigned to this Product .\n- Filter Search to go through every table data .\n\n<p><img src=\"images\/admin\/workplaces\/admin-workplace-products.PNG\" width=\"100%\"><\/p>",
+                        "description": "Is An Admin-Panel Page For Single Workplace That Views Workplace Data Info .\n\n- View Products For the Workplace .\n- View Products Count For the Single Workplace .\n- Every Product In the WorkPlace With its Stats Ex. Leads Source Name, Leads count, Contacted Leads Count & Team Names That Assigned to this Product .\n- Filter Search to go through every table data .\n\n<p><img src=\"images\/admin\/workplaces\/admin-workplace-products.png\" width=\"100%\"><\/p>",
                         "response": []
                     }
                 },
@@ -591,7 +591,7 @@
                             "mode": "raw",
                             "raw": "[]"
                         },
-                        "description": "Is An Admin-Panel Page Workplace Team That Views Workplaces Team Data Info That is assigned to the product to manage into the workplaces .\n\n- invite users with the invite button to manage the product that belongs to the workplace .\n<p><img src=\"images\/admin\/workplaces\/admin-workplaces-invite.png\" width=\"100%\"><\/p>\n- counter users that invited to a certain product .\n<p><img src=\"images\/admin\/workplaces\/admin-workplaces-counter.png\" width=\"100%\"><\/p>\n\n\nView Workplace Single Product Team Info & Roles\n\n- View the Workplace Single Product Team Info & Roles Ex. User Name, Products Names That Assigned to the user & User role, etc.\n\n<p><img src=\"images\/admin\/workplaces\/admin-workplace-team.PNG\" width=\"100%\"><\/p>",
+                        "description": "Is An Admin-Panel Page Workplace Team That Views Workplaces Team Data Info That is assigned to the product to manage into the workplaces .\n\n- invite users with the invite button to manage the product that belongs to the workplace .\n<p><img src=\"images\/admin\/workplaces\/admin-workplaces-invite.png\" width=\"100%\"><\/p>\n- counter users that invited to a certain product .\n<p><img src=\"images\/admin\/workplaces\/admin-workplaces-counter.png\" width=\"100%\"><\/p>\n\n\nView Workplace Single Product Team Info & Roles\n\n- View the Workplace Single Product Team Info & Roles Ex. User Name, Products Names That Assigned to the user & User role, etc.\n\n<p><img src=\"images\/admin\/workplaces\/admin-workplace-team.png\" width=\"100%\"><\/p>",
                         "response": []
                     }
                 }
@@ -681,7 +681,7 @@
                             "mode": "raw",
                             "raw": "[]"
                         },
-                        "description": "Is An Admin-Panel Page For Single Lead That Views Lead Data Info .\n\n- View Products For the Lead .\n- View Products Count For the Single Lead .\n- Every Product In the Lead With its Stats Ex. Leads Source Name, Leads count, Contacted Leads Count & Team Names That Assigned to this Product .\n- Filter Search to go through every table data .\n\n<p><img src=\"images\/admin\/leads\/admin-singlelead-view.PNG\" width=\"100%\"><\/p>",
+                        "description": "Is An Admin-Panel Page For Single Lead That Views Lead Data Info .\n\n- View Products For the Lead .\n- View Products Count For the Single Lead .\n- Every Product In the Lead With its Stats Ex. Leads Source Name, Leads count, Contacted Leads Count & Team Names That Assigned to this Product .\n- Filter Search to go through every table data .\n\n<p><img src=\"images\/admin\/leads\/admin-singlelead-view.png\" width=\"100%\"><\/p>",
                         "response": []
                     }
                 }
@@ -751,7 +751,7 @@
         },
         {
             "name": "2.1  Home management",
-            "description": "\nPage Group To manage General data for site .\n\n- View the General Data & Routes.\n\n<p><img src=\"images\/users\/home\/users-login-page.PNG\" width=\"100%\"><\/p>",
+            "description": "\nPage Group To manage General data for site .\n\n- View the General Data & Routes.\n\n<p><img src=\"images\/users\/home\/users-login-page.png\" width=\"100%\"><\/p>",
             "item": [
                 {
                     "name": "Users Login View Page",
@@ -777,7 +777,7 @@
                             "mode": "raw",
                             "raw": "[]"
                         },
-                        "description": "Is An Admin-Panel User Login Page .\n\n<p><img src=\"images\/users\/home\/users-login-page.PNG\" width=\"100%\"><\/p>",
+                        "description": "Is An Admin-Panel User Login Page .\n\n<p><img src=\"images\/users\/home\/users-login-page.png\" width=\"100%\"><\/p>",
                         "response": []
                     }
                 },
