@@ -1,68 +1,2987 @@
 {
-    "name": "laravel/laravel",
-    "type": "project",
-    "description": "The Laravel Framework.",
-    "keywords": [
-        "framework",
-        "laravel"
-    ],
-    "license": "MIT",
-    "require": {
-        "php": "^7.1.3",
-        "doctrine/dbal": "v2.4.2",
-        "fideloper/proxy": "^4.0",
-        "laravel/framework": "5.8.*",
-        "laravel/tinker": "^1.0",
-        "mpociot/laravel-apidoc-generator": "^4.8",
-        "yajra/laravel-datatables-oracle": "^9.15"
+    "variables": [],
+    "info": {
+        "name": "Closor API",
+        "_postman_id": "dfd9ae5d-2e15-44a2-aa95-208a6e915288",
+        "description": "",
+        "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.0.0\/collection.json"
     },
-    "require-dev": {
-        "beyondcode/laravel-dump-server": "^1.0",
-        "filp/whoops": "^2.0",
-        "fzaninotto/faker": "^1.4",
-        "mockery/mockery": "^1.0",
-        "nunomaduro/collision": "^3.0",
-        "phpunit/phpunit": "^7.5"
-    },
-    "config": {
-        "optimize-autoloader": true,
-        "preferred-install": "dist",
-        "sort-packages": true
-    },
-    "extra": {
-        "laravel": {
-            "dont-discover": []
-        }
-    },
-    "autoload": {
-        "psr-4": {
-            "App\\": "app/"
+    "item": [
+        {
+            "name": "1.1  Admin management",
+            "description": "\n\nPage Group To manage Admin data & Lists Stats Of The Site In General .\n\n<p><img src=\"images\/admin\/admin-login-page.png\" width=\"100%\"><\/p>\n\n<p><img src=\"images\/admin\/admin-management.png\" width=\"100%\"><\/p>",
+            "item": [
+                {
+                    "name": "Dashboard",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/closor\/public\/",
+                            "path": "admin\/dashboard",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Is A Dashboard Page That Shows Lists Of Stats & General Data Of The Site In General That admin can view stats and make decisions from the stats brief in front of him to manage the site more efficient .\n\n<p><img src=\"images\/admin\/dashboard.png\" width=\"100%\"><\/p>\n\n- Statistics For All The Site .\n- Diagrams For Data Of Workplaces.\n- Diagrams For Data Of Products.\n- Diagrams For Data Of Users.\n- Diagrams For Data Of Leads.\n- Counter For Workplaces All Over the Site .\n- Counter For Products All Over the Site .\n- Counter For Users All Over the Site .\n- Counter For Leads All Over the Site .",
+                        "response": []
+                    }
+                }
+            ]
         },
-        "classmap": [
-            "database/seeds",
-            "database/factories"
-        ],
-        "files": [
-            "app/helpers.php"
-        ]
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "Tests\\": "tests/"
+        {
+            "name": "1.2  Admin Moderator management",
+            "description": "\nPage Group To manage Moderator data For The Admin Control Panel .\n\n- View the moderator Data Ex. Name, Email & Phone .\n- Create New Moderators for the Site .\n- Edit an existing Moderators from the Edit Button .\n- Delete Moderators From the delete Button .\n\n<p><img src=\"images\/admin\/moderators\/admin-moderator-management.png\" width=\"100%\"><\/p>",
+            "item": [
+                {
+                    "name": "Moderators View Page",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/closor\/public\/",
+                            "path": "admin\/moderator",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Is An Admin-Panel Moderator Page That Views Moderators Data Info .\n\n<p><img src=\"images\/admin\/moderators\/admin-moderator-view.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Moderator Create Page",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/closor\/public\/",
+                            "path": "admin\/moderator\/create",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"name\": \"demo\",\n    \"email\": \"test@demo.com\",\n    \"phone\": 123456789,\n    \"zones\": \"Alex\"\n}"
+                        },
+                        "description": "Is An Admin-Panel Moderator Page That Creates Moderators To Manage The Web Site Generally .\n\n<p><img src=\"images\/admin\/moderators\/admin-moderator-create.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Moderator Store Data",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/closor\/public\/",
+                            "path": "admin\/moderator",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Is An Admin-Panel Moderator Data Request That Stores Moderators Data To Database .\n\n<p><img src=\"images\/admin\/added-successfully.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Moderator Edit Page",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/closor\/public\/",
+                            "path": "admin\/moderator\/:moderator\/edit",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"name\": \"demo .\",\n    \"email\": \"test@demo.com .\",\n    \"phone\": 123456789,\n    \"zones\": \"Alex .\"\n}"
+                        },
+                        "description": "Is An Admin-Panel Moderator Page That Edits Moderators To Manage The Web Site Generally .",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Moderator Update Data",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/closor\/public\/",
+                            "path": "admin\/moderator\/:moderator",
+                            "query": []
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Is An Admin-Panel Moderator Data Request That Updates Moderators Data To Database .\n\n<p><img src=\"images\/admin\/moderators\/admin-moderator-update.png\" width=\"100%\"><\/p>\n<p><img src=\"images\/admin\/updated-successfully.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Moderator Delete Data",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/closor\/public\/",
+                            "path": "admin\/moderator\/:moderator",
+                            "query": []
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Is An Admin-Panel Moderator Data Request That Delete Moderators Data From Database .\n\n<p><img src=\"images\/admin\/moderators\/admin-moderator-delete.png\" width=\"100%\"><\/p>\n<p><img src=\"images\/admin\/deleted-successfully.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "1.3  Admin Users management",
+            "description": "\nPage Group To manage Users data For The Admin Control Panel .\n\n- View the User Data Ex. Name, Email & Phone etc.\n- Filter an existing Users from the Filter Form .\n- Manage Users From the Enable & Disable Button .\n\n<p><img src=\"images\/admin\/users\/admin-user-view.png\" width=\"100%\"><\/p>",
+            "item": [
+                {
+                    "name": "Users View Page",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/closor\/public\/",
+                            "path": "admin\/user",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Is An Admin-Panel User Page That Views users Data Info .\n\nForm Filter is used to filtering existing Users To get better results .\n\n<p><img src=\"images\/admin\/users\/admin-user-filter.png\" width=\"100%\"><\/p>\n\nView users Data Info\n\n- View the User Data Ex. Name, Email & Phone etc.\n\n- Manage Users From the Enable & Disable Button .\n\n<p><img src=\"images\/admin\/users\/admin-user-view.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Users View Page",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/closor\/public\/",
+                            "path": "admin\/user",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Is An Admin-Panel User Page That Views users Data Info .\n\nForm Filter is used to filtering existing Users To get better results .\n\n<p><img src=\"images\/admin\/users\/admin-user-filter.png\" width=\"100%\"><\/p>\n\nView users Data Info\n\n- View the User Data Ex. Name, Email & Phone etc.\n\n- Manage Users From the Enable & Disable Button .\n\n<p><img src=\"images\/admin\/users\/admin-user-view.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Manage Users From the Enable & Disable Button",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/closor\/public\/",
+                            "path": "admin\/user_available\/:user\/:is_available",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "<p><img src=\"images\/admin\/users\/admin-user-enable.png\" width=\"100%\"><\/p>\n\n<p><img src=\"images\/admin\/updated-successfully.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "1.4  Admin Zone management",
+            "description": "\nPage Group To manage Zone data For The Admin Control Panel .\n\n- View the Zone Data Ex. Name, Countries & MANAGE .\n- Create New Zones .\n- Edit an existing Zones from the Edit Button .\n- Delete Zones From the delete Button .\n\n<p><img src=\"images\/admin\/zones\/admin-zones-view.png\" width=\"100%\"><\/p>",
+            "item": [
+                {
+                    "name": "Zones View Page",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/closor\/public\/",
+                            "path": "admin\/zone",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Is An Admin-Panel Zone Page That Views Zones Data Info .\n\n<p><img src=\"images\/admin\/zones\/admin-zones-view.png\" width=\"100%\"><\/p>\n\nView Zones Data Info\n\n- View the Zone Data Ex. Name, Countries & MANAGE .\n- Create New Zones for the Site .\n- Edit an existing Zones from the Edit Button .\n- Delete Zones From the delete Button .",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Zone Create Page",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/closor\/public\/",
+                            "path": "admin\/zone\/create",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"name\": \"demo\",\n    \"Countries\": \"Alex\"\n}"
+                        },
+                        "description": "Is An Admin-Panel Zone Page That Creates Zones To Manage The Web Site Generally .\n\n<p><img src=\"images\/admin\/zones\/admin-zones-create.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Zone Store Data",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/closor\/public\/",
+                            "path": "admin\/zone",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Is An Admin-Panel Zone Data Request That Stores Zones Data To Database .\n\n<p><img src=\"images\/admin\/added-successfully.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Zone Edit Page",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/closor\/public\/",
+                            "path": "admin\/zone\/:zone\/edit",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"name\": \"demo\",\n    \"Countries\": \"Alex\"\n}"
+                        },
+                        "description": "Is An Admin-Panel Zone Page That Edits Zones To Manage The Web Site Generally .\n\n<p><img src=\"images\/admin\/zones\/admin-zones-edit.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Zone Update Data",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/closor\/public\/",
+                            "path": "admin\/zone\/:zone",
+                            "query": []
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Is An Admin-Panel Zone Data Request That Updates Zones Data To Database .\n\n<p><img src=\"images\/admin\/zones\/admin-zones-update.png\" width=\"100%\"><\/p>\n<p><img src=\"images\/admin\/updated-successfully.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Zone Delete Data",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/closor\/public\/",
+                            "path": "admin\/zone\/:zone",
+                            "query": []
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Is An Admin-Panel Zone Data Request That Delete Zones Data From Database .\n\n<p><img src=\"images\/admin\/zones\/admin-zones-delete.png\" width=\"100%\"><\/p>\n\n<p><img src=\"images\/admin\/deleted-successfully.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "1.5  Admin Workplaces management",
+            "description": "\nPage Group To manage Workplaces data For The Admin Control Panel .\n\n- View the Workplaces Data Ex. Title, Count of Products & Created By etc .\n\n<p><img src=\"images\/admin\/workplaces\/admin-workplaces-view.png\" width=\"100%\"><\/p>",
+            "item": [
+                {
+                    "name": "Workplaces View Page",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/closor\/public\/",
+                            "path": "admin\/workplace",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Is An Admin-Panel Workplace Page That Views Workplaces Data Info .\n\nForm Filter is used to filtering existing workplaces To get better results .\n\n<p><img src=\"images\/admin\/workplaces\/admin-workplaces-filter.png\" width=\"100%\"><\/p>\n\nView Workplace Data Info\n\n- View the Workplace Data Ex. Title, Count of Products & Created By etc.\n\n<p><img src=\"images\/admin\/workplaces\/admin-workplaces-view.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Workplaces View Page",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/closor\/public\/",
+                            "path": "admin\/workplace",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Is An Admin-Panel Workplace Page That Views Workplaces Data Info .\n\nForm Filter is used to filtering existing workplaces To get better results .\n\n<p><img src=\"images\/admin\/workplaces\/admin-workplaces-filter.png\" width=\"100%\"><\/p>\n\nView Workplace Data Info\n\n- View the Workplace Data Ex. Title, Count of Products & Created By etc.\n\n<p><img src=\"images\/admin\/workplaces\/admin-workplaces-view.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Single Workplace Info View Page",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/closor\/public\/",
+                            "path": "admin\/workplace-info\/:workplace_id",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Is An Admin-Panel Page For Single Workplace That Views Workplace Data Info .\n\n- View Products For the Workplace .\n- View Products Count For the Single Workplace .\n- Every Product In the WorkPlace With its Stats Ex. Leads Source Name, Leads count, Contacted Leads Count & Team Names That Assigned to this Product .\n- Filter Search to go through every table data .\n\n<p><img src=\"images\/admin\/workplaces\/admin-workplace-products.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Single Workplace Team Info View Page",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/closor\/public\/",
+                            "path": "admin\/:workplace_id\/team\/:product_id",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Is An Admin-Panel Page Workplace Team That Views Workplaces Team Data Info That is assigned to the product to manage into the workplaces .\n\n- invite users with the invite button to manage the product that belongs to the workplace .\n<p><img src=\"images\/admin\/workplaces\/admin-workplaces-invite.png\" width=\"100%\"><\/p>\n- counter users that invited to a certain product .\n<p><img src=\"images\/admin\/workplaces\/admin-workplaces-counter.png\" width=\"100%\"><\/p>\n\n\nView Workplace Single Product Team Info & Roles\n\n- View the Workplace Single Product Team Info & Roles Ex. User Name, Products Names That Assigned to the user & User role, etc.\n\n<p><img src=\"images\/admin\/workplaces\/admin-workplace-team.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "1.6  Admin Leads management",
+            "description": "\nPage Group To manage Leads data For The Admin Control Panel .\n\n- View the Leads Data Ex. Lead Name, Workplace Product belongs to & Product etc.\n- Filter an existing Leads from the Filter Form .\n- View Leads Stats the Qualified & Un Qualified Buttons .\n\n<p><img src=\"images\/admin\/leads\/admin-leads-view.png\" width=\"100%\"><\/p>",
+            "item": [
+                {
+                    "name": "Leads View Page",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/closor\/public\/",
+                            "path": "admin\/lead",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Is An Admin-Panel Lead Page That Views leads Data Info .\n\nForm Filter is used to filtering existing leads To get better results .\n\n<p><img src=\"images\/admin\/leads\/admin-leads-filter.png\" width=\"100%\"><\/p>\n\nView leads Data Info\n\n- View the Leads Data Ex. Lead Name, Workplace Product belongs to & Product etc.\n\n-View Leads Stats the Qualified & Un Qualified Buttons .\n\n<p><img src=\"images\/admin\/leads\/admin-leads-view.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Leads View Page",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/closor\/public\/",
+                            "path": "admin\/lead",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Is An Admin-Panel Lead Page That Views leads Data Info .\n\nForm Filter is used to filtering existing leads To get better results .\n\n<p><img src=\"images\/admin\/leads\/admin-leads-filter.png\" width=\"100%\"><\/p>\n\nView leads Data Info\n\n- View the Leads Data Ex. Lead Name, Workplace Product belongs to & Product etc.\n\n-View Leads Stats the Qualified & Un Qualified Buttons .\n\n<p><img src=\"images\/admin\/leads\/admin-leads-view.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Single Lead Info View Page",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/closor\/public\/",
+                            "path": "admin\/lead\/:lead",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Is An Admin-Panel Page For Single Lead That Views Lead Data Info .\n\n- View Products For the Lead .\n- View Products Count For the Single Lead .\n- Every Product In the Lead With its Stats Ex. Leads Source Name, Leads count, Contacted Leads Count & Team Names That Assigned to this Product .\n- Filter Search to go through every table data .\n\n<p><img src=\"images\/admin\/leads\/admin-singlelead-view.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "2.1 Users Get Data Behind the scene.",
+            "description": "\nRoutes for Getting Data Request for site :\n\n- Personalize the country phone code.\n\n- Personalize the country data info.",
+            "item": [
+                {
+                    "name": "Personalize User Phone Code",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/closor\/public\/",
+                            "path": "phoneCode\/:code",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "- Personalize the Country Phone Code for later user at the site EX. +2.",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Personalize User Country Data info",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/closor\/public\/",
+                            "path": "isoCode\/:code",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "- Personalize User Country Data info for later user at the site EX. ALBANIA.",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "2.1 Users Home management",
+            "description": "\nPage Group To manage General Data for site.\n\n- View the General Data & Routes After Being Authenticated.\n\n<p><img src=\"images\/users\/home\/users-login-page.png\" width=\"100%\"><\/p>",
+            "item": [
+                {
+                    "name": "Widget View Page",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/closor\/public\/",
+                            "path": "widgetView\/:id",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Widget View Page That Views Product Widget at any site the did put in and it's so much customizable by the user customize options :\n\n- The widget colors\n\n- The widget form date Ex. Name, Phone, Email, And Extra 2 Customizable Fields.\n\n<p><img src=\"images\/users\/home\/users-widget-form.png\" width=\"100%\"><\/p>\n\n- The User can change the widget icon easily with the customized Edit widget at the control panel.\n\n- The User can change the widget Text Message bubble easily with the customized Edit widget at the control panel.\n\n<p><img src=\"images\/users\/home\/users-widget-icon.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "2.2 Users Users management",
+            "description": "\nPage Group To manage Users data For The Manager Control Panel .\n\n- View the User Data Ex. Name, Email & Phone etc.\n- Filter an existing Users from the Filter Form .\n- Manage Users From the Enable & Disable Button .\n\n<p><img src=\"images\/users\/home\/users-profile-page.png\" width=\"100%\"><\/p>",
+            "item": [
+                {
+                    "name": "User Profile Page",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/closor\/public\/",
+                            "path": "profile",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Is An User Page That Views User Personal Data Info To The User That user can update it for later use.\n\n\nView user Data Info\n\n- View the User Data Ex. Name, Email & Phone etc.\n\n- Manage User Data Change Ex. Name, Email, Phone & Password.\n\n<p><img src=\"images\/users\/home\/users-profile-page.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "User Update Data",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/closor\/public\/",
+                            "path": "profile\/:profile",
+                            "query": []
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "User Data Request That Updates User Data To Database.\n\n<p><img src=\"images\/users\/home\/users-profile-page.png\" width=\"100%\"><\/p>\n<p><img src=\"images\/admin\/updated-successfully.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Dashboard Page",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/closor\/public\/",
+                            "path": "dashboard",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Is A Dashboard Page That Shows Lists Of Stats & General Data Of The Site In General That User can view stats and make decisions from the stats brief in front of him to manage the Workplace more efficient.\n\n<p><img src=\"images\/users\/dashboard.png\" width=\"100%\"><\/p>\n\n- Statistics For All The Workplaces.\n- Diagrams For Data Of Products.\n- Diagrams For Data Of Teams.\n- Diagrams For Data Of Leads.\n- Counter For Products of All Workplaces.\n- Counter For Team of All Workplaces.\n- Counter For Leads of All Workplaces.",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "2.3 Users Workplaces management",
+            "description": "\nPage Group To manage Workplaces data For The Manager Control Panel.\n\n- View the Workplaces Data Ex. Title, Count of Products & Created By etc.\n\n<p><img src=\"images\/users\/workplaces\/users-workplaces-view.png\" width=\"100%\"><\/p>",
+            "item": [
+                {
+                    "name": "Workplaces View Page",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/closor\/public\/",
+                            "path": "workplace",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Is An Control Panel Manager Workplace Page That Views Workplaces Data Info.\n\nView Workplaces Data Info :\n\n- View the Workplace Data Ex. Title, Count of Products & Created By etc.\n\n<p><img src=\"images\/users\/workplaces\/users-workplaces-view.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Workplace Create Page",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/closor\/public\/",
+                            "path": "workplace\/create",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"title\": \"demo\",\n    \"timezone\": \"(GMT+02:00) Cairo\",\n    \"website\": \"www.demo.com\",\n    \"startday\": \"Monday\"\n}"
+                        },
+                        "description": "Is An Control Panel Manager Page That Creates Workplaces To Manage It later on the site by the manager and his team.\n\n<p><img src=\"images\/users\/workplaces\/users-workplaces-create.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Workplace Store Data",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/closor\/public\/",
+                            "path": "workplace",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Is An Control Panel Manager Data Request That Stores Workplaces Data To Database.\n\n<p><img src=\"images\/users\/added-successfully.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Workplaces Edit Page",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/closor\/public\/",
+                            "path": "workplace\/:workplace\/edit",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"title\": \"demo\",\n    \"timezone\": \"(GMT+02:00) Cairo\",\n    \"website\": \"www.demo.com\",\n    \"startday\": \"Monday\"\n}"
+                        },
+                        "description": "Is An Control Panel Manager Page That Edits Workplaces To Manage It later on the site by the manager and his team.",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Workplace Update Data",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/closor\/public\/",
+                            "path": "workplace\/:workplace",
+                            "query": []
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Is An Control Panel Manager Data Request That Updates Workplaces Data To Database.\n\n<p><img src=\"images\/users\/workplaces\/users-workplaces-edit.png\" width=\"100%\"><\/p>\n<p><img src=\"images\/users\/updated-successfully.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Workplace Delete Data",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/closor\/public\/",
+                            "path": "workplace\/:workplace",
+                            "query": []
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Is An Control Panel Workplace Data Request That Delete Workplaces Data From Database .\n\n<p><img src=\"images\/admin\/moderators\/admin-moderator-delete.png\" width=\"100%\"><\/p>\n<p><img src=\"images\/users\/deleted-successfully.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Invited Workplaces Page",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/closor\/public\/",
+                            "path": "invited_workplaces",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Is An Control Panel User Page That shows the user The Workplaces That User Invited to.\n\n<p><img src=\"images\/users\/workplaces\/users-workplaces-invited_workplaces.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "User Workplaces Page",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/closor\/public\/",
+                            "path": "user_workplaces",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Is An Control Panel User Page That shows the user The Workplaces That User Is The Owner.\n\n<p><img src=\"images\/users\/workplaces\/users-workplaces-view.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Single Workplace Team Info View Page",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/closor\/public\/",
+                            "path": "{workplace_id}\/team",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Is An Control Panel Page Workplace Team That Views Certain Workplace Team Data Info That is assigned to the product to manage into the workplace.\n\n- invite users with the invite button to manage the product that belongs to the workplace.\n\n<p><img src=\"images\/admin\/workplaces\/admin-workplaces-invite.png\" width=\"100%\"><\/p>\n\n- counter users that invited to a certain product.\n\n<p><img src=\"images\/admin\/workplaces\/admin-workplaces-counter.png\" width=\"100%\"><\/p>\n\n\nView Workplace Single Product Team Info & Roles\n\n- View the Workplace Single Product Team Info & Roles Ex. User Name, Products Names That Assigned to the user & User role, etc.\n\n<p><img src=\"images\/admin\/workplaces\/admin-workplace-team.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Single Workplace Team Info View Page",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/closor\/public\/",
+                            "path": "{workplace_id}\/team\/:product_id",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Is An Control Panel Page Workplace Team That Views Certain Workplace Team Data Info That is assigned to the product to manage into the workplace.\n\n- invite users with the invite button to manage the product that belongs to the workplace.\n\n<p><img src=\"images\/admin\/workplaces\/admin-workplaces-invite.png\" width=\"100%\"><\/p>\n\n- counter users that invited to a certain product.\n\n<p><img src=\"images\/admin\/workplaces\/admin-workplaces-counter.png\" width=\"100%\"><\/p>\n\n\nView Workplace Single Product Team Info & Roles\n\n- View the Workplace Single Product Team Info & Roles Ex. User Name, Products Names That Assigned to the user & User role, etc.\n\n<p><img src=\"images\/admin\/workplaces\/admin-workplace-team.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "User Invite To Product Page",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/closor\/public\/",
+                            "path": "invite\/:workplace",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Is An Control Panel User Page That Invites user To Product And assign a role To work in the product with it.\n\n<p><img src=\"images\/users\/workplaces\/users-workplaces-invite_user.png\" width=\"100%\"><\/p>\n<p><img src=\"images\/users\/workplaces\/users-workplaces-invite_user_product.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "User Invite To Product Request",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/closor\/public\/",
+                            "path": "invite_member_workplace",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"email\": \"test@demo.com\",\n    \"products\": \"Product\",\n    \"role\": 0\n}"
+                        },
+                        "description": "Is An Control Panel User Request That Invites users To Product And assign a role To work in the product with it.\n\n<p><img src=\"images\/users\/workplaces\/users-workplaces-invite_user.png\" width=\"100%\"><\/p>\n<p><img src=\"images\/users\/workplaces\/users-workplaces-invite_user_product.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Edit User Role",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/closor\/public\/",
+                            "path": "edit_user_role",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Is An Control Panel User Request That Updates User Role To Database.\n\n<p><img src=\"images\/users\/workplaces\/users-workplaces-edit_user_role.png\" width=\"100%\"><\/p>\n<p><img src=\"images\/users\/updated-successfully.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "User Workplaces Remove Request",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/closor\/public\/",
+                            "path": "remove_user_from_workspace\/:user_id\/:workplace_id",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Is An Control Panel User Request That Removes user From Workplaces.\n\n<p><img src=\"images\/users\/workplaces\/users-workplaces-remove_user_from_workspace0.png\" width=\"100%\"><\/p>\n<p><img src=\"images\/users\/workplaces\/users-workplaces-remove_user_from_workspace1.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "User Workplaces active Request",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/closor\/public\/",
+                            "path": "active_user_in_workspace\/:status\/:user_id\/:workplace_id",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Is An Control Panel User Request That actives user From Workplaces.\n\n<p><img src=\"images\/users\/workplaces\/users-workplaces-active_user_from_workspace.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "2.4 Users WorkPlace Products management",
+            "description": "\nRoutes To manage WorkPlace Products data For The Manager Control Panel",
+            "item": [
+                {
+                    "name": "product",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/closor\/public\/",
+                            "path": "product",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Show the form for creating a new resource.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/closor\/public\/",
+                            "path": "product\/create",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Store a newly created resource in storage.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/closor\/public\/",
+                            "path": "product",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Display the specified resource.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/closor\/public\/",
+                            "path": "product\/:product",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Show the form for editing the specified resource.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/closor\/public\/",
+                            "path": "product\/:product\/edit",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Update the specified resource in storage.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/closor\/public\/",
+                            "path": "product\/:product",
+                            "query": []
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Remove the specified resource from storage.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/closor\/public\/",
+                            "path": "product\/:product",
+                            "query": []
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Show the form for creating a new resource.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/closor\/public\/",
+                            "path": "product\/create\/:workplace_id",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "invite_member",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/closor\/public\/",
+                            "path": "invite_member",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "{workplace_id}\/products",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/closor\/public\/",
+                            "path": "{workplace_id}\/products",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "choose_members",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/closor\/public\/",
+                            "path": "choose_members",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "add_product_to_user",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/closor\/public\/",
+                            "path": "add_product_to_user",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "2.5 Users Lead Sources management",
+            "description": "\nRoutes To manage Lead Sources data For The Manager Control Panel",
+            "item": [
+                {
+                    "name": "Display a listing of the resource.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/closor\/public\/",
+                            "path": "sources",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Show the form for creating a new resource.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/closor\/public\/",
+                            "path": "sources\/create",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Store a newly created resource in storage.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/closor\/public\/",
+                            "path": "sources",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Display the specified resource.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/closor\/public\/",
+                            "path": "sources\/:source",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Show the form for editing the specified resource.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/closor\/public\/",
+                            "path": "sources\/:source\/edit",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Update the specified resource in storage.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/closor\/public\/",
+                            "path": "sources\/:source",
+                            "query": []
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Remove the specified resource from storage.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/closor\/public\/",
+                            "path": "sources\/:source",
+                            "query": []
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "2.6 Users Manager Leads management",
+            "description": "\nRoutes To manage Leads data For The Manager Control Panel",
+            "item": [
+                {
+                    "name": "Display a listing of the resource.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/closor\/public\/",
+                            "path": "leads",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Show the form for creating a new resource.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/closor\/public\/",
+                            "path": "leads\/create",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Display a listing of the resource.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/closor\/public\/",
+                            "path": "leads",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "leads\/{lead}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/closor\/public\/",
+                            "path": "leads\/:lead",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Show the form for editing the specified resource.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/closor\/public\/",
+                            "path": "leads\/:lead\/edit",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Update the specified resource in storage.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/closor\/public\/",
+                            "path": "leads\/:lead",
+                            "query": []
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Remove the specified resource from storage.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/closor\/public\/",
+                            "path": "leads\/:lead",
+                            "query": []
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "2.7 Users Product Widget management",
+            "description": "\nRoutes To manage Product Widget View data For Leads",
+            "item": [
+                {
+                    "name": "widget\/{id}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/closor\/public\/",
+                            "path": "widget\/:id",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "widgetView\/widget",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/closor\/public\/",
+                            "path": "widgetView\/widget",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "3.1  APIs User management",
+            "description": "\nAPIs for managing users",
+            "item": [
+                {
+                    "name": "api\/login",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/closor\/public\/",
+                            "path": "api\/login",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/login1",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/closor\/public\/",
+                            "path": "api\/login1",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/login2",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/closor\/public\/",
+                            "path": "api\/login2",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/update_profile",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/closor\/public\/",
+                            "path": "api\/update_profile",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/change_is_available",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/closor\/public\/",
+                            "path": "api\/change_is_available",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "3.2  APIs Workplaces management",
+            "description": "\nAPIs for managing Workplaces",
+            "item": [
+                {
+                    "name": "api\/widgetView\/widget",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/closor\/public\/",
+                            "path": "api\/widgetView\/widget",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/lead",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/closor\/public\/",
+                            "path": "api\/lead",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/all_workplaces",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/closor\/public\/",
+                            "path": "api\/all_workplaces",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/all_products",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/closor\/public\/",
+                            "path": "api\/all_products",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/all_leads",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/closor\/public\/",
+                            "path": "api\/all_leads",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/user_leads\/{user}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/closor\/public\/",
+                            "path": "api\/user_leads\/:user",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/qualified",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/closor\/public\/",
+                            "path": "api\/qualified",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/test_notification_user",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/closor\/public\/",
+                            "path": "api\/test_notification_user",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/test_notification_device",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/closor\/public\/",
+                            "path": "api\/test_notification_device",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Admin Login management",
+            "description": "\nRoute for Login Admin & Moderator",
+            "item": [
+                {
+                    "name": "admin-login",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/closor\/public\/",
+                            "path": "admin-login",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "admin.login",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/closor\/public\/",
+                            "path": "admin.login",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Login management",
+            "description": "\nRoute for Login Users",
+            "item": [
+                {
+                    "name": "Show the application's login form.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/closor\/public\/",
+                            "path": "login",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Handle a login request to the application.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/closor\/public\/",
+                            "path": "login",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Log the user out of the application.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/closor\/public\/",
+                            "path": "logout",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Create a new controller instance.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/closor\/public\/",
+                            "path": "first",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Register management",
+            "description": "\nRoute for Register Users",
+            "item": [
+                {
+                    "name": "Show the application registration form.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/closor\/public\/",
+                            "path": "register",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Create a new user instance after a valid registration.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/closor\/public\/",
+                            "path": "register",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "login2",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/closor\/public\/",
+                            "path": "login2",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "general",
+            "description": "",
+            "item": [
+                {
+                    "name": "api\/password\/email",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/closor\/public\/",
+                            "path": "api\/password\/email",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Reset the given user's password.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/closor\/public\/",
+                            "path": "api\/password\/reset",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Display the form to request a password reset link.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/closor\/public\/",
+                            "path": "password\/reset",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Send a reset link to the given user.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/closor\/public\/",
+                            "path": "password\/email",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Display the password reset view for the given token.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/closor\/public\/",
+                            "path": "password\/reset\/:token",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "If no token is present, display the link request form.",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Reset the given user's password.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/closor\/public\/",
+                            "path": "password\/reset",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Invoke the controller method.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/closor\/public\/",
+                            "path": "team",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                }
+            ]
         }
-    },
-    "minimum-stability": "dev",
-    "prefer-stable": true,
-    "scripts": {
-        "post-autoload-dump": [
-            "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
-            "@php artisan package:discover --ansi"
-        ],
-        "post-root-package-install": [
-            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
-        ],
-        "post-create-project-cmd": [
-            "@php artisan key:generate --ansi"
-        ]
-    }
+    ]
 }
