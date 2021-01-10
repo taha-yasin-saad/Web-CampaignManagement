@@ -76,7 +76,7 @@ class ModeratorController extends Controller
      * @bodyParam  name string required The name of the user. Example: demo
      * @bodyParam  email string required The email of the user. Example: test@demo.com
      * @bodyParam  phone int required The phone of the user. Example: +0123456789
-     * @bodyParam  Zones string The Zone selected of the user. Example: Alex
+     * @bodyParam  zones string The Zone selected of the user. Example: Alex
      *
      * @response {
      *   "id":2,
@@ -131,7 +131,7 @@ class ModeratorController extends Controller
      * @bodyParam  name string required The name of the user. Example: demo .
      * @bodyParam  email string required The email of the user. Example: test@demo.com .
      * @bodyParam  phone int required The phone of the user. Example: +0123456789 .
-     * @bodyParam  Zones string The Zone selected of the user. Example: Alex .
+     * @bodyParam  zones string The Zone selected of the user. Example: Alex .
      *
      * @response {
      *   "id":2,
@@ -182,7 +182,7 @@ class ModeratorController extends Controller
     /**
      * Moderator Delete Data
      *
-     * Is An Admin-Panel Moderator Data Request That Delete Moderators Data To Database .
+     * Is An Admin-Panel Moderator Data Request That Delete Moderators Data From Database .
      *
      * <p><img src="images/admin/moderators/admin-moderator-delete.png" width="100%"></p>
      * <p><img src="images/admin/deleted-successfully.png" width="100%"></p>

@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Auth;
 use Session;
 
 /**
- * @group 2.4  WorkPlace Products management
+ * @group 2.4 Users WorkPlace Products management
  *
  * Routes To manage WorkPlace Products data For The Manager Control Panel
  */
@@ -168,40 +168,6 @@ class ProductsController extends Controller
         return back()->with('success', 'Email invited Successfully');
     }
 
-    public function invite_member_workplace(Request $request)
-    {
-        // dd($request);
-        //check if user can be existed
-        $user = User::where('email', $request->email)->first();
-        //save in Users if new Email
-        if (!$user) {
-            $user = new User;
-            $user->email = $request->email;
-            $user->save();
-        }
-
-        $old_products =$user->products_workplace($request->workplace_id)->pluck('products.id')->toArray();
-        $user->products()->detach($old_products);
-        $user->products()->attach($request->products);
-
-        $save = WorkplaceUser::where('user_id',$user->id)->where('workplace_id',$request->workplace_id)->first();
-        if(!$save){
-            $save = new WorkplaceUser;
-            $save->workplace_id = $request->workplace_id;
-            $save->user_id = $user->id;
-            $save->role = $request->role;
-            $save->status = 1;
-            $save->save();
-        }
-
-        //send invitation email
-        $data['subject'] = 'CLOSOR Invitation';
-        $data['email'] = $request->email;
-        \Illuminate\Support\Facades\Mail::send('auth.email_invite', $data, function ($message) use ($data) {
-            $message->from('support@closor.com', 'CLOSOR')->to($data['email'], 'CLOSOR')->subject($data['subject']);
-        });
-        return back()->with('success', 'Email invited Successfully');
-    }
 
     public function choose_members(Request $request)
     {

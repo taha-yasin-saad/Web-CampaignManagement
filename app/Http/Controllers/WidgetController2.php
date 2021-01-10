@@ -9,7 +9,7 @@ use App\Workplace;
 use Illuminate\Http\Request;
 
 /**
- * @group 2.7 Product Widget2 management
+ * @group 2.7 Users Product Widget2 management
  *
  * Routes To manage Product Widget2 View data For Leads
  */

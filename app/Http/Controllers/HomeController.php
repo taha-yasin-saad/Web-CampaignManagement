@@ -9,11 +9,11 @@ use Illuminate\Http\Request;
 use Session;
 
 /**
- * @group 2.1  Home management
+ * @group 2.1 Users Home management
  *
- * Page Group To manage General data for site .
+ * Page Group To manage General Data for site.
  *
- * - View the General Data & Routes.
+ * - View the General Data & Routes After Being Authenticated.
  *
  * <p><img src="images/users/home/users-login-page.png" width="100%"></p>
  *
@@ -25,13 +25,15 @@ class HomeController extends Controller
 {
 
     /**
-     * Users Login View Page
+     * A Users Login View Page
      *
-     * Is An Admin-Panel User Login Page .
+     * User Login Page That Authenticates User license to use the site properly With his personalized data and getting his data from our database for him to serve him.
+     *
      *
      * <p><img src="images/users/home/users-login-page.png" width="100%"></p>
      *
      */
+
     public function index()
     {
 
@@ -42,10 +44,25 @@ class HomeController extends Controller
         }
     }
 
-    public function design()
-    {
-        return view('sources.design');
-    }
+    /**
+     * Widget View Page
+     *
+     * Widget View Page That Views Product Widget at any site the did put in and it's so much customizable by the user customize options :
+     *
+     * - The widget colors
+     *
+     * - The widget form date Ex. Name, Phone, Email, And Extra 2 Customizable Fields.
+     *
+     * <p><img src="images/users/home/users-widget-form.png" width="100%"></p>
+     *
+     * - The User can change the widget icon easily with the customized Edit widget at the control panel.
+     *
+     * - The User can change the widget Text Message bubble easily with the customized Edit widget at the control panel.
+     *
+     * <p><img src="images/users/home/users-widget-icon.png" width="100%"></p>
+     *
+     *
+     */
 
     public function widgetView($id)
     {

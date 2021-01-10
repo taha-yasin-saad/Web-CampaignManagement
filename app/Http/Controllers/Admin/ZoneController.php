@@ -194,7 +194,7 @@ class ZoneController extends Controller
     /**
      * Zone Delete Data
      *
-     * Is An Admin-Panel Zone Data Request That Delete Zones Data To Database .
+     * Is An Admin-Panel Zone Data Request That Delete Zones Data From Database .
      *
      * <p><img src="images/admin/zones/admin-zones-delete.png" width="100%"></p>
      *

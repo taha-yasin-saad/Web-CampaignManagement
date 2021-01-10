@@ -40,13 +40,13 @@ Route::post('leads', 'LeadController@index');
 Route::get('{workplace_id}/products', 'ProductsController@index');
 Route::get('{workplace_id}/team', 'WorkplacesController@team');
 Route::get('{workplace_id}/team/{product_id}', 'WorkplacesController@product_team');
-Route::post('/invite_member_workplace', 'ProductsController@invite_member_workplace');
+Route::get('invite/{workplace}', 'WorkplacesController@invite');
+Route::post('/invite_member_workplace', 'WorkplacesController@invite_member_workplace');
 Route::post('/edit_user_role', 'WorkplacesController@edit_user_role');
 Route::post('/choose_members', 'ProductsController@choose_members');
 Route::post('/add_product_to_user', 'ProductsController@add_product_to_user');
 Route::get('remove_user_from_workspace/{user_id}/{workplace_id}', 'WorkplacesController@remove_user_from_workspace');
 Route::get('active_user_in_workspace/{status}/{user_id}/{workplace_id}', 'WorkplacesController@active_user_in_workspace');
-Route::get('invite/{workplace}', 'WorkplacesController@invite');
 //admins
 Route::get('admin-login', 'Auth\AdminLoginController@showlogin')->name('admin-login');
 Route::post('admin.login', 'Auth\AdminLoginController@login')->name('admin.login');
@@ -76,7 +76,7 @@ Route::group(['middleware' => 'auth.admin', 'prefix' => 'admin', 'namespace' => 
 //     return view('sources.design');
 // });
 
-Route::get('design', 'HomeController@design');
+// Route::get('design', 'HomeController@design');
 
 //leads Sources
 Route::resource('sources', 'SourceController');
