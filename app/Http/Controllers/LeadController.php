@@ -10,7 +10,7 @@ use function foo\func;
 use DataTables;
 
 /**
- * @group 2.6  Manager Leads management
+ * @group 2.6 Users Manager Leads management
  *
  * Routes To manage Leads data For The Manager Control Panel
  */

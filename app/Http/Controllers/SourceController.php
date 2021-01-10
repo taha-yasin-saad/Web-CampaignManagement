@@ -8,7 +8,7 @@ use App\Workplace;
 use App\Product;
 
 /**
- * @group 2.5  Lead Sources management
+ * @group 2.5 Users Lead Sources management
  *
  * Routes To manage Lead Sources data For The Manager Control Panel
  */

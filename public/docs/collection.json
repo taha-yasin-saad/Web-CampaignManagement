@@ -2,7 +2,7 @@
     "variables": [],
     "info": {
         "name": "Closor API",
-        "_postman_id": "51cf5333-6f37-4015-9290-eb6cfdf67eb4",
+        "_postman_id": "dfd9ae5d-2e15-44a2-aa95-208a6e915288",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.0.0\/collection.json"
     },
@@ -95,7 +95,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"name\": \"demo\",\n    \"email\": \"test@demo.com\",\n    \"phone\": 123456789,\n    \"Zones\": \"Alex\"\n}"
+                            "raw": "{\n    \"name\": \"demo\",\n    \"email\": \"test@demo.com\",\n    \"phone\": 123456789,\n    \"zones\": \"Alex\"\n}"
                         },
                         "description": "Is An Admin-Panel Moderator Page That Creates Moderators To Manage The Web Site Generally .\n\n<p><img src=\"images\/admin\/moderators\/admin-moderator-create.png\" width=\"100%\"><\/p>",
                         "response": []
@@ -151,7 +151,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"name\": \"demo .\",\n    \"email\": \"test@demo.com .\",\n    \"phone\": 123456789,\n    \"Zones\": \"Alex .\"\n}"
+                            "raw": "{\n    \"name\": \"demo .\",\n    \"email\": \"test@demo.com .\",\n    \"phone\": 123456789,\n    \"zones\": \"Alex .\"\n}"
                         },
                         "description": "Is An Admin-Panel Moderator Page That Edits Moderators To Manage The Web Site Generally .",
                         "response": []
@@ -209,7 +209,7 @@
                             "mode": "raw",
                             "raw": "[]"
                         },
-                        "description": "Is An Admin-Panel Moderator Data Request That Delete Moderators Data To Database .\n\n<p><img src=\"images\/admin\/moderators\/admin-moderator-delete.png\" width=\"100%\"><\/p>\n<p><img src=\"images\/admin\/deleted-successfully.png\" width=\"100%\"><\/p>",
+                        "description": "Is An Admin-Panel Moderator Data Request That Delete Moderators Data From Database .\n\n<p><img src=\"images\/admin\/moderators\/admin-moderator-delete.png\" width=\"100%\"><\/p>\n<p><img src=\"images\/admin\/deleted-successfully.png\" width=\"100%\"><\/p>",
                         "response": []
                     }
                 }
@@ -473,7 +473,7 @@
                             "mode": "raw",
                             "raw": "[]"
                         },
-                        "description": "Is An Admin-Panel Zone Data Request That Delete Zones Data To Database .\n\n<p><img src=\"images\/admin\/zones\/admin-zones-delete.png\" width=\"100%\"><\/p>\n\n<p><img src=\"images\/admin\/deleted-successfully.png\" width=\"100%\"><\/p>",
+                        "description": "Is An Admin-Panel Zone Data Request That Delete Zones Data From Database .\n\n<p><img src=\"images\/admin\/zones\/admin-zones-delete.png\" width=\"100%\"><\/p>\n\n<p><img src=\"images\/admin\/deleted-successfully.png\" width=\"100%\"><\/p>",
                         "response": []
                     }
                 }
@@ -688,11 +688,11 @@
             ]
         },
         {
-            "name": "2.1  Ajax Request management",
-            "description": "\nRoutes for managing Ajax Request for site\n\n- Get the country phone code .\n\n- Get the country data info .",
+            "name": "2.1 Users Get Data Behind the scene.",
+            "description": "\nRoutes for Getting Data Request for site :\n\n- Personalize the country phone code.\n\n- Personalize the country data info.",
             "item": [
                 {
-                    "name": "country phone code for site",
+                    "name": "Personalize User Phone Code",
                     "request": {
                         "url": {
                             "protocol": "http",
@@ -715,12 +715,12 @@
                             "mode": "raw",
                             "raw": "[]"
                         },
-                        "description": "- Get the country phone code .",
+                        "description": "- Personalize the Country Phone Code for later user at the site EX. +2.",
                         "response": []
                     }
                 },
                 {
-                    "name": "country data info for site",
+                    "name": "Personalize User Country Data info",
                     "request": {
                         "url": {
                             "protocol": "http",
@@ -743,102 +743,18 @@
                             "mode": "raw",
                             "raw": "[]"
                         },
-                        "description": "- Get the country data info .",
+                        "description": "- Personalize User Country Data info for later user at the site EX. ALBANIA.",
                         "response": []
                     }
                 }
             ]
         },
         {
-            "name": "2.1  Home management",
-            "description": "\nPage Group To manage General data for site .\n\n- View the General Data & Routes.\n\n<p><img src=\"images\/users\/home\/users-login-page.png\" width=\"100%\"><\/p>",
+            "name": "2.1 Users Home management",
+            "description": "\nPage Group To manage General Data for site.\n\n- View the General Data & Routes After Being Authenticated.\n\n<p><img src=\"images\/users\/home\/users-login-page.png\" width=\"100%\"><\/p>",
             "item": [
                 {
-                    "name": "Users Login View Page",
-                    "request": {
-                        "url": {
-                            "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
-                            "path": "\/",
-                            "query": []
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "Is An Admin-Panel User Login Page .\n\n<p><img src=\"images\/users\/home\/users-login-page.png\" width=\"100%\"><\/p>",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "check",
-                    "request": {
-                        "url": {
-                            "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
-                            "path": "check",
-                            "query": []
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "design",
-                    "request": {
-                        "url": {
-                            "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
-                            "path": "design",
-                            "query": []
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "widgetView\/{id}",
+                    "name": "Widget View Page",
                     "request": {
                         "url": {
                             "protocol": "http",
@@ -861,18 +777,18 @@
                             "mode": "raw",
                             "raw": "[]"
                         },
-                        "description": "",
+                        "description": "Widget View Page That Views Product Widget at any site the did put in and it's so much customizable by the user customize options :\n\n- The widget colors\n\n- The widget form date Ex. Name, Phone, Email, And Extra 2 Customizable Fields.\n\n<p><img src=\"images\/users\/home\/users-widget-form.png\" width=\"100%\"><\/p>\n\n- The User can change the widget icon easily with the customized Edit widget at the control panel.\n\n- The User can change the widget Text Message bubble easily with the customized Edit widget at the control panel.\n\n<p><img src=\"images\/users\/home\/users-widget-icon.png\" width=\"100%\"><\/p>",
                         "response": []
                     }
                 }
             ]
         },
         {
-            "name": "2.2  Users management",
-            "description": "\n\nRoutes To manage Users data For The Manager Control Panel",
+            "name": "2.2 Users Users management",
+            "description": "\nPage Group To manage Users data For The Manager Control Panel .\n\n- View the User Data Ex. Name, Email & Phone etc.\n- Filter an existing Users from the Filter Form .\n- Manage Users From the Enable & Disable Button .\n\n<p><img src=\"images\/users\/home\/users-profile-page.png\" width=\"100%\"><\/p>",
             "item": [
                 {
-                    "name": "Display a listing of the resource.",
+                    "name": "User Profile Page",
                     "request": {
                         "url": {
                             "protocol": "http",
@@ -895,124 +811,12 @@
                             "mode": "raw",
                             "raw": "[]"
                         },
-                        "description": "",
+                        "description": "Is An User Page That Views User Personal Data Info To The User That user can update it for later use.\n\n\nView user Data Info\n\n- View the User Data Ex. Name, Email & Phone etc.\n\n- Manage User Data Change Ex. Name, Email, Phone & Password.\n\n<p><img src=\"images\/users\/home\/users-profile-page.png\" width=\"100%\"><\/p>",
                         "response": []
                     }
                 },
                 {
-                    "name": "Show the form for creating a new resource.",
-                    "request": {
-                        "url": {
-                            "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
-                            "path": "profile\/create",
-                            "query": []
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "Store a newly created resource in storage.",
-                    "request": {
-                        "url": {
-                            "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
-                            "path": "profile",
-                            "query": []
-                        },
-                        "method": "POST",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "Display the specified resource.",
-                    "request": {
-                        "url": {
-                            "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
-                            "path": "profile\/:profile",
-                            "query": []
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "Show the form for editing the specified resource.",
-                    "request": {
-                        "url": {
-                            "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
-                            "path": "profile\/:profile\/edit",
-                            "query": []
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "Update the specified resource in storage.",
+                    "name": "User Update Data",
                     "request": {
                         "url": {
                             "protocol": "http",
@@ -1035,40 +839,12 @@
                             "mode": "raw",
                             "raw": "[]"
                         },
-                        "description": "",
+                        "description": "User Data Request That Updates User Data To Database.\n\n<p><img src=\"images\/users\/home\/users-profile-page.png\" width=\"100%\"><\/p>\n<p><img src=\"images\/admin\/updated-successfully.png\" width=\"100%\"><\/p>",
                         "response": []
                     }
                 },
                 {
-                    "name": "Remove the specified resource from storage.",
-                    "request": {
-                        "url": {
-                            "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
-                            "path": "profile\/:profile",
-                            "query": []
-                        },
-                        "method": "DELETE",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "dashboard",
+                    "name": "Dashboard Page",
                     "request": {
                         "url": {
                             "protocol": "http",
@@ -1091,18 +867,18 @@
                             "mode": "raw",
                             "raw": "[]"
                         },
-                        "description": "",
+                        "description": "Is A Dashboard Page That Shows Lists Of Stats & General Data Of The Site In General That User can view stats and make decisions from the stats brief in front of him to manage the Workplace more efficient.\n\n<p><img src=\"images\/users\/dashboard.png\" width=\"100%\"><\/p>\n\n- Statistics For All The Workplaces.\n- Diagrams For Data Of Products.\n- Diagrams For Data Of Teams.\n- Diagrams For Data Of Leads.\n- Counter For Products of All Workplaces.\n- Counter For Team of All Workplaces.\n- Counter For Leads of All Workplaces.",
                         "response": []
                     }
                 }
             ]
         },
         {
-            "name": "2.3  Workplaces management",
-            "description": "\nRoutes To manage Workplaces data For The Manager Control Panel",
+            "name": "2.3 Users Workplaces management",
+            "description": "\nPage Group To manage Workplaces data For The Manager Control Panel.\n\n- View the Workplaces Data Ex. Title, Count of Products & Created By etc.\n\n<p><img src=\"images\/users\/workplaces\/users-workplaces-view.png\" width=\"100%\"><\/p>",
             "item": [
                 {
-                    "name": "workplace",
+                    "name": "Workplaces View Page",
                     "request": {
                         "url": {
                             "protocol": "http",
@@ -1125,12 +901,12 @@
                             "mode": "raw",
                             "raw": "[]"
                         },
-                        "description": "",
+                        "description": "Is An Control Panel Manager Workplace Page That Views Workplaces Data Info.\n\nView Workplaces Data Info :\n\n- View the Workplace Data Ex. Title, Count of Products & Created By etc.\n\n<p><img src=\"images\/users\/workplaces\/users-workplaces-view.png\" width=\"100%\"><\/p>",
                         "response": []
                     }
                 },
                 {
-                    "name": "Show the form for creating a new resource.",
+                    "name": "Workplace Create Page",
                     "request": {
                         "url": {
                             "protocol": "http",
@@ -1151,14 +927,14 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "[]"
+                            "raw": "{\n    \"title\": \"demo\",\n    \"timezone\": \"(GMT+02:00) Cairo\",\n    \"website\": \"www.demo.com\",\n    \"startday\": \"Monday\"\n}"
                         },
-                        "description": "",
+                        "description": "Is An Control Panel Manager Page That Creates Workplaces To Manage It later on the site by the manager and his team.\n\n<p><img src=\"images\/users\/workplaces\/users-workplaces-create.png\" width=\"100%\"><\/p>",
                         "response": []
                     }
                 },
                 {
-                    "name": "Store a newly created resource in storage.",
+                    "name": "Workplace Store Data",
                     "request": {
                         "url": {
                             "protocol": "http",
@@ -1181,40 +957,12 @@
                             "mode": "raw",
                             "raw": "[]"
                         },
-                        "description": "",
+                        "description": "Is An Control Panel Manager Data Request That Stores Workplaces Data To Database.\n\n<p><img src=\"images\/users\/added-successfully.png\" width=\"100%\"><\/p>",
                         "response": []
                     }
                 },
                 {
-                    "name": "Display the specified resource.",
-                    "request": {
-                        "url": {
-                            "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
-                            "path": "workplace\/:workplace",
-                            "query": []
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "Show the form for editing the specified resource.",
+                    "name": "Workplaces Edit Page",
                     "request": {
                         "url": {
                             "protocol": "http",
@@ -1235,14 +983,14 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "[]"
+                            "raw": "{\n    \"title\": \"demo\",\n    \"timezone\": \"(GMT+02:00) Cairo\",\n    \"website\": \"www.demo.com\",\n    \"startday\": \"Monday\"\n}"
                         },
-                        "description": "",
+                        "description": "Is An Control Panel Manager Page That Edits Workplaces To Manage It later on the site by the manager and his team.",
                         "response": []
                     }
                 },
                 {
-                    "name": "Update the specified resource in storage.",
+                    "name": "Workplace Update Data",
                     "request": {
                         "url": {
                             "protocol": "http",
@@ -1265,12 +1013,12 @@
                             "mode": "raw",
                             "raw": "[]"
                         },
-                        "description": "",
+                        "description": "Is An Control Panel Manager Data Request That Updates Workplaces Data To Database.\n\n<p><img src=\"images\/users\/workplaces\/users-workplaces-edit.png\" width=\"100%\"><\/p>\n<p><img src=\"images\/users\/updated-successfully.png\" width=\"100%\"><\/p>",
                         "response": []
                     }
                 },
                 {
-                    "name": "Remove the specified resource from storage.",
+                    "name": "Workplace Delete Data",
                     "request": {
                         "url": {
                             "protocol": "http",
@@ -1293,12 +1041,12 @@
                             "mode": "raw",
                             "raw": "[]"
                         },
-                        "description": "",
+                        "description": "Is An Control Panel Workplace Data Request That Delete Workplaces Data From Database .\n\n<p><img src=\"images\/admin\/moderators\/admin-moderator-delete.png\" width=\"100%\"><\/p>\n<p><img src=\"images\/users\/deleted-successfully.png\" width=\"100%\"><\/p>",
                         "response": []
                     }
                 },
                 {
-                    "name": "invited_workplaces",
+                    "name": "Invited Workplaces Page",
                     "request": {
                         "url": {
                             "protocol": "http",
@@ -1321,12 +1069,12 @@
                             "mode": "raw",
                             "raw": "[]"
                         },
-                        "description": "",
+                        "description": "Is An Control Panel User Page That shows the user The Workplaces That User Invited to.\n\n<p><img src=\"images\/users\/workplaces\/users-workplaces-invited_workplaces.png\" width=\"100%\"><\/p>",
                         "response": []
                     }
                 },
                 {
-                    "name": "user_workplaces",
+                    "name": "User Workplaces Page",
                     "request": {
                         "url": {
                             "protocol": "http",
@@ -1349,12 +1097,12 @@
                             "mode": "raw",
                             "raw": "[]"
                         },
-                        "description": "",
+                        "description": "Is An Control Panel User Page That shows the user The Workplaces That User Is The Owner.\n\n<p><img src=\"images\/users\/workplaces\/users-workplaces-view.png\" width=\"100%\"><\/p>",
                         "response": []
                     }
                 },
                 {
-                    "name": "{workplace_id}\/team",
+                    "name": "Single Workplace Team Info View Page",
                     "request": {
                         "url": {
                             "protocol": "http",
@@ -1377,12 +1125,12 @@
                             "mode": "raw",
                             "raw": "[]"
                         },
-                        "description": "",
+                        "description": "Is An Control Panel Page Workplace Team That Views Certain Workplace Team Data Info That is assigned to the product to manage into the workplace.\n\n- invite users with the invite button to manage the product that belongs to the workplace.\n\n<p><img src=\"images\/admin\/workplaces\/admin-workplaces-invite.png\" width=\"100%\"><\/p>\n\n- counter users that invited to a certain product.\n\n<p><img src=\"images\/admin\/workplaces\/admin-workplaces-counter.png\" width=\"100%\"><\/p>\n\n\nView Workplace Single Product Team Info & Roles\n\n- View the Workplace Single Product Team Info & Roles Ex. User Name, Products Names That Assigned to the user & User role, etc.\n\n<p><img src=\"images\/admin\/workplaces\/admin-workplace-team.png\" width=\"100%\"><\/p>",
                         "response": []
                     }
                 },
                 {
-                    "name": "{workplace_id}\/team\/{product_id}",
+                    "name": "Single Workplace Team Info View Page",
                     "request": {
                         "url": {
                             "protocol": "http",
@@ -1405,96 +1153,12 @@
                             "mode": "raw",
                             "raw": "[]"
                         },
-                        "description": "",
+                        "description": "Is An Control Panel Page Workplace Team That Views Certain Workplace Team Data Info That is assigned to the product to manage into the workplace.\n\n- invite users with the invite button to manage the product that belongs to the workplace.\n\n<p><img src=\"images\/admin\/workplaces\/admin-workplaces-invite.png\" width=\"100%\"><\/p>\n\n- counter users that invited to a certain product.\n\n<p><img src=\"images\/admin\/workplaces\/admin-workplaces-counter.png\" width=\"100%\"><\/p>\n\n\nView Workplace Single Product Team Info & Roles\n\n- View the Workplace Single Product Team Info & Roles Ex. User Name, Products Names That Assigned to the user & User role, etc.\n\n<p><img src=\"images\/admin\/workplaces\/admin-workplace-team.png\" width=\"100%\"><\/p>",
                         "response": []
                     }
                 },
                 {
-                    "name": "edit_user_role",
-                    "request": {
-                        "url": {
-                            "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
-                            "path": "edit_user_role",
-                            "query": []
-                        },
-                        "method": "POST",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "remove_user_from_workspace\/{user_id}\/{workplace_id}",
-                    "request": {
-                        "url": {
-                            "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
-                            "path": "remove_user_from_workspace\/:user_id\/:workplace_id",
-                            "query": []
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "active_user_in_workspace\/{status}\/{user_id}\/{workplace_id}",
-                    "request": {
-                        "url": {
-                            "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
-                            "path": "active_user_in_workspace\/:status\/:user_id\/:workplace_id",
-                            "query": []
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "invite\/{workplace}",
+                    "name": "User Invite To Product Page",
                     "request": {
                         "url": {
                             "protocol": "http",
@@ -1517,14 +1181,126 @@
                             "mode": "raw",
                             "raw": "[]"
                         },
-                        "description": "",
+                        "description": "Is An Control Panel User Page That Invites user To Product And assign a role To work in the product with it.\n\n<p><img src=\"images\/users\/workplaces\/users-workplaces-invite_user.png\" width=\"100%\"><\/p>\n<p><img src=\"images\/users\/workplaces\/users-workplaces-invite_user_product.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "User Invite To Product Request",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/closor\/public\/",
+                            "path": "invite_member_workplace",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"email\": \"test@demo.com\",\n    \"products\": \"Product\",\n    \"role\": 0\n}"
+                        },
+                        "description": "Is An Control Panel User Request That Invites users To Product And assign a role To work in the product with it.\n\n<p><img src=\"images\/users\/workplaces\/users-workplaces-invite_user.png\" width=\"100%\"><\/p>\n<p><img src=\"images\/users\/workplaces\/users-workplaces-invite_user_product.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Edit User Role",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/closor\/public\/",
+                            "path": "edit_user_role",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Is An Control Panel User Request That Updates User Role To Database.\n\n<p><img src=\"images\/users\/workplaces\/users-workplaces-edit_user_role.png\" width=\"100%\"><\/p>\n<p><img src=\"images\/users\/updated-successfully.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "User Workplaces Remove Request",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/closor\/public\/",
+                            "path": "remove_user_from_workspace\/:user_id\/:workplace_id",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Is An Control Panel User Request That Removes user From Workplaces.\n\n<p><img src=\"images\/users\/workplaces\/users-workplaces-remove_user_from_workspace0.png\" width=\"100%\"><\/p>\n<p><img src=\"images\/users\/workplaces\/users-workplaces-remove_user_from_workspace1.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "User Workplaces active Request",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost\/closor\/public\/",
+                            "path": "active_user_in_workspace\/:status\/:user_id\/:workplace_id",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Is An Control Panel User Request That actives user From Workplaces.\n\n<p><img src=\"images\/users\/workplaces\/users-workplaces-active_user_from_workspace.png\" width=\"100%\"><\/p>",
                         "response": []
                     }
                 }
             ]
         },
         {
-            "name": "2.4  WorkPlace Products management",
+            "name": "2.4 Users WorkPlace Products management",
             "description": "\nRoutes To manage WorkPlace Products data For The Manager Control Panel",
             "item": [
                 {
@@ -1808,34 +1584,6 @@
                     }
                 },
                 {
-                    "name": "invite_member_workplace",
-                    "request": {
-                        "url": {
-                            "protocol": "http",
-                            "host": "localhost\/closor\/public\/",
-                            "path": "invite_member_workplace",
-                            "query": []
-                        },
-                        "method": "POST",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
                     "name": "choose_members",
                     "request": {
                         "url": {
@@ -1894,7 +1642,7 @@
             ]
         },
         {
-            "name": "2.5  Lead Sources management",
+            "name": "2.5 Users Lead Sources management",
             "description": "\nRoutes To manage Lead Sources data For The Manager Control Panel",
             "item": [
                 {
@@ -2096,7 +1844,7 @@
             ]
         },
         {
-            "name": "2.6  Manager Leads management",
+            "name": "2.6 Users Manager Leads management",
             "description": "\nRoutes To manage Leads data For The Manager Control Panel",
             "item": [
                 {
@@ -2298,7 +2046,7 @@
             ]
         },
         {
-            "name": "2.7  Product Widget management",
+            "name": "2.7 Users Product Widget management",
             "description": "\nRoutes To manage Product Widget View data For Leads",
             "item": [
                 {

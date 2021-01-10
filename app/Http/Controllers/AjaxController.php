@@ -6,26 +6,25 @@ use App\Country;
 use Illuminate\Http\Request;
 
 /**
- * @group 2.1  Ajax Request management
+ * @group 2.1 Users Get Data Behind the scene.
  *
- * Routes for managing Ajax Request for site
+ * Routes for Getting Data Request for site :
  *
- * - Get the country phone code .
+ * - Personalize the country phone code.
  *
- * - Get the country data info .
+ * - Personalize the country data info.
  *
  */
 
 class AjaxController extends Controller
 {
     /**
-     * country phone code for site
+     * Personalize User Phone Code
      *
-     * - Get the country phone code .
+     * - Personalize the Country Phone Code for later user at the site EX. +2.
      *
      * @response {
-     * "iso":"AL",
-     * "name":"ALBANIA"
+     * "phonecode":355
      * }
      *
      */
@@ -36,12 +35,13 @@ class AjaxController extends Controller
         return $country_code;
     }
     /**
-     * country data info for site
+     * Personalize User Country Data info
      *
-     * - Get the country data info .
+     * - Personalize User Country Data info for later user at the site EX. ALBANIA.
      *
      * @response {
-     * "phonecode":355
+     * "iso":"AL",
+     * "name":"ALBANIA"
      * }
      *
      */

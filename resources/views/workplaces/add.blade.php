@@ -43,7 +43,11 @@
                                 @endif
                                 <input type="hidden" name="admin_id" value="{{Auth::user()->id}}">
                                 <div class="form-body">
+                                    @if(isset($data))
+                                    <h3 class="box-title m-t-40">Edit workspace</h3>
+                                    @else
                                     <h3 class="box-title m-t-40">Create new workspace</h3>
+                                    @endif
                                     <hr>
                                     <div class="row">
                                         <div class="col-md-6">

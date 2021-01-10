@@ -138,6 +138,7 @@ return [
              */
             'exclude' => [
                 // 'users.create', 'admin.*'
+                'check','/','workplace.show','workplace.team'
             ],
 
             /*
