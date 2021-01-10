@@ -16,7 +16,7 @@ toc_footers:
 # Info
 
 Welcome to the generated API reference.
-[Get Postman Collection](http://localhost/closor/public/docs/collection.json)
+[Get Postman Collection](http://localhost/docs/collection.json)
 
 <!-- END_INFO -->
 
@@ -51,14 +51,14 @@ Is A Dashboard Page That Shows Lists Of Stats & General Data Of The Site In Gene
 
 ```bash
 curl -X GET \
-    -G "http://localhost/closor/public/admin/dashboard" \
+    -G "/admin/dashboard" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/closor/public/admin/dashboard"
+    "/admin/dashboard"
 );
 
 let headers = {
@@ -115,14 +115,14 @@ Is An Admin-Panel Moderator Page That Views Moderators Data Info .
 
 ```bash
 curl -X GET \
-    -G "http://localhost/closor/public/admin/moderator" \
+    -G "/admin/moderator" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/closor/public/admin/moderator"
+    "/admin/moderator"
 );
 
 let headers = {
@@ -171,7 +171,7 @@ Is An Admin-Panel Moderator Page That Creates Moderators To Manage The Web Site 
 
 ```bash
 curl -X GET \
-    -G "http://localhost/closor/public/admin/moderator/create" \
+    -G "/admin/moderator/create" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -d '{"name":"demo","email":"test@demo.com","phone":123456789,"zones":"Alex"}'
@@ -180,7 +180,7 @@ curl -X GET \
 
 ```javascript
 const url = new URL(
-    "http://localhost/closor/public/admin/moderator/create"
+    "/admin/moderator/create"
 );
 
 let headers = {
@@ -244,14 +244,14 @@ Is An Admin-Panel Moderator Data Request That Stores Moderators Data To Database
 
 ```bash
 curl -X POST \
-    "http://localhost/closor/public/admin/moderator" \
+    "/admin/moderator" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/closor/public/admin/moderator"
+    "/admin/moderator"
 );
 
 let headers = {
@@ -352,7 +352,6 @@ Parameter | Type | Status | Description
         `zones` | string |  optional  | The Zone selected of the user.
     
 <!-- END_2a667f53fed4f739b41ed0003a388271 -->
-
 <!-- START_9b6c2330037b0e5193fe78948e5e945c -->
 ## Moderator Update Data
 
@@ -405,7 +404,6 @@ fetch(url, {
 
 
 <!-- END_9b6c2330037b0e5193fe78948e5e945c -->
-
 <!-- START_588e95fb6821fb070bbe71063ea23f26 -->
 ## Moderator Delete Data
 
@@ -456,7 +454,6 @@ fetch(url, {
 
 
 <!-- END_588e95fb6821fb070bbe71063ea23f26 -->
-
 #1.3  Admin Users management
 
 
@@ -539,7 +536,6 @@ fetch(url, {
 
 
 <!-- END_bd487ab94d8034c2d13644bb1772fdfa -->
-
 <!-- START_71dba47ec1215d1147a3f8e59c55751a -->
 ## Users View Page
 
@@ -612,7 +608,6 @@ fetch(url, {
 
 
 <!-- END_71dba47ec1215d1147a3f8e59c55751a -->
-
 <!-- START_9fa8fc1e020e7d36ccc1f3b8d7072309 -->
 ## Manage Users From the Enable &amp; Disable Button
 
@@ -662,7 +657,6 @@ fetch(url, {
 
 
 <!-- END_9fa8fc1e020e7d36ccc1f3b8d7072309 -->
-
 #1.4  Admin Zone management
 
 
@@ -748,7 +742,6 @@ fetch(url, {
 
 
 <!-- END_64ec3c6c19150d0203cd3a9140836e11 -->
-
 <!-- START_8aa920ff953d3d7b612986df862f0688 -->
 ## Zone Create Page
 
@@ -813,7 +806,6 @@ Parameter | Type | Status | Description
         `Countries` | string |  required  | The Countries selected of the zone.
     
 <!-- END_8aa920ff953d3d7b612986df862f0688 -->
-
 <!-- START_2a549bed4d631a624001ebb1533e1ccd -->
 ## Zone Store Data
 
@@ -863,7 +855,6 @@ fetch(url, {
 
 
 <!-- END_2a549bed4d631a624001ebb1533e1ccd -->
-
 <!-- START_5b2e7e6bea511d686076f055d3098619 -->
 ## Zone Edit Page
 
@@ -928,7 +919,6 @@ Parameter | Type | Status | Description
         `Countries` | string |  required  | The Countries selected of the zone.
     
 <!-- END_5b2e7e6bea511d686076f055d3098619 -->
-
 <!-- START_33fdf5c386ce71185ab081d19c5eec4b -->
 ## Zone Update Data
 
@@ -981,7 +971,6 @@ fetch(url, {
 
 
 <!-- END_33fdf5c386ce71185ab081d19c5eec4b -->
-
 <!-- START_d9e5a24825aa831706830db3050287c3 -->
 ## Zone Delete Data
 
@@ -1033,7 +1022,6 @@ fetch(url, {
 
 
 <!-- END_d9e5a24825aa831706830db3050287c3 -->
-
 #1.5  Admin Workplaces management
 
 
@@ -1109,7 +1097,6 @@ fetch(url, {
 
 
 <!-- END_699bfa8985dd4a8445e6cd2dba6bd1ff -->
-
 <!-- START_eb470148c94798707e89a20561b7c924 -->
 ## Workplaces View Page
 
@@ -1177,7 +1164,6 @@ fetch(url, {
 
 
 <!-- END_eb470148c94798707e89a20561b7c924 -->
-
 <!-- START_7f5c3cb4f0190a68ad56c43df0411e0e -->
 ## Single Workplace Info View Page
 
@@ -1242,7 +1228,6 @@ fetch(url, {
 
 
 <!-- END_7f5c3cb4f0190a68ad56c43df0411e0e -->
-
 <!-- START_ad220b974b859e1602a3412dad2df202 -->
 ## Single Workplace Team Info View Page
 
@@ -1309,7 +1294,6 @@ fetch(url, {
 
 
 <!-- END_ad220b974b859e1602a3412dad2df202 -->
-
 #1.6  Admin Leads management
 
 
@@ -1392,7 +1376,6 @@ fetch(url, {
 
 
 <!-- END_d73e5ecdb21a6038d8c7d5ab1b3bff01 -->
-
 <!-- START_8c41b839307216344317ddb09df54c66 -->
 ## Leads View Page
 
@@ -1465,7 +1448,6 @@ fetch(url, {
 
 
 <!-- END_8c41b839307216344317ddb09df54c66 -->
-
 <!-- START_20c4b3ef2d56086bd3394de6b0a721b8 -->
 ## Single Lead Info View Page
 
@@ -1538,7 +1520,6 @@ fetch(url, {
 
 
 <!-- END_20c4b3ef2d56086bd3394de6b0a721b8 -->
-
 #2.1 Users Get Data Behind the scene.
 
 
@@ -1593,7 +1574,6 @@ fetch(url, {
 
 
 <!-- END_01e8e27813cb0bbdbd50865bdad2d538 -->
-
 <!-- START_1142f13834868f73270109636ff92df5 -->
 ## Personalize User Country Data info
 
@@ -1641,7 +1621,6 @@ fetch(url, {
 
 
 <!-- END_1142f13834868f73270109636ff92df5 -->
-
 #2.1 Users Home management
 
 
@@ -1650,6 +1629,98 @@ Page Group To manage General Data for site.
 - View the General Data & Routes After Being Authenticated.
 
 <p><img src="images/users/home/users-login-page.png" width="100%"></p>
+<!-- START_53be1e9e10a08458929a2e0ea70ddb86 -->
+## A Users Login View Page
+
+<br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+User Login Page That Authenticates User license to use the site properly With his personalized data and getting his data from our database for him to serve him.
+
+
+<p><img src="images/users/home/users-login-page.png" width="100%"></p>
+
+> Example request:
+
+```bash
+curl -X GET \
+    -G "/" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "/"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (200):
+
+```json
+null
+```
+
+### HTTP Request
+`GET /`
+
+
+<!-- END_53be1e9e10a08458929a2e0ea70ddb86 -->
+
+<!-- START_b3e829637707a0c3ff670162febb23b9 -->
+## check
+<br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+> Example request:
+
+```bash
+curl -X GET \
+    -G "/check" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "/check"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (302):
+
+```json
+null
+```
+
+### HTTP Request
+`GET check`
+
+
+<!-- END_b3e829637707a0c3ff670162febb23b9 -->
+
 <!-- START_62e8dd9f1911aba4a2520fd5a6010e6d -->
 ## Widget View Page
 
@@ -1707,7 +1778,6 @@ null
 
 
 <!-- END_62e8dd9f1911aba4a2520fd5a6010e6d -->
-
 #2.2 Users Users management
 
 
@@ -1787,7 +1857,6 @@ fetch(url, {
 
 
 <!-- END_47f7fbb6bf98ef4cdc54b10f03cb3bdd -->
-
 <!-- START_7e6cecb55fb193c3c475a0c055545685 -->
 ## User Update Data
 
@@ -1840,7 +1909,6 @@ fetch(url, {
 
 
 <!-- END_7e6cecb55fb193c3c475a0c055545685 -->
-
 <!-- START_30059a09ef3f0284c40e4d06962ce08d -->
 ## Dashboard Page
 
@@ -1899,7 +1967,6 @@ fetch(url, {
 
 
 <!-- END_30059a09ef3f0284c40e4d06962ce08d -->
-
 #2.3 Users Workplaces management
 
 
@@ -1971,7 +2038,6 @@ fetch(url, {
 
 
 <!-- END_498136219ce762889e3ffd73765b9003 -->
-
 <!-- START_9e2e44622c4b535a411370f0e12f3e1b -->
 ## Workplace Create Page
 
@@ -2038,7 +2104,6 @@ Parameter | Type | Status | Description
         `startday` | string |  required  | The startday selected of Week Start ON for the workplace.
     
 <!-- END_9e2e44622c4b535a411370f0e12f3e1b -->
-
 <!-- START_3fc9a606a4188179a352baefb2070a4f -->
 ## Workplace Store Data
 
@@ -2088,6 +2153,51 @@ fetch(url, {
 
 
 <!-- END_3fc9a606a4188179a352baefb2070a4f -->
+<!-- START_55b4223b6d5c3dae76077fa642c07a2d -->
+## Display the specified resource.
+
+<br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+> Example request:
+
+```bash
+curl -X GET \
+    -G "/workplace/1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "/workplace/1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (401):
+
+```json
+{
+    "message": "Unauthenticated."
+}
+```
+
+### HTTP Request
+`GET workplace/{workplace}`
+
+
+<!-- END_55b4223b6d5c3dae76077fa642c07a2d -->
 
 <!-- START_5f73cc8376a24ab4ac6b7536a76479ee -->
 ## Workplaces Edit Page
@@ -2153,7 +2263,6 @@ Parameter | Type | Status | Description
         `startday` | string |  required  | The startday selected of Week Start ON for the workplace.
     
 <!-- END_5f73cc8376a24ab4ac6b7536a76479ee -->
-
 <!-- START_75c66c346528f43f48c1da31f07d0f2b -->
 ## Workplace Update Data
 
@@ -2206,7 +2315,6 @@ fetch(url, {
 
 
 <!-- END_75c66c346528f43f48c1da31f07d0f2b -->
-
 <!-- START_8017da6c5d0ba10a95b74891659b71d7 -->
 ## Workplace Delete Data
 
@@ -2257,7 +2365,6 @@ fetch(url, {
 
 
 <!-- END_8017da6c5d0ba10a95b74891659b71d7 -->
-
 <!-- START_4707187567e347e9f9b62fa54857eb58 -->
 ## Invited Workplaces Page
 
@@ -2317,7 +2424,6 @@ fetch(url, {
 
 
 <!-- END_4707187567e347e9f9b62fa54857eb58 -->
-
 <!-- START_2d7929f290ae72d939e89b7e232cdffb -->
 ## User Workplaces Page
 
@@ -2377,7 +2483,6 @@ fetch(url, {
 
 
 <!-- END_2d7929f290ae72d939e89b7e232cdffb -->
-
 <!-- START_46c3c689207155a26adf42e4d5418a3f -->
 ## Single Workplace Team Info View Page
 
@@ -2447,7 +2552,6 @@ fetch(url, {
 
 
 <!-- END_46c3c689207155a26adf42e4d5418a3f -->
-
 <!-- START_c88f787d4d34968e9bf2bfe32466e5f2 -->
 ## Single Workplace Team Info View Page
 
@@ -2517,7 +2621,6 @@ fetch(url, {
 
 
 <!-- END_c88f787d4d34968e9bf2bfe32466e5f2 -->
-
 <!-- START_9df3cc4d44958b41b6e119ee5744a74f -->
 ## User Invite To Product Page
 
@@ -2568,7 +2671,6 @@ fetch(url, {
 
 
 <!-- END_9df3cc4d44958b41b6e119ee5744a74f -->
-
 <!-- START_27f83ba20a35cf3aa377aaa4585b4e26 -->
 ## User Invite To Product Request
 
@@ -2634,7 +2736,6 @@ Parameter | Type | Status | Description
         `role` | integer |  required  | The role selected of User permission on certin product.
     
 <!-- END_27f83ba20a35cf3aa377aaa4585b4e26 -->
-
 <!-- START_b770a79f5f0514009c815eaca6b27451 -->
 ## Edit User Role
 
@@ -2685,7 +2786,6 @@ fetch(url, {
 
 
 <!-- END_b770a79f5f0514009c815eaca6b27451 -->
-
 <!-- START_81b98dce40509745c38b0ea8d41364a4 -->
 ## User Workplaces Remove Request
 
@@ -2736,7 +2836,6 @@ fetch(url, {
 
 
 <!-- END_81b98dce40509745c38b0ea8d41364a4 -->
-
 <!-- START_7cdf1186f200d47090bfdffb41f52e72 -->
 ## User Workplaces active Request
 
@@ -2786,7 +2885,6 @@ fetch(url, {
 
 
 <!-- END_7cdf1186f200d47090bfdffb41f52e72 -->
-
 #2.4 Users WorkPlace Products management
 
 
@@ -2834,7 +2932,6 @@ fetch(url, {
 
 
 <!-- END_b63c55c4bd1dca269829c5efb74328c8 -->
-
 <!-- START_22a05e6d736a231cc1f66b3f4fa112c1 -->
 ## Show the form for creating a new resource.
 
@@ -2879,7 +2976,6 @@ fetch(url, {
 
 
 <!-- END_22a05e6d736a231cc1f66b3f4fa112c1 -->
-
 <!-- START_dfe6fdb3ab2b4c4c229bf21ba5b32643 -->
 ## Store a newly created resource in storage.
 
@@ -2917,7 +3013,6 @@ fetch(url, {
 
 
 <!-- END_dfe6fdb3ab2b4c4c229bf21ba5b32643 -->
-
 <!-- START_21f3764688b42137635ec43b3339bda5 -->
 ## Display the specified resource.
 
@@ -2962,7 +3057,6 @@ fetch(url, {
 
 
 <!-- END_21f3764688b42137635ec43b3339bda5 -->
-
 <!-- START_a43ca982c814398a9232bb7e42ea2a2a -->
 ## Show the form for editing the specified resource.
 
@@ -3007,7 +3101,6 @@ fetch(url, {
 
 
 <!-- END_a43ca982c814398a9232bb7e42ea2a2a -->
-
 <!-- START_476695cb4ed1e5a2d79d11db4b0b2080 -->
 ## Update the specified resource in storage.
 
@@ -3047,7 +3140,6 @@ fetch(url, {
 
 
 <!-- END_476695cb4ed1e5a2d79d11db4b0b2080 -->
-
 <!-- START_2aeea7ca8dc8189a66bbdb881a5a9bb4 -->
 ## Remove the specified resource from storage.
 
@@ -3085,7 +3177,6 @@ fetch(url, {
 
 
 <!-- END_2aeea7ca8dc8189a66bbdb881a5a9bb4 -->
-
 <!-- START_7f1bd779a417892338bb9436ac4a781a -->
 ## Show the form for creating a new resource.
 
@@ -3130,7 +3221,6 @@ fetch(url, {
 
 
 <!-- END_7f1bd779a417892338bb9436ac4a781a -->
-
 <!-- START_f93f2c9646cf80d334a3abcd9d5c5762 -->
 ## invite_member
 > Example request:
@@ -3167,7 +3257,6 @@ fetch(url, {
 
 
 <!-- END_f93f2c9646cf80d334a3abcd9d5c5762 -->
-
 <!-- START_c88311d39455b3dc64c67878e4aa7924 -->
 ## {workplace_id}/products
 > Example request:
@@ -3211,7 +3300,6 @@ fetch(url, {
 
 
 <!-- END_c88311d39455b3dc64c67878e4aa7924 -->
-
 <!-- START_c64165b035a2961a0ad8945091145a1c -->
 ## choose_members
 > Example request:
@@ -3248,7 +3336,6 @@ fetch(url, {
 
 
 <!-- END_c64165b035a2961a0ad8945091145a1c -->
-
 <!-- START_7a139cf107f19ae9163446ce5ae22ee0 -->
 ## add_product_to_user
 > Example request:
@@ -3285,7 +3372,6 @@ fetch(url, {
 
 
 <!-- END_7a139cf107f19ae9163446ce5ae22ee0 -->
-
 #2.5 Users Lead Sources management
 
 
@@ -3334,7 +3420,6 @@ fetch(url, {
 
 
 <!-- END_afe861116942da8827f905c42d93c7cd -->
-
 <!-- START_6525a24380d6f0fc3d9199bdb70d8ead -->
 ## Show the form for creating a new resource.
 
@@ -3379,7 +3464,6 @@ fetch(url, {
 
 
 <!-- END_6525a24380d6f0fc3d9199bdb70d8ead -->
-
 <!-- START_1d134c058a66ac2dd612ccd654972569 -->
 ## Store a newly created resource in storage.
 
@@ -3417,7 +3501,6 @@ fetch(url, {
 
 
 <!-- END_1d134c058a66ac2dd612ccd654972569 -->
-
 <!-- START_35fe2adef26023dfdca2618eb9aa11cc -->
 ## Display the specified resource.
 
@@ -3455,7 +3538,6 @@ fetch(url, {
 
 
 <!-- END_35fe2adef26023dfdca2618eb9aa11cc -->
-
 <!-- START_8982bffebd0eaf02ce61568a0017882e -->
 ## Show the form for editing the specified resource.
 
@@ -3500,7 +3582,6 @@ fetch(url, {
 
 
 <!-- END_8982bffebd0eaf02ce61568a0017882e -->
-
 <!-- START_cc29ce8491095a2f9a53e0b9749b6273 -->
 ## Update the specified resource in storage.
 
@@ -3540,7 +3621,6 @@ fetch(url, {
 
 
 <!-- END_cc29ce8491095a2f9a53e0b9749b6273 -->
-
 <!-- START_9c88b622b1245a5da5089e7994e6eccd -->
 ## Remove the specified resource from storage.
 
@@ -3578,7 +3658,6 @@ fetch(url, {
 
 
 <!-- END_9c88b622b1245a5da5089e7994e6eccd -->
-
 #2.6 Users Manager Leads management
 
 
@@ -3625,7 +3704,6 @@ null
 
 
 <!-- END_374cfeb27ba1670c869a004f31d8f828 -->
-
 <!-- START_afa4466f98b9aabba06588f178216996 -->
 ## Show the form for creating a new resource.
 
@@ -3670,7 +3748,6 @@ fetch(url, {
 
 
 <!-- END_afa4466f98b9aabba06588f178216996 -->
-
 <!-- START_e27d419ecd767880269a31b5b88f149d -->
 ## Display a listing of the resource.
 
@@ -3713,7 +3790,6 @@ null
 
 
 <!-- END_e27d419ecd767880269a31b5b88f149d -->
-
 <!-- START_8bfb6ab02f276fc606969dfede92597f -->
 ## leads/{lead}
 > Example request:
@@ -3757,7 +3833,6 @@ fetch(url, {
 
 
 <!-- END_8bfb6ab02f276fc606969dfede92597f -->
-
 <!-- START_768db20e2d420f5da80b1ab65bc75cd0 -->
 ## Show the form for editing the specified resource.
 
@@ -3802,7 +3877,6 @@ fetch(url, {
 
 
 <!-- END_768db20e2d420f5da80b1ab65bc75cd0 -->
-
 <!-- START_f16c73a0fc51e0ee0c91be9031fba0f9 -->
 ## Update the specified resource in storage.
 
@@ -3842,7 +3916,6 @@ fetch(url, {
 
 
 <!-- END_f16c73a0fc51e0ee0c91be9031fba0f9 -->
-
 <!-- START_591151aff4db46db789a3f5554bd497e -->
 ## Remove the specified resource from storage.
 
@@ -3880,7 +3953,6 @@ fetch(url, {
 
 
 <!-- END_591151aff4db46db789a3f5554bd497e -->
-
 #2.7 Users Product Widget management
 
 
@@ -3926,7 +3998,6 @@ null
 
 
 <!-- END_6d0c9b8cc536e9a9ff2cd34e09735f19 -->
-
 <!-- START_a4fca1cb337722b58ae6367668979b88 -->
 ## widgetView/widget
 > Example request:
@@ -3963,7 +4034,6 @@ fetch(url, {
 
 
 <!-- END_a4fca1cb337722b58ae6367668979b88 -->
-
 #3.1  APIs User management
 
 
@@ -4004,7 +4074,6 @@ fetch(url, {
 
 
 <!-- END_c3fa189a6c95ca36ad6ac4791a873d23 -->
-
 <!-- START_ea980f00fb009965aa3dd5f562337404 -->
 ## api/login1
 > Example request:
@@ -4041,7 +4110,6 @@ fetch(url, {
 
 
 <!-- END_ea980f00fb009965aa3dd5f562337404 -->
-
 <!-- START_bdd2d0f4f2c3e0f3a53ecef15732db78 -->
 ## api/login2
 > Example request:
@@ -4078,7 +4146,6 @@ fetch(url, {
 
 
 <!-- END_bdd2d0f4f2c3e0f3a53ecef15732db78 -->
-
 <!-- START_8f90011138117fdccfc791cf91d0a65b -->
 ## api/update_profile
 > Example request:
@@ -4115,7 +4182,6 @@ fetch(url, {
 
 
 <!-- END_8f90011138117fdccfc791cf91d0a65b -->
-
 <!-- START_c6ffcc473f819c15d8ee9f636eed9343 -->
 ## api/change_is_available
 > Example request:
@@ -4152,7 +4218,6 @@ fetch(url, {
 
 
 <!-- END_c6ffcc473f819c15d8ee9f636eed9343 -->
-
 #3.2  APIs Workplaces management
 
 
@@ -4193,7 +4258,6 @@ fetch(url, {
 
 
 <!-- END_405eabb53d4d41d71d98563f0695ad41 -->
-
 <!-- START_bd30e8830ad43b3edb2d56c804d914de -->
 ## api/lead
 > Example request:
@@ -4230,7 +4294,6 @@ fetch(url, {
 
 
 <!-- END_bd30e8830ad43b3edb2d56c804d914de -->
-
 <!-- START_385b87ffa25ae621a0a8c77665d65ecb -->
 ## api/all_workplaces
 > Example request:
@@ -5084,7 +5147,6 @@ fetch(url, {
 
 
 <!-- END_385b87ffa25ae621a0a8c77665d65ecb -->
-
 <!-- START_127212f1a2c5e9475c73d8968f6c920e -->
 ## api/all_products
 > Example request:
@@ -5121,7 +5183,6 @@ fetch(url, {
 
 
 <!-- END_127212f1a2c5e9475c73d8968f6c920e -->
-
 <!-- START_59f5311afa947174c231488ff72a71ab -->
 ## api/all_leads
 > Example request:
@@ -13006,7 +13067,6 @@ fetch(url, {
 
 
 <!-- END_59f5311afa947174c231488ff72a71ab -->
-
 <!-- START_61a85c4495a8871ceaf432c85b5827e7 -->
 ## api/user_leads/{user}
 > Example request:
@@ -13672,7 +13732,6 @@ fetch(url, {
 
 
 <!-- END_61a85c4495a8871ceaf432c85b5827e7 -->
-
 <!-- START_a8de7d263b49f310c02e9c4c130524c9 -->
 ## api/qualified
 > Example request:
@@ -13709,7 +13768,6 @@ fetch(url, {
 
 
 <!-- END_a8de7d263b49f310c02e9c4c130524c9 -->
-
 <!-- START_926fc61aa770cdea7831fb5d8b848858 -->
 ## api/test_notification_user
 > Example request:
@@ -13746,7 +13804,6 @@ fetch(url, {
 
 
 <!-- END_926fc61aa770cdea7831fb5d8b848858 -->
-
 <!-- START_df70b272cf915016a1ca96cbc14c2b09 -->
 ## api/test_notification_device
 > Example request:
@@ -13783,7 +13840,6 @@ fetch(url, {
 
 
 <!-- END_df70b272cf915016a1ca96cbc14c2b09 -->
-
 #Admin Login management
 
 
@@ -13829,7 +13885,6 @@ null
 
 
 <!-- END_18f69092e65df23bcc6d9f57e4ca2662 -->
-
 <!-- START_82dae795cbae227a0f1a48ab41923d78 -->
 ## admin.login
 > Example request:
@@ -13866,7 +13921,6 @@ fetch(url, {
 
 
 <!-- END_82dae795cbae227a0f1a48ab41923d78 -->
-
 #Login management
 
 
@@ -13913,7 +13967,6 @@ null
 
 
 <!-- END_66e08d3cc8222573018fed49e121e96d -->
-
 <!-- START_ba35aa39474cb98cfb31829e70eb8b74 -->
 ## Handle a login request to the application.
 
@@ -13951,7 +14004,6 @@ fetch(url, {
 
 
 <!-- END_ba35aa39474cb98cfb31829e70eb8b74 -->
-
 <!-- START_e65925f23b9bc6b93d9356895f29f80c -->
 ## Log the user out of the application.
 
@@ -13989,7 +14041,6 @@ fetch(url, {
 
 
 <!-- END_e65925f23b9bc6b93d9356895f29f80c -->
-
 <!-- START_dc44652b722af6abcc3925ae84bdee69 -->
 ## Create a new controller instance.
 
@@ -14042,7 +14093,6 @@ null
 
 
 <!-- END_dc44652b722af6abcc3925ae84bdee69 -->
-
 #Register management
 
 
@@ -14089,7 +14139,6 @@ null
 
 
 <!-- END_ff38dfb1bd1bb7e1aa24b4e1792a9768 -->
-
 <!-- START_d7aad7b5ac127700500280d511a3db01 -->
 ## Create a new user instance after a valid registration.
 
@@ -14127,7 +14176,6 @@ fetch(url, {
 
 
 <!-- END_d7aad7b5ac127700500280d511a3db01 -->
-
 <!-- START_1dbcdf4354aee512432e2c97f2f678e8 -->
 ## login2
 > Example request:
@@ -14174,7 +14222,6 @@ fetch(url, {
 
 
 <!-- END_1dbcdf4354aee512432e2c97f2f678e8 -->
-
 #general
 
 
@@ -14214,7 +14261,6 @@ fetch(url, {
 
 
 <!-- END_b7802a3a2092f162a21dc668479801f4 -->
-
 <!-- START_8ad860d24dc1cc6dac772d99135ad13e -->
 ## Reset the given user&#039;s password.
 
@@ -14252,7 +14298,6 @@ fetch(url, {
 
 
 <!-- END_8ad860d24dc1cc6dac772d99135ad13e -->
-
 <!-- START_d72797bae6d0b1f3a341ebb1f8900441 -->
 ## Display the form to request a password reset link.
 
@@ -14295,7 +14340,6 @@ null
 
 
 <!-- END_d72797bae6d0b1f3a341ebb1f8900441 -->
-
 <!-- START_feb40f06a93c80d742181b6ffb6b734e -->
 ## Send a reset link to the given user.
 
@@ -14333,7 +14377,6 @@ fetch(url, {
 
 
 <!-- END_feb40f06a93c80d742181b6ffb6b734e -->
-
 <!-- START_e1605a6e5ceee9d1aeb7729216635fd7 -->
 ## Display the password reset view for the given token.
 
@@ -14378,7 +14421,6 @@ null
 
 
 <!-- END_e1605a6e5ceee9d1aeb7729216635fd7 -->
-
 <!-- START_cafb407b7a846b31491f97719bb15aef -->
 ## Reset the given user&#039;s password.
 
@@ -14416,7 +14458,6 @@ fetch(url, {
 
 
 <!-- END_cafb407b7a846b31491f97719bb15aef -->
-
 <!-- START_69ff7bfc681bd26488c719c28ce26659 -->
 ## Invoke the controller method.
 
@@ -14461,5 +14502,4 @@ fetch(url, {
 
 
 <!-- END_69ff7bfc681bd26488c719c28ce26659 -->
-
 
