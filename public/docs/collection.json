@@ -3,10 +3,14 @@
     "info": {
         "name": "Closor API",
 <<<<<<< HEAD
+<<<<<<< HEAD
         "_postman_id": "c0bab01d-d813-4f6b-a57a-c2328eb26ce2",
 =======
         "_postman_id": "81949c0b-d8d3-43f2-8df6-5c0103e956a5",
 >>>>>>> d9ccd0d01eda6a99e044b9af8f4a10138814ce2f
+=======
+        "_postman_id": "2b4637e0-5062-4a9e-aa84-eb0518b85437",
+>>>>>>> b1173c075fed74b525c020ce92d2c003db646a15
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.0.0\/collection.json"
     },
@@ -759,6 +763,7 @@
             "item": [
                 {
 <<<<<<< HEAD
+<<<<<<< HEAD
                     "name": "A Users Login View Page",
                     "request": {
                         "url": {
@@ -817,6 +822,8 @@
                 {
 =======
 >>>>>>> d9ccd0d01eda6a99e044b9af8f4a10138814ce2f
+=======
+>>>>>>> b1173c075fed74b525c020ce92d2c003db646a15
                     "name": "Widget View Page",
                     "request": {
                         "url": {
@@ -1025,6 +1032,7 @@
                     }
                 },
                 {
+<<<<<<< HEAD
                     "name": "Display the specified resource.",
                     "request": {
                         "url": {
@@ -1054,14 +1062,20 @@
                     }
                 },
                 {
+=======
+>>>>>>> b1173c075fed74b525c020ce92d2c003db646a15
                     "name": "Workplaces Edit Page",
                     "request": {
                         "url": {
                             "protocol": "http",
+<<<<<<< HEAD
                             "host": "",
 =======
                             "host": "localhost\/closor\/public\/",
 >>>>>>> d9ccd0d01eda6a99e044b9af8f4a10138814ce2f
+=======
+                            "host": "localhost\/closor\/public\/",
+>>>>>>> b1173c075fed74b525c020ce92d2c003db646a15
                             "path": "workplace\/:workplace\/edit",
                             "query": []
                         },
@@ -1090,10 +1104,14 @@
                         "url": {
                             "protocol": "http",
 <<<<<<< HEAD
+<<<<<<< HEAD
                             "host": "",
 =======
                             "host": "localhost\/closor\/public\/",
 >>>>>>> d9ccd0d01eda6a99e044b9af8f4a10138814ce2f
+=======
+                            "host": "localhost\/closor\/public\/",
+>>>>>>> b1173c075fed74b525c020ce92d2c003db646a15
                             "path": "workplace\/:workplace",
                             "query": []
                         },
@@ -1150,10 +1168,14 @@
                         "url": {
                             "protocol": "http",
 <<<<<<< HEAD
+<<<<<<< HEAD
                             "host": "",
 =======
                             "host": "localhost\/closor\/public\/",
 >>>>>>> d9ccd0d01eda6a99e044b9af8f4a10138814ce2f
+=======
+                            "host": "localhost\/closor\/public\/",
+>>>>>>> b1173c075fed74b525c020ce92d2c003db646a15
                             "path": "invited_workplaces",
                             "query": []
                         },
@@ -1182,10 +1204,14 @@
                         "url": {
                             "protocol": "http",
 <<<<<<< HEAD
+<<<<<<< HEAD
                             "host": "",
 =======
                             "host": "localhost\/closor\/public\/",
 >>>>>>> d9ccd0d01eda6a99e044b9af8f4a10138814ce2f
+=======
+                            "host": "localhost\/closor\/public\/",
+>>>>>>> b1173c075fed74b525c020ce92d2c003db646a15
                             "path": "user_workplaces",
                             "query": []
                         },
@@ -1214,10 +1240,14 @@
                         "url": {
                             "protocol": "http",
 <<<<<<< HEAD
+<<<<<<< HEAD
                             "host": "",
 =======
                             "host": "localhost\/closor\/public\/",
 >>>>>>> d9ccd0d01eda6a99e044b9af8f4a10138814ce2f
+=======
+                            "host": "localhost\/closor\/public\/",
+>>>>>>> b1173c075fed74b525c020ce92d2c003db646a15
                             "path": "{workplace_id}\/team",
                             "query": []
                         },
@@ -1246,10 +1276,14 @@
                         "url": {
                             "protocol": "http",
 <<<<<<< HEAD
+<<<<<<< HEAD
                             "host": "",
 =======
                             "host": "localhost\/closor\/public\/",
 >>>>>>> d9ccd0d01eda6a99e044b9af8f4a10138814ce2f
+=======
+                            "host": "localhost\/closor\/public\/",
+>>>>>>> b1173c075fed74b525c020ce92d2c003db646a15
                             "path": "{workplace_id}\/team\/:product_id",
                             "query": []
                         },
@@ -1278,10 +1312,14 @@
                         "url": {
                             "protocol": "http",
 <<<<<<< HEAD
+<<<<<<< HEAD
                             "host": "",
 =======
                             "host": "localhost\/closor\/public\/",
 >>>>>>> d9ccd0d01eda6a99e044b9af8f4a10138814ce2f
+=======
+                            "host": "localhost\/closor\/public\/",
+>>>>>>> b1173c075fed74b525c020ce92d2c003db646a15
                             "path": "invite\/:workplace",
                             "query": []
                         },
@@ -1310,10 +1348,14 @@
                         "url": {
                             "protocol": "http",
 <<<<<<< HEAD
+<<<<<<< HEAD
                             "host": "",
 =======
                             "host": "localhost\/closor\/public\/",
 >>>>>>> d9ccd0d01eda6a99e044b9af8f4a10138814ce2f
+=======
+                            "host": "localhost\/closor\/public\/",
+>>>>>>> b1173c075fed74b525c020ce92d2c003db646a15
                             "path": "invite_member_workplace",
                             "query": []
                         },
@@ -1342,10 +1384,14 @@
                         "url": {
                             "protocol": "http",
 <<<<<<< HEAD
+<<<<<<< HEAD
                             "host": "",
 =======
                             "host": "localhost\/closor\/public\/",
 >>>>>>> d9ccd0d01eda6a99e044b9af8f4a10138814ce2f
+=======
+                            "host": "localhost\/closor\/public\/",
+>>>>>>> b1173c075fed74b525c020ce92d2c003db646a15
                             "path": "edit_user_role",
                             "query": []
                         },
@@ -1374,10 +1420,14 @@
                         "url": {
                             "protocol": "http",
 <<<<<<< HEAD
+<<<<<<< HEAD
                             "host": "",
 =======
                             "host": "localhost\/closor\/public\/",
 >>>>>>> d9ccd0d01eda6a99e044b9af8f4a10138814ce2f
+=======
+                            "host": "localhost\/closor\/public\/",
+>>>>>>> b1173c075fed74b525c020ce92d2c003db646a15
                             "path": "remove_user_from_workspace\/:user_id\/:workplace_id",
                             "query": []
                         },
@@ -1406,10 +1456,14 @@
                         "url": {
                             "protocol": "http",
 <<<<<<< HEAD
+<<<<<<< HEAD
                             "host": "",
 =======
                             "host": "localhost\/closor\/public\/",
 >>>>>>> d9ccd0d01eda6a99e044b9af8f4a10138814ce2f
+=======
+                            "host": "localhost\/closor\/public\/",
+>>>>>>> b1173c075fed74b525c020ce92d2c003db646a15
                             "path": "active_user_in_workspace\/:status\/:user_id\/:workplace_id",
                             "query": []
                         },
