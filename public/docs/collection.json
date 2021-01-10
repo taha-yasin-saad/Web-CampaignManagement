@@ -2,11 +2,7 @@
     "variables": [],
     "info": {
         "name": "Closor API",
-<<<<<<< HEAD
-        "_postman_id": "234cd126-9b36-4dcd-84bc-3c6fdff26ef2",
-=======
-        "_postman_id": "dfd9ae5d-2e15-44a2-aa95-208a6e915288",
->>>>>>> 660258eec83947a55d2592e4429d552076db573f
+        "_postman_id": "c0bab01d-d813-4f6b-a57a-c2328eb26ce2",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.0.0\/collection.json"
     },
@@ -758,8 +754,7 @@
             "description": "\nPage Group To manage General Data for site.\n\n- View the General Data & Routes After Being Authenticated.\n\n<p><img src=\"images\/users\/home\/users-login-page.png\" width=\"100%\"><\/p>",
             "item": [
                 {
-<<<<<<< HEAD
-                    "name": "Users Login View Page",
+                    "name": "A Users Login View Page",
                     "request": {
                         "url": {
                             "protocol": "http",
@@ -782,7 +777,7 @@
                             "mode": "raw",
                             "raw": "[]"
                         },
-                        "description": "Is An Admin-Panel User Login Page .\n\n<p><img src=\"images\/users\/home\/users-login-page.png\" width=\"100%\"><\/p>",
+                        "description": "User Login Page That Authenticates User license to use the site properly With his personalized data and getting his data from our database for him to serve him.\n\n\n<p><img src=\"images\/users\/home\/users-login-page.png\" width=\"100%\"><\/p>",
                         "response": []
                     }
                 },
@@ -815,38 +810,7 @@
                     }
                 },
                 {
-                    "name": "design",
-                    "request": {
-                        "url": {
-                            "protocol": "http",
-                            "host": "",
-                            "path": "design",
-                            "query": []
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "widgetView\/{id}",
-=======
                     "name": "Widget View Page",
->>>>>>> 660258eec83947a55d2592e4429d552076db573f
                     "request": {
                         "url": {
                             "protocol": "http",
@@ -903,132 +867,12 @@
                             "mode": "raw",
                             "raw": "[]"
                         },
-<<<<<<< HEAD
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "Show the form for creating a new resource.",
-                    "request": {
-                        "url": {
-                            "protocol": "http",
-                            "host": "",
-                            "path": "profile\/create",
-                            "query": []
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "Store a newly created resource in storage.",
-                    "request": {
-                        "url": {
-                            "protocol": "http",
-                            "host": "",
-                            "path": "profile",
-                            "query": []
-                        },
-                        "method": "POST",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-=======
                         "description": "Is An User Page That Views User Personal Data Info To The User That user can update it for later use.\n\n\nView user Data Info\n\n- View the User Data Ex. Name, Email & Phone etc.\n\n- Manage User Data Change Ex. Name, Email, Phone & Password.\n\n<p><img src=\"images\/users\/home\/users-profile-page.png\" width=\"100%\"><\/p>",
->>>>>>> 660258eec83947a55d2592e4429d552076db573f
                         "response": []
                     }
                 },
                 {
-<<<<<<< HEAD
-                    "name": "Display the specified resource.",
-                    "request": {
-                        "url": {
-                            "protocol": "http",
-                            "host": "",
-                            "path": "profile\/:profile",
-                            "query": []
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "Show the form for editing the specified resource.",
-                    "request": {
-                        "url": {
-                            "protocol": "http",
-                            "host": "",
-                            "path": "profile\/:profile\/edit",
-                            "query": []
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "Update the specified resource in storage.",
-=======
                     "name": "User Update Data",
->>>>>>> 660258eec83947a55d2592e4429d552076db573f
                     "request": {
                         "url": {
                             "protocol": "http",
@@ -1051,39 +895,7 @@
                             "mode": "raw",
                             "raw": "[]"
                         },
-<<<<<<< HEAD
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "Remove the specified resource from storage.",
-                    "request": {
-                        "url": {
-                            "protocol": "http",
-                            "host": "",
-                            "path": "profile\/:profile",
-                            "query": []
-                        },
-                        "method": "DELETE",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-=======
                         "description": "User Data Request That Updates User Data To Database.\n\n<p><img src=\"images\/users\/home\/users-profile-page.png\" width=\"100%\"><\/p>\n<p><img src=\"images\/admin\/updated-successfully.png\" width=\"100%\"><\/p>",
->>>>>>> 660258eec83947a55d2592e4429d552076db573f
                         "response": []
                     }
                 },
@@ -1206,17 +1018,40 @@
                     }
                 },
                 {
+                    "name": "Display the specified resource.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "workplace\/:workplace",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
                     "name": "Workplaces Edit Page",
                     "request": {
                         "url": {
                             "protocol": "http",
-<<<<<<< HEAD
                             "host": "",
-                            "path": "workplace\/:workplace",
-=======
-                            "host": "localhost\/closor\/public\/",
                             "path": "workplace\/:workplace\/edit",
->>>>>>> 660258eec83947a55d2592e4429d552076db573f
                             "query": []
                         },
                         "method": "GET",
@@ -1243,13 +1078,8 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-<<<<<<< HEAD
                             "host": "",
-                            "path": "workplace\/:workplace\/edit",
-=======
-                            "host": "localhost\/closor\/public\/",
                             "path": "workplace\/:workplace",
->>>>>>> 660258eec83947a55d2592e4429d552076db573f
                             "query": []
                         },
                         "method": "PUT",
@@ -1304,13 +1134,8 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-<<<<<<< HEAD
                             "host": "",
-                            "path": "workplace\/:workplace",
-=======
-                            "host": "localhost\/closor\/public\/",
                             "path": "invited_workplaces",
->>>>>>> 660258eec83947a55d2592e4429d552076db573f
                             "query": []
                         },
                         "method": "GET",
@@ -1337,13 +1162,8 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-<<<<<<< HEAD
                             "host": "",
-                            "path": "invited_workplaces",
-=======
-                            "host": "localhost\/closor\/public\/",
                             "path": "user_workplaces",
->>>>>>> 660258eec83947a55d2592e4429d552076db573f
                             "query": []
                         },
                         "method": "GET",
@@ -1370,13 +1190,8 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-<<<<<<< HEAD
                             "host": "",
-                            "path": "user_workplaces",
-=======
-                            "host": "localhost\/closor\/public\/",
                             "path": "{workplace_id}\/team",
->>>>>>> 660258eec83947a55d2592e4429d552076db573f
                             "query": []
                         },
                         "method": "GET",
@@ -1403,13 +1218,8 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-<<<<<<< HEAD
                             "host": "",
-                            "path": "{workplace_id}\/team",
-=======
-                            "host": "localhost\/closor\/public\/",
                             "path": "{workplace_id}\/team\/:product_id",
->>>>>>> 660258eec83947a55d2592e4429d552076db573f
                             "query": []
                         },
                         "method": "GET",
@@ -1436,13 +1246,8 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-<<<<<<< HEAD
                             "host": "",
-                            "path": "{workplace_id}\/team\/:product_id",
-=======
-                            "host": "localhost\/closor\/public\/",
                             "path": "invite\/:workplace",
->>>>>>> 660258eec83947a55d2592e4429d552076db573f
                             "query": []
                         },
                         "method": "GET",
@@ -1469,13 +1274,8 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-<<<<<<< HEAD
                             "host": "",
-                            "path": "edit_user_role",
-=======
-                            "host": "localhost\/closor\/public\/",
                             "path": "invite_member_workplace",
->>>>>>> 660258eec83947a55d2592e4429d552076db573f
                             "query": []
                         },
                         "method": "POST",
@@ -1502,13 +1302,8 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-<<<<<<< HEAD
                             "host": "",
-                            "path": "remove_user_from_workspace\/:user_id\/:workplace_id",
-=======
-                            "host": "localhost\/closor\/public\/",
                             "path": "edit_user_role",
->>>>>>> 660258eec83947a55d2592e4429d552076db573f
                             "query": []
                         },
                         "method": "POST",
@@ -1535,13 +1330,8 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-<<<<<<< HEAD
                             "host": "",
-                            "path": "active_user_in_workspace\/:status\/:user_id\/:workplace_id",
-=======
-                            "host": "localhost\/closor\/public\/",
                             "path": "remove_user_from_workspace\/:user_id\/:workplace_id",
->>>>>>> 660258eec83947a55d2592e4429d552076db573f
                             "query": []
                         },
                         "method": "GET",
@@ -1568,13 +1358,8 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-<<<<<<< HEAD
                             "host": "",
-                            "path": "invite\/:workplace",
-=======
-                            "host": "localhost\/closor\/public\/",
                             "path": "active_user_in_workspace\/:status\/:user_id\/:workplace_id",
->>>>>>> 660258eec83947a55d2592e4429d552076db573f
                             "query": []
                         },
                         "method": "GET",
@@ -1883,37 +1668,6 @@
                     }
                 },
                 {
-<<<<<<< HEAD
-                    "name": "invite_member_workplace",
-                    "request": {
-                        "url": {
-                            "protocol": "http",
-                            "host": "",
-                            "path": "invite_member_workplace",
-                            "query": []
-                        },
-                        "method": "POST",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-=======
->>>>>>> 660258eec83947a55d2592e4429d552076db573f
                     "name": "choose_members",
                     "request": {
                         "url": {
