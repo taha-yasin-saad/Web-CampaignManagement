@@ -14,7 +14,7 @@ class ChangeForeignKeyAdminIdToWorkplaces extends Migration
     public function up()
     {
         Schema::table('workplaces', function (Blueprint $table) {
-            $table->unsignedBigInteger('admin_id')->nullable(false)->default(0)->change();
+            // $table->unsignedBigInteger('admin_id')->nullable()->change();
             $table->foreign('admin_id')->references('id')->on('admins')->onDelete('cascade');
         });
     }

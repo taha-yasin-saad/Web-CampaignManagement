@@ -14,7 +14,7 @@ class ChangeForeignKeyWorkplaceIdToProducts extends Migration
     public function up()
     {
         Schema::table('products', function (Blueprint $table) {
-            $table->unsignedBigInteger('workplace_id')->nullable(false)->default(0)->change();
+            // $table->unsignedBigInteger('workplace_id')->nullable(false)->default(0)->change();
             $table->foreign('workplace_id')->references('id')->on('workplaces')->onDelete('cascade');
         });
     }

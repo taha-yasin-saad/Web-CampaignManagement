@@ -14,9 +14,9 @@ class ChangeForeignKeyZoneIdAdminIdToAdminZones extends Migration
     public function up()
     {
         Schema::table('admin_zones', function (Blueprint $table) {
-            $table->unsignedBigInteger('zone_id')->nullable(false)->default(0)->change();
+            // $table->unsignedBigInteger('zone_id')->nullable(false)->default(0)->change();
             $table->foreign('zone_id')->references('id')->on('zones')->onDelete('cascade');
-            $table->unsignedBigInteger('admin_id')->nullable(false)->default(0)->change();
+            // $table->unsignedBigInteger('admin_id')->nullable(false)->default(0)->change();
             $table->foreign('admin_id')->references('id')->on('admins')->onDelete('cascade');
         });
     }
