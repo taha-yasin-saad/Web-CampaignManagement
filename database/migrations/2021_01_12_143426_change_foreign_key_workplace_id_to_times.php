@@ -27,7 +27,8 @@ class ChangeForeignKeyWorkplaceIdToTimes extends Migration
     public function down()
     {
         Schema::table('times', function (Blueprint $table) {
-            //
+            $table->dropForeign('times_workplace_id_foreign');
+            // $table->dropIndex('times_workplace_id_index');
         });
     }
 }

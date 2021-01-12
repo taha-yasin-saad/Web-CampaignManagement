@@ -29,7 +29,10 @@ class ChangeForeignKeyZoneIdAdminIdToAdminZones extends Migration
     public function down()
     {
         Schema::table('admin_zones', function (Blueprint $table) {
-            //
+            $table->dropForeign('admin_zones_zone_id_foreign');
+            // $table->dropIndex('admin_zones_zone_id_index');
+            $table->dropForeign('admin_zones_admin_id_foreign');
+            // $table->dropIndex('admin_zones_admin_id_index');
         });
     }
 }

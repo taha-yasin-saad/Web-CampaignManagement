@@ -29,7 +29,10 @@ class ChangeForeignKeyUserIdProductIdToUserProducts extends Migration
     public function down()
     {
         Schema::table('user_products', function (Blueprint $table) {
-            //
+            $table->dropForeign('user_products_user_id_foreign');
+            // $table->dropIndex('user_products_user_id_index');
+            $table->dropForeign('user_products_product_id_foreign');
+            // $table->dropIndex('user_products_product_id_index');
         });
     }
 }

@@ -41,7 +41,12 @@ class ChangeForeignKeyProductIdUserIdSourceIdToLeads extends Migration
     public function down()
     {
         Schema::table('leads', function (Blueprint $table) {
-            //
+            $table->dropForeign('leads_product_id_foreign');
+            // $table->dropIndex('leads_product_id_index');
+            $table->dropForeign('leads_user_id_foreign');
+            // $table->dropIndex('leads_user_id_index');
+            $table->dropForeign('leads_source_id_foreign');
+            // $table->dropIndex('leads_source_id_index');
         });
     }
 }

@@ -27,7 +27,8 @@ class ChangeForeignKeyWorkplaceIdToProducts extends Migration
     public function down()
     {
         Schema::table('products', function (Blueprint $table) {
-            //
+            $table->dropForeign('products_workplace_id_foreign');
+            // $table->dropIndex('products_workplace_id_index');
         });
     }
 }

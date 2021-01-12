@@ -27,7 +27,8 @@ class ChangeForeignKeyAdminIdToWorkplaces extends Migration
     public function down()
     {
         Schema::table('workplaces', function (Blueprint $table) {
-            //
+            $table->dropForeign('workplaces_admin_id_foreign');
+            // $table->dropIndex('workplaces_admin_id_index');
         });
     }
 }

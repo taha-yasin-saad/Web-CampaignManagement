@@ -29,7 +29,10 @@ class ChangeForeignKeyUserIdWorkplaceIdToWorkplaceUsers extends Migration
     public function down()
     {
         Schema::table('workplace_users', function (Blueprint $table) {
-            //
+            $table->dropForeign('workplace_users_user_id_foreign');
+            // $table->dropIndex('workplace_users_user_id_index');
+            $table->dropForeign('workplace_users_workplace_id_foreign');
+            // $table->dropIndex('workplace_users_workplace_id_index');
         });
     }
 }
