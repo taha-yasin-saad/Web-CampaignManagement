@@ -6,10 +6,12 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Auth\Passwords\CanResetPassword;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Admin extends Authenticatable
 {
     use Notifiable;
+    use SoftDeletes;
     public static $ROLE_Admin= 0;
     public static $ROLE_MODERATOR= 1;
     protected $guard = 'admin';

@@ -1,0 +1,47 @@
+<?php
+
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Support\Facades\DB;
+
+class ChangeForeignKeyProductIdUserIdSourceIdToLeads extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+
+        Schema::table('leads', function (Blueprint $table) {
+            DB::statement('UPDATE `leads` SET `product_id` = 0 WHERE `product_id` IS NULL;');
+
+            $table->unsignedBigInteger('product_id')->nullable(false)->default(0)->change();
+            $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
+
+            DB::statement('UPDATE `leads` SET `user_id` = 0 WHERE `user_id` IS NULL;');
+
+            $table->unsignedBigInteger('user_id')->nullable(false)->default(0)->change();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+
+            DB::statement('UPDATE `leads` SET `source_id` = 0 WHERE `source_id` IS NULL;');
+
+            $table->unsignedBigInteger('source_id')->nullable(false)->default(0)->change();
+            $table->foreign('source_id')->references('id')->on('sources')->onDelete('cascade');
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::table('leads', function (Blueprint $table) {
+            //
+        });
+    }
+}

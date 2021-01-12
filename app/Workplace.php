@@ -3,9 +3,12 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Workplace extends Model
 {
+    use SoftDeletes;
+
     protected $fillable = [
         'admin_id', 'title','timezone','website','startday'
     ];

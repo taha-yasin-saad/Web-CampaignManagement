@@ -101,7 +101,7 @@
                     <span class="circle circle-md bg-warning"><i class="ti-sharethis"></i></span>
                 </li>
                 <li class="col-last">
-                    <h3 class="counter text-right m-t-15" style="font-size: 25px;">>
+                    <h3 class="counter text-right m-t-15" style="font-size: 25px;">
                         @if($leads->count() != 0)
                         {{sprintf("%.0f%%", ($last_contact_leads->count()/$leads->count())* 100) }}
                         @else
