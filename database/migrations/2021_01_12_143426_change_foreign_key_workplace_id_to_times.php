@@ -14,7 +14,7 @@ class ChangeForeignKeyWorkplaceIdToTimes extends Migration
     public function up()
     {
         Schema::table('times', function (Blueprint $table) {
-            $table->unsignedBigInteger('workplace_id')->nullable(false)->default(0)->change();
+            // $table->unsignedBigInteger('workplace_id')->nullable(false)->default(0)->change();
             $table->foreign('workplace_id')->references('id')->on('workplaces')->onDelete('cascade');
         });
     }
@@ -27,7 +27,8 @@ class ChangeForeignKeyWorkplaceIdToTimes extends Migration
     public function down()
     {
         Schema::table('times', function (Blueprint $table) {
-            //
+            $table->dropForeign('times_workplace_id_foreign');
+            // $table->dropIndex('times_workplace_id_index');
         });
     }
 }
