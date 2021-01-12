@@ -2,7 +2,7 @@
     "variables": [],
     "info": {
         "name": "Closor API",
-        "_postman_id": "4f3a76e7-fd39-4a35-8c0d-6eed7b02af38",
+        "_postman_id": "bfc5e2c7-3cc9-4410-b598-0a0b89fb216a",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.0.0\/collection.json"
     },
@@ -1384,11 +1384,11 @@
             ]
         },
         {
-            "name": "2.4 Users WorkPlace Products management",
-            "description": "\nRoutes To manage WorkPlace Products data For The Manager Control Panel",
+            "name": "2.4 Users WorkPlace Products Management",
+            "description": "\nPage Group To manage Single WorkPlaces Individually For The Manager Control Panel And Give him full access for its all features.\n\n- add product for workplace.\n\n- Add Team members to the team that is working in the product.\n\n- manage team behavior From changing the role for every person on the team in the product Ex. owner , Sales Agent.\n\n- add lead sources for every product in the workplace.\n\n- Every Product In the WorkPlace With its Stats Ex. Leads Source Name, Leads count, Contacted Leads Count & Team Names That Assigned to this Product.\n\n- Filter Search to go through every table data.\n\n- manage every lead source from the Edit page.\n\n<p><img src=\"images\/users\/products\/users-Products-view.png\" width=\"100%\"><\/p>",
             "item": [
                 {
-                    "name": "product",
+                    "name": "Single Workplace Info View Page",
                     "request": {
                         "url": {
                             "protocol": "http",
@@ -1411,12 +1411,12 @@
                             "mode": "raw",
                             "raw": "[]"
                         },
-                        "description": "",
+                        "description": "Is An Control Panel Manager Workplace Page That Views Workplace Products Info.\n\n\n- View Products For the Workplace.\n\n- View The Team That Works For the Workplace At every Product Individually.\n\n- Manage The Team That Works For the Workplace At every Product Individually.\n\n- View Products Count For the Single Workplace.\n\n- Manage Single every Product Individually At The Workplace.\n\n- Every Product In the WorkPlace With its Stats Ex. Leads Source Name, Leads count, Contacted Leads Count & Team Names That Assigned to this Product.\n\n- Filter Search to go through every table data.\n\n<p><img src=\"images\/users\/products\/users-Products-view.png\" width=\"100%\"><\/p>",
                         "response": []
                     }
                 },
                 {
-                    "name": "Show the form for creating a new resource.",
+                    "name": "Product Create Page",
                     "request": {
                         "url": {
                             "protocol": "http",
@@ -1437,14 +1437,14 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "[]"
+                            "raw": "{\n    \"title\": \"demo\",\n    \"users\": \"demo,test\"\n}"
                         },
-                        "description": "",
+                        "description": "Is An Control Panel Manager Page That Creates Products To Manage It later on the site by the manager and his team.\n\n<p><img src=\"images\/users\/products\/users-Products-create.png\" width=\"100%\"><\/p>",
                         "response": []
                     }
                 },
                 {
-                    "name": "Store a newly created resource in storage.",
+                    "name": "Product Store Data",
                     "request": {
                         "url": {
                             "protocol": "http",
@@ -1465,14 +1465,14 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "[]"
+                            "raw": "{\n    \"title\": \"demo\",\n    \"users\": \"demo,test\"\n}"
                         },
-                        "description": "",
+                        "description": "Is An Control Panel Manager Data Request That Stores Products Data To Database.\n\n<p><img src=\"images\/users\/added-successfully.png\" width=\"100%\"><\/p>",
                         "response": []
                     }
                 },
                 {
-                    "name": "Display the specified resource.",
+                    "name": "Single Product Info View Page",
                     "request": {
                         "url": {
                             "protocol": "http",
@@ -1495,12 +1495,12 @@
                             "mode": "raw",
                             "raw": "[]"
                         },
-                        "description": "",
+                        "description": "Is An Control Panel Page For Single Product That Views Product Data Info.\n\n- View Members For The Team that is working in the product with info data of them Ex. Name,Email & Phone.\n\n\n<p><img src=\"images\/users\/products\/users-Products-single_product.png\" width=\"100%\"><\/p>",
                         "response": []
                     }
                 },
                 {
-                    "name": "Show the form for editing the specified resource.",
+                    "name": "Product Edit Page",
                     "request": {
                         "url": {
                             "protocol": "http",
@@ -1521,14 +1521,14 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "[]"
+                            "raw": "{\n    \"title\": \"Demo\"\n}"
                         },
-                        "description": "",
+                        "description": "Is An Control Panel Manager Page That Edits Products To Manage It later on the site by the manager and his team.\n\n<p><img src=\"images\/users\/products\/users-Products-edit.png\" width=\"100%\"><\/p>",
                         "response": []
                     }
                 },
                 {
-                    "name": "Update the specified resource in storage.",
+                    "name": "Product Update Data",
                     "request": {
                         "url": {
                             "protocol": "http",
@@ -1549,14 +1549,14 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "[]"
+                            "raw": "{\n    \"title\": \"Demo\"\n}"
                         },
-                        "description": "",
+                        "description": "Is An Control Panel Manager Data Request That Updates Products Data To Database.\n\n<p><img src=\"images\/users\/products\/users-Products-edit.png\" width=\"100%\"><\/p>\n<p><img src=\"images\/users\/updated-successfully.png\" width=\"100%\"><\/p>",
                         "response": []
                     }
                 },
                 {
-                    "name": "Remove the specified resource from storage.",
+                    "name": "Product Delete Data",
                     "request": {
                         "url": {
                             "protocol": "http",
@@ -1579,68 +1579,12 @@
                             "mode": "raw",
                             "raw": "[]"
                         },
-                        "description": "",
+                        "description": "Is An Control Panel Product Data Request That Delete Products Data From Database .\n\n<p><img src=\"images\/users\/deleted-successfully.png\" width=\"100%\"><\/p>",
                         "response": []
                     }
                 },
                 {
-                    "name": "Show the form for creating a new resource.",
-                    "request": {
-                        "url": {
-                            "protocol": "http",
-                            "host": "",
-                            "path": "product\/create\/:workplace_id",
-                            "query": []
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "invite_member",
-                    "request": {
-                        "url": {
-                            "protocol": "http",
-                            "host": "",
-                            "path": "invite_member",
-                            "query": []
-                        },
-                        "method": "POST",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "{workplace_id}\/products",
+                    "name": "Single Workplace Info View Page",
                     "request": {
                         "url": {
                             "protocol": "http",
@@ -1663,12 +1607,68 @@
                             "mode": "raw",
                             "raw": "[]"
                         },
-                        "description": "",
+                        "description": "Is An Control Panel Manager Workplace Page That Views Workplace Products Info.\n\n\n- View Products For the Workplace.\n\n- View The Team That Works For the Workplace At every Product Individually.\n\n- Manage The Team That Works For the Workplace At every Product Individually.\n\n- View Products Count For the Single Workplace.\n\n- Manage Single every Product Individually At The Workplace.\n\n- Every Product In the WorkPlace With its Stats Ex. Leads Source Name, Leads count, Contacted Leads Count & Team Names That Assigned to this Product.\n\n- Filter Search to go through every table data.\n\n<p><img src=\"images\/users\/products\/users-Products-view.png\" width=\"100%\"><\/p>",
                         "response": []
                     }
                 },
                 {
-                    "name": "choose_members",
+                    "name": "Product Create Page",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "product\/create\/:workplace_id",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"title\": \"demo\",\n    \"users\": \"demo,test\"\n}"
+                        },
+                        "description": "Is An Control Panel Manager Page That Creates Products To Manage It later on the site by the manager and his team.\n\n<p><img src=\"images\/users\/products\/users-Products-create.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Product Invite Member Request",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "invite_member",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Is An Control Panel Product Data Request That Invites Members To the team of the product To manage it later on .\n\n<p><img src=\"images\/users\/products\/users-Products-invite_member.png\" width=\"100%\"><\/p>\n<p><img src=\"images\/users\/products\/users-Products-invite_member1.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Product Invite Member Widget",
                     "request": {
                         "url": {
                             "protocol": "http",
@@ -1691,12 +1691,12 @@
                             "mode": "raw",
                             "raw": "[]"
                         },
-                        "description": "",
+                        "description": "Is An Control Panel Product Data Widget That Invites Members To the team of the product To manage it later on .\n\n<p><img src=\"images\/users\/products\/users-Products-invite_member.png\" width=\"100%\"><\/p>\n<p><img src=\"images\/users\/products\/users-Products-invite_member1.png\" width=\"100%\"><\/p>",
                         "response": []
                     }
                 },
                 {
-                    "name": "add_product_to_user",
+                    "name": "Invite Member To certain product",
                     "request": {
                         "url": {
                             "protocol": "http",
@@ -1719,7 +1719,7 @@
                             "mode": "raw",
                             "raw": "[]"
                         },
-                        "description": "",
+                        "description": "Is An Control Panel Product Data Request That Invites Members To the team of the product To manage it later on .\n\n<p><img src=\"images\/users\/products\/users-Products-add_product_to_user1.png\" width=\"100%\"><\/p>",
                         "response": []
                     }
                 }
@@ -1727,10 +1727,10 @@
         },
         {
             "name": "2.5 Users Lead Sources management",
-            "description": "\nRoutes To manage Lead Sources data For The Manager Control Panel",
+            "description": "\nPage Group To manage Single Lead Sources For The Manager Control Panel And Give him full access for its all features.\n\n- Add lead sources for every product in the workplace.\n\n- Every lead sources With its Stats Ex. Leads Source Name, Leads count, Contacted Leads Count & Management pages forevery lead source Ex. View , Add & Edit.\n\n- Filter Search to go through every table data.\n\n- manage every lead source from the Edit Wedget page.\n\n- View Wedget lead source from the view Wedget page.\n\n- Add Wedget lead source from the Add Wedget page.\n\n<p><img src=\"images\/users\/lead_sources\/users-lead_sources-view.png\" width=\"100%\"><\/p>",
             "item": [
                 {
-                    "name": "Display a listing of the resource.",
+                    "name": "Single Lead Source Info View Page",
                     "request": {
                         "url": {
                             "protocol": "http",
@@ -1753,12 +1753,12 @@
                             "mode": "raw",
                             "raw": "[]"
                         },
-                        "description": "",
+                        "description": "Page Group To manage Single Lead Sources For The Manager Control Panel And Give him full access for its all features.\n\n- Add lead sources for every product in the workplace.\n- Every lead sources With its Stats Ex. Leads Source Name, Leads count, Contacted Leads Count & Management pages forevery lead source Ex. View , Add & Edit.\n- Filter Search to go through every table data.\n- Add Wedget lead source from the Add Wedget page.\n- View Wedget lead source from the view Wedget page.\n- manage every lead source from the Edit Wedget page.\n<p><img src=\"images\/users\/lead_sources\/users-lead_sources-view.png\" width=\"100%\"><\/p>",
                         "response": []
                     }
                 },
                 {
-                    "name": "Show the form for creating a new resource.",
+                    "name": "Lead Source Create Page",
                     "request": {
                         "url": {
                             "protocol": "http",
@@ -1779,14 +1779,14 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "[]"
+                            "raw": "{\n    \"workplace_id\": \"7\",\n    \"name\": \"demo\",\n    \"website\": \"https:\\\/\\\/demo.com\",\n    \"widget_type\": \"icon\",\n    \"alignment\": \"right\",\n    \"primary\": \"#a83434\",\n    \"secondary\": \"#ffffff\",\n    \"icon_type\": \"mdi mdi-headset fa-fw\",\n    \"bubble\": \"on\",\n    \"bubble_line_1\": \"Want to talk to an expert?\",\n    \"bubble_line_2\": \"Our Team is 60 Second Away From You!\",\n    \"bubble_bg_color\": \"#000000\",\n    \"bubble_text_color\": \"#ffffff\",\n    \"text_text\": \"Talk to an expert!\",\n    \"text_round\": \"10\",\n    \"custom_lable_1\": \"phone\",\n    \"custom_lable_2\": \"age\"\n}"
                         },
-                        "description": "",
+                        "description": "Is An Control Panel Manager Page That Creates Lead Source To Manage It later on the site by the manager and his team.\n\n<p><img src=\"images\/users\/lead_sources\/users-lead_sources-create.png\" width=\"100%\"><\/p>\n<p><img src=\"images\/users\/lead_sources\/users-lead_sources-create1.png\" width=\"100%\"><\/p>\n<p><img src=\"images\/users\/lead_sources\/users-lead_sources-create2.png\" width=\"100%\"><\/p>",
                         "response": []
                     }
                 },
                 {
-                    "name": "Store a newly created resource in storage.",
+                    "name": "Lead Source Store Data",
                     "request": {
                         "url": {
                             "protocol": "http",
@@ -1807,42 +1807,14 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "[]"
+                            "raw": "{\n    \"workplace_id\": \"7\",\n    \"name\": \"demo\",\n    \"website\": \"https:\\\/\\\/demo.com\",\n    \"widget_type\": \"icon\",\n    \"alignment\": \"right\",\n    \"primary\": \"#a83434\",\n    \"secondary\": \"#ffffff\",\n    \"icon_type\": \"mdi mdi-headset fa-fw\",\n    \"bubble\": \"on\",\n    \"bubble_line_1\": \"Want to talk to an expert?\",\n    \"bubble_line_2\": \"Our Team is 60 Second Away From You!\",\n    \"bubble_bg_color\": \"#000000\",\n    \"bubble_text_color\": \"#ffffff\",\n    \"text_text\": \"Talk to an expert!\",\n    \"text_round\": \"10\",\n    \"custom_lable_1\": \"phone\",\n    \"custom_lable_2\": \"age\"\n}"
                         },
-                        "description": "",
+                        "description": "Is An Control Panel Manager Data Request That Stores Lead Sources Data To Database.\n\n<p><img src=\"images\/users\/added-successfully.png\" width=\"100%\"><\/p>",
                         "response": []
                     }
                 },
                 {
-                    "name": "Display the specified resource.",
-                    "request": {
-                        "url": {
-                            "protocol": "http",
-                            "host": "",
-                            "path": "sources\/:source",
-                            "query": []
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "Show the form for editing the specified resource.",
+                    "name": "Lead Source Edit Page",
                     "request": {
                         "url": {
                             "protocol": "http",
@@ -1863,14 +1835,14 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "[]"
+                            "raw": "{\n    \"workplace_id\": \"7\",\n    \"name\": \"demo\",\n    \"website\": \"https:\\\/\\\/demo.com\",\n    \"widget_type\": \"icon\",\n    \"alignment\": \"right\",\n    \"primary\": \"#a83434\",\n    \"secondary\": \"#ffffff\",\n    \"icon_type\": \"mdi mdi-headset fa-fw\",\n    \"bubble\": \"on\",\n    \"bubble_line_1\": \"Want to talk to an expert?\",\n    \"bubble_line_2\": \"Our Team is 60 Second Away From You!\",\n    \"bubble_bg_color\": \"#000000\",\n    \"bubble_text_color\": \"#ffffff\",\n    \"text_text\": \"Talk to an expert!\",\n    \"text_round\": \"10\",\n    \"custom_lable_1\": \"phone\",\n    \"custom_lable_2\": \"age\"\n}"
                         },
-                        "description": "",
+                        "description": "Is An Control Panel Manager Page That Edits Lead Source To Manage It later on the site by the manager and his team.\n\n<p><img src=\"images\/users\/lead_sources\/users-lead_sources-create.png\" width=\"100%\"><\/p>\n<p><img src=\"images\/users\/lead_sources\/users-lead_sources-create1.png\" width=\"100%\"><\/p>\n<p><img src=\"images\/users\/lead_sources\/users-lead_sources-create2.png\" width=\"100%\"><\/p>",
                         "response": []
                     }
                 },
                 {
-                    "name": "Update the specified resource in storage.",
+                    "name": "Lead Source Update Data",
                     "request": {
                         "url": {
                             "protocol": "http",
@@ -1891,37 +1863,9 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "[]"
+                            "raw": "{\n    \"workplace_id\": \"7\",\n    \"name\": \"demo\",\n    \"website\": \"https:\\\/\\\/demo.com\",\n    \"widget_type\": \"icon\",\n    \"alignment\": \"right\",\n    \"primary\": \"#a83434\",\n    \"secondary\": \"#ffffff\",\n    \"icon_type\": \"mdi mdi-headset fa-fw\",\n    \"bubble\": \"on\",\n    \"bubble_line_1\": \"Want to talk to an expert?\",\n    \"bubble_line_2\": \"Our Team is 60 Second Away From You!\",\n    \"bubble_bg_color\": \"#000000\",\n    \"bubble_text_color\": \"#ffffff\",\n    \"text_text\": \"Talk to an expert!\",\n    \"text_round\": \"10\",\n    \"custom_lable_1\": \"phone\",\n    \"custom_lable_2\": \"age\"\n}"
                         },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "Remove the specified resource from storage.",
-                    "request": {
-                        "url": {
-                            "protocol": "http",
-                            "host": "",
-                            "path": "sources\/:source",
-                            "query": []
-                        },
-                        "method": "DELETE",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
+                        "description": "Is An Control Panel Manager Data Request That Updates Lead Sources Data To Database.\n\n<p><img src=\"images\/users\/added-successfully.png\" width=\"100%\"><\/p>",
                         "response": []
                     }
                 }
@@ -3019,34 +2963,6 @@
                             "query": []
                         },
                         "method": "POST",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "Invoke the controller method.",
-                    "request": {
-                        "url": {
-                            "protocol": "http",
-                            "host": "",
-                            "path": "team",
-                            "query": []
-                        },
-                        "method": "GET",
                         "header": [
                             {
                                 "key": "Content-Type",
