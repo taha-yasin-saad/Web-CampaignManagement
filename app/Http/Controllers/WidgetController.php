@@ -125,33 +125,20 @@ class WidgetController extends Controller
                                         Would you like to recieve a free callback in 30 seconds?
                                     </div>
 
-                                    <div class="closor-callback-v1-interest-query" >';
-        if (isset($submitted) && $submitted == 1) {
-            '<div>
-                <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="check-circle" role="img"
-                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
-                    class="svg-inline--fa fa-check-circle fa-w-16 fa-5x">
-                    <path fill="currentColor"
-                        d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 48c110.532 0 200 89.451 200 200 0 110.532-89.451 200-200 200-110.532 0-200-89.451-200-200 0-110.532 89.451-200 200-200m140.204 130.267l-22.536-22.718c-4.667-4.705-12.265-4.736-16.97-.068L215.346 303.697l-59.792-60.277c-4.667-4.705-12.265-4.736-16.97-.069l-22.719 22.536c-4.705 4.667-4.736 12.265-.068 16.971l90.781 91.516c4.667 4.705 12.265 4.736 16.97.068l172.589-171.204c4.704-4.668 4.734-12.266.067-16.971z"
-                        class=""></path>
-                </svg>
-            <h2>“You Have Submitted Succesfully,Thanks.”</h2>
-        </div>';
-        } else {
-
-            '<form class="closor-callback-v1-interest-query-form" onsubmit="event.preventDefault(); return dataget()" id="form-id" data-action="submit-callback">
+                                    <div class="closor-callback-v1-interest-query" >
+                                    <form class="closor-callback-v1-interest-query-form" onsubmit="event.preventDefault(); return dataget()" id="form-id" data-action="submit-callback">
                                         <input type="hidden" name="source_id" value="' . $id . '">
                                         <input type="hidden" id="country_code" name="country_code" >';
-            foreach ($source->fields as $inputfield) {
-                if ($inputfield == 'name') {
-                    $widget .= '<div class="allow-dropdown separate-dial-code iti-sdc-3">
+        foreach ($source->fields as $inputfield) {
+            if ($inputfield == 'name') {
+                $widget .= '<div class="allow-dropdown separate-dial-code iti-sdc-3">
                                                     <input type="text" class="closor-callback-v1-input" data-iti="true" name="' . $inputfield . '"
                                                         data-role="callback-phone-number-input" autocomplete="off"
                                                         placeholder="' . ucwords($inputfield) . '">
                                                 </div>';
-                }
             }
-            $widget .= '<div class="form-group">
+        }
+        $widget .= '<div class="form-group">
                                                             <input id="phone" type="phone"
                                                             name="phone"
                                                             required
@@ -162,37 +149,37 @@ class WidgetController extends Controller
                                             margin-bottom: 10px !important;
                                             border: 1px solid #aaa;">
                                                     </div>';
-            foreach ($source->fields as $inputfield) {
-                if ($inputfield != 'name') {
-                    if ($inputfield == 'custom1') {
-                        $widget .= '
+        foreach ($source->fields as $inputfield) {
+            if ($inputfield != 'name') {
+                if ($inputfield == 'custom1') {
+                    $widget .= '
                                                     <div class="allow-dropdown separate-dial-code iti-sdc-3">
                                                         <input type="text" class="closor-callback-v1-input" data-iti="true"
                                                             data-role="callback-phone-number-input" autocomplete="off" name="' . ucwords($source->custom_lable_1) . '"
                                                             placeholder="' . ucwords($source->custom_lable_1) . '">
                                                     </div>
                                                     ';
-                    } elseif ($inputfield == 'custom2') {
-                        $widget .= '
+                } elseif ($inputfield == 'custom2') {
+                    $widget .= '
                                                     <div class="allow-dropdown separate-dial-code iti-sdc-3">
                                                         <input type="text" class="closor-callback-v1-input" data-iti="true"
                                                             data-role="callback-phone-number-input" autocomplete="off" name="' . ucwords($source->custom_lable_2) . '"
                                                             placeholder="' . ucwords($source->custom_lable_2) . '">
                                                     </div>
                                                     ';
-                    } else {
-                        $widget .= '
+                } else {
+                    $widget .= '
                                                 <div class="allow-dropdown separate-dial-code iti-sdc-3">
                                                     <input type="text" class="closor-callback-v1-input" data-iti="true" name="' . $inputfield . '"
                                                         data-role="callback-phone-number-input" autocomplete="off"
                                                         placeholder="' . ucwords($inputfield) . '">
                                                 </div>
                                                 ';
-                    }
                 }
             }
+        }
 
-            $widget .=   '<button class="closor-callback-v1-button" style="background:' . $source->primary . '!important" id="button-id">
+        $widget .=   '<button class="closor-callback-v1-button" style="background:' . $source->primary . '!important" id="button-id">
                                                 <div class="closor-callback-v1-preloader">
                                                     <div class="closor-callback-v1-preloader-dot closor-dot-1">
                                                     </div>
@@ -212,9 +199,7 @@ class WidgetController extends Controller
 
                                             </div>
 
-                                        </form>';
-        }
-        $widget .= '</div>
+                                        </form></div>
                                 </section>
 
 
@@ -232,7 +217,20 @@ class WidgetController extends Controller
         <script src="https://api.ipdata.co?api-key=bbcc18dbda8db855a82aaecedab1b35c243700bd625b2ac94a9a8926" type="text/javascript"></script>
         <script src="https://app.closor.com/css/intl-tel-input-17.0.0/build/js/intlTelInput.js"></script>
         ';
-        return $widget;
+        if (isset($submitted) && $submitted == 1) {
+            '<div>
+                <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="check-circle" role="img"
+                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
+                    class="svg-inline--fa fa-check-circle fa-w-16 fa-5x">
+                    <path fill="currentColor"
+                        d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 48c110.532 0 200 89.451 200 200 0 110.532-89.451 200-200 200-110.532 0-200-89.451-200-200 0-110.532 89.451-200 200-200m140.204 130.267l-22.536-22.718c-4.667-4.705-12.265-4.736-16.97-.068L215.346 303.697l-59.792-60.277c-4.667-4.705-12.265-4.736-16.97-.069l-22.719 22.536c-4.705 4.667-4.736 12.265-.068 16.971l90.781 91.516c4.667 4.705 12.265 4.736 16.97.068l172.589-171.204c4.704-4.668 4.734-12.266.067-16.971z"
+                        class=""></path>
+                </svg>
+            <h2>“You Have Submitted Succesfully,Thanks.”</h2>
+        </div>';
+        } else {
+            return $widget;
+        }
 
         // <script>
         //     document.getElementById("closor-call-icon").addEventListener("click", function(){
