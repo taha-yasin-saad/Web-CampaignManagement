@@ -169,7 +169,7 @@
         // };
 
         // xmlhttp.send(form_data);
-        closeCloserModal();
+        // closeCloserModal();
     }
 
     function success_msg() {
