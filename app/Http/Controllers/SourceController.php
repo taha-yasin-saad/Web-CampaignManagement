@@ -18,11 +18,11 @@ use App\Product;
  *
  * - Filter Search to go through every table data.
  *
- * - manage every lead source from the Edit Wedget page.
+ * - manage every lead source from the Edit Widget page.
  *
- * - View Wedget lead source from the view Wedget page.
+ * - View Widget lead source from the view Widget page.
  *
- * - Add Wedget lead source from the Add Wedget page.
+ * - Add Widget lead source from the Add Widget page.
  *
  * <p><img src="images/users/lead_sources/users-lead_sources-view.png" width="100%"></p>
  *
@@ -39,9 +39,9 @@ class SourceController extends Controller
      * - Add lead sources for every product in the workplace.
      * - Every lead sources With its Stats Ex. Leads Source Name, Leads count, Contacted Leads Count & Management pages forevery lead source Ex. View , Add & Edit.
      * - Filter Search to go through every table data.
-     * - Add Wedget lead source from the Add Wedget page.
-     * - View Wedget lead source from the view Wedget page.
-     * - manage every lead source from the Edit Wedget page.
+     * - Add Widget lead source from the Add Widget page.
+     * - View Widget lead source from the view Widget page.
+     * - manage every lead source from the Edit Widget page.
      * <p><img src="images/users/lead_sources/users-lead_sources-view.png" width="100%"></p>
      *
      * @authenticated
@@ -93,20 +93,20 @@ class SourceController extends Controller
      * @bodyParam  workplace_id string required The workplace_id selected to add lead source to workplace. Example: 7
      * @bodyParam  name string required The name of the lead source. Example: demo
      * @bodyParam  website string required The website of the lead source. Example: https://demo.com
-     * @bodyParam  widget_type string The widget_type selected to icon Wedget. Example: icon
-     * @bodyParam  alignment string The alignment selected to right Wedget. Example: right
-     * @bodyParam  primary string The primary Pick to color to Wedget. Example: #a83434
-     * @bodyParam  secondary string The secondary Pick to color to Wedget. Example: #ffffff
-     * @bodyParam  icon_type string The icon_type style to Wedget. Example: mdi mdi-headset fa-fw
-     * @bodyParam  bubble string The bubble selected to on Wedget. Example: on
-     * @bodyParam  bubble_line_1 string The bubble_line_1 typed to on Wedget. Example: Want to talk to an expert?
-     * @bodyParam  bubble_line_2 string The bubble_line_2 typed to on Wedget. Example: Our Team is 60 Second Away From You!
-     * @bodyParam  bubble_bg_color string The bubble_bg_color Pick to color to Wedget. Example: #000000
-     * @bodyParam  bubble_text_color string The bubble_text_color Pick to color to Wedget. Example: #ffffff
-     * @bodyParam  text_text string The text_text typed to on Wedget. Example: Talk to an expert!
-     * @bodyParam  text_round string The text_round selected to on Wedget. Example: 10
-     * @bodyParam  custom_lable_1 string The custom_lable_1 typed to on Wedget. Example: phone
-     * @bodyParam  custom_lable_2 string The custom_lable_2 typed to on Wedget. Example: age
+     * @bodyParam  widget_type string The widget_type selected to icon Widget. Example: icon
+     * @bodyParam  alignment string The alignment selected to right Widget. Example: right
+     * @bodyParam  primary string The primary Pick to color to Widget. Example: #a83434
+     * @bodyParam  secondary string The secondary Pick to color to Widget. Example: #ffffff
+     * @bodyParam  icon_type string The icon_type style to Widget. Example: mdi mdi-headset fa-fw
+     * @bodyParam  bubble string The bubble selected to on Widget. Example: on
+     * @bodyParam  bubble_line_1 string The bubble_line_1 typed to on Widget. Example: Want to talk to an expert?
+     * @bodyParam  bubble_line_2 string The bubble_line_2 typed to on Widget. Example: Our Team is 60 Second Away From You!
+     * @bodyParam  bubble_bg_color string The bubble_bg_color Pick to color to Widget. Example: #000000
+     * @bodyParam  bubble_text_color string The bubble_text_color Pick to color to Widget. Example: #ffffff
+     * @bodyParam  text_text string The text_text typed to on Widget. Example: Talk to an expert!
+     * @bodyParam  text_round string The text_round selected to on Widget. Example: 10
+     * @bodyParam  custom_lable_1 string The custom_lable_1 typed to on Widget. Example: phone
+     * @bodyParam  custom_lable_2 string The custom_lable_2 typed to on Widget. Example: age
      *
      *
      * @response  {
@@ -133,20 +133,20 @@ class SourceController extends Controller
      * @bodyParam  workplace_id string required The workplace_id selected to add lead source to workplace. Example: 7
      * @bodyParam  name string required The name of the lead source. Example: demo
      * @bodyParam  website string required The website of the lead source. Example: https://demo.com
-     * @bodyParam  widget_type string The widget_type selected to icon Wedget. Example: icon
-     * @bodyParam  alignment string The alignment selected to right Wedget. Example: right
-     * @bodyParam  primary string The primary Pick to color to Wedget. Example: #a83434
-     * @bodyParam  secondary string The secondary Pick to color to Wedget. Example: #ffffff
-     * @bodyParam  icon_type string The icon_type style to Wedget. Example: mdi mdi-headset fa-fw
-     * @bodyParam  bubble string The bubble selected to on Wedget. Example: on
-     * @bodyParam  bubble_line_1 string The bubble_line_1 typed to on Wedget. Example: Want to talk to an expert?
-     * @bodyParam  bubble_line_2 string The bubble_line_2 typed to on Wedget. Example: Our Team is 60 Second Away From You!
-     * @bodyParam  bubble_bg_color string The bubble_bg_color Pick to color to Wedget. Example: #000000
-     * @bodyParam  bubble_text_color string The bubble_text_color Pick to color to Wedget. Example: #ffffff
-     * @bodyParam  text_text string The text_text typed to on Wedget. Example: Talk to an expert!
-     * @bodyParam  text_round string The text_round selected to on Wedget. Example: 10
-     * @bodyParam  custom_lable_1 string The custom_lable_1 typed to on Wedget. Example: phone
-     * @bodyParam  custom_lable_2 string The custom_lable_2 typed to on Wedget. Example: age
+     * @bodyParam  widget_type string The widget_type selected to icon Widget. Example: icon
+     * @bodyParam  alignment string The alignment selected to right Widget. Example: right
+     * @bodyParam  primary string The primary Pick to color to Widget. Example: #a83434
+     * @bodyParam  secondary string The secondary Pick to color to Widget. Example: #ffffff
+     * @bodyParam  icon_type string The icon_type style to Widget. Example: mdi mdi-headset fa-fw
+     * @bodyParam  bubble string The bubble selected to on Widget. Example: on
+     * @bodyParam  bubble_line_1 string The bubble_line_1 typed to on Widget. Example: Want to talk to an expert?
+     * @bodyParam  bubble_line_2 string The bubble_line_2 typed to on Widget. Example: Our Team is 60 Second Away From You!
+     * @bodyParam  bubble_bg_color string The bubble_bg_color Pick to color to Widget. Example: #000000
+     * @bodyParam  bubble_text_color string The bubble_text_color Pick to color to Widget. Example: #ffffff
+     * @bodyParam  text_text string The text_text typed to on Widget. Example: Talk to an expert!
+     * @bodyParam  text_round string The text_round selected to on Widget. Example: 10
+     * @bodyParam  custom_lable_1 string The custom_lable_1 typed to on Widget. Example: phone
+     * @bodyParam  custom_lable_2 string The custom_lable_2 typed to on Widget. Example: age
      *
      * @response  {
      * "success":"Added Successfully"
@@ -175,20 +175,20 @@ class SourceController extends Controller
      * @bodyParam  workplace_id string required The workplace_id selected to add lead source to workplace. Example: 7
      * @bodyParam  name string required The name of the lead source. Example: demo
      * @bodyParam  website string required The website of the lead source. Example: https://demo.com
-     * @bodyParam  widget_type string The widget_type selected to icon Wedget. Example: icon
-     * @bodyParam  alignment string The alignment selected to right Wedget. Example: right
-     * @bodyParam  primary string The primary Pick to color to Wedget. Example: #a83434
-     * @bodyParam  secondary string The secondary Pick to color to Wedget. Example: #ffffff
-     * @bodyParam  icon_type string The icon_type style to Wedget. Example: mdi mdi-headset fa-fw
-     * @bodyParam  bubble string The bubble selected to on Wedget. Example: on
-     * @bodyParam  bubble_line_1 string The bubble_line_1 typed to on Wedget. Example: Want to talk to an expert?
-     * @bodyParam  bubble_line_2 string The bubble_line_2 typed to on Wedget. Example: Our Team is 60 Second Away From You!
-     * @bodyParam  bubble_bg_color string The bubble_bg_color Pick to color to Wedget. Example: #000000
-     * @bodyParam  bubble_text_color string The bubble_text_color Pick to color to Wedget. Example: #ffffff
-     * @bodyParam  text_text string The text_text typed to on Wedget. Example: Talk to an expert!
-     * @bodyParam  text_round string The text_round selected to on Wedget. Example: 10
-     * @bodyParam  custom_lable_1 string The custom_lable_1 typed to on Wedget. Example: phone
-     * @bodyParam  custom_lable_2 string The custom_lable_2 typed to on Wedget. Example: age
+     * @bodyParam  widget_type string The widget_type selected to icon Widget. Example: icon
+     * @bodyParam  alignment string The alignment selected to right Widget. Example: right
+     * @bodyParam  primary string The primary Pick to color to Widget. Example: #a83434
+     * @bodyParam  secondary string The secondary Pick to color to Widget. Example: #ffffff
+     * @bodyParam  icon_type string The icon_type style to Widget. Example: mdi mdi-headset fa-fw
+     * @bodyParam  bubble string The bubble selected to on Widget. Example: on
+     * @bodyParam  bubble_line_1 string The bubble_line_1 typed to on Widget. Example: Want to talk to an expert?
+     * @bodyParam  bubble_line_2 string The bubble_line_2 typed to on Widget. Example: Our Team is 60 Second Away From You!
+     * @bodyParam  bubble_bg_color string The bubble_bg_color Pick to color to Widget. Example: #000000
+     * @bodyParam  bubble_text_color string The bubble_text_color Pick to color to Widget. Example: #ffffff
+     * @bodyParam  text_text string The text_text typed to on Widget. Example: Talk to an expert!
+     * @bodyParam  text_round string The text_round selected to on Widget. Example: 10
+     * @bodyParam  custom_lable_1 string The custom_lable_1 typed to on Widget. Example: phone
+     * @bodyParam  custom_lable_2 string The custom_lable_2 typed to on Widget. Example: age
      *
      *
      * @response  {
@@ -215,20 +215,20 @@ class SourceController extends Controller
      * @bodyParam  workplace_id string required The workplace_id selected to add lead source to workplace. Example: 7
      * @bodyParam  name string required The name of the lead source. Example: demo
      * @bodyParam  website string required The website of the lead source. Example: https://demo.com
-     * @bodyParam  widget_type string The widget_type selected to icon Wedget. Example: icon
-     * @bodyParam  alignment string The alignment selected to right Wedget. Example: right
-     * @bodyParam  primary string The primary Pick to color to Wedget. Example: #a83434
-     * @bodyParam  secondary string The secondary Pick to color to Wedget. Example: #ffffff
-     * @bodyParam  icon_type string The icon_type style to Wedget. Example: mdi mdi-headset fa-fw
-     * @bodyParam  bubble string The bubble selected to on Wedget. Example: on
-     * @bodyParam  bubble_line_1 string The bubble_line_1 typed to on Wedget. Example: Want to talk to an expert?
-     * @bodyParam  bubble_line_2 string The bubble_line_2 typed to on Wedget. Example: Our Team is 60 Second Away From You!
-     * @bodyParam  bubble_bg_color string The bubble_bg_color Pick to color to Wedget. Example: #000000
-     * @bodyParam  bubble_text_color string The bubble_text_color Pick to color to Wedget. Example: #ffffff
-     * @bodyParam  text_text string The text_text typed to on Wedget. Example: Talk to an expert!
-     * @bodyParam  text_round string The text_round selected to on Wedget. Example: 10
-     * @bodyParam  custom_lable_1 string The custom_lable_1 typed to on Wedget. Example: phone
-     * @bodyParam  custom_lable_2 string The custom_lable_2 typed to on Wedget. Example: age
+     * @bodyParam  widget_type string The widget_type selected to icon Widget. Example: icon
+     * @bodyParam  alignment string The alignment selected to right Widget. Example: right
+     * @bodyParam  primary string The primary Pick to color to Widget. Example: #a83434
+     * @bodyParam  secondary string The secondary Pick to color to Widget. Example: #ffffff
+     * @bodyParam  icon_type string The icon_type style to Widget. Example: mdi mdi-headset fa-fw
+     * @bodyParam  bubble string The bubble selected to on Widget. Example: on
+     * @bodyParam  bubble_line_1 string The bubble_line_1 typed to on Widget. Example: Want to talk to an expert?
+     * @bodyParam  bubble_line_2 string The bubble_line_2 typed to on Widget. Example: Our Team is 60 Second Away From You!
+     * @bodyParam  bubble_bg_color string The bubble_bg_color Pick to color to Widget. Example: #000000
+     * @bodyParam  bubble_text_color string The bubble_text_color Pick to color to Widget. Example: #ffffff
+     * @bodyParam  text_text string The text_text typed to on Widget. Example: Talk to an expert!
+     * @bodyParam  text_round string The text_round selected to on Widget. Example: 10
+     * @bodyParam  custom_lable_1 string The custom_lable_1 typed to on Widget. Example: phone
+     * @bodyParam  custom_lable_2 string The custom_lable_2 typed to on Widget. Example: age
      *
      * @response  {
      * "success":"Edited Successfully"

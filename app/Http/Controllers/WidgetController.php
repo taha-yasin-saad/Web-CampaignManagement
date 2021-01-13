@@ -8,10 +8,17 @@ use App\Source;
 use App\Workplace;
 use Illuminate\Http\Request;
 
-/**
+ /**
  * @group 2.7 Users Product Widget management
  *
- * Routes To manage Product Widget View data For Leads
+ * Page Group To manage Product data For The Manager Control Panel .
+ *
+ * - View the Leads Widget Form Ex. Name, Email, Phone, And another two customizable fields.
+ *
+ * <p><img src="images/users/leads/users-leads-view.png" width="100%"></p>
+ *
+ * @authenticated
+ *
  */
 class WidgetController extends Controller
 {
@@ -218,6 +225,7 @@ class WidgetController extends Controller
             //     });
             // </script>
     }
+
     public function widget_ajax(Request $request){
 
         if(!$request["phone"]){
