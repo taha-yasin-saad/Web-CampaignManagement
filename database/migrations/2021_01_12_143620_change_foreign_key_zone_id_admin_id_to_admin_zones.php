@@ -22,6 +22,8 @@ class ChangeForeignKeyZoneIdAdminIdToAdminZones extends Migration
             DB::statement('UPDATE `admin_zones` SET `admin_id` = 0 WHERE `admin_id` IS NULL;');
             $table->unsignedBigInteger('admin_id')->nullable(false)->default(null)->change();
             $table->foreign('admin_id')->references('id')->on('admins')->onDelete('cascade');
+
+            DB::statement('SET FOREIGN_KEY_CHECKS = 1;');
         });
     }
 
