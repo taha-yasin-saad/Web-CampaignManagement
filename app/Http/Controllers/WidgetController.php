@@ -111,7 +111,7 @@ class WidgetController extends Controller
                                 <a href="#" id="closor-modal-close" class="closor-callback-v1-popup-close" data-action="close-callback-popup" onclick="closeCloserModal()"></a>
 
                                 <section class="closor-callback-popup">
-                                    <div class="closor-callback-v1-popup-header">
+                                    <div class="closor-callback-v1-popup-header" id="closor-header">
                                         Would you like to recieve a free callback in 30 seconds?
                                     </div>
 
