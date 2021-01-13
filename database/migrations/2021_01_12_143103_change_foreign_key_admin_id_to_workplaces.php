@@ -17,8 +17,8 @@ class ChangeForeignKeyAdminIdToWorkplaces extends Migration
         Schema::table('workplaces', function (Blueprint $table) {
             DB::statement('SET FOREIGN_KEY_CHECKS = 0;');
 
-            // DB::statement('UPDATE `workplaces` SET `admin_id` = 0 WHERE `admin_id` IS NULL;');
-            // $table->unsignedBigInteger('admin_id')->nullable()->change();
+            DB::statement('UPDATE `workplaces` SET `admin_id` = 0 WHERE `admin_id` IS NULL;');
+            $table->unsignedBigInteger('admin_id')->nullable(false)->change();
             $table->foreign('admin_id')->references('id')->on('admins')->onDelete('cascade');
         });
     }

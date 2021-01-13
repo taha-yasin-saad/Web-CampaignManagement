@@ -15,12 +15,12 @@ class ChangeForeignKeyUserIdWorkplaceIdToWorkplaceUsers extends Migration
     public function up()
     {
         Schema::table('workplace_users', function (Blueprint $table) {
-            // DB::statement('UPDATE `workplace_users` SET `user_id` = 0 WHERE `user_id` IS NULL;');
-            // $table->unsignedBigInteger('user_id')->nullable(false)->default(0)->change();
+            DB::statement('UPDATE `workplace_users` SET `user_id` = 0 WHERE `user_id` IS NULL;');
+            $table->unsignedBigInteger('user_id')->nullable(false)->change();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 
-            // DB::statement('UPDATE `workplace_users` SET `workplace_id` = 0 WHERE `workplace_id` IS NULL;');
-            // $table->unsignedBigInteger('workplace_id')->nullable(false)->default(0)->change();
+            DB::statement('UPDATE `workplace_users` SET `workplace_id` = 0 WHERE `workplace_id` IS NULL;');
+            $table->unsignedBigInteger('workplace_id')->nullable(false)->change();
             $table->foreign('workplace_id')->references('id')->on('workplaces')->onDelete('cascade');
         });
     }
