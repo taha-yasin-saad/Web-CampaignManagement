@@ -214,7 +214,7 @@ class WidgetController extends Controller
 
                                         </form>';
         }
-        '</div>
+        $widget .= '</div>
                                 </section>
 
 
