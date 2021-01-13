@@ -169,7 +169,7 @@ class WidgetController extends Controller
                                             }
                                         }
 
-                                            $widget .= '<button class="closor-callback-v1-button" style="background:'.$source->primary.'!important" id="button-id" onclick="success_msg()">
+                                            $widget .= '<button class="closor-callback-v1-button" style="background:'.$source->primary.'!important" id="button-id">
                                                 <div class="closor-callback-v1-preloader">
                                                     <div class="closor-callback-v1-preloader-dot closor-dot-1">
                                                     </div>
