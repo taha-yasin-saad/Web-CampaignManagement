@@ -18,7 +18,7 @@ class ChangeForeignKeyAdminIdToWorkplaces extends Migration
             DB::statement('SET FOREIGN_KEY_CHECKS = 0;');
 
             DB::statement('UPDATE `workplaces` SET `admin_id` = 0 WHERE `admin_id` IS NULL;');
-            $table->unsignedBigInteger('admin_id')->nullable(false)->change();
+            $table->unsignedBigInteger('admin_id')->nullable(false)->default(null)->change();
             $table->foreign('admin_id')->references('id')->on('admins')->onDelete('cascade');
         });
     }

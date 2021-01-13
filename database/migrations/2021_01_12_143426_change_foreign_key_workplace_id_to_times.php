@@ -16,7 +16,7 @@ class ChangeForeignKeyWorkplaceIdToTimes extends Migration
     {
         Schema::table('times', function (Blueprint $table) {
             DB::statement('UPDATE `times` SET `workplace_id` = 0 WHERE `workplace_id` IS NULL;');
-            $table->unsignedBigInteger('workplace_id')->nullable(false)->change();
+            $table->unsignedBigInteger('workplace_id')->nullable(false)->default(null)->change();
             $table->foreign('workplace_id')->references('id')->on('workplaces')->onDelete('cascade');
         });
     }

@@ -17,19 +17,19 @@ class ChangeForeignKeyWorkplaceIdUserIdCountryIdProductIdToSources extends Migra
         Schema::table('sources', function (Blueprint $table) {
 
             // DB::statement('UPDATE `sources` SET `workplace_id` = 0 WHERE `workplace_id` IS NULL;');
-            // $table->unsignedBigInteger('workplace_id')->nullable(false)->change();
+            // $table->unsignedBigInteger('workplace_id')->nullable(false)->default(null)->change();
             $table->foreign('workplace_id')->references('id')->on('workplaces')->onDelete('cascade');
 
             // DB::statement('UPDATE `sources` SET `user_id` = 0 WHERE `user_id` IS NULL;');
-            // $table->unsignedBigInteger('user_id')->nullable(false)->change();
+            // $table->unsignedBigInteger('user_id')->nullable(false)->default(null)->change();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 
             // DB::statement('UPDATE `sources` SET `country_id` = 0 WHERE `country_id` IS NULL;');
-            // $table->unsignedBigInteger('country_id')->nullable(false)->change();
+            // $table->unsignedBigInteger('country_id')->nullable(false)->default(null)->change();
             $table->foreign('country_id')->references('id')->on('countries')->onDelete('cascade');
 
             // DB::statement('UPDATE `sources` SET `product_id` = 0 WHERE `product_id` IS NULL;');
-            // $table->unsignedBigInteger('product_id')->nullable(false)->change();
+            // $table->unsignedBigInteger('product_id')->nullable(false)->default(null)->change();
             $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
 
             DB::statement('SET FOREIGN_KEY_CHECKS = 1;');
