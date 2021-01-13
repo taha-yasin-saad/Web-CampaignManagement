@@ -217,7 +217,7 @@ class WidgetController extends Controller
         <script src="https://api.ipdata.co?api-key=bbcc18dbda8db855a82aaecedab1b35c243700bd625b2ac94a9a8926" type="text/javascript"></script>
         <script src="https://app.closor.com/css/intl-tel-input-17.0.0/build/js/intlTelInput.js"></script>
         ';
-        if (isset($submitted) && $submitted == 1) {
+        if ("submitted") {
             '<div>
                 <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="check-circle" role="img"
                     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
