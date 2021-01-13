@@ -31,7 +31,10 @@ class ChangeForeignKeyWorkplaceIdUserIdCountryIdProductIdToSources extends Migra
             DB::statement('UPDATE `sources` SET `product_id` = 0 WHERE `product_id` IS NULL;');
             // $table->unsignedBigInteger('product_id')->nullable(false)->default(0)->change();
             $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
+
+            DB::statement('SET FOREIGN_KEY_CHECKS = 1;');
         });
+
     }
 
     /**
