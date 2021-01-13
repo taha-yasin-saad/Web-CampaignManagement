@@ -8,7 +8,7 @@ use App\Source;
 use App\Workplace;
 use Illuminate\Http\Request;
 
-/**
+ /**
  * @group 2.7 Users Product Widget management
  *
  * Page Group To manage Product data For The Manager Control Panel .
@@ -23,8 +23,7 @@ use Illuminate\Http\Request;
 class WidgetController extends Controller
 {
 
-    public function widget($id)
-    {
+    public function widget($id){
         $source = Source::find($id);
         $widget = '
         <link href="https://app.closor.com/widget/widget.css" rel="stylesheet">
@@ -58,56 +57,47 @@ class WidgetController extends Controller
                     <div class="closor-callback-v1-overlay-container
                         closor-viewport-width closor-viewport-scale">
                         <div class="closor-callback-v1-overlay" id="data-action" data-action="open-callback-popup"';
-        if ($source->alignment == 'left') {
-            $widget .= 'style="left: 10px !important;right: unset !important;direction: ltr !important;width: 400px;"';
-        };
-        $widget .= '>';
-        if ($source->widget_type == 'text') {
-            $widget .= '<div class="closerDiv" onclick="callCloserModal()" style="background:' . $source->primary . '!important;display: inline-block!important;padding: 20px!important;
-                            width: 300px!important;text-align: center!important;vertical-align: middle!important;border-radius: 10px 10px 0px 0px!important;' . $source->alignment . ': 0!important;position:absolute">
-                                    <p class="text-text" style="text-align:center!important;color:' . $source->secondary . '!important;font-size: 18px !important;';
-            if ($source->alignment == 'left') {
-                $widget .= 'position:unset!important;';
-            }
-            $widget .= 'font-weight: 700 !important;">' . $source->text_text . '</p>
+                        if($source->alignment == 'left'){
+                            $widget .= 'style="left: 10px !important;right: unset !important;direction: ltr !important;width: 400px;"';
+                        };
+                        $widget .= '>';
+                        if($source->widget_type == 'text'){
+                            $widget .= '<div class="closerDiv" onclick="callCloserModal()" style="background:'.$source->primary.'!important;display: inline-block!important;padding: 20px!important;
+                            width: 300px!important;text-align: center!important;vertical-align: middle!important;border-radius: 10px 10px 0px 0px!important;'.$source->alignment.': 0!important;position:absolute">
+                                    <p class="text-text" style="text-align:center!important;color:'.$source->secondary.'!important;font-size: 18px !important;';if($source->alignment == 'left'){$widget .='position:unset!important;';}
+                            $widget .='font-weight: 700 !important;">'.$source->text_text.'</p>
                             </div>';
-        } else {
-            $widget .= '
-                            <div class="closor-callback-v1-avatar closerDiv" id="closor-call-icon" onclick="callCloserModal()" style="background:' . $source->primary . '!important;display: inline-block!important;';
-            if ($source->alignment == 'left') {
-                $widget .= 'position:unset!important;';
-            }
-            $widget .= ';">
+                        }else{
+                            $widget .= '
+                            <div class="closor-callback-v1-avatar closerDiv" id="closor-call-icon" onclick="callCloserModal()" style="background:'.$source->primary.'!important;display: inline-block!important;';if($source->alignment == 'left'){$widget .='position:unset!important;';}
+                            $widget .=';">
                                 <div class="closor-callback-v1-avatar-icon">
-                                    <li class="' . $source->icon_type . '" id="x-icon" style="color:' . $source->secondary . '!important;width: 40px;height: 40px;font-size: 20px;"></li>
+                                    <li class="'.$source->icon_type.'" id="x-icon" style="color:'.$source->secondary.'!important;width: 40px;height: 40px;font-size: 20px;"></li>
                                 </div>
                             </div>';
-            if ($source->bubble == 'on') {
-                $widget .= '<div class="closerDiv closor-callback-v1-bubble';
-                if ($source->alignment == 'left') {
-                    $widget .= ' closor-callback-v1-bubble-left';
-                } else {
-                    $widget .= ' closor-callback-v1-bubble-right';
-                }
-                $widget .= '" id="closor-callback-v1-bubble"style="background:' . $source->bubble_bg_color . '!important;display: inline-block!important;';
-                if ($source->alignment == 'left') {
-                    $widget .= 'position:unset!important;';
-                }
-                $widget .= '">
+                            if($source->bubble == 'on'){
+                            $widget .='<div class="closerDiv closor-callback-v1-bubble';
+                            if($source->alignment == 'left'){
+                                $widget .=' closor-callback-v1-bubble-left';
+                            }else{
+                                $widget .=' closor-callback-v1-bubble-right';
+                            }
+                            $widget .='" id="closor-callback-v1-bubble"style="background:'.$source->bubble_bg_color.'!important;display: inline-block!important;';
+                            if($source->alignment == 'left'){$widget .='position:unset!important;';}
+                            $widget .='">
                                 <div class="closor-callback-v1-bubble-close" data-action="close-component"
                                     data-component="popover"></div>
-                                <div class="closor-callback-v1-bubble-text-1" style="text-align:center!important;color:' . $source->bubble_text_color . '!important">' . $source->bubble_line_1 . '<br>
+                                <div class="closor-callback-v1-bubble-text-1" style="text-align:center!important;color:'.$source->bubble_text_color.'!important">'.$source->bubble_line_1.'<br>
                                 </div>
-                                <div class="closor-callback-v1-bubble-text-2" style="text-align:center!important;color:' . $source->bubble_text_color . '!important">
-                                ' . $source->bubble_line_2 . '
+                                <div class="closor-callback-v1-bubble-text-2" style="text-align:center!important;color:'.$source->bubble_text_color.'!important">
+                                '.$source->bubble_line_2.'
                                 </div>
                             </div>
-                            ';
-            }
-        }
+                            ';}
+                        }
 
 
-        $widget .= '</div>
+                        $widget .= '</div>
                     </div>
                 </div>
 
@@ -126,19 +116,19 @@ class WidgetController extends Controller
                                     </div>
 
                                     <div class="closor-callback-v1-interest-query" >
-                                    <form class="closor-callback-v1-interest-query-form" onsubmit="event.preventDefault(); return dataget()" id="form-id" data-action="submit-callback">
-                                        <input type="hidden" name="source_id" value="' . $id . '">
+                                        <form class="closor-callback-v1-interest-query-form" onsubmit="event.preventDefault(); return dataget()" id="form-id" data-action="submit-callback">
+                                        <input type="hidden" name="source_id" value="'.$id.'">
                                         <input type="hidden" id="country_code" name="country_code" >';
-        foreach ($source->fields as $inputfield) {
-            if ($inputfield == 'name') {
-                $widget .= '<div class="allow-dropdown separate-dial-code iti-sdc-3">
-                                                    <input type="text" class="closor-callback-v1-input" data-iti="true" name="' . $inputfield . '"
+                                        foreach($source->fields as $inputfield){
+                                            if($inputfield == 'name'){
+                                                $widget .= '<div class="allow-dropdown separate-dial-code iti-sdc-3">
+                                                    <input type="text" class="closor-callback-v1-input" data-iti="true" name="'.$inputfield.'"
                                                         data-role="callback-phone-number-input" autocomplete="off"
-                                                        placeholder="' . ucwords($inputfield) . '">
+                                                        placeholder="'.ucwords($inputfield).'">
                                                 </div>';
-            }
-        }
-        $widget .= '<div class="form-group">
+                                            }
+                                        }
+                                        $widget .= '<div class="form-group">
                                                             <input id="phone" type="phone"
                                                             name="phone"
                                                             required
@@ -149,37 +139,37 @@ class WidgetController extends Controller
                                             margin-bottom: 10px !important;
                                             border: 1px solid #aaa;">
                                                     </div>';
-        foreach ($source->fields as $inputfield) {
-            if ($inputfield != 'name') {
-                if ($inputfield == 'custom1') {
-                    $widget .= '
+                                        foreach($source->fields as $inputfield){
+                                            if($inputfield != 'name'){
+                                                if($inputfield == 'custom1'){
+                                                    $widget .= '
                                                     <div class="allow-dropdown separate-dial-code iti-sdc-3">
                                                         <input type="text" class="closor-callback-v1-input" data-iti="true"
-                                                            data-role="callback-phone-number-input" autocomplete="off" name="' . ucwords($source->custom_lable_1) . '"
-                                                            placeholder="' . ucwords($source->custom_lable_1) . '">
+                                                            data-role="callback-phone-number-input" autocomplete="off" name="'.ucwords($source->custom_lable_1).'"
+                                                            placeholder="'.ucwords($source->custom_lable_1).'">
                                                     </div>
                                                     ';
-                } elseif ($inputfield == 'custom2') {
-                    $widget .= '
+                                                }elseif($inputfield == 'custom2'){
+                                                    $widget .= '
                                                     <div class="allow-dropdown separate-dial-code iti-sdc-3">
                                                         <input type="text" class="closor-callback-v1-input" data-iti="true"
-                                                            data-role="callback-phone-number-input" autocomplete="off" name="' . ucwords($source->custom_lable_2) . '"
-                                                            placeholder="' . ucwords($source->custom_lable_2) . '">
+                                                            data-role="callback-phone-number-input" autocomplete="off" name="'.ucwords($source->custom_lable_2).'"
+                                                            placeholder="'.ucwords($source->custom_lable_2).'">
                                                     </div>
                                                     ';
-                } else {
-                    $widget .= '
+                                                }else{
+                                                $widget .= '
                                                 <div class="allow-dropdown separate-dial-code iti-sdc-3">
-                                                    <input type="text" class="closor-callback-v1-input" data-iti="true" name="' . $inputfield . '"
+                                                    <input type="text" class="closor-callback-v1-input" data-iti="true" name="'.$inputfield.'"
                                                         data-role="callback-phone-number-input" autocomplete="off"
-                                                        placeholder="' . ucwords($inputfield) . '">
+                                                        placeholder="'.ucwords($inputfield).'">
                                                 </div>
                                                 ';
-                }
-            }
-        }
+                                                }
+                                            }
+                                        }
 
-        $widget .=   '<button class="closor-callback-v1-button" style="background:' . $source->primary . '!important" id="button-id">
+                                            $widget .= '<button class="closor-callback-v1-button" style="background:'.$source->primary.'!important" id="button-id" onclick="success_msg()">
                                                 <div class="closor-callback-v1-preloader">
                                                     <div class="closor-callback-v1-preloader-dot closor-dot-1">
                                                     </div>
@@ -187,7 +177,7 @@ class WidgetController extends Controller
                                                     </div>
                                                     <div class="closor-callback-v1-preloader-dot closor-dot-3"></div>
                                                 </div>
-                                                <span class="closor-callback-v1-button-text" style="color:' . $source->secondary . '!important" >' . $source->submitt_text . '</span>
+                                                <span class="closor-callback-v1-button-text" style="color:'.$source->secondary.'!important" >'.$source->submitt_text.'</span>
                                             </button>
 
 
@@ -199,7 +189,8 @@ class WidgetController extends Controller
 
                                             </div>
 
-                                        </form></div>
+                                        </form>
+                                    </div>
                                 </section>
 
 
@@ -217,39 +208,37 @@ class WidgetController extends Controller
         <script src="https://api.ipdata.co?api-key=bbcc18dbda8db855a82aaecedab1b35c243700bd625b2ac94a9a8926" type="text/javascript"></script>
         <script src="https://app.closor.com/css/intl-tel-input-17.0.0/build/js/intlTelInput.js"></script>
         ';
-        
-        return $widget;
+            return $widget;
 
-        // <script>
-        //     document.getElementById("closor-call-icon").addEventListener("click", function(){
-        //         document.getElementById("closor-call-modal").classList.add("closor-show-modal");
-        //         document.getElementById("closor-callback-v1-popup-scroll-container").classList.add("closor-show-modal");
-        //     });
-        //     document.getElementById("closor-modal-background").addEventListener("click", function(){
-        //         document.getElementById("closor-call-modal").classList.remove("closor-show-modal");
-        //         document.getElementById("closor-callback-v1-popup-scroll-container").classList.remove("closor-show-modal");
-        //     });
-        //     document.getElementById("closor-modal-close").addEventListener("click", function(){
-        //         document.getElementById("closor-call-modal").classList.remove("closor-show-modal");
-        //         document.getElementById("closor-callback-v1-popup-scroll-container").classList.remove("closor-show-modal");
-        //     });
-        // </script>
+            // <script>
+            //     document.getElementById("closor-call-icon").addEventListener("click", function(){
+            //         document.getElementById("closor-call-modal").classList.add("closor-show-modal");
+            //         document.getElementById("closor-callback-v1-popup-scroll-container").classList.add("closor-show-modal");
+            //     });
+            //     document.getElementById("closor-modal-background").addEventListener("click", function(){
+            //         document.getElementById("closor-call-modal").classList.remove("closor-show-modal");
+            //         document.getElementById("closor-callback-v1-popup-scroll-container").classList.remove("closor-show-modal");
+            //     });
+            //     document.getElementById("closor-modal-close").addEventListener("click", function(){
+            //         document.getElementById("closor-call-modal").classList.remove("closor-show-modal");
+            //         document.getElementById("closor-callback-v1-popup-scroll-container").classList.remove("closor-show-modal");
+            //     });
+            // </script>
     }
 
-    public function widget_ajax(Request $request)
-    {
+    public function widget_ajax(Request $request){
 
-        if (!$request["phone"]) {
-            return ($request->all());
+        if(!$request["phone"]){
+            return($request->all());
         }
         $data = $request->all();
         unset($data['csrftoken']);
 
         $user = Source::find($request->source_id)->workplace->users()->withCount('leads')->orderBy('leads_count', 'asc')->first();
 
-        if (!@$request->product_id && !$request->product_id) {
+        if(!@$request->product_id && !$request->product_id){
             $product_id = Source::find($request->source_id)->workplace->products()->first()->id;
-        } else {
+        }else{
             $product_id = $request->product_id;
         }
         $save = new Lead;
@@ -258,7 +247,7 @@ class WidgetController extends Controller
         $save->product_id = $product_id;
         $save->name = $request->name;
         $save->email = $request->email;
-        $save->phone = $request->country_code . ' ' . $request->phone;
+        $save->phone = $request->country_code .' '.$request->phone;
         $save->lead = json_encode($data);
         $save->save();
 
@@ -266,4 +255,5 @@ class WidgetController extends Controller
 
         return 1;
     }
+
 }
