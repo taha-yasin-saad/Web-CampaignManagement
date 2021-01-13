@@ -12,7 +12,16 @@ use DataTables;
 /**
  * @group 2.6 Users Manager Leads management
  *
- * Routes To manage Leads data For The Manager Control Panel
+ * Page Group To manage Leads data For The Manager Control Panel .
+ *
+ * - View the Leads Data Ex. Lead Name, Workplace Product belongs to & Product etc.
+ * - Filter an existing Leads from the Filter Form.
+ * - View Leads Stats the Qualified & Un Qualified Buttons.
+ *
+ * <p><img src="images/users/leads/users-leads-view.png" width="100%"></p>
+ *
+ * @authenticated
+ *
  */
 
 class LeadController extends Controller
@@ -22,48 +31,41 @@ class LeadController extends Controller
         $this->middleware('auth');
     }
     /**
-     * Display a listing of the resource.
+     * Leads View Page
      *
-     * @return \Illuminate\Http\Response
-     * @response  [
+     * Is An Control Panel Lead Page That Views leads Data Info .
      *
-     * "last_contact_leads" && "qualified_leads" && "leads" && "leads_without_filter" => {
-     * "id" => 1
-     * "name" => "kareem222"
-     * "product_id" => 6
-     * "user_id" => null
-     * "source_id" => 9
-     * "phone" => "1234567654"
-     * "email" => "kareemkima@gmail.com"
-     * "scheduled_on" => null
-     * "last_contact" => null
-     * "status" => 2
-     * "lead" => "{"name":"kareem222","phone":"1234567654","product_id":"6","mobile":"22345678987654"}"
-     * "created_at" => "2020-02-23 04:10:22"
-     * "updated_at" => "2020-10-01 07:07:08"
+     * Form Filter is used to filtering existing leads To get better results .
+     *
+     * <p><img src="images/admin/leads/admin-leads-filter.png" width="100%"></p>
+     *
+     * View leads Data Info
+     *
+     * - View the Leads Data Ex. Lead Name, Workplace Product belongs to & Product etc.
+     *
+     * -View Leads Stats the Qualified & Un Qualified Buttons .
+     *
+     * <p><img src="images/users/leads/users-leads-view.png" width="100%"></p>
+     *
+     * @authenticated
+     *
+     * @response {
+     * "id":1,
+     * "name":"demo",
+     * "phone":"01234567890",
+     * "country_code":null,
+     * "email":"test@demo.com",
+     * "email_verified_at":null,
+     * "created_at":"2020-01-26 16:26:56",
+     * "updated_at":"2021-01-07 13:35:48",
+     * "device_token":null,
+     * "os":null,
+     * "is_available":1,
+     * "products_count":2,
+     * "workplaces_count":1,
+     * "leads_count":7
      * }
      *
-     * "users" => {
-     * "id" => 1
-     * "user_id" => 7
-     * "workplace_id" => 1
-     * "role" => 0
-     * "status" => 1
-     * "created_at" => "2020-02-14 23:08:32"
-     * "updated_at" => "2020-03-06 11:19:07"
-     * }
-     *
-     * "products" => {
-     * "id" => 2
-     * "workplace_id" => 4
-     * "title" => "vola p2"
-     * "created_at" => "2020-02-16 17:17:53"
-     * "updated_at" => "2020-02-16 17:17:53"
-     * "selected_ids" => []
-     * }
-     *
-     *
-     * ]
      */
     public function index(Request $request)
     {
@@ -98,28 +100,43 @@ class LeadController extends Controller
 
         return view('leads.leads', $query);
     }
-
     /**
-     * Show the form for creating a new resource.
+     * Single Lead Info View Page
      *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
+     * Is An Control Panel Page For Single Lead That Views Lead Data Info .
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * - View Products For the Lead.
+     * - View Products Count For the Single Lead.
+     * - Every Product In the Lead With its Stats Ex. Leads Source Name, Leads count, Contacted Leads Count & Team Names That Assigned to this Product.
+     * - Filter Search to go through every table data.
+     *
+     * <p><img src="images/admin/leads/admin-singlelead-view.png" width="100%"></p>
+     *
+     * @authenticated
+     *
+     * @response {
+     * "id":9,
+     * "workplace_id":8,
+     * "user_id":7,
+     * "name":"Bottels Website Form",
+     * "country_id":null,
+     * "website":"https:\/\/popcorn.com",
+     * "product_id":11,
+     * "widget_type":"text",
+     * "alignment":"left",
+     * "primary":"#34a853",
+     * "secondary":"#ffffff",
+     * "icon_type":"mdi mdi-phone fa-fw",
+     * "bubble":"on",
+     * "bubble_line_1":"Want to talk to an expert?",
+     * "bubble_line_2":"Our Team is 60 Second Away From You!",
+     * "bubble_bg_color":"#959a9e",
+     * "bubble_text_color":"#ffffff",
+     * "text_text":"Talk to sales expert now!",
+     * "text_round":10
+     * }
+     *
      */
-    public function store(Request $request)
-    {
-        //
-    }
-
     public function show(Lead $lead)
     {
         $query['lead'] = $lead;
@@ -128,37 +145,4 @@ class LeadController extends Controller
         return view('leads.onelead', $query);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Lead  $lead
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Lead $lead)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Lead  $lead
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Lead $lead)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Lead  $lead
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Lead $lead)
-    {
-        //
-    }
 }

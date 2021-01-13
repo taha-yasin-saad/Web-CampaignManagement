@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Support\Facades\DB;
 
 class ChangeForeignKeyWorkplaceIdToProducts extends Migration
 {
@@ -14,6 +15,7 @@ class ChangeForeignKeyWorkplaceIdToProducts extends Migration
     public function up()
     {
         Schema::table('products', function (Blueprint $table) {
+            DB::statement('UPDATE `products` SET `workplace_id` = 0 WHERE `workplace_id` IS NULL;');
             // $table->unsignedBigInteger('workplace_id')->nullable(false)->default(0)->change();
             $table->foreign('workplace_id')->references('id')->on('workplaces')->onDelete('cascade');
         });
