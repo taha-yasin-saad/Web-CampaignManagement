@@ -15,11 +15,11 @@ class ChangeForeignKeyUserIdProductIdToUserProducts extends Migration
     public function up()
     {
         Schema::table('user_products', function (Blueprint $table) {
-            DB::statement('UPDATE `user_products` SET `user_id` = 0 WHERE `user_id` IS NULL;');
+            // DB::statement('UPDATE `user_products` SET `user_id` = 0 WHERE `user_id` IS NULL;');
             // $table->unsignedBigInteger('user_id')->nullable(false)->default(0)->change();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 
-            DB::statement('UPDATE `user_products` SET `product_id` = 0 WHERE `product_id` IS NULL;');
+            // DB::statement('UPDATE `user_products` SET `product_id` = 0 WHERE `product_id` IS NULL;');
             // $table->unsignedBigInteger('product_id')->nullable(false)->default(0)->change();
             $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
         });
