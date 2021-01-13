@@ -205,6 +205,6 @@ class LeadController extends Controller
 
         event(new NotificationEvent($save));
 
-        return $submitted = 1;
+        return $submitted = 'submitted';
     }
 }
