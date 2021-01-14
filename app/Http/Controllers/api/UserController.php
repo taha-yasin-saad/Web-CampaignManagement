@@ -10,13 +10,23 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use App\Country;
 
-/**
+
+ /**
  * @group 3.1  APIs User management
  *
- * APIs for managing users
+ * Page Group To manage Users data From APIs.
+ *
+ * - Get the User Data Ex. Name, Email & Phone etc.
+ * - validator to validate the User Data Ex. Name, Email & Phone etc For Login.
+ * - Login The User To An App.
+ * - Update UserData.
+ *
+ * @authenticated
+ *
  */
 class UserController extends Controller
 {
+
     protected function validator(array $data)
     {
         return Validator::make($data, [
@@ -26,6 +36,35 @@ class UserController extends Controller
             'password' => ['required', 'string', 'min:6', 'confirmed'],
         ]);
     }
+    /**
+     * User Login
+     *
+     * User Data Request That Login User To the app and give him access if the validation was right To the app.
+     *
+     * @bodyParam  email string required The email of the user. Example: test@demo.com
+     * @bodyParam  password string required The password of the user. Example: *****
+     *
+     *
+     * @authenticated
+     *
+     * @response {
+     * "id":1,
+     * "name":"demo",
+     * "phone":"01234567890",
+     * "country_code":null,
+     * "email":"test@demo.com",
+     * "email_verified_at":null,
+     * "created_at":"2020-01-26 16:26:56",
+     * "updated_at":"2021-01-07 13:35:48",
+     * "device_token":null,
+     * "os":null,
+     * "is_available":1,
+     * "products_count":2,
+     * "workplaces_count":1,
+     * "leads_count":7
+     * }
+     *
+     */
     public function login(Request $request)
     {
         $data = $request->email;
@@ -49,7 +88,35 @@ class UserController extends Controller
             return response()->json(array('code' => 1, 'message' => 'No user in system with this email'), 200, ['Access-Control-Allow-Origin' => '*'], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
         }
     }
-
+    /**
+     * User Login Ar
+     *
+     * User Data Request That Login User To the app and give him access if the validation was right To the app.
+     *
+     * @bodyParam  email string required The email of the user. Example: test@demo.com
+     * @bodyParam  password string required The password of the user. Example: *****
+     *
+     *
+     * @authenticated
+     *
+     * @response {
+     * "id":1,
+     * "name":"demo",
+     * "phone":"01234567890",
+     * "country_code":null,
+     * "email":"test@demo.com",
+     * "email_verified_at":null,
+     * "created_at":"2020-01-26 16:26:56",
+     * "updated_at":"2021-01-07 13:35:48",
+     * "device_token":null,
+     * "os":null,
+     * "is_available":1,
+     * "products_count":2,
+     * "workplaces_count":1,
+     * "leads_count":7
+     * }
+     *
+     */
     public function login1(Request $request)
     {
         $data = $request->all();
@@ -94,7 +161,38 @@ class UserController extends Controller
             return response()->json(array('code' => 1, 'message' => 'Please check data you Login Data'), 200, ['Access-Control-Allow-Origin' => '*'], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
         }
     }
-
+    /**
+     * User Register
+     *
+     * User Data Request That Register User To the app and give him access if the validation was right To the app.
+     *
+     * @bodyParam  name string required The name of the user. Example: demo
+     * @bodyParam  email string required The email of the user. Example: test@demo.com
+     * @bodyParam  phone string required The phone of the user. Example: 123456
+     * @bodyParam  country_code string required The country_code of the user. Example: +20
+     * @bodyParam  password string required The password of the user. Example: ******
+     *
+     *
+     * @authenticated
+     *
+     * @response {
+     * "id":1,
+     * "name":"demo",
+     * "phone":"01234567890",
+     * "country_code":null,
+     * "email":"test@demo.com",
+     * "email_verified_at":null,
+     * "created_at":"2020-01-26 16:26:56",
+     * "updated_at":"2021-01-07 13:35:48",
+     * "device_token":null,
+     * "os":null,
+     * "is_available":1,
+     * "products_count":2,
+     * "workplaces_count":1,
+     * "leads_count":7
+     * }
+     *
+     */
     protected function login2(Request $request)
     {
         $data = $request->all();
@@ -129,7 +227,22 @@ class UserController extends Controller
             return response()->json(array('code' => 1, 'message' => 'No user in system with this email'), 200, ['Access-Control-Allow-Origin' => '*'], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
         }
     }
-
+    /**
+     * User Status
+     *
+     * User Data Request That Enables Or Disables User Access To the app .
+     *
+     * @bodyParam  user_id string required The user_id of the user. Example: 1
+     * @bodyParam  is_available string required The is_available of the user. Example: 1
+     *
+     *
+     * @authenticated
+     *
+     * @response {
+     * "success": "User Profile Edited Succefully"
+     * }
+     *
+     */
     public function change_is_available(Request $request)
     {
         $data = $request->all();
@@ -145,7 +258,38 @@ class UserController extends Controller
         $user->update(['is_available' => $request->is_available]);
         return response()->json(array('code' => 0, 'msg_en' => 'Updated Successfully', 'msg_ar' => 'تم التعديل بنجاح'), 200, ['Access-Control-Allow-Origin' => '*'], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
     }
-
+    /**
+     * User Edit Request
+     *
+     * User Data Request That Edit User Data To the app .
+     *
+     * @bodyParam  name string required The name of the user. Example: demo
+     * @bodyParam  email string required The email of the user. Example: test@demo.com
+     * @bodyParam  phone string required The phone of the user. Example: 123456
+     * @bodyParam  country_code string required The country_code of the user. Example: +20
+     * @bodyParam  password string required The password of the user. Example: ******
+     *
+     *
+     * @authenticated
+     *
+     * @response {
+     * "id":1,
+     * "name":"demo",
+     * "phone":"01234567890",
+     * "country_code":null,
+     * "email":"test@demo.com",
+     * "email_verified_at":null,
+     * "created_at":"2020-01-26 16:26:56",
+     * "updated_at":"2021-01-07 13:35:48",
+     * "device_token":null,
+     * "os":null,
+     * "is_available":1,
+     * "products_count":2,
+     * "workplaces_count":1,
+     * "leads_count":7
+     * }
+     *
+     */
     protected function update_profile(Request $request)
     {
         $data = $request->all();
