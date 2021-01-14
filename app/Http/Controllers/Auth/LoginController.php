@@ -8,7 +8,7 @@ use Symfony\Component\HttpFoundation\Request;
 use App\User;
 
 /**
- * @group  Login management
+ * @group 0.2 Login management
  *
  * Route for Login Users
  */
@@ -37,9 +37,36 @@ class LoginController extends Controller
     protected $redirectTo = '/check';
 
     /**
-     * Create a new controller instance.
+     * User Login Page
      *
-     * @return void
+     * User Data Page That Login User To the Website and give him access if the validation was right To the Website.
+     *
+     * <p><img src="images/users/users-login-page.png" width="100%"></p>
+     *
+     *
+     * @bodyParam  email string required The email of the User. Example: test@demo.com
+     * @bodyParam  password string required The password of the User. Example: *****
+     *
+     *
+     * @authenticated
+     *
+     * @response {
+     * "id":1,
+     * "name":"demo",
+     * "phone":"01234567890",
+     * "country_code":null,
+     * "email":"test@demo.com",
+     * "email_verified_at":null,
+     * "created_at":"2020-01-26 16:26:56",
+     * "updated_at":"2021-01-07 13:35:48",
+     * "device_token":null,
+     * "os":null,
+     * "is_available":1,
+     * "products_count":2,
+     * "workplaces_count":1,
+     * "leads_count":7
+     * }
+     *
      */
 
     public function firstlogin(Request $request)
