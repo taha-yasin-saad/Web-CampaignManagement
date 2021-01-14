@@ -20,6 +20,592 @@ Welcome to the generated API reference.
 
 <!-- END_INFO -->
 
+#0.1 Admin Login management
+
+
+Route for Login Admin & Moderator
+<!-- START_18f69092e65df23bcc6d9f57e4ca2662 -->
+## Admin Login Page
+
+<br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+Admin Data Page That Login Admin To the Website and give him access if the validation was right To the Website.
+
+<p><img src="images/admin/admin-login-page.png" width="100%"></p>
+
+> Example request:
+
+```bash
+curl -X GET \
+    -G "/admin-login" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"email":"test@demo.com","password":"*****"}'
+
+```
+
+```javascript
+const url = new URL(
+    "/admin-login"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "email": "test@demo.com",
+    "password": "*****"
+}
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+    body: body
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (200):
+
+```json
+{
+    "id": 1,
+    "name": "demo",
+    "phone": "01234567890",
+    "country_code": null,
+    "email": "test@demo.com",
+    "email_verified_at": null,
+    "created_at": "2020-01-26 16:26:56",
+    "updated_at": "2021-01-07 13:35:48",
+    "device_token": null,
+    "os": null,
+    "is_available": 1,
+    "products_count": 2,
+    "workplaces_count": 1,
+    "leads_count": 7
+}
+```
+
+### HTTP Request
+`GET admin-login`
+
+#### Body Parameters
+Parameter | Type | Status | Description
+--------- | ------- | ------- | ------- | -----------
+    `email` | string |  required  | The email of the Admin.
+        `password` | string |  required  | The password of the Admin.
+    
+<!-- END_18f69092e65df23bcc6d9f57e4ca2662 -->
+
+<!-- START_82dae795cbae227a0f1a48ab41923d78 -->
+## Admin Login Request
+
+<br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+Admin Data Request That Login Admin To the Website and give him access if the validation was right To the Website.
+
+<p><img src="images/admin/admin-login-page.png" width="100%"></p>
+
+> Example request:
+
+```bash
+curl -X POST \
+    "/admin.login" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"email":"test@demo.com","password":"*****"}'
+
+```
+
+```javascript
+const url = new URL(
+    "/admin.login"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "email": "test@demo.com",
+    "password": "*****"
+}
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+    body: body
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (200):
+
+```json
+{
+    "id": 1,
+    "name": "demo",
+    "phone": "01234567890",
+    "country_code": null,
+    "email": "test@demo.com",
+    "email_verified_at": null,
+    "created_at": "2020-01-26 16:26:56",
+    "updated_at": "2021-01-07 13:35:48",
+    "device_token": null,
+    "os": null,
+    "is_available": 1,
+    "products_count": 2,
+    "workplaces_count": 1,
+    "leads_count": 7
+}
+```
+
+### HTTP Request
+`POST admin.login`
+
+#### Body Parameters
+Parameter | Type | Status | Description
+--------- | ------- | ------- | ------- | -----------
+    `email` | string |  required  | The email of the Admin.
+        `password` | string |  required  | The password of the Admin.
+    
+<!-- END_82dae795cbae227a0f1a48ab41923d78 -->
+
+#0.2 Login management
+
+
+Route for Login Users
+<!-- START_66e08d3cc8222573018fed49e121e96d -->
+## Show the application&#039;s login form.
+
+> Example request:
+
+```bash
+curl -X GET \
+    -G "/login" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "/login"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (200):
+
+```json
+null
+```
+
+### HTTP Request
+`GET login`
+
+
+<!-- END_66e08d3cc8222573018fed49e121e96d -->
+
+<!-- START_ba35aa39474cb98cfb31829e70eb8b74 -->
+## Handle a login request to the application.
+
+> Example request:
+
+```bash
+curl -X POST \
+    "/login" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "/login"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+
+### HTTP Request
+`POST login`
+
+
+<!-- END_ba35aa39474cb98cfb31829e70eb8b74 -->
+
+<!-- START_e65925f23b9bc6b93d9356895f29f80c -->
+## Log the user out of the application.
+
+> Example request:
+
+```bash
+curl -X POST \
+    "/logout" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "/logout"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+
+### HTTP Request
+`POST logout`
+
+
+<!-- END_e65925f23b9bc6b93d9356895f29f80c -->
+
+<!-- START_dc44652b722af6abcc3925ae84bdee69 -->
+## User Login Page
+
+<br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+User Data Page That Login User To the Website and give him access if the validation was right To the Website.
+
+<p><img src="images/users/users-login-page.png" width="100%"></p>
+
+> Example request:
+
+```bash
+curl -X GET \
+    -G "/first" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"email":"test@demo.com","password":"*****"}'
+
+```
+
+```javascript
+const url = new URL(
+    "/first"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "email": "test@demo.com",
+    "password": "*****"
+}
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+    body: body
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (200):
+
+```json
+{
+    "id": 1,
+    "name": "demo",
+    "phone": "01234567890",
+    "country_code": null,
+    "email": "test@demo.com",
+    "email_verified_at": null,
+    "created_at": "2020-01-26 16:26:56",
+    "updated_at": "2021-01-07 13:35:48",
+    "device_token": null,
+    "os": null,
+    "is_available": 1,
+    "products_count": 2,
+    "workplaces_count": 1,
+    "leads_count": 7
+}
+```
+
+### HTTP Request
+`GET first`
+
+`POST first`
+
+`PUT first`
+
+`PATCH first`
+
+`DELETE first`
+
+`OPTIONS first`
+
+#### Body Parameters
+Parameter | Type | Status | Description
+--------- | ------- | ------- | ------- | -----------
+    `email` | string |  required  | The email of the User.
+        `password` | string |  required  | The password of the User.
+    
+<!-- END_dc44652b722af6abcc3925ae84bdee69 -->
+
+#0.3 Register management
+
+
+Route for Register Users
+<!-- START_ff38dfb1bd1bb7e1aa24b4e1792a9768 -->
+## Show the application registration form.
+
+> Example request:
+
+```bash
+curl -X GET \
+    -G "/register" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "/register"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (200):
+
+```json
+null
+```
+
+### HTTP Request
+`GET register`
+
+
+<!-- END_ff38dfb1bd1bb7e1aa24b4e1792a9768 -->
+
+<!-- START_d7aad7b5ac127700500280d511a3db01 -->
+## User Register Page
+
+<br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+User Data Request That Register User To the Website and give him access if the validation was right To the Website.
+
+<p><img src="images/users/users-register-page.png" width="100%"></p>
+
+> Example request:
+
+```bash
+curl -X POST \
+    "/register" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"name":"demo","email":"test@demo.com","phone":"123456","country_code":"+20","password":"******"}'
+
+```
+
+```javascript
+const url = new URL(
+    "/register"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "name": "demo",
+    "email": "test@demo.com",
+    "phone": "123456",
+    "country_code": "+20",
+    "password": "******"
+}
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+    body: body
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (200):
+
+```json
+{
+    "id": 1,
+    "name": "demo",
+    "phone": "01234567890",
+    "country_code": null,
+    "email": "test@demo.com",
+    "email_verified_at": null,
+    "created_at": "2020-01-26 16:26:56",
+    "updated_at": "2021-01-07 13:35:48",
+    "device_token": null,
+    "os": null,
+    "is_available": 1,
+    "products_count": 2,
+    "workplaces_count": 1,
+    "leads_count": 7
+}
+```
+
+### HTTP Request
+`POST register`
+
+#### Body Parameters
+Parameter | Type | Status | Description
+--------- | ------- | ------- | ------- | -----------
+    `name` | string |  required  | The name of the user.
+        `email` | string |  required  | The email of the user.
+        `phone` | string |  required  | The phone of the user.
+        `country_code` | string |  required  | The country_code of the user.
+        `password` | string |  required  | The password of the user.
+    
+<!-- END_d7aad7b5ac127700500280d511a3db01 -->
+
+<!-- START_1dbcdf4354aee512432e2c97f2f678e8 -->
+## User Register Page
+
+<br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+User Data Request That Register User To the Website and give him access if the validation was right To the Website.
+
+<p><img src="images/users/users-register-page.png" width="100%"></p>
+
+> Example request:
+
+```bash
+curl -X GET \
+    -G "/login2" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"name":"demo","email":"test@demo.com","phone":"123456","country_code":"+20","password":"******"}'
+
+```
+
+```javascript
+const url = new URL(
+    "/login2"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "name": "demo",
+    "email": "test@demo.com",
+    "phone": "123456",
+    "country_code": "+20",
+    "password": "******"
+}
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+    body: body
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (200):
+
+```json
+{
+    "id": 1,
+    "name": "demo",
+    "phone": "01234567890",
+    "country_code": null,
+    "email": "test@demo.com",
+    "email_verified_at": null,
+    "created_at": "2020-01-26 16:26:56",
+    "updated_at": "2021-01-07 13:35:48",
+    "device_token": null,
+    "os": null,
+    "is_available": 1,
+    "products_count": 2,
+    "workplaces_count": 1,
+    "leads_count": 7
+}
+```
+
+### HTTP Request
+`GET login2`
+
+`POST login2`
+
+`PUT login2`
+
+`PATCH login2`
+
+`DELETE login2`
+
+`OPTIONS login2`
+
+#### Body Parameters
+Parameter | Type | Status | Description
+--------- | ------- | ------- | ------- | -----------
+    `name` | string |  required  | The name of the user.
+        `email` | string |  required  | The email of the user.
+        `phone` | string |  required  | The phone of the user.
+        `country_code` | string |  required  | The country_code of the user.
+        `password` | string |  required  | The password of the user.
+    
+<!-- END_1dbcdf4354aee512432e2c97f2f678e8 -->
+
 #1.1  Admin management
 
 
@@ -3680,11 +4266,11 @@ Page Group To manage Single Lead Sources For The Manager Control Panel And Give 
 
 - Filter Search to go through every table data.
 
-- manage every lead source from the Edit Wedget page.
+- manage every lead source from the Edit Widget page.
 
-- View Wedget lead source from the view Wedget page.
+- View Widget lead source from the view Widget page.
 
-- Add Wedget lead source from the Add Wedget page.
+- Add Widget lead source from the Add Widget page.
 
 <p><img src="images/users/lead_sources/users-lead_sources-view.png" width="100%"></p>
 <!-- START_afe861116942da8827f905c42d93c7cd -->
@@ -3696,9 +4282,9 @@ Page Group To manage Single Lead Sources For The Manager Control Panel And Give 
 - Add lead sources for every product in the workplace.
 - Every lead sources With its Stats Ex. Leads Source Name, Leads count, Contacted Leads Count & Management pages forevery lead source Ex. View , Add & Edit.
 - Filter Search to go through every table data.
-- Add Wedget lead source from the Add Wedget page.
-- View Wedget lead source from the view Wedget page.
-- manage every lead source from the Edit Wedget page.
+- Add Widget lead source from the Add Widget page.
+- View Widget lead source from the view Widget page.
+- manage every lead source from the Edit Widget page.
 <p><img src="images/users/lead_sources/users-lead_sources-view.png" width="100%"></p>
 
 > Example request:
@@ -3842,20 +4428,20 @@ Parameter | Type | Status | Description
     `workplace_id` | string |  required  | The workplace_id selected to add lead source to workplace.
         `name` | string |  required  | The name of the lead source.
         `website` | string |  required  | The website of the lead source.
-        `widget_type` | string |  optional  | The widget_type selected to icon Wedget.
-        `alignment` | string |  optional  | The alignment selected to right Wedget.
-        `primary` | string |  optional  | The primary Pick to color to Wedget.
-        `secondary` | string |  optional  | The secondary Pick to color to Wedget.
-        `icon_type` | string |  optional  | The icon_type style to Wedget.
-        `bubble` | string |  optional  | The bubble selected to on Wedget.
-        `bubble_line_1` | string |  optional  | The bubble_line_1 typed to on Wedget.
-        `bubble_line_2` | string |  optional  | The bubble_line_2 typed to on Wedget.
-        `bubble_bg_color` | string |  optional  | The bubble_bg_color Pick to color to Wedget.
-        `bubble_text_color` | string |  optional  | The bubble_text_color Pick to color to Wedget.
-        `text_text` | string |  optional  | The text_text typed to on Wedget.
-        `text_round` | string |  optional  | The text_round selected to on Wedget.
-        `custom_lable_1` | string |  optional  | The custom_lable_1 typed to on Wedget.
-        `custom_lable_2` | string |  optional  | The custom_lable_2 typed to on Wedget.
+        `widget_type` | string |  optional  | The widget_type selected to icon Widget.
+        `alignment` | string |  optional  | The alignment selected to right Widget.
+        `primary` | string |  optional  | The primary Pick to color to Widget.
+        `secondary` | string |  optional  | The secondary Pick to color to Widget.
+        `icon_type` | string |  optional  | The icon_type style to Widget.
+        `bubble` | string |  optional  | The bubble selected to on Widget.
+        `bubble_line_1` | string |  optional  | The bubble_line_1 typed to on Widget.
+        `bubble_line_2` | string |  optional  | The bubble_line_2 typed to on Widget.
+        `bubble_bg_color` | string |  optional  | The bubble_bg_color Pick to color to Widget.
+        `bubble_text_color` | string |  optional  | The bubble_text_color Pick to color to Widget.
+        `text_text` | string |  optional  | The text_text typed to on Widget.
+        `text_round` | string |  optional  | The text_round selected to on Widget.
+        `custom_lable_1` | string |  optional  | The custom_lable_1 typed to on Widget.
+        `custom_lable_2` | string |  optional  | The custom_lable_2 typed to on Widget.
     
 <!-- END_6525a24380d6f0fc3d9199bdb70d8ead -->
 
@@ -3935,20 +4521,20 @@ Parameter | Type | Status | Description
     `workplace_id` | string |  required  | The workplace_id selected to add lead source to workplace.
         `name` | string |  required  | The name of the lead source.
         `website` | string |  required  | The website of the lead source.
-        `widget_type` | string |  optional  | The widget_type selected to icon Wedget.
-        `alignment` | string |  optional  | The alignment selected to right Wedget.
-        `primary` | string |  optional  | The primary Pick to color to Wedget.
-        `secondary` | string |  optional  | The secondary Pick to color to Wedget.
-        `icon_type` | string |  optional  | The icon_type style to Wedget.
-        `bubble` | string |  optional  | The bubble selected to on Wedget.
-        `bubble_line_1` | string |  optional  | The bubble_line_1 typed to on Wedget.
-        `bubble_line_2` | string |  optional  | The bubble_line_2 typed to on Wedget.
-        `bubble_bg_color` | string |  optional  | The bubble_bg_color Pick to color to Wedget.
-        `bubble_text_color` | string |  optional  | The bubble_text_color Pick to color to Wedget.
-        `text_text` | string |  optional  | The text_text typed to on Wedget.
-        `text_round` | string |  optional  | The text_round selected to on Wedget.
-        `custom_lable_1` | string |  optional  | The custom_lable_1 typed to on Wedget.
-        `custom_lable_2` | string |  optional  | The custom_lable_2 typed to on Wedget.
+        `widget_type` | string |  optional  | The widget_type selected to icon Widget.
+        `alignment` | string |  optional  | The alignment selected to right Widget.
+        `primary` | string |  optional  | The primary Pick to color to Widget.
+        `secondary` | string |  optional  | The secondary Pick to color to Widget.
+        `icon_type` | string |  optional  | The icon_type style to Widget.
+        `bubble` | string |  optional  | The bubble selected to on Widget.
+        `bubble_line_1` | string |  optional  | The bubble_line_1 typed to on Widget.
+        `bubble_line_2` | string |  optional  | The bubble_line_2 typed to on Widget.
+        `bubble_bg_color` | string |  optional  | The bubble_bg_color Pick to color to Widget.
+        `bubble_text_color` | string |  optional  | The bubble_text_color Pick to color to Widget.
+        `text_text` | string |  optional  | The text_text typed to on Widget.
+        `text_round` | string |  optional  | The text_round selected to on Widget.
+        `custom_lable_1` | string |  optional  | The custom_lable_1 typed to on Widget.
+        `custom_lable_2` | string |  optional  | The custom_lable_2 typed to on Widget.
     
 <!-- END_1d134c058a66ac2dd612ccd654972569 -->
 
@@ -4030,20 +4616,20 @@ Parameter | Type | Status | Description
     `workplace_id` | string |  required  | The workplace_id selected to add lead source to workplace.
         `name` | string |  required  | The name of the lead source.
         `website` | string |  required  | The website of the lead source.
-        `widget_type` | string |  optional  | The widget_type selected to icon Wedget.
-        `alignment` | string |  optional  | The alignment selected to right Wedget.
-        `primary` | string |  optional  | The primary Pick to color to Wedget.
-        `secondary` | string |  optional  | The secondary Pick to color to Wedget.
-        `icon_type` | string |  optional  | The icon_type style to Wedget.
-        `bubble` | string |  optional  | The bubble selected to on Wedget.
-        `bubble_line_1` | string |  optional  | The bubble_line_1 typed to on Wedget.
-        `bubble_line_2` | string |  optional  | The bubble_line_2 typed to on Wedget.
-        `bubble_bg_color` | string |  optional  | The bubble_bg_color Pick to color to Wedget.
-        `bubble_text_color` | string |  optional  | The bubble_text_color Pick to color to Wedget.
-        `text_text` | string |  optional  | The text_text typed to on Wedget.
-        `text_round` | string |  optional  | The text_round selected to on Wedget.
-        `custom_lable_1` | string |  optional  | The custom_lable_1 typed to on Wedget.
-        `custom_lable_2` | string |  optional  | The custom_lable_2 typed to on Wedget.
+        `widget_type` | string |  optional  | The widget_type selected to icon Widget.
+        `alignment` | string |  optional  | The alignment selected to right Widget.
+        `primary` | string |  optional  | The primary Pick to color to Widget.
+        `secondary` | string |  optional  | The secondary Pick to color to Widget.
+        `icon_type` | string |  optional  | The icon_type style to Widget.
+        `bubble` | string |  optional  | The bubble selected to on Widget.
+        `bubble_line_1` | string |  optional  | The bubble_line_1 typed to on Widget.
+        `bubble_line_2` | string |  optional  | The bubble_line_2 typed to on Widget.
+        `bubble_bg_color` | string |  optional  | The bubble_bg_color Pick to color to Widget.
+        `bubble_text_color` | string |  optional  | The bubble_text_color Pick to color to Widget.
+        `text_text` | string |  optional  | The text_text typed to on Widget.
+        `text_round` | string |  optional  | The text_round selected to on Widget.
+        `custom_lable_1` | string |  optional  | The custom_lable_1 typed to on Widget.
+        `custom_lable_2` | string |  optional  | The custom_lable_2 typed to on Widget.
     
 <!-- END_8982bffebd0eaf02ce61568a0017882e -->
 
@@ -4125,29 +4711,50 @@ Parameter | Type | Status | Description
     `workplace_id` | string |  required  | The workplace_id selected to add lead source to workplace.
         `name` | string |  required  | The name of the lead source.
         `website` | string |  required  | The website of the lead source.
-        `widget_type` | string |  optional  | The widget_type selected to icon Wedget.
-        `alignment` | string |  optional  | The alignment selected to right Wedget.
-        `primary` | string |  optional  | The primary Pick to color to Wedget.
-        `secondary` | string |  optional  | The secondary Pick to color to Wedget.
-        `icon_type` | string |  optional  | The icon_type style to Wedget.
-        `bubble` | string |  optional  | The bubble selected to on Wedget.
-        `bubble_line_1` | string |  optional  | The bubble_line_1 typed to on Wedget.
-        `bubble_line_2` | string |  optional  | The bubble_line_2 typed to on Wedget.
-        `bubble_bg_color` | string |  optional  | The bubble_bg_color Pick to color to Wedget.
-        `bubble_text_color` | string |  optional  | The bubble_text_color Pick to color to Wedget.
-        `text_text` | string |  optional  | The text_text typed to on Wedget.
-        `text_round` | string |  optional  | The text_round selected to on Wedget.
-        `custom_lable_1` | string |  optional  | The custom_lable_1 typed to on Wedget.
-        `custom_lable_2` | string |  optional  | The custom_lable_2 typed to on Wedget.
+        `widget_type` | string |  optional  | The widget_type selected to icon Widget.
+        `alignment` | string |  optional  | The alignment selected to right Widget.
+        `primary` | string |  optional  | The primary Pick to color to Widget.
+        `secondary` | string |  optional  | The secondary Pick to color to Widget.
+        `icon_type` | string |  optional  | The icon_type style to Widget.
+        `bubble` | string |  optional  | The bubble selected to on Widget.
+        `bubble_line_1` | string |  optional  | The bubble_line_1 typed to on Widget.
+        `bubble_line_2` | string |  optional  | The bubble_line_2 typed to on Widget.
+        `bubble_bg_color` | string |  optional  | The bubble_bg_color Pick to color to Widget.
+        `bubble_text_color` | string |  optional  | The bubble_text_color Pick to color to Widget.
+        `text_text` | string |  optional  | The text_text typed to on Widget.
+        `text_round` | string |  optional  | The text_round selected to on Widget.
+        `custom_lable_1` | string |  optional  | The custom_lable_1 typed to on Widget.
+        `custom_lable_2` | string |  optional  | The custom_lable_2 typed to on Widget.
     
 <!-- END_cc29ce8491095a2f9a53e0b9749b6273 -->
 
 #2.6 Users Manager Leads management
 
 
-Routes To manage Leads data For The Manager Control Panel
+Page Group To manage Leads data For The Manager Control Panel .
+
+- View the Leads Data Ex. Lead Name, Workplace Product belongs to & Product etc.
+- Filter an existing Leads from the Filter Form.
+- View Leads Stats the Qualified & Un Qualified Buttons.
+
+<p><img src="images/users/leads/users-leads-view.png" width="100%"></p>
 <!-- START_374cfeb27ba1670c869a004f31d8f828 -->
-## Display a listing of the resource.
+## Leads View Page
+
+<br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+Is An Control Panel Lead Page That Views leads Data Info .
+
+Form Filter is used to filtering existing leads To get better results .
+
+<p><img src="images/admin/leads/admin-leads-filter.png" width="100%"></p>
+
+View leads Data Info
+
+- View the Leads Data Ex. Lead Name, Workplace Product belongs to & Product etc.
+
+-View Leads Stats the Qualified & Un Qualified Buttons .
+
+<p><img src="images/users/leads/users-leads-view.png" width="100%"></p>
 
 > Example request:
 
@@ -4180,7 +4787,22 @@ fetch(url, {
 > Example response (200):
 
 ```json
-null
+{
+    "id": 1,
+    "name": "demo",
+    "phone": "01234567890",
+    "country_code": null,
+    "email": "test@demo.com",
+    "email_verified_at": null,
+    "created_at": "2020-01-26 16:26:56",
+    "updated_at": "2021-01-07 13:35:48",
+    "device_token": null,
+    "os": null,
+    "is_available": 1,
+    "products_count": 2,
+    "workplaces_count": 1,
+    "leads_count": 7
+}
 ```
 
 ### HTTP Request
@@ -4189,53 +4811,23 @@ null
 
 <!-- END_374cfeb27ba1670c869a004f31d8f828 -->
 
-<!-- START_afa4466f98b9aabba06588f178216996 -->
-## Show the form for creating a new resource.
-
-> Example request:
-
-```bash
-curl -X GET \
-    -G "/leads/create" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"
-```
-
-```javascript
-const url = new URL(
-    "/leads/create"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-> Example response (401):
-
-```json
-{
-    "message": "Unauthenticated."
-}
-```
-
-### HTTP Request
-`GET leads/create`
-
-
-<!-- END_afa4466f98b9aabba06588f178216996 -->
-
 <!-- START_e27d419ecd767880269a31b5b88f149d -->
-## Display a listing of the resource.
+## Leads View Page
+
+<br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+Is An Control Panel Lead Page That Views leads Data Info .
+
+Form Filter is used to filtering existing leads To get better results .
+
+<p><img src="images/admin/leads/admin-leads-filter.png" width="100%"></p>
+
+View leads Data Info
+
+- View the Leads Data Ex. Lead Name, Workplace Product belongs to & Product etc.
+
+-View Leads Stats the Qualified & Un Qualified Buttons .
+
+<p><img src="images/users/leads/users-leads-view.png" width="100%"></p>
 
 > Example request:
 
@@ -4268,7 +4860,22 @@ fetch(url, {
 > Example response (200):
 
 ```json
-null
+{
+    "id": 1,
+    "name": "demo",
+    "phone": "01234567890",
+    "country_code": null,
+    "email": "test@demo.com",
+    "email_verified_at": null,
+    "created_at": "2020-01-26 16:26:56",
+    "updated_at": "2021-01-07 13:35:48",
+    "device_token": null,
+    "os": null,
+    "is_available": 1,
+    "products_count": 2,
+    "workplaces_count": 1,
+    "leads_count": 7
+}
 ```
 
 ### HTTP Request
@@ -4278,7 +4885,18 @@ null
 <!-- END_e27d419ecd767880269a31b5b88f149d -->
 
 <!-- START_8bfb6ab02f276fc606969dfede92597f -->
-## leads/{lead}
+## Single Lead Info View Page
+
+<br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+Is An Control Panel Page For Single Lead That Views Lead Data Info .
+
+- View Products For the Lead.
+- View Products Count For the Single Lead.
+- Every Product In the Lead With its Stats Ex. Leads Source Name, Leads count, Contacted Leads Count & Team Names That Assigned to this Product.
+- Filter Search to go through every table data.
+
+<p><img src="images/admin/leads/admin-singlelead-view.png" width="100%"></p>
+
 > Example request:
 
 ```bash
@@ -4307,11 +4925,29 @@ fetch(url, {
 ```
 
 
-> Example response (401):
+> Example response (200):
 
 ```json
 {
-    "message": "Unauthenticated."
+    "id": 9,
+    "workplace_id": 8,
+    "user_id": 7,
+    "name": "Bottels Website Form",
+    "country_id": null,
+    "website": "https:\/\/popcorn.com",
+    "product_id": 11,
+    "widget_type": "text",
+    "alignment": "left",
+    "primary": "#34a853",
+    "secondary": "#ffffff",
+    "icon_type": "mdi mdi-phone fa-fw",
+    "bubble": "on",
+    "bubble_line_1": "Want to talk to an expert?",
+    "bubble_line_2": "Our Team is 60 Second Away From You!",
+    "bubble_bg_color": "#959a9e",
+    "bubble_text_color": "#ffffff",
+    "text_text": "Talk to sales expert now!",
+    "text_round": 10
 }
 ```
 
@@ -4321,142 +4957,37 @@ fetch(url, {
 
 <!-- END_8bfb6ab02f276fc606969dfede92597f -->
 
-<!-- START_768db20e2d420f5da80b1ab65bc75cd0 -->
-## Show the form for editing the specified resource.
-
-> Example request:
-
-```bash
-curl -X GET \
-    -G "/leads/1/edit" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"
-```
-
-```javascript
-const url = new URL(
-    "/leads/1/edit"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-> Example response (401):
-
-```json
-{
-    "message": "Unauthenticated."
-}
-```
-
-### HTTP Request
-`GET leads/{lead}/edit`
-
-
-<!-- END_768db20e2d420f5da80b1ab65bc75cd0 -->
-
-<!-- START_f16c73a0fc51e0ee0c91be9031fba0f9 -->
-## Update the specified resource in storage.
-
-> Example request:
-
-```bash
-curl -X PUT \
-    "/leads/1" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"
-```
-
-```javascript
-const url = new URL(
-    "/leads/1"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "PUT",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-
-### HTTP Request
-`PUT leads/{lead}`
-
-`PATCH leads/{lead}`
-
-
-<!-- END_f16c73a0fc51e0ee0c91be9031fba0f9 -->
-
-<!-- START_591151aff4db46db789a3f5554bd497e -->
-## Remove the specified resource from storage.
-
-> Example request:
-
-```bash
-curl -X DELETE \
-    "/leads/1" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"
-```
-
-```javascript
-const url = new URL(
-    "/leads/1"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "DELETE",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-
-### HTTP Request
-`DELETE leads/{lead}`
-
-
-<!-- END_591151aff4db46db789a3f5554bd497e -->
-
 #2.7 Users Product Widget management
 
 
-Routes To manage Product Widget View data For Leads
+Page Group To manage Widget View & Submission of the form.
+
+- View the Leads Widget Form Ex. Name, Email, Phone, And another two customizable fields.
+
+<p><img src="images/users/widget/users-widget-icon.png" width="100%"></p>
+
+- Submit the Leads Widget Form To The database.
+
+<p><img src="images/users/widget/users-widget-form.png" width="100%"></p>
 <!-- START_6d0c9b8cc536e9a9ff2cd34e09735f19 -->
-## widget/{id}
+## Widget Form Page
+
+<br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+Is An Leads Page That Submit Widget To leads To Manage by the manager and his team Later On.
+
+- View the Leads Widget Form Ex. Name, Email, Phone, And another two customizable fields.
+
+<p><img src="images/users/widget/users-widget-icon.png" width="100%"></p>
+
 > Example request:
 
 ```bash
 curl -X GET \
     -G "/widget/1" \
     -H "Content-Type: application/json" \
-    -H "Accept: application/json"
+    -H "Accept: application/json" \
+    -d '{"name":"demo","phone":"demo,test","Email":"phone","custom_lable_1":"phone","custom_lable_2":"age"}'
+
 ```
 
 ```javascript
@@ -4469,38 +5000,67 @@ let headers = {
     "Accept": "application/json",
 };
 
+let body = {
+    "name": "demo",
+    "phone": "demo,test",
+    "Email": "phone",
+    "custom_lable_1": "phone",
+    "custom_lable_2": "age"
+}
+
 fetch(url, {
     method: "GET",
     headers: headers,
+    body: body
 })
     .then(response => response.json())
     .then(json => console.log(json));
 ```
 
 
-> Example response (500):
+> Example response (200):
 
 ```json
 {
-    "message": "Server Error"
+    "success": "You Have Submitted Succesfully,Thanks."
 }
 ```
 
 ### HTTP Request
 `GET widget/{id}`
 
-
+#### Body Parameters
+Parameter | Type | Status | Description
+--------- | ------- | ------- | ------- | -----------
+    `name` | string |  optional  | The name of the Product.
+        `phone` | string |  required  | The phone selected to The Team Managing the product.
+        `Email` | string |  optional  | The Email typed to on Widget.
+        `custom_lable_1` | string |  optional  | The custom_lable_1 typed to on Widget.
+        `custom_lable_2` | string |  optional  | The custom_lable_2 typed to on Widget.
+    
 <!-- END_6d0c9b8cc536e9a9ff2cd34e09735f19 -->
 
 <!-- START_a4fca1cb337722b58ae6367668979b88 -->
-## widgetView/widget
+## Widget Form Request
+
+<br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+Is An Leads Request That Submit Widget To leads by the manager and his team Later On.
+
+- View the Leads Widget Form Ex. Name, Email, Phone, And another two customizable fields.
+
+- Submit the Leads Widget Form To The database.
+
+<p><img src="images/users/widget/users-widget-form.png" width="100%"></p>
+
 > Example request:
 
 ```bash
 curl -X POST \
     "/widgetView/widget" \
     -H "Content-Type: application/json" \
-    -H "Accept: application/json"
+    -H "Accept: application/json" \
+    -d '{"name":"demo","phone":"demo,test","Email":"test@demo.com","custom_lable_1":"phone","custom_lable_2":"age"}'
+
 ```
 
 ```javascript
@@ -4513,35 +5073,70 @@ let headers = {
     "Accept": "application/json",
 };
 
+let body = {
+    "name": "demo",
+    "phone": "demo,test",
+    "Email": "test@demo.com",
+    "custom_lable_1": "phone",
+    "custom_lable_2": "age"
+}
+
 fetch(url, {
     method: "POST",
     headers: headers,
+    body: body
 })
     .then(response => response.json())
     .then(json => console.log(json));
 ```
 
 
+> Example response (200):
+
+```json
+{
+    "success": "You Have Submitted Succesfully,Thanks."
+}
+```
 
 ### HTTP Request
 `POST widgetView/widget`
 
-
+#### Body Parameters
+Parameter | Type | Status | Description
+--------- | ------- | ------- | ------- | -----------
+    `name` | string |  optional  | The name of the Product.
+        `phone` | string |  required  | The phone selected to The Team Managing the product.
+        `Email` | string |  optional  | The Email typed to on Widget.
+        `custom_lable_1` | string |  optional  | The custom_lable_1 typed to on Widget.
+        `custom_lable_2` | string |  optional  | The custom_lable_2 typed to on Widget.
+    
 <!-- END_a4fca1cb337722b58ae6367668979b88 -->
 
 #3.1  APIs User management
 
 
-APIs for managing users
+Page Group To manage Users data From APIs.
+
+- Get the User Data Ex. Name, Email & Phone etc.
+- validator to validate the User Data Ex. Name, Email & Phone etc For Login.
+- Login The User To An App.
+- Update UserData.
 <!-- START_c3fa189a6c95ca36ad6ac4791a873d23 -->
-## api/login
+## User Login
+
+<br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+User Data Request That Login User To the app and give him access if the validation was right To the app.
+
 > Example request:
 
 ```bash
 curl -X POST \
     "/api/login" \
     -H "Content-Type: application/json" \
-    -H "Accept: application/json"
+    -H "Accept: application/json" \
+    -d '{"email":"test@demo.com","password":"*****"}'
+
 ```
 
 ```javascript
@@ -4554,31 +5149,68 @@ let headers = {
     "Accept": "application/json",
 };
 
+let body = {
+    "email": "test@demo.com",
+    "password": "*****"
+}
+
 fetch(url, {
     method: "POST",
     headers: headers,
+    body: body
 })
     .then(response => response.json())
     .then(json => console.log(json));
 ```
 
 
+> Example response (200):
+
+```json
+{
+    "id": 1,
+    "name": "demo",
+    "phone": "01234567890",
+    "country_code": null,
+    "email": "test@demo.com",
+    "email_verified_at": null,
+    "created_at": "2020-01-26 16:26:56",
+    "updated_at": "2021-01-07 13:35:48",
+    "device_token": null,
+    "os": null,
+    "is_available": 1,
+    "products_count": 2,
+    "workplaces_count": 1,
+    "leads_count": 7
+}
+```
 
 ### HTTP Request
 `POST api/login`
 
-
+#### Body Parameters
+Parameter | Type | Status | Description
+--------- | ------- | ------- | ------- | -----------
+    `email` | string |  required  | The email of the user.
+        `password` | string |  required  | The password of the user.
+    
 <!-- END_c3fa189a6c95ca36ad6ac4791a873d23 -->
 
 <!-- START_ea980f00fb009965aa3dd5f562337404 -->
-## api/login1
+## User Login Ar
+
+<br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+User Data Request That Login User To the app and give him access if the validation was right To the app.
+
 > Example request:
 
 ```bash
 curl -X POST \
     "/api/login1" \
     -H "Content-Type: application/json" \
-    -H "Accept: application/json"
+    -H "Accept: application/json" \
+    -d '{"email":"test@demo.com","password":"*****"}'
+
 ```
 
 ```javascript
@@ -4591,31 +5223,68 @@ let headers = {
     "Accept": "application/json",
 };
 
+let body = {
+    "email": "test@demo.com",
+    "password": "*****"
+}
+
 fetch(url, {
     method: "POST",
     headers: headers,
+    body: body
 })
     .then(response => response.json())
     .then(json => console.log(json));
 ```
 
 
+> Example response (200):
+
+```json
+{
+    "id": 1,
+    "name": "demo",
+    "phone": "01234567890",
+    "country_code": null,
+    "email": "test@demo.com",
+    "email_verified_at": null,
+    "created_at": "2020-01-26 16:26:56",
+    "updated_at": "2021-01-07 13:35:48",
+    "device_token": null,
+    "os": null,
+    "is_available": 1,
+    "products_count": 2,
+    "workplaces_count": 1,
+    "leads_count": 7
+}
+```
 
 ### HTTP Request
 `POST api/login1`
 
-
+#### Body Parameters
+Parameter | Type | Status | Description
+--------- | ------- | ------- | ------- | -----------
+    `email` | string |  required  | The email of the user.
+        `password` | string |  required  | The password of the user.
+    
 <!-- END_ea980f00fb009965aa3dd5f562337404 -->
 
 <!-- START_bdd2d0f4f2c3e0f3a53ecef15732db78 -->
-## api/login2
+## User Register
+
+<br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+User Data Request That Register User To the app and give him access if the validation was right To the app.
+
 > Example request:
 
 ```bash
 curl -X POST \
     "/api/login2" \
     -H "Content-Type: application/json" \
-    -H "Accept: application/json"
+    -H "Accept: application/json" \
+    -d '{"name":"demo","email":"test@demo.com","phone":"123456","country_code":"+20","password":"******"}'
+
 ```
 
 ```javascript
@@ -4628,31 +5297,74 @@ let headers = {
     "Accept": "application/json",
 };
 
+let body = {
+    "name": "demo",
+    "email": "test@demo.com",
+    "phone": "123456",
+    "country_code": "+20",
+    "password": "******"
+}
+
 fetch(url, {
     method: "POST",
     headers: headers,
+    body: body
 })
     .then(response => response.json())
     .then(json => console.log(json));
 ```
 
 
+> Example response (200):
+
+```json
+{
+    "id": 1,
+    "name": "demo",
+    "phone": "01234567890",
+    "country_code": null,
+    "email": "test@demo.com",
+    "email_verified_at": null,
+    "created_at": "2020-01-26 16:26:56",
+    "updated_at": "2021-01-07 13:35:48",
+    "device_token": null,
+    "os": null,
+    "is_available": 1,
+    "products_count": 2,
+    "workplaces_count": 1,
+    "leads_count": 7
+}
+```
 
 ### HTTP Request
 `POST api/login2`
 
-
+#### Body Parameters
+Parameter | Type | Status | Description
+--------- | ------- | ------- | ------- | -----------
+    `name` | string |  required  | The name of the user.
+        `email` | string |  required  | The email of the user.
+        `phone` | string |  required  | The phone of the user.
+        `country_code` | string |  required  | The country_code of the user.
+        `password` | string |  required  | The password of the user.
+    
 <!-- END_bdd2d0f4f2c3e0f3a53ecef15732db78 -->
 
 <!-- START_8f90011138117fdccfc791cf91d0a65b -->
-## api/update_profile
+## User Edit Request
+
+<br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+User Data Request That Edit User Data To the app .
+
 > Example request:
 
 ```bash
 curl -X POST \
     "/api/update_profile" \
     -H "Content-Type: application/json" \
-    -H "Accept: application/json"
+    -H "Accept: application/json" \
+    -d '{"name":"demo","email":"test@demo.com","phone":"123456","country_code":"+20","password":"******"}'
+
 ```
 
 ```javascript
@@ -4665,31 +5377,74 @@ let headers = {
     "Accept": "application/json",
 };
 
+let body = {
+    "name": "demo",
+    "email": "test@demo.com",
+    "phone": "123456",
+    "country_code": "+20",
+    "password": "******"
+}
+
 fetch(url, {
     method: "POST",
     headers: headers,
+    body: body
 })
     .then(response => response.json())
     .then(json => console.log(json));
 ```
 
 
+> Example response (200):
+
+```json
+{
+    "id": 1,
+    "name": "demo",
+    "phone": "01234567890",
+    "country_code": null,
+    "email": "test@demo.com",
+    "email_verified_at": null,
+    "created_at": "2020-01-26 16:26:56",
+    "updated_at": "2021-01-07 13:35:48",
+    "device_token": null,
+    "os": null,
+    "is_available": 1,
+    "products_count": 2,
+    "workplaces_count": 1,
+    "leads_count": 7
+}
+```
 
 ### HTTP Request
 `POST api/update_profile`
 
-
+#### Body Parameters
+Parameter | Type | Status | Description
+--------- | ------- | ------- | ------- | -----------
+    `name` | string |  required  | The name of the user.
+        `email` | string |  required  | The email of the user.
+        `phone` | string |  required  | The phone of the user.
+        `country_code` | string |  required  | The country_code of the user.
+        `password` | string |  required  | The password of the user.
+    
 <!-- END_8f90011138117fdccfc791cf91d0a65b -->
 
 <!-- START_c6ffcc473f819c15d8ee9f636eed9343 -->
-## api/change_is_available
+## User Status
+
+<br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+User Data Request That Enables Or Disables User Access To the app .
+
 > Example request:
 
 ```bash
 curl -X POST \
     "/api/change_is_available" \
     -H "Content-Type: application/json" \
-    -H "Accept: application/json"
+    -H "Accept: application/json" \
+    -d '{"user_id":"1","is_available":"1"}'
+
 ```
 
 ```javascript
@@ -4702,35 +5457,68 @@ let headers = {
     "Accept": "application/json",
 };
 
+let body = {
+    "user_id": "1",
+    "is_available": "1"
+}
+
 fetch(url, {
     method: "POST",
     headers: headers,
+    body: body
 })
     .then(response => response.json())
     .then(json => console.log(json));
 ```
 
 
+> Example response (200):
+
+```json
+{
+    "success": "User Profile Edited Succefully"
+}
+```
 
 ### HTTP Request
 `POST api/change_is_available`
 
-
+#### Body Parameters
+Parameter | Type | Status | Description
+--------- | ------- | ------- | ------- | -----------
+    `user_id` | string |  required  | The user_id of the user.
+        `is_available` | string |  required  | The is_available of the user.
+    
 <!-- END_c6ffcc473f819c15d8ee9f636eed9343 -->
 
 #3.2  APIs Workplaces management
 
 
-APIs for managing Workplaces
+Page Group To manage Workplaces data From APIs.
+
+- Get the User Data Ex. Name, Email & Phone etc.
+- validator to validate the User Data Ex. Name, Email & Phone etc For Login.
+- Login The User To An App.
+- Update UserData.
 <!-- START_405eabb53d4d41d71d98563f0695ad41 -->
-## api/widgetView/widget
+## Widget Form Request
+
+<br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+Is An Leads Request That Submit Widget To leads by the manager and his team Later On.
+
+- View the Leads Widget Form Ex. Name, Email, Phone, And another two customizable fields.
+
+- Submit the Leads Widget Form To The database.
+
 > Example request:
 
 ```bash
 curl -X POST \
     "/api/widgetView/widget" \
     -H "Content-Type: application/json" \
-    -H "Accept: application/json"
+    -H "Accept: application/json" \
+    -d '{"name":"demo","phone":"demo,test","Email":"test@demo.com","custom_lable_1":"phone","custom_lable_2":"age"}'
+
 ```
 
 ```javascript
@@ -4743,31 +5531,63 @@ let headers = {
     "Accept": "application/json",
 };
 
+let body = {
+    "name": "demo",
+    "phone": "demo,test",
+    "Email": "test@demo.com",
+    "custom_lable_1": "phone",
+    "custom_lable_2": "age"
+}
+
 fetch(url, {
     method: "POST",
     headers: headers,
+    body: body
 })
     .then(response => response.json())
     .then(json => console.log(json));
 ```
 
 
+> Example response (200):
+
+```json
+{
+    "success": "You Have Submitted Succesfully,Thanks."
+}
+```
 
 ### HTTP Request
 `POST api/widgetView/widget`
 
-
+#### Body Parameters
+Parameter | Type | Status | Description
+--------- | ------- | ------- | ------- | -----------
+    `name` | string |  optional  | The name of the Product.
+        `phone` | string |  required  | The phone selected to The Team Managing the product.
+        `Email` | string |  optional  | The Email typed to on Widget.
+        `custom_lable_1` | string |  optional  | The custom_lable_1 typed to on Widget.
+        `custom_lable_2` | string |  optional  | The custom_lable_2 typed to on Widget.
+    
 <!-- END_405eabb53d4d41d71d98563f0695ad41 -->
 
 <!-- START_bd30e8830ad43b3edb2d56c804d914de -->
-## api/lead
+## Create Lead Request
+
+<br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+Is An Leads Request That Submit leads For Certin Product for the manager and his team Later On.
+
+- Submit the Leads To The database.
+
 > Example request:
 
 ```bash
 curl -X POST \
     "/api/lead" \
     -H "Content-Type: application/json" \
-    -H "Accept: application/json"
+    -H "Accept: application/json" \
+    -d '{"product_id":"5","name":"demo","phone":"demo,test","Email":"test@demo.com","custom_lable_1":"phone","custom_lable_2":"age"}'
+
 ```
 
 ```javascript
@@ -4780,24 +5600,54 @@ let headers = {
     "Accept": "application/json",
 };
 
+let body = {
+    "product_id": "5",
+    "name": "demo",
+    "phone": "demo,test",
+    "Email": "test@demo.com",
+    "custom_lable_1": "phone",
+    "custom_lable_2": "age"
+}
+
 fetch(url, {
     method: "POST",
     headers: headers,
+    body: body
 })
     .then(response => response.json())
     .then(json => console.log(json));
 ```
 
 
+> Example response (200):
+
+```json
+{
+    "success": "YRequest Has been Sent Successfully"
+}
+```
 
 ### HTTP Request
 `POST api/lead`
 
-
+#### Body Parameters
+Parameter | Type | Status | Description
+--------- | ------- | ------- | ------- | -----------
+    `product_id` | string |  optional  | The product_id of the Product.
+        `name` | string |  optional  | The name of the Product.
+        `phone` | string |  required  | The phone selected to The Team Managing the product.
+        `Email` | string |  optional  | The Email typed to on Widget.
+        `custom_lable_1` | string |  optional  | The custom_lable_1 typed to on Widget.
+        `custom_lable_2` | string |  optional  | The custom_lable_2 typed to on Widget.
+    
 <!-- END_bd30e8830ad43b3edb2d56c804d914de -->
 
 <!-- START_385b87ffa25ae621a0a8c77665d65ecb -->
-## api/all_workplaces
+## Get Workplaces Request
+
+<br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+Is An Api Request To Get All Workplaces Data.
+
 > Example request:
 
 ```bash
@@ -4826,11 +5676,18 @@ fetch(url, {
 ```
 
 
-> Example response (500):
+> Example response (200):
 
 ```json
 {
-    "message": "Server Error"
+    "id": 1,
+    "admin_id": 7,
+    "title": "Sherkat",
+    "created_at": "2020-02-14 23:08:32",
+    "updated_at": "2020-06-21 07:21:07",
+    "timezone": "Africa\/Cairo",
+    "website": null,
+    "startday": "Monday"
 }
 ```
 
@@ -4841,14 +5698,20 @@ fetch(url, {
 <!-- END_385b87ffa25ae621a0a8c77665d65ecb -->
 
 <!-- START_127212f1a2c5e9475c73d8968f6c920e -->
-## api/all_products
+## Get Products Request
+
+<br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+Is An Api Request To Get All Products Data Of A certin Workplace.
+
 > Example request:
 
 ```bash
 curl -X POST \
     "/api/all_products" \
     -H "Content-Type: application/json" \
-    -H "Accept: application/json"
+    -H "Accept: application/json" \
+    -d '{"workplace_id":"5"}'
+
 ```
 
 ```javascript
@@ -4861,24 +5724,53 @@ let headers = {
     "Accept": "application/json",
 };
 
+let body = {
+    "workplace_id": "5"
+}
+
 fetch(url, {
     method: "POST",
     headers: headers,
+    body: body
 })
     .then(response => response.json())
     .then(json => console.log(json));
 ```
 
 
+> Example response (200):
+
+```json
+{
+    "id": 1,
+    "name": "demo",
+    "phone": "01234567890",
+    "country_code": null,
+    "email": "test@demo.com",
+    "email_verified_at": null,
+    "created_at": "2020-01-26 16:26:56",
+    "updated_at": "2021-01-07 13:35:48",
+    "device_token": null,
+    "os": null
+}
+```
 
 ### HTTP Request
 `POST api/all_products`
 
-
+#### Body Parameters
+Parameter | Type | Status | Description
+--------- | ------- | ------- | ------- | -----------
+    `workplace_id` | required |  optional  | string The workplace_id of the Product.
+    
 <!-- END_127212f1a2c5e9475c73d8968f6c920e -->
 
 <!-- START_59f5311afa947174c231488ff72a71ab -->
-## api/all_leads
+## Get Leads Request
+
+<br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+Is An Api Request To Get All Leads Data.
+
 > Example request:
 
 ```bash
@@ -4907,11 +5799,14 @@ fetch(url, {
 ```
 
 
-> Example response (500):
+> Example response (200):
 
 ```json
 {
-    "message": "Server Error"
+    "name": "Demo",
+    "phone": "1234567654",
+    "product_id": "6",
+    "mobile": "22345678987654"
 }
 ```
 
@@ -4922,14 +5817,20 @@ fetch(url, {
 <!-- END_59f5311afa947174c231488ff72a71ab -->
 
 <!-- START_61a85c4495a8871ceaf432c85b5827e7 -->
-## api/user_leads/{user}
+## Get User Leads Request
+
+<br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+Is An Api Request To Get All Leads Data Of A Certin User.
+
 > Example request:
 
 ```bash
 curl -X GET \
     -G "/api/user_leads/1" \
     -H "Content-Type: application/json" \
-    -H "Accept: application/json"
+    -H "Accept: application/json" \
+    -d '{"user_id":"5"}'
+
 ```
 
 ```javascript
@@ -4942,38 +5843,56 @@ let headers = {
     "Accept": "application/json",
 };
 
+let body = {
+    "user_id": "5"
+}
+
 fetch(url, {
     method: "GET",
     headers: headers,
+    body: body
 })
     .then(response => response.json())
     .then(json => console.log(json));
 ```
 
 
-> Example response (500):
+> Example response (200):
 
 ```json
 {
-    "message": "Server Error"
+    "name": "Demo",
+    "phone": "1234567654",
+    "product_id": "6",
+    "mobile": "22345678987654"
 }
 ```
 
 ### HTTP Request
 `GET api/user_leads/{user}`
 
-
+#### Body Parameters
+Parameter | Type | Status | Description
+--------- | ------- | ------- | ------- | -----------
+    `user_id` | required |  optional  | string The user_id of the Product.
+    
 <!-- END_61a85c4495a8871ceaf432c85b5827e7 -->
 
 <!-- START_a8de7d263b49f310c02e9c4c130524c9 -->
-## api/qualified
+## Lead Status Edit Request
+
+<br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+Is An Api Request To Edit All Lead Status.
+
 > Example request:
 
 ```bash
 curl -X POST \
     "/api/qualified" \
     -H "Content-Type: application/json" \
-    -H "Accept: application/json"
+    -H "Accept: application/json" \
+    -d '{"id":"5","status":"1"}'
+
 ```
 
 ```javascript
@@ -4986,24 +5905,44 @@ let headers = {
     "Accept": "application/json",
 };
 
+let body = {
+    "id": "5",
+    "status": "1"
+}
+
 fetch(url, {
     method: "POST",
     headers: headers,
+    body: body
 })
     .then(response => response.json())
     .then(json => console.log(json));
 ```
 
 
+> Example response (200):
+
+```json
+{
+    "id": 2,
+    "status": 1
+}
+```
 
 ### HTTP Request
 `POST api/qualified`
 
-
+#### Body Parameters
+Parameter | Type | Status | Description
+--------- | ------- | ------- | ------- | -----------
+    `id` | required |  optional  | string The id of the Product.
+        `status` | required |  optional  | string The status of the Product.
+    
 <!-- END_a8de7d263b49f310c02e9c4c130524c9 -->
 
 <!-- START_926fc61aa770cdea7831fb5d8b848858 -->
 ## api/test_notification_user
+<br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
 > Example request:
 
 ```bash
@@ -5041,6 +5980,7 @@ fetch(url, {
 
 <!-- START_df70b272cf915016a1ca96cbc14c2b09 -->
 ## api/test_notification_device
+<br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
 > Example request:
 
 ```bash
@@ -5076,411 +6016,17 @@ fetch(url, {
 
 <!-- END_df70b272cf915016a1ca96cbc14c2b09 -->
 
-#Admin Login management
-
-
-Route for Login Admin & Moderator
-<!-- START_18f69092e65df23bcc6d9f57e4ca2662 -->
-## admin-login
-> Example request:
-
-```bash
-curl -X GET \
-    -G "/admin-login" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"
-```
-
-```javascript
-const url = new URL(
-    "/admin-login"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-> Example response (200):
-
-```json
-null
-```
-
-### HTTP Request
-`GET admin-login`
-
-
-<!-- END_18f69092e65df23bcc6d9f57e4ca2662 -->
-
-<!-- START_82dae795cbae227a0f1a48ab41923d78 -->
-## admin.login
-> Example request:
-
-```bash
-curl -X POST \
-    "/admin.login" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"
-```
-
-```javascript
-const url = new URL(
-    "/admin.login"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "POST",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-
-### HTTP Request
-`POST admin.login`
-
-
-<!-- END_82dae795cbae227a0f1a48ab41923d78 -->
-
-#Login management
-
-
-Route for Login Users
-<!-- START_66e08d3cc8222573018fed49e121e96d -->
-## Show the application&#039;s login form.
-
-> Example request:
-
-```bash
-curl -X GET \
-    -G "/login" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"
-```
-
-```javascript
-const url = new URL(
-    "/login"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-> Example response (200):
-
-```json
-null
-```
-
-### HTTP Request
-`GET login`
-
-
-<!-- END_66e08d3cc8222573018fed49e121e96d -->
-
-<!-- START_ba35aa39474cb98cfb31829e70eb8b74 -->
-## Handle a login request to the application.
-
-> Example request:
-
-```bash
-curl -X POST \
-    "/login" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"
-```
-
-```javascript
-const url = new URL(
-    "/login"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "POST",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-
-### HTTP Request
-`POST login`
-
-
-<!-- END_ba35aa39474cb98cfb31829e70eb8b74 -->
-
-<!-- START_e65925f23b9bc6b93d9356895f29f80c -->
-## Log the user out of the application.
-
-> Example request:
-
-```bash
-curl -X POST \
-    "/logout" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"
-```
-
-```javascript
-const url = new URL(
-    "/logout"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "POST",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-
-### HTTP Request
-`POST logout`
-
-
-<!-- END_e65925f23b9bc6b93d9356895f29f80c -->
-
-<!-- START_dc44652b722af6abcc3925ae84bdee69 -->
-## Create a new controller instance.
-
-> Example request:
-
-```bash
-curl -X GET \
-    -G "/first" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"
-```
-
-```javascript
-const url = new URL(
-    "/first"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-> Example response (500):
-
-```json
-{
-    "message": "Server Error"
-}
-```
-
-### HTTP Request
-`GET first`
-
-`POST first`
-
-`PUT first`
-
-`PATCH first`
-
-`DELETE first`
-
-`OPTIONS first`
-
-
-<!-- END_dc44652b722af6abcc3925ae84bdee69 -->
-
-#Register management
-
-
-Route for Register Users
-<!-- START_ff38dfb1bd1bb7e1aa24b4e1792a9768 -->
-## Show the application registration form.
-
-> Example request:
-
-```bash
-curl -X GET \
-    -G "/register" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"
-```
-
-```javascript
-const url = new URL(
-    "/register"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-> Example response (200):
-
-```json
-null
-```
-
-### HTTP Request
-`GET register`
-
-
-<!-- END_ff38dfb1bd1bb7e1aa24b4e1792a9768 -->
-
-<!-- START_d7aad7b5ac127700500280d511a3db01 -->
-## Create a new user instance after a valid registration.
-
-> Example request:
-
-```bash
-curl -X POST \
-    "/register" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"
-```
-
-```javascript
-const url = new URL(
-    "/register"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "POST",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-
-### HTTP Request
-`POST register`
-
-
-<!-- END_d7aad7b5ac127700500280d511a3db01 -->
-
-<!-- START_1dbcdf4354aee512432e2c97f2f678e8 -->
-## login2
-> Example request:
-
-```bash
-curl -X GET \
-    -G "/login2" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"
-```
-
-```javascript
-const url = new URL(
-    "/login2"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-> Example response (500):
-
-```json
-{
-    "message": "Server Error"
-}
-```
-
-### HTTP Request
-`GET login2`
-
-`POST login2`
-
-`PUT login2`
-
-`PATCH login2`
-
-`DELETE login2`
-
-`OPTIONS login2`
-
-
-<!-- END_1dbcdf4354aee512432e2c97f2f678e8 -->
-
 #general
 
 
 <!-- START_b7802a3a2092f162a21dc668479801f4 -->
-## api/password/email
+## Reset Password Request
+
+<br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+Reset Password User By Sending Request To The Email Registered At The website To Reset password.
+
+- We will send the password reset link to this user. Once we have attempted to send the link, we will examine the response then see the message we need to show to the user. Finally, we'll send out a proper response.
+
 > Example request:
 
 ```bash
@@ -5509,6 +6055,14 @@ fetch(url, {
 ```
 
 
+> Example response (200):
+
+```json
+{
+    "msg_en": "sent Successfully",
+    "msg_ar": "تم الارسال بنجاح"
+}
+```
 
 ### HTTP Request
 `POST api/password/email`

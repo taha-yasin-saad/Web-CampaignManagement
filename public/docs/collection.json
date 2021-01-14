@@ -2,11 +2,281 @@
     "variables": [],
     "info": {
         "name": "Closor API",
-        "_postman_id": "113d8e0d-cc76-4bb0-9ffe-29f420ad565c",
+        "_postman_id": "6019f400-f58b-4e0c-9d91-3e8db9d894c3",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.0.0\/collection.json"
     },
     "item": [
+        {
+            "name": "0.1 Admin Login management",
+            "description": "\nRoute for Login Admin & Moderator",
+            "item": [
+                {
+                    "name": "Admin Login Page",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "admin-login",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"email\": \"test@demo.com\",\n    \"password\": \"*****\"\n}"
+                        },
+                        "description": "Admin Data Page That Login Admin To the Website and give him access if the validation was right To the Website.\n\n<p><img src=\"images\/admin\/admin-login-page.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Admin Login Request",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "admin.login",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"email\": \"test@demo.com\",\n    \"password\": \"*****\"\n}"
+                        },
+                        "description": "Admin Data Request That Login Admin To the Website and give him access if the validation was right To the Website.\n\n<p><img src=\"images\/admin\/admin-login-page.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "0.2 Login management",
+            "description": "\nRoute for Login Users",
+            "item": [
+                {
+                    "name": "Show the application's login form.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "login",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Handle a login request to the application.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "login",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Log the user out of the application.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "logout",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "User Login Page",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "first",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"email\": \"test@demo.com\",\n    \"password\": \"*****\"\n}"
+                        },
+                        "description": "User Data Page That Login User To the Website and give him access if the validation was right To the Website.\n\n<p><img src=\"images\/users\/users-login-page.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "0.3 Register management",
+            "description": "\nRoute for Register Users",
+            "item": [
+                {
+                    "name": "Show the application registration form.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "register",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "User Register Page",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "register",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"name\": \"demo\",\n    \"email\": \"test@demo.com\",\n    \"phone\": \"123456\",\n    \"country_code\": \"+20\",\n    \"password\": \"******\"\n}"
+                        },
+                        "description": "User Data Request That Register User To the Website and give him access if the validation was right To the Website.\n\n<p><img src=\"images\/users\/users-register-page.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "User Register Page",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "login2",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"name\": \"demo\",\n    \"email\": \"test@demo.com\",\n    \"phone\": \"123456\",\n    \"country_code\": \"+20\",\n    \"password\": \"******\"\n}"
+                        },
+                        "description": "User Data Request That Register User To the Website and give him access if the validation was right To the Website.\n\n<p><img src=\"images\/users\/users-register-page.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                }
+            ]
+        },
         {
             "name": "1.1  Admin management",
             "description": "\n\nPage Group To manage Admin data & Lists Stats Of The Site In General .\n\n<p><img src=\"images\/admin\/admin-login-page.png\" width=\"100%\"><\/p>\n\n<p><img src=\"images\/admin\/admin-management.png\" width=\"100%\"><\/p>",
@@ -1727,7 +1997,7 @@
         },
         {
             "name": "2.5 Users Lead Sources management",
-            "description": "\nPage Group To manage Single Lead Sources For The Manager Control Panel And Give him full access for its all features.\n\n- Add lead sources for every product in the workplace.\n\n- Every lead sources With its Stats Ex. Leads Source Name, Leads count, Contacted Leads Count & Management pages forevery lead source Ex. View , Add & Edit.\n\n- Filter Search to go through every table data.\n\n- manage every lead source from the Edit Wedget page.\n\n- View Wedget lead source from the view Wedget page.\n\n- Add Wedget lead source from the Add Wedget page.\n\n<p><img src=\"images\/users\/lead_sources\/users-lead_sources-view.png\" width=\"100%\"><\/p>",
+            "description": "\nPage Group To manage Single Lead Sources For The Manager Control Panel And Give him full access for its all features.\n\n- Add lead sources for every product in the workplace.\n\n- Every lead sources With its Stats Ex. Leads Source Name, Leads count, Contacted Leads Count & Management pages forevery lead source Ex. View , Add & Edit.\n\n- Filter Search to go through every table data.\n\n- manage every lead source from the Edit Widget page.\n\n- View Widget lead source from the view Widget page.\n\n- Add Widget lead source from the Add Widget page.\n\n<p><img src=\"images\/users\/lead_sources\/users-lead_sources-view.png\" width=\"100%\"><\/p>",
             "item": [
                 {
                     "name": "Single Lead Source Info View Page",
@@ -1753,7 +2023,7 @@
                             "mode": "raw",
                             "raw": "[]"
                         },
-                        "description": "Page Group To manage Single Lead Sources For The Manager Control Panel And Give him full access for its all features.\n\n- Add lead sources for every product in the workplace.\n- Every lead sources With its Stats Ex. Leads Source Name, Leads count, Contacted Leads Count & Management pages forevery lead source Ex. View , Add & Edit.\n- Filter Search to go through every table data.\n- Add Wedget lead source from the Add Wedget page.\n- View Wedget lead source from the view Wedget page.\n- manage every lead source from the Edit Wedget page.\n<p><img src=\"images\/users\/lead_sources\/users-lead_sources-view.png\" width=\"100%\"><\/p>",
+                        "description": "Page Group To manage Single Lead Sources For The Manager Control Panel And Give him full access for its all features.\n\n- Add lead sources for every product in the workplace.\n- Every lead sources With its Stats Ex. Leads Source Name, Leads count, Contacted Leads Count & Management pages forevery lead source Ex. View , Add & Edit.\n- Filter Search to go through every table data.\n- Add Widget lead source from the Add Widget page.\n- View Widget lead source from the view Widget page.\n- manage every lead source from the Edit Widget page.\n<p><img src=\"images\/users\/lead_sources\/users-lead_sources-view.png\" width=\"100%\"><\/p>",
                         "response": []
                     }
                 },
@@ -1873,10 +2143,10 @@
         },
         {
             "name": "2.6 Users Manager Leads management",
-            "description": "\nRoutes To manage Leads data For The Manager Control Panel",
+            "description": "\nPage Group To manage Leads data For The Manager Control Panel .\n\n- View the Leads Data Ex. Lead Name, Workplace Product belongs to & Product etc.\n- Filter an existing Leads from the Filter Form.\n- View Leads Stats the Qualified & Un Qualified Buttons.\n\n<p><img src=\"images\/users\/leads\/users-leads-view.png\" width=\"100%\"><\/p>",
             "item": [
                 {
-                    "name": "Display a listing of the resource.",
+                    "name": "Leads View Page",
                     "request": {
                         "url": {
                             "protocol": "http",
@@ -1899,40 +2169,12 @@
                             "mode": "raw",
                             "raw": "[]"
                         },
-                        "description": "",
+                        "description": "Is An Control Panel Lead Page That Views leads Data Info .\n\nForm Filter is used to filtering existing leads To get better results .\n\n<p><img src=\"images\/admin\/leads\/admin-leads-filter.png\" width=\"100%\"><\/p>\n\nView leads Data Info\n\n- View the Leads Data Ex. Lead Name, Workplace Product belongs to & Product etc.\n\n-View Leads Stats the Qualified & Un Qualified Buttons .\n\n<p><img src=\"images\/users\/leads\/users-leads-view.png\" width=\"100%\"><\/p>",
                         "response": []
                     }
                 },
                 {
-                    "name": "Show the form for creating a new resource.",
-                    "request": {
-                        "url": {
-                            "protocol": "http",
-                            "host": "",
-                            "path": "leads\/create",
-                            "query": []
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "Display a listing of the resource.",
+                    "name": "Leads View Page",
                     "request": {
                         "url": {
                             "protocol": "http",
@@ -1955,12 +2197,12 @@
                             "mode": "raw",
                             "raw": "[]"
                         },
-                        "description": "",
+                        "description": "Is An Control Panel Lead Page That Views leads Data Info .\n\nForm Filter is used to filtering existing leads To get better results .\n\n<p><img src=\"images\/admin\/leads\/admin-leads-filter.png\" width=\"100%\"><\/p>\n\nView leads Data Info\n\n- View the Leads Data Ex. Lead Name, Workplace Product belongs to & Product etc.\n\n-View Leads Stats the Qualified & Un Qualified Buttons .\n\n<p><img src=\"images\/users\/leads\/users-leads-view.png\" width=\"100%\"><\/p>",
                         "response": []
                     }
                 },
                 {
-                    "name": "leads\/{lead}",
+                    "name": "Single Lead Info View Page",
                     "request": {
                         "url": {
                             "protocol": "http",
@@ -1983,91 +2225,7 @@
                             "mode": "raw",
                             "raw": "[]"
                         },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "Show the form for editing the specified resource.",
-                    "request": {
-                        "url": {
-                            "protocol": "http",
-                            "host": "",
-                            "path": "leads\/:lead\/edit",
-                            "query": []
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "Update the specified resource in storage.",
-                    "request": {
-                        "url": {
-                            "protocol": "http",
-                            "host": "",
-                            "path": "leads\/:lead",
-                            "query": []
-                        },
-                        "method": "PUT",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "Remove the specified resource from storage.",
-                    "request": {
-                        "url": {
-                            "protocol": "http",
-                            "host": "",
-                            "path": "leads\/:lead",
-                            "query": []
-                        },
-                        "method": "DELETE",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
+                        "description": "Is An Control Panel Page For Single Lead That Views Lead Data Info .\n\n- View Products For the Lead.\n- View Products Count For the Single Lead.\n- Every Product In the Lead With its Stats Ex. Leads Source Name, Leads count, Contacted Leads Count & Team Names That Assigned to this Product.\n- Filter Search to go through every table data.\n\n<p><img src=\"images\/admin\/leads\/admin-singlelead-view.png\" width=\"100%\"><\/p>",
                         "response": []
                     }
                 }
@@ -2075,10 +2233,10 @@
         },
         {
             "name": "2.7 Users Product Widget management",
-            "description": "\nRoutes To manage Product Widget View data For Leads",
+            "description": "\nPage Group To manage Widget View & Submission of the form.\n\n- View the Leads Widget Form Ex. Name, Email, Phone, And another two customizable fields.\n\n<p><img src=\"images\/users\/widget\/users-widget-icon.png\" width=\"100%\"><\/p>\n\n- Submit the Leads Widget Form To The database.\n\n<p><img src=\"images\/users\/widget\/users-widget-form.png\" width=\"100%\"><\/p>",
             "item": [
                 {
-                    "name": "widget\/{id}",
+                    "name": "Widget Form Page",
                     "request": {
                         "url": {
                             "protocol": "http",
@@ -2099,14 +2257,14 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "[]"
+                            "raw": "{\n    \"name\": \"demo\",\n    \"phone\": \"demo,test\",\n    \"Email\": \"phone\",\n    \"custom_lable_1\": \"phone\",\n    \"custom_lable_2\": \"age\"\n}"
                         },
-                        "description": "",
+                        "description": "Is An Leads Page That Submit Widget To leads To Manage by the manager and his team Later On.\n\n- View the Leads Widget Form Ex. Name, Email, Phone, And another two customizable fields.\n\n<p><img src=\"images\/users\/widget\/users-widget-icon.png\" width=\"100%\"><\/p>",
                         "response": []
                     }
                 },
                 {
-                    "name": "widgetView\/widget",
+                    "name": "Widget Form Request",
                     "request": {
                         "url": {
                             "protocol": "http",
@@ -2127,9 +2285,9 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "[]"
+                            "raw": "{\n    \"name\": \"demo\",\n    \"phone\": \"demo,test\",\n    \"Email\": \"test@demo.com\",\n    \"custom_lable_1\": \"phone\",\n    \"custom_lable_2\": \"age\"\n}"
                         },
-                        "description": "",
+                        "description": "Is An Leads Request That Submit Widget To leads by the manager and his team Later On.\n\n- View the Leads Widget Form Ex. Name, Email, Phone, And another two customizable fields.\n\n- Submit the Leads Widget Form To The database.\n\n<p><img src=\"images\/users\/widget\/users-widget-form.png\" width=\"100%\"><\/p>",
                         "response": []
                     }
                 }
@@ -2137,10 +2295,10 @@
         },
         {
             "name": "3.1  APIs User management",
-            "description": "\nAPIs for managing users",
+            "description": "\nPage Group To manage Users data From APIs.\n\n- Get the User Data Ex. Name, Email & Phone etc.\n- validator to validate the User Data Ex. Name, Email & Phone etc For Login.\n- Login The User To An App.\n- Update UserData.",
             "item": [
                 {
-                    "name": "api\/login",
+                    "name": "User Login",
                     "request": {
                         "url": {
                             "protocol": "http",
@@ -2161,14 +2319,14 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "[]"
+                            "raw": "{\n    \"email\": \"test@demo.com\",\n    \"password\": \"*****\"\n}"
                         },
-                        "description": "",
+                        "description": "User Data Request That Login User To the app and give him access if the validation was right To the app.",
                         "response": []
                     }
                 },
                 {
-                    "name": "api\/login1",
+                    "name": "User Login Ar",
                     "request": {
                         "url": {
                             "protocol": "http",
@@ -2189,14 +2347,14 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "[]"
+                            "raw": "{\n    \"email\": \"test@demo.com\",\n    \"password\": \"*****\"\n}"
                         },
-                        "description": "",
+                        "description": "User Data Request That Login User To the app and give him access if the validation was right To the app.",
                         "response": []
                     }
                 },
                 {
-                    "name": "api\/login2",
+                    "name": "User Register",
                     "request": {
                         "url": {
                             "protocol": "http",
@@ -2217,14 +2375,14 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "[]"
+                            "raw": "{\n    \"name\": \"demo\",\n    \"email\": \"test@demo.com\",\n    \"phone\": \"123456\",\n    \"country_code\": \"+20\",\n    \"password\": \"******\"\n}"
                         },
-                        "description": "",
+                        "description": "User Data Request That Register User To the app and give him access if the validation was right To the app.",
                         "response": []
                     }
                 },
                 {
-                    "name": "api\/update_profile",
+                    "name": "User Edit Request",
                     "request": {
                         "url": {
                             "protocol": "http",
@@ -2245,14 +2403,14 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "[]"
+                            "raw": "{\n    \"name\": \"demo\",\n    \"email\": \"test@demo.com\",\n    \"phone\": \"123456\",\n    \"country_code\": \"+20\",\n    \"password\": \"******\"\n}"
                         },
-                        "description": "",
+                        "description": "User Data Request That Edit User Data To the app .",
                         "response": []
                     }
                 },
                 {
-                    "name": "api\/change_is_available",
+                    "name": "User Status",
                     "request": {
                         "url": {
                             "protocol": "http",
@@ -2273,9 +2431,9 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "[]"
+                            "raw": "{\n    \"user_id\": \"1\",\n    \"is_available\": \"1\"\n}"
                         },
-                        "description": "",
+                        "description": "User Data Request That Enables Or Disables User Access To the app .",
                         "response": []
                     }
                 }
@@ -2283,10 +2441,10 @@
         },
         {
             "name": "3.2  APIs Workplaces management",
-            "description": "\nAPIs for managing Workplaces",
+            "description": "\nPage Group To manage Workplaces data From APIs.\n\n- Get the User Data Ex. Name, Email & Phone etc.\n- validator to validate the User Data Ex. Name, Email & Phone etc For Login.\n- Login The User To An App.\n- Update UserData.",
             "item": [
                 {
-                    "name": "api\/widgetView\/widget",
+                    "name": "Widget Form Request",
                     "request": {
                         "url": {
                             "protocol": "http",
@@ -2307,14 +2465,14 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "[]"
+                            "raw": "{\n    \"name\": \"demo\",\n    \"phone\": \"demo,test\",\n    \"Email\": \"test@demo.com\",\n    \"custom_lable_1\": \"phone\",\n    \"custom_lable_2\": \"age\"\n}"
                         },
-                        "description": "",
+                        "description": "Is An Leads Request That Submit Widget To leads by the manager and his team Later On.\n\n- View the Leads Widget Form Ex. Name, Email, Phone, And another two customizable fields.\n\n- Submit the Leads Widget Form To The database.",
                         "response": []
                     }
                 },
                 {
-                    "name": "api\/lead",
+                    "name": "Create Lead Request",
                     "request": {
                         "url": {
                             "protocol": "http",
@@ -2335,14 +2493,14 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "[]"
+                            "raw": "{\n    \"product_id\": \"5\",\n    \"name\": \"demo\",\n    \"phone\": \"demo,test\",\n    \"Email\": \"test@demo.com\",\n    \"custom_lable_1\": \"phone\",\n    \"custom_lable_2\": \"age\"\n}"
                         },
-                        "description": "",
+                        "description": "Is An Leads Request That Submit leads For Certin Product for the manager and his team Later On.\n\n- Submit the Leads To The database.",
                         "response": []
                     }
                 },
                 {
-                    "name": "api\/all_workplaces",
+                    "name": "Get Workplaces Request",
                     "request": {
                         "url": {
                             "protocol": "http",
@@ -2365,12 +2523,12 @@
                             "mode": "raw",
                             "raw": "[]"
                         },
-                        "description": "",
+                        "description": "Is An Api Request To Get All Workplaces Data.",
                         "response": []
                     }
                 },
                 {
-                    "name": "api\/all_products",
+                    "name": "Get Products Request",
                     "request": {
                         "url": {
                             "protocol": "http",
@@ -2391,14 +2549,14 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "[]"
+                            "raw": "{\n    \"workplace_id\": \"5\"\n}"
                         },
-                        "description": "",
+                        "description": "Is An Api Request To Get All Products Data Of A certin Workplace.",
                         "response": []
                     }
                 },
                 {
-                    "name": "api\/all_leads",
+                    "name": "Get Leads Request",
                     "request": {
                         "url": {
                             "protocol": "http",
@@ -2421,12 +2579,12 @@
                             "mode": "raw",
                             "raw": "[]"
                         },
-                        "description": "",
+                        "description": "Is An Api Request To Get All Leads Data.",
                         "response": []
                     }
                 },
                 {
-                    "name": "api\/user_leads\/{user}",
+                    "name": "Get User Leads Request",
                     "request": {
                         "url": {
                             "protocol": "http",
@@ -2447,14 +2605,14 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "[]"
+                            "raw": "{\n    \"user_id\": \"5\"\n}"
                         },
-                        "description": "",
+                        "description": "Is An Api Request To Get All Leads Data Of A Certin User.",
                         "response": []
                     }
                 },
                 {
-                    "name": "api\/qualified",
+                    "name": "Lead Status Edit Request",
                     "request": {
                         "url": {
                             "protocol": "http",
@@ -2475,9 +2633,9 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "[]"
+                            "raw": "{\n    \"id\": \"5\",\n    \"status\": \"1\"\n}"
                         },
-                        "description": "",
+                        "description": "Is An Api Request To Edit All Lead Status.",
                         "response": []
                     }
                 },
@@ -2540,281 +2698,11 @@
             ]
         },
         {
-            "name": "Admin Login management",
-            "description": "\nRoute for Login Admin & Moderator",
-            "item": [
-                {
-                    "name": "admin-login",
-                    "request": {
-                        "url": {
-                            "protocol": "http",
-                            "host": "",
-                            "path": "admin-login",
-                            "query": []
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "admin.login",
-                    "request": {
-                        "url": {
-                            "protocol": "http",
-                            "host": "",
-                            "path": "admin.login",
-                            "query": []
-                        },
-                        "method": "POST",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                }
-            ]
-        },
-        {
-            "name": "Login management",
-            "description": "\nRoute for Login Users",
-            "item": [
-                {
-                    "name": "Show the application's login form.",
-                    "request": {
-                        "url": {
-                            "protocol": "http",
-                            "host": "",
-                            "path": "login",
-                            "query": []
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "Handle a login request to the application.",
-                    "request": {
-                        "url": {
-                            "protocol": "http",
-                            "host": "",
-                            "path": "login",
-                            "query": []
-                        },
-                        "method": "POST",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "Log the user out of the application.",
-                    "request": {
-                        "url": {
-                            "protocol": "http",
-                            "host": "",
-                            "path": "logout",
-                            "query": []
-                        },
-                        "method": "POST",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "Create a new controller instance.",
-                    "request": {
-                        "url": {
-                            "protocol": "http",
-                            "host": "",
-                            "path": "first",
-                            "query": []
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                }
-            ]
-        },
-        {
-            "name": "Register management",
-            "description": "\nRoute for Register Users",
-            "item": [
-                {
-                    "name": "Show the application registration form.",
-                    "request": {
-                        "url": {
-                            "protocol": "http",
-                            "host": "",
-                            "path": "register",
-                            "query": []
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "Create a new user instance after a valid registration.",
-                    "request": {
-                        "url": {
-                            "protocol": "http",
-                            "host": "",
-                            "path": "register",
-                            "query": []
-                        },
-                        "method": "POST",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "login2",
-                    "request": {
-                        "url": {
-                            "protocol": "http",
-                            "host": "",
-                            "path": "login2",
-                            "query": []
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                }
-            ]
-        },
-        {
             "name": "general",
             "description": "",
             "item": [
                 {
-                    "name": "api\/password\/email",
+                    "name": "Reset Password Request",
                     "request": {
                         "url": {
                             "protocol": "http",
@@ -2837,7 +2725,7 @@
                             "mode": "raw",
                             "raw": "[]"
                         },
-                        "description": "",
+                        "description": "Reset Password User By Sending Request To The Email Registered At The website To Reset password.\n\n- We will send the password reset link to this user. Once we have attempted to send the link, we will examine the response then see the message we need to show to the user. Finally, we'll send out a proper response.",
                         "response": []
                     }
                 },
