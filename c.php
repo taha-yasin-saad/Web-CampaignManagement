@@ -1,5 +1,6 @@
 
 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://app.closor.com/widget/widget.css" rel="stylesheet">
         <link href="https://app.closor.com/css/icons/material-design-iconic-font/css/materialdesignicons.min.css"
         rel="stylesheet">
@@ -121,4 +122,3 @@
         </div>
         <script src="https://api.ipdata.co?api-key=bbcc18dbda8db855a82aaecedab1b35c243700bd625b2ac94a9a8926" type="text/javascript"></script>
         <script src="https://app.closor.com/css/intl-tel-input-17.0.0/build/js/intlTelInput.js"></script>
-        

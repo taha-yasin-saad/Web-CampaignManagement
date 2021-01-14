@@ -26,6 +26,7 @@ class WidgetController extends Controller
     public function widget($id){
         $source = Source::find($id);
         $widget = '
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://app.closor.com/widget/widget.css" rel="stylesheet">
         <link href="https://app.closor.com/css/icons/material-design-iconic-font/css/materialdesignicons.min.css"
         rel="stylesheet">
