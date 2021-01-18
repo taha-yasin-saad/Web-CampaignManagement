@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Validator;
 use App\Country;
 
 
- /**
+/**
  * @group 3.1  APIs User management
  *
  * Page Group To manage Users data From APIs.
@@ -58,6 +58,7 @@ class UserController extends Controller
      * "updated_at":"2021-01-07 13:35:48",
      * "device_token":null,
      * "os":null,
+     * "status":1,
      * "is_available":1,
      * "products_count":2,
      * "workplaces_count":1,
@@ -69,20 +70,23 @@ class UserController extends Controller
     {
         $data = $request->email;
         $user = User::where('email', $request->email)->first();
-        if ($user && $user->password && $user->is_available == 1) {
+        if ($user && $user->password && $user->status == 1) {
+            $user->update(['is_available' => 1]);
             return response()->json(array(
                 'code' => 0,
                 'id' => $user->id,
                 'email' => $user->email,
                 'password' => $user->password
             ), 200, ['Access-Control-Allow-Origin' => '*'], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
-        } elseif ($user && $user->is_available == 1) {
+        } elseif ($user && $user->status == 1) {
+            $user->update(['is_available' => 1]);
             return response()->json(array(
                 'code' => 2,
                 'id' => $user->id,
                 'email' => $user->email
             ), 200, ['Access-Control-Allow-Origin' => '*'], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
-        } elseif ($user && $user->is_available == 0) {
+        } elseif ($user && $user->status == 0) {
+            $user->update(['is_available' => 0]);
             return response()->json(array('code' => 3, 'message' => 'Your Account Has Been Disabled By The Admin'), 200, ['Access-Control-Allow-Origin' => '*'], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
         } else {
             return response()->json(array('code' => 1, 'message' => 'No user in system with this email'), 200, ['Access-Control-Allow-Origin' => '*'], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
@@ -110,6 +114,7 @@ class UserController extends Controller
      * "updated_at":"2021-01-07 13:35:48",
      * "device_token":null,
      * "os":null,
+     * "status":1,
      * "is_available":1,
      * "products_count":2,
      * "workplaces_count":1,
@@ -133,7 +138,8 @@ class UserController extends Controller
         }
 
         $user = User::where('email', $request->email)->first();
-        if ($user && Hash::check($request->password, $user->password) && $user->is_available == 1) {
+        if ($user && Hash::check($request->password, $user->password) && $user->status == 1) {
+            $user->update(['is_available' => 1]);
             if ($request->device_token) {
                 $user->update([
                     'device_token' => $request->device_token,
@@ -155,7 +161,8 @@ class UserController extends Controller
                 'code'      => 0,
                 'user'        => $user,
             ), 200, ['Access-Control-Allow-Origin' => '*'], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
-        } elseif ($user && Hash::check($request->password, $user->password) && $user->is_available == 0) {
+        } elseif ($user && Hash::check($request->password, $user->password) && $user->status == 0) {
+            $user->update(['is_available' => 0]);
             return response()->json(array('code' => 2, 'message' => 'Your Account Has Been Disabled By The Admin'), 200, ['Access-Control-Allow-Origin' => '*'], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
         } else {
             return response()->json(array('code' => 1, 'message' => 'Please check data you Login Data'), 200, ['Access-Control-Allow-Origin' => '*'], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
@@ -186,6 +193,7 @@ class UserController extends Controller
      * "updated_at":"2021-01-07 13:35:48",
      * "device_token":null,
      * "os":null,
+     * "status":1,
      * "is_available":1,
      * "products_count":2,
      * "workplaces_count":1,
@@ -216,6 +224,7 @@ class UserController extends Controller
                 'phone' => $request->phone,
                 'password' => Hash::make($request->password),
                 'device_token' => $request->device_token,
+                'is_available' => 1,
                 'os' => $request->os
             ]);
             return response()->json(array(
@@ -233,7 +242,7 @@ class UserController extends Controller
      * User Data Request That Enables Or Disables User Access To the app .
      *
      * @bodyParam  user_id string required The user_id of the user. Example: 1
-     * @bodyParam  is_available string required The is_available of the user. Example: 1
+     * @bodyParam  status string required The status of the user. Example: 1
      *
      *
      * @authenticated
@@ -283,6 +292,7 @@ class UserController extends Controller
      * "updated_at":"2021-01-07 13:35:48",
      * "device_token":null,
      * "os":null,
+     * "status":1,
      * "is_available":1,
      * "products_count":2,
      * "workplaces_count":1,
@@ -323,6 +333,7 @@ class UserController extends Controller
             $update['email'] = $request->email;
             $update['phone'] = $request->phone;
             $update['country_code'] = $country_code;
+            $update['is_available'] = 1;
             if (@$request->password && $request->password) {
                 $update['password'] = Hash::make($request->password);
             }
@@ -340,5 +351,18 @@ class UserController extends Controller
         } else {
             return response()->json(array('code' => 1, 'message' => 'No user in system with this email'), 200, ['Access-Control-Allow-Origin' => '*'], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
         }
+    }
+
+    public function logout(Request $request)
+    {
+        $user = User::where('id', $request->user_id)->first();
+        if($user) {
+            $user->is_available = 0;
+        }
+        return response()->json(array(
+            'code' => 0,
+            'id' => $user->id,
+            'message' => 'The User(' . $user->name . ') Logged Out'
+        ), 200, ['Access-Control-Allow-Origin' => '*'], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
     }
 }

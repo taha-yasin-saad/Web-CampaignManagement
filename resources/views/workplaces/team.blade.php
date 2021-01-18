@@ -73,7 +73,12 @@
                                             @else
                                             {{$value->email}}
                                             @endif
-                                        </span><span class="badge-success badge">Online</span>
+                                        </span>
+                                        @if($value->is_available == 1)
+                                        <span class="badge-success badge">Online</span>
+                                        @else
+                                        <span class="badge-danger badge">Offline</span>
+                                        @endif
                                         <br><span class="text-muted">Joined at
                                             {{date('Y-m-d', strtotime($value->created_at))}}</span>
                                     </td>

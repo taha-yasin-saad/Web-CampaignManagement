@@ -309,13 +309,13 @@
               {data: 'leads_count', name: 'leads_count'},
               {data: 'created_at', name: 'created_at'},
                 {data: "action", "render": function (data, type, full, meta) {
-                        var is_available = full.is_available;
+                        var status = full.status;
                         var user_id = full.id;
                         var Url = "{{url('/')}}";
-                        if(is_available == 1) {
-                            return '<a class="edit btn btn-danger btn-sm" href="' + Url + '/admin/user_available/' + user_id + '/0" >Disable</a>';
+                        if(status == 1) {
+                            return '<a class="edit btn btn-success successbtn-sm" href="' + Url + '/admin/user_available/' + user_id + '/0" >Enabled</a>';
                         } else {
-                            return '<a class="edit btn btn-info btn-sm" href="' + Url + '/admin/user_available/' + user_id + '/1" >Enable</a>';
+                            return '<a class="edit btn btn-danger btn-sm" href="' + Url + '/admin/user_available/' + user_id + '/1" >Disabled</a>';
                         }
                     },
                     "orderable": false,

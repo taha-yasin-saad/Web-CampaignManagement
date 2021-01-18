@@ -75,6 +75,16 @@ class AdminController extends Controller
         $query['users_count'] = User::count();
         $query['leads_count'] = Lead::count();
 
+        $query['recent_products'] = Product::with('workplace')->withCount('leads')->orderBy('id','desc')->limit(6)->get();
+        // dd($query['recent_products']);
+        $query['max_count_leads_products'] = Product::with('workplace')->withCount('leads')->orderBy('leads_count','desc')->limit(6)->get();
+
+        $query['max_count_members_workplaces'] = Workplace::with('users')->withCount('users')->orderBy('users_count','desc')->limit(6)->get();
+
+        $query['users_yearly'] = User::get();
+        $query['leads_yearly'] = Lead::get();
+
+
         return view('admin.dashboard', $query);
     }
 

@@ -20,9 +20,9 @@
                             <strong>{{ $message }}</strong>
                         </span>
                         @enderror
-                        @if (session('is_available'))
+                        @if (session('status'))
                         <div class="invalid-feedback" role="alert">
-                            {{ session('is_available') }}
+                            {{ session('status') }}
                         </div>
                         @endif
                     </div>

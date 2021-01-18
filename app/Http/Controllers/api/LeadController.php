@@ -334,7 +334,7 @@ class LeadController extends Controller
         unset($data['country_code']);
         $data["phone"] = $request->country_code . $request->phone;
 
-        $user = Source::find($request->source_id)->workplace->users()->withCount('leads')->orderBy('leads_count', 'asc')->first();
+        $user = Source::find($request->source_id)->product->users()->where('is_available',1)->withCount('leads')->orderBy('leads_count', 'asc')->first();
 
         if (!@$request->product_id && !$request->product_id) {
             $product_id = Source::find($request->source_id)->workplace->products()->first()->id;

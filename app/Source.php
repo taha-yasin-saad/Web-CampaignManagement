@@ -21,6 +21,11 @@ class Source extends Model
         return $this->belongsTo('App\Workplace');
     }
 
+    public function product()
+    {
+        return $this->belongsTo('App\Product');
+    }
+
     public function lead(){
         return $this->hasMany('App\Lead');
     }

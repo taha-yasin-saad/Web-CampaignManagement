@@ -66,9 +66,8 @@
                         <li class="col-middle">
                             <h4>Workplaces Invited To</h4>
                             {{-- <div class="progress">
-                                        <div class="progress-bar progress-bar-danger" role="progressbar"
-                                            aria-valuenow="{{$invited_workplaces}}" aria-valuemin="0"
-                            aria-valuemax="100" style="width: {{$invited_workplaces}}%">
+                <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="{{$invited_workplaces}}"
+                            aria-valuemin="0" aria-valuemax="100" style="width: {{$invited_workplaces}}%">
                             <span class="sr-only">{{$invited_workplaces}}% Complete (success)</span>
                 </div>
             </div> --}}
@@ -221,10 +220,9 @@
                         </li>
                         <li><a href="#section-iconbox-2" class="sticon ti-lock"><span>Set Permissions</span></a>
                         </li>
-                        <li><a href="#section-iconbox-3" class="sticon ti-receipt"><span>Message
-                                    Users</span></a></li>
-                        <li><a href="#section-iconbox-4" class="sticon ti-check-box"><span>Save and
-                                    finish</span></a></li>
+                        <li><a href="#section-iconbox-3" class="sticon ti-receipt"><span>Message Users</span></a></li>
+                        <li><a href="#section-iconbox-4" class="sticon ti-check-box"><span>Save and finish</span></a>
+                        </li>
                     </ul>
                 </nav>
                 <div class="content-wrap">

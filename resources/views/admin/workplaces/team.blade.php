@@ -46,7 +46,7 @@
                     @endif
                     <div class="panel-heading">MANAGE USERS</div>
                     <div class="table-responsive">
-                        <table  id="myTable" class="table table-hover table-bordered manage-u-table">
+                        <table id="myTable" class="table table-hover table-bordered manage-u-table">
                             <thead>
                                 <tr>
                                     <th style="width: 70px;" class="text-center">#</th>
@@ -66,7 +66,8 @@
                                     <td class="text-center">{{$key+1}}</td>
                                     <td>
                                         <span class="font-medium">
-                                            <a href="#" class="open-UserModal" data-toggle="modal" data-target="#UserModal" data-name="{{$value->name}}"
+                                            <a href="#" class="open-UserModal" data-toggle="modal"
+                                                data-target="#UserModal" data-name="{{$value->name}}"
                                                 data-phone="{{$value->phone}}" data-email="{{$value->email}}">
                                                 @if($value->name)
                                                 {{$value->name}}
@@ -74,8 +75,12 @@
                                                 {{$value->email}}
                                                 @endif
                                             </a>
-
-                                        </span><span class="badge-success badge">Online</span>
+                                        </span>
+                                        @if($value->is_available == 1)
+                                        <span class="badge-success badge">Online</span>
+                                        @else
+                                        <span class="badge-danger badge">Offline</span>
+                                        @endif
                                         <br><span class="text-muted">Joined at 15/2/2020</span>
                                     </td>
                                     <td>
