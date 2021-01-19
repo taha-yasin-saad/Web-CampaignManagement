@@ -547,6 +547,7 @@ class WorkplacesController extends Controller
             }
             $value->selected_ids = $selected_ids;
         }
+        $query['product'] = Product::find($product_id);
         $query['product_id'] = $product_id;
         return view('workplaces.team', $query);
     }

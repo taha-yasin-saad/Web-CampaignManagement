@@ -77,6 +77,7 @@ Route::group(['middleware' => 'auth.admin', 'prefix' => 'admin', 'namespace' => 
     Route::post('user', 'UserController@index');
     Route::post('lead', 'LeadController@index');
     Route::get('user_available/{user}/{is_available}', 'UserController@user_available');
+    Route::get('user_status/{user}/{status}', 'UserController@user_status');
     // Route::get('product_leads/{product_id}', 'LeadController@product_leads');
     // Route::post('user_ajax', 'UserController@user_ajax');
 });

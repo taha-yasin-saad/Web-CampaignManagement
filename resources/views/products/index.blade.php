@@ -8,7 +8,10 @@
     <div class="container-fluid">
         <div class="row bg-title">
             <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                <h4 class="page-title">{{$workplace->title}} - Role : @if(get_role($workplace->id) == 0) Owner @elseif(get_role($workplace->id) == 1) Admin @elseif(get_role($workplace->id) == 2) Leader @elseif(get_role($workplace->id) == 3) SalesAgent @elseif(get_role($workplace->id) == 9) you Have not Permission to access that Workspace @endif</h4>
+                <h4 class="page-title">{{$workplace->title}} - Role : @if(get_role($workplace->id) == 0) Owner
+                    @elseif(get_role($workplace->id) == 1) Admin @elseif(get_role($workplace->id) == 2) Leader
+                    @elseif(get_role($workplace->id) == 3) SalesAgent @elseif(get_role($workplace->id) == 9) you Have
+                    not Permission to access that Workspace @endif</h4>
             </div>
             <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                 <ol class="breadcrumb">
@@ -194,17 +197,20 @@
                                         <td>{{$source->lead->where('status',0)->count()}}</td>
                                         <td>
                                             @if(@$source->lead->count() > 0)
-                                                {{$source->lead->where('status',0)->count() / count($source->lead) * 100}}%
+                                            {{$source->lead->where('status',0)->count() / count($source->lead) * 100}}%
                                             @else
-                                                0%
+                                            0%
                                             @endif
                                         </td>
                                         @if(get_role($workplace->id) == 0 || get_role($workplace->id) == 1 ||
                                         get_role($workplace->id) == 2)
                                         <td>
-                                            <button type="button"
+                                            {{-- <button type="button"
                                                 class="btn btn-info btn-outline btn-circle btn-lg m-r-5"><i
-                                                    class="ti-pencil-alt"></i></button>
+                                                    class="ti-pencil-alt"></i></button> --}}
+                                            <a href="{{url('product/'.$source->id.'/edit')}}" type="button"
+                                                class="btn btn-success btn-outline btn-circle btn-lg m-r-5"><i
+                                                    class="ti-pencil-alt"></i></a>
                                         </td>
                                         @endif
                                     </tr>

@@ -313,9 +313,9 @@
                         var user_id = full.id;
                         var Url = "{{url('/')}}";
                         if(status == 1) {
-                            return '<a class="edit btn btn-success successbtn-sm" href="' + Url + '/admin/user_available/' + user_id + '/0" >Enabled</a>';
+                            return '<a class="edit btn btn-success successbtn-sm" href="' + Url + '/admin/user_status/' + user_id + '/0" >Enabled</a>';
                         } else {
-                            return '<a class="edit btn btn-danger btn-sm" href="' + Url + '/admin/user_available/' + user_id + '/1" >Disabled</a>';
+                            return '<a class="edit btn btn-danger btn-sm" href="' + Url + '/admin/user_status/' + user_id + '/1" >Disabled</a>';
                         }
                     },
                     "orderable": false,

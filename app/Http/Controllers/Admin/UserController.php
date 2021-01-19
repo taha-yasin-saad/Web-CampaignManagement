@@ -84,7 +84,7 @@ class UserController extends Controller
     }
 
     /**
-     * Manage Users From the Enable & Disable Button
+     * Manage Users From the Online & Offline Button
      *
      * <p><img src="images/admin/users/admin-user-enable.png" width="100%"></p>
      *
@@ -101,6 +101,27 @@ class UserController extends Controller
     {
         $user->is_available = $is_available;
         $user->save();
+        
+        return redirect('admin/user')->with('success', 'Updated Successfully');
+    }
+    /**
+     * Manage Users From the Enable & Disable Button
+     *
+     * <p><img src="images/admin/users/admin-user-enable.png" width="100%"></p>
+     *
+     * <p><img src="images/admin/updated-successfully.png" width="100%"></p>
+     * @authenticated
+     *
+     * @response  {
+     * "success":"Updated Successfully"
+     * }
+     *
+     */
+    public function user_status(User $user, $status)
+    {
+        $user->status = $status;
+        $user->save();
+
         return redirect('admin/user')->with('success', 'Updated Successfully');
     }
 }

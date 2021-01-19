@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Product;
 use App\User;
 use App\Workplace;
 use App\WorkplaceUser;
@@ -62,6 +63,12 @@ class UserController extends Controller
         $user_workplaces_ids = $user_workplaces->pluck('id');
         $query['invited_workplaces_count'] = WorkplaceUser::whereNotIn('workplace_id', $user_workplaces_ids)->where('user_id', auth()->id())->count();
         // dd($query);
+
+        $query['recent_products'] = Product::with('workplace','users')->where('workplace_id', session('workplace')->id)->withCount('leads')->orderBy('id','desc')->limit(6)->get();
+
+        $query['max_count_leads_products'] = Product::with('workplace')->where('workplace_id', session('workplace')->id)->withCount('leads')->orderBy('leads_count','desc')->limit(6)->get();
+        
+        $query['max_count_members_workplaces'] = Workplace::where('admin_id', auth()->id())->with('users')->withCount('users')->orderBy('users_count','desc')->limit(6)->get();
 
         return view('dashboard', $query);
     }

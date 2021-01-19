@@ -13,6 +13,7 @@
             <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                 <ol class="breadcrumb">
                     <li><a href="{{url('/')}}">{{$workplace->title}}</a></li>
+                    {{-- <li><a href="{{url($product->id.'/products')}}">{{$product->title}}</a></li> --}}
                     <li class="active">Team</li>
                 </ol>
             </div>

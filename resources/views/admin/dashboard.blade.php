@@ -102,17 +102,18 @@
                                 </li>
                                 <li class="col-middle">
                                     <h4>Total Leads</h4>
-                                    @if($leads_count>0)
-                                    <div class="col-md-6 col-sm-6 col-xs-6 text-center">
-                                        <a href="{{url('admin/lead')}}" class="btn btn-primary m-t-20">View Leads</a>
-                                    </div>
-                                    @endif
+
                                     {{-- <div class="progress">
                                                 <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
                                                     <span class="sr-only">40% Complete (success)</span>
                                                 </div>
                                             </div> --}}
                                 </li>
+                                @if($leads_count>0)
+                                <div class="col-md-6 col-sm-6 col-xs-6 text-center">
+                                    <a href="{{url('admin/lead')}}" class="btn btn-primary m-t-20">View Leads</a>
+                                </div>
+                                @endif
                             </ul>
                         </div>
                     </div>
@@ -122,38 +123,23 @@
         <!--row -->
         <br>
         <!--row -->
-        <div class="row">
+        {{-- <div class="row">
             <div class="col-md-12 col-lg-6 col-sm-12 col-xs-12">
                 <div class="white-box">
-                    <h3 class="box-title">Yearly Users Count</h3>
+                    <h3 class="box-title">Yearly Leads & Users Count</h3>
                     <ul class="list-inline text-right">
                         <li>
                             <h5><i class="fa fa-circle m-r-5 text-info"></i>Users</h5>
                         </li>
-                        {{-- <li>
-                            <h5><i class="fa fa-circle m-r-5 text-danger"></i>Leads</h5>
-                        </li> --}}
-                    </ul>
-                    <div id="yearly-users-logs" style="height: 285px;"></div>
-                </div>
-            </div>
-            <div class="col-md-12 col-lg-6 col-sm-12 col-xs-12">
-                <div class="white-box">
-                    <h3 class="box-title">Yearly Leads Count</h3>
-                    <ul class="list-inline text-right">
-                        {{-- <li>
-                            <h5><i class="fa fa-circle m-r-5 text-info"></i>Users</h5>
-                        </li> --}}
                         <li>
                             <h5><i class="fa fa-circle m-r-5 text-danger"></i>Leads</h5>
                         </li>
                     </ul>
-                    <div id="yearly-leads-logs" style="height: 285px;"></div>
+                    <div id="yearly-leads-users-logs" style="height: 285px;"></div>
                 </div>
             </div>
-        </div>
+        </div> --}}
         <!-- /.row -->
-        <br>
 
         <!--row -->
         <div class="row">
@@ -161,7 +147,7 @@
                 <div class="panel">
                     <div class="panel-heading">Recent Products</div>
                     <div class="table-responsive">
-                        <table class="table table-hover manage-u-table myTables">
+                        <table class="table table-hover manage-u-table datatable_dashboard">
                             <thead>
                                 <tr>
                                     <th style="width: 70px;" class="text-center">#</th>
@@ -194,13 +180,31 @@
                 </div>
             </div>
             <div class="col-md-6 col-lg-3 col-xs-12 col-sm-6"> <img class="img-responsive" alt="user"
-                    src="../plugins/images/big/img1.jpg">
+                    src="{{ asset('images/product-description.png') }}">
                 <div class="white-box">
-                    <div class="text-muted"><span class="m-r-10"><i class="icon-calender"></i> May 16</span> <a
-                            class="text-muted m-l-10" href="#"><i class="fa fa-heart-o"></i> 38</a></div>
-                    <h3 class="m-t-20 m-b-20">Top 20 Models are on the ramp</h3>
-                    <p>Titudin venenatis ipsum ac feugiat. Vestibulum ullamcorper quam.</p>
-                    <button class="btn btn-success btn-rounded waves-effect waves-light m-t-20">Read more</button>
+                    <div class="text-muted">
+                        <span class="m-r-10"><i class="icon-calender"></i>
+                            {{$recent_products[0]->created_at->format('M d')}}</span>
+                        {{-- <a class="text-muted m-l-10" href="#"><i class="fa fa-heart-o"></i> 38</a> --}}
+                    </div>
+                    <h3 class="m-t-20 m-b-20">{{$recent_products[0]->title}}</h3>
+                    <ul>
+                        <li>Workplace Name : {{$recent_products[0]->workplace->title}}</li>
+                        <li>StartDay : {{$recent_products[0]->workplace->startday}}</li>
+                        <li>Time Zone : {{$recent_products[0]->workplace->timezone}}</li>
+                        {{-- <li>
+                            Owner Name : {{$recent_products[0]->users->name}}
+                            <ul>
+                                <li>
+                                    Owner Phone : {{$recent_products[0]->users->phone}}
+                                    Owner Email : {{$recent_products[0]->users->email}}
+                                    Status : @if($recent_products[0]->users->is_available == 1)<span class="badge-success badge">Online</span>@else<span class="badge-danger badge">Offline</span>@endif
+                                </li>
+                            </ul>
+
+                        </li> --}}
+                        <li>Leads Count : {{$recent_products[0]->leads_count}}</li>
+                        {{-- <button class="btn btn-success btn-rounded waves-effect waves-light m-t-20">Read more</button> --}}
                 </div>
             </div>
         </div>
@@ -212,7 +216,7 @@
                 <div class="panel">
                     <div class="panel-heading">Products With Maximum Count Of Leads</div>
                     <div class="table-responsive">
-                        <table class="table table-hover manage-u-table myTables">
+                        <table class="table table-hover manage-u-table datatable_dashboard">
                             <thead>
                                 <tr>
                                     <th style="width: 70px;" class="text-center">#</th>
@@ -245,68 +249,80 @@
                 </div>
             </div>
             <div class="col-md-6 col-lg-3 col-xs-12 col-sm-6"> <img class="img-responsive" alt="user"
-                    src="../plugins/images/big/img1.jpg">
+                    src="{{ asset('images/box.png') }}">
                 <div class="white-box">
-                    <div class="text-muted"><span class="m-r-10"><i class="icon-calender"></i> May 16</span> <a
-                            class="text-muted m-l-10" href="#"><i class="fa fa-heart-o"></i> 38</a></div>
-                    <h3 class="m-t-20 m-b-20">Top 20 Models are on the ramp</h3>
-                    <p>Titudin venenatis ipsum ac feugiat. Vestibulum ullamcorper quam.</p>
-                    <button class="btn btn-success btn-rounded waves-effect waves-light m-t-20">Read more</button>
+                    <div class="text-muted">
+                        <span class="m-r-10"><i class="icon-calender"></i>
+                            {{$max_count_leads_products[0]->created_at->format('M d')}}</span>
+                        {{-- <a class="text-muted m-l-10" href="#"><i class="fa fa-heart-o"></i> 38</a> --}}
+                    </div>
+                    <h3 class="m-t-20 m-b-20">{{$max_count_leads_products[0]->title}}</h3>
+                    <ul>
+                        <li>Workplace Name : {{$max_count_leads_products[0]->workplace->title}}</li>
+                        {{-- <li>Owner Name : {{$max_count_leads_products[0]->user->title}}</li> --}}
+                        <li>Leads Count : {{$max_count_leads_products[0]->leads_count}}</li>
+                        {{-- <button class="btn btn-success btn-rounded waves-effect waves-light m-t-20">Read more</button> --}}
                 </div>
             </div>
         </div>
         <!-- /.row -->
 
-                <!--row -->
-                <div class="row">
-                    <div class="col-md-8 col-lg-9">
-                        <div class="panel">
-                            <div class="panel-heading">Workspaces With Maximum Count Of Members</div>
-                            <div class="table-responsive">
-                                <table class="table table-hover manage-u-table myTables">
-                                    <thead>
-                                        <tr>
-                                            <th style="width: 70px;" class="text-center">#</th>
-                                            <th>NAME</th>
-                                            <th>Website</th>
-                                            <th>Members Count</th>
-                                            {{-- <th>CATEGORY</th> --}}
-                                            {{-- <th>MANAGE</th> --}}
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        @foreach ($max_count_members_workplaces as $key => $max_count_members_workplace)
-                                        <tr>
-                                            <td class="text-center">{{$key + 1}}</td>
-                                            <td><span class="font-medium">{{$max_count_members_workplace->title}}</span>
-                                                {{-- <br/><span class="text-muted">Texas, Unitedd states</span>--}}
-                                            </td>
-                                            <td>{{$max_count_members_workplace->website}}
-                                                {{-- <br /><span class="text-muted">Past : teacher</span> --}}
-                                            </td>
-                                            <td>{{$max_count_members_workplace->users_count}}
-                                                {{-- <br /><span class="text-muted">999 - 444 - 555</span> --}}
-                                            </td>
-                                        </tr>
-                                        @endforeach
-        
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3 col-xs-12 col-sm-6"> <img class="img-responsive" alt="user"
-                            src="../plugins/images/big/img1.jpg">
-                        <div class="white-box">
-                            <div class="text-muted"><span class="m-r-10"><i class="icon-calender"></i> May 16</span> <a
-                                    class="text-muted m-l-10" href="#"><i class="fa fa-heart-o"></i> 38</a></div>
-                            <h3 class="m-t-20 m-b-20">Top 20 Models are on the ramp</h3>
-                            <p>Titudin venenatis ipsum ac feugiat. Vestibulum ullamcorper quam.</p>
-                            <button class="btn btn-success btn-rounded waves-effect waves-light m-t-20">Read more</button>
-                        </div>
+        <!--row -->
+        <div class="row">
+            <div class="col-md-8 col-lg-9">
+                <div class="panel">
+                    <div class="panel-heading">Workspaces With Maximum Count Of Members</div>
+                    <div class="table-responsive">
+                        <table class="table table-hover manage-u-table datatable_dashboard">
+                            <thead>
+                                <tr>
+                                    <th style="width: 70px;" class="text-center">#</th>
+                                    <th>NAME</th>
+                                    <th>Website</th>
+                                    <th>Members Count</th>
+                                    {{-- <th>CATEGORY</th> --}}
+                                    {{-- <th>MANAGE</th> --}}
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($max_count_members_workplaces as $key => $max_count_members_workplace)
+                                <tr>
+                                    <td class="text-center">{{$key + 1}}</td>
+                                    <td><span class="font-medium">{{$max_count_members_workplace->title}}</span>
+                                        {{-- <br/><span class="text-muted">Texas, Unitedd states</span>--}}
+                                    </td>
+                                    <td>{{$max_count_members_workplace->website}}
+                                        {{-- <br /><span class="text-muted">Past : teacher</span> --}}
+                                    </td>
+                                    <td>{{$max_count_members_workplace->users_count}}
+                                        {{-- <br /><span class="text-muted">999 - 444 - 555</span> --}}
+                                    </td>
+                                </tr>
+                                @endforeach
+
+                            </tbody>
+                        </table>
                     </div>
                 </div>
-                <!-- /.row -->
+            </div>
+            <div class="col-md-6 col-lg-3 col-xs-12 col-sm-6"> <img class="img-responsive" alt="user"
+                    src="{{ asset('images/profile.png') }}">
+                <div class="white-box">
+                    <div class="text-muted">
+                        <span class="m-r-10"><i class="icon-calender"></i>
+                            {{$max_count_members_workplaces[0]->created_at->format('M d')}}</span>
+                        {{-- <a class="text-muted m-l-10" href="#"><i class="fa fa-heart-o"></i> 38</a> --}}
+                    </div>
+                    <h3 class="m-t-20 m-b-20">{{$max_count_members_workplaces[0]->title}}</h3>
+                    <ul>
+                        <li>Website Name : {{$max_count_members_workplaces[0]->website}}</li>
+                        {{-- <li>Owner Name : {{$max_count_members_workplaces[0]->user->title}}</li> --}}
+                        <li>Members Count : {{$max_count_members_workplaces[0]->users_count}}</li>
+                        {{-- <button class="btn btn-success btn-rounded waves-effect waves-light m-t-20">Read more</button> --}}
+                </div>
+            </div>
+        </div>
+        <!-- /.row -->
 
         <!--row -->
         <div class="row">
@@ -1595,70 +1611,45 @@
             [].slice.call(document.querySelectorAll('.sttabs')).forEach(function(el) {
                 new CBPFWTabs(el);
             });
-            //yearly-users-leads-logs
-            new Chartist.Line('#yearly-users-logs', {
+
+            //yearly-leads-users-logs
+            new Chartist.Line('#yearly-leads-users-logs', {
             labels: [
                 @for ($i = 7; $i >= 0; $i--)
-                    {{date('Y') - $i}},
+                    {{$users_yearly->max('created_at')->format('Y') - $i}},
                 @endfor
+                // @foreach($users_yearly as $user_yearly)
+                //     $user_yearly->created_at
+                // @endforeach
                 // '2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015'
             ],
             series: [
-            [
-
-            ],
-            [2, 5, 2, 6, 2, 5, 2, 4]
+                [5, 2, 7, 4, 5, 3, 5, 4],
+                [2, 5, 2, 6, 2, 5, 2, 4]
             ]
-            }, {
-            top: 0,
+                }, {
+                    top: 0,
 
-            low: 1,
-            showPoint: true,
+                    low: 1,
+                    showPoint: true,
 
-            fullWidth: true,
-            plugins: [
-            Chartist.plugins.tooltip()
+                    fullWidth: true,
+                    plugins: [
+                Chartist.plugins.tooltip()
             ],
             axisY: {
-            labelInterpolationFnc: function (value) {
-            return (value / 1) + 'k';
-            }
+                labelInterpolationFnc: function (value) {
+                return (value / 1) + '';
+                }
             },
-            showArea: true
-            });
-
-            //yearly-leads-leads-logs
-            new Chartist.Line('#yearly-leads-logs', {
-            labels: [
-                @for ($i = 7; $i >= 0; $i--)
-                    {{date('Y') - $i}},
-                @endfor
-                // '2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015'
-            ],
-            series: [
-            [
-
-            ],
-            [2, 5, 2, 6, 2, 5, 2, 4]
-            ]
-            }, {
-            top: 0,
-
-            low: 1,
-            showPoint: true,
-
-            fullWidth: true,
-            plugins: [
-            Chartist.plugins.tooltip()
-            ],
-            axisY: {
-            labelInterpolationFnc: function (value) {
-            return (value / 1) + 'k';
-            }
-            },
-            showArea: true
+                showArea: true
             });
         })();
-
+        $('.datatable_dashboard').DataTable({
+                dom: 'Bf',
+                buttons: [
+                    'copy', 'csv', 'excel', 'pdf', 'print'
+                ]
+            });
 </script>
 @endsection

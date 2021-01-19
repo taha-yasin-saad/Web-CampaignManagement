@@ -140,6 +140,193 @@
 </div>
 </div>
 <!--row -->
+<br>
+
+<!--row -->
+<div class="row">
+    <div class="col-md-8 col-lg-9">
+        <div class="panel">
+            <div class="panel-heading">Recent Products</div>
+            <div class="table-responsive">
+                <table class="table table-hover manage-u-table datatable_dashboard">
+                    <thead>
+                        <tr>
+                            <th style="width: 70px;" class="text-center">#</th>
+                            <th>NAME</th>
+                            <th>Workpace</th>
+                            <th>Leads Count</th>
+                            {{-- <th>CATEGORY</th> --}}
+                            {{-- <th>MANAGE</th> --}}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($recent_products as $key => $recent_product)
+                        <tr>
+                            <td class="text-center">{{$key + 1}}</td>
+                            <td><span class="font-medium">{{$recent_product->title}}</span>
+                                {{-- <br/><span class="text-muted">Texas, Unitedd states</span>--}}
+                            </td>
+                            <td>{{$recent_product->workplace->title}}
+                                {{-- <br /><span class="text-muted">Past : teacher</span> --}}
+                            </td>
+                            <td>{{$recent_product->leads_count}}
+                                {{-- <br /><span class="text-muted">999 - 444 - 555</span> --}}
+                            </td>
+                        </tr>
+                        @endforeach
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 col-lg-3 col-xs-12 col-sm-6"> <img class="img-responsive" alt="user"
+            src="{{ asset('images/product-description.png') }}">
+        <div class="white-box">
+            <div class="text-muted">
+                <span class="m-r-10"><i class="icon-calender"></i>
+                    {{$recent_products[0]->created_at->format('M d')}}</span>
+                {{-- <a class="text-muted m-l-10" href="#"><i class="fa fa-heart-o"></i> 38</a> --}}
+            </div>
+            <h3 class="m-t-20 m-b-20">{{$recent_products[0]->title}}</h3>
+            <ul>
+                <li>Workplace Name : {{$recent_products[0]->workplace->title}}</li>
+                <li>StartDay : {{$recent_products[0]->workplace->startday}}</li>
+                <li>Time Zone : {{$recent_products[0]->workplace->timezone}}</li>
+                {{-- <li>
+                            Owner Name : {{$recent_products[0]->users->name}}
+                <ul>
+                    <li>
+                        Owner Phone : {{$recent_products[0]->users->phone}}
+                        Owner Email : {{$recent_products[0]->users->email}}
+                        Status : @if($recent_products[0]->users->is_available == 1)<span
+                            class="badge-success badge">Online</span>@else<span
+                            class="badge-danger badge">Offline</span>@endif
+                    </li>
+                </ul>
+
+                </li> --}}
+                <li>Leads Count : {{$recent_products[0]->leads_count}}</li>
+                {{-- <button class="btn btn-success btn-rounded waves-effect waves-light m-t-20">Read more</button> --}}
+        </div>
+    </div>
+</div>
+<!-- /.row -->
+<br>
+<!--row -->
+<div class="row">
+    <div class="col-md-8 col-lg-9">
+        <div class="panel">
+            <div class="panel-heading">Products With Maximum Count Of Leads</div>
+            <div class="table-responsive">
+                <table class="table table-hover manage-u-table datatable_dashboard">
+                    <thead>
+                        <tr>
+                            <th style="width: 70px;" class="text-center">#</th>
+                            <th>NAME</th>
+                            <th>Workpace</th>
+                            <th>Leads Count</th>
+                            {{-- <th>CATEGORY</th> --}}
+                            {{-- <th>MANAGE</th> --}}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($max_count_leads_products as $key => $max_count_leads_product)
+                        <tr>
+                            <td class="text-center">{{$key + 1}}</td>
+                            <td><span class="font-medium">{{$max_count_leads_product->title}}</span>
+                                {{-- <br/><span class="text-muted">Texas, Unitedd states</span>--}}
+                            </td>
+                            <td>{{$max_count_leads_product->workplace->title}}
+                                {{-- <br /><span class="text-muted">Past : teacher</span> --}}
+                            </td>
+                            <td>{{$max_count_leads_product->leads_count}}
+                                {{-- <br /><span class="text-muted">999 - 444 - 555</span> --}}
+                            </td>
+                        </tr>
+                        @endforeach
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 col-lg-3 col-xs-12 col-sm-6"> <img class="img-responsive" alt="user"
+            src="{{ asset('images/box.png') }}">
+        <div class="white-box">
+            <div class="text-muted">
+                <span class="m-r-10"><i class="icon-calender"></i>
+                    {{$max_count_leads_products[0]->created_at->format('M d')}}</span>
+                {{-- <a class="text-muted m-l-10" href="#"><i class="fa fa-heart-o"></i> 38</a> --}}
+            </div>
+            <h3 class="m-t-20 m-b-20">{{$max_count_leads_products[0]->title}}</h3>
+            <ul>
+                <li>Workplace Name : {{$max_count_leads_products[0]->workplace->title}}</li>
+                {{-- <li>Owner Name : {{$max_count_leads_products[0]->user->title}}</li> --}}
+                <li>Leads Count : {{$max_count_leads_products[0]->leads_count}}</li>
+                {{-- <button class="btn btn-success btn-rounded waves-effect waves-light m-t-20">Read more</button> --}}
+        </div>
+    </div>
+</div>
+<!-- /.row -->
+<br>
+
+<!--row -->
+<div class="row">
+    <div class="col-md-8 col-lg-9">
+        <div class="panel">
+            <div class="panel-heading">Workspaces With Maximum Count Of Members</div>
+            <div class="table-responsive">
+                <table class="table table-hover manage-u-table datatable_dashboard">
+                    <thead>
+                        <tr>
+                            <th style="width: 70px;" class="text-center">#</th>
+                            <th>NAME</th>
+                            <th>Website</th>
+                            <th>Members Count</th>
+                            {{-- <th>CATEGORY</th> --}}
+                            {{-- <th>MANAGE</th> --}}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($max_count_members_workplaces as $key => $max_count_members_workplace)
+                        <tr>
+                            <td class="text-center">{{$key + 1}}</td>
+                            <td><span class="font-medium">{{$max_count_members_workplace->title}}</span>
+                                {{-- <br/><span class="text-muted">Texas, Unitedd states</span>--}}
+                            </td>
+                            <td>{{$max_count_members_workplace->website}}
+                                {{-- <br /><span class="text-muted">Past : teacher</span> --}}
+                            </td>
+                            <td>{{$max_count_members_workplace->users_count}}
+                                {{-- <br /><span class="text-muted">999 - 444 - 555</span> --}}
+                            </td>
+                        </tr>
+                        @endforeach
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 col-lg-3 col-xs-12 col-sm-6"> <img class="img-responsive" alt="user"
+            src="{{ asset('images/profile.png') }}">
+        <div class="white-box">
+            <div class="text-muted">
+                <span class="m-r-10"><i class="icon-calender"></i>
+                    {{$max_count_members_workplaces[0]->created_at->format('M d')}}</span>
+                {{-- <a class="text-muted m-l-10" href="#"><i class="fa fa-heart-o"></i> 38</a> --}}
+            </div>
+            <h3 class="m-t-20 m-b-20">{{$max_count_members_workplaces[0]->title}}</h3>
+            <ul>
+                <li>Website Name : {{$max_count_members_workplaces[0]->website}}</li>
+                {{-- <li>Owner Name : {{$max_count_members_workplaces[0]->user->title}}</li> --}}
+                <li>Members Count : {{$max_count_members_workplaces[0]->users_count}}</li>
+                {{-- <button class="btn btn-success btn-rounded waves-effect waves-light m-t-20">Read more</button> --}}
+        </div>
+    </div>
+</div>
+<!-- /.row -->
 <!-- /.row -->
 <div class="row">
     <div class="col-md-12 col-lg-6 col-sm-12 col-xs-12">
