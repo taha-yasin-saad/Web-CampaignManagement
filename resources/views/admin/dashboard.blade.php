@@ -182,29 +182,33 @@
             <div class="col-md-6 col-lg-3 col-xs-12 col-sm-6"> <img class="img-responsive" alt="user"
                     src="{{ asset('images/product-description.png') }}">
                 <div class="white-box">
-                    <div class="text-muted">
-                        <span class="m-r-10"><i class="icon-calender"></i>
-                            {{$recent_products[0]->created_at->format('M d')}}</span>
-                        {{-- <a class="text-muted m-l-10" href="#"><i class="fa fa-heart-o"></i> 38</a> --}}
-                    </div>
-                    <h3 class="m-t-20 m-b-20">{{$recent_products[0]->title}}</h3>
+                    <h3 class="m-t-20 m-b-20">Most Recent product</h3>
                     <ul>
+                        <li>Product Name : {{$recent_products[0]->title}}</li>
                         <li>Workplace Name : {{$recent_products[0]->workplace->title}}</li>
                         <li>StartDay : {{$recent_products[0]->workplace->startday}}</li>
                         <li>Time Zone : {{$recent_products[0]->workplace->timezone}}</li>
                         {{-- <li>
                             Owner Name : {{$recent_products[0]->users->name}}
-                            <ul>
-                                <li>
-                                    Owner Phone : {{$recent_products[0]->users->phone}}
-                                    Owner Email : {{$recent_products[0]->users->email}}
-                                    Status : @if($recent_products[0]->users->is_available == 1)<span class="badge-success badge">Online</span>@else<span class="badge-danger badge">Offline</span>@endif
-                                </li>
-                            </ul>
+                        <ul>
+                            <li>
+                                Owner Phone : {{$recent_products[0]->users->phone}}
+                                Owner Email : {{$recent_products[0]->users->email}}
+                                Status : @if($recent_products[0]->users->is_available == 1)<span
+                                    class="badge-success badge">Online</span>@else<span
+                                    class="badge-danger badge">Offline</span>@endif
+                            </li>
+                        </ul>
 
                         </li> --}}
                         <li>Leads Count : {{$recent_products[0]->leads_count}}</li>
-                        {{-- <button class="btn btn-success btn-rounded waves-effect waves-light m-t-20">Read more</button> --}}
+                    </ul>
+                    {{-- <button class="btn btn-success btn-rounded waves-effect waves-light m-t-20">Read more</button> --}}
+                    <div class="text-muted">
+                        <span class="m-r-10"><i class="icon-calender"></i>
+                            {{$recent_products[0]->created_at->format('M d')}}</span>
+                        {{-- <a class="text-muted m-l-10" href="#"><i class="fa fa-heart-o"></i> 38</a> --}}
+                    </div>
                 </div>
             </div>
         </div>
@@ -251,17 +255,20 @@
             <div class="col-md-6 col-lg-3 col-xs-12 col-sm-6"> <img class="img-responsive" alt="user"
                     src="{{ asset('images/box.png') }}">
                 <div class="white-box">
+
+                    <h3 class="m-t-20 m-b-20">Top Leads Product</h3>
+                    <ul>
+                        <li>Product Name : {{$max_count_leads_products[0]->title}}</li>
+                        <li>Workplace Name : {{$max_count_leads_products[0]->workplace->title}}</li>
+                        {{-- <li>Owner Name : {{$max_count_leads_products[0]->user->title}}</li> --}}
+                        <li>Leads Count : {{$max_count_leads_products[0]->leads_count}}</li>
+                    </ul>
+                    {{-- <button class="btn btn-success btn-rounded waves-effect waves-light m-t-20">Read more</button> --}}
                     <div class="text-muted">
                         <span class="m-r-10"><i class="icon-calender"></i>
                             {{$max_count_leads_products[0]->created_at->format('M d')}}</span>
                         {{-- <a class="text-muted m-l-10" href="#"><i class="fa fa-heart-o"></i> 38</a> --}}
                     </div>
-                    <h3 class="m-t-20 m-b-20">{{$max_count_leads_products[0]->title}}</h3>
-                    <ul>
-                        <li>Workplace Name : {{$max_count_leads_products[0]->workplace->title}}</li>
-                        {{-- <li>Owner Name : {{$max_count_leads_products[0]->user->title}}</li> --}}
-                        <li>Leads Count : {{$max_count_leads_products[0]->leads_count}}</li>
-                        {{-- <button class="btn btn-success btn-rounded waves-effect waves-light m-t-20">Read more</button> --}}
                 </div>
             </div>
         </div>
@@ -308,17 +315,20 @@
             <div class="col-md-6 col-lg-3 col-xs-12 col-sm-6"> <img class="img-responsive" alt="user"
                     src="{{ asset('images/profile.png') }}">
                 <div class="white-box">
+
+                    <h3 class="m-t-20 m-b-20">Top Members Workplace</h3>
+                    <ul>
+                        <li>Workplace Name : {{$max_count_members_workplaces[0]->title}}</li>
+                        <li>Website Name : {{$max_count_members_workplaces[0]->website}}</li>
+                        {{-- <li>Owner Name : {{$max_count_members_workplaces[0]->user->title}}</li> --}}
+                        <li>Members Count : {{$max_count_members_workplaces[0]->users_count}}</li>
+                    </ul>
+                    {{-- <button class="btn btn-success btn-rounded waves-effect waves-light m-t-20">Read more</button> --}}
                     <div class="text-muted">
                         <span class="m-r-10"><i class="icon-calender"></i>
                             {{$max_count_members_workplaces[0]->created_at->format('M d')}}</span>
                         {{-- <a class="text-muted m-l-10" href="#"><i class="fa fa-heart-o"></i> 38</a> --}}
                     </div>
-                    <h3 class="m-t-20 m-b-20">{{$max_count_members_workplaces[0]->title}}</h3>
-                    <ul>
-                        <li>Website Name : {{$max_count_members_workplaces[0]->website}}</li>
-                        {{-- <li>Owner Name : {{$max_count_members_workplaces[0]->user->title}}</li> --}}
-                        <li>Members Count : {{$max_count_members_workplaces[0]->users_count}}</li>
-                        {{-- <button class="btn btn-success btn-rounded waves-effect waves-light m-t-20">Read more</button> --}}
                 </div>
             </div>
         </div>
