@@ -42,6 +42,12 @@
                     <span class="hide-menu"> Leads <span class="fa arrow"></span> </span>
                 </a>
             </li>
+            <li>
+                <a href="{{url('admin/email_log')}}" class="waves-effect"><i class="mdi mdi-account-multiple fa-fw"
+                        data-icon="v"></i>
+                    <span class="hide-menu"> Email Logs <span class="fa arrow"></span> </span>
+                </a>
+            </li>
         </ul>
     </div>
 </div>

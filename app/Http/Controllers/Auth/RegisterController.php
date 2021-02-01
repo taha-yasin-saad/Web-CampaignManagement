@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Log;
 use App\User;
 use App\Http\Controllers\Controller;
 use App\Workplace;
@@ -109,6 +110,10 @@ class RegisterController extends Controller
         $data['mm'] = 'welcome to Closer';
         $data['subject'] = 'welcome to Closer';
         $data['link'] = '#';
+        Log::create([
+            'subject' => 'Welcome to Closer',
+            'email' => $request->email
+        ]);
         \Illuminate\Support\Facades\Mail::send('emails.welcome_email', $data, function ($message) use ($data) {
             $message->from('support@closor.com', 'CLOSOR')->to($data['email'], 'CLOSOR')->subject($data['subject']);
         });
@@ -218,8 +223,12 @@ class RegisterController extends Controller
             if($owner){
                 $data['email'] = $owner->email;
                 $data['mm'] = 'The User('.$user->name.') who has been invited by you to workspace has been registered';
-                $data['subject'] = 'Invitaion Notification';
+                $data['subject'] = 'Invitation Notification';
                 $data['link'] = '#';
+                Log::create([
+                    'subject' => 'Invitation Notification',
+                    'email' => $owner->email
+                ]);
                 \Illuminate\Support\Facades\Mail::send('emails.welcome_email', $data, function ($message) use ($data) {
                     $message->from('support@closor.com', 'CLOSOR')->to($data['email'], 'CLOSOR')->subject($data['subject']);
                 });

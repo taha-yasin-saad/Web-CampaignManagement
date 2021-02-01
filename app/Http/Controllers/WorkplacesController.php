@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Workplace;
+use App\Log;
 use App\Product;
-use App\UserProduct;
-use App\WorkplaceUser;
 use App\Times;
 use App\User;
+use App\UserProduct;
+use App\Workplace;
+use App\WorkplaceUser;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
 /**
  * @group 2.3 Users Workplaces management
@@ -140,8 +140,12 @@ class WorkplacesController extends Controller
 
         $data2['email'] = User::find($save->user_id)->email;
         $data2['mm'] = 'You Have Created a new workspace';
-        $data2['subject'] = 'new workspace';
+        $data2['subject'] = 'New Workspace';
         $data2['link'] = '#';
+        Log::create([
+            'subject' => 'New Workspace',
+            'email' => User::find($save->user_id)->email
+        ]);
         \Illuminate\Support\Facades\Mail::send('emails.welcome_email', $data2, function ($message) use ($data2) {
             $message->from('support@closor.com', 'CLOSOR')->to($data2['email'], 'CLOSOR')->subject($data2['subject']);
         });
@@ -149,11 +153,10 @@ class WorkplacesController extends Controller
     }
 
 
-
     /**
      * Display the specified resource.
      *
-     * @param  \App\Workplace  $workplace
+     * @param  \App\Workplace $workplace
      * @return \Illuminate\Http\Response
      */
     public function show(Workplace $workplace)
@@ -166,6 +169,7 @@ class WorkplacesController extends Controller
         $query['data'] = Product::where('workplace_id', $workplace->id)->get();
         return view('products.index', $query);
     }
+
     /**
      * Workplaces Edit Page
      *
@@ -222,8 +226,12 @@ class WorkplacesController extends Controller
         }
         $data2['email'] = User::find($workplace->admin_id)->email;
         $data2['mm'] = 'You Have Created a new workspace';
-        $data2['subject'] = 'new workspace';
+        $data2['subject'] = 'New Workspace';
         $data2['link'] = '#';
+        Log::create([
+            'subject' => 'New Workspace',
+            'email' => User::find($workplace->admin_id)->email
+        ]);
         \Illuminate\Support\Facades\Mail::send('emails.welcome_email', $data2, function ($message) use ($data2) {
             $message->from('support@closor.com', 'CLOSOR')->to($data2['email'], 'CLOSOR')->subject($data2['subject']);
         });
@@ -440,6 +448,10 @@ class WorkplacesController extends Controller
         //send invitation email
         $data['subject'] = 'CLOSOR Invitation';
         $data['email'] = $request->email;
+        Log::create([
+            'subject' => 'CLOSOR Invitation',
+            'email' => $request->email
+        ]);
         \Illuminate\Support\Facades\Mail::send('auth.email_invite', $data, function ($message) use ($data) {
             $message->from('support@closor.com', 'CLOSOR')->to($data['email'], 'CLOSOR')->subject($data['subject']);
         });
@@ -452,6 +464,7 @@ class WorkplacesController extends Controller
 
         return response()->json(array('code' => '0', 'data' => $all_workspaces), 200, ['Access-Control-Allow-Origin' => '*'], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
     }
+
     /**
      * Single Workplace Team Info View Page
      *
