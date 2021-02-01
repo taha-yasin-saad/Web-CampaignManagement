@@ -8,6 +8,11 @@ use App\Source;
 use App\Workplace;
 use Illuminate\Http\Request;
 
+/**
+ * @group 2.7 Users Product Widget2 management
+ *
+ * Routes To manage Product Widget2 View data For Leads
+ */
 class WidgetController extends Controller
 {
     public function widget($id){
@@ -34,14 +39,14 @@ class WidgetController extends Controller
         //     align-items: center;
         //     height: 100%;
         // }
-        
+
         .iti__hide {
           display: none; }
-        
+
         pre {
           margin: 0 !important;
           display: inline-block; }
-        
+
         .token.operator,
         .token.entity,
         .token.url,
@@ -49,7 +54,7 @@ class WidgetController extends Controller
         .style .token.string,
         .token.variable {
           background: none; }
-        
+
         input, button {
           height: 35px;
           margin: 0;
@@ -60,29 +65,29 @@ class WidgetController extends Controller
           color: inherit; }
           input[disabled], button[disabled] {
             background-color: #eee; }
-        
+
         input, select {
           border: 1px solid #CCC;
           width: 250px; }
-        
+
         ::-webkit-input-placeholder {
           color: #BBB; }
-        
+
         ::-moz-placeholder {
           /* Firefox 19+ */
           color: #BBB;
           opacity: 1; }
-        
+
         :-ms-input-placeholder {
           color: #BBB; }
-          
+
           .iti__flag {background-image: url("https://malexs.net/closor/public/build/img/flags.png");}
 
             @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
               .iti__flag {background-image: url("https://malexs.net/closor/public/build/img/flags@2x.png");}
             }
         </style>
-        
+
         <style>
         .iti {
     position: relative;

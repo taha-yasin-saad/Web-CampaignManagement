@@ -1,0 +1,2875 @@
+{
+    "variables": [],
+    "info": {
+        "name": "Closor API",
+        "_postman_id": "c727e6af-0af1-41f4-837a-0608eab9a806",
+        "description": "",
+        "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.0.0\/collection.json"
+    },
+    "item": [
+        {
+            "name": "0.1 Admin Login management",
+            "description": "\nRoute for Login Admin & Moderator",
+            "item": [
+                {
+                    "name": "Admin Login Page",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "admin-login",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"email\": \"test@demo.com\",\n    \"password\": \"*****\"\n}"
+                        },
+                        "description": "Admin Data Page That Login Admin To the Website and give him access if the validation was right To the Website.\n\n<p><img src=\"images\/admin\/admin-login-page.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Admin Login Request",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "admin.login",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"email\": \"test@demo.com\",\n    \"password\": \"*****\"\n}"
+                        },
+                        "description": "Admin Data Request That Login Admin To the Website and give him access if the validation was right To the Website.\n\n<p><img src=\"images\/admin\/admin-login-page.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "0.2 Login management",
+            "description": "\nRoute for Login Users",
+            "item": [
+                {
+                    "name": "Show the application's login form.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "login",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Handle a login request to the application.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "login",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Log the user out of the application.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "logout",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "User Login Page",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "first",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"email\": \"test@demo.com\",\n    \"password\": \"*****\"\n}"
+                        },
+                        "description": "User Data Page That Login User To the Website and give him access if the validation was right To the Website.\n\n<p><img src=\"images\/users\/users-login-page.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "0.3 Register management",
+            "description": "\nRoute for Register Users",
+            "item": [
+                {
+                    "name": "Show the application registration form.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "register",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "User Register Page",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "register",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"name\": \"demo\",\n    \"email\": \"test@demo.com\",\n    \"phone\": \"123456\",\n    \"country_code\": \"+20\",\n    \"password\": \"******\"\n}"
+                        },
+                        "description": "User Data Request That Register User To the Website and give him access if the validation was right To the Website.\n\n<p><img src=\"images\/users\/users-register-page.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "User Register Page",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "login2",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"name\": \"demo\",\n    \"email\": \"test@demo.com\",\n    \"phone\": \"123456\",\n    \"country_code\": \"+20\",\n    \"password\": \"******\"\n}"
+                        },
+                        "description": "User Data Request That Register User To the Website and give him access if the validation was right To the Website.\n\n<p><img src=\"images\/users\/users-register-page.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "1.1  Admin management",
+            "description": "\n\nPage Group To manage Admin data & Lists Stats Of The Site In General .\n\n<p><img src=\"images\/admin\/admin-login-page.png\" width=\"100%\"><\/p>\n\n<p><img src=\"images\/admin\/admin-management.png\" width=\"100%\"><\/p>",
+            "item": [
+                {
+                    "name": "Dashboard",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "admin\/dashboard",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Is A Dashboard Page That Shows Lists Of Stats & General Data Of The Site In General That admin can view stats and make decisions from the stats brief in front of him to manage the site more efficient .\n\n<p><img src=\"images\/admin\/dashboard.png\" width=\"100%\"><\/p>\n\n- Statistics For All The Site .\n- Diagrams For Data Of Workplaces.\n- Diagrams For Data Of Products.\n- Diagrams For Data Of Users.\n- Diagrams For Data Of Leads.\n- Counter For Workplaces All Over the Site .\n- Counter For Products All Over the Site .\n- Counter For Users All Over the Site .\n- Counter For Leads All Over the Site .",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "1.2  Admin Moderator management",
+            "description": "\nPage Group To manage Moderator data For The Admin Control Panel .\n\n- View the moderator Data Ex. Name, Email & Phone .\n- Create New Moderators for the Site .\n- Edit an existing Moderators from the Edit Button .\n- Delete Moderators From the delete Button .\n\n<p><img src=\"images\/admin\/moderators\/admin-moderator-management.png\" width=\"100%\"><\/p>",
+            "item": [
+                {
+                    "name": "Moderators View Page",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "admin\/moderator",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Is An Admin-Panel Moderator Page That Views Moderators Data Info .\n\n<p><img src=\"images\/admin\/moderators\/admin-moderator-view.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Moderator Create Page",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "admin\/moderator\/create",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"name\": \"demo\",\n    \"email\": \"test@demo.com\",\n    \"phone\": 123456789,\n    \"zones\": \"Alex\"\n}"
+                        },
+                        "description": "Is An Admin-Panel Moderator Page That Creates Moderators To Manage The Web Site Generally .\n\n<p><img src=\"images\/admin\/moderators\/admin-moderator-create.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Moderator Store Data",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "admin\/moderator",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Is An Admin-Panel Moderator Data Request That Stores Moderators Data To Database .\n\n<p><img src=\"images\/admin\/added-successfully.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Moderator Edit Page",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "admin\/moderator\/:moderator\/edit",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"name\": \"demo .\",\n    \"email\": \"test@demo.com .\",\n    \"phone\": 123456789,\n    \"zones\": \"Alex .\"\n}"
+                        },
+                        "description": "Is An Admin-Panel Moderator Page That Edits Moderators To Manage The Web Site Generally .",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Moderator Update Data",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "admin\/moderator\/:moderator",
+                            "query": []
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Is An Admin-Panel Moderator Data Request That Updates Moderators Data To Database .\n\n<p><img src=\"images\/admin\/moderators\/admin-moderator-update.png\" width=\"100%\"><\/p>\n<p><img src=\"images\/admin\/updated-successfully.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Moderator Delete Data",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "admin\/moderator\/:moderator",
+                            "query": []
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Is An Admin-Panel Moderator Data Request That Delete Moderators Data From Database .\n\n<p><img src=\"images\/admin\/moderators\/admin-moderator-delete.png\" width=\"100%\"><\/p>\n<p><img src=\"images\/admin\/deleted-successfully.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "1.3  Admin Users management",
+            "description": "\nPage Group To manage Users data For The Admin Control Panel .\n\n- View the User Data Ex. Name, Email & Phone etc.\n- Filter an existing Users from the Filter Form .\n- Manage Users From the Enable & Disable Button .\n\n<p><img src=\"images\/admin\/users\/admin-user-view.png\" width=\"100%\"><\/p>",
+            "item": [
+                {
+                    "name": "Users View Page",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "admin\/user",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Is An Admin-Panel User Page That Views users Data Info .\n\nForm Filter is used to filtering existing Users To get better results .\n\n<p><img src=\"images\/admin\/users\/admin-user-filter.png\" width=\"100%\"><\/p>\n\nView users Data Info\n\n- View the User Data Ex. Name, Email & Phone etc.\n\n- Manage Users From the Enable & Disable Button .\n\n<p><img src=\"images\/admin\/users\/admin-user-view.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Users View Page",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "admin\/user",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Is An Admin-Panel User Page That Views users Data Info .\n\nForm Filter is used to filtering existing Users To get better results .\n\n<p><img src=\"images\/admin\/users\/admin-user-filter.png\" width=\"100%\"><\/p>\n\nView users Data Info\n\n- View the User Data Ex. Name, Email & Phone etc.\n\n- Manage Users From the Enable & Disable Button .\n\n<p><img src=\"images\/admin\/users\/admin-user-view.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Manage Users From the Enable & Disable Button",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "admin\/user_available\/:user\/:is_available",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "<p><img src=\"images\/admin\/users\/admin-user-enable.png\" width=\"100%\"><\/p>\n\n<p><img src=\"images\/admin\/updated-successfully.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "1.4  Admin Zone management",
+            "description": "\nPage Group To manage Zone data For The Admin Control Panel .\n\n- View the Zone Data Ex. Name, Countries & MANAGE .\n- Create New Zones .\n- Edit an existing Zones from the Edit Button .\n- Delete Zones From the delete Button .\n\n<p><img src=\"images\/admin\/zones\/admin-zones-view.png\" width=\"100%\"><\/p>",
+            "item": [
+                {
+                    "name": "Zones View Page",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "admin\/zone",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Is An Admin-Panel Zone Page That Views Zones Data Info .\n\n<p><img src=\"images\/admin\/zones\/admin-zones-view.png\" width=\"100%\"><\/p>\n\nView Zones Data Info\n\n- View the Zone Data Ex. Name, Countries & MANAGE .\n- Create New Zones for the Site .\n- Edit an existing Zones from the Edit Button .\n- Delete Zones From the delete Button .",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Zone Create Page",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "admin\/zone\/create",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"name\": \"demo\",\n    \"Countries\": \"Alex\"\n}"
+                        },
+                        "description": "Is An Admin-Panel Zone Page That Creates Zones To Manage The Web Site Generally .\n\n<p><img src=\"images\/admin\/zones\/admin-zones-create.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Zone Store Data",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "admin\/zone",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Is An Admin-Panel Zone Data Request That Stores Zones Data To Database .\n\n<p><img src=\"images\/admin\/added-successfully.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Zone Edit Page",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "admin\/zone\/:zone\/edit",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"name\": \"demo\",\n    \"Countries\": \"Alex\"\n}"
+                        },
+                        "description": "Is An Admin-Panel Zone Page That Edits Zones To Manage The Web Site Generally .\n\n<p><img src=\"images\/admin\/zones\/admin-zones-edit.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Zone Update Data",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "admin\/zone\/:zone",
+                            "query": []
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Is An Admin-Panel Zone Data Request That Updates Zones Data To Database .\n\n<p><img src=\"images\/admin\/zones\/admin-zones-update.png\" width=\"100%\"><\/p>\n<p><img src=\"images\/admin\/updated-successfully.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Zone Delete Data",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "admin\/zone\/:zone",
+                            "query": []
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Is An Admin-Panel Zone Data Request That Delete Zones Data From Database .\n\n<p><img src=\"images\/admin\/zones\/admin-zones-delete.png\" width=\"100%\"><\/p>\n\n<p><img src=\"images\/admin\/deleted-successfully.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "1.5  Admin Workplaces management",
+            "description": "\nPage Group To manage Workplaces data For The Admin Control Panel .\n\n- View the Workplaces Data Ex. Title, Count of Products & Created By etc .\n\n<p><img src=\"images\/admin\/workplaces\/admin-workplaces-view.png\" width=\"100%\"><\/p>",
+            "item": [
+                {
+                    "name": "Workplaces View Page",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "admin\/workplace",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Is An Admin-Panel Workplace Page That Views Workplaces Data Info .\n\nForm Filter is used to filtering existing workplaces To get better results .\n\n<p><img src=\"images\/admin\/workplaces\/admin-workplaces-filter.png\" width=\"100%\"><\/p>\n\nView Workplace Data Info\n\n- View the Workplace Data Ex. Title, Count of Products & Created By etc.\n\n<p><img src=\"images\/admin\/workplaces\/admin-workplaces-view.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Workplaces View Page",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "admin\/workplace",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Is An Admin-Panel Workplace Page That Views Workplaces Data Info .\n\nForm Filter is used to filtering existing workplaces To get better results .\n\n<p><img src=\"images\/admin\/workplaces\/admin-workplaces-filter.png\" width=\"100%\"><\/p>\n\nView Workplace Data Info\n\n- View the Workplace Data Ex. Title, Count of Products & Created By etc.\n\n<p><img src=\"images\/admin\/workplaces\/admin-workplaces-view.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Single Workplace Info View Page",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "admin\/workplace-info\/:workplace_id",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Is An Admin-Panel Page For Single Workplace That Views Workplace Data Info .\n\n- View Products For the Workplace .\n- View Products Count For the Single Workplace .\n- Every Product In the WorkPlace With its Stats Ex. Leads Source Name, Leads count, Contacted Leads Count & Team Names That Assigned to this Product .\n- Filter Search to go through every table data .\n\n<p><img src=\"images\/admin\/workplaces\/admin-workplace-products.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Single Workplace Team Info View Page",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "admin\/:workplace_id\/team\/:product_id",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Is An Admin-Panel Page Workplace Team That Views Workplaces Team Data Info That is assigned to the product to manage into the workplaces .\n\n- invite users with the invite button to manage the product that belongs to the workplace .\n<p><img src=\"images\/admin\/workplaces\/admin-workplaces-invite.png\" width=\"100%\"><\/p>\n- counter users that invited to a certain product .\n<p><img src=\"images\/admin\/workplaces\/admin-workplaces-counter.png\" width=\"100%\"><\/p>\n\n\nView Workplace Single Product Team Info & Roles\n\n- View the Workplace Single Product Team Info & Roles Ex. User Name, Products Names That Assigned to the user & User role, etc.\n\n<p><img src=\"images\/admin\/workplaces\/admin-workplace-team.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "1.6  Admin Leads management",
+            "description": "\nPage Group To manage Leads data For The Admin Control Panel .\n\n- View the Leads Data Ex. Lead Name, Workplace Product belongs to & Product etc.\n- Filter an existing Leads from the Filter Form .\n- View Leads Stats the Qualified & Un Qualified Buttons .\n\n<p><img src=\"images\/admin\/leads\/admin-leads-view.png\" width=\"100%\"><\/p>",
+            "item": [
+                {
+                    "name": "Leads View Page",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "admin\/lead",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Is An Admin-Panel Lead Page That Views leads Data Info .\n\nForm Filter is used to filtering existing leads To get better results .\n\n<p><img src=\"images\/admin\/leads\/admin-leads-filter.png\" width=\"100%\"><\/p>\n\nView leads Data Info\n\n- View the Leads Data Ex. Lead Name, Workplace Product belongs to & Product etc.\n\n-View Leads Stats the Qualified & Un Qualified Buttons .\n\n<p><img src=\"images\/admin\/leads\/admin-leads-view.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Leads View Page",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "admin\/lead",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Is An Admin-Panel Lead Page That Views leads Data Info .\n\nForm Filter is used to filtering existing leads To get better results .\n\n<p><img src=\"images\/admin\/leads\/admin-leads-filter.png\" width=\"100%\"><\/p>\n\nView leads Data Info\n\n- View the Leads Data Ex. Lead Name, Workplace Product belongs to & Product etc.\n\n-View Leads Stats the Qualified & Un Qualified Buttons .\n\n<p><img src=\"images\/admin\/leads\/admin-leads-view.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Single Lead Info View Page",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "admin\/lead\/:lead",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Is An Admin-Panel Page For Single Lead That Views Lead Data Info .\n\n- View Products For the Lead .\n- View Products Count For the Single Lead .\n- Every Product In the Lead With its Stats Ex. Leads Source Name, Leads count, Contacted Leads Count & Team Names That Assigned to this Product .\n- Filter Search to go through every table data .\n\n<p><img src=\"images\/admin\/leads\/admin-singlelead-view.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "2.1 Users Get Data Behind the scene.",
+            "description": "\nRoutes for Getting Data Request for site :\n\n- Personalize the country phone code.\n\n- Personalize the country data info.",
+            "item": [
+                {
+                    "name": "Personalize User Phone Code",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "phoneCode\/:code",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "- Personalize the Country Phone Code for later user at the site EX. +2.",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Personalize User Country Data info",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "isoCode\/:code",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "- Personalize User Country Data info for later user at the site EX. ALBANIA.",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "2.1 Users Home management",
+            "description": "\nPage Group To manage General Data for site.\n\n- View the General Data & Routes After Being Authenticated.\n\n<p><img src=\"images\/users\/home\/users-login-page.png\" width=\"100%\"><\/p>",
+            "item": [
+                {
+                    "name": "A Users Login View Page",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "\/",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "User Login Page That Authenticates User license to use the site properly With his personalized data and getting his data from our database for him to serve him.\n\n\n<p><img src=\"images\/users\/home\/users-login-page.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "check",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "check",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Widget View Page",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "widgetView\/:id",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Widget View Page That Views Product Widget at any site the did put in and it's so much customizable by the user customize options :\n\n- The widget colors\n\n- The widget form date Ex. Name, Phone, Email, And Extra 2 Customizable Fields.\n\n<p><img src=\"images\/users\/home\/users-widget-form.png\" width=\"100%\"><\/p>\n\n- The User can change the widget icon easily with the customized Edit widget at the control panel.\n\n- The User can change the widget Text Message bubble easily with the customized Edit widget at the control panel.\n\n<p><img src=\"images\/users\/home\/users-widget-icon.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "2.2 Users Users management",
+            "description": "\nPage Group To manage Users data For The Manager Control Panel .\n\n- View the User Data Ex. Name, Email & Phone etc.\n- Filter an existing Users from the Filter Form .\n- Manage Users From the Enable & Disable Button .\n\n<p><img src=\"images\/users\/home\/users-profile-page.png\" width=\"100%\"><\/p>",
+            "item": [
+                {
+                    "name": "User Profile Page",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "profile",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Is An User Page That Views User Personal Data Info To The User That user can update it for later use.\n\n\nView user Data Info\n\n- View the User Data Ex. Name, Email & Phone etc.\n\n- Manage User Data Change Ex. Name, Email, Phone & Password.\n\n<p><img src=\"images\/users\/home\/users-profile-page.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "User Update Data",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "profile\/:profile",
+                            "query": []
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "User Data Request That Updates User Data To Database.\n\n<p><img src=\"images\/users\/home\/users-profile-page.png\" width=\"100%\"><\/p>\n<p><img src=\"images\/admin\/updated-successfully.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Dashboard Page",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "dashboard",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Is A Dashboard Page That Shows Lists Of Stats & General Data Of The Site In General That User can view stats and make decisions from the stats brief in front of him to manage the Workplace more efficient.\n\n<p><img src=\"images\/users\/dashboard.png\" width=\"100%\"><\/p>\n\n- Statistics For All The Workplaces.\n- Diagrams For Data Of Products.\n- Diagrams For Data Of Teams.\n- Diagrams For Data Of Leads.\n- Counter For Products of All Workplaces.\n- Counter For Team of All Workplaces.\n- Counter For Leads of All Workplaces.",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "2.3 Users Workplaces management",
+            "description": "\nPage Group To manage Workplaces data For The Manager Control Panel.\n\n- View the Workplaces Data Ex. Title, Count of Products & Created By etc.\n\n<p><img src=\"images\/users\/workplaces\/users-workplaces-view.png\" width=\"100%\"><\/p>",
+            "item": [
+                {
+                    "name": "Workplaces View Page",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "workplace",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Is An Control Panel Manager Workplace Page That Views Workplaces Data Info.\n\nView Workplaces Data Info :\n\n- View the Workplace Data Ex. Title, Count of Products & Created By etc.\n\n<p><img src=\"images\/users\/workplaces\/users-workplaces-view.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Workplace Create Page",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "workplace\/create",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"title\": \"demo\",\n    \"timezone\": \"(GMT+02:00) Cairo\",\n    \"website\": \"www.demo.com\",\n    \"startday\": \"Monday\"\n}"
+                        },
+                        "description": "Is An Control Panel Manager Page That Creates Workplaces To Manage It later on the site by the manager and his team.\n\n<p><img src=\"images\/users\/workplaces\/users-workplaces-create.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Workplace Store Data",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "workplace",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Is An Control Panel Manager Data Request That Stores Workplaces Data To Database.\n\n<p><img src=\"images\/users\/added-successfully.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Display the specified resource.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "workplace\/:workplace",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Workplaces Edit Page",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "workplace\/:workplace\/edit",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"title\": \"demo\",\n    \"timezone\": \"(GMT+02:00) Cairo\",\n    \"website\": \"www.demo.com\",\n    \"startday\": \"Monday\"\n}"
+                        },
+                        "description": "Is An Control Panel Manager Page That Edits Workplaces To Manage It later on the site by the manager and his team.",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Workplace Update Data",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "workplace\/:workplace",
+                            "query": []
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Is An Control Panel Manager Data Request That Updates Workplaces Data To Database.\n\n<p><img src=\"images\/users\/workplaces\/users-workplaces-edit.png\" width=\"100%\"><\/p>\n<p><img src=\"images\/users\/updated-successfully.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Workplace Delete Data",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "workplace\/:workplace",
+                            "query": []
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Is An Control Panel Workplace Data Request That Delete Workplaces Data From Database .\n\n<p><img src=\"images\/admin\/moderators\/admin-moderator-delete.png\" width=\"100%\"><\/p>\n<p><img src=\"images\/users\/deleted-successfully.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Invited Workplaces Page",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "invited_workplaces",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Is An Control Panel User Page That shows the user The Workplaces That User Invited to.\n\n<p><img src=\"images\/users\/workplaces\/users-workplaces-invited_workplaces.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "User Workplaces Page",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "user_workplaces",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Is An Control Panel User Page That shows the user The Workplaces That User Is The Owner.\n\n<p><img src=\"images\/users\/workplaces\/users-workplaces-view.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Single Workplace Team Info View Page",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "{workplace_id}\/team",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Is An Control Panel Page Workplace Team That Views Certain Workplace Team Data Info That is assigned to the product to manage into the workplace.\n\n- invite users with the invite button to manage the product that belongs to the workplace.\n\n<p><img src=\"images\/admin\/workplaces\/admin-workplaces-invite.png\" width=\"100%\"><\/p>\n\n- counter users that invited to a certain product.\n\n<p><img src=\"images\/admin\/workplaces\/admin-workplaces-counter.png\" width=\"100%\"><\/p>\n\n\nView Workplace Single Product Team Info & Roles\n\n- View the Workplace Single Product Team Info & Roles Ex. User Name, Products Names That Assigned to the user & User role, etc.\n\n<p><img src=\"images\/admin\/workplaces\/admin-workplace-team.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Single Workplace Team Info View Page",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "{workplace_id}\/team\/:product_id",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Is An Control Panel Page Workplace Team That Views Certain Workplace Team Data Info That is assigned to the product to manage into the workplace.\n\n- invite users with the invite button to manage the product that belongs to the workplace.\n\n<p><img src=\"images\/admin\/workplaces\/admin-workplaces-invite.png\" width=\"100%\"><\/p>\n\n- counter users that invited to a certain product.\n\n<p><img src=\"images\/admin\/workplaces\/admin-workplaces-counter.png\" width=\"100%\"><\/p>\n\n\nView Workplace Single Product Team Info & Roles\n\n- View the Workplace Single Product Team Info & Roles Ex. User Name, Products Names That Assigned to the user & User role, etc.\n\n<p><img src=\"images\/admin\/workplaces\/admin-workplace-team.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "User Invite To Product Page",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "invite\/:workplace",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Is An Control Panel User Page That Invites user To Product And assign a role To work in the product with it.\n\n<p><img src=\"images\/users\/workplaces\/users-workplaces-invite_user.png\" width=\"100%\"><\/p>\n<p><img src=\"images\/users\/workplaces\/users-workplaces-invite_user_product.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "User Invite To Product Request",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "invite_member_workplace",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"email\": \"test@demo.com\",\n    \"products\": \"Product\",\n    \"role\": 0\n}"
+                        },
+                        "description": "Is An Control Panel User Request That Invites users To Product And assign a role To work in the product with it.\n\n<p><img src=\"images\/users\/workplaces\/users-workplaces-invite_user.png\" width=\"100%\"><\/p>\n<p><img src=\"images\/users\/workplaces\/users-workplaces-invite_user_product.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Edit User Role",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "edit_user_role",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Is An Control Panel User Request That Updates User Role To Database.\n\n<p><img src=\"images\/users\/workplaces\/users-workplaces-edit_user_role.png\" width=\"100%\"><\/p>\n<p><img src=\"images\/users\/updated-successfully.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "User Workplaces Remove Request",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "remove_user_from_workspace\/:user_id\/:workplace_id",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Is An Control Panel User Request That Removes user From Workplaces.\n\n<p><img src=\"images\/users\/workplaces\/users-workplaces-remove_user_from_workspace0.png\" width=\"100%\"><\/p>\n<p><img src=\"images\/users\/workplaces\/users-workplaces-remove_user_from_workspace1.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "User Workplaces active Request",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "active_user_in_workspace\/:status\/:user_id\/:workplace_id",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Is An Control Panel User Request That actives user From Workplaces.\n\n<p><img src=\"images\/users\/workplaces\/users-workplaces-active_user_from_workspace.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "2.4 Users WorkPlace Products Management",
+            "description": "\nPage Group To manage Single WorkPlaces Individually For The Manager Control Panel And Give him full access for its all features.\n\n- add product for workplace.\n\n- Add Team members to the team that is working in the product.\n\n- manage team behavior From changing the role for every person on the team in the product Ex. owner , Sales Agent.\n\n- add lead sources for every product in the workplace.\n\n- Every Product In the WorkPlace With its Stats Ex. Leads Source Name, Leads count, Contacted Leads Count & Team Names That Assigned to this Product.\n\n- Filter Search to go through every table data.\n\n- manage every lead source from the Edit page.\n\n<p><img src=\"images\/users\/products\/users-Products-view.png\" width=\"100%\"><\/p>",
+            "item": [
+                {
+                    "name": "Single Workplace Info View Page",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "product",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Is An Control Panel Manager Workplace Page That Views Workplace Products Info.\n\n\n- View Products For the Workplace.\n\n- View The Team That Works For the Workplace At every Product Individually.\n\n- Manage The Team That Works For the Workplace At every Product Individually.\n\n- View Products Count For the Single Workplace.\n\n- Manage Single every Product Individually At The Workplace.\n\n- Every Product In the WorkPlace With its Stats Ex. Leads Source Name, Leads count, Contacted Leads Count & Team Names That Assigned to this Product.\n\n- Filter Search to go through every table data.\n\n<p><img src=\"images\/users\/products\/users-Products-view.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Product Create Page",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "product\/create",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"title\": \"demo\",\n    \"users\": \"demo,test\"\n}"
+                        },
+                        "description": "Is An Control Panel Manager Page That Creates Products To Manage It later on the site by the manager and his team.\n\n<p><img src=\"images\/users\/products\/users-Products-create.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Product Store Data",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "product",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"title\": \"demo\",\n    \"users\": \"demo,test\"\n}"
+                        },
+                        "description": "Is An Control Panel Manager Data Request That Stores Products Data To Database.\n\n<p><img src=\"images\/users\/added-successfully.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Single Product Info View Page",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "product\/:product",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Is An Control Panel Page For Single Product That Views Product Data Info.\n\n- View Members For The Team that is working in the product with info data of them Ex. Name,Email & Phone.\n\n\n<p><img src=\"images\/users\/products\/users-Products-single_product.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Product Edit Page",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "product\/:product\/edit",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"title\": \"Demo\"\n}"
+                        },
+                        "description": "Is An Control Panel Manager Page That Edits Products To Manage It later on the site by the manager and his team.\n\n<p><img src=\"images\/users\/products\/users-Products-edit.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Product Update Data",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "product\/:product",
+                            "query": []
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"title\": \"Demo\"\n}"
+                        },
+                        "description": "Is An Control Panel Manager Data Request That Updates Products Data To Database.\n\n<p><img src=\"images\/users\/products\/users-Products-edit.png\" width=\"100%\"><\/p>\n<p><img src=\"images\/users\/updated-successfully.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Product Delete Data",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "product\/:product",
+                            "query": []
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Is An Control Panel Product Data Request That Delete Products Data From Database .\n\n<p><img src=\"images\/users\/deleted-successfully.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Single Workplace Info View Page",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "{workplace_id}\/products",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Is An Control Panel Manager Workplace Page That Views Workplace Products Info.\n\n\n- View Products For the Workplace.\n\n- View The Team That Works For the Workplace At every Product Individually.\n\n- Manage The Team That Works For the Workplace At every Product Individually.\n\n- View Products Count For the Single Workplace.\n\n- Manage Single every Product Individually At The Workplace.\n\n- Every Product In the WorkPlace With its Stats Ex. Leads Source Name, Leads count, Contacted Leads Count & Team Names That Assigned to this Product.\n\n- Filter Search to go through every table data.\n\n<p><img src=\"images\/users\/products\/users-Products-view.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Product Create Page",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "product\/create\/:workplace_id",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"title\": \"demo\",\n    \"users\": \"demo,test\"\n}"
+                        },
+                        "description": "Is An Control Panel Manager Page That Creates Products To Manage It later on the site by the manager and his team.\n\n<p><img src=\"images\/users\/products\/users-Products-create.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Product Invite Member Request",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "invite_member",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Is An Control Panel Product Data Request That Invites Members To the team of the product To manage it later on .\n\n<p><img src=\"images\/users\/products\/users-Products-invite_member.png\" width=\"100%\"><\/p>\n<p><img src=\"images\/users\/products\/users-Products-invite_member1.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Product Invite Member Widget",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "choose_members",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Is An Control Panel Product Data Widget That Invites Members To the team of the product To manage it later on .\n\n<p><img src=\"images\/users\/products\/users-Products-invite_member.png\" width=\"100%\"><\/p>\n<p><img src=\"images\/users\/products\/users-Products-invite_member1.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Invite Member To certain product",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "add_product_to_user",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Is An Control Panel Product Data Request That Invites Members To the team of the product To manage it later on .\n\n<p><img src=\"images\/users\/products\/users-Products-add_product_to_user1.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "2.5 Users Lead Sources management",
+            "description": "\nPage Group To manage Single Lead Sources For The Manager Control Panel And Give him full access for its all features.\n\n- Add lead sources for every product in the workplace.\n\n- Every lead sources With its Stats Ex. Leads Source Name, Leads count, Contacted Leads Count & Management pages forevery lead source Ex. View , Add & Edit.\n\n- Filter Search to go through every table data.\n\n- manage every lead source from the Edit Widget page.\n\n- View Widget lead source from the view Widget page.\n\n- Add Widget lead source from the Add Widget page.\n\n<p><img src=\"images\/users\/lead_sources\/users-lead_sources-view.png\" width=\"100%\"><\/p>",
+            "item": [
+                {
+                    "name": "Single Lead Source Info View Page",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "sources",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Page Group To manage Single Lead Sources For The Manager Control Panel And Give him full access for its all features.\n\n- Add lead sources for every product in the workplace.\n- Every lead sources With its Stats Ex. Leads Source Name, Leads count, Contacted Leads Count & Management pages forevery lead source Ex. View , Add & Edit.\n- Filter Search to go through every table data.\n- Add Widget lead source from the Add Widget page.\n- View Widget lead source from the view Widget page.\n- manage every lead source from the Edit Widget page.\n<p><img src=\"images\/users\/lead_sources\/users-lead_sources-view.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Lead Source Create Page",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "sources\/create",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"workplace_id\": \"7\",\n    \"name\": \"demo\",\n    \"website\": \"https:\\\/\\\/demo.com\",\n    \"widget_type\": \"icon\",\n    \"alignment\": \"right\",\n    \"primary\": \"#a83434\",\n    \"secondary\": \"#ffffff\",\n    \"icon_type\": \"mdi mdi-headset fa-fw\",\n    \"bubble\": \"on\",\n    \"bubble_line_1\": \"Want to talk to an expert?\",\n    \"bubble_line_2\": \"Our Team is 60 Second Away From You!\",\n    \"bubble_bg_color\": \"#000000\",\n    \"bubble_text_color\": \"#ffffff\",\n    \"text_text\": \"Talk to an expert!\",\n    \"text_round\": \"10\",\n    \"custom_lable_1\": \"phone\",\n    \"custom_lable_2\": \"age\"\n}"
+                        },
+                        "description": "Is An Control Panel Manager Page That Creates Lead Source To Manage It later on the site by the manager and his team.\n\n<p><img src=\"images\/users\/lead_sources\/users-lead_sources-create.png\" width=\"100%\"><\/p>\n<p><img src=\"images\/users\/lead_sources\/users-lead_sources-create1.png\" width=\"100%\"><\/p>\n<p><img src=\"images\/users\/lead_sources\/users-lead_sources-create2.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Lead Source Store Data",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "sources",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"workplace_id\": \"7\",\n    \"name\": \"demo\",\n    \"website\": \"https:\\\/\\\/demo.com\",\n    \"widget_type\": \"icon\",\n    \"alignment\": \"right\",\n    \"primary\": \"#a83434\",\n    \"secondary\": \"#ffffff\",\n    \"icon_type\": \"mdi mdi-headset fa-fw\",\n    \"bubble\": \"on\",\n    \"bubble_line_1\": \"Want to talk to an expert?\",\n    \"bubble_line_2\": \"Our Team is 60 Second Away From You!\",\n    \"bubble_bg_color\": \"#000000\",\n    \"bubble_text_color\": \"#ffffff\",\n    \"text_text\": \"Talk to an expert!\",\n    \"text_round\": \"10\",\n    \"custom_lable_1\": \"phone\",\n    \"custom_lable_2\": \"age\"\n}"
+                        },
+                        "description": "Is An Control Panel Manager Data Request That Stores Lead Sources Data To Database.\n\n<p><img src=\"images\/users\/added-successfully.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Lead Source Edit Page",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "sources\/:source\/edit",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"workplace_id\": \"7\",\n    \"name\": \"demo\",\n    \"website\": \"https:\\\/\\\/demo.com\",\n    \"widget_type\": \"icon\",\n    \"alignment\": \"right\",\n    \"primary\": \"#a83434\",\n    \"secondary\": \"#ffffff\",\n    \"icon_type\": \"mdi mdi-headset fa-fw\",\n    \"bubble\": \"on\",\n    \"bubble_line_1\": \"Want to talk to an expert?\",\n    \"bubble_line_2\": \"Our Team is 60 Second Away From You!\",\n    \"bubble_bg_color\": \"#000000\",\n    \"bubble_text_color\": \"#ffffff\",\n    \"text_text\": \"Talk to an expert!\",\n    \"text_round\": \"10\",\n    \"custom_lable_1\": \"phone\",\n    \"custom_lable_2\": \"age\"\n}"
+                        },
+                        "description": "Is An Control Panel Manager Page That Edits Lead Source To Manage It later on the site by the manager and his team.\n\n<p><img src=\"images\/users\/lead_sources\/users-lead_sources-create.png\" width=\"100%\"><\/p>\n<p><img src=\"images\/users\/lead_sources\/users-lead_sources-create1.png\" width=\"100%\"><\/p>\n<p><img src=\"images\/users\/lead_sources\/users-lead_sources-create2.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Lead Source Update Data",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "sources\/:source",
+                            "query": []
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"workplace_id\": \"7\",\n    \"name\": \"demo\",\n    \"website\": \"https:\\\/\\\/demo.com\",\n    \"widget_type\": \"icon\",\n    \"alignment\": \"right\",\n    \"primary\": \"#a83434\",\n    \"secondary\": \"#ffffff\",\n    \"icon_type\": \"mdi mdi-headset fa-fw\",\n    \"bubble\": \"on\",\n    \"bubble_line_1\": \"Want to talk to an expert?\",\n    \"bubble_line_2\": \"Our Team is 60 Second Away From You!\",\n    \"bubble_bg_color\": \"#000000\",\n    \"bubble_text_color\": \"#ffffff\",\n    \"text_text\": \"Talk to an expert!\",\n    \"text_round\": \"10\",\n    \"custom_lable_1\": \"phone\",\n    \"custom_lable_2\": \"age\"\n}"
+                        },
+                        "description": "Is An Control Panel Manager Data Request That Updates Lead Sources Data To Database.\n\n<p><img src=\"images\/users\/added-successfully.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "2.6 Users Manager Leads management",
+            "description": "\nPage Group To manage Leads data For The Manager Control Panel .\n\n- View the Leads Data Ex. Lead Name, Workplace Product belongs to & Product etc.\n- Filter an existing Leads from the Filter Form.\n- View Leads Stats the Qualified & Un Qualified Buttons.\n\n<p><img src=\"images\/users\/leads\/users-leads-view.png\" width=\"100%\"><\/p>",
+            "item": [
+                {
+                    "name": "Leads View Page",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "leads",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Is An Control Panel Lead Page That Views leads Data Info .\n\nForm Filter is used to filtering existing leads To get better results .\n\n<p><img src=\"images\/admin\/leads\/admin-leads-filter.png\" width=\"100%\"><\/p>\n\nView leads Data Info\n\n- View the Leads Data Ex. Lead Name, Workplace Product belongs to & Product etc.\n\n-View Leads Stats the Qualified & Un Qualified Buttons .\n\n<p><img src=\"images\/users\/leads\/users-leads-view.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Leads View Page",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "leads",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Is An Control Panel Lead Page That Views leads Data Info .\n\nForm Filter is used to filtering existing leads To get better results .\n\n<p><img src=\"images\/admin\/leads\/admin-leads-filter.png\" width=\"100%\"><\/p>\n\nView leads Data Info\n\n- View the Leads Data Ex. Lead Name, Workplace Product belongs to & Product etc.\n\n-View Leads Stats the Qualified & Un Qualified Buttons .\n\n<p><img src=\"images\/users\/leads\/users-leads-view.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Single Lead Info View Page",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "leads\/:lead",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Is An Control Panel Page For Single Lead That Views Lead Data Info .\n\n- View Products For the Lead.\n- View Products Count For the Single Lead.\n- Every Product In the Lead With its Stats Ex. Leads Source Name, Leads count, Contacted Leads Count & Team Names That Assigned to this Product.\n- Filter Search to go through every table data.\n\n<p><img src=\"images\/admin\/leads\/admin-singlelead-view.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "2.7 Users Product Widget management",
+            "description": "\nPage Group To manage Widget View & Submission of the form.\n\n- View the Leads Widget Form Ex. Name, Email, Phone, And another two customizable fields.\n\n<p><img src=\"images\/users\/widget\/users-widget-icon.png\" width=\"100%\"><\/p>\n\n- Submit the Leads Widget Form To The database.\n\n<p><img src=\"images\/users\/widget\/users-widget-form.png\" width=\"100%\"><\/p>",
+            "item": [
+                {
+                    "name": "Widget Form Page",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "widget\/:id",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"name\": \"demo\",\n    \"phone\": \"demo,test\",\n    \"Email\": \"phone\",\n    \"custom_lable_1\": \"phone\",\n    \"custom_lable_2\": \"age\"\n}"
+                        },
+                        "description": "Is An Leads Page That Submit Widget To leads To Manage by the manager and his team Later On.\n\n- View the Leads Widget Form Ex. Name, Email, Phone, And another two customizable fields.\n\n<p><img src=\"images\/users\/widget\/users-widget-icon.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Widget Form Request",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "widgetView\/widget",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"name\": \"demo\",\n    \"phone\": \"demo,test\",\n    \"Email\": \"test@demo.com\",\n    \"custom_lable_1\": \"phone\",\n    \"custom_lable_2\": \"age\"\n}"
+                        },
+                        "description": "Is An Leads Request That Submit Widget To leads by the manager and his team Later On.\n\n- View the Leads Widget Form Ex. Name, Email, Phone, And another two customizable fields.\n\n- Submit the Leads Widget Form To The database.\n\n<p><img src=\"images\/users\/widget\/users-widget-form.png\" width=\"100%\"><\/p>",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "3.1  APIs User management",
+            "description": "\nPage Group To manage Users data From APIs.\n\n- Get the User Data Ex. Name, Email & Phone etc.\n- validator to validate the User Data Ex. Name, Email & Phone etc For Login.\n- Login The User To An App.\n- Update UserData.",
+            "item": [
+                {
+                    "name": "User Login",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/login",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"email\": \"test@demo.com\",\n    \"password\": \"*****\"\n}"
+                        },
+                        "description": "User Data Request That Login User To the app and give him access if the validation was right To the app.",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "User Login Ar",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/login1",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"email\": \"test@demo.com\",\n    \"password\": \"*****\"\n}"
+                        },
+                        "description": "User Data Request That Login User To the app and give him access if the validation was right To the app.",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "User Register",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/login2",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"name\": \"demo\",\n    \"email\": \"test@demo.com\",\n    \"phone\": \"123456\",\n    \"country_code\": \"+20\",\n    \"password\": \"******\"\n}"
+                        },
+                        "description": "User Data Request That Register User To the app and give him access if the validation was right To the app.",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "User Edit Request",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/update_profile",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"name\": \"demo\",\n    \"email\": \"test@demo.com\",\n    \"phone\": \"123456\",\n    \"country_code\": \"+20\",\n    \"password\": \"******\"\n}"
+                        },
+                        "description": "User Data Request That Edit User Data To the app .",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "User Status",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/change_is_available",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"user_id\": \"1\",\n    \"is_available\": \"1\"\n}"
+                        },
+                        "description": "User Data Request That Enables Or Disables User Access To the app .",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "3.2  APIs Workplaces management",
+            "description": "\nPage Group To manage Workplaces data From APIs.\n\n- Get the User Data Ex. Name, Email & Phone etc.\n- validator to validate the User Data Ex. Name, Email & Phone etc For Login.\n- Login The User To An App.\n- Update UserData.",
+            "item": [
+                {
+                    "name": "Widget Form Request",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/widgetView\/widget",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"name\": \"demo\",\n    \"phone\": \"demo,test\",\n    \"Email\": \"test@demo.com\",\n    \"custom_lable_1\": \"phone\",\n    \"custom_lable_2\": \"age\"\n}"
+                        },
+                        "description": "Is An Leads Request That Submit Widget To leads by the manager and his team Later On.\n\n- View the Leads Widget Form Ex. Name, Email, Phone, And another two customizable fields.\n\n- Submit the Leads Widget Form To The database.",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Create Lead Request",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/lead",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"product_id\": \"5\",\n    \"name\": \"demo\",\n    \"phone\": \"demo,test\",\n    \"Email\": \"test@demo.com\",\n    \"custom_lable_1\": \"phone\",\n    \"custom_lable_2\": \"age\"\n}"
+                        },
+                        "description": "Is An Leads Request That Submit leads For Certin Product for the manager and his team Later On.\n\n- Submit the Leads To The database.",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Get Workplaces Request",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/all_workplaces",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Is An Api Request To Get All Workplaces Data.",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Get Products Request",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/all_products",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"workplace_id\": \"5\"\n}"
+                        },
+                        "description": "Is An Api Request To Get All Products Data Of A certin Workplace.",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Get Leads Request",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/all_leads",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Is An Api Request To Get All Leads Data.",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Get User Leads Request",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/user_leads\/:user",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"user_id\": \"5\"\n}"
+                        },
+                        "description": "Is An Api Request To Get All Leads Data Of A Certin User.",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Lead Status Edit Request",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/qualified",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"id\": \"5\",\n    \"status\": \"1\"\n}"
+                        },
+                        "description": "Is An Api Request To Edit All Lead Status.",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/test_notification_user",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/test_notification_user",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "api\/test_notification_device",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/test_notification_device",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "general",
+            "description": "",
+            "item": [
+                {
+                    "name": "Reset Password Request",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/password\/email",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Reset Password User By Sending Request To The Email Registered At The website To Reset password.\n\n- We will send the password reset link to this user. Once we have attempted to send the link, we will examine the response then see the message we need to show to the user. Finally, we'll send out a proper response.",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Reset the given user's password.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/password\/reset",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Display the form to request a password reset link.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "password\/reset",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Send a reset link to the given user.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "password\/email",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Display the password reset view for the given token.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "password\/reset\/:token",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "If no token is present, display the link request form.",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Reset the given user's password.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "password\/reset",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,6093 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>API Reference</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/all.js"></script>
+
+
+          <script>
+        $(function() {
+            setupLanguages(["bash","javascript"]);
+        });
+      </script>
+      </head>
+
+  <body class="">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar.png" />
+      </span>
+    </a>
+    <div class="tocify-wrapper">
+        <img src="images/logo.png" />
+                    <div class="lang-selector">
+                                  <a href="#" data-language-name="bash">bash</a>
+                                  <a href="#" data-language-name="javascript">javascript</a>
+                            </div>
+                            <div class="search">
+              <input type="text" class="search" id="input-search" placeholder="Search">
+            </div>
+            <ul class="search-results"></ul>
+              <div id="toc">
+      </div>
+                    <ul class="toc-footer">
+                                  <li><a href='http://github.com/mpociot/documentarian'>Documentation Powered by Documentarian</a></li>
+                            </ul>
+            </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+          <!-- START_INFO -->
+<h1>Info</h1>
+<p>Welcome to the generated API reference.
+<a href="http://localhost/docs/collection.json">Get Postman Collection</a></p>
+<!-- END_INFO -->
+<h1>0.1 Admin Login management</h1>
+<p>Route for Login Admin &amp; Moderator</p>
+<!-- START_18f69092e65df23bcc6d9f57e4ca2662 -->
+<h2>Admin Login Page</h2>
+<p><br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+Admin Data Page That Login Admin To the Website and give him access if the validation was right To the Website.</p>
+<p><img src="images/admin/admin-login-page.png" width="100%"></p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "/admin-login" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"email":"test@demo.com","password":"*****"}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "/admin-login"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "email": "test@demo.com",
+    "password": "*****"
+}
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "id": 1,
+    "name": "demo",
+    "phone": "01234567890",
+    "country_code": null,
+    "email": "test@demo.com",
+    "email_verified_at": null,
+    "created_at": "2020-01-26 16:26:56",
+    "updated_at": "2021-01-07 13:35:48",
+    "device_token": null,
+    "os": null,
+    "is_available": 1,
+    "products_count": 2,
+    "workplaces_count": 1,
+    "leads_count": 7
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET admin-login</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>email</code></td>
+<td>string</td>
+<td>required</td>
+<td>The email of the Admin.</td>
+</tr>
+<tr>
+<td><code>password</code></td>
+<td>string</td>
+<td>required</td>
+<td>The password of the Admin.</td>
+</tr>
+</tbody>
+</table>
+<!-- END_18f69092e65df23bcc6d9f57e4ca2662 -->
+<!-- START_82dae795cbae227a0f1a48ab41923d78 -->
+<h2>Admin Login Request</h2>
+<p><br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+Admin Data Request That Login Admin To the Website and give him access if the validation was right To the Website.</p>
+<p><img src="images/admin/admin-login-page.png" width="100%"></p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST \
+    "/admin.login" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"email":"test@demo.com","password":"*****"}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "/admin.login"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "email": "test@demo.com",
+    "password": "*****"
+}
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "id": 1,
+    "name": "demo",
+    "phone": "01234567890",
+    "country_code": null,
+    "email": "test@demo.com",
+    "email_verified_at": null,
+    "created_at": "2020-01-26 16:26:56",
+    "updated_at": "2021-01-07 13:35:48",
+    "device_token": null,
+    "os": null,
+    "is_available": 1,
+    "products_count": 2,
+    "workplaces_count": 1,
+    "leads_count": 7
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST admin.login</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>email</code></td>
+<td>string</td>
+<td>required</td>
+<td>The email of the Admin.</td>
+</tr>
+<tr>
+<td><code>password</code></td>
+<td>string</td>
+<td>required</td>
+<td>The password of the Admin.</td>
+</tr>
+</tbody>
+</table>
+<!-- END_82dae795cbae227a0f1a48ab41923d78 -->
+<h1>0.2 Login management</h1>
+<p>Route for Login Users</p>
+<!-- START_66e08d3cc8222573018fed49e121e96d -->
+<h2>Show the application&#039;s login form.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "/login" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "/login"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">null</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET login</code></p>
+<!-- END_66e08d3cc8222573018fed49e121e96d -->
+<!-- START_ba35aa39474cb98cfb31829e70eb8b74 -->
+<h2>Handle a login request to the application.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST \
+    "/login" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "/login"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST login</code></p>
+<!-- END_ba35aa39474cb98cfb31829e70eb8b74 -->
+<!-- START_e65925f23b9bc6b93d9356895f29f80c -->
+<h2>Log the user out of the application.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST \
+    "/logout" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "/logout"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST logout</code></p>
+<!-- END_e65925f23b9bc6b93d9356895f29f80c -->
+<!-- START_dc44652b722af6abcc3925ae84bdee69 -->
+<h2>User Login Page</h2>
+<p><br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+User Data Page That Login User To the Website and give him access if the validation was right To the Website.</p>
+<p><img src="images/users/users-login-page.png" width="100%"></p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "/first" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"email":"test@demo.com","password":"*****"}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "/first"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "email": "test@demo.com",
+    "password": "*****"
+}
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "id": 1,
+    "name": "demo",
+    "phone": "01234567890",
+    "country_code": null,
+    "email": "test@demo.com",
+    "email_verified_at": null,
+    "created_at": "2020-01-26 16:26:56",
+    "updated_at": "2021-01-07 13:35:48",
+    "device_token": null,
+    "os": null,
+    "is_available": 1,
+    "products_count": 2,
+    "workplaces_count": 1,
+    "leads_count": 7
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET first</code></p>
+<p><code>POST first</code></p>
+<p><code>PUT first</code></p>
+<p><code>PATCH first</code></p>
+<p><code>DELETE first</code></p>
+<p><code>OPTIONS first</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>email</code></td>
+<td>string</td>
+<td>required</td>
+<td>The email of the User.</td>
+</tr>
+<tr>
+<td><code>password</code></td>
+<td>string</td>
+<td>required</td>
+<td>The password of the User.</td>
+</tr>
+</tbody>
+</table>
+<!-- END_dc44652b722af6abcc3925ae84bdee69 -->
+<h1>0.3 Register management</h1>
+<p>Route for Register Users</p>
+<!-- START_ff38dfb1bd1bb7e1aa24b4e1792a9768 -->
+<h2>Show the application registration form.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "/register" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "/register"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">null</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET register</code></p>
+<!-- END_ff38dfb1bd1bb7e1aa24b4e1792a9768 -->
+<!-- START_d7aad7b5ac127700500280d511a3db01 -->
+<h2>User Register Page</h2>
+<p><br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+User Data Request That Register User To the Website and give him access if the validation was right To the Website.</p>
+<p><img src="images/users/users-register-page.png" width="100%"></p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST \
+    "/register" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"name":"demo","email":"test@demo.com","phone":"123456","country_code":"+20","password":"******"}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "/register"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "name": "demo",
+    "email": "test@demo.com",
+    "phone": "123456",
+    "country_code": "+20",
+    "password": "******"
+}
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "id": 1,
+    "name": "demo",
+    "phone": "01234567890",
+    "country_code": null,
+    "email": "test@demo.com",
+    "email_verified_at": null,
+    "created_at": "2020-01-26 16:26:56",
+    "updated_at": "2021-01-07 13:35:48",
+    "device_token": null,
+    "os": null,
+    "is_available": 1,
+    "products_count": 2,
+    "workplaces_count": 1,
+    "leads_count": 7
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST register</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td>string</td>
+<td>required</td>
+<td>The name of the user.</td>
+</tr>
+<tr>
+<td><code>email</code></td>
+<td>string</td>
+<td>required</td>
+<td>The email of the user.</td>
+</tr>
+<tr>
+<td><code>phone</code></td>
+<td>string</td>
+<td>required</td>
+<td>The phone of the user.</td>
+</tr>
+<tr>
+<td><code>country_code</code></td>
+<td>string</td>
+<td>required</td>
+<td>The country_code of the user.</td>
+</tr>
+<tr>
+<td><code>password</code></td>
+<td>string</td>
+<td>required</td>
+<td>The password of the user.</td>
+</tr>
+</tbody>
+</table>
+<!-- END_d7aad7b5ac127700500280d511a3db01 -->
+<!-- START_1dbcdf4354aee512432e2c97f2f678e8 -->
+<h2>User Register Page</h2>
+<p><br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+User Data Request That Register User To the Website and give him access if the validation was right To the Website.</p>
+<p><img src="images/users/users-register-page.png" width="100%"></p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "/login2" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"name":"demo","email":"test@demo.com","phone":"123456","country_code":"+20","password":"******"}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "/login2"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "name": "demo",
+    "email": "test@demo.com",
+    "phone": "123456",
+    "country_code": "+20",
+    "password": "******"
+}
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "id": 1,
+    "name": "demo",
+    "phone": "01234567890",
+    "country_code": null,
+    "email": "test@demo.com",
+    "email_verified_at": null,
+    "created_at": "2020-01-26 16:26:56",
+    "updated_at": "2021-01-07 13:35:48",
+    "device_token": null,
+    "os": null,
+    "is_available": 1,
+    "products_count": 2,
+    "workplaces_count": 1,
+    "leads_count": 7
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET login2</code></p>
+<p><code>POST login2</code></p>
+<p><code>PUT login2</code></p>
+<p><code>PATCH login2</code></p>
+<p><code>DELETE login2</code></p>
+<p><code>OPTIONS login2</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td>string</td>
+<td>required</td>
+<td>The name of the user.</td>
+</tr>
+<tr>
+<td><code>email</code></td>
+<td>string</td>
+<td>required</td>
+<td>The email of the user.</td>
+</tr>
+<tr>
+<td><code>phone</code></td>
+<td>string</td>
+<td>required</td>
+<td>The phone of the user.</td>
+</tr>
+<tr>
+<td><code>country_code</code></td>
+<td>string</td>
+<td>required</td>
+<td>The country_code of the user.</td>
+</tr>
+<tr>
+<td><code>password</code></td>
+<td>string</td>
+<td>required</td>
+<td>The password of the user.</td>
+</tr>
+</tbody>
+</table>
+<!-- END_1dbcdf4354aee512432e2c97f2f678e8 -->
+<h1>1.1  Admin management</h1>
+<p>Page Group To manage Admin data &amp; Lists Stats Of The Site In General .</p>
+<p><img src="images/admin/admin-login-page.png" width="100%"></p>
+<p><img src="images/admin/admin-management.png" width="100%"></p>
+<!-- START_8a59594ff635c00027a130968fc47527 -->
+<h2>Dashboard</h2>
+<p><br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+Is A Dashboard Page That Shows Lists Of Stats &amp; General Data Of The Site In General That admin can view stats and make decisions from the stats brief in front of him to manage the site more efficient .</p>
+<p><img src="images/admin/dashboard.png" width="100%"></p>
+<ul>
+<li>Statistics For All The Site .</li>
+<li>Diagrams For Data Of Workplaces.</li>
+<li>Diagrams For Data Of Products.</li>
+<li>Diagrams For Data Of Users.</li>
+<li>Diagrams For Data Of Leads.</li>
+<li>Counter For Workplaces All Over the Site .</li>
+<li>Counter For Products All Over the Site .</li>
+<li>Counter For Users All Over the Site .</li>
+<li>Counter For Leads All Over the Site .</li>
+</ul>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "/admin/dashboard" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "/admin/dashboard"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "workplaces_count": 19,
+    "products_count": 28,
+    "users_count": 32,
+    "leads_count": 86
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET admin/dashboard</code></p>
+<!-- END_8a59594ff635c00027a130968fc47527 -->
+<h1>1.2  Admin Moderator management</h1>
+<p>Page Group To manage Moderator data For The Admin Control Panel .</p>
+<ul>
+<li>View the moderator Data Ex. Name, Email &amp; Phone .</li>
+<li>Create New Moderators for the Site .</li>
+<li>Edit an existing Moderators from the Edit Button .</li>
+<li>Delete Moderators From the delete Button .</li>
+</ul>
+<p><img src="images/admin/moderators/admin-moderator-management.png" width="100%"></p>
+<!-- START_42f1c137c1a4a3c3a7d1a98f743d76f7 -->
+<h2>Moderators View Page</h2>
+<p><br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+Is An Admin-Panel Moderator Page That Views Moderators Data Info .</p>
+<p><img src="images/admin/moderators/admin-moderator-view.png" width="100%"></p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "/admin/moderator" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "/admin/moderator"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "id": 2,
+    "name": "Demo Mato",
+    "phone": 123456789,
+    "email": "test@demo.com",
+    "created_at": "2020-12-29 14:13:08",
+    "updated_at": "2020-12-29 14:13:08",
+    "role": 1
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET admin/moderator</code></p>
+<!-- END_42f1c137c1a4a3c3a7d1a98f743d76f7 -->
+<!-- START_01b7e01eae0845434c2002e47bc1f035 -->
+<h2>Moderator Create Page</h2>
+<p><br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+Is An Admin-Panel Moderator Page That Creates Moderators To Manage The Web Site Generally .</p>
+<p><img src="images/admin/moderators/admin-moderator-create.png" width="100%"></p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "/admin/moderator/create" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"name":"demo","email":"test@demo.com","phone":123456789,"zones":"Alex"}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "/admin/moderator/create"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "name": "demo",
+    "email": "test@demo.com",
+    "phone": 123456789,
+    "zones": "Alex"
+}
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "id": 2,
+    "name": "Demo Mato",
+    "phone": 123456789,
+    "email": "test@demo.com",
+    "created_at": "2020-12-29 14:13:08",
+    "updated_at": "2020-12-29 14:13:08",
+    "role": 1
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET admin/moderator/create</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td>string</td>
+<td>required</td>
+<td>The name of the user.</td>
+</tr>
+<tr>
+<td><code>email</code></td>
+<td>string</td>
+<td>required</td>
+<td>The email of the user.</td>
+</tr>
+<tr>
+<td><code>phone</code></td>
+<td>integer</td>
+<td>required</td>
+<td>The phone of the user.</td>
+</tr>
+<tr>
+<td><code>zones</code></td>
+<td>string</td>
+<td>optional</td>
+<td>The Zone selected of the user.</td>
+</tr>
+</tbody>
+</table>
+<!-- END_01b7e01eae0845434c2002e47bc1f035 -->
+<!-- START_9ace67bf5a097be959593ac93ecddcc2 -->
+<h2>Moderator Store Data</h2>
+<p><br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+Is An Admin-Panel Moderator Data Request That Stores Moderators Data To Database .</p>
+<p><img src="images/admin/added-successfully.png" width="100%"></p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST \
+    "/admin/moderator" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "/admin/moderator"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "success": "Added Successfully"
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST admin/moderator</code></p>
+<!-- END_9ace67bf5a097be959593ac93ecddcc2 -->
+<!-- START_2a667f53fed4f739b41ed0003a388271 -->
+<h2>Moderator Edit Page</h2>
+<p><br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+Is An Admin-Panel Moderator Page That Edits Moderators To Manage The Web Site Generally .</p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "/admin/moderator/1/edit" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"name":"demo .","email":"test@demo.com .","phone":123456789,"zones":"Alex ."}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "/admin/moderator/1/edit"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "name": "demo .",
+    "email": "test@demo.com .",
+    "phone": 123456789,
+    "zones": "Alex ."
+}
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "id": 2,
+    "name": "Demo Mato",
+    "phone": 123456789,
+    "email": "test@demo.com",
+    "created_at": "2020-12-29 14:13:08",
+    "updated_at": "2020-12-29 14:13:08",
+    "role": 1
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET admin/moderator/{moderator}/edit</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td>string</td>
+<td>required</td>
+<td>The name of the user.</td>
+</tr>
+<tr>
+<td><code>email</code></td>
+<td>string</td>
+<td>required</td>
+<td>The email of the user.</td>
+</tr>
+<tr>
+<td><code>phone</code></td>
+<td>integer</td>
+<td>required</td>
+<td>The phone of the user.</td>
+</tr>
+<tr>
+<td><code>zones</code></td>
+<td>string</td>
+<td>optional</td>
+<td>The Zone selected of the user.</td>
+</tr>
+</tbody>
+</table>
+<!-- END_2a667f53fed4f739b41ed0003a388271 -->
+<!-- START_9b6c2330037b0e5193fe78948e5e945c -->
+<h2>Moderator Update Data</h2>
+<p><br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+Is An Admin-Panel Moderator Data Request That Updates Moderators Data To Database .</p>
+<p><img src="images/admin/moderators/admin-moderator-update.png" width="100%"></p>
+<p><img src="images/admin/updated-successfully.png" width="100%"></p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X PUT \
+    "/admin/moderator/1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "/admin/moderator/1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "PUT",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "success": "Updated Successfully"
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>PUT admin/moderator/{moderator}</code></p>
+<p><code>PATCH admin/moderator/{moderator}</code></p>
+<!-- END_9b6c2330037b0e5193fe78948e5e945c -->
+<!-- START_588e95fb6821fb070bbe71063ea23f26 -->
+<h2>Moderator Delete Data</h2>
+<p><br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+Is An Admin-Panel Moderator Data Request That Delete Moderators Data From Database .</p>
+<p><img src="images/admin/moderators/admin-moderator-delete.png" width="100%"></p>
+<p><img src="images/admin/deleted-successfully.png" width="100%"></p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X DELETE \
+    "/admin/moderator/1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "/admin/moderator/1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "DELETE",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "success": "Deleted Successfully"
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>DELETE admin/moderator/{moderator}</code></p>
+<!-- END_588e95fb6821fb070bbe71063ea23f26 -->
+<h1>1.3  Admin Users management</h1>
+<p>Page Group To manage Users data For The Admin Control Panel .</p>
+<ul>
+<li>View the User Data Ex. Name, Email &amp; Phone etc.</li>
+<li>Filter an existing Users from the Filter Form .</li>
+<li>Manage Users From the Enable &amp; Disable Button .</li>
+</ul>
+<p><img src="images/admin/users/admin-user-view.png" width="100%"></p>
+<!-- START_bd487ab94d8034c2d13644bb1772fdfa -->
+<h2>Users View Page</h2>
+<p><br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+Is An Admin-Panel User Page That Views users Data Info .</p>
+<p>Form Filter is used to filtering existing Users To get better results .</p>
+<p><img src="images/admin/users/admin-user-filter.png" width="100%"></p>
+<p>View users Data Info</p>
+<ul>
+<li>
+<p>View the User Data Ex. Name, Email &amp; Phone etc.</p>
+</li>
+<li>
+<p>Manage Users From the Enable &amp; Disable Button .</p>
+</li>
+</ul>
+<p><img src="images/admin/users/admin-user-view.png" width="100%"></p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "/admin/user" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "/admin/user"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "id": 1,
+    "name": "demo",
+    "phone": "01234567890",
+    "country_code": null,
+    "email": "test@demo.com",
+    "email_verified_at": null,
+    "created_at": "2020-01-26 16:26:56",
+    "updated_at": "2021-01-07 13:35:48",
+    "device_token": null,
+    "os": null,
+    "is_available": 1,
+    "products_count": 2,
+    "workplaces_count": 1,
+    "leads_count": 7
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET admin/user</code></p>
+<!-- END_bd487ab94d8034c2d13644bb1772fdfa -->
+<!-- START_71dba47ec1215d1147a3f8e59c55751a -->
+<h2>Users View Page</h2>
+<p><br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+Is An Admin-Panel User Page That Views users Data Info .</p>
+<p>Form Filter is used to filtering existing Users To get better results .</p>
+<p><img src="images/admin/users/admin-user-filter.png" width="100%"></p>
+<p>View users Data Info</p>
+<ul>
+<li>
+<p>View the User Data Ex. Name, Email &amp; Phone etc.</p>
+</li>
+<li>
+<p>Manage Users From the Enable &amp; Disable Button .</p>
+</li>
+</ul>
+<p><img src="images/admin/users/admin-user-view.png" width="100%"></p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST \
+    "/admin/user" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "/admin/user"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "id": 1,
+    "name": "demo",
+    "phone": "01234567890",
+    "country_code": null,
+    "email": "test@demo.com",
+    "email_verified_at": null,
+    "created_at": "2020-01-26 16:26:56",
+    "updated_at": "2021-01-07 13:35:48",
+    "device_token": null,
+    "os": null,
+    "is_available": 1,
+    "products_count": 2,
+    "workplaces_count": 1,
+    "leads_count": 7
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST admin/user</code></p>
+<!-- END_71dba47ec1215d1147a3f8e59c55751a -->
+<!-- START_9fa8fc1e020e7d36ccc1f3b8d7072309 -->
+<h2>Manage Users From the Enable &amp; Disable Button</h2>
+<p><br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small></p>
+<p><img src="images/admin/users/admin-user-enable.png" width="100%"></p>
+<p><img src="images/admin/updated-successfully.png" width="100%"></p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "/admin/user_available/1/1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "/admin/user_available/1/1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "success": "Updated Successfully"
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET admin/user_available/{user}/{is_available}</code></p>
+<!-- END_9fa8fc1e020e7d36ccc1f3b8d7072309 -->
+<h1>1.4  Admin Zone management</h1>
+<p>Page Group To manage Zone data For The Admin Control Panel .</p>
+<ul>
+<li>View the Zone Data Ex. Name, Countries &amp; MANAGE .</li>
+<li>Create New Zones .</li>
+<li>Edit an existing Zones from the Edit Button .</li>
+<li>Delete Zones From the delete Button .</li>
+</ul>
+<p><img src="images/admin/zones/admin-zones-view.png" width="100%"></p>
+<!-- START_64ec3c6c19150d0203cd3a9140836e11 -->
+<h2>Zones View Page</h2>
+<p><br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+Is An Admin-Panel Zone Page That Views Zones Data Info .</p>
+<p><img src="images/admin/zones/admin-zones-view.png" width="100%"></p>
+<p>View Zones Data Info</p>
+<ul>
+<li>View the Zone Data Ex. Name, Countries &amp; MANAGE .</li>
+<li>Create New Zones for the Site .</li>
+<li>Edit an existing Zones from the Edit Button .</li>
+<li>Delete Zones From the delete Button .</li>
+</ul>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "/admin/zone" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "/admin/zone"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "id": 2,
+    "name": "Test",
+    "created_at": "2020-12-29 14:07:43",
+    "updated_at": "2020-12-29 14:07:43",
+    "countries": [
+        {
+            "id": 2,
+            "iso": "AL",
+            "name": "ALBANIA",
+            "nicename": "Albania",
+            "iso3": "ALB",
+            "numcode": 8,
+            "phonecode": 355,
+            "pivot": {
+                "zone_id": 2,
+                "country_id": 2
+            }
+        }
+    ]
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET admin/zone</code></p>
+<!-- END_64ec3c6c19150d0203cd3a9140836e11 -->
+<!-- START_8aa920ff953d3d7b612986df862f0688 -->
+<h2>Zone Create Page</h2>
+<p><br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+Is An Admin-Panel Zone Page That Creates Zones To Manage The Web Site Generally .</p>
+<p><img src="images/admin/zones/admin-zones-create.png" width="100%"></p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "/admin/zone/create" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"name":"demo","Countries":"Alex"}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "/admin/zone/create"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "name": "demo",
+    "Countries": "Alex"
+}
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "id": 2,
+    "name": "Demo Mato",
+    "countries": "ALBANIA"
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET admin/zone/create</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td>string</td>
+<td>required</td>
+<td>The name of the zone.</td>
+</tr>
+<tr>
+<td><code>Countries</code></td>
+<td>string</td>
+<td>required</td>
+<td>The Countries selected of the zone.</td>
+</tr>
+</tbody>
+</table>
+<!-- END_8aa920ff953d3d7b612986df862f0688 -->
+<!-- START_2a549bed4d631a624001ebb1533e1ccd -->
+<h2>Zone Store Data</h2>
+<p><br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+Is An Admin-Panel Zone Data Request That Stores Zones Data To Database .</p>
+<p><img src="images/admin/added-successfully.png" width="100%"></p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST \
+    "/admin/zone" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "/admin/zone"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "success": "Added Successfully"
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST admin/zone</code></p>
+<!-- END_2a549bed4d631a624001ebb1533e1ccd -->
+<!-- START_5b2e7e6bea511d686076f055d3098619 -->
+<h2>Zone Edit Page</h2>
+<p><br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+Is An Admin-Panel Zone Page That Edits Zones To Manage The Web Site Generally .</p>
+<p><img src="images/admin/zones/admin-zones-edit.png" width="100%"></p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "/admin/zone/1/edit" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"name":"demo","Countries":"Alex"}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "/admin/zone/1/edit"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "name": "demo",
+    "Countries": "Alex"
+}
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "id": 2,
+    "name": "Demo",
+    "countries": "ALBANIA"
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET admin/zone/{zone}/edit</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td>string</td>
+<td>required</td>
+<td>The name of the zone.</td>
+</tr>
+<tr>
+<td><code>Countries</code></td>
+<td>string</td>
+<td>required</td>
+<td>The Countries selected of the zone.</td>
+</tr>
+</tbody>
+</table>
+<!-- END_5b2e7e6bea511d686076f055d3098619 -->
+<!-- START_33fdf5c386ce71185ab081d19c5eec4b -->
+<h2>Zone Update Data</h2>
+<p><br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+Is An Admin-Panel Zone Data Request That Updates Zones Data To Database .</p>
+<p><img src="images/admin/zones/admin-zones-update.png" width="100%"></p>
+<p><img src="images/admin/updated-successfully.png" width="100%"></p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X PUT \
+    "/admin/zone/1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "/admin/zone/1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "PUT",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "success": "Updated Successfully"
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>PUT admin/zone/{zone}</code></p>
+<p><code>PATCH admin/zone/{zone}</code></p>
+<!-- END_33fdf5c386ce71185ab081d19c5eec4b -->
+<!-- START_d9e5a24825aa831706830db3050287c3 -->
+<h2>Zone Delete Data</h2>
+<p><br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+Is An Admin-Panel Zone Data Request That Delete Zones Data From Database .</p>
+<p><img src="images/admin/zones/admin-zones-delete.png" width="100%"></p>
+<p><img src="images/admin/deleted-successfully.png" width="100%"></p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X DELETE \
+    "/admin/zone/1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "/admin/zone/1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "DELETE",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "success": "Deleted Successfully"
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>DELETE admin/zone/{zone}</code></p>
+<!-- END_d9e5a24825aa831706830db3050287c3 -->
+<h1>1.5  Admin Workplaces management</h1>
+<p>Page Group To manage Workplaces data For The Admin Control Panel .</p>
+<ul>
+<li>View the Workplaces Data Ex. Title, Count of Products &amp; Created By etc .</li>
+</ul>
+<p><img src="images/admin/workplaces/admin-workplaces-view.png" width="100%"></p>
+<!-- START_699bfa8985dd4a8445e6cd2dba6bd1ff -->
+<h2>Workplaces View Page</h2>
+<p><br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+Is An Admin-Panel Workplace Page That Views Workplaces Data Info .</p>
+<p>Form Filter is used to filtering existing workplaces To get better results .</p>
+<p><img src="images/admin/workplaces/admin-workplaces-filter.png" width="100%"></p>
+<p>View Workplace Data Info</p>
+<ul>
+<li>View the Workplace Data Ex. Title, Count of Products &amp; Created By etc.</li>
+</ul>
+<p><img src="images/admin/workplaces/admin-workplaces-view.png" width="100%"></p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "/admin/workplace" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "/admin/workplace"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "id": 1,
+    "admin_id": 7,
+    "title": "Sherkat",
+    "created_at": "2020-02-14 23:08:32",
+    "updated_at": "2020-06-21 07:21:07",
+    "timezone": "Africa\/Cairo",
+    "website": null,
+    "startday": "Monday",
+    "products_count": 5,
+    "users_count": 5,
+    "leads_count": 12
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET admin/workplace</code></p>
+<!-- END_699bfa8985dd4a8445e6cd2dba6bd1ff -->
+<!-- START_eb470148c94798707e89a20561b7c924 -->
+<h2>Workplaces View Page</h2>
+<p><br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+Is An Admin-Panel Workplace Page That Views Workplaces Data Info .</p>
+<p>Form Filter is used to filtering existing workplaces To get better results .</p>
+<p><img src="images/admin/workplaces/admin-workplaces-filter.png" width="100%"></p>
+<p>View Workplace Data Info</p>
+<ul>
+<li>View the Workplace Data Ex. Title, Count of Products &amp; Created By etc.</li>
+</ul>
+<p><img src="images/admin/workplaces/admin-workplaces-view.png" width="100%"></p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST \
+    "/admin/workplace" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "/admin/workplace"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "id": 1,
+    "admin_id": 7,
+    "title": "Sherkat",
+    "created_at": "2020-02-14 23:08:32",
+    "updated_at": "2020-06-21 07:21:07",
+    "timezone": "Africa\/Cairo",
+    "website": null,
+    "startday": "Monday",
+    "products_count": 5,
+    "users_count": 5,
+    "leads_count": 12
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST admin/workplace</code></p>
+<!-- END_eb470148c94798707e89a20561b7c924 -->
+<!-- START_7f5c3cb4f0190a68ad56c43df0411e0e -->
+<h2>Single Workplace Info View Page</h2>
+<p><br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+Is An Admin-Panel Page For Single Workplace That Views Workplace Data Info .</p>
+<ul>
+<li>View Products For the Workplace .</li>
+<li>View Products Count For the Single Workplace .</li>
+<li>Every Product In the WorkPlace With its Stats Ex. Leads Source Name, Leads count, Contacted Leads Count &amp; Team Names That Assigned to this Product .</li>
+<li>Filter Search to go through every table data .</li>
+</ul>
+<p><img src="images/admin/workplaces/admin-workplace-products.png" width="100%"></p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "/admin/workplace-info/1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "/admin/workplace-info/1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "id": 1,
+    "admin_id": 7,
+    "title": "Sherkat",
+    "created_at": "2020-02-14 23:08:32",
+    "updated_at": "2020-06-21 07:21:07",
+    "timezone": "Africa\/Cairo",
+    "website": null,
+    "startday": "Monday",
+    "products_count": 5,
+    "users_count": 5,
+    "leads_count": 12
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET admin/workplace-info/{workplace_id}</code></p>
+<!-- END_7f5c3cb4f0190a68ad56c43df0411e0e -->
+<!-- START_ad220b974b859e1602a3412dad2df202 -->
+<h2>Single Workplace Team Info View Page</h2>
+<p><br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+Is An Admin-Panel Page Workplace Team That Views Workplaces Team Data Info That is assigned to the product to manage into the workplaces .</p>
+<ul>
+<li>invite users with the invite button to manage the product that belongs to the workplace .
+<p><img src="images/admin/workplaces/admin-workplaces-invite.png" width="100%"></p></li>
+<li>counter users that invited to a certain product .
+<p><img src="images/admin/workplaces/admin-workplaces-counter.png" width="100%"></p></li>
+</ul>
+<p>View Workplace Single Product Team Info &amp; Roles</p>
+<ul>
+<li>View the Workplace Single Product Team Info &amp; Roles Ex. User Name, Products Names That Assigned to the user &amp; User role, etc.</li>
+</ul>
+<p><img src="images/admin/workplaces/admin-workplace-team.png" width="100%"></p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "/admin/1/team/1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "/admin/1/team/1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "id": 7,
+    "name": "demo",
+    "phone": "0123456789",
+    "country_code": 20,
+    "email": "test@demo.com",
+    "email_verified_at": null,
+    "created_at": "2020-02-03 21:36:19",
+    "updated_at": "2020-12-09 01:46:55"
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET admin/{workplace_id}/team/{product_id}</code></p>
+<!-- END_ad220b974b859e1602a3412dad2df202 -->
+<h1>1.6  Admin Leads management</h1>
+<p>Page Group To manage Leads data For The Admin Control Panel .</p>
+<ul>
+<li>View the Leads Data Ex. Lead Name, Workplace Product belongs to &amp; Product etc.</li>
+<li>Filter an existing Leads from the Filter Form .</li>
+<li>View Leads Stats the Qualified &amp; Un Qualified Buttons .</li>
+</ul>
+<p><img src="images/admin/leads/admin-leads-view.png" width="100%"></p>
+<!-- START_d73e5ecdb21a6038d8c7d5ab1b3bff01 -->
+<h2>Leads View Page</h2>
+<p><br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+Is An Admin-Panel Lead Page That Views leads Data Info .</p>
+<p>Form Filter is used to filtering existing leads To get better results .</p>
+<p><img src="images/admin/leads/admin-leads-filter.png" width="100%"></p>
+<p>View leads Data Info</p>
+<ul>
+<li>View the Leads Data Ex. Lead Name, Workplace Product belongs to &amp; Product etc.</li>
+</ul>
+<p>-View Leads Stats the Qualified &amp; Un Qualified Buttons .</p>
+<p><img src="images/admin/leads/admin-leads-view.png" width="100%"></p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "/admin/lead" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "/admin/lead"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "id": 1,
+    "name": "demo",
+    "phone": "01234567890",
+    "country_code": null,
+    "email": "test@demo.com",
+    "email_verified_at": null,
+    "created_at": "2020-01-26 16:26:56",
+    "updated_at": "2021-01-07 13:35:48",
+    "device_token": null,
+    "os": null,
+    "is_available": 1,
+    "products_count": 2,
+    "workplaces_count": 1,
+    "leads_count": 7
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET admin/lead</code></p>
+<!-- END_d73e5ecdb21a6038d8c7d5ab1b3bff01 -->
+<!-- START_8c41b839307216344317ddb09df54c66 -->
+<h2>Leads View Page</h2>
+<p><br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+Is An Admin-Panel Lead Page That Views leads Data Info .</p>
+<p>Form Filter is used to filtering existing leads To get better results .</p>
+<p><img src="images/admin/leads/admin-leads-filter.png" width="100%"></p>
+<p>View leads Data Info</p>
+<ul>
+<li>View the Leads Data Ex. Lead Name, Workplace Product belongs to &amp; Product etc.</li>
+</ul>
+<p>-View Leads Stats the Qualified &amp; Un Qualified Buttons .</p>
+<p><img src="images/admin/leads/admin-leads-view.png" width="100%"></p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST \
+    "/admin/lead" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "/admin/lead"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "id": 1,
+    "name": "demo",
+    "phone": "01234567890",
+    "country_code": null,
+    "email": "test@demo.com",
+    "email_verified_at": null,
+    "created_at": "2020-01-26 16:26:56",
+    "updated_at": "2021-01-07 13:35:48",
+    "device_token": null,
+    "os": null,
+    "is_available": 1,
+    "products_count": 2,
+    "workplaces_count": 1,
+    "leads_count": 7
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST admin/lead</code></p>
+<!-- END_8c41b839307216344317ddb09df54c66 -->
+<!-- START_20c4b3ef2d56086bd3394de6b0a721b8 -->
+<h2>Single Lead Info View Page</h2>
+<p><br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+Is An Admin-Panel Page For Single Lead That Views Lead Data Info .</p>
+<ul>
+<li>View Products For the Lead .</li>
+<li>View Products Count For the Single Lead .</li>
+<li>Every Product In the Lead With its Stats Ex. Leads Source Name, Leads count, Contacted Leads Count &amp; Team Names That Assigned to this Product .</li>
+<li>Filter Search to go through every table data .</li>
+</ul>
+<p><img src="images/admin/leads/admin-singlelead-view.png" width="100%"></p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "/admin/lead/1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "/admin/lead/1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "id": 9,
+    "workplace_id": 8,
+    "user_id": 7,
+    "name": "Bottels Website Form",
+    "country_id": null,
+    "website": "https:\/\/popcorn.com",
+    "product_id": 11,
+    "widget_type": "text",
+    "alignment": "left",
+    "primary": "#34a853",
+    "secondary": "#ffffff",
+    "icon_type": "mdi mdi-phone fa-fw",
+    "bubble": "on",
+    "bubble_line_1": "Want to talk to an expert?",
+    "bubble_line_2": "Our Team is 60 Second Away From You!",
+    "bubble_bg_color": "#959a9e",
+    "bubble_text_color": "#ffffff",
+    "text_text": "Talk to sales expert now!",
+    "text_round": 10
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET admin/lead/{lead}</code></p>
+<!-- END_20c4b3ef2d56086bd3394de6b0a721b8 -->
+<h1>2.1 Users Get Data Behind the scene.</h1>
+<p>Routes for Getting Data Request for site :</p>
+<ul>
+<li>
+<p>Personalize the country phone code.</p>
+</li>
+<li>
+<p>Personalize the country data info.</p>
+<!-- START_01e8e27813cb0bbdbd50865bdad2d538 -->
+<h2>Personalize User Phone Code</h2>
+</li>
+<li>
+<p>Personalize the Country Phone Code for later user at the site EX. +2.</p>
+</li>
+</ul>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "/phoneCode/1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "/phoneCode/1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "phonecode": 355
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET phoneCode/{code}</code></p>
+<!-- END_01e8e27813cb0bbdbd50865bdad2d538 -->
+<!-- START_1142f13834868f73270109636ff92df5 -->
+<h2>Personalize User Country Data info</h2>
+<ul>
+<li>Personalize User Country Data info for later user at the site EX. ALBANIA.</li>
+</ul>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "/isoCode/1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "/isoCode/1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "iso": "AL",
+    "name": "ALBANIA"
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET isoCode/{code}</code></p>
+<!-- END_1142f13834868f73270109636ff92df5 -->
+<h1>2.1 Users Home management</h1>
+<p>Page Group To manage General Data for site.</p>
+<ul>
+<li>View the General Data &amp; Routes After Being Authenticated.</li>
+</ul>
+<p><img src="images/users/home/users-login-page.png" width="100%"></p>
+<!-- START_53be1e9e10a08458929a2e0ea70ddb86 -->
+<h2>A Users Login View Page</h2>
+<p><br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+User Login Page That Authenticates User license to use the site properly With his personalized data and getting his data from our database for him to serve him.</p>
+<p><img src="images/users/home/users-login-page.png" width="100%"></p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "/" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "/"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">null</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET /</code></p>
+<!-- END_53be1e9e10a08458929a2e0ea70ddb86 -->
+<!-- START_b3e829637707a0c3ff670162febb23b9 -->
+<h2>check</h2>
+<p><br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small></p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "/check" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "/check"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (302):</p>
+</blockquote>
+<pre><code class="language-json">null</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET check</code></p>
+<!-- END_b3e829637707a0c3ff670162febb23b9 -->
+<!-- START_62e8dd9f1911aba4a2520fd5a6010e6d -->
+<h2>Widget View Page</h2>
+<p><br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+Widget View Page That Views Product Widget at any site the did put in and it's so much customizable by the user customize options :</p>
+<ul>
+<li>
+<p>The widget colors</p>
+</li>
+<li>
+<p>The widget form date Ex. Name, Phone, Email, And Extra 2 Customizable Fields.</p>
+</li>
+</ul>
+<p><img src="images/users/home/users-widget-form.png" width="100%"></p>
+<ul>
+<li>
+<p>The User can change the widget icon easily with the customized Edit widget at the control panel.</p>
+</li>
+<li>
+<p>The User can change the widget Text Message bubble easily with the customized Edit widget at the control panel.</p>
+</li>
+</ul>
+<p><img src="images/users/home/users-widget-icon.png" width="100%"></p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "/widgetView/1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "/widgetView/1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">null</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET widgetView/{id}</code></p>
+<!-- END_62e8dd9f1911aba4a2520fd5a6010e6d -->
+<h1>2.2 Users Users management</h1>
+<p>Page Group To manage Users data For The Manager Control Panel .</p>
+<ul>
+<li>View the User Data Ex. Name, Email &amp; Phone etc.</li>
+<li>Filter an existing Users from the Filter Form .</li>
+<li>Manage Users From the Enable &amp; Disable Button .</li>
+</ul>
+<p><img src="images/users/home/users-profile-page.png" width="100%"></p>
+<!-- START_47f7fbb6bf98ef4cdc54b10f03cb3bdd -->
+<h2>User Profile Page</h2>
+<p><br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+Is An User Page That Views User Personal Data Info To The User That user can update it for later use.</p>
+<p>View user Data Info</p>
+<ul>
+<li>
+<p>View the User Data Ex. Name, Email &amp; Phone etc.</p>
+</li>
+<li>
+<p>Manage User Data Change Ex. Name, Email, Phone &amp; Password.</p>
+</li>
+</ul>
+<p><img src="images/users/home/users-profile-page.png" width="100%"></p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "/profile" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "/profile"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "id": 1,
+    "name": "demo",
+    "phone": "01234567890",
+    "country_code": null,
+    "email": "test@demo.com",
+    "email_verified_at": null,
+    "created_at": "2020-01-26 16:26:56",
+    "updated_at": "2021-01-07 13:35:48",
+    "device_token": null,
+    "os": null,
+    "is_available": 1,
+    "products_count": 2,
+    "workplaces_count": 1,
+    "leads_count": 7
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET profile</code></p>
+<!-- END_47f7fbb6bf98ef4cdc54b10f03cb3bdd -->
+<!-- START_7e6cecb55fb193c3c475a0c055545685 -->
+<h2>User Update Data</h2>
+<p><br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+User Data Request That Updates User Data To Database.</p>
+<p><img src="images/users/home/users-profile-page.png" width="100%"></p>
+<p><img src="images/admin/updated-successfully.png" width="100%"></p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X PUT \
+    "/profile/1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "/profile/1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "PUT",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "success": "Updated Successfully"
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>PUT profile/{profile}</code></p>
+<p><code>PATCH profile/{profile}</code></p>
+<!-- END_7e6cecb55fb193c3c475a0c055545685 -->
+<!-- START_30059a09ef3f0284c40e4d06962ce08d -->
+<h2>Dashboard Page</h2>
+<p><br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+Is A Dashboard Page That Shows Lists Of Stats &amp; General Data Of The Site In General That User can view stats and make decisions from the stats brief in front of him to manage the Workplace more efficient.</p>
+<p><img src="images/users/dashboard.png" width="100%"></p>
+<ul>
+<li>Statistics For All The Workplaces.</li>
+<li>Diagrams For Data Of Products.</li>
+<li>Diagrams For Data Of Teams.</li>
+<li>Diagrams For Data Of Leads.</li>
+<li>Counter For Products of All Workplaces.</li>
+<li>Counter For Team of All Workplaces.</li>
+<li>Counter For Leads of All Workplaces.</li>
+</ul>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "/dashboard" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "/dashboard"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "user_workplaces_count": 19,
+    "invited_workplaces_count": 28
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET dashboard</code></p>
+<!-- END_30059a09ef3f0284c40e4d06962ce08d -->
+<h1>2.3 Users Workplaces management</h1>
+<p>Page Group To manage Workplaces data For The Manager Control Panel.</p>
+<ul>
+<li>View the Workplaces Data Ex. Title, Count of Products &amp; Created By etc.</li>
+</ul>
+<p><img src="images/users/workplaces/users-workplaces-view.png" width="100%"></p>
+<!-- START_498136219ce762889e3ffd73765b9003 -->
+<h2>Workplaces View Page</h2>
+<p><br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+Is An Control Panel Manager Workplace Page That Views Workplaces Data Info.</p>
+<p>View Workplaces Data Info :</p>
+<ul>
+<li>View the Workplace Data Ex. Title, Count of Products &amp; Created By etc.</li>
+</ul>
+<p><img src="images/users/workplaces/users-workplaces-view.png" width="100%"></p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "/workplace" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "/workplace"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "id": 1,
+    "admin_id": 7,
+    "title": "Sherkat",
+    "created_at": "2020-02-14 23:08:32",
+    "updated_at": "2020-06-21 07:21:07",
+    "timezone": "Africa\/Cairo",
+    "website": null,
+    "startday": "Monday",
+    "products_count": 5,
+    "users_count": 5,
+    "leads_count": 12
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET workplace</code></p>
+<!-- END_498136219ce762889e3ffd73765b9003 -->
+<!-- START_9e2e44622c4b535a411370f0e12f3e1b -->
+<h2>Workplace Create Page</h2>
+<p><br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+Is An Control Panel Manager Page That Creates Workplaces To Manage It later on the site by the manager and his team.</p>
+<p><img src="images/users/workplaces/users-workplaces-create.png" width="100%"></p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "/workplace/create" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"title":"demo","timezone":"(GMT+02:00) Cairo","website":"www.demo.com","startday":"Monday"}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "/workplace/create"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "title": "demo",
+    "timezone": "(GMT+02:00) Cairo",
+    "website": "www.demo.com",
+    "startday": "Monday"
+}
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "success": "Added Successfully"
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET workplace/create</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>title</code></td>
+<td>string</td>
+<td>required</td>
+<td>The title of the workplace.</td>
+</tr>
+<tr>
+<td><code>timezone</code></td>
+<td>string</td>
+<td>required</td>
+<td>The timezone selected of the workplace.</td>
+</tr>
+<tr>
+<td><code>website</code></td>
+<td>string</td>
+<td>optional</td>
+<td>The website of the workplace.</td>
+</tr>
+<tr>
+<td><code>startday</code></td>
+<td>string</td>
+<td>required</td>
+<td>The startday selected of Week Start ON for the workplace.</td>
+</tr>
+</tbody>
+</table>
+<!-- END_9e2e44622c4b535a411370f0e12f3e1b -->
+<!-- START_3fc9a606a4188179a352baefb2070a4f -->
+<h2>Workplace Store Data</h2>
+<p><br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+Is An Control Panel Manager Data Request That Stores Workplaces Data To Database.</p>
+<p><img src="images/users/added-successfully.png" width="100%"></p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST \
+    "/workplace" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "/workplace"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "success": "Added Successfully"
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST workplace</code></p>
+<!-- END_3fc9a606a4188179a352baefb2070a4f -->
+<!-- START_55b4223b6d5c3dae76077fa642c07a2d -->
+<h2>Display the specified resource.</h2>
+<p><br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small></p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "/workplace/1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "/workplace/1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (401):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "message": "Unauthenticated."
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET workplace/{workplace}</code></p>
+<!-- END_55b4223b6d5c3dae76077fa642c07a2d -->
+<!-- START_5f73cc8376a24ab4ac6b7536a76479ee -->
+<h2>Workplaces Edit Page</h2>
+<p><br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+Is An Control Panel Manager Page That Edits Workplaces To Manage It later on the site by the manager and his team.</p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "/workplace/1/edit" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"title":"demo","timezone":"(GMT+02:00) Cairo","website":"www.demo.com","startday":"Monday"}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "/workplace/1/edit"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "title": "demo",
+    "timezone": "(GMT+02:00) Cairo",
+    "website": "www.demo.com",
+    "startday": "Monday"
+}
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "success": "Updated Successfully"
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET workplace/{workplace}/edit</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>title</code></td>
+<td>string</td>
+<td>required</td>
+<td>The title of the workplace.</td>
+</tr>
+<tr>
+<td><code>timezone</code></td>
+<td>string</td>
+<td>required</td>
+<td>The timezone selected of the workplace.</td>
+</tr>
+<tr>
+<td><code>website</code></td>
+<td>string</td>
+<td>optional</td>
+<td>The website of the workplace.</td>
+</tr>
+<tr>
+<td><code>startday</code></td>
+<td>string</td>
+<td>required</td>
+<td>The startday selected of Week Start ON for the workplace.</td>
+</tr>
+</tbody>
+</table>
+<!-- END_5f73cc8376a24ab4ac6b7536a76479ee -->
+<!-- START_75c66c346528f43f48c1da31f07d0f2b -->
+<h2>Workplace Update Data</h2>
+<p><br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+Is An Control Panel Manager Data Request That Updates Workplaces Data To Database.</p>
+<p><img src="images/users/workplaces/users-workplaces-edit.png" width="100%"></p>
+<p><img src="images/users/updated-successfully.png" width="100%"></p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X PUT \
+    "/workplace/1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "/workplace/1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "PUT",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "success": "Updated Successfully"
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>PUT workplace/{workplace}</code></p>
+<p><code>PATCH workplace/{workplace}</code></p>
+<!-- END_75c66c346528f43f48c1da31f07d0f2b -->
+<!-- START_8017da6c5d0ba10a95b74891659b71d7 -->
+<h2>Workplace Delete Data</h2>
+<p><br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+Is An Control Panel Workplace Data Request That Delete Workplaces Data From Database .</p>
+<p><img src="images/admin/moderators/admin-moderator-delete.png" width="100%"></p>
+<p><img src="images/users/deleted-successfully.png" width="100%"></p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X DELETE \
+    "/workplace/1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "/workplace/1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "DELETE",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "success": "Deleted Successfully"
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>DELETE workplace/{workplace}</code></p>
+<!-- END_8017da6c5d0ba10a95b74891659b71d7 -->
+<!-- START_4707187567e347e9f9b62fa54857eb58 -->
+<h2>Invited Workplaces Page</h2>
+<p><br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+Is An Control Panel User Page That shows the user The Workplaces That User Invited to.</p>
+<p><img src="images/users/workplaces/users-workplaces-invited_workplaces.png" width="100%"></p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "/invited_workplaces" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "/invited_workplaces"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "id": 1,
+    "admin_id": 7,
+    "title": "Sherkat",
+    "created_at": "2020-02-14 23:08:32",
+    "updated_at": "2020-06-21 07:21:07",
+    "timezone": "Africa\/Cairo",
+    "website": null,
+    "startday": "Monday",
+    "products_count": 5,
+    "users_count": 5,
+    "leads_count": 12
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET invited_workplaces</code></p>
+<!-- END_4707187567e347e9f9b62fa54857eb58 -->
+<!-- START_2d7929f290ae72d939e89b7e232cdffb -->
+<h2>User Workplaces Page</h2>
+<p><br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+Is An Control Panel User Page That shows the user The Workplaces That User Is The Owner.</p>
+<p><img src="images/users/workplaces/users-workplaces-view.png" width="100%"></p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "/user_workplaces" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "/user_workplaces"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "id": 1,
+    "admin_id": 7,
+    "title": "Sherkat",
+    "created_at": "2020-02-14 23:08:32",
+    "updated_at": "2020-06-21 07:21:07",
+    "timezone": "Africa\/Cairo",
+    "website": null,
+    "startday": "Monday",
+    "products_count": 5,
+    "users_count": 5,
+    "leads_count": 12
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET user_workplaces</code></p>
+<!-- END_2d7929f290ae72d939e89b7e232cdffb -->
+<!-- START_46c3c689207155a26adf42e4d5418a3f -->
+<h2>Single Workplace Team Info View Page</h2>
+<p><br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+Is An Control Panel Page Workplace Team That Views Certain Workplace Team Data Info That is assigned to the product to manage into the workplace.</p>
+<ul>
+<li>invite users with the invite button to manage the product that belongs to the workplace.</li>
+</ul>
+<p><img src="images/admin/workplaces/admin-workplaces-invite.png" width="100%"></p>
+<ul>
+<li>counter users that invited to a certain product.</li>
+</ul>
+<p><img src="images/admin/workplaces/admin-workplaces-counter.png" width="100%"></p>
+<p>View Workplace Single Product Team Info &amp; Roles</p>
+<ul>
+<li>View the Workplace Single Product Team Info &amp; Roles Ex. User Name, Products Names That Assigned to the user &amp; User role, etc.</li>
+</ul>
+<p><img src="images/admin/workplaces/admin-workplace-team.png" width="100%"></p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "/1/team" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "/1/team"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "id": 7,
+    "name": "demo",
+    "phone": "0123456789",
+    "country_code": 20,
+    "email": "test@demo.com",
+    "email_verified_at": null,
+    "created_at": "2020-02-03 21:36:19",
+    "updated_at": "2020-12-09 01:46:55"
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET {workplace_id}/team</code></p>
+<!-- END_46c3c689207155a26adf42e4d5418a3f -->
+<!-- START_c88f787d4d34968e9bf2bfe32466e5f2 -->
+<h2>Single Workplace Team Info View Page</h2>
+<p><br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+Is An Control Panel Page Workplace Team That Views Certain Workplace Team Data Info That is assigned to the product to manage into the workplace.</p>
+<ul>
+<li>invite users with the invite button to manage the product that belongs to the workplace.</li>
+</ul>
+<p><img src="images/admin/workplaces/admin-workplaces-invite.png" width="100%"></p>
+<ul>
+<li>counter users that invited to a certain product.</li>
+</ul>
+<p><img src="images/admin/workplaces/admin-workplaces-counter.png" width="100%"></p>
+<p>View Workplace Single Product Team Info &amp; Roles</p>
+<ul>
+<li>View the Workplace Single Product Team Info &amp; Roles Ex. User Name, Products Names That Assigned to the user &amp; User role, etc.</li>
+</ul>
+<p><img src="images/admin/workplaces/admin-workplace-team.png" width="100%"></p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "/1/team/1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "/1/team/1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "id": 7,
+    "name": "demo",
+    "phone": "0123456789",
+    "country_code": 20,
+    "email": "test@demo.com",
+    "email_verified_at": null,
+    "created_at": "2020-02-03 21:36:19",
+    "updated_at": "2020-12-09 01:46:55"
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET {workplace_id}/team/{product_id}</code></p>
+<!-- END_c88f787d4d34968e9bf2bfe32466e5f2 -->
+<!-- START_9df3cc4d44958b41b6e119ee5744a74f -->
+<h2>User Invite To Product Page</h2>
+<p><br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+Is An Control Panel User Page That Invites user To Product And assign a role To work in the product with it.</p>
+<p><img src="images/users/workplaces/users-workplaces-invite_user.png" width="100%"></p>
+<p><img src="images/users/workplaces/users-workplaces-invite_user_product.png" width="100%"></p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "/invite/1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "/invite/1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "success": "User invited To Product Successfully"
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET invite/{workplace}</code></p>
+<!-- END_9df3cc4d44958b41b6e119ee5744a74f -->
+<!-- START_27f83ba20a35cf3aa377aaa4585b4e26 -->
+<h2>User Invite To Product Request</h2>
+<p><br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+Is An Control Panel User Request That Invites users To Product And assign a role To work in the product with it.</p>
+<p><img src="images/users/workplaces/users-workplaces-invite_user.png" width="100%"></p>
+<p><img src="images/users/workplaces/users-workplaces-invite_user_product.png" width="100%"></p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST \
+    "/invite_member_workplace" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"email":"test@demo.com","products":"Product","role":0}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "/invite_member_workplace"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "email": "test@demo.com",
+    "products": "Product",
+    "role": 0
+}
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "success": "User invited To Product Successfully"
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST invite_member_workplace</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>email</code></td>
+<td>string</td>
+<td>optional</td>
+<td>The email of the workplace.</td>
+</tr>
+<tr>
+<td><code>products</code></td>
+<td>string</td>
+<td>required</td>
+<td>The products selected That Assigned To User.</td>
+</tr>
+<tr>
+<td><code>role</code></td>
+<td>integer</td>
+<td>required</td>
+<td>The role selected of User permission on certin product.</td>
+</tr>
+</tbody>
+</table>
+<!-- END_27f83ba20a35cf3aa377aaa4585b4e26 -->
+<!-- START_b770a79f5f0514009c815eaca6b27451 -->
+<h2>Edit User Role</h2>
+<p><br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+Is An Control Panel User Request That Updates User Role To Database.</p>
+<p><img src="images/users/workplaces/users-workplaces-edit_user_role.png" width="100%"></p>
+<p><img src="images/users/updated-successfully.png" width="100%"></p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST \
+    "/edit_user_role" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "/edit_user_role"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "success": "Role Updated Successfully"
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST edit_user_role</code></p>
+<!-- END_b770a79f5f0514009c815eaca6b27451 -->
+<!-- START_81b98dce40509745c38b0ea8d41364a4 -->
+<h2>User Workplaces Remove Request</h2>
+<p><br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+Is An Control Panel User Request That Removes user From Workplaces.</p>
+<p><img src="images/users/workplaces/users-workplaces-remove_user_from_workspace0.png" width="100%"></p>
+<p><img src="images/users/workplaces/users-workplaces-remove_user_from_workspace1.png" width="100%"></p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "/remove_user_from_workspace/1/1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "/remove_user_from_workspace/1/1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "success": "User Removed From The workspace Successfully"
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET remove_user_from_workspace/{user_id}/{workplace_id}</code></p>
+<!-- END_81b98dce40509745c38b0ea8d41364a4 -->
+<!-- START_7cdf1186f200d47090bfdffb41f52e72 -->
+<h2>User Workplaces active Request</h2>
+<p><br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+Is An Control Panel User Request That actives user From Workplaces.</p>
+<p><img src="images/users/workplaces/users-workplaces-active_user_from_workspace.png" width="100%"></p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "/active_user_in_workspace/1/1/1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "/active_user_in_workspace/1/1/1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "success": "User actived At workspace Successfully"
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET active_user_in_workspace/{status}/{user_id}/{workplace_id}</code></p>
+<!-- END_7cdf1186f200d47090bfdffb41f52e72 -->
+<h1>2.4 Users WorkPlace Products Management</h1>
+<p>Page Group To manage Single WorkPlaces Individually For The Manager Control Panel And Give him full access for its all features.</p>
+<ul>
+<li>
+<p>add product for workplace.</p>
+</li>
+<li>
+<p>Add Team members to the team that is working in the product.</p>
+</li>
+<li>
+<p>manage team behavior From changing the role for every person on the team in the product Ex. owner , Sales Agent.</p>
+</li>
+<li>
+<p>add lead sources for every product in the workplace.</p>
+</li>
+<li>
+<p>Every Product In the WorkPlace With its Stats Ex. Leads Source Name, Leads count, Contacted Leads Count &amp; Team Names That Assigned to this Product.</p>
+</li>
+<li>
+<p>Filter Search to go through every table data.</p>
+</li>
+<li>
+<p>manage every lead source from the Edit page.</p>
+</li>
+</ul>
+<p><img src="images/users/products/users-Products-view.png" width="100%"></p>
+<!-- START_b63c55c4bd1dca269829c5efb74328c8 -->
+<h2>Single Workplace Info View Page</h2>
+<p><br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+Is An Control Panel Manager Workplace Page That Views Workplace Products Info.</p>
+<ul>
+<li>
+<p>View Products For the Workplace.</p>
+</li>
+<li>
+<p>View The Team That Works For the Workplace At every Product Individually.</p>
+</li>
+<li>
+<p>Manage The Team That Works For the Workplace At every Product Individually.</p>
+</li>
+<li>
+<p>View Products Count For the Single Workplace.</p>
+</li>
+<li>
+<p>Manage Single every Product Individually At The Workplace.</p>
+</li>
+<li>
+<p>Every Product In the WorkPlace With its Stats Ex. Leads Source Name, Leads count, Contacted Leads Count &amp; Team Names That Assigned to this Product.</p>
+</li>
+<li>
+<p>Filter Search to go through every table data.</p>
+</li>
+</ul>
+<p><img src="images/users/products/users-Products-view.png" width="100%"></p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "/product" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "/product"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "id": 1,
+    "admin_id": 7,
+    "title": "Sherkat",
+    "created_at": "2020-02-14 23:08:32",
+    "updated_at": "2020-06-21 07:21:07",
+    "timezone": "Africa\/Cairo",
+    "website": null,
+    "startday": "Monday",
+    "products_count": 5,
+    "users_count": 5,
+    "leads_count": 12
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET product</code></p>
+<!-- END_b63c55c4bd1dca269829c5efb74328c8 -->
+<!-- START_22a05e6d736a231cc1f66b3f4fa112c1 -->
+<h2>Product Create Page</h2>
+<p><br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+Is An Control Panel Manager Page That Creates Products To Manage It later on the site by the manager and his team.</p>
+<p><img src="images/users/products/users-Products-create.png" width="100%"></p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "/product/create" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"title":"demo","users":"demo,test"}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "/product/create"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "title": "demo",
+    "users": "demo,test"
+}
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "success": "Added Successfully"
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET product/create</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>title</code></td>
+<td>string</td>
+<td>required</td>
+<td>The title of the Product.</td>
+</tr>
+<tr>
+<td><code>users</code></td>
+<td>string</td>
+<td>required</td>
+<td>The users selected to The Team Managing the product.</td>
+</tr>
+</tbody>
+</table>
+<!-- END_22a05e6d736a231cc1f66b3f4fa112c1 -->
+<!-- START_dfe6fdb3ab2b4c4c229bf21ba5b32643 -->
+<h2>Product Store Data</h2>
+<p><br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+Is An Control Panel Manager Data Request That Stores Products Data To Database.</p>
+<p><img src="images/users/added-successfully.png" width="100%"></p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST \
+    "/product" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"title":"demo","users":"demo,test"}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "/product"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "title": "demo",
+    "users": "demo,test"
+}
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "success": "Added Successfully"
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST product</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>title</code></td>
+<td>string</td>
+<td>required</td>
+<td>The title of the Product.</td>
+</tr>
+<tr>
+<td><code>users</code></td>
+<td>string</td>
+<td>required</td>
+<td>The users selected to The Team Managing the product.</td>
+</tr>
+</tbody>
+</table>
+<!-- END_dfe6fdb3ab2b4c4c229bf21ba5b32643 -->
+<!-- START_21f3764688b42137635ec43b3339bda5 -->
+<h2>Single Product Info View Page</h2>
+<p><br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+Is An Control Panel Page For Single Product That Views Product Data Info.</p>
+<ul>
+<li>View Members For The Team that is working in the product with info data of them Ex. Name,Email &amp; Phone.</li>
+</ul>
+<p><img src="images/users/products/users-Products-single_product.png" width="100%"></p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "/product/1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "/product/1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "id": 9,
+    "name": "test",
+    "email": "test@demo.com",
+    "phone": "0123456789",
+    "created_at": "2020-02-14 23:08:32",
+    "updated_at": "2020-06-21 07:21:07"
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET product/{product}</code></p>
+<!-- END_21f3764688b42137635ec43b3339bda5 -->
+<!-- START_a43ca982c814398a9232bb7e42ea2a2a -->
+<h2>Product Edit Page</h2>
+<p><br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+Is An Control Panel Manager Page That Edits Products To Manage It later on the site by the manager and his team.</p>
+<p><img src="images/users/products/users-Products-edit.png" width="100%"></p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "/product/1/edit" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"title":"Demo"}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "/product/1/edit"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "title": "Demo"
+}
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "success": "Updated Successfully"
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET product/{product}/edit</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>title</code></td>
+<td>string</td>
+<td>required</td>
+<td>The title of the Product.</td>
+</tr>
+</tbody>
+</table>
+<!-- END_a43ca982c814398a9232bb7e42ea2a2a -->
+<!-- START_476695cb4ed1e5a2d79d11db4b0b2080 -->
+<h2>Product Update Data</h2>
+<p><br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+Is An Control Panel Manager Data Request That Updates Products Data To Database.</p>
+<p><img src="images/users/products/users-Products-edit.png" width="100%"></p>
+<p><img src="images/users/updated-successfully.png" width="100%"></p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X PUT \
+    "/product/1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"title":"Demo"}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "/product/1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "title": "Demo"
+}
+
+fetch(url, {
+    method: "PUT",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "success": "Updated Successfully"
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>PUT product/{product}</code></p>
+<p><code>PATCH product/{product}</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>title</code></td>
+<td>string</td>
+<td>required</td>
+<td>The title of the Product.</td>
+</tr>
+</tbody>
+</table>
+<!-- END_476695cb4ed1e5a2d79d11db4b0b2080 -->
+<!-- START_2aeea7ca8dc8189a66bbdb881a5a9bb4 -->
+<h2>Product Delete Data</h2>
+<p><br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+Is An Control Panel Product Data Request That Delete Products Data From Database .</p>
+<p><img src="images/users/deleted-successfully.png" width="100%"></p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X DELETE \
+    "/product/1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "/product/1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "DELETE",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "success": "Deleted Successfully"
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>DELETE product/{product}</code></p>
+<!-- END_2aeea7ca8dc8189a66bbdb881a5a9bb4 -->
+<!-- START_c88311d39455b3dc64c67878e4aa7924 -->
+<h2>Single Workplace Info View Page</h2>
+<p><br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+Is An Control Panel Manager Workplace Page That Views Workplace Products Info.</p>
+<ul>
+<li>
+<p>View Products For the Workplace.</p>
+</li>
+<li>
+<p>View The Team That Works For the Workplace At every Product Individually.</p>
+</li>
+<li>
+<p>Manage The Team That Works For the Workplace At every Product Individually.</p>
+</li>
+<li>
+<p>View Products Count For the Single Workplace.</p>
+</li>
+<li>
+<p>Manage Single every Product Individually At The Workplace.</p>
+</li>
+<li>
+<p>Every Product In the WorkPlace With its Stats Ex. Leads Source Name, Leads count, Contacted Leads Count &amp; Team Names That Assigned to this Product.</p>
+</li>
+<li>
+<p>Filter Search to go through every table data.</p>
+</li>
+</ul>
+<p><img src="images/users/products/users-Products-view.png" width="100%"></p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "/1/products" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "/1/products"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "id": 1,
+    "admin_id": 7,
+    "title": "Sherkat",
+    "created_at": "2020-02-14 23:08:32",
+    "updated_at": "2020-06-21 07:21:07",
+    "timezone": "Africa\/Cairo",
+    "website": null,
+    "startday": "Monday",
+    "products_count": 5,
+    "users_count": 5,
+    "leads_count": 12
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET {workplace_id}/products</code></p>
+<!-- END_c88311d39455b3dc64c67878e4aa7924 -->
+<!-- START_7f1bd779a417892338bb9436ac4a781a -->
+<h2>Product Create Page</h2>
+<p><br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+Is An Control Panel Manager Page That Creates Products To Manage It later on the site by the manager and his team.</p>
+<p><img src="images/users/products/users-Products-create.png" width="100%"></p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "/product/create/1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"title":"demo","users":"demo,test"}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "/product/create/1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "title": "demo",
+    "users": "demo,test"
+}
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "success": "Added Successfully"
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET product/create/{workplace_id}</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>title</code></td>
+<td>string</td>
+<td>required</td>
+<td>The title of the Product.</td>
+</tr>
+<tr>
+<td><code>users</code></td>
+<td>string</td>
+<td>required</td>
+<td>The users selected to The Team Managing the product.</td>
+</tr>
+</tbody>
+</table>
+<!-- END_7f1bd779a417892338bb9436ac4a781a -->
+<!-- START_f93f2c9646cf80d334a3abcd9d5c5762 -->
+<h2>Product Invite Member Request</h2>
+<p><br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+Is An Control Panel Product Data Request That Invites Members To the team of the product To manage it later on .</p>
+<p><img src="images/users/products/users-Products-invite_member.png" width="100%"></p>
+<p><img src="images/users/products/users-Products-invite_member1.png" width="100%"></p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST \
+    "/invite_member" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "/invite_member"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "success": "Member added Successfully"
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST invite_member</code></p>
+<!-- END_f93f2c9646cf80d334a3abcd9d5c5762 -->
+<!-- START_c64165b035a2961a0ad8945091145a1c -->
+<h2>Product Invite Member Widget</h2>
+<p><br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+Is An Control Panel Product Data Widget That Invites Members To the team of the product To manage it later on .</p>
+<p><img src="images/users/products/users-Products-invite_member.png" width="100%"></p>
+<p><img src="images/users/products/users-Products-invite_member1.png" width="100%"></p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST \
+    "/choose_members" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "/choose_members"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "success": "Member added Successfully"
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST choose_members</code></p>
+<!-- END_c64165b035a2961a0ad8945091145a1c -->
+<!-- START_7a139cf107f19ae9163446ce5ae22ee0 -->
+<h2>Invite Member To certain product</h2>
+<p><br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+Is An Control Panel Product Data Request That Invites Members To the team of the product To manage it later on .</p>
+<p><img src="images/users/products/users-Products-add_product_to_user1.png" width="100%"></p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST \
+    "/add_product_to_user" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "/add_product_to_user"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "success": "Product has been Added successfully"
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST add_product_to_user</code></p>
+<!-- END_7a139cf107f19ae9163446ce5ae22ee0 -->
+<h1>2.5 Users Lead Sources management</h1>
+<p>Page Group To manage Single Lead Sources For The Manager Control Panel And Give him full access for its all features.</p>
+<ul>
+<li>
+<p>Add lead sources for every product in the workplace.</p>
+</li>
+<li>
+<p>Every lead sources With its Stats Ex. Leads Source Name, Leads count, Contacted Leads Count &amp; Management pages forevery lead source Ex. View , Add &amp; Edit.</p>
+</li>
+<li>
+<p>Filter Search to go through every table data.</p>
+</li>
+<li>
+<p>manage every lead source from the Edit Widget page.</p>
+</li>
+<li>
+<p>View Widget lead source from the view Widget page.</p>
+</li>
+<li>
+<p>Add Widget lead source from the Add Widget page.</p>
+</li>
+</ul>
+<p><img src="images/users/lead_sources/users-lead_sources-view.png" width="100%"></p>
+<!-- START_afe861116942da8827f905c42d93c7cd -->
+<h2>Single Lead Source Info View Page</h2>
+<p><br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+Page Group To manage Single Lead Sources For The Manager Control Panel And Give him full access for its all features.</p>
+<ul>
+<li>Add lead sources for every product in the workplace.</li>
+<li>Every lead sources With its Stats Ex. Leads Source Name, Leads count, Contacted Leads Count &amp; Management pages forevery lead source Ex. View , Add &amp; Edit.</li>
+<li>Filter Search to go through every table data.</li>
+<li>Add Widget lead source from the Add Widget page.</li>
+<li>View Widget lead source from the view Widget page.</li>
+<li>manage every lead source from the Edit Widget page.
+<p><img src="images/users/lead_sources/users-lead_sources-view.png" width="100%"></p></li>
+</ul>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "/sources" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "/sources"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "id": 1,
+    "workplace_id": 7,
+    "user_id": 2,
+    "name": "demo",
+    "country_id": 1,
+    "website": "https:\/\/demo.com",
+    "widget_type": "icon",
+    "alignment": "right",
+    "primary": "#a83434",
+    "secondary": "#ffffff",
+    "icon_type": "mdi mdi-headset fa-fw",
+    "bubble": "on",
+    "bubble_line_1": "Want to talk to an expert?",
+    "bubble_line_2": "Our Team is 60 Second Away From You!",
+    "bubble_bg_color": "#000000",
+    "bubble_text_color": "#ffffff",
+    "text_text": "Talk to an expert!",
+    "text_round": 10,
+    "custom_lable_1": "phone",
+    "custom_lable_2": "age",
+    "created_at": "2020-02-14 23:08:32",
+    "updated_at": "2020-06-21 07:21:07"
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET sources</code></p>
+<!-- END_afe861116942da8827f905c42d93c7cd -->
+<!-- START_6525a24380d6f0fc3d9199bdb70d8ead -->
+<h2>Lead Source Create Page</h2>
+<p><br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+Is An Control Panel Manager Page That Creates Lead Source To Manage It later on the site by the manager and his team.</p>
+<p><img src="images/users/lead_sources/users-lead_sources-create.png" width="100%"></p>
+<p><img src="images/users/lead_sources/users-lead_sources-create1.png" width="100%"></p>
+<p><img src="images/users/lead_sources/users-lead_sources-create2.png" width="100%"></p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "/sources/create" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"workplace_id":"7","name":"demo","website":"https:\/\/demo.com","widget_type":"icon","alignment":"right","primary":"#a83434","secondary":"#ffffff","icon_type":"mdi mdi-headset fa-fw","bubble":"on","bubble_line_1":"Want to talk to an expert?","bubble_line_2":"Our Team is 60 Second Away From You!","bubble_bg_color":"#000000","bubble_text_color":"#ffffff","text_text":"Talk to an expert!","text_round":"10","custom_lable_1":"phone","custom_lable_2":"age"}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "/sources/create"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "workplace_id": "7",
+    "name": "demo",
+    "website": "https:\/\/demo.com",
+    "widget_type": "icon",
+    "alignment": "right",
+    "primary": "#a83434",
+    "secondary": "#ffffff",
+    "icon_type": "mdi mdi-headset fa-fw",
+    "bubble": "on",
+    "bubble_line_1": "Want to talk to an expert?",
+    "bubble_line_2": "Our Team is 60 Second Away From You!",
+    "bubble_bg_color": "#000000",
+    "bubble_text_color": "#ffffff",
+    "text_text": "Talk to an expert!",
+    "text_round": "10",
+    "custom_lable_1": "phone",
+    "custom_lable_2": "age"
+}
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "success": "Added Successfully"
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET sources/create</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>workplace_id</code></td>
+<td>string</td>
+<td>required</td>
+<td>The workplace_id selected to add lead source to workplace.</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td>string</td>
+<td>required</td>
+<td>The name of the lead source.</td>
+</tr>
+<tr>
+<td><code>website</code></td>
+<td>string</td>
+<td>required</td>
+<td>The website of the lead source.</td>
+</tr>
+<tr>
+<td><code>widget_type</code></td>
+<td>string</td>
+<td>optional</td>
+<td>The widget_type selected to icon Widget.</td>
+</tr>
+<tr>
+<td><code>alignment</code></td>
+<td>string</td>
+<td>optional</td>
+<td>The alignment selected to right Widget.</td>
+</tr>
+<tr>
+<td><code>primary</code></td>
+<td>string</td>
+<td>optional</td>
+<td>The primary Pick to color to Widget.</td>
+</tr>
+<tr>
+<td><code>secondary</code></td>
+<td>string</td>
+<td>optional</td>
+<td>The secondary Pick to color to Widget.</td>
+</tr>
+<tr>
+<td><code>icon_type</code></td>
+<td>string</td>
+<td>optional</td>
+<td>The icon_type style to Widget.</td>
+</tr>
+<tr>
+<td><code>bubble</code></td>
+<td>string</td>
+<td>optional</td>
+<td>The bubble selected to on Widget.</td>
+</tr>
+<tr>
+<td><code>bubble_line_1</code></td>
+<td>string</td>
+<td>optional</td>
+<td>The bubble_line_1 typed to on Widget.</td>
+</tr>
+<tr>
+<td><code>bubble_line_2</code></td>
+<td>string</td>
+<td>optional</td>
+<td>The bubble_line_2 typed to on Widget.</td>
+</tr>
+<tr>
+<td><code>bubble_bg_color</code></td>
+<td>string</td>
+<td>optional</td>
+<td>The bubble_bg_color Pick to color to Widget.</td>
+</tr>
+<tr>
+<td><code>bubble_text_color</code></td>
+<td>string</td>
+<td>optional</td>
+<td>The bubble_text_color Pick to color to Widget.</td>
+</tr>
+<tr>
+<td><code>text_text</code></td>
+<td>string</td>
+<td>optional</td>
+<td>The text_text typed to on Widget.</td>
+</tr>
+<tr>
+<td><code>text_round</code></td>
+<td>string</td>
+<td>optional</td>
+<td>The text_round selected to on Widget.</td>
+</tr>
+<tr>
+<td><code>custom_lable_1</code></td>
+<td>string</td>
+<td>optional</td>
+<td>The custom_lable_1 typed to on Widget.</td>
+</tr>
+<tr>
+<td><code>custom_lable_2</code></td>
+<td>string</td>
+<td>optional</td>
+<td>The custom_lable_2 typed to on Widget.</td>
+</tr>
+</tbody>
+</table>
+<!-- END_6525a24380d6f0fc3d9199bdb70d8ead -->
+<!-- START_1d134c058a66ac2dd612ccd654972569 -->
+<h2>Lead Source Store Data</h2>
+<p><br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+Is An Control Panel Manager Data Request That Stores Lead Sources Data To Database.</p>
+<p><img src="images/users/added-successfully.png" width="100%"></p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST \
+    "/sources" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"workplace_id":"7","name":"demo","website":"https:\/\/demo.com","widget_type":"icon","alignment":"right","primary":"#a83434","secondary":"#ffffff","icon_type":"mdi mdi-headset fa-fw","bubble":"on","bubble_line_1":"Want to talk to an expert?","bubble_line_2":"Our Team is 60 Second Away From You!","bubble_bg_color":"#000000","bubble_text_color":"#ffffff","text_text":"Talk to an expert!","text_round":"10","custom_lable_1":"phone","custom_lable_2":"age"}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "/sources"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "workplace_id": "7",
+    "name": "demo",
+    "website": "https:\/\/demo.com",
+    "widget_type": "icon",
+    "alignment": "right",
+    "primary": "#a83434",
+    "secondary": "#ffffff",
+    "icon_type": "mdi mdi-headset fa-fw",
+    "bubble": "on",
+    "bubble_line_1": "Want to talk to an expert?",
+    "bubble_line_2": "Our Team is 60 Second Away From You!",
+    "bubble_bg_color": "#000000",
+    "bubble_text_color": "#ffffff",
+    "text_text": "Talk to an expert!",
+    "text_round": "10",
+    "custom_lable_1": "phone",
+    "custom_lable_2": "age"
+}
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "success": "Added Successfully"
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST sources</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>workplace_id</code></td>
+<td>string</td>
+<td>required</td>
+<td>The workplace_id selected to add lead source to workplace.</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td>string</td>
+<td>required</td>
+<td>The name of the lead source.</td>
+</tr>
+<tr>
+<td><code>website</code></td>
+<td>string</td>
+<td>required</td>
+<td>The website of the lead source.</td>
+</tr>
+<tr>
+<td><code>widget_type</code></td>
+<td>string</td>
+<td>optional</td>
+<td>The widget_type selected to icon Widget.</td>
+</tr>
+<tr>
+<td><code>alignment</code></td>
+<td>string</td>
+<td>optional</td>
+<td>The alignment selected to right Widget.</td>
+</tr>
+<tr>
+<td><code>primary</code></td>
+<td>string</td>
+<td>optional</td>
+<td>The primary Pick to color to Widget.</td>
+</tr>
+<tr>
+<td><code>secondary</code></td>
+<td>string</td>
+<td>optional</td>
+<td>The secondary Pick to color to Widget.</td>
+</tr>
+<tr>
+<td><code>icon_type</code></td>
+<td>string</td>
+<td>optional</td>
+<td>The icon_type style to Widget.</td>
+</tr>
+<tr>
+<td><code>bubble</code></td>
+<td>string</td>
+<td>optional</td>
+<td>The bubble selected to on Widget.</td>
+</tr>
+<tr>
+<td><code>bubble_line_1</code></td>
+<td>string</td>
+<td>optional</td>
+<td>The bubble_line_1 typed to on Widget.</td>
+</tr>
+<tr>
+<td><code>bubble_line_2</code></td>
+<td>string</td>
+<td>optional</td>
+<td>The bubble_line_2 typed to on Widget.</td>
+</tr>
+<tr>
+<td><code>bubble_bg_color</code></td>
+<td>string</td>
+<td>optional</td>
+<td>The bubble_bg_color Pick to color to Widget.</td>
+</tr>
+<tr>
+<td><code>bubble_text_color</code></td>
+<td>string</td>
+<td>optional</td>
+<td>The bubble_text_color Pick to color to Widget.</td>
+</tr>
+<tr>
+<td><code>text_text</code></td>
+<td>string</td>
+<td>optional</td>
+<td>The text_text typed to on Widget.</td>
+</tr>
+<tr>
+<td><code>text_round</code></td>
+<td>string</td>
+<td>optional</td>
+<td>The text_round selected to on Widget.</td>
+</tr>
+<tr>
+<td><code>custom_lable_1</code></td>
+<td>string</td>
+<td>optional</td>
+<td>The custom_lable_1 typed to on Widget.</td>
+</tr>
+<tr>
+<td><code>custom_lable_2</code></td>
+<td>string</td>
+<td>optional</td>
+<td>The custom_lable_2 typed to on Widget.</td>
+</tr>
+</tbody>
+</table>
+<!-- END_1d134c058a66ac2dd612ccd654972569 -->
+<!-- START_8982bffebd0eaf02ce61568a0017882e -->
+<h2>Lead Source Edit Page</h2>
+<p><br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+Is An Control Panel Manager Page That Edits Lead Source To Manage It later on the site by the manager and his team.</p>
+<p><img src="images/users/lead_sources/users-lead_sources-create.png" width="100%"></p>
+<p><img src="images/users/lead_sources/users-lead_sources-create1.png" width="100%"></p>
+<p><img src="images/users/lead_sources/users-lead_sources-create2.png" width="100%"></p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "/sources/1/edit" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"workplace_id":"7","name":"demo","website":"https:\/\/demo.com","widget_type":"icon","alignment":"right","primary":"#a83434","secondary":"#ffffff","icon_type":"mdi mdi-headset fa-fw","bubble":"on","bubble_line_1":"Want to talk to an expert?","bubble_line_2":"Our Team is 60 Second Away From You!","bubble_bg_color":"#000000","bubble_text_color":"#ffffff","text_text":"Talk to an expert!","text_round":"10","custom_lable_1":"phone","custom_lable_2":"age"}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "/sources/1/edit"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "workplace_id": "7",
+    "name": "demo",
+    "website": "https:\/\/demo.com",
+    "widget_type": "icon",
+    "alignment": "right",
+    "primary": "#a83434",
+    "secondary": "#ffffff",
+    "icon_type": "mdi mdi-headset fa-fw",
+    "bubble": "on",
+    "bubble_line_1": "Want to talk to an expert?",
+    "bubble_line_2": "Our Team is 60 Second Away From You!",
+    "bubble_bg_color": "#000000",
+    "bubble_text_color": "#ffffff",
+    "text_text": "Talk to an expert!",
+    "text_round": "10",
+    "custom_lable_1": "phone",
+    "custom_lable_2": "age"
+}
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "success": "Edited Successfully"
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET sources/{source}/edit</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>workplace_id</code></td>
+<td>string</td>
+<td>required</td>
+<td>The workplace_id selected to add lead source to workplace.</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td>string</td>
+<td>required</td>
+<td>The name of the lead source.</td>
+</tr>
+<tr>
+<td><code>website</code></td>
+<td>string</td>
+<td>required</td>
+<td>The website of the lead source.</td>
+</tr>
+<tr>
+<td><code>widget_type</code></td>
+<td>string</td>
+<td>optional</td>
+<td>The widget_type selected to icon Widget.</td>
+</tr>
+<tr>
+<td><code>alignment</code></td>
+<td>string</td>
+<td>optional</td>
+<td>The alignment selected to right Widget.</td>
+</tr>
+<tr>
+<td><code>primary</code></td>
+<td>string</td>
+<td>optional</td>
+<td>The primary Pick to color to Widget.</td>
+</tr>
+<tr>
+<td><code>secondary</code></td>
+<td>string</td>
+<td>optional</td>
+<td>The secondary Pick to color to Widget.</td>
+</tr>
+<tr>
+<td><code>icon_type</code></td>
+<td>string</td>
+<td>optional</td>
+<td>The icon_type style to Widget.</td>
+</tr>
+<tr>
+<td><code>bubble</code></td>
+<td>string</td>
+<td>optional</td>
+<td>The bubble selected to on Widget.</td>
+</tr>
+<tr>
+<td><code>bubble_line_1</code></td>
+<td>string</td>
+<td>optional</td>
+<td>The bubble_line_1 typed to on Widget.</td>
+</tr>
+<tr>
+<td><code>bubble_line_2</code></td>
+<td>string</td>
+<td>optional</td>
+<td>The bubble_line_2 typed to on Widget.</td>
+</tr>
+<tr>
+<td><code>bubble_bg_color</code></td>
+<td>string</td>
+<td>optional</td>
+<td>The bubble_bg_color Pick to color to Widget.</td>
+</tr>
+<tr>
+<td><code>bubble_text_color</code></td>
+<td>string</td>
+<td>optional</td>
+<td>The bubble_text_color Pick to color to Widget.</td>
+</tr>
+<tr>
+<td><code>text_text</code></td>
+<td>string</td>
+<td>optional</td>
+<td>The text_text typed to on Widget.</td>
+</tr>
+<tr>
+<td><code>text_round</code></td>
+<td>string</td>
+<td>optional</td>
+<td>The text_round selected to on Widget.</td>
+</tr>
+<tr>
+<td><code>custom_lable_1</code></td>
+<td>string</td>
+<td>optional</td>
+<td>The custom_lable_1 typed to on Widget.</td>
+</tr>
+<tr>
+<td><code>custom_lable_2</code></td>
+<td>string</td>
+<td>optional</td>
+<td>The custom_lable_2 typed to on Widget.</td>
+</tr>
+</tbody>
+</table>
+<!-- END_8982bffebd0eaf02ce61568a0017882e -->
+<!-- START_cc29ce8491095a2f9a53e0b9749b6273 -->
+<h2>Lead Source Update Data</h2>
+<p><br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+Is An Control Panel Manager Data Request That Updates Lead Sources Data To Database.</p>
+<p><img src="images/users/added-successfully.png" width="100%"></p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X PUT \
+    "/sources/1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"workplace_id":"7","name":"demo","website":"https:\/\/demo.com","widget_type":"icon","alignment":"right","primary":"#a83434","secondary":"#ffffff","icon_type":"mdi mdi-headset fa-fw","bubble":"on","bubble_line_1":"Want to talk to an expert?","bubble_line_2":"Our Team is 60 Second Away From You!","bubble_bg_color":"#000000","bubble_text_color":"#ffffff","text_text":"Talk to an expert!","text_round":"10","custom_lable_1":"phone","custom_lable_2":"age"}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "/sources/1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "workplace_id": "7",
+    "name": "demo",
+    "website": "https:\/\/demo.com",
+    "widget_type": "icon",
+    "alignment": "right",
+    "primary": "#a83434",
+    "secondary": "#ffffff",
+    "icon_type": "mdi mdi-headset fa-fw",
+    "bubble": "on",
+    "bubble_line_1": "Want to talk to an expert?",
+    "bubble_line_2": "Our Team is 60 Second Away From You!",
+    "bubble_bg_color": "#000000",
+    "bubble_text_color": "#ffffff",
+    "text_text": "Talk to an expert!",
+    "text_round": "10",
+    "custom_lable_1": "phone",
+    "custom_lable_2": "age"
+}
+
+fetch(url, {
+    method: "PUT",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "success": "Edited Successfully"
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>PUT sources/{source}</code></p>
+<p><code>PATCH sources/{source}</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>workplace_id</code></td>
+<td>string</td>
+<td>required</td>
+<td>The workplace_id selected to add lead source to workplace.</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td>string</td>
+<td>required</td>
+<td>The name of the lead source.</td>
+</tr>
+<tr>
+<td><code>website</code></td>
+<td>string</td>
+<td>required</td>
+<td>The website of the lead source.</td>
+</tr>
+<tr>
+<td><code>widget_type</code></td>
+<td>string</td>
+<td>optional</td>
+<td>The widget_type selected to icon Widget.</td>
+</tr>
+<tr>
+<td><code>alignment</code></td>
+<td>string</td>
+<td>optional</td>
+<td>The alignment selected to right Widget.</td>
+</tr>
+<tr>
+<td><code>primary</code></td>
+<td>string</td>
+<td>optional</td>
+<td>The primary Pick to color to Widget.</td>
+</tr>
+<tr>
+<td><code>secondary</code></td>
+<td>string</td>
+<td>optional</td>
+<td>The secondary Pick to color to Widget.</td>
+</tr>
+<tr>
+<td><code>icon_type</code></td>
+<td>string</td>
+<td>optional</td>
+<td>The icon_type style to Widget.</td>
+</tr>
+<tr>
+<td><code>bubble</code></td>
+<td>string</td>
+<td>optional</td>
+<td>The bubble selected to on Widget.</td>
+</tr>
+<tr>
+<td><code>bubble_line_1</code></td>
+<td>string</td>
+<td>optional</td>
+<td>The bubble_line_1 typed to on Widget.</td>
+</tr>
+<tr>
+<td><code>bubble_line_2</code></td>
+<td>string</td>
+<td>optional</td>
+<td>The bubble_line_2 typed to on Widget.</td>
+</tr>
+<tr>
+<td><code>bubble_bg_color</code></td>
+<td>string</td>
+<td>optional</td>
+<td>The bubble_bg_color Pick to color to Widget.</td>
+</tr>
+<tr>
+<td><code>bubble_text_color</code></td>
+<td>string</td>
+<td>optional</td>
+<td>The bubble_text_color Pick to color to Widget.</td>
+</tr>
+<tr>
+<td><code>text_text</code></td>
+<td>string</td>
+<td>optional</td>
+<td>The text_text typed to on Widget.</td>
+</tr>
+<tr>
+<td><code>text_round</code></td>
+<td>string</td>
+<td>optional</td>
+<td>The text_round selected to on Widget.</td>
+</tr>
+<tr>
+<td><code>custom_lable_1</code></td>
+<td>string</td>
+<td>optional</td>
+<td>The custom_lable_1 typed to on Widget.</td>
+</tr>
+<tr>
+<td><code>custom_lable_2</code></td>
+<td>string</td>
+<td>optional</td>
+<td>The custom_lable_2 typed to on Widget.</td>
+</tr>
+</tbody>
+</table>
+<!-- END_cc29ce8491095a2f9a53e0b9749b6273 -->
+<h1>2.6 Users Manager Leads management</h1>
+<p>Page Group To manage Leads data For The Manager Control Panel .</p>
+<ul>
+<li>View the Leads Data Ex. Lead Name, Workplace Product belongs to &amp; Product etc.</li>
+<li>Filter an existing Leads from the Filter Form.</li>
+<li>View Leads Stats the Qualified &amp; Un Qualified Buttons.</li>
+</ul>
+<p><img src="images/users/leads/users-leads-view.png" width="100%"></p>
+<!-- START_374cfeb27ba1670c869a004f31d8f828 -->
+<h2>Leads View Page</h2>
+<p><br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+Is An Control Panel Lead Page That Views leads Data Info .</p>
+<p>Form Filter is used to filtering existing leads To get better results .</p>
+<p><img src="images/admin/leads/admin-leads-filter.png" width="100%"></p>
+<p>View leads Data Info</p>
+<ul>
+<li>View the Leads Data Ex. Lead Name, Workplace Product belongs to &amp; Product etc.</li>
+</ul>
+<p>-View Leads Stats the Qualified &amp; Un Qualified Buttons .</p>
+<p><img src="images/users/leads/users-leads-view.png" width="100%"></p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "/leads" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "/leads"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "id": 1,
+    "name": "demo",
+    "phone": "01234567890",
+    "country_code": null,
+    "email": "test@demo.com",
+    "email_verified_at": null,
+    "created_at": "2020-01-26 16:26:56",
+    "updated_at": "2021-01-07 13:35:48",
+    "device_token": null,
+    "os": null,
+    "is_available": 1,
+    "products_count": 2,
+    "workplaces_count": 1,
+    "leads_count": 7
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET leads</code></p>
+<!-- END_374cfeb27ba1670c869a004f31d8f828 -->
+<!-- START_e27d419ecd767880269a31b5b88f149d -->
+<h2>Leads View Page</h2>
+<p><br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+Is An Control Panel Lead Page That Views leads Data Info .</p>
+<p>Form Filter is used to filtering existing leads To get better results .</p>
+<p><img src="images/admin/leads/admin-leads-filter.png" width="100%"></p>
+<p>View leads Data Info</p>
+<ul>
+<li>View the Leads Data Ex. Lead Name, Workplace Product belongs to &amp; Product etc.</li>
+</ul>
+<p>-View Leads Stats the Qualified &amp; Un Qualified Buttons .</p>
+<p><img src="images/users/leads/users-leads-view.png" width="100%"></p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST \
+    "/leads" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "/leads"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "id": 1,
+    "name": "demo",
+    "phone": "01234567890",
+    "country_code": null,
+    "email": "test@demo.com",
+    "email_verified_at": null,
+    "created_at": "2020-01-26 16:26:56",
+    "updated_at": "2021-01-07 13:35:48",
+    "device_token": null,
+    "os": null,
+    "is_available": 1,
+    "products_count": 2,
+    "workplaces_count": 1,
+    "leads_count": 7
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST leads</code></p>
+<!-- END_e27d419ecd767880269a31b5b88f149d -->
+<!-- START_8bfb6ab02f276fc606969dfede92597f -->
+<h2>Single Lead Info View Page</h2>
+<p><br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+Is An Control Panel Page For Single Lead That Views Lead Data Info .</p>
+<ul>
+<li>View Products For the Lead.</li>
+<li>View Products Count For the Single Lead.</li>
+<li>Every Product In the Lead With its Stats Ex. Leads Source Name, Leads count, Contacted Leads Count &amp; Team Names That Assigned to this Product.</li>
+<li>Filter Search to go through every table data.</li>
+</ul>
+<p><img src="images/admin/leads/admin-singlelead-view.png" width="100%"></p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "/leads/1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "/leads/1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "id": 9,
+    "workplace_id": 8,
+    "user_id": 7,
+    "name": "Bottels Website Form",
+    "country_id": null,
+    "website": "https:\/\/popcorn.com",
+    "product_id": 11,
+    "widget_type": "text",
+    "alignment": "left",
+    "primary": "#34a853",
+    "secondary": "#ffffff",
+    "icon_type": "mdi mdi-phone fa-fw",
+    "bubble": "on",
+    "bubble_line_1": "Want to talk to an expert?",
+    "bubble_line_2": "Our Team is 60 Second Away From You!",
+    "bubble_bg_color": "#959a9e",
+    "bubble_text_color": "#ffffff",
+    "text_text": "Talk to sales expert now!",
+    "text_round": 10
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET leads/{lead}</code></p>
+<!-- END_8bfb6ab02f276fc606969dfede92597f -->
+<h1>2.7 Users Product Widget management</h1>
+<p>Page Group To manage Widget View &amp; Submission of the form.</p>
+<ul>
+<li>View the Leads Widget Form Ex. Name, Email, Phone, And another two customizable fields.</li>
+</ul>
+<p><img src="images/users/widget/users-widget-icon.png" width="100%"></p>
+<ul>
+<li>Submit the Leads Widget Form To The database.</li>
+</ul>
+<p><img src="images/users/widget/users-widget-form.png" width="100%"></p>
+<!-- START_6d0c9b8cc536e9a9ff2cd34e09735f19 -->
+<h2>Widget Form Page</h2>
+<p><br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+Is An Leads Page That Submit Widget To leads To Manage by the manager and his team Later On.</p>
+<ul>
+<li>View the Leads Widget Form Ex. Name, Email, Phone, And another two customizable fields.</li>
+</ul>
+<p><img src="images/users/widget/users-widget-icon.png" width="100%"></p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "/widget/1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"name":"demo","phone":"demo,test","Email":"phone","custom_lable_1":"phone","custom_lable_2":"age"}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "/widget/1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "name": "demo",
+    "phone": "demo,test",
+    "Email": "phone",
+    "custom_lable_1": "phone",
+    "custom_lable_2": "age"
+}
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "success": "You Have Submitted Succesfully,Thanks."
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET widget/{id}</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td>string</td>
+<td>optional</td>
+<td>The name of the Product.</td>
+</tr>
+<tr>
+<td><code>phone</code></td>
+<td>string</td>
+<td>required</td>
+<td>The phone selected to The Team Managing the product.</td>
+</tr>
+<tr>
+<td><code>Email</code></td>
+<td>string</td>
+<td>optional</td>
+<td>The Email typed to on Widget.</td>
+</tr>
+<tr>
+<td><code>custom_lable_1</code></td>
+<td>string</td>
+<td>optional</td>
+<td>The custom_lable_1 typed to on Widget.</td>
+</tr>
+<tr>
+<td><code>custom_lable_2</code></td>
+<td>string</td>
+<td>optional</td>
+<td>The custom_lable_2 typed to on Widget.</td>
+</tr>
+</tbody>
+</table>
+<!-- END_6d0c9b8cc536e9a9ff2cd34e09735f19 -->
+<!-- START_a4fca1cb337722b58ae6367668979b88 -->
+<h2>Widget Form Request</h2>
+<p><br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+Is An Leads Request That Submit Widget To leads by the manager and his team Later On.</p>
+<ul>
+<li>
+<p>View the Leads Widget Form Ex. Name, Email, Phone, And another two customizable fields.</p>
+</li>
+<li>
+<p>Submit the Leads Widget Form To The database.</p>
+</li>
+</ul>
+<p><img src="images/users/widget/users-widget-form.png" width="100%"></p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST \
+    "/widgetView/widget" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"name":"demo","phone":"demo,test","Email":"test@demo.com","custom_lable_1":"phone","custom_lable_2":"age"}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "/widgetView/widget"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "name": "demo",
+    "phone": "demo,test",
+    "Email": "test@demo.com",
+    "custom_lable_1": "phone",
+    "custom_lable_2": "age"
+}
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "success": "You Have Submitted Succesfully,Thanks."
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST widgetView/widget</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td>string</td>
+<td>optional</td>
+<td>The name of the Product.</td>
+</tr>
+<tr>
+<td><code>phone</code></td>
+<td>string</td>
+<td>required</td>
+<td>The phone selected to The Team Managing the product.</td>
+</tr>
+<tr>
+<td><code>Email</code></td>
+<td>string</td>
+<td>optional</td>
+<td>The Email typed to on Widget.</td>
+</tr>
+<tr>
+<td><code>custom_lable_1</code></td>
+<td>string</td>
+<td>optional</td>
+<td>The custom_lable_1 typed to on Widget.</td>
+</tr>
+<tr>
+<td><code>custom_lable_2</code></td>
+<td>string</td>
+<td>optional</td>
+<td>The custom_lable_2 typed to on Widget.</td>
+</tr>
+</tbody>
+</table>
+<!-- END_a4fca1cb337722b58ae6367668979b88 -->
+<h1>3.1  APIs User management</h1>
+<p>Page Group To manage Users data From APIs.</p>
+<ul>
+<li>Get the User Data Ex. Name, Email &amp; Phone etc.</li>
+<li>validator to validate the User Data Ex. Name, Email &amp; Phone etc For Login.</li>
+<li>Login The User To An App.</li>
+<li>Update UserData.
+<!-- START_c3fa189a6c95ca36ad6ac4791a873d23 -->
+<h2>User Login</h2></li>
+</ul>
+<p><br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+User Data Request That Login User To the app and give him access if the validation was right To the app.</p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST \
+    "/api/login" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"email":"test@demo.com","password":"*****"}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "/api/login"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "email": "test@demo.com",
+    "password": "*****"
+}
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "id": 1,
+    "name": "demo",
+    "phone": "01234567890",
+    "country_code": null,
+    "email": "test@demo.com",
+    "email_verified_at": null,
+    "created_at": "2020-01-26 16:26:56",
+    "updated_at": "2021-01-07 13:35:48",
+    "device_token": null,
+    "os": null,
+    "is_available": 1,
+    "products_count": 2,
+    "workplaces_count": 1,
+    "leads_count": 7
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST api/login</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>email</code></td>
+<td>string</td>
+<td>required</td>
+<td>The email of the user.</td>
+</tr>
+<tr>
+<td><code>password</code></td>
+<td>string</td>
+<td>required</td>
+<td>The password of the user.</td>
+</tr>
+</tbody>
+</table>
+<!-- END_c3fa189a6c95ca36ad6ac4791a873d23 -->
+<!-- START_ea980f00fb009965aa3dd5f562337404 -->
+<h2>User Login Ar</h2>
+<p><br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+User Data Request That Login User To the app and give him access if the validation was right To the app.</p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST \
+    "/api/login1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"email":"test@demo.com","password":"*****"}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "/api/login1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "email": "test@demo.com",
+    "password": "*****"
+}
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "id": 1,
+    "name": "demo",
+    "phone": "01234567890",
+    "country_code": null,
+    "email": "test@demo.com",
+    "email_verified_at": null,
+    "created_at": "2020-01-26 16:26:56",
+    "updated_at": "2021-01-07 13:35:48",
+    "device_token": null,
+    "os": null,
+    "is_available": 1,
+    "products_count": 2,
+    "workplaces_count": 1,
+    "leads_count": 7
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST api/login1</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>email</code></td>
+<td>string</td>
+<td>required</td>
+<td>The email of the user.</td>
+</tr>
+<tr>
+<td><code>password</code></td>
+<td>string</td>
+<td>required</td>
+<td>The password of the user.</td>
+</tr>
+</tbody>
+</table>
+<!-- END_ea980f00fb009965aa3dd5f562337404 -->
+<!-- START_bdd2d0f4f2c3e0f3a53ecef15732db78 -->
+<h2>User Register</h2>
+<p><br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+User Data Request That Register User To the app and give him access if the validation was right To the app.</p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST \
+    "/api/login2" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"name":"demo","email":"test@demo.com","phone":"123456","country_code":"+20","password":"******"}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "/api/login2"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "name": "demo",
+    "email": "test@demo.com",
+    "phone": "123456",
+    "country_code": "+20",
+    "password": "******"
+}
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "id": 1,
+    "name": "demo",
+    "phone": "01234567890",
+    "country_code": null,
+    "email": "test@demo.com",
+    "email_verified_at": null,
+    "created_at": "2020-01-26 16:26:56",
+    "updated_at": "2021-01-07 13:35:48",
+    "device_token": null,
+    "os": null,
+    "is_available": 1,
+    "products_count": 2,
+    "workplaces_count": 1,
+    "leads_count": 7
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST api/login2</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td>string</td>
+<td>required</td>
+<td>The name of the user.</td>
+</tr>
+<tr>
+<td><code>email</code></td>
+<td>string</td>
+<td>required</td>
+<td>The email of the user.</td>
+</tr>
+<tr>
+<td><code>phone</code></td>
+<td>string</td>
+<td>required</td>
+<td>The phone of the user.</td>
+</tr>
+<tr>
+<td><code>country_code</code></td>
+<td>string</td>
+<td>required</td>
+<td>The country_code of the user.</td>
+</tr>
+<tr>
+<td><code>password</code></td>
+<td>string</td>
+<td>required</td>
+<td>The password of the user.</td>
+</tr>
+</tbody>
+</table>
+<!-- END_bdd2d0f4f2c3e0f3a53ecef15732db78 -->
+<!-- START_8f90011138117fdccfc791cf91d0a65b -->
+<h2>User Edit Request</h2>
+<p><br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+User Data Request That Edit User Data To the app .</p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST \
+    "/api/update_profile" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"name":"demo","email":"test@demo.com","phone":"123456","country_code":"+20","password":"******"}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "/api/update_profile"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "name": "demo",
+    "email": "test@demo.com",
+    "phone": "123456",
+    "country_code": "+20",
+    "password": "******"
+}
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "id": 1,
+    "name": "demo",
+    "phone": "01234567890",
+    "country_code": null,
+    "email": "test@demo.com",
+    "email_verified_at": null,
+    "created_at": "2020-01-26 16:26:56",
+    "updated_at": "2021-01-07 13:35:48",
+    "device_token": null,
+    "os": null,
+    "is_available": 1,
+    "products_count": 2,
+    "workplaces_count": 1,
+    "leads_count": 7
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST api/update_profile</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td>string</td>
+<td>required</td>
+<td>The name of the user.</td>
+</tr>
+<tr>
+<td><code>email</code></td>
+<td>string</td>
+<td>required</td>
+<td>The email of the user.</td>
+</tr>
+<tr>
+<td><code>phone</code></td>
+<td>string</td>
+<td>required</td>
+<td>The phone of the user.</td>
+</tr>
+<tr>
+<td><code>country_code</code></td>
+<td>string</td>
+<td>required</td>
+<td>The country_code of the user.</td>
+</tr>
+<tr>
+<td><code>password</code></td>
+<td>string</td>
+<td>required</td>
+<td>The password of the user.</td>
+</tr>
+</tbody>
+</table>
+<!-- END_8f90011138117fdccfc791cf91d0a65b -->
+<!-- START_c6ffcc473f819c15d8ee9f636eed9343 -->
+<h2>User Status</h2>
+<p><br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+User Data Request That Enables Or Disables User Access To the app .</p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST \
+    "/api/change_is_available" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"user_id":"1","is_available":"1"}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "/api/change_is_available"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "user_id": "1",
+    "is_available": "1"
+}
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "success": "User Profile Edited Succefully"
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST api/change_is_available</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>user_id</code></td>
+<td>string</td>
+<td>required</td>
+<td>The user_id of the user.</td>
+</tr>
+<tr>
+<td><code>is_available</code></td>
+<td>string</td>
+<td>required</td>
+<td>The is_available of the user.</td>
+</tr>
+</tbody>
+</table>
+<!-- END_c6ffcc473f819c15d8ee9f636eed9343 -->
+<h1>3.2  APIs Workplaces management</h1>
+<p>Page Group To manage Workplaces data From APIs.</p>
+<ul>
+<li>Get the User Data Ex. Name, Email &amp; Phone etc.</li>
+<li>validator to validate the User Data Ex. Name, Email &amp; Phone etc For Login.</li>
+<li>Login The User To An App.</li>
+<li>Update UserData.
+<!-- START_405eabb53d4d41d71d98563f0695ad41 -->
+<h2>Widget Form Request</h2></li>
+</ul>
+<p><br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+Is An Leads Request That Submit Widget To leads by the manager and his team Later On.</p>
+<ul>
+<li>
+<p>View the Leads Widget Form Ex. Name, Email, Phone, And another two customizable fields.</p>
+</li>
+<li>
+<p>Submit the Leads Widget Form To The database.</p>
+</li>
+</ul>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST \
+    "/api/widgetView/widget" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"name":"demo","phone":"demo,test","Email":"test@demo.com","custom_lable_1":"phone","custom_lable_2":"age"}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "/api/widgetView/widget"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "name": "demo",
+    "phone": "demo,test",
+    "Email": "test@demo.com",
+    "custom_lable_1": "phone",
+    "custom_lable_2": "age"
+}
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "success": "You Have Submitted Succesfully,Thanks."
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST api/widgetView/widget</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td>string</td>
+<td>optional</td>
+<td>The name of the Product.</td>
+</tr>
+<tr>
+<td><code>phone</code></td>
+<td>string</td>
+<td>required</td>
+<td>The phone selected to The Team Managing the product.</td>
+</tr>
+<tr>
+<td><code>Email</code></td>
+<td>string</td>
+<td>optional</td>
+<td>The Email typed to on Widget.</td>
+</tr>
+<tr>
+<td><code>custom_lable_1</code></td>
+<td>string</td>
+<td>optional</td>
+<td>The custom_lable_1 typed to on Widget.</td>
+</tr>
+<tr>
+<td><code>custom_lable_2</code></td>
+<td>string</td>
+<td>optional</td>
+<td>The custom_lable_2 typed to on Widget.</td>
+</tr>
+</tbody>
+</table>
+<!-- END_405eabb53d4d41d71d98563f0695ad41 -->
+<!-- START_bd30e8830ad43b3edb2d56c804d914de -->
+<h2>Create Lead Request</h2>
+<p><br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+Is An Leads Request That Submit leads For Certin Product for the manager and his team Later On.</p>
+<ul>
+<li>Submit the Leads To The database.</li>
+</ul>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST \
+    "/api/lead" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"product_id":"5","name":"demo","phone":"demo,test","Email":"test@demo.com","custom_lable_1":"phone","custom_lable_2":"age"}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "/api/lead"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "product_id": "5",
+    "name": "demo",
+    "phone": "demo,test",
+    "Email": "test@demo.com",
+    "custom_lable_1": "phone",
+    "custom_lable_2": "age"
+}
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "success": "YRequest Has been Sent Successfully"
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST api/lead</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>product_id</code></td>
+<td>string</td>
+<td>optional</td>
+<td>The product_id of the Product.</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td>string</td>
+<td>optional</td>
+<td>The name of the Product.</td>
+</tr>
+<tr>
+<td><code>phone</code></td>
+<td>string</td>
+<td>required</td>
+<td>The phone selected to The Team Managing the product.</td>
+</tr>
+<tr>
+<td><code>Email</code></td>
+<td>string</td>
+<td>optional</td>
+<td>The Email typed to on Widget.</td>
+</tr>
+<tr>
+<td><code>custom_lable_1</code></td>
+<td>string</td>
+<td>optional</td>
+<td>The custom_lable_1 typed to on Widget.</td>
+</tr>
+<tr>
+<td><code>custom_lable_2</code></td>
+<td>string</td>
+<td>optional</td>
+<td>The custom_lable_2 typed to on Widget.</td>
+</tr>
+</tbody>
+</table>
+<!-- END_bd30e8830ad43b3edb2d56c804d914de -->
+<!-- START_385b87ffa25ae621a0a8c77665d65ecb -->
+<h2>Get Workplaces Request</h2>
+<p><br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+Is An Api Request To Get All Workplaces Data.</p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "/api/all_workplaces" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "/api/all_workplaces"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "id": 1,
+    "admin_id": 7,
+    "title": "Sherkat",
+    "created_at": "2020-02-14 23:08:32",
+    "updated_at": "2020-06-21 07:21:07",
+    "timezone": "Africa\/Cairo",
+    "website": null,
+    "startday": "Monday"
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET api/all_workplaces</code></p>
+<!-- END_385b87ffa25ae621a0a8c77665d65ecb -->
+<!-- START_127212f1a2c5e9475c73d8968f6c920e -->
+<h2>Get Products Request</h2>
+<p><br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+Is An Api Request To Get All Products Data Of A certin Workplace.</p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST \
+    "/api/all_products" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"workplace_id":"5"}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "/api/all_products"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "workplace_id": "5"
+}
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "id": 1,
+    "name": "demo",
+    "phone": "01234567890",
+    "country_code": null,
+    "email": "test@demo.com",
+    "email_verified_at": null,
+    "created_at": "2020-01-26 16:26:56",
+    "updated_at": "2021-01-07 13:35:48",
+    "device_token": null,
+    "os": null
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST api/all_products</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>workplace_id</code></td>
+<td>required</td>
+<td>optional</td>
+<td>string The workplace_id of the Product.</td>
+</tr>
+</tbody>
+</table>
+<!-- END_127212f1a2c5e9475c73d8968f6c920e -->
+<!-- START_59f5311afa947174c231488ff72a71ab -->
+<h2>Get Leads Request</h2>
+<p><br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+Is An Api Request To Get All Leads Data.</p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "/api/all_leads" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "/api/all_leads"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "name": "Demo",
+    "phone": "1234567654",
+    "product_id": "6",
+    "mobile": "22345678987654"
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET api/all_leads</code></p>
+<!-- END_59f5311afa947174c231488ff72a71ab -->
+<!-- START_61a85c4495a8871ceaf432c85b5827e7 -->
+<h2>Get User Leads Request</h2>
+<p><br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+Is An Api Request To Get All Leads Data Of A Certin User.</p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "/api/user_leads/1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"user_id":"5"}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "/api/user_leads/1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "user_id": "5"
+}
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "name": "Demo",
+    "phone": "1234567654",
+    "product_id": "6",
+    "mobile": "22345678987654"
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET api/user_leads/{user}</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>user_id</code></td>
+<td>required</td>
+<td>optional</td>
+<td>string The user_id of the Product.</td>
+</tr>
+</tbody>
+</table>
+<!-- END_61a85c4495a8871ceaf432c85b5827e7 -->
+<!-- START_a8de7d263b49f310c02e9c4c130524c9 -->
+<h2>Lead Status Edit Request</h2>
+<p><br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+Is An Api Request To Edit All Lead Status.</p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST \
+    "/api/qualified" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"id":"5","status":"1"}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "/api/qualified"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "id": "5",
+    "status": "1"
+}
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "id": 2,
+    "status": 1
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST api/qualified</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>required</td>
+<td>optional</td>
+<td>string The id of the Product.</td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td>required</td>
+<td>optional</td>
+<td>string The status of the Product.</td>
+</tr>
+</tbody>
+</table>
+<!-- END_a8de7d263b49f310c02e9c4c130524c9 -->
+<!-- START_926fc61aa770cdea7831fb5d8b848858 -->
+<h2>api/test_notification_user</h2>
+<p><br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small></p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST \
+    "/api/test_notification_user" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "/api/test_notification_user"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST api/test_notification_user</code></p>
+<!-- END_926fc61aa770cdea7831fb5d8b848858 -->
+<!-- START_df70b272cf915016a1ca96cbc14c2b09 -->
+<h2>api/test_notification_device</h2>
+<p><br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small></p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST \
+    "/api/test_notification_device" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "/api/test_notification_device"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST api/test_notification_device</code></p>
+<!-- END_df70b272cf915016a1ca96cbc14c2b09 -->
+<h1>general</h1>
+<!-- START_b7802a3a2092f162a21dc668479801f4 -->
+<h2>Reset Password Request</h2>
+<p><br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small>
+Reset Password User By Sending Request To The Email Registered At The website To Reset password.</p>
+<ul>
+<li>We will send the password reset link to this user. Once we have attempted to send the link, we will examine the response then see the message we need to show to the user. Finally, we'll send out a proper response.</li>
+</ul>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST \
+    "/api/password/email" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "/api/password/email"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "msg_en": "sent Successfully",
+    "msg_ar": "تم الارسال بنجاح"
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST api/password/email</code></p>
+<!-- END_b7802a3a2092f162a21dc668479801f4 -->
+<!-- START_8ad860d24dc1cc6dac772d99135ad13e -->
+<h2>Reset the given user&#039;s password.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST \
+    "/api/password/reset" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "/api/password/reset"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST api/password/reset</code></p>
+<!-- END_8ad860d24dc1cc6dac772d99135ad13e -->
+<!-- START_d72797bae6d0b1f3a341ebb1f8900441 -->
+<h2>Display the form to request a password reset link.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "/password/reset" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "/password/reset"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">null</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET password/reset</code></p>
+<!-- END_d72797bae6d0b1f3a341ebb1f8900441 -->
+<!-- START_feb40f06a93c80d742181b6ffb6b734e -->
+<h2>Send a reset link to the given user.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST \
+    "/password/email" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "/password/email"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST password/email</code></p>
+<!-- END_feb40f06a93c80d742181b6ffb6b734e -->
+<!-- START_e1605a6e5ceee9d1aeb7729216635fd7 -->
+<h2>Display the password reset view for the given token.</h2>
+<p>If no token is present, display the link request form.</p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "/password/reset/1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "/password/reset/1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">null</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET password/reset/{token}</code></p>
+<!-- END_e1605a6e5ceee9d1aeb7729216635fd7 -->
+<!-- START_cafb407b7a846b31491f97719bb15aef -->
+<h2>Reset the given user&#039;s password.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST \
+    "/password/reset" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "/password/reset"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST password/reset</code></p>
+<!-- END_cafb407b7a846b31491f97719bb15aef -->
+      </div>
+      <div class="dark-box">
+                        <div class="lang-selector">
+                                    <a href="#" data-language-name="bash">bash</a>
+                                    <a href="#" data-language-name="javascript">javascript</a>
+                              </div>
+                </div>
+    </div>
+  </body>
+</html>

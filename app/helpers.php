@@ -5,12 +5,13 @@ use App\User;
 use App\WorkplaceUser;
 use Illuminate\Support\Facades\Auth;
 
-function get_workplaces(){
-    $workplaces = WorkplaceUser::with('workplace')->where('user_id',Auth::user()->id)->get();
+function get_workplaces($user_id){
+    $workplaces = WorkplaceUser::with('workplace')->where('user_id',$user_id)->get();
     return $workplaces;
 }
 function get_role($workplace_id){
-    $user = WorkplaceUser::where('user_id',Auth::user()->id)->where('workplace_id',$workplace_id)->first();
+    $user_id = Workplace::find($workplace_id)->admin_id;
+    $user = WorkplaceUser::where('user_id',$user_id)->where('workplace_id',$workplace_id)->first();
     if($user){
         $role = $user->role;
     }else{

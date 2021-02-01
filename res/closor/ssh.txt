@@ -1,0 +1,31 @@
+ssh -i appclosor.pem ec2-user@ec2-35-178-137-120.eu-west-2.compute.amazonaws.com
+
+cd /var/www/html/closor
+
+It looks like you haven't opened up the ports. If you look at security groups on the management console, you should see the ports you need on the 'Inbound' tab once you have ticked the appropriate security group. If it isn't working select HTTP from the drop down box, and click apply.
+
+
+../composer require "ext-gd:*" --ignore-platform-reqs
+
+
+https://eu-west-2.console.aws.amazon.com/ec2/v2/home?region=eu-west-2#Instances:sort=instanceId
+
+mysql -u root -p
+1020304050
+SHOW DATABASES;
+use closor
+SELECT database();
+
+
+sudo chown -R root:www-data storage
+sudo chown -R root:www-data bootstrap/cache
+
+chmod -R 775 storage
+chmod -R 775 bootstrap/cache
+
+
+sudo nano /etc/httpd/sites-available/app.closor.com.conf
+sudo -s /etc/httpd/sites-available/app.closor.com.conf /etc/httpd/sites-enabled/app.closor.com.conf
+
+sudo service httpd restart
+sudo /etc/init.d/mysqld restart

@@ -12,7 +12,7 @@
             </div>
             <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                 <ol class="breadcrumb">
-                    <li><a href="#">Dashboard</a></li>
+                    <li><a href="{{url('dashboard')}}">Dashboard</a></li>
                     <li class="active">Workplaces</li>
                 </ol>
             </div>
@@ -43,7 +43,11 @@
                                 @endif
                                 <input type="hidden" name="admin_id" value="{{Auth::user()->id}}">
                                 <div class="form-body">
+                                    @if(isset($data))
+                                    <h3 class="box-title m-t-40">Edit workspace</h3>
+                                    @else
                                     <h3 class="box-title m-t-40">Create new workspace</h3>
+                                    @endif
                                     <hr>
                                     <div class="row">
                                         <div class="col-md-6">
