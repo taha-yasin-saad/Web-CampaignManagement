@@ -15,7 +15,8 @@ class ChangeAdminIdToNullableWorkplacesTable extends Migration
     {
         Schema::table('workplaces', function (Blueprint $table) {
             DB::statement('SET FOREIGN_KEY_CHECKS = 0;');
-            $table->unsignedBigInteger('admin_id')->nullable()->change();
+            $table->dropForeign('workplaces_admin_id_foreign');
+            $table->unsignedBigInteger('admin_id')->default(0)->change();
         });
     }
 
