@@ -145,6 +145,16 @@
 
 
     </div>
+    <style>
+        .switchery {
+            height: 20px;
+            width: 40px;
+        }
+        .switchery>small {
+            height: 20px;
+            width: 20px;
+        }
+    </style>
     <!-- ============================================================== -->
     <!-- End Wrapper -->
     <!-- ============================================================== -->
@@ -413,7 +423,7 @@
         });
     });
     </script>
-    {{-- <script src="http://www.geoplugin.net/javascript.gp" type="text/javascript"></script>
+    <script src="http://www.geoplugin.net/javascript.gp" type="text/javascript"></script>
     <!-- get time zone -->
     <script type="text/javascript">
     jQuery(document).ready(function($) {
@@ -421,10 +431,11 @@
         jQuery.getScript('http://www.geoplugin.net/javascript.gp', function() {
             var zone = geoplugin_timezone();
             $("#time-zone").val(zone);
+            console.log('time-zone is');
             console.log(zone);
         });
     });
-    </script> --}}
+    </script>
     {{-- country flag js --}}
     <script src="{{asset('css/intl-tel-input-17.0.0/build/js/intlTelInput.js')}}"></script>
     <script>

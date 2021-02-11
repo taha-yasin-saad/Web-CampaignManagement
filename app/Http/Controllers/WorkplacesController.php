@@ -428,6 +428,7 @@ class WorkplacesController extends Controller
         if (!$user) {
             $user = new User;
             $user->email = $request->email;
+            $user->is_available = 0;
             $user->save();
         }
 
@@ -455,7 +456,7 @@ class WorkplacesController extends Controller
         \Illuminate\Support\Facades\Mail::send('auth.email_invite', $data, function ($message) use ($data) {
             $message->from('support@closor.com', 'CLOSOR')->to($data['email'], 'CLOSOR')->subject($data['subject']);
         });
-        return back()->with('success', 'Email invited Successfully');
+        return redirect($request->workplace_id.'/team')->with('success', 'Email invited Successfully');
     }
 
     public function all_workspaces()

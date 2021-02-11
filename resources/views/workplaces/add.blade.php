@@ -54,7 +54,7 @@
                                             <div class="form-group">
                                                 <label>Workspace Name</label>
                                                 <input required type="text" class="form-control"
-                                                    placeholder="XYZ Workspace"
+                                                    placeholder="Business Name"
                                                     value="@if(isset($data)){{$data->title}}@endif" name="title"> </div>
                                         </div>
                                         <!--/span-->
@@ -327,7 +327,12 @@
                                                 <label>Website</label>
                                                 <input type="url" class="form-control" name="website"
                                                     placeholder="https://example.com"
-                                                    value="@if(isset($data)){{$data->website}}@endif">
+                                                    value="@if(isset($data)){{$data->website}}@endif"
+                                                    oninvalid="setCustomValidity(validity.typeMismatch
+                                      ? 'Please enter a URL starting with https:// '
+                                      : '(custom)Field cannot be blank ')"
+    onchange="try { setCustomValidity('') } catch (e) {}"
+                                                    >
                                             </div>
                                         </div>
                                         <!--/span-->

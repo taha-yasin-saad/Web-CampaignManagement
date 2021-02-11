@@ -40,6 +40,24 @@
 
     <!--country flag -->
     <link rel="stylesheet" href="{{asset('css/intl-tel-input-17.0.0/build/css/intlTelInput.css')}}">
+    <style>
+        label {
+            text-transform: capitalize !important;
+        }
+        ::-webkit-input-placeholder { /* Edge */
+            text-transform: capitalize !important;
+        }
+        :-ms-input-placeholder { /* Internet Explorer */
+            text-transform: capitalize !important;
+        }
+        ::placeholder {
+            text-transform: capitalize !important;
+        }
+        .invalid-feedback .text-danger {
+            font-weight: 100;
+            color: red;
+        }
+    </style>
 </head>
 
 <body>
@@ -114,28 +132,28 @@
     // function getLocation() {
     //     if (navigator.geolocation) {
     //         return navigator.geolocation.getCurrentPosition(showPosition);
-    //     } else { 
+    //     } else {
     //        return "Geolocation is not supported by this browser.";
     //     }
     // }
     // function showPosition(position) {
-    //     var loc =  "lat=" + position.coords.latitude + 
+    //     var loc =  "lat=" + position.coords.latitude +
     //     "&lng=" + position.coords.longitude;
-    
+
     //     console.log(loc);
-        
+
     // }
 
     jQuery(document).ready(function($) {
         // getLocation();
-    
+
         // jQuery.getScript('https://www.geoplugin.net/javascript.gp', function()
         // {
         //     var code= geoplugin_countryCode();
         //     console.log('old Api: '+code);
-            
+
         // });
-        
+
         $.get("https://api.ipdata.co?api-key=bbcc18dbda8db855a82aaecedab1b35c243700bd625b2ac94a9a8926", function(response) {
             console.log(response.country_code);
             var code = response.country_code;

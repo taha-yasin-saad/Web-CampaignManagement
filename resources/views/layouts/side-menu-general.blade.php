@@ -61,7 +61,7 @@
             </li>
             <li class="{{ (request()->is(session('workplace')->id.'/products')) ? 'active' : '' }}">
                 <a href="{{url(session('workplace')->id.'/products')}}" class="waves-effect"><i
-                        class="mdi mdi-account-card-details fa-fw" data-icon="v"></i>
+                        class="mdi mdi-directions-fork fa-fw" data-icon="v"></i>
                     <span class="hide-menu"> Products <span class="fa arrow"></span> </span>
                 </a>
             </li>
