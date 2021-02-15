@@ -360,7 +360,7 @@
                                         <!--/span-->
                                     </div>
 
-                                    <label>working days & times</label>
+                                    <label>Working Days & Hours</label>
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="row form-group">

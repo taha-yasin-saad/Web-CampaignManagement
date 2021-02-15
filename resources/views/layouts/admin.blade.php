@@ -149,6 +149,7 @@
         .switchery {
             height: 20px;
             width: 40px;
+            margin-right: 18px;
         }
         .switchery>small {
             height: 20px;
