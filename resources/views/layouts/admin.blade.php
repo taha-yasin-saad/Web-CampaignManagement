@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{asset('logo.jpg')}}">
+    <link rel="icon" type="image/svg+xml" href="{{asset('fav-512.svg')}}">
     <title>Closor</title>
     <!-- Bootstrap Core CSS -->
     <link href="{{asset('bootstrap/dist/css/bootstrap.min.css')}}" rel="stylesheet">
@@ -423,17 +423,25 @@
         });
     });
     </script>
-    <script src="http://www.geoplugin.net/javascript.gp" type="text/javascript"></script>
+    <!-- <script src="http://www.geoplugin.net/javascript.gp" type="text/javascript"></script> -->
     <!-- get time zone -->
     <script type="text/javascript">
     jQuery(document).ready(function($) {
 
-        jQuery.getScript('http://www.geoplugin.net/javascript.gp', function() {
-            var zone = geoplugin_timezone();
+        // jQuery.getScript('http://www.geoplugin.net/javascript.gp', function() {
+        //     var zone = geoplugin_timezone();
+        //     $("#time-zone").val(zone);
+        //     console.log('time-zone is');
+        //     console.log(zone);
+        // });
+
+        $.get("https://api.ipdata.co?api-key=bbcc18dbda8db855a82aaecedab1b35c243700bd625b2ac94a9a8926", function(response) {
+            console.log(response);
+            var code = response.country_code;
+            var zone = response.time_zone.name;
             $("#time-zone").val(zone);
-            console.log('time-zone is');
             console.log(zone);
-        });
+        }, "jsonp");
     });
     </script>
     {{-- country flag js --}}

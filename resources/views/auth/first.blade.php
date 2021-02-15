@@ -6,7 +6,7 @@
 
     <div class="new-login-box">
         <div class="white-box">
-            <img src="{{asset('bright-logo.svg')}}" alt="logo">
+            <img src="{{asset('Closor-Logo-Wide-whiteBG.svg')}}" alt="logo">
             <form class="form-horizontal new-lg-form" id="loginform" method="POST" action="{{ url('first') }}">
                 @csrf
                 <div class="form-group  m-t-20">

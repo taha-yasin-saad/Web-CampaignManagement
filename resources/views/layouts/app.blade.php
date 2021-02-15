@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{asset('logo.jpg')}}">
+    <link rel="icon" type="image/svg+xml" href="{{asset('fav-512.svg')}}">
     <title>Closor</title>
     <!-- Bootstrap Core CSS -->
     <link href="{{asset('bootstrap/dist/css/bootstrap.min.css')}}" rel="stylesheet">
@@ -54,6 +54,10 @@
             text-transform: capitalize !important;
         }
         .invalid-feedback .text-danger {
+            font-weight: 100;
+            color: red;
+        }
+        .invalid-feedback strong {
             font-weight: 100;
             color: red;
         }

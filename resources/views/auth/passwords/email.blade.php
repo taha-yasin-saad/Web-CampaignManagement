@@ -5,7 +5,7 @@
 <section id="wrapper" class="new-login-register">
     <div class="new-login-box" style="margin-top: 5%;">
         <div class="white-box">
-            <img src="{{asset('bright-logo.svg')}}" alt="logo">
+            <img src="{{asset('Closor-Logo-Wide-whiteBG.svg')}}" alt="logo">
             @if (session('status'))
             <div class="alert alert-success" role="alert">
                 {{ session('status') }}

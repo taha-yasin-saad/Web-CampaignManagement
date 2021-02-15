@@ -5,7 +5,7 @@
 <section id="wrapper" class="new-login-register">
     <div class="new-login-box" style="margin-top: 5%;">
         <div class="white-box">
-            <img src="{{asset('bright-logo.svg')}}" alt="logo">
+            <img src="{{asset('Closor-Logo-Wide-whiteBG.svg')}}" alt="logo">
             <form class="form-horizontal new-lg-form" id="loginform" method="POST" @if(session('invited'))
                 action="{{ url('login2') }}" @else action="{{ route('register') }}" @endif>
                 @csrf
@@ -13,7 +13,7 @@
                     <div class="col-xs-12">
                         <label>Name</label>
                         <input id="name" type="text" class="form-control @error('name') is-invalid @enderror"
-                            name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                            name="name" placeholder="Name" value="{{ old('name') }}" required autocomplete="name" autofocus>
 
                         @error('name')
                         <span class="invalid-feedback" role="alert">
@@ -80,6 +80,8 @@
                     </div>
                 </div>
                 <div>
+                <p class="small-font">By clicking on register, you agree to the <a href="https://closor.com/terms/" target="_blank">terms of service</a></p>
+                <br>
                 <a href="{{url()->previous()}}"><- Back to login</a>
                 </div>
             </form>

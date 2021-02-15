@@ -2,7 +2,7 @@
     <div class="sidebar-nav slimscrollsidebar">
         <div class="sidebar-head">
 
-            <img src="{{asset('dark-logo.png')}}" alt="logo" width="100%">
+            <img src="{{asset('Closor-Logo-Wide-darkBG.svg')}}" alt="logo" width="100%">
         </div>
         <ul class="nav" id="side-menu">
 
