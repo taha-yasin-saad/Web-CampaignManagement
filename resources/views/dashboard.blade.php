@@ -141,7 +141,33 @@
 </div>
 <!--row -->
 <br>
-
+<!--row -->
+<div class="row">
+    <div class="col-md-12 col-lg-6 col-sm-12 col-xs-12">
+        <div class="white-box">
+            <h3 class="box-title">Workplaces Chart</h3>
+            <ul class="list-inline text-right">
+                <li>
+                    <h5><i class="fa fa-circle m-r-5 text-danger"></i>Workplaces</h5>
+                </li>
+            </ul>
+            <div id="workplaces_chart" style="height: 285px;"></div>
+        </div>
+    </div>
+    <div class="col-md-12 col-lg-6 col-sm-12 col-xs-12">
+        <div class="white-box">
+            <h3 class="box-title">{{@$products_chart[0]->title}} Products chart</h3>
+            <ul class="list-inline text-right">
+                <li>
+                    <h5><i class="fa fa-circle m-r-5 text-info"></i>Products</h5>
+                </li>
+            </ul>
+            <div id="products_chart" style="height: 285px;"></div>
+        </div>
+    </div>
+</div>
+<!-- /.row -->
+<br>
 <!--row -->
 <div class="row">
     <div class="col-md-8 col-lg-9">
@@ -204,7 +230,7 @@
                 </li> --}}
                 <li>Leads Count : {{$recent_products[0]->leads_count}}</li>
             </ul>
-                {{-- <button class="btn btn-success btn-rounded waves-effect waves-light m-t-20">Read more</button> --}}
+            {{-- <button class="btn btn-success btn-rounded waves-effect waves-light m-t-20">Read more</button> --}}
             <div class="text-muted">
                 <span class="m-r-10"><i class="icon-calender"></i>
                     {{$recent_products[0]->created_at->format('M d')}}</span>
@@ -263,7 +289,7 @@
                 {{-- <li>Owner Name : {{$max_count_leads_products[0]->user->title}}</li> --}}
                 <li>Leads Count : {{$max_count_leads_products[0]->leads_count}}</li>
             </ul>
-                {{-- <button class="btn btn-success btn-rounded waves-effect waves-light m-t-20">Read more</button> --}}
+            {{-- <button class="btn btn-success btn-rounded waves-effect waves-light m-t-20">Read more</button> --}}
             <div class="text-muted">
                 <span class="m-r-10"><i class="icon-calender"></i>
                     {{$max_count_leads_products[0]->created_at->format('M d')}}</span>
@@ -323,7 +349,7 @@
                 {{-- <li>Owner Name : {{$max_count_members_workplaces[0]->user->title}}</li> --}}
                 <li>Members Count : {{$max_count_members_workplaces[0]->users_count}}</li>
             </ul>
-                {{-- <button class="btn btn-success btn-rounded waves-effect waves-light m-t-20">Read more</button> --}}
+            {{-- <button class="btn btn-success btn-rounded waves-effect waves-light m-t-20">Read more</button> --}}
             <div class="text-muted">
                 <span class="m-r-10"><i class="icon-calender"></i>
                     {{$max_count_members_workplaces[0]->created_at->format('M d')}}</span>
@@ -1617,6 +1643,77 @@
             [].slice.call(document.querySelectorAll('.sttabs')).forEach(function(el) {
                 new CBPFWTabs(el);
             });
+
+            //workplaces_chart
+            new Chartist.Line('#workplaces_chart', {
+            labels: [
+                @foreach($workplaces_chart as $workplace_chart)
+                    {{$workplace_chart->month}},
+                @endforeach
+            ],
+            series: [
+                [
+                @foreach($workplaces_chart as $workplace_chart)
+                    {{$workplace_chart->workplaces_count}},
+                @endforeach
+                ]
+            ]
+                }, {
+                    top: 0,
+
+                    low: 1,
+                    showPoint: true,
+
+                    fullWidth: true,
+                    plugins: [
+                Chartist.plugins.tooltip()
+            ],
+            axisY: {
+                labelInterpolationFnc: function (value) {
+                return (value / 1) + '';
+                }
+            },
+                showArea: true
+            });
+
+            //products_chart
+            new Chartist.Line('#products_chart', {
+            labels: [
+                @foreach($products_chart as $product_chart)
+                    {{$product_chart->month}},
+                @endforeach
+            ],
+            series: [
+                [],
+                [
+                @foreach($products_chart as $product_chart)
+                    {{$product_chart->products_count}},
+                @endforeach
+                ]
+            ]
+                }, {
+                    top: 0,
+
+                    low: 1,
+                    showPoint: true,
+
+                    fullWidth: true,
+                    plugins: [
+                Chartist.plugins.tooltip()
+            ],
+            axisY: {
+                labelInterpolationFnc: function (value) {
+                return (value / 1) + '';
+                }
+            },
+                showArea: true
+            });
         })();
+        $('.datatable_dashboard').DataTable({
+                dom: 'Bf',
+                buttons: [
+                    'copy', 'csv', 'excel', 'pdf', 'print'
+                ]
+            });
 </script>
 @endsection

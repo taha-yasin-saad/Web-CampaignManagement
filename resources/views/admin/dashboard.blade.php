@@ -123,24 +123,32 @@
         <!--row -->
         <br>
         <!--row -->
-        {{-- <div class="row">
+        <div class="row">
             <div class="col-md-12 col-lg-6 col-sm-12 col-xs-12">
                 <div class="white-box">
-                    <h3 class="box-title">Yearly Leads & Users Count</h3>
+                    <h3 class="box-title">Yearly Leads Count</h3>
                     <ul class="list-inline text-right">
-                        <li>
-                            <h5><i class="fa fa-circle m-r-5 text-info"></i>Users</h5>
-                        </li>
                         <li>
                             <h5><i class="fa fa-circle m-r-5 text-danger"></i>Leads</h5>
                         </li>
                     </ul>
-                    <div id="yearly-leads-users-logs" style="height: 285px;"></div>
+                    <div id="yearly-leads-logs" style="height: 285px;"></div>
                 </div>
             </div>
-        </div> --}}
+            <div class="col-md-12 col-lg-6 col-sm-12 col-xs-12">
+                <div class="white-box">
+                    <h3 class="box-title">Yearly Users Count</h3>
+                    <ul class="list-inline text-right">
+                        <li>
+                            <h5><i class="fa fa-circle m-r-5 text-info"></i>Users</h5>
+                        </li>
+                    </ul>
+                    <div id="yearly-users-logs" style="height: 285px;"></div>
+                </div>
+            </div>
+        </div>
         <!-- /.row -->
-
+        <br>
         <!--row -->
         <div class="row">
             <div class="col-md-8 col-lg-9">
@@ -1622,20 +1630,52 @@
                 new CBPFWTabs(el);
             });
 
-            //yearly-leads-users-logs
-            new Chartist.Line('#yearly-leads-users-logs', {
+            //yearly-leads-logs
+            new Chartist.Line('#yearly-leads-logs', {
             labels: [
-                @for ($i = 7; $i >= 0; $i--)
-                    {{$users_yearly->max('created_at')->format('Y') - $i}},
-                @endfor
-                // @foreach($users_yearly as $user_yearly)
-                //     $user_yearly->created_at
-                // @endforeach
-                // '2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015'
+                @foreach($leads_yearly as $lead_yearly)
+                    {{$lead_yearly->year}},
+                @endforeach
             ],
             series: [
-                [5, 2, 7, 4, 5, 3, 5, 4],
-                [2, 5, 2, 6, 2, 5, 2, 4]
+                [
+                @foreach($leads_yearly as $lead_yearly)
+                    {{$lead_yearly->leads_yearly_count}},
+                @endforeach
+                ]
+            ]
+                }, {
+                    top: 0,
+
+                    low: 1,
+                    showPoint: true,
+
+                    fullWidth: true,
+                    plugins: [
+                Chartist.plugins.tooltip()
+            ],
+            axisY: {
+                labelInterpolationFnc: function (value) {
+                return (value / 1) + '';
+                }
+            },
+                showArea: true
+            });
+
+            //yearly-users-logs
+            new Chartist.Line('#yearly-users-logs', {
+            labels: [
+                @foreach($users_yearly as $user_yearly)
+                    {{$user_yearly->year}},
+                @endforeach
+            ],
+            series: [
+                [],
+                [
+                @foreach($users_yearly as $user_yearly)
+                    {{$user_yearly->users_yearly_count}},
+                @endforeach
+                ]
             ]
                 }, {
                     top: 0,

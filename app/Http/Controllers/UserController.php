@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Lead;
 use App\Product;
 use App\User;
 use App\Workplace;
@@ -67,9 +68,22 @@ class UserController extends Controller
         $query['recent_products'] = Product::with('workplace','users')->where('workplace_id', session('workplace')->id)->withCount('leads')->orderBy('id','desc')->limit(6)->get();
 
         $query['max_count_leads_products'] = Product::with('workplace')->where('workplace_id', session('workplace')->id)->withCount('leads')->orderBy('leads_count','desc')->limit(6)->get();
-        
-        $query['max_count_members_workplaces'] = Workplace::where('admin_id', auth()->id())->with('users')->withCount('users')->orderBy('users_count','desc')->limit(6)->get();
 
+        $query['max_count_members_workplaces'] = Workplace::where('admin_id', auth()->id())->with('users')->withCount('users')->orderBy('users_count','desc')->limit(6)->get();
+        // dd($query['recent_products']);
+
+        // $query['years'] = User::get();
+        // $query['leads_yearly'] = Lead::get();
+        // $query['users_yearly'] = User::with('products')->where('products.user_id', auth()->id())->selectRaw('COUNT(*) as users_yearly_count, YEAR(created_at) year')->groupBy('year')->orderBy('id','asc')->get();
+
+        $query['workplaces_chart'] = Workplace::where('admin_id', auth()->id())->with('users')->selectRaw('COUNT(*) as workplaces_count, YEAR(created_at) year, MONTH(created_at) month')->groupBy('year', 'month')->orderBy('id','asc')->limit(5)->get();
+
+        $query['products_chart'] = Product::with('users')->where('workplace_id', session('workplace')->id)->selectRaw('COUNT(*) as products_count, YEAR(created_at) year, MONTH(created_at) month')->groupBy('year', 'month')->orderBy('id','asc')->limit(5)->get();
+    // dd($query['workplaces_chart']);
+
+        // $query['max_count_leads_products'] = Product::with('workplace')->where('workplace_id', session('workplace')->id)->withCount('leads')->orderBy('leads_count','desc')->limit(6)->get();
+
+    //     $query['leads_yearly'] = Lead::selectRaw('COUNT(*) as leads_yearly_count, YEAR(created_at) year')->groupBy('year')->orderBy('id','asc')->get();
         return view('dashboard', $query);
     }
 

@@ -8,7 +8,16 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Password;
 use Validator;
-
+/**
+ * @group 3.4  APIs Reset Password Request
+ *
+ * Page Group To manage User Password From APIs.
+ *
+ * - Send Reset Password Link.
+ *
+ * @authenticated
+ *
+ */
 class ForgotPasswordController extends Controller
 {
     use SendsPasswordResetEmails;

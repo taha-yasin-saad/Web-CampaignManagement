@@ -6,7 +6,16 @@ use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ResetsPasswords;
 use Illuminate\Http\Request;
 
-
+/**
+ * @group 3.3  APIs Password management
+ *
+ * Page Group To manage User Password From APIs.
+ *
+ * - Send Reset Password Link.
+ *
+ * @authenticated
+ *
+ */
 class ResetPasswordController extends Controller
 {
     use ResetsPasswords;
