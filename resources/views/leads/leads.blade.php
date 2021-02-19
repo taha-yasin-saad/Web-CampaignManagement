@@ -8,12 +8,12 @@
     <div class="container-fluid">
         <div class="row bg-title">
             <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                <h4 class="page-title">Workplace</h4>
+                <h4 class="page-title">LEADS</h4>
             </div>
             <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                 <ol class="breadcrumb">
                     <li><a href="{{url('dashboard')}}">Dashboard</a></li>
-                    <li class="active">Workplaces</li>
+                    <li class="active">LEADS</li>
                 </ol>
             </div>
         </div>
@@ -133,7 +133,7 @@
 <div class="row">
     <div class="col-md-12">
         <div class="white-box">
-            <form class="white-box lead_filter" method="post">
+            <form class=" lead_filter" method="post">
                 <div class="row">
                     <div class="col-md-12">
                         <div class="form-group">
@@ -157,51 +157,49 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-12">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label for="assigned">assigned to</label>
-                                <select class="form-control" id="assigned" name="user_id">
-                                    <option value="0">All Users</option>
-                                    @foreach ($users as $user)
-                                    @if(get_role(session('workplace')->id) <= 2 || Auth::user()->id ==
-                                        $user->user->id)
-                                        <option value="{{$user->user->id}}" @if(isset($_GET['user_id']) &&
-                                            $user_id==$user->user->id) selected
-                                            @endif>@if($user->user->name){{$user->user->name}} @else
-                                            {{$user->user->email}}@endif</option>
-                                        @endif
-                                        @endforeach
-                                </select>
-                            </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="assigned">assigned to</label>
+                            <select class="form-control" id="assigned" name="user_id">
+                                <option value="0">All Users</option>
+                                @foreach ($users as $user)
+                                @if(get_role(session('workplace')->id) <= 2 || Auth::user()->id ==
+                                    $user->user->id)
+                                    <option value="{{$user->user->id}}" @if(isset($_GET['user_id']) && $user_id==$user->
+                                        user->id) selected
+                                        @endif>@if($user->user->name){{$user->user->name}} @else
+                                        {{$user->user->email}}@endif</option>
+                                    @endif
+                                    @endforeach
+                            </select>
                         </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label for="assigned">Product</label>
-                                <select class="form-control" name="product_id" id="assigned">
-                                    <option value="0">All Products</option>
-                                    @foreach ($products as $value)
-                                    @if (get_role(session('workplace')->id) <= 1 || (get_role(session('workplace')->id)
-                                        > 1 &&
-                                        in_array(Auth::user()->id,$value->selected_ids)))
-                                        <option value="{{$value->id}}" @if(@$product_id && $product_id==$value->id)
-                                            selected
-                                            @endif>{{$value->title}}</option>
-                                        @endif
-                                        @endforeach
-                                </select>
-                            </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="assigned">Product</label>
+                            <select class="form-control" name="product_id" id="assigned">
+                                <option value="0">All Products</option>
+                                @foreach ($products as $value)
+                                @if (get_role(session('workplace')->id) <= 1 || (get_role(session('workplace')->id)
+                                    > 1 &&
+                                    in_array(Auth::user()->id,$value->selected_ids)))
+                                    <option value="{{$value->id}}" @if(@$product_id && $product_id==$value->id)
+                                        selected
+                                        @endif>{{$value->title}}</option>
+                                    @endif
+                                    @endforeach
+                            </select>
                         </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label for="lead-quality">Lead quality</label>
-                                <select class="form-control" name="status" id="lead-quality">
-                                    <option selected disabled>Select quality</option>
-                                    <option value="0" @if(@$status && $status==0) selected @endif>Qualified</option>
-                                    <option value="1" @if(@$status && $status==1) selected @endif>Un Qualified</option>
-                                </select>
-                            </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="lead-quality">Lead quality</label>
+                            <select class="form-control" name="status" id="lead-quality">
+                                <option selected disabled>Select quality</option>
+                                <option value="0" @if(@$status && $status==0) selected @endif>Qualified</option>
+                                <option value="1" @if(@$status && $status==1) selected @endif>Un Qualified</option>
+                            </select>
                         </div>
                     </div>
                 </div>
@@ -229,7 +227,6 @@
                             <tr>
                                 {{-- <th style="width: 70px;" class="text-center">#</th> --}}
                                 <th>Lead</th>
-                                <th>Workplace</th>
                                 <th>Product</th>
                                 <th>Source</th>
                                 <th>Submitted on</th>
@@ -251,99 +248,118 @@
 @endsection
 @section('filter_table')
 <script type="text/javascript">
-    var oTable = $('.lead-data-table').DataTable({
-        dom: "Bf" + "<'row'<'col-xs-12'<'col-xs-6'l><'col-xs-6'p>>r>"+
-            "<'row'<'col-xs-12't>>"+
-            "<'row'<'col-xs-12'<'col-xs-6'i><'col-xs-6'p>>>",
-        buttons: [
-            'copy', 'csv', 'excel', 'pdf', 'print'
-        ],
-        processing: true,
-        serverSide: true,
-        ajax: {
-            url: "{{ route('leads.index') }}",
-            data: function (d) {
-                d.min_date = $('input[name=min_date]').val();
-                d.max_date = $('input[name=max_date]').val();
-                d.user_id = $('select[name=user_id]').val();
-                d.product_id = $('select[name=product_id]').val();
-                d.status = $('select[name=status]').val();
-                console.log(d.status);
-            }
+var oTable = $('.lead-data-table').DataTable({
+    dom: "Bf" + "<'row'<'col-xs-12'<'col-xs-6'l><'col-xs-6'p>>r>" +
+        "<'row'<'col-xs-12't>>" +
+        "<'row'<'col-xs-12'<'col-xs-6'i><'col-xs-6'p>>>",
+    buttons: [
+        'copy', 'csv', 'excel', 'pdf', 'print'
+    ],
+    processing: true,
+    serverSide: true,
+    ajax: {
+        url: "{{ route('leads.index') }}",
+        data: function(d) {
+            d.min_date = $('input[name=min_date]').val();
+            d.max_date = $('input[name=max_date]').val();
+            d.user_id = $('select[name=user_id]').val();
+            d.product_id = $('select[name=product_id]').val();
+            d.status = $('select[name=status]').val();
+            console.log(d.status);
+        }
+    },
+    columns: [{
+            data: "name",
+            "render": function(data, type, full, meta) {
+                var lead_name = (full.name != null) ? full.name : '-';
+                var lead_phone = (full.phone != null) ? full.phone : '-';
+                var lead_id = (full.id != null) ? full.id : '-';
+                var lead_url = "{{url('leads')}}";
+                // console.log(full);
+                return '<div class="flex-column"><a href="' + lead_url + '/' + lead_id + '">' +
+                    lead_name +
+                    '</a><span class="text-right"><button type="button" class="btn btn-primary lead-btn"><i class="fa  fa-envelope"></i></button><a href="tel:+' +
+                    lead_phone + '" class="btn btn-success lead-btn" title="+' + lead_phone +
+                    '"><i class="fa fa-phone"></i></a></span></div>'
+            },
+            // "orderable": true,
+            // "targets": 0
+        }
+        {
+            data: 'product.title',
+            name: 'title',
+            orderable: false,
+            searchable: false
         },
-        columns: [
-              {
-                data: "name",
-                "render": function (data, type, full, meta) {
-                    var lead_name = (full.name != null) ? full.name : '-';
-                    var lead_phone = (full.phone != null) ? full.phone : '-';
-                    var lead_id = (full.id != null) ? full.id : '-';
-                    var lead_url = "{{url('leads')}}";
-                    // console.log(full);
-                    return '<div class="flex-column"><a href="'+ lead_url +'/'+ lead_id +'">' + lead_name + '</a><span class="text-right"><button type="button" class="btn btn-primary lead-btn"><i class="fa  fa-envelope"></i></button><a href="tel:+' + lead_phone + '" class="btn btn-success lead-btn" title="+' + lead_phone + '"><i class="fa fa-phone"></i></a></span></div>'
-                },
-                // "orderable": true,
-                // "targets": 0
-                },
-                {data: 'workplaces.title', name: 'title' , orderable: false, searchable: false},
-                {data: 'product.title', name: 'title' , orderable: false, searchable: false},
-                {data: 'source.name', name: 'name'},
-                {data: 'created_at', name: 'created_at'},
-                // {data: 'user.name', name: 'name'},
-                {
-                data: "user",
-                "render": function (data, type, full, meta) {
-                    var user = (full.user != null) ? full.user.name : '-';
+        {
+            data: 'source.name',
+            name: 'name'
+        },
+        {
+            data: 'created_at',
+            name: 'created_at'
+        },
+        // {data: 'user.name', name: 'name'},
+        {
+            data: "user",
+            "render": function(data, type, full, meta) {
+                var user = (full.user != null) ? full.user.name : '-';
 
 
-                    // console.log(full.user);
-                    return user
-                },
-                // "orderable": true,
-                // "targets": 0
-                },
-                {data: 'scheduled_on', name: 'scheduled_on'},
-                {data: 'last_contact', name: 'last_contact'},
-                {
-                data: "status",
-                "render": function (data, type, full, meta) {
-                    var status = (full.status == 0) ? 'Qualified' : 'Un Qualified';
-                    var status_style = (full.status == 0) ? 'primary' : 'danger';
+                // console.log(full.user);
+                return user
+            },
+            // "orderable": true,
+            // "targets": 0
+        },
+        {
+            data: 'scheduled_on',
+            name: 'scheduled_on'
+        },
+        {
+            data: 'last_contact',
+            name: 'last_contact'
+        },
+        {
+            data: "status",
+            "render": function(data, type, full, meta) {
+                var status = (full.status == 0) ? 'Qualified' : 'Un Qualified';
+                var status_style = (full.status == 0) ? 'primary' : 'danger';
 
-                    return '<button class="btn btn-'+status_style+'">'+status+'</button>'
-                },
-                // "orderable": true,
-                // "targets": 0
-                },
-            ],
-          columnDefs: [{
-                orderable: false,
-                // targets: [1, 2, 3]
+                return '<button class="btn btn-' + status_style + '">' + status + '</button>'
+            },
+            // "orderable": true,
+            // "targets": 0
+        },
+    ],
+    columnDefs: [{
+        orderable: false,
+        // targets: [1, 2, 3]
 
-            }]
-    });
+    }]
+});
 
 
-    $('.lead_filter').on('submit', function(e) {
-        e.preventDefault();
-        oTable.draw();
-        setTimeout(function(){
+$('.lead_filter').on('submit', function(e) {
+    e.preventDefault();
+    oTable.draw();
+    setTimeout(function() {
         var total_leads_count = oTable.page.info().recordsTotal;
-        var total_contacted_leads_count = oTable.column(7).data().filter( function ( value, index ) {
+        var total_contacted_leads_count = oTable.column(7).data().filter(function(value, index) {
             return value != null ? true : false;
         }).count();
-        var total_qualified_leads_count = oTable.column(8).data().filter( function ( value, index ) {
+        var total_qualified_leads_count = oTable.column(8).data().filter(function(value, index) {
             return value == 0 ? true : false;
         }).count();
         console.log(total_leads_count);
         $(".leads_count").text(total_leads_count);
         $(".contacted_leads_count").text(total_contacted_leads_count);
         $(".qualified_leads_count").text(total_qualified_leads_count);
-        }, 500);
-    });
+    }, 500);
+});
 </script>
 <script src="{{asset('js/filter-table.js')}}"></script>
 <script>
-    $('.mydatepicker').datepicker();
+$('.mydatepicker').datepicker();
 </script>
 @endsection

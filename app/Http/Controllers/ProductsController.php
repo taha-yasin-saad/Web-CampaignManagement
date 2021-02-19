@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Log;
 use App\Workplace;
 use App\Product;
 use App\User;
@@ -319,6 +320,10 @@ class ProductsController extends Controller
         //send invitation email
         $data['subject'] = 'CLOSOR Invitation';
         $data['email'] = $request->email;
+        Log::create([
+            'subject' => 'CLOSOR Invitation',
+            'email' => $request->email
+        ]);
         \Illuminate\Support\Facades\Mail::send('auth.email_invite', $data, function ($message) use ($data) {
             $message->from('support@closor.com', 'CLOSOR')->to($data['email'], 'CLOSOR')->subject($data['subject']);
         });

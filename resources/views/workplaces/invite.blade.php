@@ -8,12 +8,12 @@
     <div class="container-fluid">
         <div class="row bg-title">
             <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                <h4 class="page-title">Invite To Product</h4>
+                <h4 class="page-title">Invite Team Member</h4>
             </div>
             <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                 <ol class="breadcrumb">
                     <li><a href="{{url('dashboard')}}">Dashboard</a></li>
-                    <li class="active">Invite To Products</li>
+                    <li class="active">Invite Team Members</li>
                 </ol>
             </div>
         </div>
@@ -66,7 +66,7 @@
                                         <div class="col-md-12 text-right m-t-20">
                                             <button type="submit" class="btn btn-danger"> <i
                                                     class="fa fa-check"></i>
-                                                Save</button>
+                                                    Send Invitation</button>
                                         </div>
                                     </div>
                                 </form>

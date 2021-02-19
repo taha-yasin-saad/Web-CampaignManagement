@@ -8,10 +8,11 @@
     <div class="container-fluid">
         <div class="row bg-title">
             <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                <h4 class="page-title">{{$workplace->title}} - Role : @if(get_role($workplace->id) == 0) Owner
+                <!-- <h4 class="page-title">{{$workplace->title}} - Role : @if(get_role($workplace->id) == 0) Owner
                     @elseif(get_role($workplace->id) == 1) Admin @elseif(get_role($workplace->id) == 2) Leader
                     @elseif(get_role($workplace->id) == 3) SalesAgent @elseif(get_role($workplace->id) == 9) you Have
-                    not Permission to access that Workspace @endif</h4>
+                    not Permission to access that Workspace @endif</h4> -->
+                <h4 class="page-title">PRODUCTS</h4>
             </div>
             <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                 <ol class="breadcrumb">
@@ -97,7 +98,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xs-12">
+            <div class="">
                 @if (session('success'))
                 <div class="alert alert-success" role="alert">
                     {{ session('success') }}

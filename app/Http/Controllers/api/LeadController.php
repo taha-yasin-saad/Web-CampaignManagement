@@ -332,7 +332,7 @@ class LeadController extends Controller
         $data = $request->all();
         unset($data['phone']);
         unset($data['country_code']);
-        $data["phone"] = $request->country_code . $request->phone;
+        $data["phone"] = $request->country_code . ltrim($request->phone, '0');
 
         $user = Source::find($request->source_id)->product->users()->where('is_available',1)->withCount('leads')->orderBy('leads_count', 'asc')->first();
 
@@ -347,7 +347,7 @@ class LeadController extends Controller
         $save->product_id = $product_id;
         $save->name = $request->name;
         $save->email = $request->email;
-        $save->phone = $request->country_code . $request->phone;
+        $save->phone = $request->country_code .ltrim($request->phone, '0');
         $save->lead = json_encode($data);
         $save->save();
 

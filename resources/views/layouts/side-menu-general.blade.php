@@ -3,7 +3,7 @@
     <div class="sidebar-nav slimscrollsidebar">
         <div class="sidebar-head">
 
-            <img src="{{asset('dark-logo.png')}}" alt="logo" width="100%">
+            <img src="{{asset('Closor-Logo-Wide-darkBG.svg')}}" alt="logo" width="100%">
         </div>
         <div class="dropdown workspace_dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#">
@@ -61,7 +61,7 @@
             </li>
             <li class="{{ (request()->is(session('workplace')->id.'/products')) ? 'active' : '' }}">
                 <a href="{{url(session('workplace')->id.'/products')}}" class="waves-effect"><i
-                        class="mdi mdi-account-card-details fa-fw" data-icon="v"></i>
+                        class="mdi mdi-directions-fork fa-fw" data-icon="v"></i>
                     <span class="hide-menu"> Products <span class="fa arrow"></span> </span>
                 </a>
             </li>

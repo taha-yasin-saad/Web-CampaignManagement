@@ -12,7 +12,7 @@
             </div>
             <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                 <ol class="breadcrumb">
-                    <li><a href="{{url('/')}}">{{$workplace->title}}</a></li>
+                    <li><a href="{{url('/')}}">Dashboard</a></li>
                     {{-- <li><a href="{{url($product->id.'/products')}}">{{$product->title}}</a></li> --}}
                     <li class="active">Team</li>
                 </ol>
@@ -58,7 +58,7 @@
                                     <th>QUALIFIED LEADS</th>
                                     <th>CONVERSION RATE</th>
                                     @if(get_role($workplace->id) == 0 || get_role($workplace->id) == 1)
-                                    <th colspan="3">MANAGE</th>
+                                    <th>MANAGE</th>
                                     @endif
                                 </tr>
                             </thead>
@@ -121,14 +121,18 @@
                                         class="js-switch" data-color="#2cabe3" name="status" />
                                         <input type="hidden" id="current_user{{$value->id}}" value="{{$value->id}}" />
                                         @endif
-                                    </td>
+
                                     @section('status')
                                     <script>
-                                        var baseUrl = "{{url('/')}}";
+                                    var baseUrl = "{{url('/')}}";
 
                                     function change_status(activate) {
                                         console.log(activate.checked)
-                                        var id = document.getElementById("current_user" +{{$value->id}}).value;
+                                        var id = document.getElementById("current_user" + {
+                                            {
+                                                $value - > id
+                                            }
+                                        }).value;
                                         console.log(id)
                                         var status;
 
@@ -146,7 +150,11 @@
                                         $.ajax({
                                             type: 'GET',
                                             url: baseUrl + '/active_user_in_workspace/' + status + '/' + id +
-                                                '/' + {{$workplace->id}},
+                                                '/' + {
+                                                    {
+                                                        $workplace - > id
+                                                    }
+                                                },
                                             success: function(data) {
 
                                                 console.log(data)
@@ -156,7 +164,7 @@
                                     }
                                     </script>
                                     @endsection
-                                    <td>
+
                                         @if($value->pivot->role != 0)
                                         <button type="button"
                                             class="btn btn-info btn-outline btn-circle btn-lg m-r-5 remove_user_from_workspace_alert"
@@ -165,7 +173,7 @@
                                         </button>
                                         @endif
                                         <script>
-                                            function delete_user() {
+                                        function delete_user() {
                                             swal({
                                                 title: "Are you sure?",
                                                 text: "The user will be removed from entire workspace !",
@@ -175,7 +183,11 @@
                                                 confirmButtonText: "Yes, delete it!",
                                                 closeOnConfirm: true
                                             }, function() {
-                                                document.getElementById('remove_user_from_workspace' + {{$value->id}}).submit();
+                                                document.getElementById('remove_user_from_workspace' + {
+                                                    {
+                                                        $value - > id
+                                                    }
+                                                }).submit();
                                             });
                                         }
                                         </script>
@@ -220,8 +232,7 @@
                                                 </div>
                                             </div>
                                         </a>
-                                    </td>
-                                    <td>
+
                                         @if($value->pivot->role != 0)
                                         <a class="dropdown">
                                             <a class="btn btn-info btn-outline btn-circle btn-lg m-r-5"

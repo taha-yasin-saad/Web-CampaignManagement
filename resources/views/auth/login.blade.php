@@ -5,7 +5,7 @@
 <section id="wrapper" class="new-login-register">
     <div class="new-login-box">
         <div class="white-box">
-            <img src="{{asset('bright-logo.png')}}" alt="logo">
+            <img src="{{asset('Closor-Logo-Wide-whiteBG.svg')}}" alt="logo">
             <form class="form-horizontal new-lg-form" id="loginform" method="POST" action="{{ route('login') }}">
                 @csrf
                 <div class="form-group  m-t-20">
@@ -17,7 +17,7 @@
                             autocomplete="email" autofocus placeholder="email" required>
                         @error('email')
                         <span class="invalid-feedback text-danger" role="alert">
-                            <strong>{{ $message }}</strong>
+                            <strong class="text-danger">{{ $message }}</strong>
                         </span>
                         @enderror
                     </div>
@@ -30,7 +30,7 @@
                             autocomplete="current-password" placeholder="Password">
                         @error('password')
                         <span class="invalid-feedback text-danger" role="alert">
-                            <strong>{{ $message }}</strong>
+                            <strong class="text-danger">{{ $message }}</strong>
                         </span>
                         @enderror
                     </div>

@@ -595,6 +595,7 @@ hr {
 }
 label {
     font-weight: 500;
+    padding-bottom: 10px;
 }
 .btn {
     border-radius: 3px;
@@ -3929,6 +3930,7 @@ table.focus-on tbody tr.focused th {
 .new-login-box .white-box img {
     display: block;
     margin: auto;
+    max-width: 60%;
 }
 .new-login-register .new-login-box .new-lg-form {
     padding-top: 20px;
@@ -5921,7 +5923,7 @@ ul.select-row-icon li a:hover i.whn-hov {
     font-size: 21px;
 }
 .sidebar .sidebar-head {
-    padding: 4px 20px;
+    padding: 15px 20px;
     width: 240px;
     z-index: 10;
     left: 0;
@@ -16364,4 +16366,8 @@ ul.pro-amenities li span i {
 
 .panel {
     padding: 20px;
+}
+
+p.small-font {
+    font-size: small;
 }

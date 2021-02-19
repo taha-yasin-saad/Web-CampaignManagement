@@ -2,7 +2,7 @@
     <div class="sidebar-nav slimscrollsidebar">
         <div class="sidebar-head">
 
-            <img src="{{asset('dark-logo.png')}}" alt="logo" width="100%">
+            <img src="{{asset('Closor-Logo-Wide-darkBG.svg')}}" alt="logo" width="100%">
         </div>
         <ul class="nav" id="side-menu">
 
@@ -40,6 +40,12 @@
                 <a href="{{url('admin/lead')}}" class="waves-effect"><i class="mdi mdi-account-multiple fa-fw"
                         data-icon="v"></i>
                     <span class="hide-menu"> Leads <span class="fa arrow"></span> </span>
+                </a>
+            </li>
+            <li>
+                <a href="{{url('admin/email_log')}}" class="waves-effect"><i class="mdi mdi-account-multiple fa-fw"
+                        data-icon="v"></i>
+                    <span class="hide-menu"> Email Logs <span class="fa arrow"></span> </span>
                 </a>
             </li>
         </ul>
