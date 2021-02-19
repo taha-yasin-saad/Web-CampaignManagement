@@ -9,6 +9,7 @@ use App\User;
 use App\UserProduct;
 use App\Workplace;
 use App\WorkplaceUser;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 /**
@@ -88,7 +89,9 @@ class WorkplacesController extends Controller
      */
     public function create()
     {
-        return view('workplaces.add');
+        $query['start_time'] = '9:00';
+        $query['end_time'] = '5:00';
+        return view('workplaces.add', $query);
     }
 
     /**
@@ -191,7 +194,13 @@ class WorkplacesController extends Controller
     public function edit(Workplace $workplace)
     {
         $query['data'] = $workplace;
-        //dd($query['data']);
+        $query['data']['start_time'] = "9:00";
+        $query['data']['end_time'] = "5:00";
+        // dd($query['data']);
+        // $date = date_create('16:00');
+        // $format = \Carbon\Carbon::parse($date)->format('a');
+        // dd($format);
+
         return view('workplaces.add', $query);
     }
 
@@ -213,11 +222,102 @@ class WorkplacesController extends Controller
     public function update(Request $request, Workplace $workplace)
     {
         //dd($request);
+
         $data = $request->except(['_token', '_method']);
         $workplace->update($data);
         $times = Times::where('workplace_id', $workplace->id)->first();
         $data = $request->except(['_token', '_method', 'title', 'admin_id', 'timezone', 'website', 'startday', 'status']);
         $data['workplace_id'] = $workplace->id;
+        // "sun_start" => "22:22"
+        // "sun_end" => "22:27"
+        // dd($data);
+
+        // change time from 12 hr to 24 hr
+
+        //sunday
+        if (isset($data['sun_start']) && isset($data['sun_end'])) {
+            $sun_start = $data['sun_start']['time'] . $data['sun_start']['am_pm'];
+            $data['sun_start'] = Carbon::parse($sun_start)->format('H:i');
+
+            $sun_end = $data['sun_end']['time'] . $data['sun_end']['am_pm'];
+            $data['sun_end'] = Carbon::parse($sun_end)->format('H:i');
+        } else {
+            $data['sun_start'] = null;
+            $data['sun_end'] = null;
+        }
+
+        //monday
+        if (isset($data['mon_start']) && isset($data['mon_end'])) {
+            $mon_start = $data['mon_start']['time'] . $data['mon_start']['am_pm'];
+            $data['mon_start'] = Carbon::parse($mon_start)->format('H:i');
+
+            $mon_end = $data['mon_end']['time'] . $data['mon_end']['am_pm'];
+            $data['mon_end'] = Carbon::parse($mon_end)->format('H:i');
+        } else {
+            $data['mon_start'] = null;
+            $data['mon_end'] = null;
+        }
+
+        //tuesday
+        if (isset($data['tue_start']) && isset($data['tue_end'])) {
+            $tue_start = $data['tue_start']['time'] . $data['tue_start']['am_pm'];
+            $data['tue_start'] = Carbon::parse($tue_start)->format('H:i');
+
+            $tue_end = $data['tue_end']['time'] . $data['tue_end']['am_pm'];
+            $data['tue_end'] = Carbon::parse($tue_end)->format('H:i');
+        } else {
+            $data['tue_start'] = null;
+            $data['tue_end'] = null;
+        }
+
+        //wednesday
+        if (isset($data['wed_start']) && isset($data['wed_end'])) {
+            $wed_start = $data['wed_start']['time'] . $data['wed_start']['am_pm'];
+            $data['wed_start'] = Carbon::parse($wed_start)->format('H:i');
+
+            $wed_end = $data['wed_end']['time'] . $data['wed_end']['am_pm'];
+            $data['wed_end'] = Carbon::parse($wed_end)->format('H:i');
+        } else {
+            $data['wed_start'] = null;
+            $data['wed_end'] = null;
+        }
+
+        //thursday
+        if (isset($data['thu_start']) && isset($data['thu_end'])) {
+            $thu_start = $data['thu_start']['time'] . $data['thu_start']['am_pm'];
+            $data['thu_start'] = Carbon::parse($thu_start)->format('H:i');
+
+            $thu_end = $data['thu_end']['time'] . $data['thu_end']['am_pm'];
+            $data['thu_end'] = Carbon::parse($thu_end)->format('H:i');
+        } else {
+            $data['thu_start'] = null;
+            $data['thu_end'] = null;
+        }
+
+        //friday
+        if (isset($data['fri_start']) && isset($data['fri_end'])) {
+            $fri_start = $data['fri_start']['time'] . $data['fri_start']['am_pm'];
+            $data['fri_start'] = Carbon::parse($fri_start)->format('H:i');
+
+            $fri_end = $data['fri_end']['time'] . $data['fri_end']['am_pm'];
+            $data['fri_end'] = Carbon::parse($fri_end)->format('H:i');
+        } else {
+            $data['fri_start'] = null;
+            $data['fri_end'] = null;
+        }
+
+        //saturday
+        if (isset($data['sat_start']) && isset($data['sat_end'])) {
+            $sat_start = $data['sat_start']['time'] . $data['sat_start']['am_pm'];
+            $data['sat_start'] = Carbon::parse($sat_start)->format('H:i');
+
+            $sat_end = $data['sat_end']['time'] . $data['sat_end']['am_pm'];
+            $data['sat_end'] = Carbon::parse($sat_end)->format('H:i');
+        } else {
+            $data['sat_start'] = null;
+            $data['sat_end'] = null;
+        }
+        // dd($data);
 
         if ($times) {
             Times::where('workplace_id', $workplace->id)->update($data);
@@ -456,7 +556,7 @@ class WorkplacesController extends Controller
         \Illuminate\Support\Facades\Mail::send('auth.email_invite', $data, function ($message) use ($data) {
             $message->from('support@closor.com', 'CLOSOR')->to($data['email'], 'CLOSOR')->subject($data['subject']);
         });
-        return redirect($request->workplace_id.'/team')->with('success', 'Email invited Successfully');
+        return redirect($request->workplace_id . '/team')->with('success', 'Email invited Successfully');
     }
 
     public function all_workspaces()

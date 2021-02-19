@@ -121,7 +121,7 @@
             </div>
         </div>
         <!--row -->
-        <br>
+        {{-- <br>
         <!--row -->
         <div class="row">
             <div class="col-md-12 col-lg-6 col-sm-12 col-xs-12">
@@ -147,7 +147,7 @@
                 </div>
             </div>
         </div>
-        <!-- /.row -->
+        <!-- /.row --> --}}
         <br>
         <!--row -->
         <div class="row">
