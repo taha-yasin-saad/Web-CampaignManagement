@@ -556,40 +556,42 @@
     function showNewcustomsField(id) {
         $(".custom-" + id).show("swing");
         $(".custom-" + (id - 1) + " .plus-icon").hide("swing");
-
         $('#checkbox_custom'+id).change(function () {
-        if (this.checked) {
-            $('#form1_custom_lable_'+id).show('swing');
-            $('#custom_input_field_'+id).show('swing');
-            // $('#custom_lable_'+id).show('swing');
-        }  else {
-            $('#form1_custom_lable_'+id).hide('swing');
-            $('#custom_input_field_'+id).hide('swing');
-            // $('#custom_lable_'+id).hide('swing');
-        }
-    });
+            if (this.checked) {
+                $('#form1_custom_lable_'+id).show('swing');
+                $('#custom_input_field_'+id).show('swing');
+            }  else {
+                $('#form1_custom_lable_'+id).hide('swing');
+                $('#custom_input_field_'+id).hide('swing');
+            }
+        });
 
-    $('#custom_lable_'+id).on('input', function(e) {
-        $('#form1_custom_lable_'+id).attr("placeholder", this.value);
-        $('#checkbox_custom'+id).val(this.value);
-        $('#custom_lable_title_'+id).html(this.value);
-        $('#checkbox_custom_value_'+id).html(this.value);
+        $('#custom_lable_'+id).on('input', function(e) {
+            $('#form1_custom_lable_'+id).attr("placeholder", this.value);
+            $('#checkbox_custom'+id).val(this.value);
+            $('#custom_lable_title_'+id).html(this.value);
+            $('#checkbox_custom_value_'+id).html(this.value);
 
-        // document.getElementById("form1_custom_lable_"+id).placeholder = this.value;
-        // document.getElementById("custom_lable_title_"+id).innerHTML = this.value;
-        // document.getElementById("checkbox_custom_value_"+id).innerHTML = this.value;
-    });
+            // document.getElementById("form1_custom_lable_"+id).placeholder = this.value;
+            // document.getElementById("custom_lable_title_"+id).innerHTML = this.value;
+            // document.getElementById("checkbox_custom_value_"+id).innerHTML = this.value;
+        });
     }
+
+    $('#custom_lable_1').on('input', function(e) {
+        $('#form1_custom_lable_1').attr("placeholder", this.value);
+        $('#checkbox_custom1').val(this.value);
+        $('#custom_lable_title_1').html(this.value);
+        $('#checkbox_custom_value_1').html(this.value);
+    });
 
     $('#checkbox_custom1').change(function () {
         if (this.checked) {
             $('#form1_custom_lable_1').show('swing');
             $('#custom_input_field_1').show('swing');
-            // $('#custom_lable_1').show('swing');
         } else {
             $('#form1_custom_lable_1').hide('swing');
             $('#custom_input_field_1').hide('swing');
-            // $('#custom_lable_1').hide('swing');
         }
 
     });
@@ -602,12 +604,7 @@
 
     // });
 
-    $('#custom_lable_1').on('input', function(e) {
-        $('#form1_custom_lable_1').attr("placeholder", this.value);
-        $('#checkbox_custom1').val(this.value);
-        $('#custom_lable_title_1').html(this.value);
-        $('#checkbox_custom_value_1').html(this.value);
-    });
+
 
     // $('#custom_lable_2').on('input', function(e) {
     //     document.getElementById("form1_custom_lable_2").placeholder = this.value;
