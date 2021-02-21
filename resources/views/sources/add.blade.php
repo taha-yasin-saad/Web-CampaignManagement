@@ -38,7 +38,8 @@
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label>Widget Name</label>
-                                                <input required type="text" class="form-control" placeholder="Widget Name"
+                                                <input required type="text" class="form-control"
+                                                    placeholder="Widget Name"
                                                     value="@if(isset($data)){{$data->name}}@endif" name="name">
                                             </div>
                                         </div>
@@ -147,7 +148,8 @@
                                                     </div>
                                                     <label style="margin-top:20px">Bubble Switch</label><br>
                                                     <div class="col-md-4">
-                                                        <input type="radio" name="bubble" value="on" class="text-large" checked>
+                                                        <input type="radio" name="bubble" value="on" class="text-large"
+                                                            checked>
                                                         On
                                                     </div>
                                                     <div class="col-md-4">
@@ -158,13 +160,19 @@
                                                         <label style="margin-top:20px">Shoutout Bubble Line 1
                                                         </label><span class="text-small text-muted"> (40 Characters
                                                             Max)</span><br>
-                                                        <input class="form-control" name="bubble_line_1" id="bubble-line-1" type="text" value="Want to talk to an expert?" placeholder="Want to talk to an expert?">
+                                                        <input class="form-control" name="bubble_line_1"
+                                                            id="bubble-line-1" type="text"
+                                                            value="Want to talk to an expert?"
+                                                            placeholder="Want to talk to an expert?">
                                                     </div>
                                                     <div class="form-group shoutout-bubble">
                                                         <label style="margin-top:20px">Shoutout Bubble Line 2
                                                         </label><span class="text-small text-muted"> (40 Characters
                                                             Max)</span><br>
-                                                        <input class="form-control" name="bubble_line_2" id="bubble-line-2" type="text" value="Our Team is 60 Second Away From You!" placeholder="Our Team is 60 Second Away From You!">
+                                                        <input class="form-control" name="bubble_line_2"
+                                                            id="bubble-line-2" type="text"
+                                                            value="Our Team is 60 Second Away From You!"
+                                                            placeholder="Our Team is 60 Second Away From You!">
                                                     </div>
                                                 </div>
 
@@ -174,11 +182,13 @@
                                                 <div class="col-md-4">
                                                     <label>Bubble BG Color <li class="mdi mdi-filter fa-fw"></li>
                                                     </label><br>
-                                                    <input class="form-control" name="bubble_bg_color" id="bubble-bg-color" type="color" value="#959a9e">
+                                                    <input class="form-control" name="bubble_bg_color"
+                                                        id="bubble-bg-color" type="color" value="#959a9e">
                                                 </div>
                                                 <div class="col-md-4">
                                                     <label>Text Color<li class="mdi mdi-filter fa-fw"></li></label><br>
-                                                    <input class="form-control" name="bubble_text_color" id="bubble-text-color" type="color" value="#ffffff">
+                                                    <input class="form-control" name="bubble_text_color"
+                                                        id="bubble-text-color" type="color" value="#ffffff">
                                                 </div>
                                             </div>
                                         </div>
@@ -211,13 +221,16 @@
                                                         <label style="margin-top:20px">Call to action text </label><span
                                                             class="text-small text-muted"> (25 Characters
                                                             Max)</span><br>
-                                                        <input class="form-control" name="text_text" id="text_text" value="Talk to an expert!" type="text" placeholder="Talk to an expert!">
+                                                        <input class="form-control" name="text_text" id="text_text"
+                                                            value="Talk to an expert!" type="text"
+                                                            placeholder="Talk to an expert!">
                                                     </div>
                                                     <div class="form-group">
                                                         <label style="margin-top:20px">Corner Roundness </label><span
                                                             class="text-small text-muted"> (in px "50 px
                                                             Max")</span><br>
-                                                        <input class="form-control" name="text_round" type="number" id="text_round" value="10" placeholder="10">
+                                                        <input class="form-control" name="text_round" type="number"
+                                                            id="text_round" value="10" placeholder="10">
                                                     </div>
                                                 </div>
                                                 <!--/span-->
@@ -241,36 +254,119 @@
                                             <h4 class="font-bold">Fields</h4>
 
                                             <div class="col-md-3">
-                                                <input class="d-inline" name="fields[]" type="checkbox" id="checkbox_name" value="name" ><span> Name</span><br>
+                                                <input class="d-inline" name="fields[]" type="checkbox"
+                                                    id="checkbox_name" value="name"><span> Name</span><br>
                                             </div>
                                             <div class="col-md-3">
-                                                <input class="d-inline" name="fields[]" type="checkbox" id="checkbox_email"  value="email"><span> Email</span><br>
+                                                <input class="d-inline" name="fields[]" type="checkbox"
+                                                    id="checkbox_email" value="email"><span> Email</span><br>
                                             </div>
-                                            <div class="col-md-3">
-                                                <input class="d-inline" name="fields[]" type="checkbox" id="checkbox_custom1" value="custom1"><span id="checkbox_custom_vlue_1"> Custom Field
+                                            <!-- End of one custom -->
+                                            <div class="col-md-3 custom-1">
+                                                <input class="d-inline" name="fields[]" type="checkbox"
+                                                    id="checkbox_custom1" value="custom1">
+                                                <span id="checkbox_custom_value_1"> Custom Field 01</span>
+                                                <a class="plus-icon" onclick="showNewcustomsField(2)"><i
+                                                        class="fa fa-plus-circle" aria-hidden="true"></i></a><br>
+                                            </div>
+                                            <div class="col-md-3 custom-2" style="display: none;">
+                                                <input class="d-inline" name="fields[]" type="checkbox"
+                                                    id="checkbox_custom2" value="custom2">
+                                                <span id="checkbox_custom_value_2"> Custom Field 02</span>
+                                                <a class="plus-icon" onclick="showNewcustomsField(3)"><i
+                                                        class="fa fa-plus-circle" aria-hidden="true"></i></a><br>
+                                            </div>
+                                            <div class="col-md-3 custom-3" style="display: none;">
+                                                <input class="d-inline" name="fields[]" type="checkbox"
+                                                    id="checkbox_custom3" value="custom3">
+                                                <span id="checkbox_custom_value_3"> Custom Field 03</span>
+                                                <a class="plus-icon" onclick="showNewcustomsField(4)"><i
+                                                        class="fa fa-plus-circle" aria-hidden="true"></i></a><br>
+                                            </div>
+                                            <div class="col-md-3 custom-4" style="display: none;">
+                                                <input class="d-inline" name="fields[]" type="checkbox"
+                                                    id="checkbox_custom4" value="custom4">
+                                                <span id="checkbox_custom_value_4"> Custom Field 04</span>
+                                                <a class="plus-icon" onclick="showNewcustomsField(5)"><i
+                                                        class="fa fa-plus-circle" aria-hidden="true"></i></a><br>
+                                            </div>
+                                            <div class="col-md-3 custom-5" style="display: none;">
+                                                <input class="d-inline" name="fields[]" type="checkbox"
+                                                    id="checkbox_custom5" value="custom5">
+                                                <span id="checkbox_custom_value_5"> Custom Field 05</span>
+                                                <a class="plus-icon" onclick="showNewcustomsField(6)"><i
+                                                        class="fa fa-plus-circle" aria-hidden="true"></i></a><br>
+                                            </div>
+                                            <div class="col-md-3 custom-6" style="display: none;">
+                                                <input class="d-inline" name="fields[]" type="checkbox"
+                                                    id="checkbox_custom6" value="custom6">
+                                                <span id="checkbox_custom_value_6"> Custom Field 06</span><br>
+                                                {{-- <a class="plus-icon" onclick="showNewcustomsField(7)"><i class="fa fa-plus-circle" aria-hidden="true"></i></a> --}}
+                                            </div>
+                                            {{-- <div class="col-md-3">
+                                                <input class="d-inline" name="fields[]" type="checkbox"
+                                                    id="checkbox_custom1" value="custom1"><span
+                                                    id="checkbox_custom_value_1"> Custom Field
                                                     01</span><br>
                                             </div>
                                             <div class="col-md-3">
-                                                <input class="d-inline" name="fields[]"  type="checkbox" id="checkbox_custom2" value="custom2"><span id="checkbox_custom_vlue_2"> Custom Field
+                                                <input class="d-inline" name="fields[]" type="checkbox"
+                                                    id="checkbox_custom2" value="custom2"><span
+                                                    id="checkbox_custom_value_2"> Custom Field
                                                     02</span><br>
+                                            </div> --}}
+                                            <br>
+                                            <br>
+                                            <hr>
+                                            <div class="form-group" id="custom_input_field_1" style="display: none;">
+                                                <label style="margin-top:20px" id="custom_lable_title_1">Custom Field 01
+                                                    Title </label><span class="text-small text-muted"> (20 Characters
+                                                    Max)</span><br>
+                                                <input class="form-control" id="custom_lable_1" name="custom_lable_1"
+                                                    type="text" placeholder="Field Label">
                                             </div>
-                                            <div class="form-group">
-                                                <label style="margin-top:20px" id="custom_lable_title_1">Custom Field 01 Title </label><span
-                                                    class="text-small text-muted"> (20 Characters Max)</span><br>
-                                                <input class="form-control" id="custom_lable_1" name="custom_lable_1" type="text"
-                                                    placeholder="Field Label">
+                                            <div class="form-group" id="custom_input_field_2" style="display: none;">
+                                                <label style="margin-top:20px" id="custom_lable_title_2">Custom Field 02
+                                                    Title </label><span class="text-small text-muted"> (20 Characters
+                                                    Max)</span><br>
+                                                <input class="form-control" id="custom_lable_2" name="custom_lable_2"
+                                                    type="text" placeholder="Field Label">
                                             </div>
+                                            <div class="form-group" id="custom_input_field_3" style="display: none;">
+                                                <label style="margin-top:20px" id="custom_lable_title_3">Custom Field 03
+                                                    Title </label><span class="text-small text-muted"> (20 Characters
+                                                    Max)</span><br>
+                                                <input class="form-control" id="custom_lable_3" name="custom_lable_3"
+                                                    type="text" placeholder="Field Label">
+                                            </div>
+                                            <div class="form-group" id="custom_input_field_4" style="display: none;">
+                                                <label style="margin-top:20px" id="custom_lable_title_4">Custom Field 04
+                                                    Title </label><span class="text-small text-muted"> (20 Characters
+                                                    Max)</span><br>
+                                                <input class="form-control" id="custom_lable_4" name="custom_lable_4"
+                                                    type="text" placeholder="Field Label">
+                                            </div>
+                                            <div class="form-group" id="custom_input_field_5" style="display: none;">
+                                                <label style="margin-top:20px" id="custom_lable_title_5">Custom Field 05
+                                                    Title </label><span class="text-small text-muted"> (20 Characters
+                                                    Max)</span><br>
+                                                <input class="form-control" id="custom_lable_5" name="custom_lable_5"
+                                                    type="text" placeholder="Field Label">
+                                            </div>
+                                            <div class="form-group" id="custom_input_field_6" style="display: none;">
+                                                <label style="margin-top:20px" id="custom_lable_title_6">Custom Field 06
+                                                    Title </label><span class="text-small text-muted"> (20 Characters
+                                                    Max)</span><br>
+                                                <input class="form-control" id="custom_lable_6" name="custom_lable_6"
+                                                    type="text" placeholder="Field Label">
+                                            </div>
+                                            <hr>
                                             <div class="form-group">
-                                                <label style="margin-top:20px" id="custom_lable_title_2">Custom Field 02 Title </label><span
-                                                    class="text-small text-muted"> (20 Characters Max)</span><br>
-                                                <input class="form-control" id="custom_lable_2" name="custom_lable_2" type="text"
-                                                    placeholder="Field Label">
-                                            </div><hr>
-                                            <div class="form-group">
-                                                <label style="margin-top:20px" id="submitt_label">Submitt Button Text</label><span
-                                                    class="text-small text-muted"> (20 Characters Max)</span><br>
-                                                <input class="form-control" id="submitt_text" name="submitt_text" type="text"
-                                                    placeholder="Call Me Now" value="Call Me Now">
+                                                <label style="margin-top:20px" id="submitt_label">Submitt Button
+                                                    Text</label><span class="text-small text-muted"> (20 Characters
+                                                    Max)</span><br>
+                                                <input class="form-control" id="submitt_text" name="submitt_text"
+                                                    type="text" placeholder="Call Me Now" value="Call Me Now">
                                             </div>
                                         </div>
                                         <div class="col-md-4"
@@ -302,28 +398,43 @@
                                                             </div>
                                                             <div class="form-group">
                                                                 <input type="text" class="form-control" id="form1_name"
-                                                                    placeholder="name" style="display: none;"
-                                                                    >
+                                                                    placeholder="name" style="display: none;">
                                                             </div>
                                                             <div class="form-group">
                                                                 <input type="email" class="form-control"
-                                                                    id="form1_email" placeholder="email" style="display: none;"
-                                                                   >
+                                                                    id="form1_email" placeholder="email"
+                                                                    style="display: none;">
                                                             </div>
 
                                                             <div class="form-group">
                                                                 <input type="text" class="form-control"
-                                                                    id="form1_custom_lable_1"
-                                                                    style="display: none;">
+                                                                    id="form1_custom_lable_1" style="display: none;">
                                                             </div>
                                                             <div class="form-group">
                                                                 <input type="text" class="form-control"
-                                                                    id="form1_custom_lable_2"
-                                                                    style="display: none;">
+                                                                    id="form1_custom_lable_2" style="display: none;">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <input type="text" class="form-control"
+                                                                    id="form1_custom_lable_3" style="display: none;">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <input type="text" class="form-control"
+                                                                    id="form1_custom_lable_4" style="display: none;">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <input type="text" class="form-control"
+                                                                    id="form1_custom_lable_5" style="display: none;">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <input type="text" class="form-control"
+                                                                    id="form1_custom_lable_6" style="display: none;">
                                                             </div>
                                                         </div>
                                                         <div class="text-center">
-                                                            <button type="button" class="btn btn-primary btn-block call_me" id="submitt_btn"
+                                                            <button type="button"
+                                                                class="btn btn-primary btn-block call_me"
+                                                                id="submitt_btn"
                                                                 style="background-color:#34a853;color:#ffffff;">Call
                                                                 Me Now
                                                             </button>
@@ -441,35 +552,69 @@
 
     });
 
+
+    function showNewcustomsField(id) {
+        $(".custom-" + id).show("swing");
+        $(".custom-" + (id - 1) + " .plus-icon").hide("swing");
+
+        $('#checkbox_custom'+id).change(function () {
+        if (this.checked) {
+            $('#form1_custom_lable_'+id).show('swing');
+            $('#custom_input_field_'+id).show('swing');
+            // $('#custom_lable_'+id).show('swing');
+        }  else {
+            $('#form1_custom_lable_'+id).hide('swing');
+            $('#custom_input_field_'+id).hide('swing');
+            // $('#custom_lable_'+id).hide('swing');
+        }
+    });
+
+    $('#custom_lable_'+id).on('input', function(e) {
+        $('#form1_custom_lable_'+id).attr("placeholder", this.value);
+        $('#checkbox_custom'+id).val(this.value);
+        $('#custom_lable_title_'+id).html(this.value);
+        $('#checkbox_custom_value_'+id).html(this.value);
+
+        // document.getElementById("form1_custom_lable_"+id).placeholder = this.value;
+        // document.getElementById("custom_lable_title_"+id).innerHTML = this.value;
+        // document.getElementById("checkbox_custom_value_"+id).innerHTML = this.value;
+    });
+    }
+
     $('#checkbox_custom1').change(function () {
-        if (this.checked)
+        if (this.checked) {
             $('#form1_custom_lable_1').show('swing');
-        else
+            $('#custom_input_field_1').show('swing');
+            // $('#custom_lable_1').show('swing');
+        } else {
             $('#form1_custom_lable_1').hide('swing');
+            $('#custom_input_field_1').hide('swing');
+            // $('#custom_lable_1').hide('swing');
+        }
 
     });
 
-    $('#checkbox_custom2').change(function () {
-        if (this.checked)
-            $('#form1_custom_lable_2').show('swing');
-        else
-            $('#form1_custom_lable_2').hide('swing');
+    // $('#checkbox_custom2').change(function () {
+    //     if (this.checked)
+    //         $('#form1_custom_lable_2').show('swing');
+    //     else
+    //         $('#form1_custom_lable_2').hide('swing');
 
-    });
+    // });
 
     $('#custom_lable_1').on('input', function(e) {
-        document.getElementById("form1_custom_lable_1").placeholder = this.value;
-        document.getElementById("custom_lable_title_1").innerHTML = this.value;
-        document.getElementById("checkbox_custom_vlue_1").innerHTML = this.value;
+        $('#form1_custom_lable_1').attr("placeholder", this.value);
+        $('#checkbox_custom1').val(this.value);
+        $('#custom_lable_title_1').html(this.value);
+        $('#checkbox_custom_value_1').html(this.value);
     });
 
-    $('#custom_lable_2').on('input', function(e) {
-        document.getElementById("form1_custom_lable_2").placeholder = this.value;
-        document.getElementById("custom_lable_title_2").innerHTML = this.value;
-        document.getElementById("checkbox_custom_vlue_2").innerHTML = this.value;
+    // $('#custom_lable_2').on('input', function(e) {
+    //     document.getElementById("form1_custom_lable_2").placeholder = this.value;
+    //     document.getElementById("custom_lable_title_2").innerHTML = this.value;
+    //     document.getElementById("checkbox_custom_value_2").innerHTML = this.value;
 
-    });
-
+    // });
 </script>
 @endsection
 @section('js')
