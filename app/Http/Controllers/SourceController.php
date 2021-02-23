@@ -199,7 +199,9 @@ class SourceController extends Controller
     {
         $query['products'] = Product::with('users', 'workplace')->where('workplace_id', $source->workplace_id)->get();
         $query['data'] = $source;
-
+        $custom_source_arr = array_diff($source->fields, array('name', 'email'));
+        $query['custom_source'] = array_splice($custom_source_arr, 0);
+        // dd($query['custom_source']);
         return view('sources.edit', $query);
     }
 
@@ -240,5 +242,4 @@ class SourceController extends Controller
         $source->update($request->all());
         return redirect('sources')->with('success', 'Edited Successfully');
     }
-
 }
