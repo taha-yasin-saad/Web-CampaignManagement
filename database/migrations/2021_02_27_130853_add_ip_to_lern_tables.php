@@ -1,9 +1,11 @@
 <?php
 
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class AddIpToLernTables extends Migration {
+class AddIpToLernTables extends Migration
+{
 
     /**
      * Run the migrations.
@@ -12,7 +14,7 @@ class AddIpToLernTables extends Migration {
      */
     public function up()
     {
-        Schema::table(config('lern.record.table'), function(Blueprint $table) {
+        Schema::table(config('lern.record.table'), function (Blueprint $table) {
             $table->string('ip')->nullable();
         });
     }
@@ -24,9 +26,8 @@ class AddIpToLernTables extends Migration {
      */
     public function down()
     {
-        Schema::table(config('lern.record.table'), function(Blueprint $table) {
+        Schema::table(config('lern.record.table'), function (Blueprint $table) {
             $table->dropColumn('ip');
         });
     }
-
 }
