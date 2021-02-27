@@ -40,10 +40,7 @@ class Handler extends ExceptionHandler
 
             //Check to see if LERN is installed otherwise you will not get an exception.
             if (app()->bound("lern")) {
-                app()->make("lern")->handle($exception); //Record the Exception to the database
-                app()->make("lern")->record($exception); //Record the Exception to the database
-                app()->make("lern")->notify($exception); //Notify the Exception
-
+                app()->make("lern")->handle($exception); //Record and Notify the Exception
                 /*
                 OR...
                 app()->make("lern")->handle($exception); //Record and Notify the Exception
