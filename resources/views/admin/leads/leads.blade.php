@@ -105,7 +105,7 @@
                         @if ($leads->count() != 0)
                         {{sprintf("%.0f%%", $last_contact_leads->count()/$leads->count()* 100)}}
                         @else
-                        0%
+                        0.0%
                         @endif
                     </h3>
                 </li>

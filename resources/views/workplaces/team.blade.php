@@ -108,7 +108,7 @@
                                         @if(@$value->leads->count() > 0)
                                         {{sprintf("%.1f%%", ($value->leads->where('last_contact','!=',null)->count() / count($value->leads)) * 100)}}
                                         @else
-                                        0%
+                                        0.0%
                                         @endif
                                     </td>
                                     @if(get_role($workplace->id) == 0 || get_role($workplace->id) == 1)

@@ -200,7 +200,7 @@
                                             @if(@$source->lead->count() > 0)
                                             {{sprintf("%.1f%%", ($source->lead->where('status',0)->count() / count($source->lead)) * 100)}}
                                             @else
-                                            0%
+                                            0.0%
                                             @endif
                                         </td>
                                         @if(get_role($workplace->id) == 0 || get_role($workplace->id) == 1 ||
