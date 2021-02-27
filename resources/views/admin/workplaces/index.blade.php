@@ -57,9 +57,9 @@
                                         <div class="progress-bar progress-bar-info" role="progressbar"
                                             aria-valuenow="{{$workplaces->sum('products_count')/$workplaces_without_filter->sum('products_count')*100}}"
                                             aria-valuemin="0" aria-valuemax="100"
-                                            style="width: {{$workplaces->sum('products_count')/$workplaces_without_filter->sum('products_count')*100}}%">
+                                            style="width: {{$workplaces->sum('products_count')/$workplaces_without_filter->sum('products_count')*100}}">
                                             <span
-                                                class="sr-only">{{$workplaces->sum('products_count')/$workplaces_without_filter->sum('products_count')*100}}%
+                                                class="sr-only">{{$workplaces->sum('products_count')/$workplaces_without_filter->sum('products_count')*100}}
                                                 Complete (success)</span>
                                         </div>
                                     </div>
@@ -83,9 +83,9 @@
                                         <div class="progress-bar progress-bar-success" role="progressbar"
                                             aria-valuenow="{{$workplaces->sum('users_count')/$workplaces_without_filter->sum('users_count')*100}}"
                                             aria-valuemin="0" aria-valuemax="100"
-                                            style="width: {{$workplaces->sum('users_count')/$workplaces_without_filter->sum('users_count')*100}}%">
+                                            style="width: {{$workplaces->sum('users_count')/$workplaces_without_filter->sum('users_count')*100}}">
                                             <span class="sr-only">
-                                                {{$workplaces->sum('users_count')/$workplaces_without_filter->sum('users_count')*100}}%
+                                                {{$workplaces->sum('users_count')/$workplaces_without_filter->sum('users_count')*100}}
                                                 Complete (success)</span>
                                         </div>
                                     </div>
@@ -109,9 +109,9 @@
                                         <div class="progress-bar progress-bar-warning" role="progressbar"
                                             aria-valuenow="{{$workplaces->sum('leads_count')/$workplaces_without_filter->sum('leads_count')*100}}"
                                             aria-valuemin="0" aria-valuemax="100"
-                                            style="width: {{$workplaces->sum('leads_count')/$workplaces_without_filter->sum('leads_count')*100}}%">
+                                            style="width: {{$workplaces->sum('leads_count')/$workplaces_without_filter->sum('leads_count')*100}}">
                                             <span
-                                                class="sr-only">{{$workplaces->sum('leads_count')/$workplaces_without_filter->sum('leads_count')*100}}%
+                                                class="sr-only">{{$workplaces->sum('leads_count')/$workplaces_without_filter->sum('leads_count')*100}}
                                                 Complete (success)</span>
                                         </div>
                                     </div>

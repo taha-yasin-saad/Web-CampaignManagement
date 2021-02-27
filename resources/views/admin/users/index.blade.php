@@ -83,7 +83,7 @@
                                         <div class="progress-bar progress-bar-info" role="progressbar"
                                             aria-valuenow="{{$users->sum('products_count')/$users_without_filter->sum('products_count')*100}}"
                                             aria-valuemin="0" aria-valuemax="100"
-                                            style="width: {{sprintf("%.1f%%",$users->sum('products_count')/$users_without_filter->sum('products_count') * 100)}}%">
+                                            style="width: {{sprintf("%.1f%%",$users->sum('products_count')/$users_without_filter->sum('products_count') * 100)}}">
                                             <span
                                                 class="sr-only">{{sprintf("%.1f%%",$users->sum('products_count')/$users_without_filter->sum('products_count') * 100)}}
                                                 Complete (success)</span>
