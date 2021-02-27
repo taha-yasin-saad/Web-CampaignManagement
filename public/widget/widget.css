@@ -6949,3 +6949,10 @@ html.no-svg .closor-embedded-v1-widget .closor-embedded-v1-call-image {
 .closor-callback-popup, .closerDiv{
     direction: ltr !important;
 }
+
+@media (max-width: 768px) {
+    .closor-callback-popup, .WidgetText{
+        bottom: 0;
+        position:fixed;
+    }
+  }

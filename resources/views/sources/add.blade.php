@@ -318,6 +318,13 @@
                                             <br>
                                             <br>
                                             <hr>
+                                            <div class="form-group">
+                                                <label style="margin-top:20px" id="head_message_lable">Head Message
+                                                    Text</label><span class="text-small text-muted"> (20 Characters
+                                                    Max)</span><br>
+                                                <input class="form-control" id="head_message_text" name="head_message"
+                                                    type="text" placeholder="Would you like to recieve a free callback in 30 seconds?" value="Would you like to recieve a free callback in 30 seconds?">
+                                            </div>
                                             <div class="form-group" id="custom_input_field_1" style="display: none;">
                                                 <label style="margin-top:20px" id="custom_lable_title_1">Custom Field 01
                                                     Title </label><span class="text-small text-muted"> (20 Characters
@@ -362,7 +369,7 @@
                                             </div>
                                             <hr>
                                             <div class="form-group">
-                                                <label style="margin-top:20px" id="submitt_label">Submitt Button
+                                                <label style="margin-top:20px" id="submitt_label">Submit Button
                                                     Text</label><span class="text-small text-muted"> (20 Characters
                                                     Max)</span><br>
                                                 <input class="form-control" id="submitt_text" name="submitt_text"

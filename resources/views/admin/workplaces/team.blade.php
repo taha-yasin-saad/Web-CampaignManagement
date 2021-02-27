@@ -106,7 +106,7 @@
                                     <td>{{$value->leads->where('status',0)->count()}}</td>
                                     <td>
                                         @if(@$value->leads->count() > 0)
-                                        {{($value->leads->where('last_contact','!=',null)->count() / count($value->leads)) * 100}}%
+                                        {{sprintf("%.1f%%", ($value->leads->where('last_contact','!=',null)->count() / count($value->leads)) * 100)}}%
                                         @else
                                         0%
                                         @endif

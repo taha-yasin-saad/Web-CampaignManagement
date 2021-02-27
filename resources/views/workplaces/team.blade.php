@@ -106,7 +106,7 @@
                                     <td>{{$value->leads->where('status',0)->count()}}</td>
                                     <td>
                                         @if(@$value->leads->count() > 0)
-                                        {{$value->leads->where('last_contact','!=',null)->count() / count($value->leads) * 100}}%
+                                        {{sprintf("%.1f%%", ($value->leads->where('last_contact','!=',null)->count() / count($value->leads)) * 100)}}%
                                         @else
                                         0%
                                         @endif
@@ -122,9 +122,9 @@
                                         <input type="hidden" id="current_user{{$value->id}}" value="{{$value->id}}" />
                                         @endif
 
-                                    @section('status')
-                                    <script>
-                                    var baseUrl = "{{url('/')}}";
+                                        @section('status')
+                                        <script>
+                                            var baseUrl = "{{url('/')}}";
 
                                     function change_status(activate) {
                                         console.log(activate.checked)
@@ -162,8 +162,8 @@
                                             }
                                         });
                                     }
-                                    </script>
-                                    @endsection
+                                        </script>
+                                        @endsection
 
                                         @if($value->pivot->role != 0)
                                         <button type="button"
@@ -173,7 +173,7 @@
                                         </button>
                                         @endif
                                         <script>
-                                        function delete_user() {
+                                            function delete_user() {
                                             swal({
                                                 title: "Are you sure?",
                                                 text: "The user will be removed from entire workspace !",
@@ -197,13 +197,13 @@
                                             {{ csrf_field() }}
                                         </form>
 
-                                        <a class="dropdown">
+                                        <span class="dropdown">
                                             <a class="btn btn-info btn-outline btn-circle btn-lg m-r-5"
                                                 id="addRemoveLeadDropDown" data-toggle="dropdown" href="#"
                                                 aria-expanded="false" role="button"><i class="ti-settings"></i></a>
                                             <div class="dropdown-menu bullet dropdown-menu-right"
                                                 aria-labelledby="addRemoveLeadDropDown" role="menu"
-                                                style="top: unset!important;">
+                                                style="top: unset!important;position: relative;">
                                                 <div class="white-box">
                                                     <h3 class="box-title m-b-0">Add Or Remove Product</h3>
                                                     <p class="text-muted m-b-30"> Only these sales agents will receive
@@ -225,22 +225,22 @@
                                                         <div class="form-actions text-right">
                                                             <button type="submit" class="btn btn-success"> <i
                                                                     class="fa fa-check"></i> Save</button>
-                                                            <button type="button" class="btn btn-dark">Cancel</button>
+                                                            <button data-toggle="dropdown" type="button" class="btn btn-dark">Cancel</button>
                                                         </div>
                                                     </form>
 
                                                 </div>
                                             </div>
-                                        </a>
+                                        </span>
 
                                         @if($value->pivot->role != 0)
-                                        <a class="dropdown">
+                                        <span class="dropdown">
                                             <a class="btn btn-info btn-outline btn-circle btn-lg m-r-5"
                                                 id="editRoleDropDown" data-toggle="dropdown" href="#"
                                                 aria-expanded="false" role="button"><i class="ti-pencil-alt"></i></a>
                                             <div class="dropdown-menu bullet dropdown-menu-right"
                                                 aria-labelledby="editRoleDropDown" role="menu"
-                                                style="top: unset!important;">
+                                                style="top: unset!important;position: relative;">
                                                 <div class="white-box">
                                                     <h3 class="box-title m-b-0">Edit Role</h3>
                                                     <p class="text-muted m-b-30"> Only these Owner and Admin will Edit
@@ -258,13 +258,13 @@
                                                         <div class="form-actions text-right">
                                                             <button type="submit" class="btn btn-success"> <i
                                                                     class="fa fa-check"></i> Save</button>
-                                                            <button type="button" class="btn btn-dark">Cancel</button>
+                                                            <button data-toggle="dropdown" type="button" class="btn btn-dark">Cancel</button>
                                                         </div>
                                                     </form>
 
                                                 </div>
                                             </div>
-                                        </a>
+                                        </span>
                                         @endif
                                     </td>
                                     @endif

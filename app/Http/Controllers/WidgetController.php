@@ -89,8 +89,8 @@ class WidgetController extends Controller
         };
         $widget .= '>';
         if ($source->widget_type == 'text') {
-            $widget .= '<div class="closerDiv" onclick="callCloserModal()" style="background:' . $source->primary . '!important;display: inline-block!important;padding: 20px!important;
-                            width: 300px!important;text-align: center!important;vertical-align: middle!important;border-radius: 10px 10px 0px 0px!important;' . $source->alignment . ': 0!important;position:absolute;bottom: 0;">
+            $widget .= '<div class="closerDiv WidgetText" onclick="callCloserModal()" style="background:' . $source->primary . '!important;display: inline-block!important;padding: 20px!important;
+                            width: 300px!important;text-align: center!important;vertical-align: middle!important;border-radius: 10px 10px 0px 0px!important;' . $source->alignment . ': 0!important;position:absolute;">
                                     <p class="text-text" style="text-align:center!important;color:' . $source->secondary . '!important;font-size: 18px !important;';
             if ($source->alignment == 'left') {
                 $widget .= 'position:unset!important;';
@@ -148,7 +148,7 @@ class WidgetController extends Controller
 
                                 <section class="closor-callback-popup">
                                     <div class="closor-callback-v1-popup-header" id="closor-header">
-                                        Would you like to recieve a free callback in 30 seconds?
+                                        ' . $source->head_message . '
                                     </div>
 
                                     <div class="closor-callback-v1-interest-query" >

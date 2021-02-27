@@ -4,6 +4,8 @@ namespace App\Exceptions;
 
 use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Tylercd100\LERN\Facades\LERN;
+use Throwable;
 
 class Handler extends ExceptionHandler
 {
@@ -34,8 +36,23 @@ class Handler extends ExceptionHandler
      */
     public function report(Exception $exception)
     {
+        if ($this->shouldReport($exception)) {
+
+            //Check to see if LERN is installed otherwise you will not get an exception.
+            if (app()->bound("lern")) {
+                app()->make("lern")->record($exception); //Record the Exception to the database
+
+                /*
+                OR...
+                app()->make("lern")->handle($exception); //Record and Notify the Exception
+                app()->make("lern")->record($exception); //Record the Exception to the database
+                app()->make("lern")->notify($exception); //Notify the Exception
+                */
+            }
+        }
         parent::report($exception);
     }
+
 
     /**
      * Render an exception into an HTTP response.

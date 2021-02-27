@@ -198,7 +198,7 @@
                                         <td>{{$source->lead->where('status',0)->count()}}</td>
                                         <td>
                                             @if(@$source->lead->count() > 0)
-                                            {{$source->lead->where('status',0)->count() / count($source->lead) * 100}}%
+                                            {{sprintf("%.1f%%", ($source->lead->where('status',0)->count() / count($source->lead)) * 100)}}%
                                             @else
                                             0%
                                             @endif

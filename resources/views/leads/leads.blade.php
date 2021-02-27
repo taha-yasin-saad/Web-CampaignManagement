@@ -114,11 +114,11 @@
                     @if($leads_without_filter->sum('leads_count') != 0)
                     <div class="progress">
                         <div class="progress-bar progress-bar-warning" role="progressbar"
-                            aria-valuenow="{{$leads->sum('leads_count')/$leads_without_filter->sum('leads_count')*100}}"
+                            aria-valuenow="{{($leads->sum('leads_count')/$leads_without_filter->sum('leads_count'))*100}}"
                             aria-valuemin="0" aria-valuemax="100"
-                            style="width: {{$leads->sum('leads_count')/$leads_without_filter->sum('leads_count')*100}}%">
+                            style="width: {{sprintf("%.1f%%", ($leads->sum('leads_count')/$leads_without_filter->sum('leads_count'))*100)}}%">
                             <span
-                                class="sr-only">{{$leads->sum('leads_count')/$leads_without_filter->sum('leads_count')*100}}%
+                                class="sr-only">{{sprintf("%.1f%%", ($leads->sum('leads_count')/$leads_without_filter->sum('leads_count'))*100)}}%
                                 Complete (success)</span>
                         </div>
                     </div>
@@ -284,7 +284,7 @@ var oTable = $('.lead-data-table').DataTable({
             },
             // "orderable": true,
             // "targets": 0
-        }
+        },
         {
             data: 'product.title',
             name: 'title',

@@ -72,7 +72,7 @@ class LeadController extends Controller
         $query['leads'] = Lead::with('workplaces', 'product', 'source', 'user')->whereHas('product', function ($query) {
             $query->where('workplace_id', session('workplace')->id);
         })->filter($request)->get();
-        // dd($query['leads'][0]);
+        // dd($query['leads']);
         $query['qualified_leads'] = Lead::with('workplaces')->whereHas('product', function ($query) {
             $query->where('workplace_id', session('workplace')->id);
         })->qualified()->get();
@@ -97,6 +97,8 @@ class LeadController extends Controller
             return Datatables::of($query['leads'])
                 ->make(true);
         }
+
+        // dd($query['leads']);
 
         return view('leads.leads', $query);
     }

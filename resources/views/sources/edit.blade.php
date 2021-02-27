@@ -343,6 +343,15 @@
                                         <br>
                                         <br>
                                         <hr>
+                                        <div class="form-group">
+                                            <label style="margin-top:20px" id="head_message_lable">Head Message
+                                                Text</label><span class="text-small text-muted"> (20 Characters
+                                                Max)</span><br>
+                                            <input class="form-control" id="head_message_text" name="head_message"
+                                                type="text"
+                                                placeholder="Would you like to recieve a free callback in 30 seconds?"
+                                                value="@if(isset($data)){{$data->head_message}}@endif">
+                                        </div>
                                         @foreach ($custom_source as $k => $val)
                                         <div class="form-group" id="custom_input_field_{{$k+1}}" style="display: none;">
                                             <label style="margin-top:20px"

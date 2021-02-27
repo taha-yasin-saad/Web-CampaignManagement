@@ -101,7 +101,7 @@ class UserController extends Controller
     {
         $user->is_available = $is_available;
         $user->save();
-        
+
         return redirect('admin/user')->with('success', 'Updated Successfully');
     }
     /**

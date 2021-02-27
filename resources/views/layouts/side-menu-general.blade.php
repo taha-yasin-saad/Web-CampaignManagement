@@ -1,4 +1,3 @@
-
 <div class="navbar-default sidebar" role="navigation">
     <div class="sidebar-nav slimscrollsidebar">
         <div class="sidebar-head">
@@ -48,8 +47,9 @@
 
 
             @if(session('workplace') && get_role(session('workplace')->id) != 9)
-            <li>
-                <a href="{{url('dashboard')}}" class="waves-effect"><i class="mdi mdi-view-dashboard" data-icon="v"></i>
+            <li class="{{ (request()->is('dashboard*')) ? 'active' : '' }}">
+                <a href=" {{url('dashboard')}}" class="waves-effect"><i class="mdi mdi-view-dashboard"
+                        data-icon="v"></i>
                     <span class="hide-menu"> Dashboard <span class="fa arrow"></span> </span>
                 </a>
             </li>
@@ -66,8 +66,8 @@
                 </a>
             </li>
             <li class="{{ (request()->is(session('workplace')->id.'/team')) ? 'active' : '' }}">
-                <a href="{{url(session('workplace')->id.'/team')}}" class="waves-effect"><i class="mdi mdi-account-multiple fa-fw"
-                        data-icon="v"></i>
+                <a href="{{url(session('workplace')->id.'/team')}}" class="waves-effect"><i
+                        class="mdi mdi-account-multiple fa-fw" data-icon="v"></i>
                     <span class="hide-menu"> Team <span class="fa arrow"></span> </span>
                 </a>
             </li>
@@ -87,9 +87,9 @@
 
         </ul>
         <div class="sidebar-footer">
-            <a href="#" target="blank">
+            <a href="https://help.closor.com" target="blank">
                 <i class="mdi mdi-information fa-fw" data-icon="v"></i>
-                need a little help?
+                Need Help?
             </a>
         </div>
     </div>

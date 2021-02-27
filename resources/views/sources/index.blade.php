@@ -69,7 +69,7 @@
                                     <td>{{$value->lead->where('status',0)->count()}}</td>
                                     <td>
                                         @if(@$value->lead->count() > 0)
-                                        {{$value->lead->where('last_contact','!=',null)->count() / count($value->lead) * 100}}%
+                                        {{sprintf("%.1f%%", ($value->lead->where('last_contact','!=',null)->count() / count($value->lead)) * 100)}}%
                                         @else
                                         0%
                                         @endif
@@ -78,7 +78,7 @@
                                     get_role($workplace->id) == 2)
                                     <td>
                                     <input style="display: none" value="<script src='https://app.closor.com/widget/widget.js?id={{$value->id}}'></script>" id="copyToClipboard{{$value->id}}">
-                                        <a href="{{url('widgetView/'.$value->id)}}"
+                                        <a href="{{url('widgetView/'.$value->id)}}" target="_blank"
                                             class="btn btn-info btn-outline btn-circle btn-lg m-r-5"><i class="ti-eye"></i></a>
                                                 <button type="button"
                                                 class="btn btn-info btn-outline btn-circle btn-lg m-r-5" onclick="copyToClipboard('copyToClipboard{{$value->id}}')"><i

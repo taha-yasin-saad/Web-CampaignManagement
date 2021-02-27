@@ -5930,6 +5930,8 @@ ul.select-row-icon li a:hover i.whn-hov {
     top: 0;
 }
 .sidebar .sidebar-footer {
+    position: absolute;
+    display: inline-block;
     padding: 20px;
     width: 240px;
     z-index: 10;
