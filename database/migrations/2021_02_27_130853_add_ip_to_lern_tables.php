@@ -14,7 +14,7 @@ class AddIpToLernTables extends Migration
      */
     public function up()
     {
-        Schema::table(config('lern.record.table'), function (Blueprint $table) {
+        Schema::table('vendor_tylercd100_lern_exceptions', function (Blueprint $table) {
             $table->string('ip')->nullable();
         });
     }
@@ -26,7 +26,7 @@ class AddIpToLernTables extends Migration
      */
     public function down()
     {
-        Schema::table(config('lern.record.table'), function (Blueprint $table) {
+        Schema::table('vendor_tylercd100_lern_exceptions', function (Blueprint $table) {
             $table->dropColumn('ip');
         });
     }
