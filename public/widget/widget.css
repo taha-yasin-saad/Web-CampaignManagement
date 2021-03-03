@@ -181,7 +181,7 @@
 .closor-callback-v1-widget p,
 .closor-callback-v1-widget pre,
 .closor-callback-v1-widget section,
-.closor-callback-v1-widget select{
+.closor-callback-v1-widget select {
     display: block;
 }
 .closor-callback-v1-widget textarea {
@@ -1037,7 +1037,7 @@
     width: 40px !important;
     height: 40px !important;
     /* background-image: url(https://malexs.net/closor/public/widget/icons-9384ae0d188da7d2bf6ce71005cbaf89.png) !important; */
-        margin: 12px auto !important;
+    margin: 12px auto !important;
 }
 
 html.no-svg .closor-callback-v1-widget .closor-callback-v1-avatar-icon {
@@ -6907,18 +6907,24 @@ html.no-svg .closor-embedded-v1-widget .closor-embedded-v1-call-image {
     display: none !important;
 }
 
-.closor-callback-v1-popup.closor-viewport-left.closor-viewport-top.closor-viewport-width.closor-viewport-height.closor-viewport-scale.closor-show-modal{
+.closor-callback-v1-popup.closor-viewport-left.closor-viewport-top.closor-viewport-width.closor-viewport-height.closor-viewport-scale.closor-show-modal {
     display: flex !important;
 }
 
-.closor-callback-v1-widget .closor-callback-v1-popup-scroll-container.closor-show-modal {
+.closor-callback-v1-widget
+    .closor-callback-v1-popup-scroll-container.closor-show-modal {
     position: fixed !important;
 }
-.iti__flag-container{
+.iti__flag-container {
     height: 40px;
 }
-.iti__country-list{width:280px;overflow-x: hidden;}
-.closor-widget-container li{    list-style-type: none!important;}
+.iti__country-list {
+    width: 280px;
+    overflow-x: hidden;
+}
+.closor-widget-container li {
+    list-style-type: none !important;
+}
 
 .closor-callback-v1-avatar-icon li {
     text-align: center;
@@ -6940,19 +6946,24 @@ html.no-svg .closor-embedded-v1-widget .closor-embedded-v1-call-image {
     align-items: center;
     background: rgb(52, 168, 83) !important;
     text-align: center !important;
-    margin: 0!important;
+    margin: 0 !important;
     margin-right: 12px !important;
 }
-.closor-callback-v1-widget .closor-callback-v1-bubble{
-    display:block;
+.closor-callback-v1-widget .closor-callback-v1-bubble {
+    display: block;
 }
-.closor-callback-popup, .closerDiv{
+.closor-callback-popup,
+.closerDiv {
     direction: ltr !important;
 }
 
 @media (max-width: 768px) {
-    .closor-callback-popup, .WidgetText{
+    .closor-callback-popup,
+    .WidgetText {
         bottom: 0;
-        position:fixed;
+        position: fixed;
     }
-  }
+    body {
+        overscroll-behavior: contain; /* or "none" */
+    }
+}
