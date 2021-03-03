@@ -332,7 +332,14 @@ class LeadController extends Controller
         $data = $request->all();
         unset($data['phone']);
         unset($data['country_code']);
-        $data["phone"] = $request->country_code . ltrim($request->phone, '0');
+
+        // if (preg_match('/(+20)/', $request->phone)) {
+        //     $phone_num = $request->country_code . ltrim($request->phone, '+20');
+        // } else {
+        //     $phone_num = $request->country_code . ltrim($request->phone, '0');
+        // }
+
+        $data["phone"] = $request->country_code . ltrim($request->phone, '+20\0');
 
         $user = Source::find($request->source_id)->product->users()->where('is_available', 1)->withCount('leads')->orderBy('leads_count', 'asc')->first();
 
@@ -347,13 +354,7 @@ class LeadController extends Controller
         $save->product_id = $product_id;
         $save->name = $request->name;
         $save->email = $request->email;
-        $phone = preg_replace("/[^0-9.]/", "", $request->phone);
-        if (preg_match('/(20)/', $phone)) {
-            $phone_num = $phone;
-        } else {
-            $phone_num = $request->country_code;
-        }
-        $save->phone = $phone_num;
+        $save->phone = $request->country_code . ltrim($request->phone, '+20\0');
         $save->lead = json_encode($data);
         $save->save();
 
