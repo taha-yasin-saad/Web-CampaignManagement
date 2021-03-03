@@ -347,7 +347,7 @@ class LeadController extends Controller
         $save->product_id = $product_id;
         $save->name = $request->name;
         $save->email = $request->email;
-        $phone = preg_replace("/[^0-9.]/", "", "$request->phone");
+        $phone = preg_replace("/[^0-9.]/", "", $request->phone);
         if (preg_match('/(20)/', $phone)) {
             $phone_num = $phone;
         } else {
