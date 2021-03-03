@@ -347,7 +347,7 @@ class LeadController extends Controller
         $save->product_id = $product_id;
         $save->name = $request->name;
         $save->email = $request->email;
-        $save->phone = $request->country_code . ltrim($request->phone, '+20');
+        $save->phone = $request->country_code . ltrim($request->phone, '0');
         $save->lead = json_encode($data);
         $save->save();
 
