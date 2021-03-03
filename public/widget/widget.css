@@ -6964,6 +6964,6 @@ html.no-svg .closor-embedded-v1-widget .closor-embedded-v1-call-image {
         position: fixed;
     }
     body {
-        overscroll-behavior: contain; /* or "none" */
+        overscroll-behavior: none; /* or "none" */
     }
 }
