@@ -351,7 +351,7 @@ class LeadController extends Controller
         if (preg_match('/(20)/', $phone)) {
             $phone_num = $phone;
         } else {
-            $phone_num = $request->country_code . ltrim($phone, '0');
+            $phone_num = $request->country_code;
         }
         $save->phone = $phone_num;
         $save->lead = json_encode($data);
