@@ -177,23 +177,23 @@ class WidgetController extends Controller
                                                     </div>';
         foreach ($source->fields as $inputfield) {
             if ($inputfield != 'name') {
-                if ($inputfield == 'custom1') {
-                    $widget .= '
-                                                    <div class="allow-dropdown separate-dial-code iti-sdc-3">
-                                                        <input type="text" class="closor-callback-v1-input" data-iti="true"
-                                                            data-role="callback-phone-number-input" autocomplete="off" name="' . ucwords($source->custom_lable_1) . '"
-                                                            placeholder="' . ucwords($source->custom_lable_1) . '">
-                                                    </div>
-                                                    ';
-                } elseif ($inputfield == 'custom2') {
-                    $widget .= '
-                                                    <div class="allow-dropdown separate-dial-code iti-sdc-3">
-                                                        <input type="text" class="closor-callback-v1-input" data-iti="true"
-                                                            data-role="callback-phone-number-input" autocomplete="off" name="' . ucwords($source->custom_lable_2) . '"
-                                                            placeholder="' . ucwords($source->custom_lable_2) . '">
-                                                    </div>
-                                                    ';
-                } else {
+                // if ($inputfield == 'custom1') {
+                //     $widget .= '
+                //                                     <div class="allow-dropdown separate-dial-code iti-sdc-3">
+                //                                         <input type="text" class="closor-callback-v1-input" data-iti="true"
+                //                                             data-role="callback-phone-number-input" autocomplete="off" name="' . ucwords($source->custom_lable_1) . '"
+                //                                             placeholder="' . ucwords($source->custom_lable_1) . '">
+                //                                     </div>
+                //                                     ';
+                // } elseif ($inputfield == 'custom2') {
+                //     $widget .= '
+                //                                     <div class="allow-dropdown separate-dial-code iti-sdc-3">
+                //                                         <input type="text" class="closor-callback-v1-input" data-iti="true"
+                //                                             data-role="callback-phone-number-input" autocomplete="off" name="' . ucwords($source->custom_lable_2) . '"
+                //                                             placeholder="' . ucwords($source->custom_lable_2) . '">
+                //                                     </div>
+                //                                     ';
+                // } else {
                     $widget .= '
                                                 <div class="allow-dropdown separate-dial-code iti-sdc-3">
                                                     <input type="text" class="closor-callback-v1-input" data-iti="true" name="' . $inputfield . '"
@@ -201,7 +201,7 @@ class WidgetController extends Controller
                                                         placeholder="' . ucwords($inputfield) . '">
                                                 </div>
                                                 ';
-                }
+                // }
             }
         }
 
