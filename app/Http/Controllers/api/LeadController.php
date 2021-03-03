@@ -347,7 +347,7 @@ class LeadController extends Controller
         $save->product_id = $product_id;
         $save->name = $request->name;
         $save->email = $request->email;
-        if (preg_match('/(20)/', $request->phone)) {
+        if (preg_match('/(+20)/', $request->phone)) {
             $phone_num = $request->country_code . ltrim($request->phone, '+20');
         } else {
             $phone_num = $request->country_code . ltrim($request->phone, '0');
