@@ -194,8 +194,8 @@ class WorkplacesController extends Controller
     public function edit(Workplace $workplace)
     {
         $query['data'] = $workplace;
-        $query['data']['start_time'] = "9:00";
-        $query['data']['end_time'] = "5:00";
+        $query['start_time'] = "9:00";
+        $query['end_time'] = "5:00";
         // dd($query['data']);
         // $date = date_create('16:00');
         // $format = \Carbon\Carbon::parse($date)->format('a');

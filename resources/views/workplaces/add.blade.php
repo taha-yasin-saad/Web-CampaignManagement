@@ -377,21 +377,22 @@
                                                             @if(isset($data) && isset($data->times) &&
                                                             \Carbon\Carbon::parse($data->times->sun_start)->format('g:i')
                                                             == "$i:00") selected
-                                                            @elseif(isset($data) && $data->start_time == "$i:00")
+                                                            @elseif(!isset($data->times->sun_start) && $start_time ==
+                                                            "$i:00")
                                                             selected @endif>{{$i}}:00</option>
                                                             @endfor
                                                     </select>
                                                 </div>
                                                 <div class="col-xs-2">
-                                                    <select class="form-control" name="sun_start[am_pm]"
-                                                        id="sunStart1" @if(isset($data) && isset($data->times) &&
+                                                    <select class="form-control" name="sun_start[am_pm]" id="sunStart1"
+                                                        @if(isset($data) && isset($data->times) &&
                                                         $data->times->sun_start) @else disabled
                                                         @endif>
                                                         <option value="am" @if(isset($data) && isset($data->times) &&
                                                             \Carbon\Carbon::parse($data->times->sun_start)->format('a')
-                                                            == "am") selected @elseif(!isset($data->times)) selected
-                                                            @endif>AM</option>
-                                                        <option value="pm" @if(isset($data) && isset($data->times) &&
+                                                            == "am") selected @elseif(!isset($data->times))
+                                                            selected @endif>AM</option>
+                                                        <option value="pm" @if(isset($data->times->sun_start) &&
                                                             \Carbon\Carbon::parse($data->times->sun_start)->format('a')
                                                             == "pm") selected @endif>PM</option>
                                                     </select>
@@ -407,7 +408,8 @@
                                                             @if(isset($data) && isset($data->times) &&
                                                             \Carbon\Carbon::parse($data->times->sun_end)->format('g:i')
                                                             == "$i:00") selected
-                                                            @elseif(isset($data) && $data->end_time == "$i:00")
+                                                            @elseif(!isset($data->times->sun_end) && $end_time ==
+                                                            "$i:00")
                                                             selected @endif>{{$i}}:00</option>
                                                             @endfor
                                                     </select>
@@ -426,517 +428,464 @@
                                                             @endif>PM</option>
                                                     </select>
                                                 </div>
-                                                {{-- <div class="col-xs-4"><input type="time" name="sun_start"
-                                                            value="@if(isset($data) && isset($data->times)){{$data->times->sun_start}}@endif"
-                                                id="sunStart" class="form-control" @if(isset($data) &&
-                                                isset($data->times) && $data->times->sun_start) @else disabled
-                                                @endif>
-                                            </div> --}}
-                                            {{-- <div class="col-xs-4"><input type="time" name="sun_end"
-                                                                value="@if(isset($data) && isset($data->times)){{$data->times->sun_end}}@endif"
-                                            id="sunEnd" class="form-control" @if(isset($data) &&
-                                            isset($data->times) && $data->times->sun_start) @else disabled
-                                            @endif>
-                                        </div> --}}
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="row form-group">
+                                                <div class="col-xs-4" style="margin-top: 10px">
+                                                    <input onchange='change_status(this,"monStart", "monEnd")'
+                                                        type="checkbox" class="js-switch" data-color="#2cabe3"
+                                                        name="status" @if(isset($data) && isset($data->times) &&
+                                                    $data->times->mon_start) checked @endif /> Monday </div>
+                                                <div class="col-xs-2">
+                                                    <select style="padding-right: 0px;padding-left: 0px;"
+                                                        class="form-control" name="mon_start[time]" id="monStart0"
+                                                        @if(isset($data) && isset($data->times) &&
+                                                        $data->times->mon_start) @else disabled
+                                                        @endif>
+                                                        @for ($i = 1; $i <= 12; $i++) <option value="{{$i}}:00"
+                                                            @if(isset($data) && isset($data->times) &&
+                                                            \Carbon\Carbon::parse($data->times->mon_start)->format('g:i')
+                                                            == "$i:00") selected
+                                                            @elseif(!isset($data->times->mon_start) && $start_time ==
+                                                            "$i:00")
+                                                            selected @endif>{{$i}}:00</option>
+                                                            @endfor
+                                                    </select>
+                                                </div>
+                                                <div class="col-xs-2">
+                                                    <select class="form-control" name="mon_start[am_pm]" id="monStart1"
+                                                        @if(isset($data) && isset($data->times) &&
+                                                        $data->times->mon_start) @else disabled
+                                                        @endif>
+                                                        <option value="am" @if(isset($data) && isset($data->times) &&
+                                                            \Carbon\Carbon::parse($data->times->mon_start)->format('a')
+                                                            == "am") selected @elseif(!isset($data->times->mon_start))
+                                                            selected
+                                                            @endif>AM</option>
+                                                        <option value="pm" @if(isset($data->times->mon_start) &&
+                                                            \Carbon\Carbon::parse($data->times->mon_start)->format('a')
+                                                            == "pm") selected @endif>PM</option>
+                                                    </select>
+
+                                                </div>
+                                                <div class="col-xs-2">
+                                                    <select style="padding-right: 0px;padding-left: 0px;"
+                                                        class="form-control" name="mon_end[time]" id="monEnd0"
+                                                        @if(isset($data) && isset($data->times) &&
+                                                        $data->times->mon_start) @else disabled
+                                                        @endif>
+                                                        @for ($i = 1; $i <= 12; $i++) <option value="{{$i}}:00"
+                                                            @if(isset($data) && isset($data->times) &&
+                                                            \Carbon\Carbon::parse($data->times->mon_end)->format('g:i')
+                                                            == "$i:00") selected
+                                                            @elseif(!isset($data->times->mon_end) && $end_time ==
+                                                            "$i:00")
+                                                            selected @endif>{{$i}}:00</option>
+                                                            @endfor
+                                                    </select>
+                                                </div>
+                                                <div class="col-xs-2">
+                                                    <select class="form-control" name="mon_end[am_pm]" id="monEnd1"
+                                                        @if(isset($data) && isset($data->times) &&
+                                                        $data->times->mon_start) @else disabled
+                                                        @endif>
+                                                        <option value="am" @if(isset($data) && isset($data->times) &&
+                                                            \Carbon\Carbon::parse($data->times->mon_end)->format('a')
+                                                            == "am") selected @endif>AM</option>
+                                                        <option value="pm" @if(isset($data) && isset($data->times) &&
+                                                            \Carbon\Carbon::parse($data->times->mon_end)->format('a')
+                                                            == "pm") selected @elseif(!isset($data->times)) selected
+                                                            @endif>PM</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="row form-group">
+                                                <div class="col-xs-4" style="margin-top: 10px">
+                                                    <input onchange='change_status(this,"tueStart", "tueEnd")'
+                                                        type="checkbox" class="js-switch" data-color="#2cabe3"
+                                                        name="status" @if(isset($data) && isset($data->times) &&
+                                                    $data->times->tue_start) checked @endif /> Tuesday </div>
+                                                <div class="col-xs-2">
+                                                    <select style="padding-right: 0px;padding-left: 0px;"
+                                                        class="form-control" name="tue_start[time]" id="tueStart0"
+                                                        @if(isset($data) && isset($data->times)
+                                                        &&
+                                                        $data->times->tue_start) @else disabled
+                                                        @endif>
+                                                        @for ($i = 1; $i <= 12; $i++) <option value="{{$i}}:00"
+                                                            @if(isset($data) && isset($data->times) &&
+                                                            \Carbon\Carbon::parse($data->times->tue_start)->format('g:i')
+                                                            == "$i:00") selected
+                                                            @elseif(!isset($data->times->tue_start) && $start_time ==
+                                                            "$i:00")
+                                                            selected @endif>{{$i}}:00</option>
+                                                            @endfor
+                                                    </select>
+                                                </div>
+                                                <div class="col-xs-2">
+                                                    <select class="form-control" name="tue_start[am_pm]" id="tueStart1"
+                                                        @if(isset($data) && isset($data->times) &&
+                                                        $data->times->tue_start) @else disabled
+                                                        @endif>
+                                                        <option value="am" @if(isset($data) && isset($data->times) &&
+                                                            \Carbon\Carbon::parse($data->times->tue_start)->format('a')
+                                                            == "am") selected @elseif(!isset($data->times->tue_start))
+                                                            selected
+                                                            @endif>AM</option>
+                                                        <option value="pm" @if(isset($data->times->tue_start) &&
+                                                            \Carbon\Carbon::parse($data->times->tue_start)->format('a')
+                                                            == "pm") selected @endif>PM</option>
+                                                    </select>
+
+                                                </div>
+                                                <div class="col-xs-2">
+                                                    <select style="padding-right: 0px;padding-left: 0px;"
+                                                        class="form-control" name="tue_end[time]" id="tueEnd0"
+                                                        @if(isset($data) && isset($data->times) &&
+                                                        $data->times->tue_start) @else disabled
+                                                        @endif>
+                                                        @for ($i = 1; $i <= 12; $i++) <option value="{{$i}}:00"
+                                                            @if(isset($data) && isset($data->times) &&
+                                                            \Carbon\Carbon::parse($data->times->tue_end)->format('g:i')
+                                                            == "$i:00") selected
+                                                            @elseif(!isset($data->times->tue_end) && $end_time ==
+                                                            "$i:00")
+                                                            selected @endif>{{$i}}:00</option>
+                                                            @endfor
+                                                    </select>
+                                                </div>
+                                                <div class="col-xs-2">
+                                                    <select class="form-control" name="tue_end[am_pm]" id="tueEnd1"
+                                                        @if(isset($data) && isset($data->times) &&
+                                                        $data->times->tue_start) @else disabled
+                                                        @endif>
+                                                        <option value="am" @if(isset($data) && isset($data->times) &&
+                                                            \Carbon\Carbon::parse($data->times->tue_end)->format('a')
+                                                            == "am") selected @endif>AM</option>
+                                                        <option value="pm" @if(isset($data) && isset($data->times) &&
+                                                            \Carbon\Carbon::parse($data->times->tue_end)->format('a')
+                                                            == "pm") selected @elseif(!isset($data->times)) selected
+                                                            @endif>PM</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="row form-group">
+                                                <div class="col-xs-4" style="margin-top: 10px">
+                                                    <input onchange='change_status(this,"wedStart", "wedEnd")'
+                                                        type="checkbox" class="js-switch" data-color="#2cabe3"
+                                                        name="status" @if(isset($data) && isset($data->times) &&
+                                                    $data->times->wed_start) checked @endif /> Wednesday </div>
+                                                <div class="col-xs-2">
+                                                    <select style="padding-right: 0px;padding-left: 0px;"
+                                                        class="form-control" name="wed_start[time]" id="wedStart0"
+                                                        @if(isset($data) && isset($data->times) &&
+                                                        $data->times->wed_start) @else disabled
+                                                        @endif>
+                                                        @for ($i = 1; $i <= 12; $i++) <option value="{{$i}}:00"
+                                                            @if(isset($data) && isset($data->times) &&
+                                                            \Carbon\Carbon::parse($data->times->wed_start)->format('g:i')
+                                                            == "$i:00") selected
+                                                            @elseif(!isset($data->times->wed_start) && $start_time ==
+                                                            "$i:00")
+                                                            selected @endif>{{$i}}:00</option>
+                                                            @endfor
+                                                    </select>
+                                                </div>
+                                                <div class="col-xs-2">
+                                                    <select class="form-control" name="wed_start[am_pm]" id="wedStart1"
+                                                        @if(isset($data) && isset($data->times) &&
+                                                        $data->times->wed_start) @else disabled
+                                                        @endif>
+                                                        <option value="am" @if(isset($data) && isset($data->times) &&
+                                                            \Carbon\Carbon::parse($data->times->wed_start)->format('a')
+                                                            == "am") selected @elseif(!isset($data->times->wed_start))
+                                                            selected
+                                                            @endif>AM</option>
+                                                        <option value="pm" @if(isset($data->times->wed_start) &&
+                                                            \Carbon\Carbon::parse($data->times->wed_start)->format('a')
+                                                            == "pm") selected @endif>PM</option>
+                                                    </select>
+
+                                                </div>
+                                                <div class="col-xs-2">
+                                                    <select style="padding-right: 0px;padding-left: 0px;"
+                                                        class="form-control" name="wed_end[time]" id="wedEnd0"
+                                                        @if(isset($data) && isset($data->times) &&
+                                                        $data->times->wed_start) @else disabled
+                                                        @endif>
+                                                        @for ($i = 1; $i <= 12; $i++) <option value="{{$i}}:00"
+                                                            @if(isset($data) && isset($data->times) &&
+                                                            \Carbon\Carbon::parse($data->times->wed_end)->format('g:i')
+                                                            == "$i:00") selected
+                                                            @elseif(!isset($data->times->wed_end) && $end_time ==
+                                                            "$i:00")
+                                                            selected @endif>{{$i}}:00</option>
+                                                            @endfor
+                                                    </select>
+                                                </div>
+                                                <div class="col-xs-2">
+                                                    <select class="form-control" name="wed_end[am_pm]" id="wedEnd1"
+                                                        @if(isset($data) && isset($data->times) &&
+                                                        $data->times->wed_start) @else disabled
+                                                        @endif>
+                                                        <option value="am" @if(isset($data) && isset($data->times) &&
+                                                            \Carbon\Carbon::parse($data->times->wed_end)->format('a')
+                                                            == "am") selected @endif>AM</option>
+                                                        <option value="pm" @if(isset($data) && isset($data->times) &&
+                                                            \Carbon\Carbon::parse($data->times->wed_end)->format('a')
+                                                            == "pm") selected @elseif(!isset($data->times)) selected
+                                                            @endif>PM</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="row form-group">
+                                                <div class="col-xs-4" style="margin-top: 10px">
+                                                    <input onchange='change_status(this,"thuStart", "thuEnd")'
+                                                        type="checkbox" class="js-switch" data-color="#2cabe3"
+                                                        name="status" @if(isset($data) && isset($data->times) &&
+                                                    $data->times->thu_start) checked @endif /> Thursday </div>
+                                                <div class="col-xs-2">
+                                                    <select style="padding-right: 0px;padding-left: 0px;"
+                                                        class="form-control" name="thu_start[time]" id="thuStart0"
+                                                        @if(isset($data) && isset($data->times) &&
+                                                        $data->times->thu_start) @else disabled
+                                                        @endif>
+                                                        @for ($i = 1; $i <= 12; $i++) <option value="{{$i}}:00"
+                                                            @if(isset($data) && isset($data->times) &&
+                                                            \Carbon\Carbon::parse($data->times->thu_start)->format('g:i')
+                                                            == "$i:00") selected
+                                                            @elseif(!isset($data->times->thu_start) && $start_time ==
+                                                            "$i:00")
+                                                            selected @endif>{{$i}}:00</option>
+                                                            @endfor
+                                                    </select>
+                                                </div>
+                                                <div class="col-xs-2">
+                                                    <select class="form-control" name="thu_start[am_pm]" id="thuStart1"
+                                                        @if(isset($data) && isset($data->times) &&
+                                                        $data->times->thu_start) @else disabled
+                                                        @endif>
+                                                        <option value="am" @if(isset($data) && isset($data->times) &&
+                                                            \Carbon\Carbon::parse($data->times->thu_start)->format('a')
+                                                            == "am") selected @elseif(!isset($data->times->thu_start))
+                                                            selected
+                                                            @endif>AM</option>
+                                                        <option value="pm" @if(isset($data->times->thu_start) &&
+                                                            \Carbon\Carbon::parse($data->times->thu_start)->format('a')
+                                                            == "pm") selected @endif>PM</option>
+                                                    </select>
+
+                                                </div>
+                                                <div class="col-xs-2">
+                                                    <select style="padding-right: 0px;padding-left: 0px;"
+                                                        class="form-control" name="thu_end[time]" id="thuEnd0"
+                                                        @if(isset($data) && isset($data->times) &&
+                                                        $data->times->thu_start) @else disabled
+                                                        @endif>
+                                                        @for ($i = 1; $i <= 12; $i++) <option value="{{$i}}:00"
+                                                            @if(isset($data) && isset($data->times) &&
+                                                            \Carbon\Carbon::parse($data->times->thu_end)->format('g:i')
+                                                            == "$i:00") selected
+                                                            @elseif(!isset($data->times->thu_end) && $end_time ==
+                                                            "$i:00")
+                                                            selected @endif>{{$i}}:00</option>
+                                                            @endfor
+                                                    </select>
+                                                </div>
+                                                <div class="col-xs-2">
+                                                    <select class="form-control" name="thu_end[am_pm]" id="thuEnd1"
+                                                        @if(isset($data) && isset($data->times) &&
+                                                        $data->times->thu_start) @else disabled
+                                                        @endif>
+                                                        <option value="am" @if(isset($data) && isset($data->times) &&
+                                                            \Carbon\Carbon::parse($data->times->thu_end)->format('a')
+                                                            == "am") selected @endif>AM</option>
+                                                        <option value="pm" @if(isset($data) && isset($data->times) &&
+                                                            \Carbon\Carbon::parse($data->times->thu_end)->format('a')
+                                                            == "pm") selected @elseif(!isset($data->times)) selected
+                                                            @endif>PM</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="row form-group">
+                                                <div class="col-xs-4" style="margin-top: 10px">
+                                                    <input onchange='change_status(this,"friStart", "friEnd")'
+                                                        type="checkbox" class="js-switch" data-color="#2cabe3"
+                                                        name="status" @if(isset($data) && isset($data->times) &&
+                                                    $data->times->fri_start) checked @endif /> Friday </div>
+                                                <div class="col-xs-2">
+                                                    <select style="padding-right: 0px;padding-left: 0px;"
+                                                        class="form-control" name="fri_start[time]" id="friStart0"
+                                                        @if(isset($data) && isset($data->times) &&
+                                                        $data->times->fri_start) @else disabled
+                                                        @endif>
+                                                        @for ($i = 1; $i <= 12; $i++) <option value="{{$i}}:00"
+                                                            @if(isset($data) && isset($data->
+                                                            times) &&
+                                                            \Carbon\Carbon::parse($data->times->fri_start)->format('g:i')
+                                                            == "$i:00") selected
+                                                            @elseif(!isset($data->times->fri_start) && $start_time ==
+                                                            "$i:00")
+                                                            selected @endif>{{$i}}:00</option>
+                                                            @endfor
+                                                    </select>
+                                                </div>
+                                                <div class="col-xs-2">
+                                                    <select class="form-control" name="fri_start[am_pm]" id="friStart1"
+                                                        @if(isset($data) && isset($data->times) &&
+                                                        $data->times->fri_start) @else disabled
+                                                        @endif>
+                                                        <option value="am" @if(isset($data) && isset($data->times) &&
+                                                            \Carbon\Carbon::parse($data->times->fri_start)->format('a')
+                                                            == "am") selected @elseif(!isset($data->times->fri_start))
+                                                            selected
+                                                            @endif>AM</option>
+                                                        <option value="pm" @if(isset($data->times->fri_start) &&
+                                                            \Carbon\Carbon::parse($data->times->fri_start)->format('a')
+                                                            == "pm") selected @endif>PM</option>
+                                                    </select>
+
+                                                </div>
+                                                <div class="col-xs-2">
+                                                    <select style="padding-right: 0px;padding-left: 0px;"
+                                                        class="form-control" name="fri_end[time]" id="friEnd0"
+                                                        @if(isset($data) && isset($data->times) &&
+                                                        $data->times->fri_start) @else disabled
+                                                        @endif>
+                                                        @for ($i = 1; $i <= 12; $i++) <option value="{{$i}}:00"
+                                                            @if(isset($data) && isset($data->
+                                                            times) &&
+                                                            \Carbon\Carbon::parse($data->times->fri_end)->format('g:i')
+                                                            == "$i:00") selected
+                                                            @elseif(!isset($data->times->fri_end) && $end_time ==
+                                                            "$i:00")
+                                                            selected @endif>{{$i}}:00</option>
+                                                            @endfor
+                                                    </select>
+                                                </div>
+                                                <div class="col-xs-2">
+                                                    <select class="form-control" name="fri_end[am_pm]" id="friEnd1"
+                                                        @if(isset($data) && isset($data->times)
+                                                        &&
+                                                        $data->times->fri_start) @else disabled
+                                                        @endif>
+                                                        <option value="am" @if(isset($data) && isset($data->times) &&
+                                                            \Carbon\Carbon::parse($data->times->fri_end)->format('a')
+                                                            == "am") selected @endif>AM</option>
+                                                        <option value="pm" @if(isset($data) && isset($data->times) &&
+                                                            \Carbon\Carbon::parse($data->times->fri_end)->format('a')
+                                                            == "pm") selected @elseif(!isset($data->times)) selected
+                                                            @endif>PM</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="row form-group">
+                                                <div class="col-xs-4" style="margin-top: 10px">
+                                                    <input onchange='change_status(this,"satStart", "satEnd")'
+                                                        type="checkbox" class="js-switch" data-color="#2cabe3"
+                                                        name="status" @if(isset($data) && isset($data->times) &&
+                                                    $data->times->sat_start) checked @endif /> Saturday </div>
+                                                <div class="col-xs-2">
+                                                    <select style="padding-right: 0px;padding-left: 0px;"
+                                                        class="form-control" name="sat_start[time]" id="satStart0"
+                                                        @if(isset($data) && isset($data->times) &&
+                                                        $data->times->sat_start) @else disabled
+                                                        @endif>
+                                                        @for ($i = 1; $i <= 12; $i++) <option value="{{$i}}:00"
+                                                            @if(isset($data) && isset($data->times)
+                                                            &&
+                                                            \Carbon\Carbon::parse($data->times->sat_start)->format('g:i')
+                                                            == "$i:00") selected
+                                                            @elseif(!isset($data->times->sat_start) && $start_time ==
+                                                            "$i:00")
+                                                            selected @endif>{{$i}}:00</option>
+                                                            @endfor
+                                                    </select>
+                                                </div>
+                                                <div class="col-xs-2">
+                                                    <select class="form-control" name="sat_start[am_pm]" id="satStart1"
+                                                        @if(isset($data) && isset($data->times) &&
+                                                        $data->times->sat_start) @else disabled
+                                                        @endif>
+                                                        <option value="am" @if(isset($data) && isset($data->times) &&
+                                                            \Carbon\Carbon::parse($data->times->sat_start)->format('a')
+                                                            == "am") selected @elseif(!isset($data->times->sat_start))
+                                                            selected
+                                                            @endif>AM</option>
+                                                        <option value="pm" @if(isset($data->times->sat_start) &&
+                                                            \Carbon\Carbon::parse($data->times->sat_start)->format('a')
+                                                            == "pm") selected @endif>PM</option>
+                                                    </select>
+
+                                                </div>
+                                                <div class="col-xs-2">
+                                                    <select style="padding-right: 0px;padding-left: 0px;"
+                                                        class="form-control" name="sat_end[time]" id="satEnd0"
+                                                        @if(isset($data) && isset($data->times) &&
+                                                        $data->times->sat_start) @else disabled
+                                                        @endif>
+                                                        @for ($i = 1; $i <= 12; $i++) <option value="{{$i}}:00"
+                                                            @if(isset($data) && isset($data->times)
+                                                            &&
+                                                            \Carbon\Carbon::parse($data->times->sat_end)->format('g:i')
+                                                            == "$i:00") selected
+                                                            @elseif(!isset($data->times->sat_end) && $end_time ==
+                                                            "$i:00")
+                                                            selected @endif>{{$i}}:00</option>
+                                                            @endfor
+                                                    </select>
+                                                </div>
+                                                <div class="col-xs-2">
+                                                    <select class="form-control" name="sat_end[am_pm]" id="satEnd1"
+                                                        @if(isset($data) && isset($data->times) &&
+                                                        $data->times->sat_start) @else disabled
+                                                        @endif>
+                                                        <option value="am" @if(isset($data) && isset($data->times) &&
+                                                            \Carbon\Carbon::parse($data->times->sat_end)->format('a')
+                                                            == "am") selected @endif>AM</option>
+                                                        <option value="pm" @if(isset($data) && isset($data->times) &&
+                                                            \Carbon\Carbon::parse($data->times->sat_end)->format('a')
+                                                            == "pm") selected @elseif(!isset($data->times)) selected
+                                                            @endif>PM</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
+                                    <script>
+                                        function change_status(value, start, end) {
+                                            console.log(value.checked);
+                                            document.getElementById(start+'0').disabled = !value.checked;
+                                            document.getElementById(start+'1').disabled = !value.checked;
+                                            document.getElementById(end+'0').disabled = !value.checked;
+                                            document.getElementById(end+'1').disabled = !value.checked;
+                                        }
+                                    </script>
                                 </div>
-                                <div class="col-md-6">
-                                    <div class="row form-group">
-                                        <div class="col-xs-4" style="margin-top: 10px">
-                                            <input onchange='change_status(this,"monStart", "monEnd")' type="checkbox"
-                                                class="js-switch" data-color="#2cabe3" name="status" @if(isset($data) &&
-                                                isset($data->times) &&
-                                            $data->times->mon_start) checked @endif /> Monday </div>
-                                        <div class="col-xs-2">
-                                            <select style="padding-right: 0px;padding-left: 0px;" class="form-control"
-                                                name="mon_start[time]" id="monStart0" @if(isset($data) &&
-                                                isset($data->times) &&
-                                                $data->times->mon_start) @else disabled
-                                                @endif>
-                                                @for ($i = 1; $i <= 12; $i++) <option value="{{$i}}:00" @if(isset($data)
-                                                    && isset($data->times) &&
-                                                    \Carbon\Carbon::parse($data->times->mon_start)->format('g:i')
-                                                    == "$i:00") selected
-                                                    @elseif(isset($data) && $data->start_time == "$i:00")
-                                                    selected @endif>{{$i}}:00</option>
-                                                    @endfor
-                                            </select>
-                                        </div>
-                                        <div class="col-xs-2">
-                                            <select class="form-control" name="mon_start[am_pm]" id="monStart1"
-                                                @if(isset($data) && isset($data->times) &&
-                                                $data->times->mon_start) @else disabled
-                                                @endif>
-                                                <option value="am" @if(isset($data) && isset($data->times) &&
-                                                    \Carbon\Carbon::parse($data->times->mon_start)->format('a')
-                                                    == "am") selected @elseif(!isset($data->times)) selected
-                                                    @endif>AM</option>
-                                                <option value="pm" @if(isset($data) && isset($data->times) &&
-                                                    \Carbon\Carbon::parse($data->times->mon_start)->format('a')
-                                                    == "pm") selected @endif>PM</option>
-                                            </select>
+                                <div class="form-actions text-right">
+                                    <button type="submit" class="btn btn-success"> <i class="fa fa-check"></i>
+                                        Save</button>
+                                    <button type="reset" class="btn btn-dark">Cancel</button>
+                                </div>
+                            </form>
 
-                                        </div>
-                                        <div class="col-xs-2">
-                                            <select style="padding-right: 0px;padding-left: 0px;" class="form-control"
-                                                name="mon_end[time]" id="monEnd0" @if(isset($data) && isset($data->times) &&
-                                                $data->times->mon_start) @else disabled
-                                                @endif>
-                                                @for ($i = 1; $i <= 12; $i++) <option value="{{$i}}:00" @if(isset($data)
-                                                    && isset($data->times) &&
-                                                    \Carbon\Carbon::parse($data->times->mon_end)->format('g:i')
-                                                    == "$i:00") selected
-                                                    @elseif(isset($data) && $data->end_time == "$i:00")
-                                                    selected @endif>{{$i}}:00</option>
-                                                    @endfor
-                                            </select>
-                                        </div>
-                                        <div class="col-xs-2">
-                                            <select class="form-control" name="mon_end[am_pm]" id="monEnd1" @if(isset($data) &&
-                                                isset($data->times) &&
-                                                $data->times->mon_start) @else disabled
-                                                @endif>
-                                                <option value="am" @if(isset($data) && isset($data->times) &&
-                                                    \Carbon\Carbon::parse($data->times->mon_end)->format('a')
-                                                    == "am") selected @endif>AM</option>
-                                                <option value="pm" @if(isset($data) && isset($data->times) &&
-                                                    \Carbon\Carbon::parse($data->times->mon_end)->format('a')
-                                                    == "pm") selected @elseif(!isset($data->times)) selected
-                                                    @endif>PM</option>
-                                            </select>
-                                        </div>
-                                        {{-- <div class="col-xs-4"> <input type="time" name="mon_start"
-                                                            value="@if(isset($data) && isset($data->times)){{$data->times->mon_start}}@endif"
-                                        id="monStart" class="form-control" @if(isset($data) &&
-                                        isset($data->times) && $data->times->mon_start) @else
-                                        disabled
-                                        @endif>
-                                    </div>
-                                    <div class="col-xs-4"> <input type="time" name="mon_end"
-                                            value="@if(isset($data) && isset($data->times)){{$data->times->mon_end}}@endif"
-                                            id="monEnd" class="form-control" @if(isset($data) && isset($data->times)
-                                        && $data->times->mon_start) @else
-                                        disabled
-                                        @endif> </div> --}}
-                                </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="row form-group">
-                                <div class="col-xs-4" style="margin-top: 10px">
-                                    <input onchange='change_status(this,"tueStart", "tueEnd")' type="checkbox"
-                                        class="js-switch" data-color="#2cabe3" name="status" @if(isset($data) &&
-                                        isset($data->times) &&
-                                    $data->times->tue_start) checked @endif /> Tuesday </div>
-                                <div class="col-xs-2">
-                                    <select style="padding-right: 0px;padding-left: 0px;" class="form-control"
-                                        name="tue_start[time]" id="tueStart0" @if(isset($data) && isset($data->times)
-                                        &&
-                                        $data->times->tue_start) @else disabled
-                                        @endif>
-                                        @for ($i = 1; $i <= 12; $i++) <option value="{{$i}}:00" @if(isset($data) &&
-                                            isset($data->times) &&
-                                            \Carbon\Carbon::parse($data->times->tue_start)->format('g:i')
-                                            == "$i:00") selected
-                                            @elseif(isset($data) && $data->start_time == "$i:00")
-                                            selected @endif>{{$i}}:00</option>
-                                            @endfor
-                                    </select>
-                                </div>
-                                <div class="col-xs-2">
-                                    <select class="form-control" name="tue_start[am_pm]" id="tueStart1"
-                                        @if(isset($data) && isset($data->times) &&
-                                        $data->times->tue_start) @else disabled
-                                        @endif>
-                                        <option value="am" @if(isset($data) && isset($data->times) &&
-                                            \Carbon\Carbon::parse($data->times->tue_start)->format('a')
-                                            == "am") selected @elseif(!isset($data->times)) selected
-                                            @endif>AM</option>
-                                        <option value="pm" @if(isset($data) && isset($data->times) &&
-                                            \Carbon\Carbon::parse($data->times->tue_start)->format('a')
-                                            == "pm") selected @endif>PM</option>
-                                    </select>
-
-                                </div>
-                                <div class="col-xs-2">
-                                    <select style="padding-right: 0px;padding-left: 0px;" class="form-control"
-                                        name="tue_end[time]" id="tueEnd0" @if(isset($data) && isset($data->times) &&
-                                        $data->times->tue_start) @else disabled
-                                        @endif>
-                                        @for ($i = 1; $i <= 12; $i++) <option value="{{$i}}:00" @if(isset($data) &&
-                                            isset($data->times) &&
-                                            \Carbon\Carbon::parse($data->times->tue_end)->format('g:i')
-                                            == "$i:00") selected
-                                            @elseif(isset($data) && $data->end_time == "$i:00")
-                                            selected @endif>{{$i}}:00</option>
-                                            @endfor
-                                    </select>
-                                </div>
-                                <div class="col-xs-2">
-                                    <select class="form-control" name="tue_end[am_pm]" id="tueEnd1" @if(isset($data) &&
-                                        isset($data->times) &&
-                                        $data->times->tue_start) @else disabled
-                                        @endif>
-                                        <option value="am" @if(isset($data) && isset($data->times) &&
-                                            \Carbon\Carbon::parse($data->times->tue_end)->format('a')
-                                            == "am") selected @endif>AM</option>
-                                        <option value="pm" @if(isset($data) && isset($data->times) &&
-                                            \Carbon\Carbon::parse($data->times->tue_end)->format('a')
-                                            == "pm") selected @elseif(!isset($data->times)) selected
-                                            @endif>PM</option>
-                                    </select>
-                                </div>
-                                {{-- <div class="col-xs-4"> <input type="time" name="tue_start"
-                                                        value="@if(isset($data) && isset($data->times)){{$data->times->tue_start}}@endif"
-                                id="tueStart" class="form-control" @if(isset($data) &&
-                                isset($data->times) && $data->times->tue_start) @else
-                                disabled
-                                @endif>
-                            </div>
-                            <div class="col-xs-4"> <input type="time" name="tue_end"
-                                    value="@if(isset($data) && isset($data->times)){{$data->times->tue_end}}@endif"
-                                    id="tueEnd" class="form-control" @if(isset($data) && isset($data->times)
-                                && $data->times->tue_start) @else
-                                disabled
-                                @endif> </div> --}}
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="row form-group">
-                            <div class="col-xs-4" style="margin-top: 10px">
-                                <input onchange='change_status(this,"wedStart", "wedEnd")' type="checkbox"
-                                    class="js-switch" data-color="#2cabe3" name="status" @if(isset($data) &&
-                                    isset($data->times) &&
-                                $data->times->wed_start) checked @endif /> Wednesday </div>
-                            <div class="col-xs-2">
-                                <select style="padding-right: 0px;padding-left: 0px;" class="form-control"
-                                    name="wed_start[time]" id="wedStart0" @if(isset($data) && isset($data->times) &&
-                                    $data->times->wed_start) @else disabled
-                                    @endif>
-                                    @for ($i = 1; $i <= 12; $i++) <option value="{{$i}}:00" @if(isset($data) &&
-                                        isset($data->times) &&
-                                        \Carbon\Carbon::parse($data->times->wed_start)->format('g:i')
-                                        == "$i:00") selected
-                                        @elseif(isset($data) && $data->start_time == "$i:00")
-                                        selected @endif>{{$i}}:00</option>
-                                        @endfor
-                                </select>
-                            </div>
-                            <div class="col-xs-2">
-                                <select class="form-control" name="wed_start[am_pm]" id="wedStart1" @if(isset($data)
-                                    && isset($data->times) &&
-                                    $data->times->wed_start) @else disabled
-                                    @endif>
-                                    <option value="am" @if(isset($data) && isset($data->times) &&
-                                        \Carbon\Carbon::parse($data->times->wed_start)->format('a')
-                                        == "am") selected @elseif(!isset($data->times)) selected
-                                        @endif>AM</option>
-                                    <option value="pm" @if(isset($data) && isset($data->times) &&
-                                        \Carbon\Carbon::parse($data->times->wed_start)->format('a')
-                                        == "pm") selected @endif>PM</option>
-                                </select>
-
-                            </div>
-                            <div class="col-xs-2">
-                                <select style="padding-right: 0px;padding-left: 0px;" class="form-control"
-                                    name="wed_end[time]" id="wedEnd0" @if(isset($data) && isset($data->times) &&
-                                    $data->times->wed_start) @else disabled
-                                    @endif>
-                                    @for ($i = 1; $i <= 12; $i++) <option value="{{$i}}:00" @if(isset($data) &&
-                                        isset($data->times) &&
-                                        \Carbon\Carbon::parse($data->times->wed_end)->format('g:i')
-                                        == "$i:00") selected
-                                        @elseif(isset($data) && $data->end_time == "$i:00")
-                                        selected @endif>{{$i}}:00</option>
-                                        @endfor
-                                </select>
-                            </div>
-                            <div class="col-xs-2">
-                                <select class="form-control" name="wed_end[am_pm]" id="wedEnd1" @if(isset($data) &&
-                                    isset($data->times) &&
-                                    $data->times->wed_start) @else disabled
-                                    @endif>
-                                    <option value="am" @if(isset($data) && isset($data->times) &&
-                                        \Carbon\Carbon::parse($data->times->wed_end)->format('a')
-                                        == "am") selected @endif>AM</option>
-                                    <option value="pm" @if(isset($data) && isset($data->times) &&
-                                        \Carbon\Carbon::parse($data->times->wed_end)->format('a')
-                                        == "pm") selected @elseif(!isset($data->times)) selected
-                                        @endif>PM</option>
-                                </select>
-                            </div>
-                            {{-- <div class="col-xs-4"> <input type="time" name="wed_start"
-                                                    value="@if(isset($data) && isset($data->times)){{$data->times->wed_start}}@endif"
-                            id="wedStart" class="form-control" @if(isset($data) &&
-                            isset($data->times) && $data->times->wed_start) @else
-                            disabled
-                            @endif>
-                        </div>
-                        <div class="col-xs-4"> <input type="time" name="wed_end"
-                                value="@if(isset($data) && isset($data->times)){{$data->times->wed_end}}@endif"
-                                id="wedEnd" class="form-control" @if(isset($data) && isset($data->times)
-                            && $data->times->wed_start) @else
-                            disabled
-                            @endif> </div> --}}
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="row form-group">
-                        <div class="col-xs-4" style="margin-top: 10px">
-                            <input onchange='change_status(this,"thuStart", "thuEnd")' type="checkbox" class="js-switch"
-                                data-color="#2cabe3" name="status" @if(isset($data) && isset($data->times) &&
-                            $data->times->thu_start) checked @endif /> Thursday </div>
-                        <div class="col-xs-2">
-                            <select style="padding-right: 0px;padding-left: 0px;" class="form-control"
-                                name="thu_start[time]" id="thuStart0" @if(isset($data) && isset($data->times) &&
-                                $data->times->thu_start) @else disabled
-                                @endif>
-                                @for ($i = 1; $i <= 12; $i++) <option value="{{$i}}:00" @if(isset($data) &&
-                                    isset($data->times) &&
-                                    \Carbon\Carbon::parse($data->times->thu_start)->format('g:i')
-                                    == "$i:00") selected
-                                    @elseif(isset($data) && $data->start_time == "$i:00")
-                                    selected @endif>{{$i}}:00</option>
-                                    @endfor
-                            </select>
-                        </div>
-                        <div class="col-xs-2">
-                            <select class="form-control" name="thu_start[am_pm]" id="thuStart1" @if(isset($data) &&
-                                isset($data->times) &&
-                                $data->times->thu_start) @else disabled
-                                @endif>
-                                <option value="am" @if(isset($data) && isset($data->times) &&
-                                    \Carbon\Carbon::parse($data->times->thu_start)->format('a')
-                                    == "am") selected @elseif(!isset($data->times)) selected
-                                    @endif>AM</option>
-                                <option value="pm" @if(isset($data) && isset($data->times) &&
-                                    \Carbon\Carbon::parse($data->times->thu_start)->format('a')
-                                    == "pm") selected @endif>PM</option>
-                            </select>
-
-                        </div>
-                        <div class="col-xs-2">
-                            <select style="padding-right: 0px;padding-left: 0px;" class="form-control" name="thu_end[time]"
-                                id="thuEnd0" @if(isset($data) && isset($data->times) &&
-                                $data->times->thu_start) @else disabled
-                                @endif>
-                                @for ($i = 1; $i <= 12; $i++) <option value="{{$i}}:00" @if(isset($data) &&
-                                    isset($data->times) &&
-                                    \Carbon\Carbon::parse($data->times->thu_end)->format('g:i')
-                                    == "$i:00") selected
-                                    @elseif(isset($data) && $data->end_time == "$i:00")
-                                    selected @endif>{{$i}}:00</option>
-                                    @endfor
-                            </select>
-                        </div>
-                        <div class="col-xs-2">
-                            <select class="form-control" name="thu_end[am_pm]" id="thuEnd1" @if(isset($data) &&
-                                isset($data->times) &&
-                                $data->times->thu_start) @else disabled
-                                @endif>
-                                <option value="am" @if(isset($data) && isset($data->times) &&
-                                    \Carbon\Carbon::parse($data->times->thu_end)->format('a')
-                                    == "am") selected @endif>AM</option>
-                                <option value="pm" @if(isset($data) && isset($data->times) &&
-                                    \Carbon\Carbon::parse($data->times->thu_end)->format('a')
-                                    == "pm") selected @elseif(!isset($data->times)) selected
-                                    @endif>PM</option>
-                            </select>
-                        </div>
-                        {{-- <div class="col-xs-4"> <input type="time" name="thu_start"
-                                                value="@if(isset($data) && isset($data->times)){{$data->times->thu_start}}@endif"
-                        id="thuStart" class="form-control" @if(isset($data) &&
-                        isset($data->times) && $data->times->thu_start) @else
-                        disabled
-                        @endif>
-                    </div>
-                    <div class="col-xs-4"> <input type="time" name="thu_end"
-                            value="@if(isset($data) && isset($data->times)){{$data->times->thu_end}}@endif" id="thuEnd"
-                            class="form-control" @if(isset($data) && isset($data->times)
-                        && $data->times->thu_start) @else
-                        disabled
-                        @endif> </div> --}}
                 </div>
             </div>
-            <div class="col-md-6">
-                <div class="row form-group">
-                    <div class="col-xs-4" style="margin-top: 10px">
-                        <input onchange='change_status(this,"friStart", "friEnd")' type="checkbox" class="js-switch"
-                            data-color="#2cabe3" name="status" @if(isset($data) && isset($data->times) &&
-                        $data->times->fri_start) checked @endif /> Friday </div>
-                    <div class="col-xs-2">
-                        <select style="padding-right: 0px;padding-left: 0px;" class="form-control"
-                            name="fri_start[time]" id="friStart0" @if(isset($data) && isset($data->times) &&
-                            $data->times->fri_start) @else disabled
-                            @endif>
-                            @for ($i = 1; $i <= 12; $i++) <option value="{{$i}}:00" @if(isset($data) && isset($data->
-                                times) &&
-                                \Carbon\Carbon::parse($data->times->fri_start)->format('g:i')
-                                == "$i:00") selected
-                                @elseif(isset($data) && $data->start_time == "$i:00")
-                                selected @endif>{{$i}}:00</option>
-                                @endfor
-                        </select>
-                    </div>
-                    <div class="col-xs-2">
-                        <select class="form-control" name="fri_start[am_pm]" id="friStart1" @if(isset($data) &&
-                            isset($data->times) &&
-                            $data->times->fri_start) @else disabled
-                            @endif>
-                            <option value="am" @if(isset($data) && isset($data->times) &&
-                                \Carbon\Carbon::parse($data->times->fri_start)->format('a')
-                                == "am") selected @elseif(!isset($data->times)) selected
-                                @endif>AM</option>
-                            <option value="pm" @if(isset($data) && isset($data->times) &&
-                                \Carbon\Carbon::parse($data->times->fri_start)->format('a')
-                                == "pm") selected @endif>PM</option>
-                        </select>
-
-                    </div>
-                    <div class="col-xs-2">
-                        <select style="padding-right: 0px;padding-left: 0px;" class="form-control" name="fri_end[time]"
-                            id="friEnd0" @if(isset($data) && isset($data->times) &&
-                            $data->times->fri_start) @else disabled
-                            @endif>
-                            @for ($i = 1; $i <= 12; $i++) <option value="{{$i}}:00" @if(isset($data) && isset($data->
-                                times) &&
-                                \Carbon\Carbon::parse($data->times->fri_end)->format('g:i')
-                                == "$i:00") selected
-                                @elseif(isset($data) && $data->end_time == "$i:00")
-                                selected @endif>{{$i}}:00</option>
-                                @endfor
-                        </select>
-                    </div>
-                    <div class="col-xs-2">
-                        <select class="form-control" name="fri_end[am_pm]" id="friEnd1" @if(isset($data) && isset($data->times)
-                            &&
-                            $data->times->fri_start) @else disabled
-                            @endif>
-                            <option value="am" @if(isset($data) && isset($data->times) &&
-                                \Carbon\Carbon::parse($data->times->fri_end)->format('a')
-                                == "am") selected @endif>AM</option>
-                            <option value="pm" @if(isset($data) && isset($data->times) &&
-                                \Carbon\Carbon::parse($data->times->fri_end)->format('a')
-                                == "pm") selected @elseif(!isset($data->times)) selected
-                                @endif>PM</option>
-                        </select>
-                    </div>
-                    {{-- <div class="col-xs-4"> <input type="time" name="fri_start"
-                                        value="@if(isset($data) && isset($data->times)){{$data->times->fri_start}}@endif"
-                    id="friStart" class="form-control" @if(isset($data) && isset($data->times) &&
-                    $data->times->fri_start) @else
-                    disabled
-                    @endif>
-                </div>
-                <div class="col-xs-4"> <input type="time" name="fri_end"
-                        value="@if(isset($data) && isset($data->times)){{$data->times->fri_end}}@endif" id="friEnd"
-                        class="form-control" @if(isset($data) && isset($data->times)
-                    && $data->times->fri_start) @else
-                    disabled
-                    @endif> </div> --}}
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div class="row form-group">
-                <div class="col-xs-4" style="margin-top: 10px">
-                    <input onchange='change_status(this,"satStart", "satEnd")' type="checkbox" class="js-switch"
-                        data-color="#2cabe3" name="status" @if(isset($data) && isset($data->times) &&
-                    $data->times->sat_start) checked @endif /> Saturday </div>
-                <div class="col-xs-2">
-                    <select style="padding-right: 0px;padding-left: 0px;" class="form-control" name="sat_start[time]"
-                        id="satStart0" @if(isset($data) && isset($data->times) &&
-                        $data->times->sat_start) @else disabled
-                        @endif>
-                        @for ($i = 1; $i <= 12; $i++) <option value="{{$i}}:00" @if(isset($data) && isset($data->times)
-                            &&
-                            \Carbon\Carbon::parse($data->times->sat_start)->format('g:i')
-                            == "$i:00") selected
-                            @elseif(isset($data) && $data->start_time == "$i:00")
-                            selected @endif>{{$i}}:00</option>
-                            @endfor
-                    </select>
-                </div>
-                <div class="col-xs-2">
-                    <select class="form-control" name="sat_start[am_pm]" id="satStart1" @if(isset($data) &&
-                        isset($data->times) &&
-                        $data->times->sat_start) @else disabled
-                        @endif>
-                        <option value="am" @if(isset($data) && isset($data->times) &&
-                            \Carbon\Carbon::parse($data->times->sat_start)->format('a')
-                            == "am") selected @elseif(!isset($data->times)) selected
-                            @endif>AM</option>
-                        <option value="pm" @if(isset($data) && isset($data->times) &&
-                            \Carbon\Carbon::parse($data->times->sat_start)->format('a')
-                            == "pm") selected @endif>PM</option>
-                    </select>
-
-                </div>
-                <div class="col-xs-2">
-                    <select style="padding-right: 0px;padding-left: 0px;" class="form-control" name="sat_end[time]"
-                        id="satEnd0" @if(isset($data) && isset($data->times) &&
-                        $data->times->sat_start) @else disabled
-                        @endif>
-                        @for ($i = 1; $i <= 12; $i++) <option value="{{$i}}:00" @if(isset($data) && isset($data->times)
-                            &&
-                            \Carbon\Carbon::parse($data->times->sat_end)->format('g:i')
-                            == "$i:00") selected
-                            @elseif(isset($data) && $data->end_time == "$i:00")
-                            selected @endif>{{$i}}:00</option>
-                            @endfor
-                    </select>
-                </div>
-                <div class="col-xs-2">
-                    <select class="form-control" name="sat_end[am_pm]" id="satEnd1" @if(isset($data) && isset($data->times) &&
-                        $data->times->sat_start) @else disabled
-                        @endif>
-                        <option value="am" @if(isset($data) && isset($data->times) &&
-                            \Carbon\Carbon::parse($data->times->sat_end)->format('a')
-                            == "am") selected @endif>AM</option>
-                        <option value="pm" @if(isset($data) && isset($data->times) &&
-                            \Carbon\Carbon::parse($data->times->sat_end)->format('a')
-                            == "pm") selected @elseif(!isset($data->times)) selected
-                            @endif>PM</option>
-                    </select>
-                </div>
-                {{-- <div class="col-xs-4"> <input type="time" name="sat_start"
-                                    value="@if(isset($data) && isset($data->times)){{$data->times->sat_start}}@endif"
-                id="sutStart" class="form-control" @if(isset($data) && isset($data->times) &&
-                $data->times->sat_start) @else
-                disabled
-                @endif>
-            </div>
-            <div class="col-xs-4"> <input type="time" name="sat_end"
-                    value="@if(isset($data) && isset($data->times)){{$data->times->sat_end}}@endif" id="sutEnd"
-                    class="form-control" @if(isset($data) && isset($data->times)
-                && $data->times->sat_start) @else
-                disabled
-                @endif> </div> --}}
         </div>
     </div>
-</div>
-<script>
-    function change_status(value, start, end) {
-        console.log(value.checked);
-        document.getElementById(start+'0').disabled = !value.checked;
-        document.getElementById(start+'1').disabled = !value.checked;
-        document.getElementById(end+'0').disabled = !value.checked;
-        document.getElementById(end+'1').disabled = !value.checked;
-    }
-
-</script>
-</div>
-<div class="form-actions text-right">
-    <button type="submit" class="btn btn-success"> <i class="fa fa-check"></i>
-        Save</button>
-    <button type="reset" class="btn btn-dark">Cancel</button>
-</div>
-</form>
-
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<!-- /#page-wrapper -->
+    <!-- /#page-wrapper -->
 </div>
 @endsection
