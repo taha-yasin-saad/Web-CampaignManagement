@@ -333,12 +333,6 @@ class LeadController extends Controller
         unset($data['phone']);
         unset($data['country_code']);
 
-        // if (preg_match('/(+20)/', $request->phone)) {
-        //     $phone_num = $request->country_code . ltrim($request->phone, '+20');
-        // } else {
-        //     $phone_num = $request->country_code . ltrim($request->phone, '0');
-        // }
-
         $data["phone"] = $request->country_code . ltrim($request->phone, '+20\0');
 
         $user = Source::find($request->source_id)->product->users()->where('is_available', 1)->withCount('leads')->orderBy('leads_count', 'asc')->first();
