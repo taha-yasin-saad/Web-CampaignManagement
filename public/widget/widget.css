@@ -888,8 +888,8 @@
 }
 .closor-callback-v1-widget .closor-callback-v1-overlay {
     position: absolute !important;
-    right: 50px !important;
-    bottom: 50px !important;
+    right: 10px !important;
+    bottom: 0 !important;
     left: 10px !important;
     display: block !important;
     z-index: 2147483500 !important;
@@ -905,7 +905,7 @@
 @media (max-width: 700px), (max-device-width: 700px) {
     .closor-callback-v1-widget .closor-callback-v1-overlay {
         right: 10px !important;
-        bottom: 10px !important;
+        bottom: 0 !important;
     }
 }
 .closor-callback-v1-widget.closor-placement-bottom-left
