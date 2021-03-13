@@ -85,7 +85,9 @@ class WidgetController extends Controller
                         closor-viewport-width closor-viewport-scale">
                         <div class="closor-callback-v1-overlay" id="data-action" data-action="open-callback-popup"';
         if ($source->alignment == 'left') {
-            $widget .= 'style="left: 10px !important;right: unset !important;direction: ltr !important;width: 400px;"';
+            $widget .= 'style="left: 10px !important;right: unset !important;direction: ltr !important;"';
+        } else {
+            $widget .= 'style="right: 10px !important;left: unset !important;direction: rtl !important;"';
         };
         $widget .= '>';
         if ($source->widget_type == 'text') {
