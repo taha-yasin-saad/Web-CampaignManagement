@@ -16376,4 +16376,5 @@ p.small-font {
 
 .table-responsive-team {
     height: 100%;
+    display: contents;
 }
