@@ -16373,3 +16373,7 @@ ul.pro-amenities li span i {
 p.small-font {
     font-size: small;
 }
+
+.table-responsive-team {
+    height: 100%;
+}

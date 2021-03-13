@@ -45,7 +45,7 @@
                     </div>
                     @endif
                     <div class="panel-heading">MANAGE USERS</div>
-                    <div class="table-responsive">
+                    <div class="table-responsive table-responsive-team">
                         <table class="table table-hover table-bordered manage-u-table">
                             <thead>
                                 <tr>
@@ -202,8 +202,7 @@
                                                 id="addRemoveLeadDropDown" data-toggle="dropdown" href="#"
                                                 aria-expanded="false" role="button"><i class="ti-settings"></i></a>
                                             <div class="dropdown-menu bullet dropdown-menu-right"
-                                                aria-labelledby="addRemoveLeadDropDown" role="menu"
-                                                style="top: unset!important;position: relative;">
+                                                aria-labelledby="addRemoveLeadDropDown" role="menu">
                                                 <div class="white-box">
                                                     <h3 class="box-title m-b-0">Add Or Remove Product</h3>
                                                     <p class="text-muted m-b-30"> Only these sales agents will receive
