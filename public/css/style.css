@@ -29,7 +29,7 @@ body {
 html {
     position: relative;
     min-height: 100%;
-    background: #fff;
+    background: #edf1f5;
 }
 h1,
 h2,
@@ -16372,4 +16372,9 @@ ul.pro-amenities li span i {
 
 p.small-font {
     font-size: small;
+}
+
+.table-responsive-team {
+    height: 100%;
+    display: contents;
 }

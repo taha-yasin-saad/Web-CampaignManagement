@@ -85,12 +85,14 @@ class WidgetController extends Controller
                         closor-viewport-width closor-viewport-scale">
                         <div class="closor-callback-v1-overlay" id="data-action" data-action="open-callback-popup"';
         if ($source->alignment == 'left') {
-            $widget .= 'style="left: 10px !important;right: unset !important;direction: ltr !important;width: 400px;"';
+            $widget .= 'style="left: 10px !important;right: unset !important;direction: ltr !important;"';
+        } else {
+            $widget .= 'style="right: 10px !important;left: unset !important;direction: rtl !important;"';
         };
         $widget .= '>';
         if ($source->widget_type == 'text') {
             $widget .= '<div class="closerDiv WidgetText" onclick="callCloserModal()" style="background:' . $source->primary . '!important;display: inline-block!important;padding: 20px!important;
-                            width: 300px!important;text-align: center!important;vertical-align: middle!important;border-radius: 10px 10px 0px 0px!important;' . $source->alignment . ': 0!important;">
+                            width: 200px!important;text-align: center!important;vertical-align: middle!important;border-radius: 10px 10px 0px 0px!important;' . $source->alignment . ': 0!important;">
                                     <p class="text-text" style="text-align:center!important;color:' . $source->secondary . '!important;font-size: 18px !important;';
             if ($source->alignment == 'left') {
                 $widget .= 'position:unset!important;';
