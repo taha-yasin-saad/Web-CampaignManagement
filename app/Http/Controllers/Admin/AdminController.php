@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Admin;
+use App\ExceptionHandler;
 use App\Lead;
 use App\Product;
 use App\User;
@@ -90,6 +91,34 @@ class AdminController extends Controller
 
 
         return view('admin.dashboard', $query);
+    }
+
+        /**
+     * View Exceptions
+     *
+     *
+     * Is A View Exceptions Page That Shows Lists Of Stats & Exceptions Data Of The Site In Exceptions That admin can view stats and make decisions from the stats brief in front of him to manage the site more efficient .
+     *
+     * <p><img src="images/admin/dashboard.png" width="100%"></p>
+     *
+     *
+     *
+     * @authenticated
+     *
+     * @response  {
+     * "workplaces_count":19,
+     * "products_count":28,
+     * "users_count":32,
+     * "leads_count":86
+     * }
+     *
+     */
+
+    public function view_exceptions()
+    {
+        $query['data'] = ExceptionHandler::orderBy('id','desc')->limit(100)->get();
+
+        return view('admin.view_exceptions.index', $query);
     }
 
     /**
