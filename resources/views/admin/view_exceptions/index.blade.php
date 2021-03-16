@@ -35,7 +35,10 @@
                                 <tr>
                                     <th style="width: 70px;" class="text-center">#</th>
                                     {{-- <th>Class</th> --}}
-                                    {{-- <th>File</th> --}}
+                                    <th>User Name</th>
+                                    <th>Email</th>
+                                    <th>Url</th>
+                                    <th>File</th>
                                     {{-- <th>Code</th> --}}
                                     {{-- <th>Line</th> --}}
                                     {{-- <th>Trace</th> --}}
@@ -48,12 +51,15 @@
                                 <tr>
                                     <td class="text-center">{{$value->id}}</td>
                                     {{-- <td><span class="font-medium">{{$value->class}}</span></td> --}}
-                                    {{-- <td><span class="font-medium">{{$value->file}}</span></td> --}}
-                                    {{-- <td><span class="font-medium">{{$value->code}}</span></td> --}}
-                                    {{-- <td><span class="font-medium">{{$value->line}}</span></td> --}}
-                                    {{-- <td><span class="font-medium">{{$value->trace}}</span></td> --}}
-                                    <td><span class="font-medium">{{$value->message}}</span></td>
-                                    <td><span class="font-medium">{{$value->created_at->diffForHumans()}}</span></td>
+                                    <td><span class="font-medium">@if(@$value->user){{$value->user->name}}@endif</span></td>
+                                    <td><span class="font-medium">@if(@$value->user){{$value->user->email}}@endif</span></td>
+                                    <td>{{$value->url}}</td>
+                                    <td>{{$value->file}}</td>
+                                    {{-- <td>{{$value->code}}</td> --}}
+                                    {{-- <td>{{$value->line}}</td> --}}
+                                    {{-- <td>{{$value->trace}}</td> --}}
+                                    <td>{{$value->message}}</td>
+                                    <td>{{$value->created_at->diffForHumans()}}</td>
                                 </tr>
                                 @endforeach
                             </tbody>

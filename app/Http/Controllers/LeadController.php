@@ -71,7 +71,7 @@ class LeadController extends Controller
     {
         $query['leads'] = Lead::with('workplaces', 'product', 'source', 'user')->whereHas('product', function ($query) {
             $query->where('workplace_id', session('workplace')->id);
-        })->filter($request)->get();
+        })->filter($request)->orderBy('id', 'desc')->get();
         // dd($query['leads']);
         $query['qualified_leads'] = Lead::with('workplaces')->whereHas('product', function ($query) {
             $query->where('workplace_id', session('workplace')->id);
@@ -146,5 +146,4 @@ class LeadController extends Controller
         // print_r($query['ldata']);exit();
         return view('leads.onelead', $query);
     }
-
 }

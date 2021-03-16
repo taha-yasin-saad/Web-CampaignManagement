@@ -184,6 +184,28 @@ class LeadController extends Controller
         }
         return response()->json(array('code' => '0', 'data' => $all_leads), 200, ['Access-Control-Allow-Origin' => '*'], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
     }
+
+    /**
+     * Call leads counter
+     *
+     * Is An Api Request To Store Call Leads date and count.
+     *
+     * @bodyParam  user_id required string The user_id of the Product. Example: 5
+     *
+     * @authenticated
+     *
+     * @response {
+     * "message":"Last Contact Status Changed Successfully"
+     * }
+     *
+     */
+    public function last_contact(Lead $lead)
+    {
+        $lead->last_contact = Carbon::now();
+        $lead->save();
+
+        return response()->json(array('code' => '0', 'message' => 'Last Contact Status Changed Successfully'), 200, ['Access-Control-Allow-Origin' => '*'], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
+    }
     /**
      * Lead Status Edit Request
      *
