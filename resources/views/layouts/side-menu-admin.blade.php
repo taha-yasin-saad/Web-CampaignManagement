@@ -48,6 +48,12 @@
                     <span class="hide-menu"> Email Logs <span class="fa arrow"></span> </span>
                 </a>
             </li>
+            <li class="{{ (request()->is('admin/view_exceptions*')) ? 'active' : '' }}">
+                <a href="{{url('admin/view_exceptions')}}" class="waves-effect"><i class="mdi mdi-account-multiple fa-fw"
+                        data-icon="v"></i>
+                    <span class="hide-menu"> View Exceptions <span class="fa arrow"></span> </span>
+                </a>
+            </li>
         </ul>
     </div>
 </div>

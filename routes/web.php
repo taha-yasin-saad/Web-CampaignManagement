@@ -66,6 +66,7 @@ Route::get('isoCode/{code}', 'AjaxController@isoCode');
 
 Route::group(['middleware' => 'auth.admin', 'prefix' => 'admin', 'namespace' => 'Admin'], function () {
     Route::get('/dashboard', 'AdminController@index')->name('admin.dashboard');
+    Route::get('/view_exceptions', 'AdminController@view_exceptions');
     Route::resource('email_log', 'EmailLogController');
     Route::resource('moderator', 'ModeratorController');
     Route::resource('zone', 'ZoneController');
