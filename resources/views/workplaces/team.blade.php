@@ -238,8 +238,7 @@
                                                 id="editRoleDropDown" data-toggle="dropdown" href="#"
                                                 aria-expanded="false" role="button"><i class="ti-pencil-alt"></i></a>
                                             <div class="dropdown-menu bullet dropdown-menu-right"
-                                                aria-labelledby="editRoleDropDown" role="menu"
-                                                style="top: unset!important;position: relative;">
+                                                aria-labelledby="editRoleDropDown" role="menu">
                                                 <div class="white-box">
                                                     <h3 class="box-title m-b-0">Edit Role</h3>
                                                     <p class="text-muted m-b-30"> Only these Owner and Admin will Edit
