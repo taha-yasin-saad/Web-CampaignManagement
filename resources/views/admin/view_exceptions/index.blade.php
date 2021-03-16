@@ -18,6 +18,8 @@
             </div>
         </div>
         <!-- .row -->
+        @include('admin.view_exceptions.exception_modal')
+
         <div class="row">
             <div class="col-xs-12">
                 @if (session('success'))
@@ -37,12 +39,12 @@
                                     {{-- <th>Class</th> --}}
                                     <th>User Name</th>
                                     <th>Email</th>
-                                    <th>Url</th>
-                                    <th>File</th>
+                                    <th>Exception Info</th>
+                                    {{-- <th>File</th> --}}
                                     {{-- <th>Code</th> --}}
                                     {{-- <th>Line</th> --}}
                                     {{-- <th>Trace</th> --}}
-                                    <th>Message</th>
+                                    {{-- <th>Message</th> --}}
                                     <th>Created At</th>
                                 </tr>
                             </thead>
@@ -51,14 +53,22 @@
                                 <tr>
                                     <td class="text-center">{{$value->id}}</td>
                                     {{-- <td><span class="font-medium">{{$value->class}}</span></td> --}}
-                                    <td><span class="font-medium">@if(@$value->user){{$value->user->name}}@endif</span></td>
-                                    <td><span class="font-medium">@if(@$value->user){{$value->user->email}}@endif</span></td>
-                                    <td>{{$value->url}}</td>
-                                    <td>{{$value->file}}</td>
+                                    <td><span class="font-medium">@if(@$value->user){{$value->user->name}}@endif</span>
+                                    </td>
+                                    <td><span class="font-medium">@if(@$value->user){{$value->user->email}}@endif</span>
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn btn-danger open-exception_modal"
+                                            data-toggle="modal" data-target="#exception_modal"
+                                            data-url="{{$value->url}}" data-file="{{$value->file}}"
+                                            data-message="{{$value->message}}"> <span
+                                                class="font-medium">Exception Info</span> </button>
+                                    </td>
+                                    {{-- <td>{{$value->file}}</td> --}}
                                     {{-- <td>{{$value->code}}</td> --}}
                                     {{-- <td>{{$value->line}}</td> --}}
                                     {{-- <td>{{$value->trace}}</td> --}}
-                                    <td>{{$value->message}}</td>
+                                    {{-- <td>{{$value->message}}</td> --}}
                                     <td>{{$value->created_at->diffForHumans()}}</td>
                                 </tr>
                                 @endforeach
@@ -77,4 +87,14 @@
     </div>
     <!-- /#page-wrapper -->
 </div>
+<script>
+    $(document).on("click", ".open-exception_modal", function () {
+        var url = $(this).data('url');
+        var file = $(this).data('file');
+        var message = $(this).data('message');
+        $(".modal-body #url").text('Url : ' + url);
+        $(".modal-body #file").text('File : ' + file);
+        $(".modal-body #message").text('Message : ' + message);
+    });
+</script>
 @endsection

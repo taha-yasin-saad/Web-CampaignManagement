@@ -358,17 +358,17 @@
 </script>
 <script>
     $('.mydatepicker').datepicker();
-            $(document).on("click", ".open-UserModal", function () {
-                var Username = $(this).data('name');
-                var Useremail = $(this).data('email');
-                var Userphone = $(this).data('phone');
-                $(".modal-body #Username").text(Username);
-                $(".modal-body #Useremail").text(Useremail);
-                $(".modal-body #Userphone").text(Userphone);
-                console.log($(".modal-body #Username").text());
-                console.log(Username);
-                console.log(Useremail);
-                console.log(Userphone);
-            });
+    $(document).on("click", ".open-UserModal", function () {
+        var Username = $(this).data('name');
+        var Useremail = $(this).data('email');
+        var Userphone = $(this).data('phone');
+        $(".modal-body #Username").text(Username);
+        $(".modal-body #Useremail").text(Useremail);
+        $(".modal-body #Userphone").text(Userphone);
+        console.log($(".modal-body #Username").text());
+        console.log(Username);
+        console.log(Useremail);
+        console.log(Userphone);
+    });
 </script>
 @endsection
