@@ -61,7 +61,7 @@
                                         <button type="button" class="btn btn-danger open-exception_modal"
                                             data-toggle="modal" data-target="#exception_modal"
                                             data-url="{{$value->url}}" data-file="{{$value->file}}"
-                                            data-message="{{$value->message}}"> <span
+                                            data-message="{{$value->message}}" data-username="@if(@$value->user){{$value->user->name}}@endif"> <span
                                                 class="font-medium">Exception Info</span> </button>
                                     </td>
                                     {{-- <td>{{$value->file}}</td> --}}
@@ -92,9 +92,11 @@
         var url = $(this).data('url');
         var file = $(this).data('file');
         var message = $(this).data('message');
+        var username = $(this).data('username');
         $(".modal-body #url").text('Url : ' + url);
         $(".modal-body #file").text('File : ' + file);
         $(".modal-body #message").text('Message : ' + message);
+        $(".modal-body #username").text('Username : ' + username);
     });
 </script>
 @endsection

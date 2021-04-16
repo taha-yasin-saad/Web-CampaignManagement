@@ -287,7 +287,7 @@ class LeadController extends Controller
 
     public function firebase_sent($lead, $device_token, $message)
     {
-        $API_ACCESS_KEY = 'AAAAAmEDn3w:APA91bGBWdD0XkzwivgPc_0qF0xt_V9NaRCDl59s0x54Qxjh6EPpSASsWgKF26fI9bVyJppiJnM5E7wxG25OiJ1iiLktyTa0pQiTChustIzH3CraEpAcaQJw9W02C1sKl9qBNrXY0Lmm';
+        $API_ACCESS_KEY = 'AAAA17pGnXM:APA91bGxvnurB7oRPa-RAm6FdlIyfhtoeA5AdozcD27TxaG8UWuMnRWr4G3RATMu7HXkBfPPvji81p4BiuUJsIPZyGMn2MWUYUFNtluwOg2IX7JJx42r5hEWmI0kou4UlrgZYXH1atob';
         $data = $lead;
         $fields = [
             'to' => $device_token,
