@@ -1,0 +1,38 @@
+{
+	"info": {
+		"_postman_id": "83cb914d-e07c-4dac-b024-823a521b8c78",
+		"name": "Closor last contact",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Last Contact",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://app.closor.com/api/last_contact/145",
+					"protocol": "http",
+					"host": [
+						"app",
+						"closor",
+						"com"
+					],
+					"path": [
+						"api",
+						"last_contact",
+						"145"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
